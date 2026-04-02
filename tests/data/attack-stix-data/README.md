@@ -1,0 +1,1 @@
+This directory contains the MITRE ATT&CK dataset represented in STIX 2.1 JSON collections sourced from [upstream](https://github.com/mitre-attack/attack-stix-data/) and used to test the LinkML schema.

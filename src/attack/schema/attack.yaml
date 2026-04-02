@@ -1,0 +1,2533 @@
+---
+id: https://w3id.org/lmodel/attack
+name: attack
+title: ATT&CK
+description: |-
+  MITRE ATT&CK®: LinkML Schema
+  The ATT&CK knowledge base is modeled using the ATT&CK Data Model (ADM), a STIX 2.1-based
+  schema expressing adversary tactics, techniques, procedures (TTPs) and related objects.
+  This schema imports the STIX 2.1 LinkML schema and adds ATT&CK-specific classes, slots,
+  enumerations, and constraints.
+license: Apache-2.0
+see_also:
+  - https://lmodel.github.io/attack
+  - https://github.com/mitre-attack/attack-data-model
+  - https://attack.mitre.org
+
+source: https://mitre-attack.github.io/attack-data-model/schemas/
+
+prefixes:
+  attack: https://w3id.org/lmodel/attack/
+  linkml: https://w3id.org/linkml/
+  schema: http://schema.org/
+  PATO: http://purl.obolibrary.org/obo/PATO_
+  stix: https://w3id.org/lmodel/stix/
+  spdx: https://lmodel.github.io/spdx/
+  oscal: https://lmodel.github.io/oscal/
+  capex: https://lmodel.github.io/capex/
+  unified_cyber_ontology: https://w3id.org/lmodel/uco-master/
+default_prefix: attack
+default_range: string
+
+imports:
+  - linkml:types
+  - ./stix
+
+annotations:
+  attack_spec_version: "3.3.0"
+  stix_version: "2.1"
+
+subsets:
+
+  attack_sdos:
+    description: >-
+      ATT&CK STIX Domain Objects (SDOs) — the primary objects representing tactics,
+      techniques, groups, campaigns, software, mitigations, assets, data sources,
+      data components, matrices, collections, analytics, detection strategies, and identity.
+
+  attack_sros:
+    description: >-
+      ATT&CK STIX Relationship Objects (SROs) — relationship objects connecting ATT&CK SDOs
+      with typed semantic relationships (uses, mitigates, subtechnique-of, detects, etc.).
+
+  attack_smos:
+    description: >-
+      ATT&CK STIX Meta Objects (SMOs) — non-versioned metadata objects such as
+      TLP and statement marking definitions.
+
+  attack_bundle:
+    description: >-
+      ATT&CK STIX Bundle — the top-level distribution container for an ATT&CK domain dataset.
+      Not a STIX Object; distributes exactly one x-mitre-collection plus all referenced objects.
+
+  attack_aux:
+    description: >-
+      Auxiliary helper classes used as inlined component types within ATT&CK objects
+      (e.g., RelatedAsset, LogSource, LogSourceReference, MutableElement, ObjectVersionReference).
+
+  deprecated:
+    description: >-
+      Slots and classes marked as deprecated in the ATT&CK Data Model.
+      Properties in this subset are present for backward compatibility and are scheduled
+      for removal in ATT&CK Specification 4.0.0.
+
+  enterprise_only:
+    description: >-
+      Properties and values applicable only within the Enterprise ATT&CK domain.
+
+  mobile_only:
+    description: >-
+      Properties and values applicable only within the Mobile ATT&CK domain.
+
+  ics_only:
+    description: >-
+      Properties and values applicable only within the ICS (Industrial Control Systems)
+      ATT&CK domain.
+
+types:
+
+  attack_version_string:
+    uri: xsd:string
+    base: str
+    description: >-
+      An ATT&CK object version string in 'major.minor' format where both components
+      are integers between 0 and 99 (e.g., "1.0", "12.5"). The version is incremented
+      by ATT&CK when the content of an object changes. Does not include a patch component.
+    pattern: "^(\\d{1,2})\\.(\\d{1,2})$"
+
+  semver_string:
+    uri: xsd:string
+    base: str
+    description: >-
+      A semantic version string in MAJOR.MINOR.PATCH format as per https://semver.org/.
+      Used by x_mitre_attack_spec_version to identify which version of the ATT&CK
+      Data Model specification an object conforms to. Example: "3.0.0", "2.1.0".
+    pattern: "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+
+  citation_string:
+    uri: xsd:string
+    base: str
+    description: >-
+      One or more inline citation references concatenated without any separator,
+      each in the form '(Citation: source_name)'. Used on Campaign objects to cite
+      sources for when a campaign was first or last seen. Each source_name reference
+      must resolve to a source_name value in the object's external_references array.
+      Example: "(Citation: FireEye APT28)(Citation: MSTIC HAFNIUM)"
+    pattern: "^(\\(Citation:[^)]+\\))+$"
+
+enums:
+
+  AttackDomainEnum:
+    description: >-
+      Closed enumeration of the three ATT&CK technology domains. ATT&CK is organized
+      into domains that represent the ecosystems adversaries operate within. All ATT&CK
+      objects that carry x_mitre_domains must reference at least one of these domains.
+    permissible_values:
+      enterprise-attack:
+        description: >-
+          Enterprise domain covering Windows, Linux, macOS, cloud platforms (IaaS, SaaS,
+          Office 365, Google Workspace, Azure AD), containers, network devices, and PRE.
+      mobile-attack:
+        description: >-
+          Mobile domain covering Android and iOS operating systems. Techniques describe
+          adversary behavior targeting mobile devices.
+      ics-attack:
+        description: >-
+          ICS (Industrial Control Systems) domain covering Operational Technology
+          environments including SCADA, DCS, PLCs, RTUs, and other OT components.
+
+  AttackPlatformEnum:
+    description: >-
+      Closed enumeration of all technology platforms supported across ATT&CK domains.
+      Platforms represent specific operating environments or technology stacks within
+      which adversary techniques are applicable. Values must be unique within any
+      x_mitre_platforms array; duplicates are not permitted.
+    permissible_values:
+      Windows:
+        description: Microsoft Windows desktop and server operating systems.
+      Linux:
+        description: Linux-based operating systems (all distributions).
+      macOS:
+        description: Apple macOS operating system.
+      Android:
+        description: Google Android mobile operating system.
+      iOS:
+        description: Apple iOS and iPadOS mobile operating systems.
+      "Azure AD":
+        description: Microsoft Azure Active Directory — cloud identity and access management.
+      "Google Workspace":
+        description: Google Workspace productivity suite (formerly G Suite), including Gmail, Drive, etc.
+      "Office Suite":
+        description: Office productivity suites (Microsoft 365, etc.).
+      SaaS:
+        description: Software-as-a-Service cloud applications accessible via a web browser.
+      IaaS:
+        description: Infrastructure-as-a-Service cloud platforms (AWS, Azure, GCP compute, storage, etc.).
+      Containers:
+        description: Container runtimes and orchestration platforms (Docker, Kubernetes, etc.).
+      ESXi:
+        description: VMware ESXi hypervisor platform.
+      "Identity Provider":
+        description: Identity and Access Management (IAM) provider systems.
+      "Network Devices":
+        description: Network infrastructure devices such as routers, switches, and firewalls.
+      PRE:
+        description: Pre-compromise activities such as reconnaissance and resource development.
+      None:
+        description: No specific platform dependency; technique applies generically.
+      "Field Controller/RTU/PLC/IED":
+        description: >-
+          ICS field controllers, Remote Terminal Units (RTUs), Programmable Logic Controllers
+          (PLCs), and Intelligent Electronic Devices (IEDs).
+      "Data Historian":
+        description: ICS data historian systems that record and store process data over time.
+      "Engineering Workstation":
+        description: ICS engineering workstations used to program and configure field devices.
+      "Control Server":
+        description: ICS supervisory control servers including SCADA and DCS master stations.
+      "Human-Machine Interface":
+        description: ICS HMI systems providing operator visualization and control interfaces.
+      "Input/Output Server":
+        description: ICS Input/Output servers that interface between control networks and field devices.
+      "Safety Instrumented System/Protection Relay":
+        description: ICS safety systems including Safety Instrumented Systems (SIS) and protection relays.
+      Embedded:
+        description: Embedded systems and firmware environments in specialized hardware.
+
+  KillChainNameEnum:
+    description: >-
+      Closed enumeration of ATT&CK kill chain identifiers used in kill_chain_phases.
+      These three values correspond to the three ATT&CK domains and are used to map
+      techniques to their associated tactics. The phase_name in each kill_chain_phase
+      must match the x_mitre_shortname of the corresponding x-mitre-tactic object.
+    permissible_values:
+      mitre-attack:
+        description: Enterprise ATT&CK kill chain (used in the enterprise-attack domain).
+      mitre-mobile-attack:
+        description: Mobile ATT&CK kill chain (used in the mobile-attack domain).
+      mitre-ics-attack:
+        description: ICS ATT&CK kill chain (used in the ics-attack domain).
+
+  AttackTacticShortNameEnum:
+    description: >-
+      Closed enumeration of all ATT&CK tactic short names (x_mitre_shortname).
+      Short names use lowercase hyphen-separated words and are used as the
+      kill_chain_phases.phase_name value by techniques belonging to a tactic.
+      This enumeration covers short names across all three ATT&CK domains
+      (Enterprise, Mobile, ICS). Some short names appear in multiple domains.
+    permissible_values:
+      reconnaissance:
+        description: "Enterprise: Adversaries gather information to plan future operations."
+      resource-development:
+        description: "Enterprise: Adversaries establish resources to support operations."
+      initial-access:
+        description: "Enterprise / Mobile / ICS: Adversaries gain a foothold in the environment."
+      execution:
+        description: "Enterprise / Mobile / ICS: Adversaries run malicious code."
+      persistence:
+        description: "Enterprise / Mobile / ICS: Adversaries maintain their foothold."
+      privilege-escalation:
+        description: "Enterprise / Mobile / ICS: Adversaries gain higher-level permissions."
+      defense-evasion:
+        description: "Enterprise / Mobile: Adversaries avoid being detected."
+      credential-access:
+        description: "Enterprise / Mobile: Adversaries steal account names and passwords."
+      discovery:
+        description: "Enterprise / Mobile / ICS: Adversaries figure out the environment."
+      lateral-movement:
+        description: "Enterprise / Mobile / ICS: Adversaries move through the environment."
+      collection:
+        description: "Enterprise / Mobile / ICS: Adversaries gather data of interest."
+      command-and-control:
+        description: "Enterprise / Mobile / ICS: Adversaries communicate with compromised systems."
+      exfiltration:
+        description: "Enterprise / Mobile: Adversaries steal data."
+      impact:
+        description: "Enterprise / Mobile / ICS: Adversaries manipulate, interrupt, or destroy systems and data."
+      evasion:
+        description: "Mobile: Adversaries evade analysis and defenses on mobile platforms."
+      network-effects:
+        description: "Mobile (legacy): Adversaries intercept or manipulate network traffic."
+      remote-service-effects:
+        description: "Mobile (legacy): Adversaries control or monitor remote services on mobile devices."
+      inhibit-response-function:
+        description: "ICS: Adversaries prevent safety mechanisms from responding to events."
+      impair-process-control:
+        description: "ICS: Adversaries manipulate physical control processes."
+
+  AttackRelationshipTypeEnum:
+    description: >-
+      Closed enumeration of relationship types used in ATT&CK relationship objects.
+      Each value defines a specific semantic connection between ATT&CK STIX objects.
+      Not all (source, relationship, target) type combinations are valid; see the
+      ATT&CK Data Model specification for the full relationship compatibility matrix.
+    permissible_values:
+      uses:
+        description: >-
+          A Group (intrusion-set), Campaign, Malware, or Tool uses a Technique (attack-pattern),
+          Malware, or Tool. Constraint: Malware CANNOT use Malware; Tool CANNOT use Tool.
+          Campaign --uses--> Technique/Malware/Tool is also valid.
+      mitigates:
+        description: >-
+          A Mitigation (course-of-action) mitigates a Technique (attack-pattern).
+          Only valid source type: course-of-action. Only valid target type: attack-pattern.
+      subtechnique-of:
+        description: >-
+          A sub-technique (attack-pattern) is a specialized implementation of a parent
+          technique (attack-pattern). Source is the sub-technique; target is the parent.
+          Each sub-technique has exactly one parent; parent techniques may have many sub-techniques.
+      detects:
+        description: >-
+          A DataComponent (x-mitre-data-component) or DetectionStrategy
+          (x-mitre-detection-strategy) detects a Technique (attack-pattern).
+          Note: x-mitre-data-component --detects--> attack-pattern is DEPRECATED as of v3.3.0.
+      attributed-to:
+        description: >-
+          A Campaign is attributed to a Group (intrusion-set). Represents the intelligence
+          assessment linking a campaign to a known threat actor group.
+      targets:
+        description: >-
+          A Technique (attack-pattern) targets an Asset (x-mitre-asset). Only applicable
+          in the ICS domain to model technique-to-asset targeting relationships.
+      revoked-by:
+        description: >-
+          An ATT&CK object has been revoked and replaced by another object of the same STIX type.
+          Both source and target must be the same STIX type (e.g., both attack-pattern).
+
+  AttackEffectivePermissionsEnum:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      Closed enumeration of the effective Windows or Unix permission levels that an adversary
+      achieves after successfully exploiting a technique. Only four values are recognized.
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+    permissible_values:
+      Administrator:
+        description: Windows Administrator-level permissions (local or domain admin).
+      SYSTEM:
+        description: Windows SYSTEM account privileges — highest built-in Windows privilege level.
+      User:
+        description: Standard unprivileged user-level permissions.
+      root:
+        description: Unix/Linux root (superuser) privileges.
+
+  AttackImpactTypeEnum:
+    description: >-
+      Closed enumeration of impact type categories applicable to techniques in the
+      Enterprise ATT&CK Impact tactic. Indicates whether the technique can be used
+      to affect system availability, data integrity, or both.
+    in_subset:
+      - enterprise_only
+    permissible_values:
+      Availability:
+        description: >-
+          The technique can be used to impact system or service availability (e.g.,
+          denial-of-service, ransomware data encryption, destructive malware).
+      Integrity:
+        description: >-
+          The technique can be used to impact data or system integrity (e.g.,
+          unauthorized data modification, firmware compromise, log tampering).
+
+  AttackPermissionsRequiredEnum:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      Closed enumeration of the minimum permission level required for an adversary
+      to execute the technique on a target system.
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+    permissible_values:
+      "Remote Desktop Users":
+        description: Membership in the Remote Desktop Users group is required.
+      SYSTEM:
+        description: SYSTEM account context is required.
+      Administrator:
+        description: Local or domain Administrator privilege is required.
+      root:
+        description: Unix/Linux root (superuser) privilege is required.
+      User:
+        description: Standard (non-privileged) user access is sufficient.
+
+  AttackTacticTypeEnum:
+    description: >-
+      Closed enumeration of tactic types for Mobile ATT&CK techniques (x_mitre_tactic_type).
+      Indicates the adversary's device access model for executing the technique.
+      Only used in the Mobile ATT&CK domain.
+    in_subset:
+      - mobile_only
+    permissible_values:
+      "Post-Adversary Device Access":
+        description: The technique is executed after the adversary has gained access to the device.
+      "Pre-Adversary Device Access":
+        description: The technique is performed before the adversary gains access to the device.
+      "Without Adversary Device Access":
+        description: The technique does not require the adversary to have direct device access.
+
+  AttackDefenseBypassEnum:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      Closed enumeration of defensive tools, methodologies, or processes that a technique
+      is documented to bypass, circumvent, or evade. Values are sourced from the historical
+      ATT&CK data model and have been preserved verbatim including case variants.
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+    permissible_values:
+      "Signature-based detection": {}
+      "Signature-based Detection": {}
+      "Multi-Factor Authentication": {}
+      "Network Intrusion Detection System": {}
+      "Network intrusion detection system": {}
+      "Application Control": {}
+      "Application control": {}
+      "Host forensic analysis": {}
+      "Host Forensic Analysis": {}
+      "Exploit Prevention": {}
+      "Data Execution Prevention": {}
+      "Heuristic Detection": {}
+      "Heuristic detection": {}
+      "File system access controls": {}
+      "File Monitoring": {}
+      "File monitoring": {}
+      "Digital Certificate Validation": {}
+      "Logon Credentials": {}
+      "Firewall": {}
+      "Static File Analysis": {}
+      "Notarization": {}
+      "System access controls": {}
+      "System Access Controls": {}
+      "Binary Analysis": {}
+      "Web Content Filters": {}
+      "Host intrusion prevention systems": {}
+      "Host Intrusion Prevention Systems": {}
+      "Application whitelisting": {}
+      "Defensive network service scanning": {}
+      "User Mode Signature Validation": {}
+      "Encryption": {}
+      "Log Analysis": {}
+      "Log analysis": {}
+      "Autoruns Analysis": {}
+      "Anti Virus": {}
+      "Anti-virus": {}
+      "Gatekeeper": {}
+      "Process whitelisting": {}
+      "Windows User Account Control": {}
+      "Whitelisting by file name or path": {}
+
+  AttackAssetSectorEnum:
+    description: >-
+      Closed enumeration of industry sectors in which ICS Assets (x-mitre-asset) are
+      commonly observed. Used to associate assets with specific industrial environments.
+      Only applicable in the ICS ATT&CK domain.
+    in_subset:
+      - ics_only
+    permissible_values:
+      Electric:
+        description: Electric power generation, transmission, and distribution sector.
+      "Water and Wastewater":
+        description: Water treatment, distribution, and wastewater management sector.
+      Manufacturing:
+        description: Industrial manufacturing and production environments.
+      Rail:
+        description: Rail transportation and signaling systems.
+      Maritime:
+        description: Maritime and port operations including vessel management systems.
+      General:
+        description: Applicable across multiple industry sectors without a specific focus.
+
+  AttackCollectionLayerEnum:
+    description: >-
+      Closed enumeration of collection layers for ATT&CK Data Sources. A collection
+      layer identifies the location or tier within a technology stack where telemetry
+      for a data source can be collected for detection purposes.
+    permissible_values:
+      "Cloud Control Plane":
+        description: Cloud provider API and management plane logs (e.g., AWS CloudTrail, Azure Activity Log).
+      Host:
+        description: Host-based collection from endpoint agents, OS audit logs, and EDR sensors.
+      Container:
+        description: Container runtime logs and orchestration platform events (Docker, Kubernetes).
+      Network:
+        description: Network traffic capture, flow records, and packet data (PCAP, NetFlow, DNS logs).
+      Device:
+        description: Device-level logs from hardware sensors, embedded systems, or field devices.
+      OSINT:
+        description: Open-source intelligence gathered from publicly available sources.
+      Report:
+        description: Third-party threat intelligence reports and publications.
+
+  MarkingDefinitionTypeEnum:
+    description: >-
+      Closed enumeration of ATT&CK marking definition types. ATT&CK uses two variants:
+      TLP traffic-light protocol markings and plain text statement (copyright) markings.
+    permissible_values:
+      tlp:
+        description: Traffic Light Protocol (TLP) marking definition for information sharing restrictions.
+      statement:
+        description: Statement marking definition carrying a copyright or terms-of-use notice.
+
+  TlpLevelEnum:
+    description: >-
+      Closed enumeration of Traffic Light Protocol (TLP) sharing sensitivity levels.
+      The four standard TLP levels control how broadly shared information can be distributed.
+      ATT&CK uses canonical TLP marking definitions with fixed, immutable STIX IDs.
+    permissible_values:
+      white:
+        description: >-
+          TLP:WHITE — unrestricted information sharing.
+          Canonical ID: marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9
+      green:
+        description: >-
+          TLP:GREEN — sharing within the broader community; not for public release.
+          Canonical ID: marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da
+      amber:
+        description: >-
+          TLP:AMBER — limited sharing on a need-to-know basis within the recipient organization.
+          Canonical ID: marking-definition--f88d31f6-486f-44da-b317-01333bde0b82
+      red:
+        description: >-
+          TLP:RED — not for disclosure; recipient eyes and ears only.
+          Canonical ID: marking-definition--5e57c739-391a-4eb3-b6be-7d15ca92d5ed
+
+slots:
+
+  #  ATT&CK Core / Common Properties 
+
+  x_mitre_attack_spec_version:
+    description: >-
+      The version of the ATT&CK Data Model specification used to construct this object,
+      in MAJOR.MINOR.PATCH (semantic versioning) format. Helps consuming software determine
+      whether the data format is supported. Objects lacking this property are assumed to
+      conform to ATT&CK spec version 2.0.0. Refer to the ATT&CK CHANGELOG for all
+      supported versions.
+    range: semver_string
+    required: true
+    in_subset:
+      - attack_sdos
+      - attack_sros
+    comments: >-
+      absent_on: marking-definition, identity (x_mitre_version absent), relationship (x_mitre_version absent)
+
+  x_mitre_version:
+    description: >-
+      The version of this ATT&CK object content in 'major.minor' format, where both
+      components are integers between 0 and 99. Incremented by ATT&CK whenever the
+      substantive content of the object changes. Does not apply to relationship objects.
+      Example: "1.0", "12.5".
+    range: attack_version_string
+    required: true
+    in_subset:
+      - attack_sdos
+    comments: >-
+      absent_on: relationship, marking-definition
+
+  x_mitre_deprecated:
+    description: >-
+      Boolean flag indicating that this ATT&CK object has been deprecated and should
+      no longer be used in new analyses or tooling implementations. Deprecated objects
+      are retained in the knowledge base for historical reference and legacy compatibility,
+      but are not actively maintained with new information.
+    range: boolean
+    in_subset:
+      - attack_sdos
+      - attack_sros
+    comments: >-
+      absent_on: marking-definition
+
+  x_mitre_old_attack_id:
+    description: >-
+      A legacy ATT&CK ID previously assigned to this object before a knowledge base
+      restructuring or domain migration event. Format mirrors the current ATT&CK ID
+      format but from the prior numbering scheme (e.g., "MOB-T1001" for a mobile
+      technique previously in the pre-unification Mobile ATT&CK dataset).
+    range: string
+    in_subset:
+      - attack_sdos
+
+  x_mitre_domains:
+    description: >-
+      The ATT&CK technology domains to which this object belongs. At least one domain
+      must be specified. An object may belong to multiple domains when the same technique,
+      group, or software is relevant across domain boundaries.
+    range: AttackDomainEnum
+    multivalued: true
+    required: true
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  x_mitre_platforms:
+    description: >-
+      The set of technology platforms or operating environments to which this ATT&CK
+      object applies. Each value must be a supported ATT&CK platform identifier.
+      Values within the array must be unique; duplicate platforms are not permitted.
+    range: AttackPlatformEnum
+    multivalued: true
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+      validator_hint: no-duplicate-platforms
+
+  x_mitre_modified_by_ref:
+    description: >-
+      The STIX ID of the identity object that created the current version of this object.
+      In practice, always references MITRE's canonical identity object:
+      identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5.
+      May differ from created_by_ref if the object was originally created by a third party
+      and subsequently adopted or updated by MITRE.
+    range: stix_identifier
+    pattern: "^identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5$"
+    in_subset:
+      - attack_sdos
+      - attack_sros
+    comments: >-
+      validator_hint: must-match-mitre-identity-id
+
+  x_mitre_contributors:
+    description: >-
+      Names of people and organizations who have contributed to the creation or
+      enrichment of this ATT&CK object. Contributors are credited for providing
+      information, examples, or analysis that informed the object's content.
+      Not present on relationship objects.
+    range: string
+    multivalued: true
+    in_subset:
+      - attack_sdos
+
+  #  Technique-Specific Slots 
+
+  x_mitre_is_subtechnique:
+    description: >-
+      Boolean flag indicating whether this attack-pattern is a sub-technique (true)
+      or a top-level technique (false). Sub-techniques represent more specific
+      implementations of parent techniques with ATT&CK IDs in the format T####.###.
+      Each sub-technique is connected to its parent via a 'subtechnique-of' relationship
+      where this object is the source_ref and the parent technique is the target_ref.
+      Sub-techniques inherit all of their parent's tactics and must use a subset of
+      the parent's platforms.
+    range: boolean
+    required: true
+    in_subset:
+      - attack_sdos
+
+  x_mitre_detection:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      Narrative text describing analytic strategies that defenders can use to identify
+      whether an adversary has used this technique. Superseded by Detection Strategies
+      and Analytics referenced via 'detects' relationships.
+    range: string
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; superseded by DetectionStrategy and Analytic objects. Will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+      - attack_sdos
+
+  x_mitre_data_sources:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      A list of data sources that can provide evidence for detecting this technique.
+      Each entry must follow the format 'Data Source Name: Data Component Name'
+      (e.g., 'Process: Process Creation'). Superseded by 'detects' relationships
+      from x-mitre-data-component and x-mitre-detection-strategy objects.
+    range: string
+    multivalued: true
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; superseded by 'detects' relationships from DataComponent and DetectionStrategy objects. Will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+      - attack_sdos
+    notes:
+      - Each value must conform to the pattern '<Data Source Name>: <Data Component Name>'.
+    comments: >-
+      jsonschema_minItems: "1"
+      validator_hint: validate-data-source-string-format
+
+  x_mitre_defense_bypassed:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      List of defensive tools, methodologies, or security controls that this technique
+      can bypass, evade, or otherwise circumvent when used by an adversary.
+    range: AttackDefenseBypassEnum
+    multivalued: true
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  x_mitre_permissions_required:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      The lowest permission level at which an adversary must be operating to execute
+      this technique on a target system. If multiple values are present, the technique
+      can be used at any of the listed permission levels.
+    range: AttackPermissionsRequiredEnum
+    multivalued: true
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  x_mitre_effective_permissions:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      The effective permission level(s) that an adversary achieves on the target system
+      after successfully executing this technique. Represents the post-exploitation
+      privilege gain.
+    range: AttackEffectivePermissionsEnum
+    multivalued: true
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  x_mitre_remote_support:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      Boolean indicating whether this technique can be used to execute commands or
+      payloads on a remote system without requiring local presence. When true, the
+      technique supports remote execution scenarios.
+    range: boolean
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+      - attack_sdos
+
+  x_mitre_system_requirements:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      Additional preconditions about the state of the target system that may be
+      required for the technique to succeed, such as required software, configuration
+      settings, patch levels, or service states.
+    range: string
+    multivalued: true
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  x_mitre_impact_type:
+    description: >-
+      Indicates whether this technique can be used for availability attacks, integrity
+      attacks, or both. Only applicable to techniques in the Enterprise ATT&CK Impact
+      tactic. A technique with 'Availability' affects the availability of systems or
+      data; 'Integrity' indicates unauthorized modification of data or configuration.
+    range: AttackImpactTypeEnum
+    multivalued: true
+    in_subset:
+      - enterprise_only
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  x_mitre_network_requirements:
+    description: >-
+      Boolean indicating whether this technique requires network connectivity as a
+      precondition for execution. When true, the adversary must have network access
+      to the target environment for the technique to be applicable.
+    range: boolean
+    in_subset:
+      - attack_sdos
+
+  x_mitre_tactic_type:
+    description: >-
+      Indicates the adversary's device access model for Mobile ATT&CK techniques.
+      Specifies whether the technique requires post-device-access, pre-device-access,
+      or no device access at all. Only used in the Mobile ATT&CK domain.
+    range: AttackTacticTypeEnum
+    multivalued: true
+    in_subset:
+      - mobile_only
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  #  Tactic Slots 
+
+  x_mitre_shortname:
+    description: >-
+      The machine-readable short identifier for an ATT&CK tactic. Used to map techniques
+      to their associated tactic: a technique's kill_chain_phases entry uses this value
+      as its phase_name when the kill_chain_name matches the tactic's domain.
+      For example, the 'Initial Access' tactic has x_mitre_shortname 'initial-access'.
+      Must be unique across all tactics within a domain.
+    range: AttackTacticShortNameEnum
+    required: true
+    in_subset:
+      - attack_sdos
+
+  #  Campaign Slots 
+
+  x_mitre_first_seen_citation:
+    description: >-
+      One or more inline citation references documenting the original sources that
+      established when this campaign was first observed. Each citation references a
+      source_name from the object's external_references array. Multiple citations are
+      concatenated without separators: '(Citation: Source1)(Citation: Source2)'.
+      This property is required on all Campaign objects.
+    range: citation_string
+    required: true
+    in_subset:
+      - attack_sdos
+
+  x_mitre_last_seen_citation:
+    description: >-
+      One or more inline citation references documenting the original sources that
+      established when this campaign was last observed. Each citation references a
+      source_name from the object's external_references array. Multiple citations are
+      concatenated without separators: '(Citation: Source1)(Citation: Source2)'.
+      This property is required on all Campaign objects.
+    range: citation_string
+    required: true
+    in_subset:
+      - attack_sdos
+
+  #  Software Alias Slot 
+
+  x_mitre_aliases:
+    description: >-
+      ATT&CK-recognized alternative names or aliases for this software object (Malware
+      or Tool). The first alias in the array MUST match the object's name property.
+      This is the preferred alias field for ATT&CK software objects, distinct from the
+      STIX-standard 'aliases' property which is present but not actively maintained
+      in ATT&CK software objects.
+    range: string
+    multivalued: true
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+      validator_hint: first-alias-must-match-name
+
+  #  Asset Slots 
+
+  x_mitre_sectors:
+    description: >-
+      The industry sectors in which this ICS Asset is commonly observed or deployed.
+      Provides context for which operational environments the asset appears in.
+      Only applicable in the ICS ATT&CK domain. At least one sector must be specified
+      when this property is present.
+    range: AttackAssetSectorEnum
+    multivalued: true
+    in_subset:
+      - ics_only
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  x_mitre_related_assets:
+    description: >-
+      Sector-specific aliases and related device types associated with this primary
+      asset definition. Related assets describe how the same physical or logical asset
+      may be named or categorized differently across industrial sectors (e.g., a
+      'Programmable Logic Controller' in manufacturing may be called a 'Field Controller'
+      in water treatment). Each related asset entry may include sector scoping.
+    range: RelatedAsset
+    multivalued: true
+    inlined: true
+    in_subset:
+      - ics_only
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  #  Data Source Slots 
+
+  x_mitre_collection_layers:
+    description: >-
+      The technology stack layers from which telemetry for this Data Source can be
+      collected. Indicates where in the environment defenders should look to obtain
+      the raw data this source provides. At least one collection layer must be specified.
+    range: AttackCollectionLayerEnum
+    multivalued: true
+    required: true
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  #  Data Component Slots 
+
+  x_mitre_data_source_ref:
+    description: >-
+      DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0.
+      The STIX ID of the parent x-mitre-data-source object that this data component
+      belongs to. Establishes the hierarchical source-to-component relationship.
+      Superseded by explicit 'detects' relationships from DetectionStrategy objects.
+    range: stix_identifier
+    pattern: "^x-mitre-data-source--"
+    deprecated: "Deprecated in ATT&CK Specification v3.3.0; superseded by DetectionStrategy 'detects' relationships. Will be removed in v4.0.0."
+    in_subset:
+      - deprecated
+      - attack_sdos
+
+  x_mitre_log_sources:
+    description: >-
+      Platform-specific log collection configurations for this data component.
+      Each entry specifies a log source provider name and a channel/event type
+      identifier that together pinpoint where to collect relevant telemetry.
+      Each (name, channel) pair must be unique within the array.
+      This property is optional in ATT&CK Specification 3.x but will become
+      required in ATT&CK Specification 4.x.
+    range: LogSource
+    multivalued: true
+    inlined: true
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+      validator_hint: no-duplicate-name-channel-pairs
+
+  #  Matrix Slots 
+
+  tactic_refs:
+    description: >-
+      An ordered list of STIX IDs referencing x-mitre-tactic objects that constitute
+      this ATT&CK matrix. The order of entries in this array determines the left-to-right
+      display order of tactics in the ATT&CK matrix visualization. At least one
+      tactic reference is required.
+    range: stix_identifier
+    multivalued: true
+    required: true
+    pattern: "^x-mitre-tactic--"
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  #  Collection Slots 
+
+  x_mitre_contents:
+    description: >-
+      An ordered list of versioned object references specifying the exact version of
+      each STIX object included in this ATT&CK collection. Each entry pairs a STIX
+      object ID with the precise modified timestamp of the version being referenced,
+      allowing consumers to reconstruct the exact state of the knowledge base at any
+      given release. All referenced IDs must be present in the distributing bundle's
+      objects array.
+    range: ObjectVersionReference
+    multivalued: true
+    inlined: true
+    required: true
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+      validator_hint: validate-x-mitre-contents-cross-references
+
+  #  Detection Strategy Slots 
+
+  x_mitre_analytic_refs:
+    description: >-
+      An ordered array of STIX IDs referencing x-mitre-analytic objects that
+      implement this detection strategy. Each referenced analytic provides
+      platform-specific detection logic for one platform. References must be unique;
+      no duplicate analytic IDs are permitted. At least one analytic is required.
+    range: stix_identifier
+    multivalued: true
+    required: true
+    pattern: "^x-mitre-analytic--"
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+      validator_hint: no-duplicate-analytic-refs
+
+  #  Analytic Slots 
+
+  x_mitre_log_source_references:
+    description: >-
+      A list of log source references that link this analytic to specific data components
+      and their associated log sources. Each reference identifies a data component by
+      STIX ID and specifies the (name, channel) pair of the log source within that
+      component to target. Each (x_mitre_data_component_ref, name, channel) tuple must
+      be unique within the array.
+    range: LogSourceReference
+    multivalued: true
+    inlined: true
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+      validator_hint: no-duplicate-log-source-reference-tuples
+
+  x_mitre_mutable_elements:
+    description: >-
+      Environment-tunable parameters within this analytic that defenders can adjust
+      to adapt the detection logic to their specific environment without altering its
+      fundamental detection behavior. Examples include time windows, user context
+      filters, or port ranges. Each element names a tunable field and explains the
+      rationale for tunability.
+    range: MutableElement
+    multivalued: true
+    inlined: true
+    in_subset:
+      - attack_sdos
+    comments: >-
+      jsonschema_minItems: "1"
+
+  #  RelatedAsset Component Slots 
+
+  related_asset_sectors:
+    description: >-
+      The industry sectors in which this related (aliased) asset variant is observed
+      under the given name. Provides sector-specific scoping for the alias entry,
+      indicating which industries use this naming convention for the asset.
+    range: AttackAssetSectorEnum
+    multivalued: true
+    in_subset:
+      - attack_aux
+    comments: >-
+      jsonschema_minItems: "1"
+
+  #  LogSource Component Slots 
+
+  log_source_name:
+    description: >-
+      The log source provider or service name (e.g., 'sysmon', 'auditd',
+      'unified_logs', 'windows_security'). Together with log_source_channel,
+      uniquely identifies a specific log collection configuration.
+    range: string
+    required: true
+    in_subset:
+      - attack_aux
+
+  log_source_channel:
+    description: >-
+      The specific log channel, event ID, or event category within the log source
+      (e.g., '1' for Sysmon Process Creation event, 'SYSCALL' for Linux auditd,
+      'process' for macOS unified logs). Together with log_source_name, uniquely
+      identifies a log collection configuration.
+    range: string
+    required: true
+    in_subset:
+      - attack_aux
+
+  #  LogSourceReference Component Slots 
+
+  x_mitre_data_component_ref:
+    description: >-
+      The STIX ID of the x-mitre-data-component object that this log source reference
+      is associated with. Links the analytic's required data collection to a specific
+      data component's log source definition.
+    range: stix_identifier
+    required: true
+    pattern: "^x-mitre-data-component--"
+    in_subset:
+      - attack_aux
+
+  #  MutableElement Component Slots 
+
+  mutable_field:
+    description: >-
+      The name of the analytic field or parameter that can be tuned by a defender
+      to adapt it to their environment (e.g., 'TimeWindow', 'UserContext', 'PortRange',
+      'SubnetFilter'). Provides a clear identifier for the tunable aspect of the analytic.
+    range: string
+    required: true
+    in_subset:
+      - attack_aux
+
+  #  Marking Definition Slots 
+
+  tlp:
+    description: >-
+      The Traffic Light Protocol level assigned by this TLP marking definition.
+      Must be one of the four standard TLP values: 'white', 'green', 'amber', 'red'.
+      Each TLP level carries distinct sharing semantics governing how marked content
+      may be further distributed by recipients.
+    range: TlpLevelEnum
+    in_subset:
+      - attack_smos
+
+classes:
+
+  # 
+  # Auxiliary / Inline Component Classes
+  # These classes are used as inlined component types within ATT&CK SDO properties.
+  # They do not stand alone as top-level STIX objects.
+  # 
+
+  AttackKillChainPhase:
+    is_a: KillChainPhase
+    description: >-
+      An ATT&CK-constrained kill chain phase restricting kill_chain_name to the
+      three ATT&CK domain identifiers: 'mitre-attack', 'mitre-mobile-attack', and
+      'mitre-ics-attack'. The phase_name must match the x_mitre_shortname of the
+      associated x-mitre-tactic object in the same domain. Used in the
+      kill_chain_phases property of Technique, Malware, and Tool objects to map
+      them to their applicable tactic(s).
+    in_subset:
+      - attack_aux
+    slot_usage:
+      kill_chain_name:
+        range: KillChainNameEnum
+        required: true
+        description: >-
+          The ATT&CK domain kill chain identifier. Must be one of 'mitre-attack',
+          'mitre-mobile-attack', or 'mitre-ics-attack'.
+      phase_name:
+        required: true
+        description: >-
+          The tactic short name corresponding to the x_mitre_shortname of the
+          associated x-mitre-tactic object (e.g., 'initial-access', 'execution').
+
+  RelatedAsset:
+    description: >-
+      A sector-specific alias or variant name for a primary ATT&CK Asset object.
+      Related assets capture how the same physical or logical device may be known
+      by different names in different industrial contexts. For example, the primary
+      asset 'Programmable Logic Controller (PLC)' may be called 'Field Controller'
+      in the water treatment sector. Each related asset entry optionally scopes the
+      alias to one or more industry sectors.
+    in_subset:
+      - attack_aux
+    slots:
+      - name
+      - related_asset_sectors
+      - description
+    slot_usage:
+      name:
+        required: true
+        description: >-
+          Sector-specific name or alias used to identify this asset variant in a
+          particular industrial context.
+      description:
+        required: false
+        description: >-
+          Explanation of how this related asset variant relates to or differs from
+          the primary asset definition.
+
+  LogSource:
+    description: >-
+      A platform-specific log collection configuration embedded within a data component.
+      Defines a specific log provider (name) and event category or channel identifier
+      (channel) that together specify where to collect telemetry relevant to the parent
+      data component's detection context. The (name, channel) pair must be unique within
+      the x_mitre_log_sources array of a given data component.
+    in_subset:
+      - attack_aux
+    slots:
+      - log_source_name
+      - log_source_channel
+    slot_usage:
+      log_source_name:
+        required: true
+      log_source_channel:
+        required: true
+
+  LogSourceReference:
+    description: >-
+      A reference linking an analytic to a specific data component and log source pair.
+      Specifies both the data component by STIX ID and the precise (name, channel) log
+      source within that component that provides the raw data consumed by the analytic.
+      Each (x_mitre_data_component_ref, name, channel) tuple must be unique within the
+      x_mitre_log_source_references array of a given analytic.
+    in_subset:
+      - attack_aux
+    slots:
+      - x_mitre_data_component_ref
+      - log_source_name
+      - log_source_channel
+    slot_usage:
+      x_mitre_data_component_ref:
+        required: true
+      log_source_name:
+        required: true
+      log_source_channel:
+        required: true
+
+  MutableElement:
+    description: >-
+      An environment-tunable parameter within an ATT&CK analytic. Mutable elements
+      identify specific fields in the detection logic that defenders can adjust to
+      adapt the analytic to their operational environment without altering its
+      fundamental detection behavior. For example, 'TimeWindow' could be tuned to
+      match an organization's normal authentication patterns, or 'PortRange' adjusted
+      to reflect monitored network segments.
+    in_subset:
+      - attack_aux
+    slots:
+      - mutable_field
+      - description
+    slot_usage:
+      mutable_field:
+        required: true
+      description:
+        required: true
+        description: >-
+          Rationale for why this field is tunable and guidance for environment-specific
+          configuration considerations.
+
+  ObjectVersionReference:
+    description: >-
+      A versioned reference to a specific state of a STIX object, consisting of the
+      object's STIX identifier paired with the exact modified timestamp of the version
+      being referenced. Used in the x_mitre_contents property of Collection objects
+      to designate the precise snapshot of each included object. The object_modified
+      value must exactly match the corresponding object's modified property.
+    in_subset:
+      - attack_aux
+    slots:
+      - object_ref
+      - object_modified
+    slot_usage:
+      object_ref:
+        required: true
+        description: The STIX ID of the referenced ATT&CK object.
+      object_modified:
+        required: true
+        description: >-
+          The exact modified timestamp of the referenced object version. Must be
+          a precise, millisecond-accurate match to the STIX object's modified property.
+
+  TlpMarkingObject:
+    description: >-
+      The definition payload for a TLP (Traffic Light Protocol) marking definition.
+      Contains a single tlp field carrying the TLP level value. Only instances
+      corresponding to the four canonical ATT&CK TLP marking definitions are valid;
+      new TLP marking objects must not be created.
+    in_subset:
+      - attack_smos
+    slots:
+      - tlp
+    slot_usage:
+      tlp:
+        required: true
+
+  StatementMarkingObject:
+    description: >-
+      The definition payload for a statement marking definition. Contains a single
+      statement field with a copyright notice or terms-of-use text. ATT&CK uses this
+      for its standard copyright statement applied to all distributed content.
+    in_subset:
+      - attack_smos
+    slots:
+      - statement
+    slot_usage:
+      statement:
+        required: true
+        description: >-
+          The full copyright or terms-of-use statement text. Example:
+          "Copyright 2023, The MITRE Corporation. ATT&CK content is licensed under
+          the Creative Commons Attribution 4.0 International (CC BY 4.0) license."
+
+  # 
+  # ATT&CK Base Class
+  # The common ancestor for all versioned ATT&CK objects (SDOs, SROs).
+  # 
+
+  AttackObject:
+    is_a: Core
+    abstract: true
+    description: >-
+      Abstract base class for all versioned ATT&CK objects (SDOs and SROs).
+      Extends the STIX Core (Common Properties) object with ATT&CK-specific universal
+      properties: the required x_mitre_attack_spec_version (which ATT&CK specification
+      the object conforms to), x_mitre_version (the object's content version), and
+      optional x_mitre_deprecated and x_mitre_old_attack_id for lifecycle management.
+      The name property inherited from StixEntity is required on all AttackObject
+      subclasses (except Relationship, where it is not present).
+    annotations:
+      note: >-
+        Corresponds to attackBaseDomainObjectSchema / attackBaseRelationshipObjectSchema
+        in the ATT&CK Data Model TypeScript implementation. Relationship objects additionally
+        omit 'name' and 'x_mitre_version'; see AttackRelationship for those constraints.
+        MarkingDefinition additionally omits 'modified', 'x_mitre_attack_spec_version',
+        'x_mitre_version', and 'x_mitre_deprecated'; see AttackMarkingDefinition.
+    slots:
+      - x_mitre_attack_spec_version
+      - x_mitre_version
+      - x_mitre_deprecated
+      - x_mitre_old_attack_id
+    slot_usage:
+      id:
+        required: true
+      type:
+        required: true
+      spec_version:
+        required: true
+      name:
+        required: true
+        description: >-
+          The human-readable name of this ATT&CK object. Required on all ATT&CK
+          objects except relationship objects (which never carry a name).
+      created:
+        required: true
+      modified:
+        required: true
+      x_mitre_attack_spec_version:
+        required: true
+      x_mitre_version:
+        required: true
+      created_by_ref:
+        description: >-
+          The STIX ID of the identity object that first created this ATT&CK object.
+          Typically references MITRE's identity (identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5).
+
+  # 
+  # ATT&CK Software Abstract Superclass
+  # Shared base for Malware and Tool (the two ATT&CK "Software" object types).
+  # 
+
+  Software:
+    is_a: AttackObject
+    abstract: true
+    description: >-
+      Abstract superclass for ATT&CK Software objects, representing both Malware and
+      Tool STIX types. Software in ATT&CK encompasses all programs used by adversaries
+      to accomplish their objectives. Both Malware and Tool share the ATT&CK ID format
+      S#### and the same set of ATT&CK-specific properties (x_mitre_aliases,
+      x_mitre_platforms, x_mitre_domains, etc.).
+      Concrete subclasses: Malware (stix type 'malware') and Tool (stix type 'tool').
+    in_subset:
+      - attack_sdos
+    annotations:
+      note: >-
+        Software is a union type in the ATT&CK Data Model (softwareSchema = malwareSchema | toolSchema).
+        This abstract class captures the shared properties. Use Malware or Tool for concrete objects.
+        ATT&CK ID format: S####
+
+  # 
+  # ATT&CK SDOs — STIX Domain Objects
+  # Each class represents one concrete STIX type used in the ATT&CK knowledge base.
+  # 
+
+  Technique:
+    is_a: AttackObject
+    description: >-
+      Techniques describe the specific methods adversaries use to achieve tactical objectives.
+      They are implemented as STIX attack-pattern objects and represent the "how" of
+      adversary behavior — the concrete actions taken to accomplish a tactic.
+
+      A Technique may be a top-level technique (x_mitre_is_subtechnique: false) or a
+      sub-technique (x_mitre_is_subtechnique: true). Sub-techniques provide more granular
+      detail about specific implementations of their parent technique.
+
+      Sub-technique constraints:
+        - ATT&CK ID format: T####.### where T#### is the parent's ID
+        - Connected to parent via 'subtechnique-of' relationship (source = sub, target = parent)
+        - Each sub-technique has exactly one parent; parents may have many sub-techniques
+        - Sub-techniques inherit all parent tactics; platforms must be a subset of parent's
+
+      Tactics mapping: kill_chain_phases entries use the tactic's x_mitre_shortname as
+      phase_name, with kill_chain_name set to the appropriate ATT&CK domain value.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: attack-pattern
+      attack_id_format: "T#### (technique) or T####.### (sub-technique)"
+    slots:
+      - x_mitre_domains
+      - x_mitre_is_subtechnique
+      - x_mitre_platforms
+      - x_mitre_detection
+      - x_mitre_data_sources
+      - x_mitre_defense_bypassed
+      - x_mitre_permissions_required
+      - x_mitre_effective_permissions
+      - x_mitre_remote_support
+      - x_mitre_system_requirements
+      - x_mitre_impact_type
+      - x_mitre_network_requirements
+      - x_mitre_tactic_type
+      - x_mitre_modified_by_ref
+      - x_mitre_contributors
+    slot_usage:
+      type:
+        required: true
+        pattern: "^attack-pattern$"
+      id:
+        required: true
+        pattern: "^attack-pattern--"
+      name:
+        required: true
+        description: >-
+          The name of the technique or sub-technique (e.g., 'Command and Scripting
+          Interpreter', 'PowerShell').
+      description:
+        description: >-
+          A description of the technique, how adversaries use it, what it accomplishes,
+          and typically includes examples of observed adversary behavior and platform
+          considerations.
+      external_references:
+        required: true
+        description: >-
+          External references for this technique. The first entry MUST have source_name
+          'mitre-attack' with the ATT&CK ID as external_id (e.g., 'T1059' or 'T1059.001').
+          Additional entries may reference reports, malware analyses, or other sources.
+        comments: >-
+          validator_hint: first-ref-must-be-mitre-attack-technique-id
+          jsonschema_minItems: "1"
+      kill_chain_phases:
+        range: AttackKillChainPhase
+        description: >-
+          The ATT&CK tactic(s) this technique is associated with, as ATT&CK kill chain
+          phases. Each entry's kill_chain_name identifies the ATT&CK domain and phase_name
+          matches the corresponding tactic's x_mitre_shortname.
+      x_mitre_domains:
+        required: true
+      x_mitre_is_subtechnique:
+        required: true
+
+  Tactic:
+    is_a: AttackObject
+    description: >-
+      Tactics represent the adversary's high-level strategic objectives during an attack —
+      the "why" behind individual techniques. Tactics form the columns of the ATT&CK matrix
+      and organize techniques into coherent operational categories.
+
+      Tactics are implemented as x-mitre-tactic custom STIX objects that extend the
+      STIX Domain Object pattern. They are specific to ATT&CK and not defined by the
+      core STIX 2.1 specification.
+
+      The x_mitre_shortname property is the machine-readable tactic identifier used to
+      link techniques: a technique's kill_chain_phases entry uses x_mitre_shortname as
+      phase_name when kill_chain_name matches the appropriate ATT&CK domain value.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: x-mitre-tactic
+      attack_id_format: "TA####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_shortname
+      - x_mitre_modified_by_ref
+      - x_mitre_contributors
+    slot_usage:
+      type:
+        required: true
+        pattern: "^x-mitre-tactic$"
+      id:
+        required: true
+        pattern: "^x-mitre-tactic--"
+      name:
+        required: true
+        description: >-
+          The human-readable name of the tactic (e.g., 'Initial Access',
+          'Execution', 'Persistence').
+      description:
+        required: true
+        description: >-
+          A full description of the tactic's strategic objective and what adversaries
+          are trying to accomplish by executing techniques in this category.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST have source_name 'mitre-attack'
+          and contain the tactic's ATT&CK ID as external_id (e.g., 'TA0001').
+        comments: >-
+          validator_hint: first-ref-must-be-mitre-attack-tactic-id
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      x_mitre_domains:
+        required: true
+      x_mitre_shortname:
+        required: true
+      x_mitre_modified_by_ref:
+        required: true
+
+  Group:
+    is_a: AttackObject
+    description: >-
+      Groups represent clusters of adversary activity attributed to a common actor,
+      sharing characteristics such as tools, tactics, techniques, infrastructure, or
+      targeting. They may represent nation-state actors, criminal organizations, hacktivist
+      collectives, or other tracked threat entities.
+
+      Groups are implemented as standard STIX intrusion-set objects without additional
+      ATT&CK-specific custom properties beyond the shared ATT&CK base fields.
+      The aliases array provides alternative names; the first alias MUST match the
+      group's name property.
+
+      Note: Several STIX Intrusion Set properties (goals, resource_level, primary_motivation,
+      secondary_motivations, first_seen, last_seen) are inherited from STIX but are not
+      actively used or populated in ATT&CK Group objects.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: intrusion-set
+      attack_id_format: "G####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_contributors
+      - x_mitre_modified_by_ref
+    slot_usage:
+      type:
+        required: true
+        pattern: "^intrusion-set$"
+      id:
+        required: true
+        pattern: "^intrusion-set--"
+      name:
+        required: true
+        description: >-
+          The group's primary name as used in ATT&CK (e.g., 'APT28', 'FIN7', 'Lazarus Group').
+      description:
+        description: >-
+          A description of the group's known activity, targeting preferences, attributed
+          campaigns, and distinguishing characteristics.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST have source_name 'mitre-attack'
+          and contain the group's ATT&CK ID as external_id (e.g., 'G0007').
+        comments: >-
+          validator_hint: first-ref-must-be-mitre-attack-group-id
+          jsonschema_minItems: "1"
+      aliases:
+        description: >-
+          Alternative names used to identify this group across different intelligence
+          sources and vendors. The first alias MUST match the group's name property.
+      first_seen:
+        description: >-
+          The earliest date this group's activity was observed. Not actively used in ATT&CK.
+      last_seen:
+        description: >-
+          The most recent date this group's activity was observed. Not actively used in ATT&CK.
+      goals:
+        description: >-
+          The group's high-level strategic goals. Available from STIX but not actively
+          used in ATT&CK Group objects.
+      resource_level:
+        description: >-
+          The organizational resource level of this group (individual, club, team,
+          organization, or government). Available from STIX open vocabulary
+          attack-resource-level-ov but not actively used in ATT&CK Group objects.
+      primary_motivation:
+        description: >-
+          The group's primary motivation (e.g., financial-gain, espionage, ideology).
+          Available from STIX open vocabulary attack-motivation-ov but not actively
+          used in ATT&CK Group objects.
+      secondary_motivations:
+        description: >-
+          Additional motivations of the group. Available from STIX open vocabulary
+          attack-motivation-ov but not actively used in ATT&CK Group objects.
+      x_mitre_domains:
+        required: true
+    comments: >-
+      validator_hint: first-aliases-entry-must-match-name
+
+  Campaign:
+    is_a: AttackObject
+    description: >-
+      Campaigns represent a grouping of adversary behaviors and resources with a common
+      objective, occurring over a defined time period. A campaign may be attributed to
+      one or more Groups via 'attributed-to' relationships.
+
+      Campaigns require mandatory temporal properties: first_seen and last_seen document
+      when the campaign was active, and the corresponding citation properties
+      (x_mitre_first_seen_citation, x_mitre_last_seen_citation) cite the intelligence
+      sources that established those observations.
+
+      The aliases array is required; its first entry MUST match the campaign's name.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: campaign
+      attack_id_format: "C####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_contributors
+      - x_mitre_modified_by_ref
+      - x_mitre_first_seen_citation
+      - x_mitre_last_seen_citation
+    slot_usage:
+      type:
+        required: true
+        pattern: "^campaign$"
+      id:
+        required: true
+        pattern: "^campaign--"
+      name:
+        required: true
+        description: The campaign's primary name or identifier (e.g., 'Operation Wocao', 'C0001').
+      description:
+        required: true
+        description: >-
+          A description of the campaign, including its objectives, targeted sectors,
+          observed techniques, and any notable characteristics.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST have source_name 'mitre-attack'
+          and contain the campaign's ATT&CK ID as external_id (e.g., 'C0001').
+        comments: >-
+          validator_hint: first-ref-must-be-mitre-attack-campaign-id
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      revoked:
+        required: true
+        description: >-
+          Required on Campaign objects. Indicates whether this campaign has been revoked
+          and superseded by another campaign object.
+      aliases:
+        required: true
+        description: >-
+          Alternative names for this campaign. Required; the first alias MUST match
+          the campaign's name property.
+      first_seen:
+        required: true
+        description: >-
+          The date when this campaign was first observed. Required on ATT&CK Campaign objects;
+          optional in STIX.
+      last_seen:
+        required: true
+        description: >-
+          The date when this campaign was most recently observed. Required on ATT&CK Campaign
+          objects; optional in STIX.
+      x_mitre_domains:
+        required: true
+      x_mitre_modified_by_ref:
+        required: true
+      x_mitre_first_seen_citation:
+        required: true
+      x_mitre_last_seen_citation:
+        required: true
+    comments: >-
+      validator_hint: first-aliases-entry-must-match-name
+      validator_hint: citations-must-reference-valid-external-reference-source-names
+
+  Mitigation:
+    is_a: AttackObject
+    description: >-
+      Mitigations describe defensive measures, security controls, and configuration
+      changes that can prevent or reduce the effectiveness of adversary techniques.
+      Mitigations are implemented as STIX course-of-action objects.
+
+      Historical note — Legacy 1:1 Mitigations: Prior to ATT&CK v5 (July 2019),
+      mitigations had a 1:1 relationship with techniques and shared their ATT&CK IDs.
+      This design was deprecated to support the current many-to-many model where one
+      mitigation can address multiple techniques. Legacy 1:1 mitigation objects may
+      cause ATT&CK ID collisions and can be filtered by their deprecated or revoked status.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: course-of-action
+      attack_id_format: "M####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_contributors
+      - x_mitre_modified_by_ref
+    slot_usage:
+      type:
+        required: true
+        pattern: "^course-of-action$"
+      id:
+        required: true
+        pattern: "^course-of-action--"
+      name:
+        required: true
+        description: >-
+          The name of the mitigation (e.g., 'Privileged Account Management',
+          'Multi-Factor Authentication', 'Network Segmentation').
+      description:
+        required: true
+        description: >-
+          A detailed description of the mitigation, what adversary behaviors it
+          addresses, implementation guidance, and relevant considerations for
+          enterprise defenders.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST have source_name 'mitre-attack'
+          and contain the mitigation's ATT&CK ID as external_id (e.g., 'M1026').
+        comments: >-
+          validator_hint: first-ref-must-be-mitre-attack-mitigation-id
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      x_mitre_domains:
+        required: true
+      x_mitre_modified_by_ref:
+        required: true
+
+  Malware:
+    is_a: Software
+    description: >-
+      Malware represents malicious software programs that adversaries use to accomplish
+      their operational objectives, such as data exfiltration, persistent access,
+      lateral movement, or destructive impact. ATT&CK tracks both malware families
+      (is_family: true) and specific malware instances or samples (is_family: false).
+
+      Together with Tool objects, Malware forms the ATT&CK 'Software' category. Both
+      share the ATT&CK ID format S#### and are often linked to Groups and Techniques
+      via 'uses' relationships.
+
+      The x_mitre_aliases field holds ATT&CK-recognized alternative names; the first
+      alias MUST match the object's name. The STIX 'aliases' property is defined in
+      the STIX specification but is not actively maintained in ATT&CK Malware objects.
+
+      Note: Several STIX Malware properties (malware_types, kill_chain_phases, first_seen,
+      last_seen, architecture_execution_envs, implementation_languages, capabilities) are
+      available from the STIX specification but not actively used in ATT&CK.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: malware
+      attack_id_format: "S####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_platforms
+      - x_mitre_contributors
+      - x_mitre_modified_by_ref
+      - x_mitre_aliases
+    slot_usage:
+      type:
+        required: true
+        pattern: "^malware$"
+      id:
+        required: true
+        pattern: "^malware--"
+      name:
+        required: true
+        description: The primary name of the malware family or instance (e.g., 'Mimikatz', 'WannaCry').
+      description:
+        required: true
+        description: >-
+          A description of the malware, its capabilities, how adversaries use it in
+          attacks, and any notable technical characteristics.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST have source_name 'mitre-attack'
+          and contain the software's ATT&CK ID as external_id (e.g., 'S0001').
+        comments: >-
+          validator_hint: first-ref-must-be-mitre-attack-software-id
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      is_family:
+        required: true
+        description: >-
+          Indicates whether this object represents a malware family (true) or a
+          specific malware instance or sample (false). Required by STIX for malware objects.
+      x_mitre_domains:
+        required: true
+      x_mitre_modified_by_ref:
+        required: true
+      aliases:
+        description: >-
+          STIX aliases property. Not actively maintained in ATT&CK Malware objects;
+          use x_mitre_aliases for ATT&CK-recognized software names.
+      malware_types:
+        description: >-
+          STIX malware type classifications from malware-type-ov. Available from STIX
+          but not actively used in ATT&CK Malware objects.
+      kill_chain_phases:
+        range: AttackKillChainPhase
+        description: >-
+          STIX kill chain phases. Available from STIX but not actively used in ATT&CK
+          Malware objects; technique relationships encode tactic associations.
+      first_seen:
+        description: >-
+          The time this malware family or instance was first observed. Available from
+          STIX but not actively used in ATT&CK Malware objects.
+      last_seen:
+        description: >-
+          The time this malware family or instance was last observed. Available from
+          STIX but not actively used in ATT&CK Malware objects.
+      architecture_execution_envs:
+        description: >-
+          Processor architectures (from processor-architecture-ov) that this malware
+          executes on. Available from STIX but not actively used in ATT&CK Malware objects.
+      implementation_languages:
+        description: >-
+          Programming languages used to implement this malware (from implementation-language-ov).
+          Available from STIX but not actively used in ATT&CK Malware objects.
+      capabilities:
+        description: >-
+          Malware capability classifications from malware-capabilities-ov. Available from
+          STIX but not actively used in ATT&CK Malware objects.
+    comments: >-
+      validator_hint: first-x-mitre-alias-or-alias-must-match-name
+
+  Tool:
+    is_a: Software
+    description: >-
+      Tools represent legitimate software programs that adversaries may abuse or repurpose
+      to accomplish their attack objectives. Unlike Malware, tools are not inherently
+      malicious — they serve legitimate purposes but can be weaponized by adversaries
+      (e.g., Cobalt Strike, Mimikatz, PsExec, Metasploit).
+
+      Together with Malware objects, Tools form the ATT&CK 'Software' category and share
+      the same ATT&CK ID format (S####). Both are linked to Groups and Techniques via
+      'uses' relationships.
+
+      The x_mitre_aliases field holds ATT&CK-recognized alternative names; the first
+      alias MUST match the object's name. The STIX 'aliases' property is not actively
+      maintained in ATT&CK Tool objects.
+
+      Note: STIX Tool properties (tool_types, kill_chain_phases, tool_version, aliases)
+      are available from the STIX specification but not actively used in ATT&CK Tool objects.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: tool
+      attack_id_format: "S####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_platforms
+      - x_mitre_contributors
+      - x_mitre_modified_by_ref
+      - x_mitre_aliases
+    slot_usage:
+      type:
+        required: true
+        pattern: "^tool$"
+      id:
+        required: true
+        pattern: "^tool--"
+      name:
+        required: true
+        description: >-
+          The primary name of the tool as used in ATT&CK (e.g., 'Mimikatz', 'PsExec',
+          'Cobalt Strike').
+      description:
+        required: true
+        description: >-
+          A description of the tool, its functionality, legitimate uses, and how adversaries
+          leverage it in malicious campaigns.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST have source_name 'mitre-attack'
+          and contain the tool's ATT&CK ID as external_id (e.g., 'S0002').
+        comments: >-
+          validator_hint: first-ref-must-be-mitre-attack-software-id
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      x_mitre_domains:
+        required: true
+      x_mitre_modified_by_ref:
+        required: true
+      aliases:
+        description: >-
+          STIX aliases property. Not actively maintained in ATT&CK Tool objects;
+          use x_mitre_aliases for ATT&CK-recognized software names.
+      tool_types:
+        description: >-
+          STIX tool type classifications from tool-type-ov. Available from STIX
+          but not actively used in ATT&CK Tool objects.
+      tool_version:
+        description: >-
+          The version identifier of the tool. Available from STIX but not actively
+          used in ATT&CK Tool objects.
+      kill_chain_phases:
+        range: AttackKillChainPhase
+        description: >-
+          STIX kill chain phases. Available from STIX but not actively used in ATT&CK
+          Tool objects.
+    comments: >-
+      validator_hint: first-x-mitre-alias-or-alias-must-match-name
+
+  Asset:
+    is_a: AttackObject
+    description: >-
+      Assets represent physical or logical systems, devices, and technologies within
+      Operational Technology (OT) and Industrial Control System (ICS) environments
+      that adversaries may target when attacking critical infrastructure. Assets are
+      specific to the ICS ATT&CK domain.
+
+      Examples include Programmable Logic Controllers (PLCs), Remote Terminal Units
+      (RTUs), Engineering Workstations, and Safety Instrumented Systems.
+
+      Related assets (x_mitre_related_assets) capture sector-specific alias names and
+      variants of the same device type used across different industrial sectors. Asset
+      sectors (x_mitre_sectors) scope the asset to one or more industry verticals.
+    in_subset:
+      - attack_sdos
+      - ics_only
+    annotations:
+      stix_type: x-mitre-asset
+      attack_id_format: "A####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_platforms
+      - x_mitre_contributors
+      - x_mitre_modified_by_ref
+      - x_mitre_sectors
+      - x_mitre_related_assets
+    slot_usage:
+      type:
+        required: true
+        pattern: "^x-mitre-asset$"
+      id:
+        required: true
+        pattern: "^x-mitre-asset--"
+      name:
+        required: true
+        description: >-
+          The primary name of the ICS asset (e.g., 'Programmable Logic Controller',
+          'Data Historian', 'Engineering Workstation').
+      description:
+        description: >-
+          A description of the asset, its function in ICS environments, and its role
+          in industrial process control.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST have source_name 'mitre-attack'
+          and contain the asset's ATT&CK ID as external_id (e.g., 'A0001').
+        comments: >-
+          validator_hint: first-ref-must-be-mitre-attack-asset-id
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      x_mitre_domains:
+        required: true
+
+  DataSource:
+    is_a: AttackObject
+    description: >-
+      DEPRECATED as of ATT&CK Specification 3.3.0. Superseded by the Detection Strategy
+      and Analytic framework. Will be removed in ATT&CK Specification 4.0.0.
+
+      Data Sources represented categories of information that could be collected from
+      a computing environment to identify signs of adversary technique execution.
+      They were organized hierarchically: each Data Source contained one or more
+      Data Components specifying observable events within that source category.
+
+      The data source hierarchy was:
+        DataSource (x-mitre-data-source) →
+          DataComponent (x-mitre-data-component) →
+            detects →
+              Technique (attack-pattern)
+
+      Retained for backward compatibility with ATT&CK datasets prior to Spec 3.3.0.
+    in_subset:
+      - attack_sdos
+      - deprecated
+    annotations:
+      stix_type: x-mitre-data-source
+      attack_id_format: "DS####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_platforms
+      - x_mitre_contributors
+      - x_mitre_modified_by_ref
+      - x_mitre_collection_layers
+    slot_usage:
+      type:
+        required: true
+        pattern: "^x-mitre-data-source$"
+      id:
+        required: true
+        pattern: "^x-mitre-data-source--"
+      name:
+        required: true
+        description: >-
+          The name of the data source category (e.g., 'Process', 'Network Traffic',
+          'File', 'Windows Registry').
+      description:
+        required: true
+        description: >-
+          A description of this data source, the type of information it provides,
+          and how it can be used to detect adversary activity.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST have source_name 'mitre-attack'
+          and contain the data source's ATT&CK ID as external_id (e.g., 'DS0009').
+        comments: >-
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      x_mitre_domains:
+        required: true
+      x_mitre_modified_by_ref:
+        required: true
+      x_mitre_collection_layers:
+        required: true
+
+  DataComponent:
+    is_a: AttackObject
+    description: >-
+      Data Components represent specific types of observable events or artifacts
+      within a Data Source that can be collected to detect adversary technique execution.
+      For example, 'Process Creation' and 'Process Termination' are data components
+      within the 'Process' data source.
+
+      Data Components serve as the bridge between defensive telemetry and ATT&CK
+      techniques. They detect techniques via 'detects' relationship objects.
+
+      The x_mitre_log_sources property (optional in Spec 3.x, required in Spec 4.x)
+      provides platform-specific log collection configurations specifying exactly which
+      log provider and event channel to monitor.
+
+      The x_mitre_data_source_ref property establishing the parent data source link
+      is DEPRECATED in ATT&CK Specification 3.3.0 and will be removed in 4.0.0.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: x-mitre-data-component
+      attack_id_format: "DC####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_modified_by_ref
+      - x_mitre_data_source_ref
+      - x_mitre_log_sources
+    slot_usage:
+      type:
+        required: true
+        pattern: "^x-mitre-data-component$"
+      id:
+        required: true
+        pattern: "^x-mitre-data-component--"
+      name:
+        required: true
+        description: >-
+          The name of the data component event type (e.g., 'Process Creation',
+          'Network Traffic Flow', 'File Modification', 'Logon Session Creation').
+      description:
+        required: true
+        description: >-
+          A description of the specific observable event or artifact this data component
+          captures, and how it relates to detecting adversary activity.
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      x_mitre_domains:
+        required: true
+      x_mitre_modified_by_ref:
+        required: true
+      x_mitre_data_source_ref:
+        description: >-
+          DEPRECATED. Reference to the parent x-mitre-data-source object.
+          Will be removed in ATT&CK Specification 4.0.0.
+      x_mitre_log_sources:
+        description: >-
+          Platform-specific log collection configurations for detecting this event type.
+          Optional in ATT&CK Spec 3.x; will become required in Spec 4.x.
+        comments: >-
+          validator_hint: no-duplicate-name-channel-tuples
+
+  Matrix:
+    is_a: AttackObject
+    description: >-
+      ATT&CK Matrices define the structural layout and organization of tactics and
+      techniques within each ATT&CK domain. The matrix arranges tactics as columns
+      and techniques (with sub-techniques nested beneath parents) as rows, providing
+      a comprehensive visual map of adversary behavior within a domain.
+
+      Each ATT&CK domain has exactly one Matrix object. The tactic_refs property
+      contains an ordered list of x-mitre-tactic STIX IDs that defines the left-to-right
+      display order of columns in the ATT&CK matrix. The matrix does not directly
+      enumerate techniques — technique-to-tactic associations are captured via
+      kill_chain_phases on the Technique objects.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: x-mitre-matrix
+    slots:
+      - x_mitre_domains
+      - x_mitre_modified_by_ref
+      - tactic_refs
+    slot_usage:
+      type:
+        required: true
+        pattern: "^x-mitre-matrix$"
+      id:
+        required: true
+        pattern: "^x-mitre-matrix--"
+      name:
+        required: true
+        description: >-
+          The name of this ATT&CK matrix (e.g., 'Enterprise ATT&CK',
+          'Mobile ATT&CK', 'ICS ATT&CK').
+      description:
+        required: true
+        description: >-
+          A description of the domain and scope covered by this matrix.
+      external_references:
+        required: true
+        description: External references for this matrix object.
+        comments: >-
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      x_mitre_domains:
+        required: true
+      x_mitre_modified_by_ref:
+        required: true
+      tactic_refs:
+        required: true
+        description: >-
+          Ordered list of x-mitre-tactic STIX IDs defining the column order of
+          tactics in this ATT&CK matrix visualization.
+        comments: >-
+          jsonschema_minItems: "1"
+
+  Collection:
+    is_a: AttackObject
+    description: >-
+      Collections are versioned snapshots of an ATT&CK dataset grouping all STIX objects
+      that constitute a specific release of an ATT&CK domain or curated subset.
+      ATT&CK distributes one collection per domain per release.
+
+      The x_mitre_contents property provides an ordered list of versioned object
+      references (ID + modified timestamp pairs) enumerating every STIX object included
+      in this collection. This precise versioning allows consumers to reconstruct the
+      exact state of the knowledge base at any given ATT&CK release.
+
+      Bundle validation: In a distributing STIX Bundle, the Collection must be the
+      first object in the bundle's 'objects' array. All STIX IDs referenced in
+      x_mitre_contents must be present as objects within the same bundle.
+
+      See the ATT&CK Workbench collections documentation for detailed design rationale
+      and usage guidance.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: x-mitre-collection
+    slots:
+      - x_mitre_modified_by_ref
+      - x_mitre_contents
+    slot_usage:
+      type:
+        required: true
+        pattern: "^x-mitre-collection$"
+      id:
+        required: true
+        pattern: "^x-mitre-collection--"
+      name:
+        required: true
+        description: >-
+          The name of this collection (e.g., 'Enterprise ATT&CK',
+          'ATT&CK for ICS v14.1').
+      description:
+        required: true
+        description: >-
+          Details, context, and explanation about the purpose, scope, or version
+          of the objects contained in this collection.
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      x_mitre_contents:
+        required: true
+        description: >-
+          Ordered list of versioned references to all ATT&CK STIX objects included
+          in this collection release.
+        comments: >-
+          jsonschema_minItems: "1"
+          validator_hint: validate-x-mitre-contents-cross-references
+
+  Identity:
+    is_a: AttackObject
+    description: >-
+      The ATT&CK Identity object represents MITRE Corporation, the organization that
+      maintains the ATT&CK knowledge base. The canonical ATT&CK Identity object has:
+        STIX ID: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+        Name: The MITRE Corporation
+        identity_class: organization
+
+      This Identity is referenced by created_by_ref and x_mitre_modified_by_ref
+      throughout all ATT&CK objects to attribute creation and modification to MITRE.
+
+      Key differences from the standard ATT&CK object:
+        - x_mitre_version is absent on Identity objects
+        - Several STIX Identity properties (roles, sectors, contact_information) are
+          defined in STIX but not actively used in ATT&CK Identity objects
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: identity
+      canonical_id: "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5"
+    slot_usage:
+      type:
+        required: true
+        pattern: "^identity$"
+      id:
+        required: true
+        pattern: "^identity--"
+      name:
+        required: true
+        description: The name of the identity organization (e.g., 'The MITRE Corporation').
+      object_marking_refs:
+        required: true
+      identity_class:
+        required: true
+        description: >-
+          The category of entity this Identity describes (e.g., 'organization').
+          Open vocabulary from identity-class-ov; additional string values are permitted.
+      x_mitre_version:
+        required: false
+        description: Not present on ATT&CK Identity objects.
+      description:
+        description: Optional description of the identity organization.
+      roles:
+        description: >-
+          STIX identity roles. Available from the STIX specification but not actively
+          used in ATT&CK Identity objects.
+      sectors:
+        description: >-
+          STIX industry sectors. Available from the STIX specification but not actively
+          used in ATT&CK Identity objects.
+      contact_information:
+        description: >-
+          STIX contact information. Available from the STIX specification but not
+          actively used in ATT&CK Identity objects.
+
+  DetectionStrategy:
+    is_a: AttackObject
+    description: >-
+      Detection Strategies define high-level, platform-agnostic approaches for detecting
+      specific adversary techniques. They function as containers organizing one or more
+      platform-specific Analytics (x-mitre-analytic objects) into cohesive detection
+      methodologies, describing what data to collect and what behavioral patterns to look for.
+
+      Detection Strategies were introduced in ATT&CK Specification 3.3.0 as part of the
+      new detection framework, superseding the deprecated x-mitre-data-source and
+      x-mitre-data-component approach for technique detection.
+
+      A Detection Strategy links to its implementing analytics via x_mitre_analytic_refs.
+      Analytics in turn link back to data components via x_mitre_log_source_references,
+      creating a complete detection chain from technique to observable log event.
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: x-mitre-detection-strategy
+      attack_id_format: "DET####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_modified_by_ref
+      - x_mitre_contributors
+      - x_mitre_analytic_refs
+    slot_usage:
+      type:
+        required: true
+        pattern: "^x-mitre-detection-strategy$"
+      id:
+        required: true
+        pattern: "^x-mitre-detection-strategy--"
+      name:
+        required: true
+        description: >-
+          The name of the detection strategy describing the overall detection approach.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST contain the detection strategy's
+          ATT&CK ID as external_id (e.g., 'DET0001').
+        comments: >-
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      x_mitre_domains:
+        required: true
+      x_mitre_modified_by_ref:
+        required: true
+      x_mitre_contributors:
+        required: true
+        description: >-
+          People and organizations who contributed to this detection strategy.
+          At least one contributor is required on DetectionStrategy objects.
+        comments: >-
+          jsonschema_minItems: "1"
+      x_mitre_analytic_refs:
+        required: true
+        description: >-
+          STIX IDs of x-mitre-analytic objects implementing this strategy.
+          Each analytic provides platform-specific detection logic. At least one
+          analytic reference is required; references must be unique.
+
+  Analytic:
+    is_a: AttackObject
+    description: >-
+      Analytics contain the concrete, platform-specific detection logic implementing
+      a Detection Strategy for a specific operating environment. An analytic specifies
+      the exact log data sources to query (via x_mitre_log_source_references),
+      the detection logic or query pattern, and optionally defines tunable parameters
+      (x_mitre_mutable_elements) allowing defenders to adapt it to their environment.
+
+      Each analytic targets exactly one platform (x_mitre_platforms maximum cardinality
+      is 1). Multiple analytics may implement the same detection strategy, one per
+      supported platform.
+
+      The detection chain is:
+        DetectionStrategy (x_mitre_analytic_refs →)
+          Analytic (x_mitre_log_source_references →)
+            DataComponent (log_source name/channel →)
+              detects →
+                Technique
+    in_subset:
+      - attack_sdos
+    annotations:
+      stix_type: x-mitre-analytic
+      attack_id_format: "AN####"
+    slots:
+      - x_mitre_domains
+      - x_mitre_platforms
+      - x_mitre_modified_by_ref
+      - x_mitre_log_source_references
+      - x_mitre_mutable_elements
+    slot_usage:
+      type:
+        required: true
+        pattern: "^x-mitre-analytic$"
+      id:
+        required: true
+        pattern: "^x-mitre-analytic--"
+      name:
+        required: true
+        description: The name of this analytic.
+      description:
+        required: true
+        description: >-
+          A description of this analytic, including what it detects, how it works,
+          and any important behavioral or environmental context.
+      external_references:
+        required: true
+        description: >-
+          External references. The first entry MUST contain the analytic's ATT&CK ID
+          as external_id (e.g., 'AN0001').
+        comments: >-
+          jsonschema_minItems: "1"
+      created_by_ref:
+        required: true
+      object_marking_refs:
+        required: true
+      x_mitre_platforms:
+        description: >-
+          The single target platform for this analytic. Maximum cardinality is 1;
+          each analytic targets exactly one platform.
+        comments: >-
+          jsonschema_maxItems: "1"
+      x_mitre_domains:
+        required: true
+
+  # 
+  # ATT&CK SROs — STIX Relationship Objects
+  # 
+
+  AttackRelationship:
+    is_a: AttackObject
+    description: >-
+      ATT&CK Relationship objects connect ATT&CK STIX objects using typed semantic
+      relationships. ATT&CK restricts STIX relationship semantics to a closed set of
+      relationship_type values and enforces valid (source_type, relationship_type,
+      target_type) combinations.
+
+      Valid relationship combinations:
+        uses:
+          malware | tool | intrusion-set | campaign  →  attack-pattern | malware | tool
+          (malware→malware and tool→tool combinations are explicitly prohibited)
+        mitigates:
+          course-of-action  →  attack-pattern
+        subtechnique-of:
+          attack-pattern  →  attack-pattern  (source=sub-technique, target=parent)
+        detects:
+          x-mitre-data-component | x-mitre-detection-strategy  →  attack-pattern
+          (x-mitre-data-component→attack-pattern DEPRECATED as of Spec 3.3.0)
+        attributed-to:
+          campaign  →  intrusion-set
+        targets:
+          attack-pattern  →  x-mitre-asset
+        revoked-by:
+          <any> → <same STIX type>  (source and target must be the same type)
+
+      ATT&CK Relationship objects do not carry a 'name' property or 'x_mitre_version'.
+      The x_mitre_modified_by_ref is required on all ATT&CK relationships.
+    in_subset:
+      - attack_sros
+    annotations:
+      stix_type: relationship
+    slots:
+      - x_mitre_modified_by_ref
+    slot_usage:
+      type:
+        required: true
+        pattern: "^relationship$"
+      id:
+        required: true
+        pattern: "^relationship--"
+      relationship_type:
+        range: AttackRelationshipTypeEnum
+        required: true
+        description: >-
+          The semantic type of this relationship. Must be one of the seven ATT&CK
+          relationship types.
+      source_ref:
+        required: true
+        description: >-
+          The STIX ID of the source object. The STIX type prefix must be compatible
+          with the relationship_type and target_ref type.
+      target_ref:
+        required: true
+        description: >-
+          The STIX ID of the target object. The STIX type prefix must be compatible
+          with the relationship_type and source_ref type.
+      description:
+        description: >-
+          Optional human-readable description providing context about this specific
+          relationship instance.
+      x_mitre_modified_by_ref:
+        required: true
+      name:
+        required: false
+        description: >-
+          Not present on ATT&CK Relationship objects. Inherited from the base STIX
+          specification but omitted in ATT&CK's use of relationship objects.
+      x_mitre_version:
+        required: false
+        description: >-
+          Not present on ATT&CK Relationship objects. Version tracking is not applied
+          to relationship objects in the ATT&CK Data Model.
+    comments: >-
+      validator_hint: validate-attack-relationship-source-target-type-compatibility
+
+  # 
+  # ATT&CK SMOs — STIX Meta Objects
+  # 
+
+  AttackMarkingDefinition:
+    is_a: MarkingDefinition
+    description: >-
+      ATT&CK Marking Definition objects apply data handling constraints to ATT&CK
+      content. ATT&CK uses two categories of marking definitions:
+
+      1. TLP (Traffic Light Protocol) markings — four canonical instances with fixed IDs:
+           TLP:WHITE  → marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9
+           TLP:GREEN  → marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da
+           TLP:AMBER  → marking-definition--f88d31f6-486f-44da-b317-01333bde0b82
+           TLP:RED    → marking-definition--5e57c739-391a-4eb3-b6be-7d15ca92d5ed
+
+      2. Statement markings — copyright and terms-of-use text applied to ATT&CK content.
+           Example: "Copyright 2023, The MITRE Corporation. ATT&CK® is a registered trademark."
+
+      Marking Definition objects are STIX Meta Objects (SMOs). They do NOT have a
+      'modified' property and do NOT carry ATT&CK versioning fields
+      (x_mitre_attack_spec_version, x_mitre_version, x_mitre_deprecated).
+
+      The canonical TLP marking definition instances MUST NOT be recreated; only the
+      four fixed instances listed above are valid TLP markings for ATT&CK content.
+    in_subset:
+      - attack_smos
+    annotations:
+      stix_type: marking-definition
+    slot_usage:
+      type:
+        required: true
+        pattern: "^marking-definition$"
+      id:
+        required: true
+        pattern: "^marking-definition--"
+      spec_version:
+        required: true
+      created:
+        required: true
+      created_by_ref:
+        required: true
+        description: >-
+          The STIX ID of the identity that created this marking definition.
+          ATT&CK marking definitions reference MITRE's identity.
+      definition_type:
+        range: MarkingDefinitionTypeEnum
+        required: true
+        description: >-
+          The type of marking definition payload: 'tlp' for Traffic Light Protocol
+          markings, or 'statement' for copyright/terms-of-use text.
+      definition:
+        required: true
+        description: >-
+          The marking definition payload object. For TLP markings this is a
+          TlpMarkingObject containing the tlp level. For statement markings this
+          is a StatementMarkingObject containing the statement text.
+      name:
+        description: >-
+          Human-readable name for TLP marking definitions (e.g., 'TLP:WHITE', 'TLP:GREEN').
+          Listed in the STIX 2.1 specification; optional in ATT&CK practice.
+      x_mitre_attack_spec_version:
+        required: false
+        description: Not present on ATT&CK Marking Definition objects (SMOs are unversioned).
+      x_mitre_version:
+        required: false
+        description: Not present on ATT&CK Marking Definition objects.
+      x_mitre_deprecated:
+        required: false
+        description: Not present on ATT&CK Marking Definition objects.
+    comments: >-
+      validator_hint: enforce-marking-definition-tlp-statement-branches
+      note: TLP marking definition IDs are fixed constants; do not create new TLP instances.
+
+  # 
+  # ATT&CK Bundle
+  # 
+
+  AttackBundle:
+    is_a: Bundle
+    description: >-
+      An ATT&CK STIX Bundle is the top-level distribution container for an ATT&CK
+      domain dataset. ATT&CK publishes one bundle per domain per release:
+        - enterprise-attack  (Enterprise ATT&CK)
+        - mobile-attack      (Mobile ATT&CK)
+        - ics-attack         (ATT&CK for ICS)
+
+      A Bundle is NOT a STIX Object — it has no ATT&CK-specific versioning fields,
+      no created_by_ref, and no marking definitions of its own. It serves purely as
+      a JSON container grouping all objects that constitute a release.
+
+      ATT&CK Bundle structural requirements:
+        1. The bundle MUST contain exactly one x-mitre-collection object.
+        2. The x-mitre-collection MUST be the first object in the 'objects' array.
+        3. All STIX IDs referenced in the collection's x_mitre_contents MUST be
+           present in the bundle's 'objects' array (no dangling references).
+        4. No duplicate STIX IDs are permitted within a bundle's objects array.
+
+      Note: A STIX Bundle Object is not a STIX Object (Section 7.1, STIX 2.1 spec).
+      Objects within the bundle are not semantically related by virtue of sharing
+      a container; all relationships are expressed via Relationship SRO objects.
+    in_subset:
+      - attack_bundle
+    annotations:
+      stix_type: bundle
+    slot_usage:
+      type:
+        required: true
+        pattern: "^bundle$"
+        description: Must be the literal string 'bundle'.
+      id:
+        required: true
+        pattern: "^bundle--"
+        description: >-
+          The STIX identifier for this bundle. Follows the standard STIX identifier
+          format: bundle--<UUIDv4>.
+      bundle_objects:
+        required: true
+        description: >-
+          The ATT&CK STIX objects contained in this bundle. The first object MUST be
+          an x-mitre-collection object. All STIX IDs referenced in the collection's
+          x_mitre_contents must appear as objects in this array.
+        comments: >-
+          jsonschema_minItems: "1"
+          validator_hint: validate-attack-bundle-first-object-is-collection
+          validator_hint: validate-attack-bundle-contents-cross-references
+          validator_hint: no-duplicate-stix-ids-in-bundle

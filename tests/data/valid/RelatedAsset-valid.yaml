@@ -1,0 +1,4 @@
+name: Engineering Workstation
+related_asset_sectors:
+  - Manufacturing
+description: Sector-specific related asset name for ICS contexts.
