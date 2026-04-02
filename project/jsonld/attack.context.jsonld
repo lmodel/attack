@@ -1,0 +1,1684 @@
+{
+   "@context": {
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "PATO": {
+         "@id": "http://purl.obolibrary.org/obo/PATO_",
+         "@prefix": true
+      },
+      "attack": "https://w3id.org/lmodel/attack/",
+      "capex": "https://lmodel.github.io/capex/",
+      "linkml": "https://w3id.org/linkml/",
+      "oscal": "https://lmodel.github.io/oscal/",
+      "schema": {
+         "@id": "stix:schema"
+      },
+      "skos": "http://www.w3.org/2004/02/skos/core#",
+      "spdx": "https://lmodel.github.io/spdx/",
+      "stix": "https://w3id.org/lmodel/stix/",
+      "unified_cyber_ontology": "https://w3id.org/lmodel/uco-master/",
+      "@vocab": "https://w3id.org/lmodel/attack/",
+      "abstract": {
+         "@id": "stix:abstract"
+      },
+      "account_created": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:account_created"
+      },
+      "account_expires": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:account_expires"
+      },
+      "account_first_login": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:account_first_login"
+      },
+      "account_last_login": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:account_last_login"
+      },
+      "account_login": {
+         "@id": "stix:account_login"
+      },
+      "account_type": {
+         "@id": "stix:account_type"
+      },
+      "additional_header_fields": {
+         "@id": "stix:additional_header_fields"
+      },
+      "address_family": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:address_family"
+      },
+      "address_of_entry_point": {
+         "@type": "xsd:integer",
+         "@id": "stix:address_of_entry_point"
+      },
+      "administrative_area": {
+         "@id": "stix:administrative_area"
+      },
+      "ads_hashes": {
+         "@type": "@id",
+         "@id": "stix:ads_hashes"
+      },
+      "ads_name": {
+         "@id": "stix:ads_name"
+      },
+      "ads_size": {
+         "@type": "xsd:integer",
+         "@id": "stix:ads_size"
+      },
+      "aliases": {
+         "@id": "stix:aliases"
+      },
+      "alternate_data_streams": {
+         "@type": "@id",
+         "@id": "stix:alternate_data_streams"
+      },
+      "analysis_definition_version": {
+         "@id": "stix:analysis_definition_version"
+      },
+      "analysis_ended": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:analysis_ended"
+      },
+      "analysis_engine_version": {
+         "@id": "stix:analysis_engine_version"
+      },
+      "analysis_sco_refs": {
+         "@id": "stix:analysis_sco_refs"
+      },
+      "analysis_started": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:analysis_started"
+      },
+      "architecture_execution_envs": {
+         "@id": "stix:architecture_execution_envs"
+      },
+      "aslr_enabled": {
+         "@type": "xsd:boolean",
+         "@id": "stix:aslr_enabled"
+      },
+      "atime": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:atime"
+      },
+      "authority_key_identifier": {
+         "@id": "stix:authority_key_identifier"
+      },
+      "authors": {
+         "@id": "stix:authors"
+      },
+      "base_of_code": {
+         "@type": "xsd:integer",
+         "@id": "stix:base_of_code"
+      },
+      "base_of_data": {
+         "@type": "xsd:integer",
+         "@id": "stix:base_of_data"
+      },
+      "basic_constraints": {
+         "@id": "stix:basic_constraints"
+      },
+      "bcc_refs": {
+         "@id": "stix:bcc_refs"
+      },
+      "belongs_to_ref": {
+         "@id": "stix:belongs_to_ref"
+      },
+      "belongs_to_refs": {
+         "@id": "stix:belongs_to_refs"
+      },
+      "bits_per_pixel": {
+         "@type": "xsd:integer",
+         "@id": "stix:bits_per_pixel"
+      },
+      "body": {
+         "@id": "stix:body"
+      },
+      "body_multipart": {
+         "@type": "@id",
+         "@id": "stix:body_multipart"
+      },
+      "body_raw_ref": {
+         "@id": "stix:body_raw_ref"
+      },
+      "bundle_objects": {
+         "@type": "@id",
+         "@id": "stix:bundle_objects"
+      },
+      "can_escalate_privs": {
+         "@type": "xsd:boolean",
+         "@id": "stix:can_escalate_privs"
+      },
+      "capabilities": {
+         "@id": "stix:capabilities"
+      },
+      "cc_refs": {
+         "@id": "stix:cc_refs"
+      },
+      "certificate_policies": {
+         "@id": "stix:certificate_policies"
+      },
+      "characteristics_hex": {
+         "@id": "stix:characteristics_hex"
+      },
+      "checksum_hex": {
+         "@id": "stix:checksum_hex"
+      },
+      "child_refs": {
+         "@id": "stix:child_refs"
+      },
+      "city": {
+         "@id": "stix:city"
+      },
+      "command_line": {
+         "@id": "stix:command_line"
+      },
+      "comment": {
+         "@id": "stix:comment"
+      },
+      "confidence": {
+         "@type": "xsd:integer",
+         "@id": "stix:confidence"
+      },
+      "configuration_version": {
+         "@id": "stix:configuration_version"
+      },
+      "contact_information": {
+         "@id": "stix:contact_information"
+      },
+      "contains_refs": {
+         "@id": "stix:contains_refs"
+      },
+      "content": {
+         "@id": "stix:content"
+      },
+      "content_disposition": {
+         "@id": "stix:content_disposition"
+      },
+      "content_ref": {
+         "@id": "stix:content_ref"
+      },
+      "content_type": {
+         "@id": "stix:content_type"
+      },
+      "contents": {
+         "@id": "stix:contents"
+      },
+      "context": {
+         "@id": "stix:context"
+      },
+      "count": {
+         "@type": "xsd:integer",
+         "@id": "stix:count"
+      },
+      "country": {
+         "@id": "stix:country"
+      },
+      "cpe": {
+         "@id": "stix:cpe"
+      },
+      "created": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:created"
+      },
+      "created_by_ref": {
+         "@id": "stix:created_by_ref"
+      },
+      "created_time": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:created_time"
+      },
+      "creator_user_ref": {
+         "@id": "stix:creator_user_ref"
+      },
+      "credential": {
+         "@id": "stix:credential"
+      },
+      "credential_last_changed": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:credential_last_changed"
+      },
+      "crl_distribution_points": {
+         "@id": "stix:crl_distribution_points"
+      },
+      "ctime": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:ctime"
+      },
+      "cwd": {
+         "@id": "stix:cwd"
+      },
+      "decryption_key": {
+         "@id": "stix:decryption_key"
+      },
+      "defanged": {
+         "@type": "xsd:boolean",
+         "@id": "stix:defanged"
+      },
+      "definition": {
+         "@id": "stix:definition"
+      },
+      "definition_type": {
+         "@id": "stix:definition_type"
+      },
+      "dep_enabled": {
+         "@type": "xsd:boolean",
+         "@id": "stix:dep_enabled"
+      },
+      "description": {
+         "@id": "stix:description"
+      },
+      "descriptions": {
+         "@id": "stix:descriptions"
+      },
+      "display_name": {
+         "@id": "stix:display_name"
+      },
+      "dll_characteristics_hex": {
+         "@id": "stix:dll_characteristics_hex"
+      },
+      "document_info_dict": {
+         "@id": "stix:document_info_dict"
+      },
+      "dst_byte_count": {
+         "@type": "xsd:integer",
+         "@id": "stix:dst_byte_count"
+      },
+      "dst_flags_hex": {
+         "@id": "stix:dst_flags_hex"
+      },
+      "dst_packets": {
+         "@type": "xsd:integer",
+         "@id": "stix:dst_packets"
+      },
+      "dst_payload_ref": {
+         "@id": "stix:dst_payload_ref"
+      },
+      "dst_port": {
+         "@type": "xsd:integer",
+         "@id": "stix:dst_port"
+      },
+      "dst_ref": {
+         "@id": "stix:dst_ref"
+      },
+      "email_date": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:email_date"
+      },
+      "encapsulated_by_ref": {
+         "@id": "stix:encapsulated_by_ref"
+      },
+      "encapsulates_refs": {
+         "@id": "stix:encapsulates_refs"
+      },
+      "encryption_algorithm": {
+         "@id": "stix:encryption_algorithm"
+      },
+      "end": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:end"
+      },
+      "entropy": {
+         "@type": "xsd:float",
+         "@id": "stix:entropy"
+      },
+      "environment_variables": {
+         "@id": "stix:environment_variables"
+      },
+      "exif_tags": {
+         "@id": "stix:exif_tags"
+      },
+      "explanation": {
+         "@id": "stix:explanation"
+      },
+      "extended_key_usage": {
+         "@id": "stix:extended_key_usage"
+      },
+      "extension_properties": {
+         "@id": "stix:extension_properties"
+      },
+      "extension_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:extension_type"
+      },
+      "extension_types": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:extension_types"
+      },
+      "extensions": {
+         "@id": "stix:extensions"
+      },
+      "external_id": {
+         "@id": "stix:external_id"
+      },
+      "external_references": {
+         "@type": "@id",
+         "@id": "stix:external_references"
+      },
+      "file_alignment": {
+         "@type": "xsd:integer",
+         "@id": "stix:file_alignment"
+      },
+      "file_header_hashes": {
+         "@type": "@id",
+         "@id": "stix:file_header_hashes"
+      },
+      "first_observed": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:first_observed"
+      },
+      "first_seen": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:first_seen"
+      },
+      "from_ref": {
+         "@id": "stix:from_ref"
+      },
+      "gid": {
+         "@type": "xsd:integer",
+         "@id": "stix:gid"
+      },
+      "goals": {
+         "@id": "stix:goals"
+      },
+      "granular_markings": {
+         "@type": "@id",
+         "@id": "stix:granular_markings"
+      },
+      "group_name": {
+         "@id": "stix:group_name"
+      },
+      "groups": {
+         "@id": "stix:groups"
+      },
+      "hashes": {
+         "@type": "@id",
+         "@id": "stix:hashes"
+      },
+      "home_dir": {
+         "@id": "stix:home_dir"
+      },
+      "host_vm_ref": {
+         "@id": "stix:host_vm_ref"
+      },
+      "icmp_code_hex": {
+         "@id": "stix:icmp_code_hex"
+      },
+      "icmp_type_hex": {
+         "@id": "stix:icmp_type_hex"
+      },
+      "id": {
+         "@id": "stix:id"
+      },
+      "identity_class": {
+         "@id": "stix:identity_class"
+      },
+      "image_base": {
+         "@type": "xsd:integer",
+         "@id": "stix:image_base"
+      },
+      "image_height": {
+         "@type": "xsd:integer",
+         "@id": "stix:image_height"
+      },
+      "image_ref": {
+         "@id": "stix:image_ref"
+      },
+      "image_width": {
+         "@type": "xsd:integer",
+         "@id": "stix:image_width"
+      },
+      "imphash": {
+         "@id": "stix:imphash"
+      },
+      "implementation_languages": {
+         "@id": "stix:implementation_languages"
+      },
+      "indicator_types": {
+         "@id": "stix:indicator_types"
+      },
+      "infrastructure_types": {
+         "@id": "stix:infrastructure_types"
+      },
+      "inhibit_any_policy": {
+         "@id": "stix:inhibit_any_policy"
+      },
+      "installed_software_refs": {
+         "@id": "stix:installed_software_refs"
+      },
+      "integrity_level": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:integrity_level"
+      },
+      "ipfix": {
+         "@id": "stix:ipfix"
+      },
+      "is_active": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_active"
+      },
+      "is_blocking": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_blocking"
+      },
+      "is_disabled": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_disabled"
+      },
+      "is_family": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_family"
+      },
+      "is_hidden": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_hidden"
+      },
+      "is_listening": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_listening"
+      },
+      "is_multipart": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_multipart"
+      },
+      "is_optimized": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_optimized"
+      },
+      "is_privileged": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_privileged"
+      },
+      "is_self_signed": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_self_signed"
+      },
+      "is_service_account": {
+         "@type": "xsd:boolean",
+         "@id": "stix:is_service_account"
+      },
+      "issuer": {
+         "@id": "stix:issuer"
+      },
+      "issuer_alternative_name": {
+         "@id": "stix:issuer_alternative_name"
+      },
+      "key": {
+         "@id": "stix:key"
+      },
+      "key_usage": {
+         "@id": "stix:key_usage"
+      },
+      "kill_chain_name": {
+         "@id": "stix:kill_chain_name"
+      },
+      "kill_chain_phases": {
+         "@type": "@id",
+         "@id": "stix:kill_chain_phases"
+      },
+      "labels": {
+         "@id": "stix:labels"
+      },
+      "lang": {
+         "@id": "stix:lang"
+      },
+      "languages": {
+         "@id": "stix:languages"
+      },
+      "last_observed": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:last_observed"
+      },
+      "last_seen": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:last_seen"
+      },
+      "latitude": {
+         "@type": "xsd:float",
+         "@id": "stix:latitude"
+      },
+      "loader_flags_hex": {
+         "@id": "stix:loader_flags_hex"
+      },
+      "log_source_channel": {
+         "@id": "log_source_channel"
+      },
+      "log_source_name": {
+         "@id": "log_source_name"
+      },
+      "longitude": {
+         "@type": "xsd:float",
+         "@id": "stix:longitude"
+      },
+      "machine_hex": {
+         "@id": "stix:machine_hex"
+      },
+      "magic_hex": {
+         "@id": "stix:magic_hex"
+      },
+      "magic_number_hex": {
+         "@id": "stix:magic_number_hex"
+      },
+      "major_image_version": {
+         "@type": "xsd:integer",
+         "@id": "stix:major_image_version"
+      },
+      "major_linker_version": {
+         "@type": "xsd:integer",
+         "@id": "stix:major_linker_version"
+      },
+      "major_os_version": {
+         "@type": "xsd:integer",
+         "@id": "stix:major_os_version"
+      },
+      "major_subsystem_version": {
+         "@type": "xsd:integer",
+         "@id": "stix:major_subsystem_version"
+      },
+      "malware_types": {
+         "@id": "stix:malware_types"
+      },
+      "marking_ref": {
+         "@id": "stix:marking_ref"
+      },
+      "message_body_data_ref": {
+         "@id": "stix:message_body_data_ref"
+      },
+      "message_body_length": {
+         "@type": "xsd:integer",
+         "@id": "stix:message_body_length"
+      },
+      "message_id": {
+         "@id": "stix:message_id"
+      },
+      "mime_type": {
+         "@id": "stix:mime_type"
+      },
+      "minor_image_version": {
+         "@type": "xsd:integer",
+         "@id": "stix:minor_image_version"
+      },
+      "minor_linker_version": {
+         "@type": "xsd:integer",
+         "@id": "stix:minor_linker_version"
+      },
+      "minor_os_version": {
+         "@type": "xsd:integer",
+         "@id": "stix:minor_os_version"
+      },
+      "minor_subsystem_version": {
+         "@type": "xsd:integer",
+         "@id": "stix:minor_subsystem_version"
+      },
+      "modified": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:modified"
+      },
+      "modified_time": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:modified_time"
+      },
+      "modules": {
+         "@id": "stix:modules"
+      },
+      "mtime": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:mtime"
+      },
+      "mutable_field": {
+         "@id": "mutable_field"
+      },
+      "name": {
+         "@id": "stix:name"
+      },
+      "name_constraints": {
+         "@id": "stix:name_constraints"
+      },
+      "name_enc": {
+         "@id": "stix:name_enc"
+      },
+      "number": {
+         "@type": "xsd:integer",
+         "@id": "stix:number"
+      },
+      "number_observed": {
+         "@type": "xsd:integer",
+         "@id": "stix:number_observed"
+      },
+      "number_of_rva_and_sizes": {
+         "@type": "xsd:integer",
+         "@id": "stix:number_of_rva_and_sizes"
+      },
+      "number_of_sections": {
+         "@type": "xsd:integer",
+         "@id": "stix:number_of_sections"
+      },
+      "number_of_subkeys": {
+         "@type": "xsd:integer",
+         "@id": "stix:number_of_subkeys"
+      },
+      "number_of_symbols": {
+         "@type": "xsd:integer",
+         "@id": "stix:number_of_symbols"
+      },
+      "object_marking_refs": {
+         "@id": "stix:object_marking_refs"
+      },
+      "object_modified": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:object_modified"
+      },
+      "object_ref": {
+         "@id": "stix:object_ref"
+      },
+      "object_refs": {
+         "@id": "stix:object_refs"
+      },
+      "objective": {
+         "@id": "stix:objective"
+      },
+      "objects": {
+         "@type": "@id",
+         "@id": "stix:objects"
+      },
+      "observed_data_refs": {
+         "@id": "stix:observed_data_refs"
+      },
+      "opened_connection_refs": {
+         "@id": "stix:opened_connection_refs"
+      },
+      "operating_system_ref": {
+         "@id": "stix:operating_system_ref"
+      },
+      "operating_system_refs": {
+         "@id": "stix:operating_system_refs"
+      },
+      "opinion": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:opinion"
+      },
+      "optional_header": {
+         "@type": "@id",
+         "@id": "stix:optional_header"
+      },
+      "owner_sid": {
+         "@id": "stix:owner_sid"
+      },
+      "parent_directory_ref": {
+         "@id": "stix:parent_directory_ref"
+      },
+      "parent_ref": {
+         "@id": "stix:parent_ref"
+      },
+      "path": {
+         "@id": "stix:path"
+      },
+      "path_enc": {
+         "@id": "stix:path_enc"
+      },
+      "pattern": {
+         "@id": "stix:pattern"
+      },
+      "pattern_type": {
+         "@id": "stix:pattern_type"
+      },
+      "pattern_version": {
+         "@id": "stix:pattern_version"
+      },
+      "payload_bin": {
+         "@id": "stix:payload_bin"
+      },
+      "pdfid0": {
+         "@id": "stix:pdfid0"
+      },
+      "pdfid1": {
+         "@id": "stix:pdfid1"
+      },
+      "pe_section_hashes": {
+         "@type": "@id",
+         "@id": "stix:pe_section_hashes"
+      },
+      "pe_section_name": {
+         "@id": "stix:pe_section_name"
+      },
+      "pe_section_size": {
+         "@type": "xsd:integer",
+         "@id": "stix:pe_section_size"
+      },
+      "pe_type": {
+         "@id": "stix:pe_type"
+      },
+      "personal_motivations": {
+         "@id": "stix:personal_motivations"
+      },
+      "phase_name": {
+         "@id": "stix:phase_name"
+      },
+      "pid": {
+         "@type": "xsd:integer",
+         "@id": "stix:pid"
+      },
+      "pointer_to_symbol_table_hex": {
+         "@id": "stix:pointer_to_symbol_table_hex"
+      },
+      "policy_constraints": {
+         "@id": "stix:policy_constraints"
+      },
+      "policy_mappings": {
+         "@id": "stix:policy_mappings"
+      },
+      "postal_code": {
+         "@id": "stix:postal_code"
+      },
+      "precision": {
+         "@type": "xsd:float",
+         "@id": "stix:precision"
+      },
+      "primary_motivation": {
+         "@id": "stix:primary_motivation"
+      },
+      "priority": {
+         "@id": "stix:priority"
+      },
+      "private_key_usage_period_not_after": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:private_key_usage_period_not_after"
+      },
+      "private_key_usage_period_not_before": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:private_key_usage_period_not_before"
+      },
+      "product": {
+         "@id": "stix:product"
+      },
+      "protocols": {
+         "@id": "stix:protocols"
+      },
+      "published": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:published"
+      },
+      "raw_email_ref": {
+         "@id": "stix:raw_email_ref"
+      },
+      "received_lines": {
+         "@id": "stix:received_lines"
+      },
+      "region": {
+         "@id": "stix:region"
+      },
+      "registry_value_data": {
+         "@id": "stix:registry_value_data"
+      },
+      "registry_value_data_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:registry_value_data_type"
+      },
+      "registry_value_name": {
+         "@id": "stix:registry_value_name"
+      },
+      "related_asset_sectors": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "related_asset_sectors"
+      },
+      "relationship_type": {
+         "@id": "stix:relationship_type"
+      },
+      "report_types": {
+         "@id": "stix:report_types"
+      },
+      "request_header": {
+         "@id": "stix:request_header"
+      },
+      "request_method": {
+         "@id": "stix:request_method"
+      },
+      "request_value": {
+         "@id": "stix:request_value"
+      },
+      "request_version": {
+         "@id": "stix:request_version"
+      },
+      "resolves_to_refs": {
+         "@id": "stix:resolves_to_refs"
+      },
+      "resource_level": {
+         "@id": "stix:resource_level"
+      },
+      "result": {
+         "@id": "stix:result"
+      },
+      "result_name": {
+         "@id": "stix:result_name"
+      },
+      "revoked": {
+         "@type": "xsd:boolean",
+         "@id": "stix:revoked"
+      },
+      "rir": {
+         "@id": "stix:rir"
+      },
+      "roles": {
+         "@id": "stix:roles"
+      },
+      "sample_ref": {
+         "@id": "stix:sample_ref"
+      },
+      "sample_refs": {
+         "@id": "stix:sample_refs"
+      },
+      "secondary_motivations": {
+         "@id": "stix:secondary_motivations"
+      },
+      "section_alignment": {
+         "@type": "xsd:integer",
+         "@id": "stix:section_alignment"
+      },
+      "sections": {
+         "@type": "@id",
+         "@id": "stix:sections"
+      },
+      "sectors": {
+         "@id": "stix:sectors"
+      },
+      "selectors": {
+         "@id": "stix:selectors"
+      },
+      "sender_ref": {
+         "@id": "stix:sender_ref"
+      },
+      "serial_number": {
+         "@id": "stix:serial_number"
+      },
+      "service_dll_refs": {
+         "@id": "stix:service_dll_refs"
+      },
+      "service_name": {
+         "@id": "stix:service_name"
+      },
+      "service_status": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:service_status"
+      },
+      "service_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:service_type"
+      },
+      "shell": {
+         "@id": "stix:shell"
+      },
+      "sid": {
+         "@id": "stix:sid"
+      },
+      "sighting_of_ref": {
+         "@id": "stix:sighting_of_ref"
+      },
+      "signature_algorithm": {
+         "@id": "stix:signature_algorithm"
+      },
+      "size": {
+         "@type": "xsd:integer",
+         "@id": "stix:size"
+      },
+      "size_of_code": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_code"
+      },
+      "size_of_headers": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_headers"
+      },
+      "size_of_heap_commit": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_heap_commit"
+      },
+      "size_of_heap_reserve": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_heap_reserve"
+      },
+      "size_of_image": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_image"
+      },
+      "size_of_initialized_data": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_initialized_data"
+      },
+      "size_of_optional_header": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_optional_header"
+      },
+      "size_of_stack_commit": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_stack_commit"
+      },
+      "size_of_stack_reserve": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_stack_reserve"
+      },
+      "size_of_uninitialized_data": {
+         "@type": "xsd:integer",
+         "@id": "stix:size_of_uninitialized_data"
+      },
+      "socket_descriptor": {
+         "@type": "xsd:integer",
+         "@id": "stix:socket_descriptor"
+      },
+      "socket_handle": {
+         "@type": "xsd:integer",
+         "@id": "stix:socket_handle"
+      },
+      "socket_options": {
+         "@id": "stix:socket_options"
+      },
+      "socket_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:socket_type"
+      },
+      "sophistication": {
+         "@id": "stix:sophistication"
+      },
+      "source_name": {
+         "@id": "stix:source_name"
+      },
+      "source_ref": {
+         "@id": "stix:source_ref"
+      },
+      "spec_version": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:spec_version"
+      },
+      "src_byte_count": {
+         "@type": "xsd:integer",
+         "@id": "stix:src_byte_count"
+      },
+      "src_flags_hex": {
+         "@id": "stix:src_flags_hex"
+      },
+      "src_packets": {
+         "@type": "xsd:integer",
+         "@id": "stix:src_packets"
+      },
+      "src_payload_ref": {
+         "@id": "stix:src_payload_ref"
+      },
+      "src_port": {
+         "@type": "xsd:integer",
+         "@id": "stix:src_port"
+      },
+      "src_ref": {
+         "@id": "stix:src_ref"
+      },
+      "start": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:start"
+      },
+      "start_time": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:start_time"
+      },
+      "start_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:start_type"
+      },
+      "startup_info": {
+         "@id": "stix:startup_info"
+      },
+      "statement": {
+         "@id": "stix:statement"
+      },
+      "stop_time": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:stop_time"
+      },
+      "street_address": {
+         "@id": "stix:street_address"
+      },
+      "subject": {
+         "@id": "stix:subject"
+      },
+      "subject_alternative_name": {
+         "@id": "stix:subject_alternative_name"
+      },
+      "subject_directory_attributes": {
+         "@id": "stix:subject_directory_attributes"
+      },
+      "subject_key_identifier": {
+         "@id": "stix:subject_key_identifier"
+      },
+      "subject_public_key_algorithm": {
+         "@id": "stix:subject_public_key_algorithm"
+      },
+      "subject_public_key_exponent": {
+         "@type": "xsd:integer",
+         "@id": "stix:subject_public_key_exponent"
+      },
+      "subject_public_key_modulus": {
+         "@id": "stix:subject_public_key_modulus"
+      },
+      "submitted": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:submitted"
+      },
+      "subsystem_hex": {
+         "@id": "stix:subsystem_hex"
+      },
+      "summary": {
+         "@type": "xsd:boolean",
+         "@id": "stix:summary"
+      },
+      "swid": {
+         "@id": "stix:swid"
+      },
+      "tactic_refs": {
+         "@id": "tactic_refs"
+      },
+      "target_ref": {
+         "@id": "stix:target_ref"
+      },
+      "threat_actor_types": {
+         "@id": "stix:threat_actor_types"
+      },
+      "time_date_stamp": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:time_date_stamp"
+      },
+      "tlp": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "tlp"
+      },
+      "to_refs": {
+         "@id": "stix:to_refs"
+      },
+      "tool_types": {
+         "@id": "stix:tool_types"
+      },
+      "tool_version": {
+         "@id": "stix:tool_version"
+      },
+      "type": {
+         "@id": "stix:type"
+      },
+      "url": {
+         "@type": "xsd:anyURI",
+         "@id": "stix:url"
+      },
+      "user_id": {
+         "@id": "stix:user_id"
+      },
+      "valid_from": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:valid_from"
+      },
+      "valid_until": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:valid_until"
+      },
+      "validity_not_after": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:validity_not_after"
+      },
+      "validity_not_before": {
+         "@type": "xsd:dateTime",
+         "@id": "stix:validity_not_before"
+      },
+      "value": {
+         "@id": "stix:value"
+      },
+      "values": {
+         "@type": "@id",
+         "@id": "stix:values"
+      },
+      "vendor": {
+         "@id": "stix:vendor"
+      },
+      "version": {
+         "@id": "stix:version"
+      },
+      "where_sighted_refs": {
+         "@id": "stix:where_sighted_refs"
+      },
+      "win32_version_value_hex": {
+         "@id": "stix:win32_version_value_hex"
+      },
+      "window_title": {
+         "@id": "stix:window_title"
+      },
+      "x509_v3_extensions": {
+         "@type": "@id",
+         "@id": "stix:x509_v3_extensions"
+      },
+      "x_mitre_aliases": {
+         "@id": "x_mitre_aliases"
+      },
+      "x_mitre_analytic_refs": {
+         "@id": "x_mitre_analytic_refs"
+      },
+      "x_mitre_attack_spec_version": {
+         "@id": "x_mitre_attack_spec_version"
+      },
+      "x_mitre_collection_layers": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_collection_layers"
+      },
+      "x_mitre_contents": {
+         "@type": "@id",
+         "@id": "x_mitre_contents"
+      },
+      "x_mitre_contributors": {
+         "@id": "x_mitre_contributors"
+      },
+      "x_mitre_data_component_ref": {
+         "@id": "x_mitre_data_component_ref"
+      },
+      "x_mitre_data_source_ref": {
+         "@id": "x_mitre_data_source_ref"
+      },
+      "x_mitre_data_sources": {
+         "@id": "x_mitre_data_sources"
+      },
+      "x_mitre_defense_bypassed": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_defense_bypassed"
+      },
+      "x_mitre_deprecated": {
+         "@type": "xsd:boolean",
+         "@id": "x_mitre_deprecated"
+      },
+      "x_mitre_detection": {
+         "@id": "x_mitre_detection"
+      },
+      "x_mitre_domains": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_domains"
+      },
+      "x_mitre_effective_permissions": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_effective_permissions"
+      },
+      "x_mitre_first_seen_citation": {
+         "@id": "x_mitre_first_seen_citation"
+      },
+      "x_mitre_impact_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_impact_type"
+      },
+      "x_mitre_is_subtechnique": {
+         "@type": "xsd:boolean",
+         "@id": "x_mitre_is_subtechnique"
+      },
+      "x_mitre_last_seen_citation": {
+         "@id": "x_mitre_last_seen_citation"
+      },
+      "x_mitre_log_source_references": {
+         "@type": "@id",
+         "@id": "x_mitre_log_source_references"
+      },
+      "x_mitre_log_sources": {
+         "@type": "@id",
+         "@id": "x_mitre_log_sources"
+      },
+      "x_mitre_modified_by_ref": {
+         "@id": "x_mitre_modified_by_ref"
+      },
+      "x_mitre_mutable_elements": {
+         "@type": "@id",
+         "@id": "x_mitre_mutable_elements"
+      },
+      "x_mitre_network_requirements": {
+         "@type": "xsd:boolean",
+         "@id": "x_mitre_network_requirements"
+      },
+      "x_mitre_old_attack_id": {
+         "@id": "x_mitre_old_attack_id"
+      },
+      "x_mitre_permissions_required": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_permissions_required"
+      },
+      "x_mitre_platforms": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_platforms"
+      },
+      "x_mitre_related_assets": {
+         "@type": "@id",
+         "@id": "x_mitre_related_assets"
+      },
+      "x_mitre_remote_support": {
+         "@type": "xsd:boolean",
+         "@id": "x_mitre_remote_support"
+      },
+      "x_mitre_sectors": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_sectors"
+      },
+      "x_mitre_shortname": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_shortname"
+      },
+      "x_mitre_system_requirements": {
+         "@id": "x_mitre_system_requirements"
+      },
+      "x_mitre_tactic_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "x_mitre_tactic_type"
+      },
+      "x_mitre_version": {
+         "@id": "x_mitre_version"
+      },
+      "AlternateDataStreamType": {
+         "@id": "stix:AlternateDataStreamType"
+      },
+      "Analytic": {
+         "@id": "Analytic"
+      },
+      "ArchiveExt": {
+         "@id": "stix:ArchiveExt"
+      },
+      "Artifact": {
+         "@id": "stix:Artifact"
+      },
+      "Asset": {
+         "@id": "Asset"
+      },
+      "AttackBundle": {
+         "@id": "AttackBundle"
+      },
+      "AttackCampaign": {
+         "@id": "AttackCampaign"
+      },
+      "AttackIdentity": {
+         "@id": "AttackIdentity"
+      },
+      "AttackKillChainPhase": {
+         "@id": "AttackKillChainPhase"
+      },
+      "AttackMalware": {
+         "@id": "AttackMalware"
+      },
+      "AttackMarkingDefinition": {
+         "@id": "AttackMarkingDefinition"
+      },
+      "AttackObject": {
+         "@id": "AttackObject"
+      },
+      "AttackPattern": {
+         "@id": "stix:AttackPattern"
+      },
+      "AttackRelationship": {
+         "@id": "AttackRelationship"
+      },
+      "AttackSoftware": {
+         "@id": "AttackSoftware"
+      },
+      "AttackTool": {
+         "@id": "AttackTool"
+      },
+      "AutonomousSystem": {
+         "@id": "stix:AutonomousSystem"
+      },
+      "Bundle": {
+         "@id": "stix:Bundle"
+      },
+      "Campaign": {
+         "@id": "stix:Campaign"
+      },
+      "Collection": {
+         "@id": "Collection"
+      },
+      "CommonSchemaComponent": {
+         "@id": "stix:CommonSchemaComponent"
+      },
+      "Core": {
+         "@id": "stix:Core"
+      },
+      "CourseOfAction": {
+         "@id": "stix:CourseOfAction"
+      },
+      "CyberObservableCore": {
+         "@id": "stix:CyberObservableCore"
+      },
+      "CyberObservableObject": {
+         "@id": "stix:CyberObservableObject"
+      },
+      "DataComponent": {
+         "@id": "DataComponent"
+      },
+      "DataSource": {
+         "@id": "DataSource"
+      },
+      "DetectionStrategy": {
+         "@id": "DetectionStrategy"
+      },
+      "Dictionary": {
+         "@id": "stix:Dictionary"
+      },
+      "Directory": {
+         "@id": "stix:Directory"
+      },
+      "DomainName": {
+         "@id": "stix:DomainName"
+      },
+      "EmailAddr": {
+         "@id": "stix:EmailAddr"
+      },
+      "EmailMessage": {
+         "@id": "stix:EmailMessage"
+      },
+      "Extension": {
+         "@id": "stix:Extension"
+      },
+      "ExtensionDefinition": {
+         "@id": "stix:ExtensionDefinition"
+      },
+      "ExternalReference": {
+         "@id": "stix:ExternalReference"
+      },
+      "File": {
+         "@id": "stix:File"
+      },
+      "GranularMarking": {
+         "@id": "stix:GranularMarking"
+      },
+      "Group": {
+         "@id": "Group"
+      },
+      "Grouping": {
+         "@id": "stix:Grouping"
+      },
+      "HashesType": {
+         "@id": "stix:HashesType"
+      },
+      "Hex": {
+         "@id": "stix:Hex"
+      },
+      "HttpRequestExt": {
+         "@id": "stix:HttpRequestExt"
+      },
+      "IcmpExt": {
+         "@id": "stix:IcmpExt"
+      },
+      "Identifier": {
+         "@id": "stix:Identifier"
+      },
+      "Identity": {
+         "@id": "stix:Identity"
+      },
+      "Incident": {
+         "@id": "stix:Incident"
+      },
+      "Indicator": {
+         "@id": "stix:Indicator"
+      },
+      "Infrastructure": {
+         "@id": "stix:Infrastructure"
+      },
+      "IntrusionSet": {
+         "@id": "stix:IntrusionSet"
+      },
+      "Ipv4Addr": {
+         "@id": "stix:Ipv4Addr"
+      },
+      "Ipv6Addr": {
+         "@id": "stix:Ipv6Addr"
+      },
+      "KillChainPhase": {
+         "@id": "stix:KillChainPhase"
+      },
+      "LanguageContent": {
+         "@id": "stix:LanguageContent"
+      },
+      "Location": {
+         "@id": "stix:Location"
+      },
+      "LogSource": {
+         "@id": "LogSource"
+      },
+      "LogSourceReference": {
+         "@id": "LogSourceReference"
+      },
+      "MacAddr": {
+         "@id": "stix:MacAddr"
+      },
+      "Malware": {
+         "@id": "stix:Malware"
+      },
+      "MalwareAnalysis": {
+         "@id": "stix:MalwareAnalysis"
+      },
+      "MarkingDefinition": {
+         "@id": "stix:MarkingDefinition"
+      },
+      "Matrix": {
+         "@id": "Matrix"
+      },
+      "MimePartType": {
+         "@id": "stix:MimePartType"
+      },
+      "Mitigation": {
+         "@id": "Mitigation"
+      },
+      "MutableElement": {
+         "@id": "MutableElement"
+      },
+      "Mutex": {
+         "@id": "stix:Mutex"
+      },
+      "NetworkTraffic": {
+         "@id": "stix:NetworkTraffic"
+      },
+      "Note": {
+         "@id": "stix:Note"
+      },
+      "NtfsExt": {
+         "@id": "stix:NtfsExt"
+      },
+      "ObjectVersionReference": {
+         "@id": "ObjectVersionReference"
+      },
+      "ObservedData": {
+         "@id": "stix:ObservedData"
+      },
+      "Opinion": {
+         "@id": "stix:Opinion"
+      },
+      "PdfExt": {
+         "@id": "stix:PdfExt"
+      },
+      "PEBinaryExt": {
+         "@id": "stix:PEBinaryExt"
+      },
+      "Process": {
+         "@id": "stix:Process"
+      },
+      "Properties": {
+         "@id": "stix:Properties"
+      },
+      "RasterImageExt": {
+         "@id": "stix:RasterImageExt"
+      },
+      "RelatedAsset": {
+         "@id": "RelatedAsset"
+      },
+      "Relationship": {
+         "@id": "stix:Relationship"
+      },
+      "Report": {
+         "@id": "stix:Report"
+      },
+      "Sighting": {
+         "@id": "stix:Sighting"
+      },
+      "SocketExt": {
+         "@id": "stix:SocketExt"
+      },
+      "Software": {
+         "@id": "stix:Software"
+      },
+      "StatementMarkingObject": {
+         "@id": "StatementMarkingObject"
+      },
+      "StixDomainObject": {
+         "@id": "stix:StixDomainObject"
+      },
+      "StixEntity": {
+         "@id": "stix:StixEntity"
+      },
+      "StixRelationshipObject": {
+         "@id": "stix:StixRelationshipObject"
+      },
+      "Tactic": {
+         "@id": "Tactic"
+      },
+      "TcpExt": {
+         "@id": "stix:TcpExt"
+      },
+      "Technique": {
+         "@id": "Technique"
+      },
+      "ThreatActor": {
+         "@id": "stix:ThreatActor"
+      },
+      "Timestamp": {
+         "@id": "stix:Timestamp"
+      },
+      "TlpMarkingObject": {
+         "@id": "TlpMarkingObject"
+      },
+      "Tool": {
+         "@id": "stix:Tool"
+      },
+      "UnixAccountExt": {
+         "@id": "stix:UnixAccountExt"
+      },
+      "Url": {
+         "@id": "stix:Url"
+      },
+      "UrlRegex": {
+         "@id": "stix:UrlRegex"
+      },
+      "UserAccount": {
+         "@id": "stix:UserAccount"
+      },
+      "Vulnerability": {
+         "@id": "stix:Vulnerability"
+      },
+      "WindowsPEOptionalHeaderType": {
+         "@id": "stix:WindowsPEOptionalHeaderType"
+      },
+      "WindowsPESection": {
+         "@id": "stix:WindowsPESection"
+      },
+      "WindowsProcessExt": {
+         "@id": "stix:WindowsProcessExt"
+      },
+      "WindowsRegistryKey": {
+         "@id": "stix:WindowsRegistryKey"
+      },
+      "WindowsRegistryValue": {
+         "@id": "stix:WindowsRegistryValue"
+      },
+      "WindowsServiceExt": {
+         "@id": "stix:WindowsServiceExt"
+      },
+      "X509Certificate": {
+         "@id": "stix:X509Certificate"
+      },
+      "X509V3ExtensionsType": {
+         "@id": "stix:X509V3ExtensionsType"
+      }
+   }
+}

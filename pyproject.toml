@@ -16,6 +16,7 @@ dynamic = ["version"]
 
 dependencies = [
   "linkml-runtime >=1.9.4",
+  "yamllint>=1.37.1",
 ]
 
 [dependency-groups]

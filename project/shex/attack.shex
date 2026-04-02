@@ -1,0 +1,1975 @@
+# metamodel_version: 1.7.0
+BASE <https://w3id.org/lmodel/attack/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX stix: <https://w3id.org/lmodel/stix/>
+
+
+<AttackVersionString> xsd:string
+
+<SemverString> xsd:string
+
+<CitationString> xsd:string
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:time
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:DateOrDatetime linkml:DateOrDatetime
+
+linkml:Uriorcurie IRI
+
+linkml:Curie xsd:string
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+linkml:Jsonpointer xsd:string
+
+linkml:Jsonpath xsd:string
+
+linkml:Sparqlpath xsd:string
+
+stix:StixIdentifier xsd:string
+
+stix:StixTypeName xsd:string
+
+stix:AlternateDataStreamType CLOSED {
+    (  $stix:AlternateDataStreamType_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:ads_name @linkml:String ;
+          stix:ads_size @linkml:Integer ? ;
+          stix:ads_hashes @stix:HashesType ?
+       ) ;
+       rdf:type [ stix:AlternateDataStreamType ] ?
+    )
+}
+
+<Analytic> CLOSED {
+    (  $<Analytic_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_platforms> [ <https://w3id.org/lmodel/attack/AttackPlatformEnum#Windows>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Linux> <https://w3id.org/lmodel/attack/AttackPlatformEnum#macOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Android> <https://w3id.org/lmodel/attack/AttackPlatformEnum#iOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Azure%20AD>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Google%20Workspace>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Office%20Suite>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#SaaS> <https://w3id.org/lmodel/attack/AttackPlatformEnum#IaaS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Containers>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#ESXi>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Identity%20Provider>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Network%20Devices>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#PRE> <https://w3id.org/lmodel/attack/AttackPlatformEnum#None>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Field%20Controller/RTU/PLC/IED>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Data%20Historian>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Engineering%20Workstation>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Control%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Human-Machine%20Interface>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Input/Output%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Safety%20Instrumented%20System/Protection%20Relay>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Embedded> ] * ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ? ;
+          <x_mitre_log_source_references> @<LogSourceReference> * ;
+          <x_mitre_mutable_elements> @<MutableElement> * ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier +
+       ) ;
+       rdf:type [ <Analytic> ] ?
+    )
+}
+
+stix:ArchiveExt CLOSED {
+    (  $stix:ArchiveExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:contains_refs @stix:StixIdentifier + ;
+          stix:comment @linkml:String ?
+       ) ;
+       rdf:type [ stix:ArchiveExt ] ?
+    )
+}
+
+stix:Artifact CLOSED {
+    (  $stix:Artifact_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:mime_type @linkml:String ? ;
+          stix:payload_bin @linkml:String ? ;
+          stix:url @linkml:Uriorcurie ? ;
+          stix:hashes @stix:HashesType ? ;
+          stix:encryption_algorithm @linkml:String ? ;
+          stix:decryption_key @linkml:String ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Artifact ] ?
+    )
+}
+
+<Asset> CLOSED {
+    (  $<Asset_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_platforms> [ <https://w3id.org/lmodel/attack/AttackPlatformEnum#Windows>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Linux> <https://w3id.org/lmodel/attack/AttackPlatformEnum#macOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Android> <https://w3id.org/lmodel/attack/AttackPlatformEnum#iOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Azure%20AD>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Google%20Workspace>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Office%20Suite>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#SaaS> <https://w3id.org/lmodel/attack/AttackPlatformEnum#IaaS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Containers>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#ESXi>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Identity%20Provider>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Network%20Devices>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#PRE> <https://w3id.org/lmodel/attack/AttackPlatformEnum#None>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Field%20Controller/RTU/PLC/IED>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Data%20Historian>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Engineering%20Workstation>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Control%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Human-Machine%20Interface>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Input/Output%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Safety%20Instrumented%20System/Protection%20Relay>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Embedded> ] * ;
+          <x_mitre_contributors> @linkml:String * ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ? ;
+          <x_mitre_sectors> [ <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Electric>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Water%20and%20Wastewater>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Manufacturing>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Rail>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Maritime>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#General> ] * ;
+          <x_mitre_related_assets> @<RelatedAsset> * ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ? ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier +
+       ) ;
+       rdf:type [ <Asset> ] ?
+    )
+}
+
+<AttackBundle> CLOSED {
+    (  $<AttackBundle_tes> (  &stix:Bundle_tes ;
+          rdf:type [ stix:Bundle ] ? ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:bundle_objects @stix:StixEntity +
+       ) ;
+       rdf:type [ <AttackBundle> ] ?
+    )
+}
+
+<AttackCampaign> CLOSED {
+    (  $<AttackCampaign_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_contributors> @linkml:String * ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          <x_mitre_first_seen_citation> @<CitationString> ;
+          <x_mitre_last_seen_citation> @<CitationString> ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier + ;
+          stix:revoked @linkml:Boolean ;
+          stix:aliases @linkml:String + ;
+          stix:first_seen @linkml:Datetime ;
+          stix:last_seen @linkml:Datetime
+       ) ;
+       rdf:type [ <AttackCampaign> ] ?
+    )
+}
+
+<AttackIdentity> CLOSED {
+    (  $<AttackIdentity_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:object_marking_refs @stix:StixIdentifier + ;
+          stix:identity_class @linkml:String ;
+          <x_mitre_version> @<AttackVersionString> ;
+          stix:description @linkml:String ? ;
+          stix:roles @linkml:String * ;
+          stix:sectors @linkml:String * ;
+          stix:contact_information @linkml:String ?
+       ) ;
+       rdf:type [ <AttackIdentity> ] ?
+    )
+}
+
+<AttackKillChainPhase> CLOSED {
+    (  $<AttackKillChainPhase_tes> (  &stix:KillChainPhase_tes ;
+          rdf:type [ stix:KillChainPhase ] ? ;
+          stix:kill_chain_name [ <https://w3id.org/lmodel/attack/KillChainNameEnum#mitre-attack>
+             <https://w3id.org/lmodel/attack/KillChainNameEnum#mitre-mobile-attack>
+             <https://w3id.org/lmodel/attack/KillChainNameEnum#mitre-ics-attack> ] ;
+          stix:phase_name @linkml:String
+       ) ;
+       rdf:type [ <AttackKillChainPhase> ] ?
+    )
+}
+
+<AttackMalware> CLOSED {
+    (  $<AttackMalware_tes> (  &<AttackSoftware_tes> ;
+          rdf:type [ <AttackSoftware> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_platforms> [ <https://w3id.org/lmodel/attack/AttackPlatformEnum#Windows>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Linux> <https://w3id.org/lmodel/attack/AttackPlatformEnum#macOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Android> <https://w3id.org/lmodel/attack/AttackPlatformEnum#iOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Azure%20AD>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Google%20Workspace>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Office%20Suite>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#SaaS> <https://w3id.org/lmodel/attack/AttackPlatformEnum#IaaS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Containers>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#ESXi>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Identity%20Provider>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Network%20Devices>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#PRE> <https://w3id.org/lmodel/attack/AttackPlatformEnum#None>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Field%20Controller/RTU/PLC/IED>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Data%20Historian>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Engineering%20Workstation>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Control%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Human-Machine%20Interface>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Input/Output%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Safety%20Instrumented%20System/Protection%20Relay>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Embedded> ] * ;
+          <x_mitre_contributors> @linkml:String * ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          <x_mitre_aliases> @linkml:String * ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:is_family @linkml:Boolean ;
+          stix:aliases @linkml:String * ;
+          stix:malware_types @linkml:String * ;
+          stix:kill_chain_phases @<AttackKillChainPhase> * ;
+          stix:first_seen @linkml:Datetime ? ;
+          stix:last_seen @linkml:Datetime ? ;
+          stix:architecture_execution_envs @linkml:String * ;
+          stix:implementation_languages @linkml:String * ;
+          stix:capabilities @linkml:String *
+       ) ;
+       rdf:type [ <AttackMalware> ] ?
+    )
+}
+
+<AttackMarkingDefinition> CLOSED {
+    (  $<AttackMarkingDefinition_tes> (  &stix:MarkingDefinition_tes ;
+          rdf:type [ stix:MarkingDefinition ] ? ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:spec_version [ <https://w3id.org/lmodel/stix/SpecVersionEnum#2.0> <https://w3id.org/lmodel/stix/SpecVersionEnum#2.1>
+             ] ;
+          stix:created @linkml:Datetime ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:definition_type [ <https://w3id.org/lmodel/attack/MarkingDefinitionTypeEnum#tlp>
+             <https://w3id.org/lmodel/attack/MarkingDefinitionTypeEnum#statement> ] ;
+          stix:definition @linkml:String ;
+          stix:name @linkml:String ? ;
+          <x_mitre_attack_spec_version> @<SemverString> ;
+          <x_mitre_version> @<AttackVersionString> ;
+          <x_mitre_deprecated> @linkml:Boolean ?
+       ) ;
+       rdf:type [ <AttackMarkingDefinition> ] ?
+    )
+}
+
+<AttackObject>  (
+    @<Analytic> OR @<Asset> OR @<AttackCampaign> OR @<AttackIdentity> OR @<AttackRelationship> OR @<AttackSoftware> OR
+    @<Collection> OR @<DataComponent> OR @<DataSource> OR @<DetectionStrategy> OR @<Group> OR @<Matrix> OR @<Mitigation> OR
+    @<Tactic> OR @<Technique>
+)
+
+<AttackObject_struct> {
+    (  $<AttackObject_tes> (  &stix:Core_tes ;
+          rdf:type [ stix:Core ] ? ;
+          <x_mitre_attack_spec_version> @<SemverString> ;
+          <x_mitre_version> @<AttackVersionString> ;
+          <x_mitre_deprecated> @linkml:Boolean ? ;
+          <x_mitre_old_attack_id> @linkml:String ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:spec_version [ <https://w3id.org/lmodel/stix/SpecVersionEnum#2.0> <https://w3id.org/lmodel/stix/SpecVersionEnum#2.1>
+             ] ;
+          stix:name @linkml:String ;
+          stix:created @linkml:Datetime ;
+          stix:modified @linkml:Datetime ;
+          stix:created_by_ref @stix:StixIdentifier ?
+       ) ;
+       rdf:type [ <AttackObject> ] ?
+    )
+}
+
+stix:AttackPattern CLOSED {
+    (  $stix:AttackPattern_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:aliases @linkml:String * ;
+          stix:kill_chain_phases @stix:KillChainPhase * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:AttackPattern ] ?
+    )
+}
+
+<AttackRelationship> CLOSED {
+    (  $<AttackRelationship_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:relationship_type [ <https://w3id.org/lmodel/attack/AttackRelationshipTypeEnum#uses>
+             <https://w3id.org/lmodel/attack/AttackRelationshipTypeEnum#mitigates>
+             <https://w3id.org/lmodel/attack/AttackRelationshipTypeEnum#subtechnique-of>
+             <https://w3id.org/lmodel/attack/AttackRelationshipTypeEnum#detects>
+             <https://w3id.org/lmodel/attack/AttackRelationshipTypeEnum#attributed-to>
+             <https://w3id.org/lmodel/attack/AttackRelationshipTypeEnum#targets>
+             <https://w3id.org/lmodel/attack/AttackRelationshipTypeEnum#revoked-by> ] ;
+          stix:source_ref @stix:StixIdentifier ;
+          stix:target_ref @stix:StixIdentifier ;
+          stix:description @linkml:String ? ;
+          stix:name @linkml:String ? ;
+          <x_mitre_version> @<AttackVersionString>
+       ) ;
+       rdf:type [ <AttackRelationship> ] ?
+    )
+}
+
+<AttackSoftware>  (
+    @<AttackMalware> OR @<AttackTool>
+)
+
+<AttackSoftware_struct> {
+    (  $<AttackSoftware_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ?
+       ) ;
+       rdf:type [ <AttackSoftware> ] ?
+    )
+}
+
+<AttackTool> CLOSED {
+    (  $<AttackTool_tes> (  &<AttackSoftware_tes> ;
+          rdf:type [ <AttackSoftware> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_platforms> [ <https://w3id.org/lmodel/attack/AttackPlatformEnum#Windows>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Linux> <https://w3id.org/lmodel/attack/AttackPlatformEnum#macOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Android> <https://w3id.org/lmodel/attack/AttackPlatformEnum#iOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Azure%20AD>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Google%20Workspace>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Office%20Suite>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#SaaS> <https://w3id.org/lmodel/attack/AttackPlatformEnum#IaaS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Containers>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#ESXi>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Identity%20Provider>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Network%20Devices>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#PRE> <https://w3id.org/lmodel/attack/AttackPlatformEnum#None>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Field%20Controller/RTU/PLC/IED>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Data%20Historian>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Engineering%20Workstation>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Control%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Human-Machine%20Interface>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Input/Output%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Safety%20Instrumented%20System/Protection%20Relay>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Embedded> ] * ;
+          <x_mitre_contributors> @linkml:String * ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          <x_mitre_aliases> @linkml:String * ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:aliases @linkml:String * ;
+          stix:tool_types @linkml:String * ;
+          stix:tool_version @linkml:String ? ;
+          stix:kill_chain_phases @<AttackKillChainPhase> *
+       ) ;
+       rdf:type [ <AttackTool> ] ?
+    )
+}
+
+stix:AutonomousSystem CLOSED {
+    (  $stix:AutonomousSystem_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:number @linkml:Integer ;
+          stix:rir @linkml:String ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:AutonomousSystem ] ?
+    )
+}
+
+stix:Bundle  (
+    CLOSED {
+       (  $stix:Bundle_tes (  &stix:CommonSchemaComponent_tes ;
+             rdf:type [ stix:CommonSchemaComponent ] ? ;
+             stix:type @stix:StixTypeName ;
+             stix:id @stix:StixIdentifier ;
+             stix:bundle_objects @stix:StixEntity *
+          ) ;
+          rdf:type [ stix:Bundle ] ?
+       )
+    } OR @<AttackBundle>
+)
+
+stix:Campaign CLOSED {
+    (  $stix:Campaign_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:aliases @linkml:String * ;
+          stix:first_seen @linkml:Datetime ? ;
+          stix:last_seen @linkml:Datetime ? ;
+          stix:objective @linkml:String ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:Campaign ] ?
+    )
+}
+
+<Collection> CLOSED {
+    (  $<Collection_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ? ;
+          <x_mitre_contents> @<ObjectVersionReference> + ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier +
+       ) ;
+       rdf:type [ <Collection> ] ?
+    )
+}
+
+stix:CommonSchemaComponent  (
+    @stix:AlternateDataStreamType OR @stix:ArchiveExt OR @stix:Bundle OR @stix:Core OR @stix:CyberObservableCore OR
+    @stix:Dictionary OR @stix:Extension OR @stix:ExternalReference OR @stix:GranularMarking OR @stix:HashesType OR @stix:Hex OR
+    @stix:HttpRequestExt OR @stix:IcmpExt OR @stix:Identifier OR @stix:KillChainPhase OR @stix:MarkingDefinition OR
+    @stix:MimePartType OR @stix:NtfsExt OR @stix:PEBinaryExt OR @stix:PdfExt OR @stix:Properties OR @stix:RasterImageExt OR
+    @stix:SocketExt OR @stix:TcpExt OR @stix:Timestamp OR @stix:UnixAccountExt OR @stix:UrlRegex OR
+    @stix:WindowsPEOptionalHeaderType OR @stix:WindowsPESection OR @stix:WindowsProcessExt OR @stix:WindowsRegistryValue OR
+    @stix:WindowsServiceExt OR @stix:X509V3ExtensionsType
+)
+
+stix:CommonSchemaComponent_struct {
+    (  $stix:CommonSchemaComponent_tes (  &stix:StixEntity_tes ;
+          rdf:type [ stix:StixEntity ] ?
+       ) ;
+       rdf:type [ stix:CommonSchemaComponent ] ?
+    )
+}
+
+stix:Core  (
+    @<AttackObject> OR @stix:ExtensionDefinition OR @stix:LanguageContent OR @stix:StixDomainObject OR @stix:StixRelationshipObject
+)
+
+stix:Core_struct {
+    (  $stix:Core_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:type @stix:StixTypeName ;
+          stix:spec_version [ <https://w3id.org/lmodel/stix/SpecVersionEnum#2.0> <https://w3id.org/lmodel/stix/SpecVersionEnum#2.1>
+             ] ;
+          stix:id @stix:StixIdentifier ;
+          stix:created @linkml:Datetime ;
+          stix:modified @linkml:Datetime ;
+          stix:created_by_ref @stix:StixIdentifier ? ;
+          stix:labels @linkml:String * ;
+          stix:revoked @linkml:Boolean ? ;
+          stix:confidence @linkml:Integer ? ;
+          stix:lang @linkml:String ? ;
+          stix:external_references @stix:ExternalReference * ;
+          stix:object_marking_refs @stix:StixIdentifier * ;
+          stix:granular_markings @stix:GranularMarking * ;
+          stix:extensions @linkml:String *
+       ) ;
+       rdf:type [ stix:Core ] ?
+    )
+}
+
+stix:CourseOfAction CLOSED {
+    (  $stix:CourseOfAction_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:CourseOfAction ] ?
+    )
+}
+
+stix:CyberObservableCore  (
+    {
+       (  $stix:CyberObservableCore_tes (  &stix:CommonSchemaComponent_tes ;
+             rdf:type [ stix:CommonSchemaComponent ] ? ;
+             stix:type @stix:StixTypeName ;
+             stix:spec_version [ <https://w3id.org/lmodel/stix/SpecVersionEnum#2.0>
+                <https://w3id.org/lmodel/stix/SpecVersionEnum#2.1> ] ? ;
+             stix:id @stix:StixIdentifier ;
+             stix:object_marking_refs @stix:StixIdentifier * ;
+             stix:granular_markings @stix:GranularMarking * ;
+             stix:defanged @linkml:Boolean ? ;
+             stix:extensions @linkml:String *
+          ) ;
+          rdf:type [ stix:CyberObservableCore ] ?
+       )
+    } OR @stix:CyberObservableObject
+)
+
+stix:CyberObservableObject  (
+    @stix:Artifact OR @stix:AutonomousSystem OR @stix:Directory OR @stix:DomainName OR @stix:EmailAddr OR @stix:EmailMessage OR
+    @stix:File OR @stix:Ipv4Addr OR @stix:Ipv6Addr OR @stix:MacAddr OR @stix:Mutex OR @stix:NetworkTraffic OR @stix:Process OR
+    @stix:Software OR @stix:Url OR @stix:UserAccount OR @stix:WindowsRegistryKey OR @stix:X509Certificate
+)
+
+stix:CyberObservableObject_struct {
+    (  $stix:CyberObservableObject_tes (  &stix:CyberObservableCore_tes ;
+          rdf:type [ stix:CyberObservableCore ] ?
+       ) ;
+       rdf:type [ stix:CyberObservableObject ] ?
+    )
+}
+
+<DataComponent> CLOSED {
+    (  $<DataComponent_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          <x_mitre_data_source_ref> @stix:StixIdentifier ? ;
+          <x_mitre_log_sources> @<LogSource> * ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier +
+       ) ;
+       rdf:type [ <DataComponent> ] ?
+    )
+}
+
+<DataSource> CLOSED {
+    (  $<DataSource_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_platforms> [ <https://w3id.org/lmodel/attack/AttackPlatformEnum#Windows>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Linux> <https://w3id.org/lmodel/attack/AttackPlatformEnum#macOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Android> <https://w3id.org/lmodel/attack/AttackPlatformEnum#iOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Azure%20AD>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Google%20Workspace>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Office%20Suite>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#SaaS> <https://w3id.org/lmodel/attack/AttackPlatformEnum#IaaS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Containers>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#ESXi>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Identity%20Provider>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Network%20Devices>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#PRE> <https://w3id.org/lmodel/attack/AttackPlatformEnum#None>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Field%20Controller/RTU/PLC/IED>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Data%20Historian>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Engineering%20Workstation>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Control%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Human-Machine%20Interface>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Input/Output%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Safety%20Instrumented%20System/Protection%20Relay>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Embedded> ] * ;
+          <x_mitre_contributors> @linkml:String * ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          <x_mitre_collection_layers> [ <https://w3id.org/lmodel/attack/AttackCollectionLayerEnum#Cloud%20Control%20Plane>
+             <https://w3id.org/lmodel/attack/AttackCollectionLayerEnum#Host>
+             <https://w3id.org/lmodel/attack/AttackCollectionLayerEnum#Container>
+             <https://w3id.org/lmodel/attack/AttackCollectionLayerEnum#Network>
+             <https://w3id.org/lmodel/attack/AttackCollectionLayerEnum#Device>
+             <https://w3id.org/lmodel/attack/AttackCollectionLayerEnum#OSINT>
+             <https://w3id.org/lmodel/attack/AttackCollectionLayerEnum#Report> ] + ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier +
+       ) ;
+       rdf:type [ <DataSource> ] ?
+    )
+}
+
+<DetectionStrategy> CLOSED {
+    (  $<DetectionStrategy_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          <x_mitre_contributors> @linkml:String + ;
+          <x_mitre_analytic_refs> @stix:StixIdentifier + ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier +
+       ) ;
+       rdf:type [ <DetectionStrategy> ] ?
+    )
+}
+
+stix:Dictionary CLOSED {
+    (  $stix:Dictionary_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ?
+       ) ;
+       rdf:type [ stix:Dictionary ] ?
+    )
+}
+
+stix:Directory CLOSED {
+    (  $stix:Directory_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:path @linkml:String ;
+          stix:path_enc @linkml:String ? ;
+          stix:ctime @linkml:Datetime ? ;
+          stix:mtime @linkml:Datetime ? ;
+          stix:atime @linkml:Datetime ? ;
+          stix:contains_refs @stix:StixIdentifier * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Directory ] ?
+    )
+}
+
+stix:DomainName CLOSED {
+    (  $stix:DomainName_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:value @linkml:String ;
+          stix:resolves_to_refs @stix:StixIdentifier * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:DomainName ] ?
+    )
+}
+
+stix:EmailAddr CLOSED {
+    (  $stix:EmailAddr_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:value @linkml:String ;
+          stix:display_name @linkml:String ? ;
+          stix:belongs_to_ref @stix:StixIdentifier ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:EmailAddr ] ?
+    )
+}
+
+stix:EmailMessage CLOSED {
+    (  $stix:EmailMessage_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:email_date @linkml:Datetime ? ;
+          stix:content_type @linkml:String ? ;
+          stix:from_ref @stix:StixIdentifier ? ;
+          stix:sender_ref @stix:StixIdentifier ? ;
+          stix:to_refs @stix:StixIdentifier * ;
+          stix:cc_refs @stix:StixIdentifier * ;
+          stix:bcc_refs @stix:StixIdentifier * ;
+          stix:message_id @linkml:String ? ;
+          stix:subject @linkml:String ? ;
+          stix:received_lines @linkml:String * ;
+          stix:additional_header_fields @linkml:String ? ;
+          stix:raw_email_ref @stix:StixIdentifier ? ;
+          stix:is_multipart @linkml:Boolean ? ;
+          stix:body @linkml:String ? ;
+          stix:body_multipart @stix:MimePartType * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:EmailMessage ] ?
+    )
+}
+
+stix:Extension CLOSED {
+    (  $stix:Extension_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:extension_type [ <https://w3id.org/lmodel/stix/ExtensionTypeEnum#new-sdo>
+             <https://w3id.org/lmodel/stix/ExtensionTypeEnum#new-sco> <https://w3id.org/lmodel/stix/ExtensionTypeEnum#new-sro>
+             <https://w3id.org/lmodel/stix/ExtensionTypeEnum#property-extension>
+             <https://w3id.org/lmodel/stix/ExtensionTypeEnum#toplevel-property-extension> ]
+       ) ;
+       rdf:type [ stix:Extension ] ?
+    )
+}
+
+stix:ExtensionDefinition CLOSED {
+    (  $stix:ExtensionDefinition_tes (  &stix:Core_tes ;
+          rdf:type [ stix:Core ] ? ;
+          stix:type @stix:StixTypeName ? ;
+          stix:id @stix:StixIdentifier ? ;
+          stix:name @linkml:String ;
+          stix:schema @linkml:String ;
+          stix:version @linkml:String ;
+          stix:extension_types [ <https://w3id.org/lmodel/stix/ExtensionTypeEnum#new-sdo>
+             <https://w3id.org/lmodel/stix/ExtensionTypeEnum#new-sco> <https://w3id.org/lmodel/stix/ExtensionTypeEnum#new-sro>
+             <https://w3id.org/lmodel/stix/ExtensionTypeEnum#property-extension>
+             <https://w3id.org/lmodel/stix/ExtensionTypeEnum#toplevel-property-extension> ] + ;
+          stix:extension_properties @linkml:String *
+       ) ;
+       rdf:type [ stix:ExtensionDefinition ] ?
+    )
+}
+
+stix:ExternalReference CLOSED {
+    (  $stix:ExternalReference_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:source_name @linkml:String ;
+          stix:url @linkml:Uriorcurie ? ;
+          stix:hashes @stix:HashesType ? ;
+          stix:external_id @linkml:String ?
+       ) ;
+       rdf:type [ stix:ExternalReference ] ?
+    )
+}
+
+stix:File CLOSED {
+    (  $stix:File_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:type @stix:StixTypeName ? ;
+          stix:id @stix:StixIdentifier ? ;
+          stix:hashes @stix:HashesType ? ;
+          stix:size @linkml:Integer ? ;
+          stix:name_enc @linkml:String ? ;
+          stix:magic_number_hex @linkml:String ? ;
+          stix:mime_type @linkml:String ? ;
+          stix:ctime @linkml:Datetime ? ;
+          stix:mtime @linkml:Datetime ? ;
+          stix:atime @linkml:Datetime ? ;
+          stix:parent_directory_ref @stix:StixIdentifier ? ;
+          stix:contains_refs @stix:StixIdentifier * ;
+          stix:content_ref @stix:StixIdentifier ?
+       ) ;
+       rdf:type [ stix:File ] ?
+    )
+}
+
+stix:GranularMarking CLOSED {
+    (  $stix:GranularMarking_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:marking_ref @stix:StixIdentifier ;
+          stix:selectors @linkml:String + ;
+          stix:lang @linkml:String ?
+       ) ;
+       rdf:type [ stix:GranularMarking ] ?
+    )
+}
+
+<Group> CLOSED {
+    (  $<Group_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_contributors> @linkml:String * ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ? ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ? ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:aliases @linkml:String * ;
+          stix:first_seen @linkml:Datetime ? ;
+          stix:last_seen @linkml:Datetime ? ;
+          stix:goals @linkml:String * ;
+          stix:resource_level @linkml:String ? ;
+          stix:primary_motivation @linkml:String ? ;
+          stix:secondary_motivations @linkml:String *
+       ) ;
+       rdf:type [ <Group> ] ?
+    )
+}
+
+stix:Grouping CLOSED {
+    (  $stix:Grouping_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:context @linkml:String ;
+          stix:object_refs @stix:StixIdentifier + ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Grouping ] ?
+    )
+}
+
+stix:HashesType CLOSED {
+    (  $stix:HashesType_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ?
+       ) ;
+       rdf:type [ stix:HashesType ] ?
+    )
+}
+
+stix:Hex CLOSED {
+    (  $stix:Hex_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ?
+       ) ;
+       rdf:type [ stix:Hex ] ?
+    )
+}
+
+stix:HttpRequestExt CLOSED {
+    (  $stix:HttpRequestExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:request_method @linkml:String ;
+          stix:request_value @linkml:String ;
+          stix:request_version @linkml:String ? ;
+          stix:request_header @linkml:String ? ;
+          stix:message_body_length @linkml:Integer ? ;
+          stix:message_body_data_ref @stix:StixIdentifier ?
+       ) ;
+       rdf:type [ stix:HttpRequestExt ] ?
+    )
+}
+
+stix:IcmpExt CLOSED {
+    (  $stix:IcmpExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:icmp_type_hex @linkml:String ;
+          stix:icmp_code_hex @linkml:String
+       ) ;
+       rdf:type [ stix:IcmpExt ] ?
+    )
+}
+
+stix:Identifier CLOSED {
+    (  $stix:Identifier_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ?
+       ) ;
+       rdf:type [ stix:Identifier ] ?
+    )
+}
+
+stix:Identity CLOSED {
+    (  $stix:Identity_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:roles @linkml:String * ;
+          stix:identity_class @linkml:String ? ;
+          stix:sectors @linkml:String * ;
+          stix:contact_information @linkml:String ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:Identity ] ?
+    )
+}
+
+stix:Incident CLOSED {
+    (  $stix:Incident_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:Incident ] ?
+    )
+}
+
+stix:Indicator CLOSED {
+    (  $stix:Indicator_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:indicator_types @linkml:String * ;
+          stix:pattern @linkml:String ;
+          stix:pattern_type @linkml:String ;
+          stix:pattern_version @linkml:String ? ;
+          stix:valid_from @linkml:Datetime ;
+          stix:valid_until @linkml:Datetime ? ;
+          stix:kill_chain_phases @stix:KillChainPhase * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Indicator ] ?
+    )
+}
+
+stix:Infrastructure CLOSED {
+    (  $stix:Infrastructure_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:infrastructure_types @linkml:String * ;
+          stix:aliases @linkml:String * ;
+          stix:kill_chain_phases @stix:KillChainPhase * ;
+          stix:first_seen @linkml:Datetime ? ;
+          stix:last_seen @linkml:Datetime ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:Infrastructure ] ?
+    )
+}
+
+stix:IntrusionSet CLOSED {
+    (  $stix:IntrusionSet_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:aliases @linkml:String * ;
+          stix:first_seen @linkml:Datetime ? ;
+          stix:last_seen @linkml:Datetime ? ;
+          stix:goals @linkml:String * ;
+          stix:resource_level @linkml:String ? ;
+          stix:primary_motivation @linkml:String ? ;
+          stix:secondary_motivations @linkml:String * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:IntrusionSet ] ?
+    )
+}
+
+stix:Ipv4Addr CLOSED {
+    (  $stix:Ipv4Addr_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:value @linkml:String ;
+          stix:resolves_to_refs @stix:StixIdentifier * ;
+          stix:belongs_to_refs @stix:StixIdentifier * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Ipv4Addr ] ?
+    )
+}
+
+stix:Ipv6Addr CLOSED {
+    (  $stix:Ipv6Addr_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:value @linkml:String ;
+          stix:resolves_to_refs @stix:StixIdentifier * ;
+          stix:belongs_to_refs @stix:StixIdentifier * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Ipv6Addr ] ?
+    )
+}
+
+stix:KillChainPhase  (
+    CLOSED {
+       (  $stix:KillChainPhase_tes (  &stix:CommonSchemaComponent_tes ;
+             rdf:type [ stix:CommonSchemaComponent ] ? ;
+             stix:kill_chain_name @linkml:String ;
+             stix:phase_name @linkml:String
+          ) ;
+          rdf:type [ stix:KillChainPhase ] ?
+       )
+    } OR @<AttackKillChainPhase>
+)
+
+stix:LanguageContent CLOSED {
+    (  $stix:LanguageContent_tes (  &stix:Core_tes ;
+          rdf:type [ stix:Core ] ? ;
+          stix:type @stix:StixTypeName ? ;
+          stix:id @stix:StixIdentifier ? ;
+          stix:object_ref @stix:StixIdentifier ;
+          stix:object_modified @linkml:Datetime ? ;
+          stix:contents @linkml:String
+       ) ;
+       rdf:type [ stix:LanguageContent ] ?
+    )
+}
+
+stix:Location CLOSED {
+    (  $stix:Location_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:latitude @linkml:Float ? ;
+          stix:longitude @linkml:Float ? ;
+          stix:precision @linkml:Float ? ;
+          stix:region @linkml:String ? ;
+          stix:country @linkml:String ? ;
+          stix:administrative_area @linkml:String ? ;
+          stix:city @linkml:String ? ;
+          stix:street_address @linkml:String ? ;
+          stix:postal_code @linkml:String ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Location ] ?
+    )
+}
+
+<LogSource> CLOSED {
+    (  $<LogSource_tes> (  <log_source_name> @linkml:String ;
+          <log_source_channel> @linkml:String
+       ) ;
+       rdf:type [ <LogSource> ] ?
+    )
+}
+
+<LogSourceReference> CLOSED {
+    (  $<LogSourceReference_tes> (  <x_mitre_data_component_ref> @stix:StixIdentifier ;
+          <log_source_name> @linkml:String ;
+          <log_source_channel> @linkml:String
+       ) ;
+       rdf:type [ <LogSourceReference> ] ?
+    )
+}
+
+stix:MacAddr CLOSED {
+    (  $stix:MacAddr_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:value @linkml:String ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:MacAddr ] ?
+    )
+}
+
+stix:Malware CLOSED {
+    (  $stix:Malware_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:aliases @linkml:String * ;
+          stix:first_seen @linkml:Datetime ? ;
+          stix:last_seen @linkml:Datetime ? ;
+          stix:operating_system_refs @stix:StixIdentifier * ;
+          stix:architecture_execution_envs @linkml:String * ;
+          stix:implementation_languages @linkml:String * ;
+          stix:capabilities @linkml:String * ;
+          stix:sample_refs @stix:StixIdentifier * ;
+          stix:malware_types @linkml:String * ;
+          stix:is_family @linkml:Boolean ;
+          stix:kill_chain_phases @stix:KillChainPhase * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Malware ] ?
+    )
+}
+
+stix:MalwareAnalysis CLOSED {
+    (  $stix:MalwareAnalysis_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:product @linkml:String ;
+          stix:version @linkml:String ? ;
+          stix:configuration_version @linkml:String ? ;
+          stix:modules @linkml:String * ;
+          stix:analysis_engine_version @linkml:String ? ;
+          stix:analysis_definition_version @linkml:String ? ;
+          stix:submitted @linkml:Datetime ? ;
+          stix:analysis_started @linkml:Datetime ? ;
+          stix:analysis_ended @linkml:Datetime ? ;
+          stix:result_name @linkml:String ? ;
+          stix:result @linkml:String ? ;
+          stix:host_vm_ref @stix:StixIdentifier ? ;
+          stix:operating_system_ref @stix:StixIdentifier ? ;
+          stix:installed_software_refs @stix:StixIdentifier * ;
+          stix:analysis_sco_refs @stix:StixIdentifier * ;
+          stix:sample_ref @stix:StixIdentifier ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:MalwareAnalysis ] ?
+    )
+}
+
+stix:MarkingDefinition  (
+    CLOSED {
+       (  $stix:MarkingDefinition_tes (  &stix:CommonSchemaComponent_tes ;
+             rdf:type [ stix:CommonSchemaComponent ] ? ;
+             stix:type @stix:StixTypeName ;
+             stix:spec_version [ <https://w3id.org/lmodel/stix/SpecVersionEnum#2.0>
+                <https://w3id.org/lmodel/stix/SpecVersionEnum#2.1> ] ;
+             stix:id @stix:StixIdentifier ;
+             stix:created_by_ref @stix:StixIdentifier ? ;
+             stix:created @linkml:Datetime ;
+             stix:external_references @stix:ExternalReference * ;
+             stix:object_marking_refs @stix:StixIdentifier * ;
+             stix:granular_markings @stix:GranularMarking * ;
+             stix:extensions @linkml:String * ;
+             stix:definition_type @linkml:String ? ;
+             stix:definition @linkml:String ? ;
+             stix:statement @linkml:String ?
+          ) ;
+          rdf:type [ stix:MarkingDefinition ] ?
+       )
+    } OR @<AttackMarkingDefinition>
+)
+
+<Matrix> CLOSED {
+    (  $<Matrix_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          <tactic_refs> @stix:StixIdentifier + ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier +
+       ) ;
+       rdf:type [ <Matrix> ] ?
+    )
+}
+
+stix:MimePartType CLOSED {
+    (  $stix:MimePartType_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:body @linkml:String ? ;
+          stix:body_raw_ref @stix:StixIdentifier ? ;
+          stix:content_type @linkml:String ? ;
+          stix:content_disposition @linkml:String ?
+       ) ;
+       rdf:type [ stix:MimePartType ] ?
+    )
+}
+
+<Mitigation> CLOSED {
+    (  $<Mitigation_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_contributors> @linkml:String * ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier +
+       ) ;
+       rdf:type [ <Mitigation> ] ?
+    )
+}
+
+<MutableElement> CLOSED {
+    (  $<MutableElement_tes> (  <mutable_field> @linkml:String ;
+          stix:description @linkml:String
+       ) ;
+       rdf:type [ <MutableElement> ] ?
+    )
+}
+
+stix:Mutex CLOSED {
+    (  $stix:Mutex_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:Mutex ] ?
+    )
+}
+
+stix:NetworkTraffic CLOSED {
+    (  $stix:NetworkTraffic_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:start @linkml:Datetime ? ;
+          stix:end @linkml:Datetime ? ;
+          stix:src_ref @stix:StixIdentifier ? ;
+          stix:dst_ref @stix:StixIdentifier ? ;
+          stix:src_port @linkml:Integer ? ;
+          stix:dst_port @linkml:Integer ? ;
+          stix:protocols @linkml:String + ;
+          stix:src_byte_count @linkml:Integer ? ;
+          stix:dst_byte_count @linkml:Integer ? ;
+          stix:src_packets @linkml:Integer ? ;
+          stix:dst_packets @linkml:Integer ? ;
+          stix:ipfix @linkml:String ? ;
+          stix:src_payload_ref @stix:StixIdentifier ? ;
+          stix:dst_payload_ref @stix:StixIdentifier ? ;
+          stix:encapsulates_refs @stix:StixIdentifier * ;
+          stix:encapsulated_by_ref @stix:StixIdentifier ? ;
+          stix:is_active @linkml:Boolean ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:NetworkTraffic ] ?
+    )
+}
+
+stix:Note CLOSED {
+    (  $stix:Note_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:abstract @linkml:String ? ;
+          stix:content @linkml:String ;
+          stix:authors @linkml:String * ;
+          stix:object_refs @stix:StixIdentifier + ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Note ] ?
+    )
+}
+
+stix:NtfsExt CLOSED {
+    (  $stix:NtfsExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:sid @linkml:String ? ;
+          stix:alternate_data_streams @stix:AlternateDataStreamType *
+       ) ;
+       rdf:type [ stix:NtfsExt ] ?
+    )
+}
+
+<ObjectVersionReference> CLOSED {
+    (  $<ObjectVersionReference_tes> (  stix:object_ref @stix:StixIdentifier ;
+          stix:object_modified @linkml:Datetime
+       ) ;
+       rdf:type [ <ObjectVersionReference> ] ?
+    )
+}
+
+stix:ObservedData CLOSED {
+    (  $stix:ObservedData_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:first_observed @linkml:Datetime ;
+          stix:last_observed @linkml:Datetime ;
+          stix:number_observed @linkml:Integer ;
+          stix:objects @stix:CyberObservableObject * ;
+          stix:object_refs @stix:StixIdentifier * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:ObservedData ] ?
+    )
+}
+
+stix:Opinion CLOSED {
+    (  $stix:Opinion_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:explanation @linkml:String ? ;
+          stix:authors @linkml:String * ;
+          stix:object_refs @stix:StixIdentifier + ;
+          stix:opinion [ <https://w3id.org/lmodel/stix/OpinionEnum#strongly-disagree>
+             <https://w3id.org/lmodel/stix/OpinionEnum#disagree> <https://w3id.org/lmodel/stix/OpinionEnum#neutral>
+             <https://w3id.org/lmodel/stix/OpinionEnum#agree> <https://w3id.org/lmodel/stix/OpinionEnum#strongly-agree> ] ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Opinion ] ?
+    )
+}
+
+stix:PdfExt CLOSED {
+    (  $stix:PdfExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:version @linkml:String ? ;
+          stix:is_optimized @linkml:Boolean ? ;
+          stix:document_info_dict @linkml:String ? ;
+          stix:pdfid0 @linkml:String ? ;
+          stix:pdfid1 @linkml:String ?
+       ) ;
+       rdf:type [ stix:PdfExt ] ?
+    )
+}
+
+stix:PEBinaryExt CLOSED {
+    (  $stix:PEBinaryExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:pe_type @linkml:String ;
+          stix:imphash @linkml:String ? ;
+          stix:machine_hex @linkml:String ? ;
+          stix:number_of_sections @linkml:Integer ? ;
+          stix:time_date_stamp @linkml:Datetime ? ;
+          stix:pointer_to_symbol_table_hex @linkml:String ? ;
+          stix:number_of_symbols @linkml:Integer ? ;
+          stix:size_of_optional_header @linkml:Integer ? ;
+          stix:characteristics_hex @linkml:String ? ;
+          stix:file_header_hashes @stix:HashesType ? ;
+          stix:optional_header @stix:WindowsPEOptionalHeaderType ? ;
+          stix:sections @stix:WindowsPESection *
+       ) ;
+       rdf:type [ stix:PEBinaryExt ] ?
+    )
+}
+
+stix:Process CLOSED {
+    (  $stix:Process_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:is_hidden @linkml:Boolean ? ;
+          stix:pid @linkml:Integer ? ;
+          stix:created_time @linkml:Datetime ? ;
+          stix:cwd @linkml:String ? ;
+          stix:command_line @linkml:String ? ;
+          stix:environment_variables @linkml:String ? ;
+          stix:opened_connection_refs @stix:StixIdentifier * ;
+          stix:creator_user_ref @stix:StixIdentifier ? ;
+          stix:image_ref @stix:StixIdentifier ? ;
+          stix:parent_ref @stix:StixIdentifier ? ;
+          stix:child_refs @stix:StixIdentifier * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Process ] ?
+    )
+}
+
+stix:Properties CLOSED {
+    (  $stix:Properties_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ?
+       ) ;
+       rdf:type [ stix:Properties ] ?
+    )
+}
+
+stix:RasterImageExt CLOSED {
+    (  $stix:RasterImageExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:image_height @linkml:Integer ? ;
+          stix:image_width @linkml:Integer ? ;
+          stix:bits_per_pixel @linkml:Integer ? ;
+          stix:exif_tags @linkml:String ?
+       ) ;
+       rdf:type [ stix:RasterImageExt ] ?
+    )
+}
+
+<RelatedAsset> CLOSED {
+    (  $<RelatedAsset_tes> (  stix:name @linkml:String ;
+          <related_asset_sectors> [ <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Electric>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Water%20and%20Wastewater>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Manufacturing>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Rail>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#Maritime>
+             <https://w3id.org/lmodel/attack/AttackAssetSectorEnum#General> ] * ;
+          stix:description @linkml:String ?
+       ) ;
+       rdf:type [ <RelatedAsset> ] ?
+    )
+}
+
+stix:Relationship CLOSED {
+    (  $stix:Relationship_tes (  &stix:StixRelationshipObject_tes ;
+          rdf:type [ stix:StixRelationshipObject ] ? ;
+          stix:relationship_type @linkml:String ;
+          stix:source_ref @stix:StixIdentifier ;
+          stix:target_ref @stix:StixIdentifier ;
+          stix:start_time @linkml:Datetime ? ;
+          stix:stop_time @linkml:Datetime ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Relationship ] ?
+    )
+}
+
+stix:Report CLOSED {
+    (  $stix:Report_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:report_types @linkml:String * ;
+          stix:published @linkml:Datetime ;
+          stix:object_refs @stix:StixIdentifier + ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:Report ] ?
+    )
+}
+
+stix:Sighting CLOSED {
+    (  $stix:Sighting_tes (  &stix:StixRelationshipObject_tes ;
+          rdf:type [ stix:StixRelationshipObject ] ? ;
+          stix:sighting_of_ref @stix:StixIdentifier ;
+          stix:observed_data_refs @stix:StixIdentifier * ;
+          stix:where_sighted_refs @stix:StixIdentifier * ;
+          stix:first_seen @linkml:Datetime ? ;
+          stix:last_seen @linkml:Datetime ? ;
+          stix:count @linkml:Integer ? ;
+          stix:summary @linkml:Boolean ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Sighting ] ?
+    )
+}
+
+stix:SocketExt CLOSED {
+    (  $stix:SocketExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:address_family [ <https://w3id.org/lmodel/stix/NetworkSocketAddressFamilyEnum#AF_UNSPEC>
+             <https://w3id.org/lmodel/stix/NetworkSocketAddressFamilyEnum#AF_INET>
+             <https://w3id.org/lmodel/stix/NetworkSocketAddressFamilyEnum#AF_IPX>
+             <https://w3id.org/lmodel/stix/NetworkSocketAddressFamilyEnum#AF_APPLETALK>
+             <https://w3id.org/lmodel/stix/NetworkSocketAddressFamilyEnum#AF_NETBIOS>
+             <https://w3id.org/lmodel/stix/NetworkSocketAddressFamilyEnum#AF_INET6>
+             <https://w3id.org/lmodel/stix/NetworkSocketAddressFamilyEnum#AF_IRDA>
+             <https://w3id.org/lmodel/stix/NetworkSocketAddressFamilyEnum#AF_BTH> ] ;
+          stix:is_blocking @linkml:Boolean ? ;
+          stix:is_listening @linkml:Boolean ? ;
+          stix:socket_options @linkml:String ? ;
+          stix:socket_type [ <https://w3id.org/lmodel/stix/NetworkSocketTypeEnum#SOCK_STREAM>
+             <https://w3id.org/lmodel/stix/NetworkSocketTypeEnum#SOCK_DGRAM>
+             <https://w3id.org/lmodel/stix/NetworkSocketTypeEnum#SOCK_RAW>
+             <https://w3id.org/lmodel/stix/NetworkSocketTypeEnum#SOCK_RDM>
+             <https://w3id.org/lmodel/stix/NetworkSocketTypeEnum#SOCK_SEQPACKET> ] ? ;
+          stix:socket_descriptor @linkml:Integer ? ;
+          stix:socket_handle @linkml:Integer ?
+       ) ;
+       rdf:type [ stix:SocketExt ] ?
+    )
+}
+
+stix:Software CLOSED {
+    (  $stix:Software_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:cpe @linkml:String ? ;
+          stix:swid @linkml:String ? ;
+          stix:languages @linkml:String * ;
+          stix:vendor @linkml:String ? ;
+          stix:version @linkml:String ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:Software ] ?
+    )
+}
+
+<StatementMarkingObject> CLOSED {
+    (  $<StatementMarkingObject_tes> stix:statement @linkml:String ;
+       rdf:type [ <StatementMarkingObject> ] ?
+    )
+}
+
+stix:StixDomainObject  (
+    @stix:AttackPattern OR @stix:Campaign OR @stix:CourseOfAction OR @stix:Grouping OR @stix:Identity OR @stix:Incident OR
+    @stix:Indicator OR @stix:Infrastructure OR @stix:IntrusionSet OR @stix:Location OR @stix:Malware OR @stix:MalwareAnalysis OR
+    @stix:Note OR @stix:ObservedData OR @stix:Opinion OR @stix:Report OR @stix:ThreatActor OR @stix:Tool OR @stix:Vulnerability
+)
+
+stix:StixDomainObject_struct {
+    (  $stix:StixDomainObject_tes (  &stix:Core_tes ;
+          rdf:type [ stix:Core ] ?
+       ) ;
+       rdf:type [ stix:StixDomainObject ] ?
+    )
+}
+
+stix:StixEntity  (
+    {
+       (  $stix:StixEntity_tes (  stix:id @stix:StixIdentifier ? ;
+             stix:type @stix:StixTypeName ? ;
+             stix:name @linkml:String ? ;
+             stix:description @linkml:String ?
+          ) ;
+          rdf:type [ stix:StixEntity ] ?
+       )
+    } OR @stix:CommonSchemaComponent
+)
+
+stix:StixRelationshipObject  (
+    @stix:Relationship OR @stix:Sighting
+)
+
+stix:StixRelationshipObject_struct {
+    (  $stix:StixRelationshipObject_tes (  &stix:Core_tes ;
+          rdf:type [ stix:Core ] ?
+       ) ;
+       rdf:type [ stix:StixRelationshipObject ] ?
+    )
+}
+
+<Tactic> CLOSED {
+    (  $<Tactic_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_shortname> [ <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#reconnaissance>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#resource-development>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#initial-access>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#execution>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#persistence>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#privilege-escalation>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#defense-evasion>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#credential-access>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#discovery>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#lateral-movement>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#collection>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#command-and-control>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#exfiltration>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#impact>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#evasion>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#network-effects>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#remote-service-effects>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#inhibit-response-function>
+             <https://w3id.org/lmodel/attack/AttackTacticShortNameEnum#impair-process-control> ] ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ;
+          <x_mitre_contributors> @linkml:String * ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:created_by_ref @stix:StixIdentifier ;
+          stix:object_marking_refs @stix:StixIdentifier +
+       ) ;
+       rdf:type [ <Tactic> ] ?
+    )
+}
+
+stix:TcpExt CLOSED {
+    (  $stix:TcpExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:src_flags_hex @linkml:String ? ;
+          stix:dst_flags_hex @linkml:String ?
+       ) ;
+       rdf:type [ stix:TcpExt ] ?
+    )
+}
+
+<Technique> CLOSED {
+    (  $<Technique_tes> (  &<AttackObject_tes> ;
+          rdf:type [ <AttackObject> ] ? ;
+          <x_mitre_domains> [ <https://w3id.org/lmodel/attack/AttackDomainEnum#enterprise-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#mobile-attack>
+             <https://w3id.org/lmodel/attack/AttackDomainEnum#ics-attack> ] + ;
+          <x_mitre_is_subtechnique> @linkml:Boolean ;
+          <x_mitre_platforms> [ <https://w3id.org/lmodel/attack/AttackPlatformEnum#Windows>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Linux> <https://w3id.org/lmodel/attack/AttackPlatformEnum#macOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Android> <https://w3id.org/lmodel/attack/AttackPlatformEnum#iOS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Azure%20AD>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Google%20Workspace>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Office%20Suite>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#SaaS> <https://w3id.org/lmodel/attack/AttackPlatformEnum#IaaS>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Containers>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#ESXi>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Identity%20Provider>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Network%20Devices>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#PRE> <https://w3id.org/lmodel/attack/AttackPlatformEnum#None>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Field%20Controller/RTU/PLC/IED>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Data%20Historian>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Engineering%20Workstation>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Control%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Human-Machine%20Interface>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Input/Output%20Server>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Safety%20Instrumented%20System/Protection%20Relay>
+             <https://w3id.org/lmodel/attack/AttackPlatformEnum#Embedded> ] * ;
+          <x_mitre_detection> @linkml:String ? ;
+          <x_mitre_data_sources> @linkml:String * ;
+          <x_mitre_defense_bypassed> [ <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Signature-based%20detection>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Signature-based%20Detection>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Multi-Factor%20Authentication>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Network%20Intrusion%20Detection%20System>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Network%20intrusion%20detection%20system>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Application%20Control>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Application%20control>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Host%20forensic%20analysis>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Host%20Forensic%20Analysis>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Exploit%20Prevention>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Data%20Execution%20Prevention>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Heuristic%20Detection>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Heuristic%20detection>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#File%20system%20access%20controls>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#File%20Monitoring>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#File%20monitoring>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Digital%20Certificate%20Validation>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Logon%20Credentials>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Firewall>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Static%20File%20Analysis>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Notarization>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#System%20access%20controls>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#System%20Access%20Controls>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Binary%20Analysis>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Web%20Content%20Filters>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Host%20intrusion%20prevention%20systems>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Host%20Intrusion%20Prevention%20Systems>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Application%20whitelisting>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Defensive%20network%20service%20scanning>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#User%20Mode%20Signature%20Validation>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Encryption>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Log%20Analysis>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Log%20analysis>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Autoruns%20Analysis>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Anti%20Virus>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Anti-virus>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Gatekeeper>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Process%20whitelisting>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Windows%20User%20Account%20Control>
+             <https://w3id.org/lmodel/attack/AttackDefenseBypassEnum#Whitelisting%20by%20file%20name%20or%20path> ] * ;
+          <x_mitre_permissions_required> [ <https://w3id.org/lmodel/attack/AttackPermissionsRequiredEnum#Remote%20Desktop%20Users>
+             <https://w3id.org/lmodel/attack/AttackPermissionsRequiredEnum#SYSTEM>
+             <https://w3id.org/lmodel/attack/AttackPermissionsRequiredEnum#Administrator>
+             <https://w3id.org/lmodel/attack/AttackPermissionsRequiredEnum#root>
+             <https://w3id.org/lmodel/attack/AttackPermissionsRequiredEnum#User> ] * ;
+          <x_mitre_effective_permissions> [ <https://w3id.org/lmodel/attack/AttackEffectivePermissionsEnum#Administrator>
+             <https://w3id.org/lmodel/attack/AttackEffectivePermissionsEnum#SYSTEM>
+             <https://w3id.org/lmodel/attack/AttackEffectivePermissionsEnum#User>
+             <https://w3id.org/lmodel/attack/AttackEffectivePermissionsEnum#root> ] * ;
+          <x_mitre_remote_support> @linkml:Boolean ? ;
+          <x_mitre_system_requirements> @linkml:String * ;
+          <x_mitre_impact_type> [ <https://w3id.org/lmodel/attack/AttackImpactTypeEnum#Availability>
+             <https://w3id.org/lmodel/attack/AttackImpactTypeEnum#Integrity> ] * ;
+          <x_mitre_network_requirements> @linkml:Boolean ? ;
+          <x_mitre_tactic_type> [ <https://w3id.org/lmodel/attack/AttackTacticTypeEnum#Post-Adversary%20Device%20Access>
+             <https://w3id.org/lmodel/attack/AttackTacticTypeEnum#Pre-Adversary%20Device%20Access>
+             <https://w3id.org/lmodel/attack/AttackTacticTypeEnum#Without%20Adversary%20Device%20Access> ] * ;
+          <x_mitre_modified_by_ref> @stix:StixIdentifier ? ;
+          <x_mitre_contributors> @linkml:String * ;
+          stix:type @stix:StixTypeName ;
+          stix:id @stix:StixIdentifier ;
+          stix:name @linkml:String ;
+          stix:description @linkml:String ? ;
+          stix:external_references @stix:ExternalReference + ;
+          stix:kill_chain_phases @<AttackKillChainPhase> *
+       ) ;
+       rdf:type [ <Technique> ] ?
+    )
+}
+
+stix:ThreatActor CLOSED {
+    (  $stix:ThreatActor_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:threat_actor_types @linkml:String * ;
+          stix:aliases @linkml:String * ;
+          stix:roles @linkml:String * ;
+          stix:goals @linkml:String * ;
+          stix:first_seen @linkml:Datetime ? ;
+          stix:last_seen @linkml:Datetime ? ;
+          stix:sophistication @linkml:String ? ;
+          stix:resource_level @linkml:String ? ;
+          stix:primary_motivation @linkml:String ? ;
+          stix:secondary_motivations @linkml:String * ;
+          stix:personal_motivations @linkml:String * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:ThreatActor ] ?
+    )
+}
+
+stix:Timestamp CLOSED {
+    (  $stix:Timestamp_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ?
+       ) ;
+       rdf:type [ stix:Timestamp ] ?
+    )
+}
+
+<TlpMarkingObject> CLOSED {
+    (  $<TlpMarkingObject_tes> <tlp> [ <https://w3id.org/lmodel/attack/TlpLevelEnum#white>
+          <https://w3id.org/lmodel/attack/TlpLevelEnum#green> <https://w3id.org/lmodel/attack/TlpLevelEnum#amber>
+          <https://w3id.org/lmodel/attack/TlpLevelEnum#red> ] ;
+       rdf:type [ <TlpMarkingObject> ] ?
+    )
+}
+
+stix:Tool CLOSED {
+    (  $stix:Tool_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:aliases @linkml:String * ;
+          stix:tool_types @linkml:String * ;
+          stix:tool_version @linkml:String ? ;
+          stix:kill_chain_phases @stix:KillChainPhase * ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:Tool ] ?
+    )
+}
+
+stix:UnixAccountExt CLOSED {
+    (  $stix:UnixAccountExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:gid @linkml:Integer ? ;
+          stix:groups @linkml:String * ;
+          stix:home_dir @linkml:String ? ;
+          stix:shell @linkml:String ?
+       ) ;
+       rdf:type [ stix:UnixAccountExt ] ?
+    )
+}
+
+stix:Url CLOSED {
+    (  $stix:Url_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:value @linkml:String ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:Url ] ?
+    )
+}
+
+stix:UrlRegex CLOSED {
+    (  $stix:UrlRegex_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ?
+       ) ;
+       rdf:type [ stix:UrlRegex ] ?
+    )
+}
+
+stix:UserAccount CLOSED {
+    (  $stix:UserAccount_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:user_id @linkml:String ? ;
+          stix:credential @linkml:String ? ;
+          stix:account_login @linkml:String ? ;
+          stix:account_type @linkml:String ? ;
+          stix:display_name @linkml:String ? ;
+          stix:is_service_account @linkml:Boolean ? ;
+          stix:is_privileged @linkml:Boolean ? ;
+          stix:can_escalate_privs @linkml:Boolean ? ;
+          stix:is_disabled @linkml:Boolean ? ;
+          stix:account_created @linkml:Datetime ? ;
+          stix:account_expires @linkml:Datetime ? ;
+          stix:credential_last_changed @linkml:Datetime ? ;
+          stix:account_first_login @linkml:Datetime ? ;
+          stix:account_last_login @linkml:Datetime ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:UserAccount ] ?
+    )
+}
+
+stix:Vulnerability CLOSED {
+    (  $stix:Vulnerability_tes (  &stix:StixDomainObject_tes ;
+          rdf:type [ stix:StixDomainObject ] ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName ;
+          stix:name @linkml:String
+       ) ;
+       rdf:type [ stix:Vulnerability ] ?
+    )
+}
+
+stix:WindowsPEOptionalHeaderType CLOSED {
+    (  $stix:WindowsPEOptionalHeaderType_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:magic_hex @linkml:String ? ;
+          stix:major_linker_version @linkml:Integer ? ;
+          stix:minor_linker_version @linkml:Integer ? ;
+          stix:size_of_code @linkml:Integer ? ;
+          stix:size_of_initialized_data @linkml:Integer ? ;
+          stix:size_of_uninitialized_data @linkml:Integer ? ;
+          stix:address_of_entry_point @linkml:Integer ? ;
+          stix:base_of_code @linkml:Integer ? ;
+          stix:base_of_data @linkml:Integer ? ;
+          stix:image_base @linkml:Integer ? ;
+          stix:section_alignment @linkml:Integer ? ;
+          stix:file_alignment @linkml:Integer ? ;
+          stix:major_os_version @linkml:Integer ? ;
+          stix:minor_os_version @linkml:Integer ? ;
+          stix:major_image_version @linkml:Integer ? ;
+          stix:minor_image_version @linkml:Integer ? ;
+          stix:major_subsystem_version @linkml:Integer ? ;
+          stix:minor_subsystem_version @linkml:Integer ? ;
+          stix:win32_version_value_hex @linkml:String ? ;
+          stix:size_of_image @linkml:Integer ? ;
+          stix:size_of_headers @linkml:Integer ? ;
+          stix:checksum_hex @linkml:String ? ;
+          stix:subsystem_hex @linkml:String ? ;
+          stix:dll_characteristics_hex @linkml:String ? ;
+          stix:size_of_stack_reserve @linkml:Integer ? ;
+          stix:size_of_stack_commit @linkml:Integer ? ;
+          stix:size_of_heap_reserve @linkml:Integer ? ;
+          stix:size_of_heap_commit @linkml:Integer ? ;
+          stix:loader_flags_hex @linkml:String ? ;
+          stix:number_of_rva_and_sizes @linkml:Integer ?
+       ) ;
+       rdf:type [ stix:WindowsPEOptionalHeaderType ] ?
+    )
+}
+
+stix:WindowsPESection CLOSED {
+    (  $stix:WindowsPESection_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:pe_section_name @linkml:String ;
+          stix:pe_section_size @linkml:Integer ? ;
+          stix:entropy @linkml:Float ? ;
+          stix:pe_section_hashes @stix:HashesType ?
+       ) ;
+       rdf:type [ stix:WindowsPESection ] ?
+    )
+}
+
+stix:WindowsProcessExt CLOSED {
+    (  $stix:WindowsProcessExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:aslr_enabled @linkml:Boolean ? ;
+          stix:dep_enabled @linkml:Boolean ? ;
+          stix:priority @linkml:String ? ;
+          stix:owner_sid @linkml:String ? ;
+          stix:window_title @linkml:String ? ;
+          stix:startup_info @linkml:String ? ;
+          stix:integrity_level [ <https://w3id.org/lmodel/stix/WindowsIntegrityLevelEnum#low>
+             <https://w3id.org/lmodel/stix/WindowsIntegrityLevelEnum#medium>
+             <https://w3id.org/lmodel/stix/WindowsIntegrityLevelEnum#high>
+             <https://w3id.org/lmodel/stix/WindowsIntegrityLevelEnum#system> ] ?
+       ) ;
+       rdf:type [ stix:WindowsProcessExt ] ?
+    )
+}
+
+stix:WindowsRegistryKey CLOSED {
+    (  $stix:WindowsRegistryKey_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:key @linkml:String ? ;
+          stix:values @stix:WindowsRegistryValue * ;
+          stix:modified_time @linkml:Datetime ? ;
+          stix:creator_user_ref @stix:StixIdentifier ? ;
+          stix:number_of_subkeys @linkml:Integer ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:WindowsRegistryKey ] ?
+    )
+}
+
+stix:WindowsRegistryValue CLOSED {
+    (  $stix:WindowsRegistryValue_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:registry_value_name @linkml:String ? ;
+          stix:registry_value_data @linkml:String ? ;
+          stix:registry_value_data_type [ <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_NONE>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_SZ>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_EXPAND_SZ>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_BINARY>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_DWORD>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_DWORD_BIG_ENDIAN>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_DWORD_LITTLE_ENDIAN>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_LINK>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_MULTI_SZ>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_RESOURCE_LIST>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_FULL_RESOURCE_DESCRIPTION>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_RESOURCE_REQUIREMENTS_LIST>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_QWORD>
+             <https://w3id.org/lmodel/stix/RegistryDataTypeEnum#REG_INVALID_TYPE> ] ?
+       ) ;
+       rdf:type [ stix:WindowsRegistryValue ] ?
+    )
+}
+
+stix:WindowsServiceExt CLOSED {
+    (  $stix:WindowsServiceExt_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:service_name @linkml:String ? ;
+          stix:descriptions @linkml:String * ;
+          stix:display_name @linkml:String ? ;
+          stix:group_name @linkml:String ? ;
+          stix:start_type [ <https://w3id.org/lmodel/stix/WindowsServiceStartEnum#SERVICE_AUTO_START>
+             <https://w3id.org/lmodel/stix/WindowsServiceStartEnum#SERVICE_BOOT_START>
+             <https://w3id.org/lmodel/stix/WindowsServiceStartEnum#SERVICE_DEMAND_START>
+             <https://w3id.org/lmodel/stix/WindowsServiceStartEnum#SERVICE_DISABLED>
+             <https://w3id.org/lmodel/stix/WindowsServiceStartEnum#SERVICE_SYSTEM_ALERT> ] ? ;
+          stix:service_dll_refs @stix:StixIdentifier * ;
+          stix:service_type [ <https://w3id.org/lmodel/stix/WindowsServiceTypeEnum#SERVICE_KERNEL_DRIVER>
+             <https://w3id.org/lmodel/stix/WindowsServiceTypeEnum#SERVICE_FILE_SYSTEM_DRIVER>
+             <https://w3id.org/lmodel/stix/WindowsServiceTypeEnum#SERVICE_WIN32_OWN_PROCESS>
+             <https://w3id.org/lmodel/stix/WindowsServiceTypeEnum#SERVICE_WIN32_SHARE_PROCESS> ] ? ;
+          stix:service_status [ <https://w3id.org/lmodel/stix/WindowsServiceStatusEnum#SERVICE_CONTINUE_PENDING>
+             <https://w3id.org/lmodel/stix/WindowsServiceStatusEnum#SERVICE_PAUSE_PENDING>
+             <https://w3id.org/lmodel/stix/WindowsServiceStatusEnum#SERVICE_PAUSED>
+             <https://w3id.org/lmodel/stix/WindowsServiceStatusEnum#SERVICE_RUNNING>
+             <https://w3id.org/lmodel/stix/WindowsServiceStatusEnum#SERVICE_START_PENDING>
+             <https://w3id.org/lmodel/stix/WindowsServiceStatusEnum#SERVICE_STOP_PENDING>
+             <https://w3id.org/lmodel/stix/WindowsServiceStatusEnum#SERVICE_STOPPED> ] ?
+       ) ;
+       rdf:type [ stix:WindowsServiceExt ] ?
+    )
+}
+
+stix:X509Certificate CLOSED {
+    (  $stix:X509Certificate_tes (  &stix:CyberObservableObject_tes ;
+          rdf:type [ stix:CyberObservableObject ] ? ;
+          stix:is_self_signed @linkml:Boolean ? ;
+          stix:hashes @stix:HashesType ? ;
+          stix:version @linkml:String ? ;
+          stix:serial_number @linkml:String ? ;
+          stix:signature_algorithm @linkml:String ? ;
+          stix:issuer @linkml:String ? ;
+          stix:validity_not_before @linkml:Datetime ? ;
+          stix:validity_not_after @linkml:Datetime ? ;
+          stix:subject @linkml:String ? ;
+          stix:subject_public_key_algorithm @linkml:String ? ;
+          stix:subject_public_key_modulus @linkml:String ? ;
+          stix:subject_public_key_exponent @linkml:Integer ? ;
+          stix:x509_v3_extensions @stix:X509V3ExtensionsType ? ;
+          stix:id @stix:StixIdentifier ;
+          stix:type @stix:StixTypeName
+       ) ;
+       rdf:type [ stix:X509Certificate ] ?
+    )
+}
+
+stix:X509V3ExtensionsType CLOSED {
+    (  $stix:X509V3ExtensionsType_tes (  &stix:CommonSchemaComponent_tes ;
+          rdf:type [ stix:CommonSchemaComponent ] ? ;
+          stix:basic_constraints @linkml:String ? ;
+          stix:name_constraints @linkml:String ? ;
+          stix:policy_constraints @linkml:String ? ;
+          stix:key_usage @linkml:String ? ;
+          stix:extended_key_usage @linkml:String ? ;
+          stix:subject_key_identifier @linkml:String ? ;
+          stix:authority_key_identifier @linkml:String ? ;
+          stix:subject_alternative_name @linkml:String ? ;
+          stix:issuer_alternative_name @linkml:String ? ;
+          stix:subject_directory_attributes @linkml:String ? ;
+          stix:crl_distribution_points @linkml:String ? ;
+          stix:inhibit_any_policy @linkml:String ? ;
+          stix:private_key_usage_period_not_before @linkml:Datetime ? ;
+          stix:private_key_usage_period_not_after @linkml:Datetime ? ;
+          stix:certificate_policies @linkml:String ? ;
+          stix:policy_mappings @linkml:String ?
+       ) ;
+       rdf:type [ stix:X509V3ExtensionsType ] ?
+    )
+}

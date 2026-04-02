@@ -1,0 +1,248 @@
+{
+   "PATO": "http://purl.obolibrary.org/obo/PATO_",
+   "attack": "https://w3id.org/lmodel/attack/",
+   "capex": "https://lmodel.github.io/capex/",
+   "linkml": "https://w3id.org/linkml/",
+   "oscal": "https://lmodel.github.io/oscal/",
+   "schema": "http://schema.org/",
+   "spdx": "https://lmodel.github.io/spdx/",
+   "stix": "https://w3id.org/lmodel/stix/",
+   "unified_cyber_ontology": "https://w3id.org/lmodel/uco-master/",
+   "AlternateDataStreamType": {
+      "@id": "stix:AlternateDataStreamType"
+   },
+   "ArchiveExt": {
+      "@id": "stix:ArchiveExt"
+   },
+   "Artifact": {
+      "@id": "stix:Artifact"
+   },
+   "AttackPattern": {
+      "@id": "stix:AttackPattern"
+   },
+   "AutonomousSystem": {
+      "@id": "stix:AutonomousSystem"
+   },
+   "Bundle": {
+      "@id": "stix:Bundle"
+   },
+   "Campaign": {
+      "@id": "stix:Campaign"
+   },
+   "CommonSchemaComponent": {
+      "@id": "stix:CommonSchemaComponent"
+   },
+   "Core": {
+      "@id": "stix:Core"
+   },
+   "CourseOfAction": {
+      "@id": "stix:CourseOfAction"
+   },
+   "CyberObservableCore": {
+      "@id": "stix:CyberObservableCore"
+   },
+   "CyberObservableObject": {
+      "@id": "stix:CyberObservableObject"
+   },
+   "Dictionary": {
+      "@id": "stix:Dictionary"
+   },
+   "Directory": {
+      "@id": "stix:Directory"
+   },
+   "DomainName": {
+      "@id": "stix:DomainName"
+   },
+   "EmailAddr": {
+      "@id": "stix:EmailAddr"
+   },
+   "EmailMessage": {
+      "@id": "stix:EmailMessage"
+   },
+   "Extension": {
+      "@id": "stix:Extension"
+   },
+   "ExtensionDefinition": {
+      "@id": "stix:ExtensionDefinition"
+   },
+   "ExternalReference": {
+      "@id": "stix:ExternalReference"
+   },
+   "File": {
+      "@id": "stix:File"
+   },
+   "GranularMarking": {
+      "@id": "stix:GranularMarking"
+   },
+   "Grouping": {
+      "@id": "stix:Grouping"
+   },
+   "HashesType": {
+      "@id": "stix:HashesType"
+   },
+   "Hex": {
+      "@id": "stix:Hex"
+   },
+   "HttpRequestExt": {
+      "@id": "stix:HttpRequestExt"
+   },
+   "IcmpExt": {
+      "@id": "stix:IcmpExt"
+   },
+   "Identifier": {
+      "@id": "stix:Identifier"
+   },
+   "Identity": {
+      "@id": "stix:Identity"
+   },
+   "Incident": {
+      "@id": "stix:Incident"
+   },
+   "Indicator": {
+      "@id": "stix:Indicator"
+   },
+   "Infrastructure": {
+      "@id": "stix:Infrastructure"
+   },
+   "IntrusionSet": {
+      "@id": "stix:IntrusionSet"
+   },
+   "Ipv4Addr": {
+      "@id": "stix:Ipv4Addr"
+   },
+   "Ipv6Addr": {
+      "@id": "stix:Ipv6Addr"
+   },
+   "KillChainPhase": {
+      "@id": "stix:KillChainPhase"
+   },
+   "LanguageContent": {
+      "@id": "stix:LanguageContent"
+   },
+   "Location": {
+      "@id": "stix:Location"
+   },
+   "MacAddr": {
+      "@id": "stix:MacAddr"
+   },
+   "Malware": {
+      "@id": "stix:Malware"
+   },
+   "MalwareAnalysis": {
+      "@id": "stix:MalwareAnalysis"
+   },
+   "MarkingDefinition": {
+      "@id": "stix:MarkingDefinition"
+   },
+   "MimePartType": {
+      "@id": "stix:MimePartType"
+   },
+   "Mutex": {
+      "@id": "stix:Mutex"
+   },
+   "NetworkTraffic": {
+      "@id": "stix:NetworkTraffic"
+   },
+   "Note": {
+      "@id": "stix:Note"
+   },
+   "NtfsExt": {
+      "@id": "stix:NtfsExt"
+   },
+   "ObservedData": {
+      "@id": "stix:ObservedData"
+   },
+   "Opinion": {
+      "@id": "stix:Opinion"
+   },
+   "PdfExt": {
+      "@id": "stix:PdfExt"
+   },
+   "PEBinaryExt": {
+      "@id": "stix:PEBinaryExt"
+   },
+   "Process": {
+      "@id": "stix:Process"
+   },
+   "Properties": {
+      "@id": "stix:Properties"
+   },
+   "RasterImageExt": {
+      "@id": "stix:RasterImageExt"
+   },
+   "Relationship": {
+      "@id": "stix:Relationship"
+   },
+   "Report": {
+      "@id": "stix:Report"
+   },
+   "Sighting": {
+      "@id": "stix:Sighting"
+   },
+   "SocketExt": {
+      "@id": "stix:SocketExt"
+   },
+   "Software": {
+      "@id": "stix:Software"
+   },
+   "StixDomainObject": {
+      "@id": "stix:StixDomainObject"
+   },
+   "StixEntity": {
+      "@id": "stix:StixEntity"
+   },
+   "StixRelationshipObject": {
+      "@id": "stix:StixRelationshipObject"
+   },
+   "TcpExt": {
+      "@id": "stix:TcpExt"
+   },
+   "ThreatActor": {
+      "@id": "stix:ThreatActor"
+   },
+   "Timestamp": {
+      "@id": "stix:Timestamp"
+   },
+   "Tool": {
+      "@id": "stix:Tool"
+   },
+   "UnixAccountExt": {
+      "@id": "stix:UnixAccountExt"
+   },
+   "Url": {
+      "@id": "stix:Url"
+   },
+   "UrlRegex": {
+      "@id": "stix:UrlRegex"
+   },
+   "UserAccount": {
+      "@id": "stix:UserAccount"
+   },
+   "Vulnerability": {
+      "@id": "stix:Vulnerability"
+   },
+   "WindowsPEOptionalHeaderType": {
+      "@id": "stix:WindowsPEOptionalHeaderType"
+   },
+   "WindowsPESection": {
+      "@id": "stix:WindowsPESection"
+   },
+   "WindowsProcessExt": {
+      "@id": "stix:WindowsProcessExt"
+   },
+   "WindowsRegistryKey": {
+      "@id": "stix:WindowsRegistryKey"
+   },
+   "WindowsRegistryValue": {
+      "@id": "stix:WindowsRegistryValue"
+   },
+   "WindowsServiceExt": {
+      "@id": "stix:WindowsServiceExt"
+   },
+   "X509Certificate": {
+      "@id": "stix:X509Certificate"
+   },
+   "X509V3ExtensionsType": {
+      "@id": "stix:X509V3ExtensionsType"
+   }
+}

@@ -1,0 +1,1988 @@
+ syntax="proto3";
+ package
+// metamodel_version: 1.7.0
+// Specifies properties of an NTFS alternate data stream.
+message AlternateDataStreamType
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string adsName = 0
+  integer adsSize = 0
+  hashesType adsHashes = 0
+ }
+// Analytics contain the concrete, platform-specific detection logic implementing a Detection Strategy for a specific operating environment. An analytic specifies the exact log data sources to query (via x_mitre_log_source_references), the detection logic or query pattern, and optionally defines tunable parameters (x_mitre_mutable_elements) allowing defenders to adapt it to their environment.
+// Each analytic targets exactly one platform (x_mitre_platforms maximum cardinality is 1). Multiple analytics may implement the same detection strategy, one per supported platform.
+// The detection chain is:
+//   DetectionStrategy (x_mitre_analytic_refs →)
+//     Analytic (x_mitre_log_source_references →)
+//       DataComponent (log_source name/channel →)
+//         detects →
+//           Technique
+message Analytic
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+ repeated  attackPlatformEnum xMitrePlatforms = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  logSourceReference xMitreLogSourceReferences = 0
+ repeated  mutableElement xMitreMutableElements = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ }
+// The Archive File extension specifies a default extension for capturing properties specific to archive files, such as ZIP.
+message ArchiveExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+ repeated  stixIdentifier containsRefs = 0
+  string comment = 0
+ }
+// The Artifact Object permits capturing an array of bytes (8-bits), as a base64-encoded string string, or linking to a file-like payload. 
+message Artifact
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string mimeType = 0
+  string payloadBin = 0
+  uriorcurie url = 0
+  hashesType hashes = 0
+  string encryptionAlgorithm = 0
+  string decryptionKey = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Assets represent physical or logical systems, devices, and technologies within Operational Technology (OT) and Industrial Control System (ICS) environments that adversaries may target when attacking critical infrastructure. Assets are specific to the ICS ATT&CK domain.
+// Examples include Programmable Logic Controllers (PLCs), Remote Terminal Units (RTUs), Engineering Workstations, and Safety Instrumented Systems.
+// Related assets (x_mitre_related_assets) capture sector-specific alias names and variants of the same device type used across different industrial sectors. Asset sectors (x_mitre_sectors) scope the asset to one or more industry verticals.
+message Asset
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+ repeated  attackPlatformEnum xMitrePlatforms = 0
+ repeated  string xMitreContributors = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  attackAssetSectorEnum xMitreSectors = 0
+ repeated  relatedAsset xMitreRelatedAssets = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ }
+// An ATT&CK STIX Bundle is the top-level distribution container for an ATT&CK domain dataset. ATT&CK publishes one bundle per domain per release:
+//   - enterprise-attack  (Enterprise ATT&CK)
+//   - mobile-attack      (Mobile ATT&CK)
+//   - ics-attack         (ATT&CK for ICS)
+// 
+// A Bundle is NOT a STIX Object — it has no ATT&CK-specific versioning fields, no created_by_ref, and no marking definitions of its own. It serves purely as a JSON container grouping all objects that constitute a release.
+// ATT&CK Bundle structural requirements:
+//   1. The bundle MUST contain exactly one x-mitre-collection object.
+//   2. The x-mitre-collection MUST be the first object in the 'objects' array.
+//   3. All STIX IDs referenced in the collection's x_mitre_contents MUST be
+//      present in the bundle's 'objects' array (no dangling references).
+//   4. No duplicate STIX IDs are permitted within a bundle's objects array.
+// 
+// Note: A STIX Bundle Object is not a STIX Object (Section 7.1, STIX 2.1 spec). Objects within the bundle are not semantically related by virtue of sharing a container; all relationships are expressed via Relationship SRO objects.
+message AttackBundle
+ {
+  string name = 0
+  string description = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+ repeated  stixEntity bundleObjects = 0
+ }
+// Campaigns represent a grouping of adversary behaviors and resources with a common objective, occurring over a defined time period. A campaign may be attributed to one or more Groups via 'attributed-to' relationships.
+// Campaigns require mandatory temporal properties: first_seen and last_seen document when the campaign was active, and the corresponding citation properties (x_mitre_first_seen_citation, x_mitre_last_seen_citation) cite the intelligence sources that established those observations.
+// The aliases array is required; its first entry MUST match the campaign's name.
+message AttackCampaign
+ {
+ repeated  string labels = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+ repeated  string xMitreContributors = 0
+  stixIdentifier xMitreModifiedByRef = 0
+  citationString xMitreFirstSeenCitation = 0
+  citationString xMitreLastSeenCitation = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+  boolean revoked = 0
+ repeated  string aliases = 0
+  datetime firstSeen = 0
+  datetime lastSeen = 0
+ }
+// The ATT&CK Identity object represents MITRE Corporation, the organization that maintains the ATT&CK knowledge base. The canonical ATT&CK Identity object has:
+//   STIX ID: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+//   Name: The MITRE Corporation
+//   identity_class: organization
+// 
+// This Identity is referenced by created_by_ref and x_mitre_modified_by_ref throughout all ATT&CK objects to attribute creation and modification to MITRE.
+// Key differences from the standard ATT&CK object:
+//   - x_mitre_version is absent on Identity objects
+//   - Several STIX Identity properties (roles, sectors, contact_information) are
+//     defined in STIX but not actively used in ATT&CK Identity objects
+message AttackIdentity
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+  string identityClass = 0
+  attackVersionString xMitreVersion = 0
+  string description = 0
+ repeated  string roles = 0
+ repeated  string sectors = 0
+  string contactInformation = 0
+ }
+// An ATT&CK-constrained kill chain phase restricting kill_chain_name to the three ATT&CK domain identifiers: 'mitre-attack', 'mitre-mobile-attack', and 'mitre-ics-attack'. The phase_name must match the x_mitre_shortname of the associated x-mitre-tactic object in the same domain. Used in the kill_chain_phases property of Technique, Malware, and Tool objects to map them to their applicable tactic(s).
+message AttackKillChainPhase
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  killChainNameEnum killChainName = 0
+  string phaseName = 0
+ }
+// Malware represents malicious software programs that adversaries use to accomplish their operational objectives, such as data exfiltration, persistent access, lateral movement, or destructive impact. ATT&CK tracks both malware families (is_family: true) and specific malware instances or samples (is_family: false).
+// Together with Tool objects, Malware forms the ATT&CK 'Software' category. Both share the ATT&CK ID format S#### and are often linked to Groups and Techniques via 'uses' relationships.
+// The x_mitre_aliases field holds ATT&CK-recognized alternative names; the first alias MUST match the object's name. The STIX 'aliases' property is defined in the STIX specification but is not actively maintained in ATT&CK Malware objects.
+// Note: Several STIX Malware properties (malware_types, kill_chain_phases, first_seen, last_seen, architecture_execution_envs, implementation_languages, capabilities) are available from the STIX specification but not actively used in ATT&CK.
+message AttackMalware
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+ repeated  attackPlatformEnum xMitrePlatforms = 0
+ repeated  string xMitreContributors = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  string xMitreAliases = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+  boolean isFamily = 0
+ repeated  string aliases = 0
+ repeated  string malwareTypes = 0
+ repeated  attackKillChainPhase killChainPhases = 0
+  datetime firstSeen = 0
+  datetime lastSeen = 0
+ repeated  string architectureExecutionEnvs = 0
+ repeated  string implementationLanguages = 0
+ repeated  string capabilities = 0
+ }
+// ATT&CK Marking Definition objects apply data handling constraints to ATT&CK content. ATT&CK uses two categories of marking definitions:
+// 1. TLP (Traffic Light Protocol) markings — four canonical instances with fixed IDs:
+//      TLP:WHITE  → marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9
+//      TLP:GREEN  → marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da
+//      TLP:AMBER  → marking-definition--f88d31f6-486f-44da-b317-01333bde0b82
+//      TLP:RED    → marking-definition--5e57c739-391a-4eb3-b6be-7d15ca92d5ed
+// 
+// 2. Statement markings — copyright and terms-of-use text applied to ATT&CK content.
+//      Example: "Copyright 2023, The MITRE Corporation. ATT&CK® is a registered trademark."
+// 
+// Marking Definition objects are STIX Meta Objects (SMOs). They do NOT have a 'modified' property and do NOT carry ATT&CK versioning fields (x_mitre_attack_spec_version, x_mitre_version, x_mitre_deprecated).
+// The canonical TLP marking definition instances MUST NOT be recreated; only the four fixed instances listed above are valid TLP markings for ATT&CK content.
+message AttackMarkingDefinition
+ {
+  string description = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  string statement = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  stixIdentifier createdByRef = 0
+  markingDefinitionTypeEnum definitionType = 0
+  string definition = 0
+  string name = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+ }
+// Attack Patterns are a type of TTP that describe ways that adversaries attempt to compromise targets. 
+message AttackPattern
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string aliases = 0
+ repeated  killChainPhase killChainPhases = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// ATT&CK Relationship objects connect ATT&CK STIX objects using typed semantic relationships. ATT&CK restricts STIX relationship semantics to a closed set of relationship_type values and enforces valid (source_type, relationship_type, target_type) combinations.
+// Valid relationship combinations:
+//   uses:
+//     malware | tool | intrusion-set | campaign  →  attack-pattern | malware | tool
+//     (malware→malware and tool→tool combinations are explicitly prohibited)
+//   mitigates:
+//     course-of-action  →  attack-pattern
+//   subtechnique-of:
+//     attack-pattern  →  attack-pattern  (source=sub-technique, target=parent)
+//   detects:
+//     x-mitre-data-component | x-mitre-detection-strategy  →  attack-pattern
+//     (x-mitre-data-component→attack-pattern DEPRECATED as of Spec 3.3.0)
+//   attributed-to:
+//     campaign  →  intrusion-set
+//   targets:
+//     attack-pattern  →  x-mitre-asset
+//   revoked-by:
+//     <any> → <same STIX type>  (source and target must be the same type)
+// 
+// ATT&CK Relationship objects do not carry a 'name' property or 'x_mitre_version'. The x_mitre_modified_by_ref is required on all ATT&CK relationships.
+message AttackRelationship
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+  stixIdentifier xMitreModifiedByRef = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  attackRelationshipTypeEnum relationshipType = 0
+  stixIdentifier sourceRef = 0
+  stixIdentifier targetRef = 0
+  string description = 0
+  string name = 0
+  attackVersionString xMitreVersion = 0
+ }
+// Tools represent legitimate software programs that adversaries may abuse or repurpose to accomplish their attack objectives. Unlike Malware, tools are not inherently malicious — they serve legitimate purposes but can be weaponized by adversaries (e.g., Cobalt Strike, Mimikatz, PsExec, Metasploit).
+// Together with Malware objects, Tools form the ATT&CK 'Software' category and share the same ATT&CK ID format (S####). Both are linked to Groups and Techniques via 'uses' relationships.
+// The x_mitre_aliases field holds ATT&CK-recognized alternative names; the first alias MUST match the object's name. The STIX 'aliases' property is not actively maintained in ATT&CK Tool objects.
+// Note: STIX Tool properties (tool_types, kill_chain_phases, tool_version, aliases) are available from the STIX specification but not actively used in ATT&CK Tool objects.
+message AttackTool
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+ repeated  attackPlatformEnum xMitrePlatforms = 0
+ repeated  string xMitreContributors = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  string xMitreAliases = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+ repeated  string aliases = 0
+ repeated  string toolTypes = 0
+  string toolVersion = 0
+ repeated  attackKillChainPhase killChainPhases = 0
+ }
+// The AS object represents the properties of an Autonomous Systems (AS). 
+message AutonomousSystem
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  integer number = 0
+  string name = 0
+  string rir = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// A Bundle is a collection of arbitrary STIX Objects and Marking Definitions grouped together in a single container. 
+message Bundle
+ {
+  string name = 0
+  string description = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+ repeated  stixEntity bundleObjects = 0
+ }
+// A Campaign is a grouping of adversary behavior that describes a set of malicious activities or attacks that occur over a period of time against a specific set of targets. 
+message Campaign
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string aliases = 0
+  datetime firstSeen = 0
+  datetime lastSeen = 0
+  string objective = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// Collections are versioned snapshots of an ATT&CK dataset grouping all STIX objects that constitute a specific release of an ATT&CK domain or curated subset. ATT&CK distributes one collection per domain per release.
+// The x_mitre_contents property provides an ordered list of versioned object references (ID + modified timestamp pairs) enumerating every STIX object included in this collection. This precise versioning allows consumers to reconstruct the exact state of the knowledge base at any given ATT&CK release.
+// Bundle validation: In a distributing STIX Bundle, the Collection must be the first object in the bundle's 'objects' array. All STIX IDs referenced in x_mitre_contents must be present as objects within the same bundle.
+// See the ATT&CK Workbench collections documentation for detailed design rationale and usage guidance.
+message Collection
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  objectVersionReference xMitreContents = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ }
+// A Course of Action is an action taken either to prevent an attack or to respond to an attack that is in progress. 
+message CourseOfAction
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// Data Components represent specific types of observable events or artifacts within a Data Source that can be collected to detect adversary technique execution. For example, 'Process Creation' and 'Process Termination' are data components within the 'Process' data source.
+// Data Components serve as the bridge between defensive telemetry and ATT&CK techniques. They detect techniques via 'detects' relationship objects.
+// The x_mitre_log_sources property (optional in Spec 3.x, required in Spec 4.x) provides platform-specific log collection configurations specifying exactly which log provider and event channel to monitor.
+// The x_mitre_data_source_ref property establishing the parent data source link is DEPRECATED in ATT&CK Specification 3.3.0 and will be removed in 4.0.0.
+message DataComponent
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+  stixIdentifier xMitreModifiedByRef = 0
+  stixIdentifier xMitreDataSourceRef = 0
+ repeated  logSource xMitreLogSources = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ }
+// DEPRECATED as of ATT&CK Specification 3.3.0. Superseded by the Detection Strategy and Analytic framework. Will be removed in ATT&CK Specification 4.0.0.
+// Data Sources represented categories of information that could be collected from a computing environment to identify signs of adversary technique execution. They were organized hierarchically: each Data Source contained one or more Data Components specifying observable events within that source category.
+// The data source hierarchy was:
+//   DataSource (x-mitre-data-source) →
+//     DataComponent (x-mitre-data-component) →
+//       detects →
+//         Technique (attack-pattern)
+// 
+// Retained for backward compatibility with ATT&CK datasets prior to Spec 3.3.0.
+message DataSource
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+ repeated  attackPlatformEnum xMitrePlatforms = 0
+ repeated  string xMitreContributors = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  attackCollectionLayerEnum xMitreCollectionLayers = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ }
+// Detection Strategies define high-level, platform-agnostic approaches for detecting specific adversary techniques. They function as containers organizing one or more platform-specific Analytics (x-mitre-analytic objects) into cohesive detection methodologies, describing what data to collect and what behavioral patterns to look for.
+// Detection Strategies were introduced in ATT&CK Specification 3.3.0 as part of the new detection framework, superseding the deprecated x-mitre-data-source and x-mitre-data-component approach for technique detection.
+// A Detection Strategy links to its implementing analytics via x_mitre_analytic_refs. Analytics in turn link back to data components via x_mitre_log_source_references, creating a complete detection chain from technique to observable log event.
+message DetectionStrategy
+ {
+  string description = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  string xMitreContributors = 0
+ repeated  stixIdentifier xMitreAnalyticRefs = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ }
+// A dictionary captures a set of key/value pairs 
+message Dictionary
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+ }
+// The Directory Object represents the properties common to a file system directory. 
+message Directory
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string path = 0
+  string pathEnc = 0
+  datetime ctime = 0
+  datetime mtime = 0
+  datetime atime = 0
+ repeated  stixIdentifier containsRefs = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The Domain Name represents the properties of a network domain name. 
+message DomainName
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string value = 0
+ repeated  stixIdentifier resolvesToRefs = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The Email Address Object represents a single email address. 
+message EmailAddr
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string value = 0
+  string displayName = 0
+  stixIdentifier belongsToRef = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The Email Message Object represents an instance of an email message. 
+message EmailMessage
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  datetime emailDate = 0
+  string contentType = 0
+  stixIdentifier fromRef = 0
+  stixIdentifier senderRef = 0
+ repeated  stixIdentifier toRefs = 0
+ repeated  stixIdentifier ccRefs = 0
+ repeated  stixIdentifier bccRefs = 0
+  string messageId = 0
+  string subject = 0
+ repeated  string receivedLines = 0
+  string additionalHeaderFields = 0
+  stixIdentifier rawEmailRef = 0
+  boolean isMultipart = 0
+  string body = 0
+ repeated  mimePartType bodyMultipart = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Converted from common/extension.json
+message Extension
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  extensionTypeEnum extensionType = 0
+ }
+// The STIX Extension Definition object allows producers of threat intelligence to extend existing STIX objects or to create entirely new STIX objects in a standardized way. 
+message ExtensionDefinition
+ {
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+  string schema = 0
+  string version = 0
+ repeated  extensionTypeEnum extensionTypes = 0
+ repeated  string extensionProperties = 0
+ }
+// External references are used to describe pointers to information represented outside of STIX. 
+message ExternalReference
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string sourceName = 0
+  string description = 0
+  uriorcurie url = 0
+  hashesType hashes = 0
+  string externalId = 0
+ }
+// The File Object represents the properties of a file. 
+message File
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  hashesType hashes = 0
+  integer size = 0
+  string name = 0
+  string nameEnc = 0
+  string magicNumberHex = 0
+  string mimeType = 0
+  datetime ctime = 0
+  datetime mtime = 0
+  datetime atime = 0
+  stixIdentifier parentDirectoryRef = 0
+ repeated  stixIdentifier containsRefs = 0
+  stixIdentifier contentRef = 0
+ repeated  string extensions = 0
+ }
+// The granular-marking type defines how the list of marking-definition objects referenced by the marking_refs property to apply to a set of content identified by the list of selectors in the selectors property. 
+message GranularMarking
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  stixIdentifier markingRef = 0
+ repeated  string selectors = 0
+  string lang = 0
+ }
+// Groups represent clusters of adversary activity attributed to a common actor, sharing characteristics such as tools, tactics, techniques, infrastructure, or targeting. They may represent nation-state actors, criminal organizations, hacktivist collectives, or other tracked threat entities.
+// Groups are implemented as standard STIX intrusion-set objects without additional ATT&CK-specific custom properties beyond the shared ATT&CK base fields. The aliases array provides alternative names; the first alias MUST match the group's name property.
+// Note: Several STIX Intrusion Set properties (goals, resource_level, primary_motivation, secondary_motivations, first_seen, last_seen) are inherited from STIX but are not actively used or populated in ATT&CK Group objects.
+message Group
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+ repeated  string xMitreContributors = 0
+  stixIdentifier xMitreModifiedByRef = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+ repeated  string aliases = 0
+  datetime firstSeen = 0
+  datetime lastSeen = 0
+ repeated  string goals = 0
+  string resourceLevel = 0
+  string primaryMotivation = 0
+ repeated  string secondaryMotivations = 0
+ }
+// A Grouping object explicitly asserts that the referenced STIX Objects have a shared content. 
+message Grouping
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  string context = 0
+ repeated  stixIdentifier objectRefs = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The Hashes type represents one or more cryptographic hashes, as a special set of key/value pairs 
+message HashesType
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+ }
+// The hex data type encodes an array of octets (8-bit bytes) as hexadecimal. The string MUST consist of an even number of hexadecimal characters, which are the digits '0' through '9' and the letters 'a' through 'f'. In order to allow pattern matching on custom objects, all properties that use the hex type, the property name MUST end with '_hex'. 
+message Hex
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+ }
+// The HTTP Request extension specifies a default extension for capturing network traffic properties specific to HTTP requests. Used as the value of the 'http-request-ext' key in a NetworkTraffic object's extensions dictionary.
+message HttpRequestExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string requestMethod = 0
+  string requestValue = 0
+  string requestVersion = 0
+  string requestHeader = 0
+  integer messageBodyLength = 0
+  stixIdentifier messageBodyDataRef = 0
+ }
+// The ICMP extension specifies a default extension for capturing network traffic properties specific to ICMP. Used as the value of the 'icmp-ext' key in a NetworkTraffic object's extensions dictionary.
+message IcmpExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string icmpTypeHex = 0
+  string icmpCodeHex = 0
+ }
+// Represents identifiers across the CTI specifications. The format consists of the name of the top-level object being identified, followed by two dashes (--), followed by a UUIDv4. 
+message Identifier
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+ }
+// Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of individuals, organizations, or groups. 
+message Identity
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string roles = 0
+  string identityClass = 0
+ repeated  string sectors = 0
+  string contactInformation = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// The Incident object in STIX 2.1 is a stub, to be expanded in future STIX 2 releases. 
+message Incident
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// Indicators contain a pattern that can be used to detect suspicious or malicious cyber activity. 
+message Indicator
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string indicatorTypes = 0
+  string pattern = 0
+  string patternType = 0
+  string patternVersion = 0
+  datetime validFrom = 0
+  datetime validUntil = 0
+ repeated  killChainPhase killChainPhases = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Infrastructure objects describe systems, software services, and associated physical or virtual resources. 
+message Infrastructure
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string infrastructureTypes = 0
+ repeated  string aliases = 0
+ repeated  killChainPhase killChainPhases = 0
+  datetime firstSeen = 0
+  datetime lastSeen = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// An Intrusion Set is a grouped set of adversary behavior and resources with common properties that is believed to be orchestrated by a single organization. 
+message IntrusionSet
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string aliases = 0
+  datetime firstSeen = 0
+  datetime lastSeen = 0
+ repeated  string goals = 0
+  string resourceLevel = 0
+  string primaryMotivation = 0
+ repeated  string secondaryMotivations = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// The IPv4 Address Object represents one or more IPv4 addresses expressed using CIDR notation. 
+message Ipv4Addr
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string value = 0
+ repeated  stixIdentifier resolvesToRefs = 0
+ repeated  stixIdentifier belongsToRefs = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The IPv6 Address Object represents one or more IPv6 addresses expressed using CIDR notation. 
+message Ipv6Addr
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string value = 0
+ repeated  stixIdentifier resolvesToRefs = 0
+ repeated  stixIdentifier belongsToRefs = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The kill-chain-phase represents a phase in a kill chain. 
+message KillChainPhase
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string killChainName = 0
+  string phaseName = 0
+ }
+// The language-content object represents text content for STIX Objects represented in languages other than that of the original object. 
+message LanguageContent
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  stixIdentifier objectRef = 0
+  datetime objectModified = 0
+  string contents = 0
+ }
+// A Location represents a geographic location. The location may be described as any, some or all of the following: region (e.g., North America), civic address (e.g. New York, US), latitude and longitude. 
+message Location
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  float latitude = 0
+  float longitude = 0
+  float precision = 0
+  string region = 0
+  string country = 0
+  string administrativeArea = 0
+  string city = 0
+  string streetAddress = 0
+  string postalCode = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// A platform-specific log collection configuration embedded within a data component. Defines a specific log provider (name) and event category or channel identifier (channel) that together specify where to collect telemetry relevant to the parent data component's detection context. The (name, channel) pair must be unique within the x_mitre_log_sources array of a given data component.
+message LogSource
+ {
+  string logSourceName = 0
+  string logSourceChannel = 0
+ }
+// A reference linking an analytic to a specific data component and log source pair. Specifies both the data component by STIX ID and the precise (name, channel) log source within that component that provides the raw data consumed by the analytic. Each (x_mitre_data_component_ref, name, channel) tuple must be unique within the x_mitre_log_source_references array of a given analytic.
+message LogSourceReference
+ {
+  stixIdentifier xMitreDataComponentRef = 0
+  string logSourceName = 0
+  string logSourceChannel = 0
+ }
+// The MAC Address Object represents a single Media Access Control (MAC) address. 
+message MacAddr
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string value = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Malware is a type of TTP that is also known as malicious code and malicious software, refers to a program that is inserted into a system, usually covertly, with the intent of compromising the confidentiality, integrity, or availability of the victim's data, applications, or operating system (OS) or of otherwise annoying or disrupting the victim. 
+message Malware
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string aliases = 0
+  datetime firstSeen = 0
+  datetime lastSeen = 0
+ repeated  stixIdentifier operatingSystemRefs = 0
+ repeated  string architectureExecutionEnvs = 0
+ repeated  string implementationLanguages = 0
+ repeated  string capabilities = 0
+ repeated  stixIdentifier sampleRefs = 0
+ repeated  string malwareTypes = 0
+  boolean isFamily = 0
+ repeated  killChainPhase killChainPhases = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Malware Analysis captures the metadata and results of a particular analysis performed (static or dynamic) on the malware instance or family. 
+message MalwareAnalysis
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  string product = 0
+  string version = 0
+  string configurationVersion = 0
+ repeated  string modules = 0
+  string analysisEngineVersion = 0
+  string analysisDefinitionVersion = 0
+  datetime submitted = 0
+  datetime analysisStarted = 0
+  datetime analysisEnded = 0
+  string resultName = 0
+  string result = 0
+  stixIdentifier hostVmRef = 0
+  stixIdentifier operatingSystemRef = 0
+ repeated  stixIdentifier installedSoftwareRefs = 0
+ repeated  stixIdentifier analysisScoRefs = 0
+  stixIdentifier sampleRef = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The marking-definition object represents a specific marking. 
+message MarkingDefinition
+ {
+  string description = 0
+  stixTypeName type = 0
+  specVersionEnum specVersion = 0
+  stixIdentifier id = 0
+  string name = 0
+  stixIdentifier createdByRef = 0
+  datetime created = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  string definitionType = 0
+  string definition = 0
+  string statement = 0
+ }
+// ATT&CK Matrices define the structural layout and organization of tactics and techniques within each ATT&CK domain. The matrix arranges tactics as columns and techniques (with sub-techniques nested beneath parents) as rows, providing a comprehensive visual map of adversary behavior within a domain.
+// Each ATT&CK domain has exactly one Matrix object. The tactic_refs property contains an ordered list of x-mitre-tactic STIX IDs that defines the left-to-right display order of columns in the ATT&CK matrix. The matrix does not directly enumerate techniques — technique-to-tactic associations are captured via kill_chain_phases on the Technique objects.
+message Matrix
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  stixIdentifier tacticRefs = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ }
+// Specifies a component of a multi-part email body as defined in the email-message observable.
+message MimePartType
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string body = 0
+  stixIdentifier bodyRawRef = 0
+  string contentType = 0
+  string contentDisposition = 0
+ }
+// Mitigations describe defensive measures, security controls, and configuration changes that can prevent or reduce the effectiveness of adversary techniques. Mitigations are implemented as STIX course-of-action objects.
+// Historical note — Legacy 1:1 Mitigations: Prior to ATT&CK v5 (July 2019), mitigations had a 1:1 relationship with techniques and shared their ATT&CK IDs. This design was deprecated to support the current many-to-many model where one mitigation can address multiple techniques. Legacy 1:1 mitigation objects may cause ATT&CK ID collisions and can be filtered by their deprecated or revoked status.
+message Mitigation
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+ repeated  string xMitreContributors = 0
+  stixIdentifier xMitreModifiedByRef = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ }
+// An environment-tunable parameter within an ATT&CK analytic. Mutable elements identify specific fields in the detection logic that defenders can adjust to adapt the analytic to their operational environment without altering its fundamental detection behavior. For example, 'TimeWindow' could be tuned to match an organization's normal authentication patterns, or 'PortRange' adjusted to reflect monitored network segments.
+message MutableElement
+ {
+  string mutableField = 0
+  string description = 0
+ }
+// The Mutex Object represents the properties of a mutual exclusion (mutex) object. 
+message Mutex
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// The Network Traffic Object represents arbitrary network traffic that originates from a source and is addressed to a destination. 
+message NetworkTraffic
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  datetime start = 0
+  datetime end = 0
+  stixIdentifier srcRef = 0
+  stixIdentifier dstRef = 0
+  integer srcPort = 0
+  integer dstPort = 0
+ repeated  string protocols = 0
+  integer srcByteCount = 0
+  integer dstByteCount = 0
+  integer srcPackets = 0
+  integer dstPackets = 0
+  string ipfix = 0
+  stixIdentifier srcPayloadRef = 0
+  stixIdentifier dstPayloadRef = 0
+ repeated  stixIdentifier encapsulatesRefs = 0
+  stixIdentifier encapsulatedByRef = 0
+  boolean isActive = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// A Note is a comment or note containing informative text to help explain the context of one or more STIX Objects (SDOs or SROs) or to provide additional analysis that is not contained in the original object. 
+message Note
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  string abstract = 0
+  string content = 0
+ repeated  string authors = 0
+ repeated  stixIdentifier objectRefs = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The NTFS extension specifies a default extension for capturing properties specific to the storage of the file on the NTFS file system.
+message NtfsExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string sid = 0
+ repeated  alternateDataStreamType alternateDataStreams = 0
+ }
+// A versioned reference to a specific state of a STIX object, consisting of the object's STIX identifier paired with the exact modified timestamp of the version being referenced. Used in the x_mitre_contents property of Collection objects to designate the precise snapshot of each included object. The object_modified value must exactly match the corresponding object's modified property.
+message ObjectVersionReference
+ {
+  stixIdentifier objectRef = 0
+  datetime objectModified = 0
+ }
+// Observed data conveys information that was observed on systems and networks, such as log data or network traffic, using the Cyber Observable specification. 
+message ObservedData
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  datetime firstObserved = 0
+  datetime lastObserved = 0
+  integer numberObserved = 0
+ repeated  cyberObservableObject objects = 0
+ repeated  stixIdentifier objectRefs = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity and captures the level of agreement or disagreement using a fixed scale. 
+message Opinion
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  string explanation = 0
+ repeated  string authors = 0
+ repeated  stixIdentifier objectRefs = 0
+  opinionEnum opinion = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The PDF extension specifies a default extension for capturing properties specific to PDF files.
+message PdfExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string version = 0
+  boolean isOptimized = 0
+  string documentInfoDict = 0
+  string pdfid0 = 0
+  string pdfid1 = 0
+ }
+// The Windows PE Binary File extension specifies a default extension for capturing properties specific to Windows portable executable (PE) files.
+message PEBinaryExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string peType = 0
+  string imphash = 0
+  string machineHex = 0
+  integer numberOfSections = 0
+  datetime timeDateStamp = 0
+  string pointerToSymbolTableHex = 0
+  integer numberOfSymbols = 0
+  integer sizeOfOptionalHeader = 0
+  string characteristicsHex = 0
+  hashesType fileHeaderHashes = 0
+  windowsPEOptionalHeaderType optionalHeader = 0
+ repeated  windowsPESection sections = 0
+ }
+// The Process Object represents common properties of an instance of a computer program as executed on an operating system. 
+message Process
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  boolean isHidden = 0
+  integer pid = 0
+  datetime createdTime = 0
+  string cwd = 0
+  string commandLine = 0
+  string environmentVariables = 0
+ repeated  stixIdentifier openedConnectionRefs = 0
+  stixIdentifier creatorUserRef = 0
+  stixIdentifier imageRef = 0
+  stixIdentifier parentRef = 0
+ repeated  stixIdentifier childRefs = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Rules for custom properties 
+message Properties
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+ }
+// The Raster Image extension specifies a default extension for capturing properties specific to raster image files.
+message RasterImageExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  integer imageHeight = 0
+  integer imageWidth = 0
+  integer bitsPerPixel = 0
+  string exifTags = 0
+ }
+// A sector-specific alias or variant name for a primary ATT&CK Asset object. Related assets capture how the same physical or logical device may be known by different names in different industrial contexts. For example, the primary asset 'Programmable Logic Controller (PLC)' may be called 'Field Controller' in the water treatment sector. Each related asset entry optionally scopes the alias to one or more industry sectors.
+message RelatedAsset
+ {
+  string name = 0
+ repeated  attackAssetSectorEnum relatedAssetSectors = 0
+  string description = 0
+ }
+// The Relationship object is used to link together two SDOs in order to describe how they are related to each other. 
+message Relationship
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  string relationshipType = 0
+  stixIdentifier sourceRef = 0
+  stixIdentifier targetRef = 0
+  datetime startTime = 0
+  datetime stopTime = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Reports are collections of threat intelligence focused on one or more topics, such as a description of a threat actor, malware, or attack technique, including context and related details. 
+message Report
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string reportTypes = 0
+  datetime published = 0
+ repeated  stixIdentifier objectRefs = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// A Sighting denotes the belief that something in CTI (e.g., an indicator, malware, tool, threat actor, etc.) was seen. 
+message Sighting
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  stixIdentifier sightingOfRef = 0
+ repeated  stixIdentifier observedDataRefs = 0
+ repeated  stixIdentifier whereSightedRefs = 0
+  datetime firstSeen = 0
+  datetime lastSeen = 0
+  integer count = 0
+  boolean summary = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// The Socket extension specifies a default extension for capturing network traffic properties specific to network sockets. Used as the value of the 'socket-ext' key in a NetworkTraffic object's extensions dictionary.
+message SocketExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  networkSocketAddressFamilyEnum addressFamily = 0
+  boolean isBlocking = 0
+  boolean isListening = 0
+  string socketOptions = 0
+  networkSocketTypeEnum socketType = 0
+  integer socketDescriptor = 0
+  integer socketHandle = 0
+ }
+// The Software Object represents high-level properties associated with software, including software products. 
+message Software
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string cpe = 0
+  string swid = 0
+ repeated  string languages = 0
+  string vendor = 0
+  string version = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// The definition payload for a statement marking definition. Contains a single statement field with a copyright notice or terms-of-use text. ATT&CK uses this for its standard copyright statement applied to all distributed content.
+message StatementMarkingObject
+ {
+  string statement = 0
+ }
+// Tactics represent the adversary's high-level strategic objectives during an attack — the "why" behind individual techniques. Tactics form the columns of the ATT&CK matrix and organize techniques into coherent operational categories.
+// Tactics are implemented as x-mitre-tactic custom STIX objects that extend the STIX Domain Object pattern. They are specific to ATT&CK and not defined by the core STIX 2.1 specification.
+// The x_mitre_shortname property is the machine-readable tactic identifier used to link techniques: a technique's kill_chain_phases entry uses x_mitre_shortname as phase_name when kill_chain_name matches the appropriate ATT&CK domain value.
+message Tactic
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+  attackTacticShortNameEnum xMitreShortname = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  string xMitreContributors = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+  stixIdentifier createdByRef = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ }
+// The TCP extension specifies a default extension for capturing network traffic properties specific to TCP. Used as the value of the 'tcp-ext' key in a NetworkTraffic object's extensions dictionary.
+message TcpExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string srcFlagsHex = 0
+  string dstFlagsHex = 0
+ }
+// Techniques describe the specific methods adversaries use to achieve tactical objectives. They are implemented as STIX attack-pattern objects and represent the "how" of adversary behavior — the concrete actions taken to accomplish a tactic.
+// A Technique may be a top-level technique (x_mitre_is_subtechnique: false) or a sub-technique (x_mitre_is_subtechnique: true). Sub-techniques provide more granular detail about specific implementations of their parent technique.
+// Sub-technique constraints:
+//   - ATT&CK ID format: T####.### where T#### is the parent's ID
+//   - Connected to parent via 'subtechnique-of' relationship (source = sub, target = parent)
+//   - Each sub-technique has exactly one parent; parents may have many sub-techniques
+//   - Sub-techniques inherit all parent tactics; platforms must be a subset of parent's
+// 
+// Tactics mapping: kill_chain_phases entries use the tactic's x_mitre_shortname as phase_name, with kill_chain_name set to the appropriate ATT&CK domain value.
+message Technique
+ {
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  semverString xMitreAttackSpecVersion = 0
+  attackVersionString xMitreVersion = 0
+  boolean xMitreDeprecated = 0
+  string xMitreOldAttackId = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  attackDomainEnum xMitreDomains = 0
+  boolean xMitreIsSubtechnique = 0
+ repeated  attackPlatformEnum xMitrePlatforms = 0
+  string xMitreDetection = 0
+ repeated  string xMitreDataSources = 0
+ repeated  attackDefenseBypassEnum xMitreDefenseBypassed = 0
+ repeated  attackPermissionsRequiredEnum xMitrePermissionsRequired = 0
+ repeated  attackEffectivePermissionsEnum xMitreEffectivePermissions = 0
+  boolean xMitreRemoteSupport = 0
+ repeated  string xMitreSystemRequirements = 0
+ repeated  attackImpactTypeEnum xMitreImpactType = 0
+  boolean xMitreNetworkRequirements = 0
+ repeated  attackTacticTypeEnum xMitreTacticType = 0
+  stixIdentifier xMitreModifiedByRef = 0
+ repeated  string xMitreContributors = 0
+  stixTypeName type = 0
+  stixIdentifier id = 0
+  string name = 0
+  string description = 0
+ repeated  externalReference externalReferences = 0
+ repeated  attackKillChainPhase killChainPhases = 0
+ }
+// Threat Actors are actual individuals, groups, or organizations believed to be operating with malicious intent. 
+message ThreatActor
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string threatActorTypes = 0
+ repeated  string aliases = 0
+ repeated  string roles = 0
+ repeated  string goals = 0
+  datetime firstSeen = 0
+  datetime lastSeen = 0
+  string sophistication = 0
+  string resourceLevel = 0
+  string primaryMotivation = 0
+ repeated  string secondaryMotivations = 0
+ repeated  string personalMotivations = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// Represents timestamps across the CTI specifications. The format is an RFC3339 timestamp, with a required timezone specification of 'Z'. 
+message Timestamp
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+ }
+// The definition payload for a TLP (Traffic Light Protocol) marking definition. Contains a single tlp field carrying the TLP level value. Only instances corresponding to the four canonical ATT&CK TLP marking definitions are valid; new TLP marking objects must not be created.
+message TlpMarkingObject
+ {
+  tlpLevelEnum tlp = 0
+ }
+// Tools are legitimate software that can be used by threat actors to perform attacks. 
+message Tool
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+ repeated  string aliases = 0
+ repeated  string toolTypes = 0
+  string toolVersion = 0
+ repeated  killChainPhase killChainPhases = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// The Unix Account extension specifies a default extension for capturing the additional information for an account on a Unix system. Used as the value of the 'unix-account-ext' key in a UserAccount object's extensions dictionary.
+message UnixAccountExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  integer gid = 0
+ repeated  string groups = 0
+  string homeDir = 0
+  string shell = 0
+ }
+// The URL Object represents the properties of a uniform resource locator (URL). 
+message Url
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string value = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Matches a URI according to RFC 3986. 
+message UrlRegex
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+ }
+// The User Account Object represents an instance of any type of user account, including but not limited to operating system, device, messaging service, and social media platform accounts. 
+message UserAccount
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string userId = 0
+  string credential = 0
+  string accountLogin = 0
+  string accountType = 0
+  string displayName = 0
+  boolean isServiceAccount = 0
+  boolean isPrivileged = 0
+  boolean canEscalatePrivs = 0
+  boolean isDisabled = 0
+  datetime accountCreated = 0
+  datetime accountExpires = 0
+  datetime credentialLastChanged = 0
+  datetime accountFirstLogin = 0
+  datetime accountLastLogin = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// A Vulnerability is a mistake in software that can be directly used by a hacker to gain access to a system or network. 
+message Vulnerability
+ {
+  string description = 0
+  specVersionEnum specVersion = 0
+  datetime created = 0
+  datetime modified = 0
+  stixIdentifier createdByRef = 0
+ repeated  string labels = 0
+  boolean revoked = 0
+  integer confidence = 0
+  string lang = 0
+ repeated  externalReference externalReferences = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+ repeated  string extensions = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+ }
+// The Windows PE Optional Header type represents the properties of the PE optional header. At least one property from this type MUST be included.
+message WindowsPEOptionalHeaderType
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string magicHex = 0
+  integer majorLinkerVersion = 0
+  integer minorLinkerVersion = 0
+  integer sizeOfCode = 0
+  integer sizeOfInitializedData = 0
+  integer sizeOfUninitializedData = 0
+  integer addressOfEntryPoint = 0
+  integer baseOfCode = 0
+  integer baseOfData = 0
+  integer imageBase = 0
+  integer sectionAlignment = 0
+  integer fileAlignment = 0
+  integer majorOsVersion = 0
+  integer minorOsVersion = 0
+  integer majorImageVersion = 0
+  integer minorImageVersion = 0
+  integer majorSubsystemVersion = 0
+  integer minorSubsystemVersion = 0
+  string win32VersionValueHex = 0
+  integer sizeOfImage = 0
+  integer sizeOfHeaders = 0
+  string checksumHex = 0
+  string subsystemHex = 0
+  string dllCharacteristicsHex = 0
+  integer sizeOfStackReserve = 0
+  integer sizeOfStackCommit = 0
+  integer sizeOfHeapReserve = 0
+  integer sizeOfHeapCommit = 0
+  string loaderFlagsHex = 0
+  integer numberOfRvaAndSizes = 0
+ }
+// The Windows PE Section type specifies metadata about a PE file section.
+message WindowsPESection
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string peSectionName = 0
+  integer peSectionSize = 0
+  float entropy = 0
+  hashesType peSectionHashes = 0
+ }
+// The Windows Process extension specifies properties specific to Windows processes. Used as the value of the 'windows-process-ext' key in a Process object's extensions dictionary.
+message WindowsProcessExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  boolean aslrEnabled = 0
+  boolean depEnabled = 0
+  string priority = 0
+  string ownerSid = 0
+  string windowTitle = 0
+  string startupInfo = 0
+  windowsIntegrityLevelEnum integrityLevel = 0
+ }
+// The Registry Key Object represents the properties of a Windows registry key. 
+message WindowsRegistryKey
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  string key = 0
+ repeated  windowsRegistryValue values = 0
+  datetime modifiedTime = 0
+  stixIdentifier creatorUserRef = 0
+  integer numberOfSubkeys = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Structured value entry under a Windows registry key.
+message WindowsRegistryValue
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string registryValueName = 0
+  string registryValueData = 0
+  registryDataTypeEnum registryValueDataType = 0
+ }
+// The Windows Service extension specifies properties specific to Windows services. Used as the value of the 'windows-service-ext' key in a Process object's extensions dictionary.
+message WindowsServiceExt
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string serviceName = 0
+ repeated  string descriptions = 0
+  string displayName = 0
+  string groupName = 0
+  windowsServiceStartEnum startType = 0
+ repeated  stixIdentifier serviceDllRefs = 0
+  windowsServiceTypeEnum serviceType = 0
+  windowsServiceStatusEnum serviceStatus = 0
+ }
+// The X509 Certificate Object represents the properties of an X.509 certificate. 
+message X509Certificate
+ {
+  string name = 0
+  string description = 0
+  specVersionEnum specVersion = 0
+ repeated  stixIdentifier objectMarkingRefs = 0
+ repeated  granularMarking granularMarkings = 0
+  boolean defanged = 0
+ repeated  string extensions = 0
+  boolean isSelfSigned = 0
+  hashesType hashes = 0
+  string version = 0
+  string serialNumber = 0
+  string signatureAlgorithm = 0
+  string issuer = 0
+  datetime validityNotBefore = 0
+  datetime validityNotAfter = 0
+  string subject = 0
+  string subjectPublicKeyAlgorithm = 0
+  string subjectPublicKeyModulus = 0
+  integer subjectPublicKeyExponent = 0
+  x509V3ExtensionsType x509V3Extensions = 0
+  stixIdentifier id = 0
+  stixTypeName type = 0
+ }
+// Specifies any standard X.509 v3 extensions that may be used in the certificate.
+message X509V3ExtensionsType
+ {
+  stixIdentifier id = 0
+  stixTypeName type = 0
+  string name = 0
+  string description = 0
+  string basicConstraints = 0
+  string nameConstraints = 0
+  string policyConstraints = 0
+  string keyUsage = 0
+  string extendedKeyUsage = 0
+  string subjectKeyIdentifier = 0
+  string authorityKeyIdentifier = 0
+  string subjectAlternativeName = 0
+  string issuerAlternativeName = 0
+  string subjectDirectoryAttributes = 0
+  string crlDistributionPoints = 0
+  string inhibitAnyPolicy = 0
+  datetime privateKeyUsagePeriodNotBefore = 0
+  datetime privateKeyUsagePeriodNotAfter = 0
+  string certificatePolicies = 0
+  string policyMappings = 0
+ }

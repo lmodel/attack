@@ -492,7 +492,7 @@ enums:
 
 slots:
 
-  #  ATT&CK Core / Common Properties 
+  #  ATT&CK Core / Common Properties
 
   x_mitre_attack_spec_version:
     description: >-
@@ -597,7 +597,7 @@ slots:
     in_subset:
       - attack_sdos
 
-  #  Technique-Specific Slots 
+  #  Technique-Specific Slots
 
   x_mitre_is_subtechnique:
     description: >-
@@ -751,7 +751,7 @@ slots:
     comments: >-
       jsonschema_minItems: "1"
 
-  #  Tactic Slots 
+  #  Tactic Slots
 
   x_mitre_shortname:
     description: >-
@@ -765,7 +765,7 @@ slots:
     in_subset:
       - attack_sdos
 
-  #  Campaign Slots 
+  #  Campaign Slots
 
   x_mitre_first_seen_citation:
     description: >-
@@ -791,7 +791,7 @@ slots:
     in_subset:
       - attack_sdos
 
-  #  Software Alias Slot 
+  #  Software Alias Slot
 
   x_mitre_aliases:
     description: >-
@@ -808,7 +808,7 @@ slots:
       jsonschema_minItems: "1"
       validator_hint: first-alias-must-match-name
 
-  #  Asset Slots 
+  #  Asset Slots
 
   x_mitre_sectors:
     description: >-
@@ -840,7 +840,7 @@ slots:
     comments: >-
       jsonschema_minItems: "1"
 
-  #  Data Source Slots 
+  #  Data Source Slots
 
   x_mitre_collection_layers:
     description: >-
@@ -855,7 +855,7 @@ slots:
     comments: >-
       jsonschema_minItems: "1"
 
-  #  Data Component Slots 
+  #  Data Component Slots
 
   x_mitre_data_source_ref:
     description: >-
@@ -887,7 +887,7 @@ slots:
       jsonschema_minItems: "1"
       validator_hint: no-duplicate-name-channel-pairs
 
-  #  Matrix Slots 
+  #  Matrix Slots
 
   tactic_refs:
     description: >-
@@ -904,7 +904,7 @@ slots:
     comments: >-
       jsonschema_minItems: "1"
 
-  #  Collection Slots 
+  #  Collection Slots
 
   x_mitre_contents:
     description: >-
@@ -924,7 +924,7 @@ slots:
       jsonschema_minItems: "1"
       validator_hint: validate-x-mitre-contents-cross-references
 
-  #  Detection Strategy Slots 
+  #  Detection Strategy Slots
 
   x_mitre_analytic_refs:
     description: >-
@@ -942,7 +942,7 @@ slots:
       jsonschema_minItems: "1"
       validator_hint: no-duplicate-analytic-refs
 
-  #  Analytic Slots 
+  #  Analytic Slots
 
   x_mitre_log_source_references:
     description: >-
@@ -975,7 +975,7 @@ slots:
     comments: >-
       jsonschema_minItems: "1"
 
-  #  RelatedAsset Component Slots 
+  #  RelatedAsset Component Slots
 
   related_asset_sectors:
     description: >-
@@ -989,7 +989,7 @@ slots:
     comments: >-
       jsonschema_minItems: "1"
 
-  #  LogSource Component Slots 
+  #  LogSource Component Slots
 
   log_source_name:
     description: >-
@@ -1012,7 +1012,7 @@ slots:
     in_subset:
       - attack_aux
 
-  #  LogSourceReference Component Slots 
+  #  LogSourceReference Component Slots
 
   x_mitre_data_component_ref:
     description: >-
@@ -1025,7 +1025,7 @@ slots:
     in_subset:
       - attack_aux
 
-  #  MutableElement Component Slots 
+  #  MutableElement Component Slots
 
   mutable_field:
     description: >-
@@ -1037,7 +1037,7 @@ slots:
     in_subset:
       - attack_aux
 
-  #  Marking Definition Slots 
+  #  Marking Definition Slots
 
   tlp:
     description: >-
@@ -1051,11 +1051,11 @@ slots:
 
 classes:
 
-  # 
+  #
   # Auxiliary / Inline Component Classes
   # These classes are used as inlined component types within ATT&CK SDO properties.
   # They do not stand alone as top-level STIX objects.
-  # 
+  #
 
   AttackKillChainPhase:
     is_a: KillChainPhase
@@ -1221,10 +1221,10 @@ classes:
           "Copyright 2023, The MITRE Corporation. ATT&CK content is licensed under
           the Creative Commons Attribution 4.0 International (CC BY 4.0) license."
 
-  # 
+  #
   # ATT&CK Base Class
   # The common ancestor for all versioned ATT&CK objects (SDOs, SROs).
-  # 
+  #
 
   AttackObject:
     is_a: Core
@@ -1274,13 +1274,15 @@ classes:
           The STIX ID of the identity object that first created this ATT&CK object.
           Typically references MITRE's identity (identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5).
 
-  # 
+  #
   # ATT&CK Software Abstract Superclass
   # Shared base for Malware and Tool (the two ATT&CK "Software" object types).
-  # 
+  #
 
-  Software:
+  AttackSoftware:
     is_a: AttackObject
+    notes:
+      - The class name 'attack:Software' collides with (is_a) 'stix:Software', so renamed.
     abstract: true
     description: >-
       Abstract superclass for ATT&CK Software objects, representing both Malware and
@@ -1297,10 +1299,10 @@ classes:
         This abstract class captures the shared properties. Use Malware or Tool for concrete objects.
         ATT&CK ID format: S####
 
-  # 
+  #
   # ATT&CK SDOs — STIX Domain Objects
   # Each class represents one concrete STIX type used in the ATT&CK knowledge base.
-  # 
+  #
 
   Technique:
     is_a: AttackObject
@@ -1520,7 +1522,9 @@ classes:
     comments: >-
       validator_hint: first-aliases-entry-must-match-name
 
-  Campaign:
+  AttackCampaign:
+    notes:
+      - The class name 'attack:Campaign' collides with 'stix:Campaign', so renamed.
     is_a: AttackObject
     description: >-
       Campaigns represent a grouping of adversary behaviors and resources with a common
@@ -1659,8 +1663,11 @@ classes:
       x_mitre_modified_by_ref:
         required: true
 
-  Malware:
-    is_a: Software
+  AttackMalware:
+    is_a: AttackSoftware
+    notes:
+      - The class name 'attack:Software' collides with (is_a) 'stix:Software', so renamed.
+      - The class name 'attack:Malware' collides with 'stix:Malware', so renamed.
     description: >-
       Malware represents malicious software programs that adversaries use to accomplish
       their operational objectives, such as data exfiltration, persistent access,
@@ -1759,8 +1766,11 @@ classes:
     comments: >-
       validator_hint: first-x-mitre-alias-or-alias-must-match-name
 
-  Tool:
-    is_a: Software
+  AttackTool:
+    is_a: AttackSoftware
+    notes:
+      - The class name 'attack:Software' collides with (is_a) 'stix:Software', so renamed.
+      - The class name 'attack:Tool' collides with 'stix:Tool', so renamed.
     description: >-
       Tools represent legitimate software programs that adversaries may abuse or repurpose
       to accomplish their attack objectives. Unlike Malware, tools are not inherently
@@ -2138,7 +2148,9 @@ classes:
           jsonschema_minItems: "1"
           validator_hint: validate-x-mitre-contents-cross-references
 
-  Identity:
+  AttackIdentity:
+    notes:
+      - The class name 'attack:Identity' collides with 'stix:Identity', so renamed.
     is_a: AttackObject
     description: >-
       The ATT&CK Identity object represents MITRE Corporation, the organization that
@@ -2324,9 +2336,9 @@ classes:
       x_mitre_domains:
         required: true
 
-  # 
+  #
   # ATT&CK SROs — STIX Relationship Objects
-  # 
+  #
 
   AttackRelationship:
     is_a: AttackObject
@@ -2404,9 +2416,9 @@ classes:
     comments: >-
       validator_hint: validate-attack-relationship-source-target-type-compatibility
 
-  # 
+  #
   # ATT&CK SMOs — STIX Meta Objects
-  # 
+  #
 
   AttackMarkingDefinition:
     is_a: MarkingDefinition
@@ -2478,9 +2490,9 @@ classes:
       validator_hint: enforce-marking-definition-tlp-statement-branches
       note: TLP marking definition IDs are fixed constants; do not create new TLP instances.
 
-  # 
+  #
   # ATT&CK Bundle
-  # 
+  #
 
   AttackBundle:
     is_a: Bundle

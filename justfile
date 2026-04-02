@@ -85,7 +85,7 @@ deploy: site
 
 # Run all tests
 [group('model development')]
-test: _test-schema _test-python _test-examples test-data
+test: _test-schema _test-python _test-examples test-data test-data-strict
 
 # Run linting
 [group('model development')]
