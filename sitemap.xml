@@ -2,2230 +2,2230 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://lmodel.github.io/attack/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/about/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AccountTypeOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AlternateDataStreamType/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Analytic/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ArchiveExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Artifact/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Asset/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackAssetSectorEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackAux/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackBundle/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackCampaign/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackCollectionLayerEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackDefenseBypassEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackDomainEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackEffectivePermissionsEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackIdentity/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackImpactTypeEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackKillChainPhase/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackMalware/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackMarkingDefinition/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackMotivationOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackObject/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackPattern/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackPermissionsRequiredEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackPlatformEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackRelationship/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackRelationshipTypeEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackResourceLevelOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackSdos/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackSmos/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackSoftware/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackSros/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackTacticShortNameEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackTacticTypeEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackTool/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AttackVersionString/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/AutonomousSystem/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Boolean/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Bundle/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Campaign/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/CitationString/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Collection/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Common/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/CommonSchemaComponent/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Core/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/CourseOfAction/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Curie/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/CyberObservableCore/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/CyberObservableObject/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/DataComponent/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/DataSource/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Date/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/DateOrDatetime/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Datetime/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Decimal/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Deprecated/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/DetectionStrategy/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Dictionary/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Directory/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/DomainName/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Double/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/EmailAddr/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/EmailMessage/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/EnterpriseOnly/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Extension/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ExtensionDefinition/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ExtensionTypeEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ExternalReference/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/File/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Float/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/GranularMarking/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Group/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Grouping/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/HashesType/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/HttpRequestExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/IcmpExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/IcsOnly/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Identifier/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Identity/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/IdentityClassOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ImplementationLanguageOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Incident/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Indicator/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/IndicatorTypeOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/IndustrySectorOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Infrastructure/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/InfrastructureTypeOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Integer/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/IntrusionSet/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Ipv4Addr/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Ipv6Addr/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Jsonpath/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Jsonpointer/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/KillChainNameEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/KillChainPhase/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/LanguageContent/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Location/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/LogSource/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/LogSourceReference/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MacAddr/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Malware/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MalwareAnalysis/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MalwareAvResultOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MalwareCapabilityOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MalwareTypeOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MarkingDefinition/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MarkingDefinitionTypeEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Matrix/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MimePartType/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Mitigation/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MobileOnly/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/MutableElement/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Mutex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Ncname/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/NetworkSocketAddressFamilyEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/NetworkSocketTypeEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/NetworkTraffic/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Nodeidentifier/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Note/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/NtfsExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ObjectVersionReference/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Objectidentifier/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Observables/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ObservedData/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Opinion/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/OpinionEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/PEBinaryExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/PatternTypeOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/PdfExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Process/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ProcessorArchitectureOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Properties/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/RasterImageExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/RegistryDataTypeEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/RelatedAsset/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Relationship/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Report/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ReportTypeOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Sdos/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/SemverString/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Sighting/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/SocketExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Software/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Sparqlpath/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/SpecVersionEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Sros/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/StatementMarkingObject/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/StixDomainObject/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/StixEntity/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/StixIdentifier/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/StixRelationshipObject/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/StixTypeName/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/String/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Tactic/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/TcpExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Technique/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ThreatActor/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ThreatActorRoleOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ThreatActorSophisticationOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ThreatActorTypeOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Time/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Timestamp/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/TlpLevelEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/TlpMarkingObject/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Tool/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ToolTypeOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/UnixAccountExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Uri/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Uriorcurie/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Url/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/UrlRegex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/UserAccount/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/Vulnerability/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsIntegrityLevelEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsPEBinaryTypeOv/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsPEOptionalHeaderType/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsPESection/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsProcessExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsRegistryKey/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsRegistryValue/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsServiceExt/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsServiceStartEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsServiceStatusEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/WindowsServiceTypeEnum/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/X509Certificate/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/X509V3ExtensionsType/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/abstract/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/account_created/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/account_expires/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/account_first_login/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/account_last_login/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/account_login/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/account_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/additional_header_fields/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/address_family/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/address_of_entry_point/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/administrative_area/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ads_hashes/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ads_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ads_size/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/aliases/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/alternate_data_streams/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/analysis_definition_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/analysis_ended/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/analysis_engine_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/analysis_sco_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/analysis_started/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/architecture_execution_envs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/aslr_enabled/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/atime/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/attack/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/authority_key_identifier/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/authors/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/base_of_code/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/base_of_data/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/basic_constraints/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/bcc_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/belongs_to_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/belongs_to_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/bits_per_pixel/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/body/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/body_multipart/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/body_raw_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/bundle_objects/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/can_escalate_privs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/capabilities/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/cc_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/certificate_policies/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/characteristics_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/checksum_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/child_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/city/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/command_line/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/comment/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/confidence/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/configuration_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/contact_information/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/contains_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/content/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/content_disposition/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/content_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/content_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/contents/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/context/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/count/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/country/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/cpe/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/created/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/created_by_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/created_time/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/creator_user_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/credential/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/credential_last_changed/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/crl_distribution_points/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ctime/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/cwd/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/decryption_key/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/defanged/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/definition/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/definition_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/dep_enabled/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/description/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/descriptions/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/display_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/dll_characteristics_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/document_info_dict/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/dst_byte_count/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/dst_flags_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/dst_packets/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/dst_payload_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/dst_port/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/dst_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/email_date/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/encapsulated_by_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/encapsulates_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/encryption_algorithm/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/end/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/entropy/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/environment_variables/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/exif_tags/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/explanation/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/extended_key_usage/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/extension_properties/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/extension_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/extension_types/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/extensions/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/external_id/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/external_references/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/file_alignment/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/file_header_hashes/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/first_observed/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/first_seen/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/from_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/gid/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/goals/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/granular_markings/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/group_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/groups/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/hashes/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/home_dir/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/host_vm_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/icmp_code_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/icmp_type_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/id/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/identity_class/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/image_base/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/image_height/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/image_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/image_width/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/imphash/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/implementation_languages/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/indicator_types/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/infrastructure_types/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/inhibit_any_policy/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/installed_software_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/integrity_level/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/ipfix/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_active/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_blocking/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_disabled/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_family/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_hidden/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_listening/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_multipart/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_optimized/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_privileged/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_self_signed/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/is_service_account/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/issuer/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/issuer_alternative_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/key/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/key_usage/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/kill_chain_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/kill_chain_phases/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/labels/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/lang/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/languages/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/last_observed/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/last_seen/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/latitude/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/loader_flags_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/log_source_channel/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/log_source_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/longitude/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/machine_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/magic_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/magic_number_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/major_image_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/major_linker_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/major_os_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/major_subsystem_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/malware_types/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/marking_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/message_body_data_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/message_body_length/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/message_id/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/mime_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/minor_image_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/minor_linker_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/minor_os_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/minor_subsystem_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/modified/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/modified_time/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/modules/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/mtime/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/mutable_field/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/name_constraints/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/name_enc/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/number/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/number_observed/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/number_of_rva_and_sizes/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/number_of_sections/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/number_of_subkeys/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/number_of_symbols/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/object_marking_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/object_modified/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/object_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/object_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/objective/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/objects/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/observed_data_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/opened_connection_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/operating_system_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/operating_system_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/opinion/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/optional_header/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/owner_sid/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/parent_directory_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/parent_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/path/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/path_enc/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pattern/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pattern_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pattern_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/payload_bin/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pdfid0/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pdfid1/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pe_section_hashes/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pe_section_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pe_section_size/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pe_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/personal_motivations/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/phase_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pid/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/pointer_to_symbol_table_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/policy_constraints/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/policy_mappings/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/postal_code/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/precision/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/primary_motivation/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/priority/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/private_key_usage_period_not_after/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/private_key_usage_period_not_before/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/product/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/protocols/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/published/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/raw_email_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/received_lines/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/region/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/registry_value_data/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/registry_value_data_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/registry_value_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/related_asset_sectors/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/relationship_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/report_types/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/request_header/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/request_method/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/request_value/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/request_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/resolves_to_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/resource_level/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/result/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/result_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/revoked/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/rir/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/roles/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/sample_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/sample_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/schema/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/secondary_motivations/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/section_alignment/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/sections/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/sectors/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/selectors/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/sender_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/serial_number/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/service_dll_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/service_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/service_status/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/service_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/shell/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/sid/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/sighting_of_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/signature_algorithm/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_code/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_headers/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_heap_commit/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_heap_reserve/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_image/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_initialized_data/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_optional_header/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_stack_commit/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_stack_reserve/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/size_of_uninitialized_data/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/socket_descriptor/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/socket_handle/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/socket_options/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/socket_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/sophistication/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/source_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/source_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/spec_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/src_byte_count/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/src_flags_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/src_packets/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/src_payload_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/src_port/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/src_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/start/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/start_time/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/start_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/startup_info/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/statement/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/stop_time/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/street_address/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/subject/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/subject_alternative_name/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/subject_directory_attributes/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/subject_key_identifier/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/subject_public_key_algorithm/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/subject_public_key_exponent/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/subject_public_key_modulus/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/submitted/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/subsystem_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/summary/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/swid/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/tactic_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/target_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/threat_actor_types/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/time_date_stamp/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/tlp/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/to_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/tool_types/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/tool_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/url/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/user_id/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/valid_from/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/valid_until/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/validity_not_after/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/validity_not_before/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/value/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/values/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/vendor/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/where_sighted_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/win32_version_value_hex/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/window_title/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x509_v3_extensions/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_aliases/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_analytic_refs/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_attack_spec_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_collection_layers/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_contents/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_contributors/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_data_component_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_data_source_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_data_sources/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_defense_bypassed/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_deprecated/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_detection/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_domains/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_effective_permissions/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_first_seen_citation/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_impact_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_is_subtechnique/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_last_seen_citation/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_log_source_references/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_log_sources/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_modified_by_ref/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_mutable_elements/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_network_requirements/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_old_attack_id/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_permissions_required/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_platforms/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_related_assets/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_remote_support/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_sectors/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_shortname/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_system_requirements/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_tactic_type/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
     <url>
          <loc>https://lmodel.github.io/attack/elements/x_mitre_version/</loc>
-         <lastmod>2026-04-02</lastmod>
+         <lastmod>2026-05-09</lastmod>
     </url>
 </urlset>

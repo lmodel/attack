@@ -502,18 +502,143 @@ Alias: external_references</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="../AttackMalware/">AttackMalware</a></td>
-<td>Malware represents malicious software programs that adversaries use to accomp...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../AttackIdentity/">AttackIdentity</a></td>
-<td>The ATT&amp;CK Identity object represents MITRE Corporation, the organization tha...</td>
+<td><a href="../Sighting/">Sighting</a></td>
+<td>A Sighting denotes the belief that something in CTI (e</td>
 <td>no</td>
 </tr>
 <tr>
 <td><a href="../Grouping/">Grouping</a></td>
 <td>A Grouping object explicitly asserts that the referenced STIX Objects have a ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Group/">Group</a></td>
+<td>Groups represent clusters of adversary activity attributed to a common actor,...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../AttackRelationship/">AttackRelationship</a></td>
+<td>ATT&amp;CK Relationship objects connect ATT&amp;CK STIX objects using typed semantic ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Infrastructure/">Infrastructure</a></td>
+<td>Infrastructure objects describe systems, software services, and associated ph...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../StixDomainObject/">StixDomainObject</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AttackObject/">AttackObject</a></td>
+<td>Abstract base class for all versioned ATT&amp;CK objects (SDOs and SROs)</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Campaign/">Campaign</a></td>
+<td>A Campaign is a grouping of adversary behavior that describes a set of malici...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Analytic/">Analytic</a></td>
+<td>Analytics contain the concrete, platform-specific detection logic implementin...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../MarkingDefinition/">MarkingDefinition</a></td>
+<td>The marking-definition object represents a specific marking</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../Malware/">Malware</a></td>
+<td>Malware is a type of TTP that is also known as malicious code and malicious s...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Tool/">Tool</a></td>
+<td>Tools are legitimate software that can be used by threat actors to perform at...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AttackCampaign/">AttackCampaign</a></td>
+<td>Campaigns represent a grouping of adversary behaviors and resources with a co...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../Identity/">Identity</a></td>
+<td>Identities can represent actual individuals, organizations, or groups (e</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Opinion/">Opinion</a></td>
+<td>An Opinion is an assessment of the correctness of the information in a STIX O...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DetectionStrategy/">DetectionStrategy</a></td>
+<td>Detection Strategies define high-level, platform-agnostic approaches for dete...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../AttackMarkingDefinition/">AttackMarkingDefinition</a></td>
+<td>ATT&amp;CK Marking Definition objects apply data handling constraints to ATT&amp;CK c...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Technique/">Technique</a></td>
+<td>Techniques describe the specific methods adversaries use to achieve tactical ...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../DataSource/">DataSource</a></td>
+<td>DEPRECATED as of ATT&amp;CK Specification 3</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../AttackSoftware/">AttackSoftware</a></td>
+<td>Abstract superclass for ATT&amp;CK Software objects, representing both Malware an...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../DataComponent/">DataComponent</a></td>
+<td>Data Components represent specific types of observable events or artifacts wi...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ThreatActor/">ThreatActor</a></td>
+<td>Threat Actors are actual individuals, groups, or organizations believed to be...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Note/">Note</a></td>
+<td>A Note is a comment or note containing informative text to help explain the c...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Core/">Core</a></td>
+<td>Common properties and behavior across all STIX Domain Objects and STIX Relati...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../Asset/">Asset</a></td>
+<td>Assets represent physical or logical systems, devices, and technologies withi...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../IntrusionSet/">IntrusionSet</a></td>
+<td>An Intrusion Set is a grouped set of adversary behavior and resources with co...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Location/">Location</a></td>
+<td>A Location represents a geographic location</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Collection/">Collection</a></td>
+<td>Collections are versioned snapshots of an ATT&amp;CK dataset grouping all STIX ob...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -527,198 +652,18 @@ Alias: external_references</p>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../AttackCampaign/">AttackCampaign</a></td>
-<td>Campaigns represent a grouping of adversary behaviors and resources with a co...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../AttackObject/">AttackObject</a></td>
-<td>Abstract base class for all versioned ATT&amp;CK objects (SDOs and SROs)</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Sighting/">Sighting</a></td>
-<td>A Sighting denotes the belief that something in CTI (e</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Identity/">Identity</a></td>
-<td>Identities can represent actual individuals, organizations, or groups (e</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Tool/">Tool</a></td>
-<td>Tools are legitimate software that can be used by threat actors to perform at...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Indicator/">Indicator</a></td>
-<td>Indicators contain a pattern that can be used to detect suspicious or malicio...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MarkingDefinition/">MarkingDefinition</a></td>
-<td>The marking-definition object represents a specific marking</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../AttackTool/">AttackTool</a></td>
-<td>Tools represent legitimate software programs that adversaries may abuse or re...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../Technique/">Technique</a></td>
-<td>Techniques describe the specific methods adversaries use to achieve tactical ...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../Opinion/">Opinion</a></td>
-<td>An Opinion is an assessment of the correctness of the information in a STIX O...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../AttackRelationship/">AttackRelationship</a></td>
-<td>ATT&amp;CK Relationship objects connect ATT&amp;CK STIX objects using typed semantic ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Report/">Report</a></td>
-<td>Reports are collections of threat intelligence focused on one or more topics,...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Group/">Group</a></td>
-<td>Groups represent clusters of adversary activity attributed to a common actor,...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../Core/">Core</a></td>
-<td>Common properties and behavior across all STIX Domain Objects and STIX Relati...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../AttackPattern/">AttackPattern</a></td>
-<td>Attack Patterns are a type of TTP that describe ways that adversaries attempt...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DataComponent/">DataComponent</a></td>
-<td>Data Components represent specific types of observable events or artifacts wi...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Matrix/">Matrix</a></td>
-<td>ATT&amp;CK Matrices define the structural layout and organization of tactics and ...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../Malware/">Malware</a></td>
-<td>Malware is a type of TTP that is also known as malicious code and malicious s...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Analytic/">Analytic</a></td>
-<td>Analytics contain the concrete, platform-specific detection logic implementin...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../DataSource/">DataSource</a></td>
-<td>DEPRECATED as of ATT&amp;CK Specification 3</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../Relationship/">Relationship</a></td>
-<td>The Relationship object is used to link together two SDOs in order to describ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../StixRelationshipObject/">StixRelationshipObject</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Collection/">Collection</a></td>
-<td>Collections are versioned snapshots of an ATT&amp;CK dataset grouping all STIX ob...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../DetectionStrategy/">DetectionStrategy</a></td>
-<td>Detection Strategies define high-level, platform-agnostic approaches for dete...</td>
-<td>yes</td>
-</tr>
-<tr>
-<td><a href="../Infrastructure/">Infrastructure</a></td>
-<td>Infrastructure objects describe systems, software services, and associated ph...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../StixDomainObject/">StixDomainObject</a></td>
-<td></td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Location/">Location</a></td>
-<td>A Location represents a geographic location</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ThreatActor/">ThreatActor</a></td>
-<td>Threat Actors are actual individuals, groups, or organizations believed to be...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../LanguageContent/">LanguageContent</a></td>
-<td>The language-content object represents text content for STIX Objects represen...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../AttackMarkingDefinition/">AttackMarkingDefinition</a></td>
-<td>ATT&amp;CK Marking Definition objects apply data handling constraints to ATT&amp;CK c...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../ObservedData/">ObservedData</a></td>
-<td>Observed data conveys information that was observed on systems and networks, ...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../MalwareAnalysis/">MalwareAnalysis</a></td>
-<td>Malware Analysis captures the metadata and results of a particular analysis p...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Asset/">Asset</a></td>
-<td>Assets represent physical or logical systems, devices, and technologies withi...</td>
-<td>yes</td>
-</tr>
-<tr>
 <td><a href="../Tactic/">Tactic</a></td>
 <td>Tactics represent the adversary's high-level strategic objectives during an a...</td>
 <td>yes</td>
 </tr>
 <tr>
-<td><a href="../ExtensionDefinition/">ExtensionDefinition</a></td>
-<td>The STIX Extension Definition object allows producers of threat intelligence ...</td>
-<td>no</td>
+<td><a href="../AttackMalware/">AttackMalware</a></td>
+<td>Malware represents malicious software programs that adversaries use to accomp...</td>
+<td>yes</td>
 </tr>
 <tr>
-<td><a href="../Campaign/">Campaign</a></td>
-<td>A Campaign is a grouping of adversary behavior that describes a set of malici...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Incident/">Incident</a></td>
-<td>The Incident object in STIX 2</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../IntrusionSet/">IntrusionSet</a></td>
-<td>An Intrusion Set is a grouped set of adversary behavior and resources with co...</td>
-<td>no</td>
-</tr>
-<tr>
-<td><a href="../Note/">Note</a></td>
-<td>A Note is a comment or note containing informative text to help explain the c...</td>
+<td><a href="../AttackIdentity/">AttackIdentity</a></td>
+<td>The ATT&amp;CK Identity object represents MITRE Corporation, the organization tha...</td>
 <td>no</td>
 </tr>
 <tr>
@@ -727,8 +672,63 @@ Alias: external_references</p>
 <td>no</td>
 </tr>
 <tr>
-<td><a href="../AttackSoftware/">AttackSoftware</a></td>
-<td>Abstract superclass for ATT&amp;CK Software objects, representing both Malware an...</td>
+<td><a href="../MalwareAnalysis/">MalwareAnalysis</a></td>
+<td>Malware Analysis captures the metadata and results of a particular analysis p...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../StixRelationshipObject/">StixRelationshipObject</a></td>
+<td></td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Matrix/">Matrix</a></td>
+<td>ATT&amp;CK Matrices define the structural layout and organization of tactics and ...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../ExtensionDefinition/">ExtensionDefinition</a></td>
+<td>The STIX Extension Definition object allows producers of threat intelligence ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../ObservedData/">ObservedData</a></td>
+<td>Observed data conveys information that was observed on systems and networks, ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../LanguageContent/">LanguageContent</a></td>
+<td>The language-content object represents text content for STIX Objects represen...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Indicator/">Indicator</a></td>
+<td>Indicators contain a pattern that can be used to detect suspicious or malicio...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AttackPattern/">AttackPattern</a></td>
+<td>Attack Patterns are a type of TTP that describe ways that adversaries attempt...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Relationship/">Relationship</a></td>
+<td>The Relationship object is used to link together two SDOs in order to describ...</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../AttackTool/">AttackTool</a></td>
+<td>Tools represent legitimate software programs that adversaries may abuse or re...</td>
+<td>yes</td>
+</tr>
+<tr>
+<td><a href="../Incident/">Incident</a></td>
+<td>The Incident object in STIX 2</td>
+<td>no</td>
+</tr>
+<tr>
+<td><a href="../Report/">Report</a></td>
+<td>Reports are collections of threat intelligence focused on one or more topics,...</td>
 <td>no</td>
 </tr>
 </tbody>
