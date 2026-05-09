@@ -19994,7 +19994,7 @@ classes:
     class_uri: stix:Sighting
 metamodel_version: 1.7.0
 source_file: attack.yaml
-source_file_date: '2026-05-09T00:29:23'
+source_file_date: '2026-05-09T00:30:46'
 source_file_size: 101869
-generation_date: '2026-05-09T00:29:36'
+generation_date: '2026-05-09T00:30:56'
 
