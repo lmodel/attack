@@ -3,7 +3,7 @@ type: Dataset
 id: https://w3id.org/lmodel/attack/knowledge/datasets/test-data
 genre: reference
 title: Test data and tests
-description: "The tests and their data under `tests/`: 21 valid examples and 71 counter-examples, an extract of 97 objects of the v20.0 bundles, the checks of the ATT&CK Data Model's rules beyond the validator, the list of the data's six departures from it, and the neighbours' adapt copies."
+description: "The tests and their data under `tests/`: 21 valid examples and 72 counter-examples, an extract of 97 objects of the v20.0 bundles, the checks of the ATT&CK Data Model's rules beyond the validator, the list of the data's six departures from it, and the neighbours' adapt copies."
 resource: tests
 sources:
   - id: test_data.py
@@ -29,13 +29,13 @@ sources:
     title: the three files of objects
 generated:
   by: process:ktl-librarian
-  at: "2026-10-31T02:18:54Z"
+  at: "2026-10-31T10:44:16Z"
 status: draft
 ---
 
 # Test data and tests
 
-`tests/data/valid/` holds 21 examples, one of each ATT&CK class and more of a technique, and `tests/data/invalid/` holds 71 counter-examples. Each example is an object of MITRE's v20.0 data written as YAML. Each counter-example is a valid example with one thing broken, and its first line, `# Fails at:`, names where the validator must report it.[^data-readme.md] `tests/test_data.py` validates them against the JSON Schema the validator generates, and checks that every ATT&CK class has an example.[^test_data.py]
+`tests/data/valid/` holds 21 examples, one of each ATT&CK class and more of a technique, and `tests/data/invalid/` holds 72 counter-examples. Each example is an object of MITRE's v20.0 data written as YAML. Each counter-example is a valid example with one thing broken, and its first line, `# Fails at:`, names where the validator must report it.[^data-readme.md] `tests/test_data.py` validates them against the JSON Schema the validator generates, and checks that every ATT&CK class has an example.[^test_data.py]
 
 `tests/data/attack-stix-data/extract/` holds 97 objects copied unchanged from the three bundles: 37 from Enterprise, 31 from Mobile and 29 from ICS.[^extract] The default tests validate each one.
 
