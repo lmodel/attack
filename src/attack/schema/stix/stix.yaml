@@ -1,0 +1,98 @@
+---
+id: https://w3id.org/lmodel/stix
+name: stix
+title: Structured Threat Information Expression (STIX)
+description: >-
+  A LinkML model of Structured Threat Information Expression (STIX) Version
+  2.1, the OASIS Standard for exchanging cyber threat intelligence: its
+  domain, relationship, cyber-observable and meta objects, their properties,
+  vocabularies and enumerations, and the bundle that carries them. STIX's own
+  property names are the schema's keys, so STIX JSON validates unchanged.
+version: "2.1"
+source: https://docs.oasis-open.org/cti/stix/v2.1/os/stix-v2.1-os.html
+license: Apache-2.0
+see_also:
+  - https://lmodel.github.io/stix
+  - https://github.com/oasis-open/cti-stix2-json-schemas/tree/9af1db41b7b86c06324f899649ae83480134f66e
+annotations:
+  stix_publication_date: "2021-06-10"
+  json_schemas_repository: https://github.com/oasis-open/cti-stix2-json-schemas
+  json_schemas_commit: 9af1db41b7b86c06324f899649ae83480134f66e
+comments:
+  - >-
+    The version is the edition of STIX that the schema renders, and source
+    is the OASIS Standard of 10 June 2021. OASIS publishes no release of its
+    JSON schemas, so upstream/ copies them, their examples and their licence
+    at the commit in the annotations, and scripts/check_upstream_release.py
+    reports when that repository moves. STIX 2.1 Errata 01 exists only as a
+    Committee Specification Draft (2 April 2025); the schema follows the
+    approved standard, and the values the draft adds to four open
+    vocabularies validate anyway.
+  - >-
+    The specification is copyright OASIS Open, and nothing here copies its
+    text. Descriptions come from OASIS's JSON schemas, which are under the
+    BSD-3-Clause licence that NOTICE carries, or are this project's own.
+  - >-
+    The classes are closed: an object validates only with the properties its
+    class declares. STIX allows custom properties and custom objects; they
+    validate once a schema that imports this one declares them, as a slot of
+    a subclass or a class of its own, as lmodel/attack does for MITRE's
+    x_mitre_ properties and x-mitre- objects. Opening the object bases with
+    extra_slots would accept every misspelled key as well, and LinkML 1.12.1's
+    Pydantic generator ignores extra_slots.
+  - >-
+    The JSON keys that contain a hyphen are dictionary keys, never property
+    names: hash algorithms (SHA-256), extension names (ntfs-ext) and
+    extension definition identifiers. The dictionaries that hold them are
+    classes with extra_slots, which the generated JSON Schema checks; the
+    generated Python models do not, and docs/index.md lists what goes
+    unchecked.
+  - >-
+    Classes and slots map to terms of the Unified Cyber Ontology (UCO) 1.5.0
+    where the meaning matches, under UCO's own namespaces: close_mappings
+    for the cyber-observable objects, their extensions and the shared
+    objects, and broad_mappings for Tool, which UCO defines more widely. The
+    domain objects that UCO has no term for are left unmapped.
+    tests/test_mappings.py checks each against UCO's term list.
+default_prefix: stix
+default_range: string
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  stix: https://w3id.org/lmodel/stix/
+  uco-core: https://ontology.unifiedcyberontology.org/uco/core/
+
+imports:
+  - linkml:types
+  - ./stix_vocabularies
+  - ./stix_core
+  - ./stix_sco
+  - ./stix_sdo
+  - ./stix_sro
+
+classes:
+  StixBundle:
+    description: >-
+      A bundle: a collection of STIX objects grouped together in one
+      container. A bundle is a container for transport, not a STIX object,
+      so it carries no spec_version.
+    tree_root: true
+    slots:
+      - id
+      - type
+      - objects
+    slot_usage:
+      id:
+        pattern: "^bundle--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$"
+      type:
+        equals_string: bundle
+      objects:
+        description: The STIX objects in the bundle.
+        range: StixObject
+        multivalued: true
+        inlined_as_list: true
+        minimum_cardinality: 1
+    annotations:
+      stix_type: bundle
+    close_mappings:
+      - uco-core:Bundle

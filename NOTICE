@@ -46,6 +46,47 @@ https://github.com/mitre-attack/attack-data-model (commit
 99558689a7efecbb9eec74b1b1a5b6fbfad25f8a), licensed under the Apache
 License, Version 2.0. No code or text of the ADM is copied here.
 
+lmodel/stix
+-----------
+
+src/attack/schema/stix/ holds the modules of the Structured Threat
+Information Expression (STIX) 2.1 LinkML schema of lmodel/stix
+(https://github.com/lmodel/stix) at commit
+de2122f3c48d90fe7358a6b1fe7df21ded124cc3, under the Apache License,
+Version 2.0, copied unchanged. tests/test_stix_import.py pins each
+module's git object hash. Some of their descriptions reuse those of the
+STIX 2.1 JSON schemas of OASIS
+(https://github.com/oasis-open/cti-stix2-json-schemas), which are under
+this licence:
+
+  Copyright (c) [2016], OASIS Open
+  All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are met:
+
+  * Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+
+  * Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+  * Neither the name of the copyright holder nor the names of its
+    contributors may be used to endorse or promote products derived from
+    this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+  AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 linkml-project-copier
 ---------------------
 

@@ -69,8 +69,9 @@ skip = [
   # Files copied in by the KTL sidecar sync or written by npm, not by hand.
   ".lokf/scripts/*",
   "website/package-lock.json",
-  # MITRE's data and licence, copied unchanged.
+  # MITRE's data and licence, and lmodel/stix's modules, copied unchanged.
   "tests/data/attack-stix-data/*",
+  "src/attack/schema/stix/*",
 ]
 
 # Reminder: words have to be lowercased for the ignore-words-list
@@ -92,4 +93,5 @@ extend-exclude = [
   ".lokf/scripts/*",
   "website/package-lock.json",
   "tests/data/attack-stix-data/*",
+  "src/attack/schema/stix/*",
 ]
