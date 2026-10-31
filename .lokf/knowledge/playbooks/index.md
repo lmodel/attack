@@ -1,0 +1,7 @@
+# Playbooks
+
+* [Regenerate and test the schema](regenerate-and-test.md) - How to change the schema: set up with uv and just, edit `src/attack/schema/attack.yaml`, regenerate with `just gen-project`, `just gen-doc` and `just lokf-adapt`, then run `just lint`, where a warning fails, `just test` and the pre-commit hooks.
+* [Release the schema](release.md) - How a release is made: semantic-release on a merge to main, from the v0.0.0 baseline tag, so the first release is 0.1.0; only feat, fix, security and breaking commits release, with the `## [Unreleased]` changelog section as the notes, and the knowledge release attaches the adapt copy and the bundle.
+* [Update the upstream pins](update-upstream-pins.md) - What to do when the upstream watch reports a newer ATT&CK release, a newer ATT&CK Data Model release or a changed licence, or when lmodel/stix releases: which pins move together in the manifest, the watch, the schema header, the departures list, the stix import test and NOTICE.
+* [Validate ATT&CK data](validate-data.md) - How to validate ATT&CK data against the schema: `linkml-validate` with an ATT&CK class for one object or AttackBundle for a bundle, a large release object by object as `just test-attack-data` does, before loading it into the generated models, which check less.
+* [Knowledge sources map](knowledge-sources.md) - The librarian's scrape map: every repository location and external page this bundle derives concepts from, the concepts each yields, how to re-check each on a refresh run, and the paths left out on purpose.
