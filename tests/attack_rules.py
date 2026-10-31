@@ -179,8 +179,11 @@ def problems(obj):
 
 def bundle_problems(bundle):
     """Each ADM rule a whole bundle breaks: its first object is its one
-    collection, and the collection's contents and every relationship name
-    objects of the bundle, the contents at the version the bundle holds."""
+    collection; the collection's contents and every relationship name objects
+    of the bundle, the contents at the version the bundle holds; each kill
+    chain phase of a technique names a tactic of the bundle; and a
+    sub-technique's parent is a technique that is not one, whose ID its own
+    extends and whose tactics it has."""
     found = []
     objects = bundle.get("objects") or []
     collections = [
@@ -206,4 +209,39 @@ def bundle_problems(bundle):
                     found.append(
                         ("relationship", f"{obj['id']} {key} is not in the bundle")
                     )
+    shortnames = {
+        o.get("x_mitre_shortname") for o in objects if o.get("type") == "x-mitre-tactic"
+    }
+    for obj in objects:
+        if obj.get("type") == "attack-pattern":
+            for phase in _phases(obj) - shortnames:
+                found.append(("phase", f"{obj['id']} names no tactic {phase!r}"))
+    for obj in objects:
+        if obj.get("relationship_type") != "subtechnique-of":
+            continue
+        child, parent = by_id.get(obj["source_ref"]), by_id.get(obj["target_ref"])
+        if child is None or parent is None:
+            continue
+        if child.get("x_mitre_is_subtechnique") is not True or parent.get(
+            "x_mitre_is_subtechnique"
+        ):
+            found.append(
+                ("parent", f"{obj['id']} joins no sub-technique to a technique")
+            )
+            continue
+        ids = [_attack_id(o) for o in (child, parent)]
+        if not ids[0].startswith(f"{ids[1]}."):
+            found.append(("parent", f"{ids[0]} is not an ID under {ids[1]}"))
+        if _phases(child) != _phases(parent):
+            found.append(("parent", f"{ids[0]} has other tactics than {ids[1]}"))
     return found
+
+
+def _attack_id(obj):
+    """An object's ATT&CK ID: the external ID of its first external reference."""
+    return ((obj.get("external_references") or [{}])[0]).get("external_id", "")
+
+
+def _phases(technique):
+    """The short names of the tactics a technique's kill chain phases name."""
+    return {p["phase_name"] for p in technique.get("kill_chain_phases") or []}

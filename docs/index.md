@@ -50,7 +50,10 @@ in `just test-attack-data`, every object of the bundles:
 - a list of platforms, analytics, log sources, log source references or
   mutable elements names each item once;
 - a bundle starts with its one collection, whose contents, like every
-  relationship's ends, are objects of the bundle.
+  relationship's ends, are objects of the bundle;
+- each kill chain phase of a technique names a tactic of its bundle;
+- a sub-technique's parent is a technique that is not one, whose ID the
+  sub-technique's extends and whose tactics it shares.
 
 Where MITRE's data breaks one of them, `tests/test_upstream.py` lists the
 departure with its reason.

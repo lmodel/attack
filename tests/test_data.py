@@ -239,3 +239,70 @@ def test_each_rule_finds_its_breach():
         }
     )
     assert {rule for rule, _ in found} == {"contents"}
+
+
+def test_each_bundle_rule_finds_its_breach():
+    """Each rule of a whole bundle reports a breach of it, and a bundle that
+    keeps them all reports nothing."""
+
+    def technique(number, sub, phases=("impact",)):
+        return {
+            "type": "attack-pattern",
+            "id": f"attack-pattern--{number}",
+            "modified": "2026-01-01T00:00:00.000Z",
+            "external_references": [
+                {"source_name": "mitre-attack", "external_id": number}
+            ],
+            "kill_chain_phases": [
+                {"kill_chain_name": "mitre-attack", "phase_name": p} for p in phases
+            ],
+            "x_mitre_is_subtechnique": sub,
+        }
+
+    def rules(*objects, contents=None):
+        collection = {
+            "type": "x-mitre-collection",
+            "id": "x-mitre-collection--1",
+            "x_mitre_contents": contents
+            if contents is not None
+            else [
+                {"object_ref": o["id"], "object_modified": o["modified"]}
+                for o in objects
+            ],
+        }
+        return {
+            rule for rule, _ in bundle_problems({"objects": [collection, *objects]})
+        }
+
+    tactic = {
+        "type": "x-mitre-tactic",
+        "id": "x-mitre-tactic--1",
+        "modified": "2026-01-01T00:00:00.000Z",
+        "x_mitre_shortname": "impact",
+    }
+    parent, child = technique("T0001", False), technique("T0001.001", True)
+
+    def subtechnique_of(source, target):
+        return {
+            "type": "relationship",
+            "id": "relationship--1",
+            "modified": "2026-01-01T00:00:00.000Z",
+            "relationship_type": "subtechnique-of",
+            "source_ref": source["id"],
+            "target_ref": target["id"],
+        }
+
+    assert rules(tactic, parent, child, subtechnique_of(child, parent)) == set()
+    assert rules(tactic, tactic) == {"unique id"}
+    assert rules(tactic, contents=[]) == set()
+    assert rules(
+        tactic, contents=[{"object_ref": tactic["id"], "object_modified": "x"}]
+    ) == {"contents"}
+    assert rules(tactic, parent, subtechnique_of(child, parent)) == {"relationship"}
+    assert rules(tactic, technique("T0002", False, ["discovery"])) == {"phase"}
+    assert rules(tactic, parent, child, subtechnique_of(parent, child)) == {"parent"}
+    other = technique("T0002.001", True)
+    assert rules(tactic, parent, other, subtechnique_of(other, parent)) == {"parent"}
+    tactics = [tactic, tactic | {"id": "x-mitre-tactic--2", "x_mitre_shortname": "x"}]
+    broad = technique("T0001", False, ["impact", "x"])
+    assert rules(*tactics, broad, child, subtechnique_of(child, broad)) == {"parent"}

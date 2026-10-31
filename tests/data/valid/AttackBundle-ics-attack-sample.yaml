@@ -22,8 +22,8 @@ objects:
         object_modified: '2026-05-12T16:33:30.227Z'
       - object_ref: marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
         object_modified: '2017-06-01T00:00:00.000Z'
-      - object_ref: x-mitre-tactic--33752ae7-f875-4f43-bdb6-d8d02d341046
-        object_modified: '2025-04-16T21:26:21.215Z'
+      - object_ref: x-mitre-tactic--ddf70682-f3ce-479c-a9a4-7eadf9bfead7
+        object_modified: '2025-04-25T14:39:30.353Z'
       - object_ref: attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805
         object_modified: '2026-10-13T17:48:40.569Z'
       - object_ref: x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d
@@ -54,33 +54,33 @@ objects:
     definition_type: statement
   - type: x-mitre-tactic
     spec_version: '2.1'
-    id: x-mitre-tactic--33752ae7-f875-4f43-bdb6-d8d02d341046
-    created: '2021-04-10T17:32:33.899Z'
+    id: x-mitre-tactic--ddf70682-f3ce-479c-a9a4-7eadf9bfead7
+    created: '2018-10-17T00:14:20.652Z'
     created_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
-    revoked: false
     external_references:
       - source_name: mitre-attack
-        url: https://attack.mitre.org/tactics/TA0111
-        external_id: TA0111
+        url: https://attack.mitre.org/tactics/TA0103
+        external_id: TA0103
     object_marking_refs:
       - marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
-    modified: '2025-04-16T21:26:21.215Z'
-    name: Privilege Escalation
-    description: 'The adversary is trying to gain higher-level permissions.
+    modified: '2025-04-25T14:39:30.353Z'
+    name: Evasion
+    description: 'The adversary is trying to avoid security defenses.
 
 
-      Privilege Escalation consists of techniques that adversaries use to gain higher-level
-      permissions on a system or network. Adversaries can often enter and explore
-      a network with unprivileged access but require elevated permissions to follow
-      through on their objectives. Common approaches are to take advantage of system
-      weaknesses, misconfigurations, and vulnerabilities.'
+      Evasion consists of techniques that adversaries use to avoid technical defenses
+      throughout their campaign. Techniques used for evasion include removal of indicators
+      of compromise, spoofing communications, and exploiting software vulnerabilities.
+      Adversaries may also leverage and abuse trusted devices and processes to hide
+      their activity, possibly by masquerading as master devices or native software.
+      Methods of defense evasion for this purpose are often more passive in nature.'
     x_mitre_modified_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
     x_mitre_deprecated: false
     x_mitre_domains:
       - ics-attack
     x_mitre_version: '1.0'
     x_mitre_attack_spec_version: 3.2.0
-    x_mitre_shortname: privilege-escalation
+    x_mitre_shortname: evasion
   - type: attack-pattern
     spec_version: '2.1'
     id: attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805
