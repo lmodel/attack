@@ -6,6 +6,8 @@ The `v0.0.0` tag is a baseline, not a release: it marks where versioning starts 
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-10-31
+
 ### Added
 
 - **A LinkML schema of MITRE ATT&CK v20.0, as MITRE publishes it in STIX 2.1.** It models the tactics, techniques, groups, campaigns, software, mitigations, assets, data sources, data components, detection strategies, analytics, matrices, collections, relationships, identity and marking of the Enterprise, Mobile and ICS domains, following the ATT&CK Data Model v4.11.7 at ATT&CK specification 3.3.0. Every object of the three v20.0 bundles validates against it.
