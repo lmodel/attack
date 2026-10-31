@@ -8,8 +8,10 @@ the bundle example, and each file says so where it differs from MITRE's.
 - `valid/` holds an example of each ATT&CK class. `tests/test_data.py`
   validates each, and checks that every ATT&CK class has one.
 - `invalid/` holds a counter-example per constraint: a valid example with one
-  thing broken. Its first line, `# Fails at: <JSON pointer>`, names where the
-  validator must report it, and `tests/test_data.py` holds it to that.
+  thing broken. Its first line, `# Fails at: <JSON pointer>`, names the one
+  place the validator must report, and `tests/test_data.py` holds it to that.
+  A missing or undeclared key is named by its own pointer, such as
+  `/x_mitre_domains`.
 - `attack-stix-data/` pins the ATT&CK release and holds the extract that the
   default tests validate; its README says how.
 

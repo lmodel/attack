@@ -1,4 +1,4 @@
-# Fails at: /
+# Fails at: /external_references
 type: intrusion-set
 spec_version: '2.1'
 id: intrusion-set--190242d7-73fc-4738-af68-20162f7a5aae

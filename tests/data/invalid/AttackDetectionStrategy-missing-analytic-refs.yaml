@@ -1,4 +1,4 @@
-# Fails at: /
+# Fails at: /x_mitre_analytic_refs
 type: x-mitre-detection-strategy
 spec_version: '2.1'
 id: x-mitre-detection-strategy--c94af5cb-61c3-4180-81e7-30c1669f4252

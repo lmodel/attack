@@ -1,4 +1,4 @@
-# Fails at: /x_mitre_related_assets/0
+# Fails at: /x_mitre_related_assets/0/description
 type: x-mitre-asset
 spec_version: '2.1'
 id: x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d

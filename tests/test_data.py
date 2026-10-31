@@ -50,7 +50,16 @@ def errors(instance, class_name):
 
 
 def pointer(error):
-    return "/" + "/".join(str(part) for part in error.absolute_path)
+    """Where an error is, as a JSON pointer. A missing or an undeclared key
+    is named after the object that lacks or holds it, so a counter-example
+    that drops one required key cannot pass by dropping another."""
+    parts = [str(part) for part in error.absolute_path]
+    if error.validator == "required":
+        parts.append(error.message.split("'")[1])
+    elif error.validator == "additionalProperties":
+        declared = error.schema.get("properties") or {}
+        parts += sorted(key for key in error.instance if key not in declared)
+    return "/" + "/".join(parts)
 
 
 def class_of_file(path):
@@ -75,15 +84,15 @@ def test_valid_examples_validate(path):
 @pytest.mark.parametrize("path", INVALID, ids=lambda p: p.stem)
 def test_counter_examples_fail_where_they_say(path):
     """Every counter-example fails at the place its first line names, as
-    `# Fails at: <JSON pointer>`, so a file that starts failing for another
-    reason fails this test."""
+    `# Fails at: <JSON pointer>`, and nowhere else, so a file that starts
+    failing for another reason fails this test."""
     first = path.read_text().splitlines()[0]
     assert first.startswith("# Fails at: "), (
         f"{path.name}: the first line names where it fails"
     )
     where = first.removeprefix("# Fails at: ").strip()
     found = errors(yaml.safe_load(path.read_text()), class_of_file(path))
-    assert where in [pointer(e) for e in found], [
+    assert {pointer(e) for e in found} == {where}, [
         f"{pointer(e)}: {e.message}" for e in found
     ]
 

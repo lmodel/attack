@@ -1,4 +1,4 @@
-# Fails at: /x_mitre_log_sources/0
+# Fails at: /x_mitre_log_sources/0/channel
 type: x-mitre-data-component
 spec_version: '2.1'
 id: x-mitre-data-component--faa34cf6-cf32-4dc9-bd6a-8f7a606ff65b

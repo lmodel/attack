@@ -1,4 +1,4 @@
-# Fails at: /
+# Fails at: /x_mitre_domains
 type: attack-pattern
 spec_version: '2.1'
 id: attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805

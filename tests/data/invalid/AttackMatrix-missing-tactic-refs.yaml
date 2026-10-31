@@ -1,4 +1,4 @@
-# Fails at: /
+# Fails at: /tactic_refs
 type: x-mitre-matrix
 spec_version: '2.1'
 id: x-mitre-matrix--575f48f4-8897-4468-897b-48bb364af6c7

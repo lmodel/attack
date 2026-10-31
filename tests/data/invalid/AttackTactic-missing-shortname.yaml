@@ -1,4 +1,4 @@
-# Fails at: /
+# Fails at: /x_mitre_shortname
 type: x-mitre-tactic
 spec_version: '2.1'
 id: x-mitre-tactic--78b23412-0651-46d7-a540-170a1ce8bd5a
