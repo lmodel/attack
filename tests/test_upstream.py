@@ -4,11 +4,16 @@ tests/data/attack-stix-data/manifest.json pins the ATT&CK release: the tag,
 the commit it names, each bundle that scripts/fetch_attack_data.py downloads
 and the licence copied beside the manifest. scripts/check_upstream_release.py
 reads the same manifest and pins the ATT&CK Data Model (ADM) release. These
-tests check that the manifest is consistent with itself, that the schema
-header names the same releases, that the copied licence is the pinned file,
-and that NOTICE reproduces MITRE's copyright designation and licence, as the
-licence asks of every copy. They also list where the v20.0 data departs from
-the ADM, in one object and across a bundle.
+tests check that:
+
+- the manifest is consistent with itself;
+- the schema header names the same releases;
+- the copied licence is the pinned file;
+- NOTICE reproduces MITRE's copyright designation and licence, as the
+  licence asks of every copy.
+
+They also list where the v20.0 data departs from the ADM, in one object and
+across a bundle.
 """
 
 import hashlib
@@ -176,9 +181,10 @@ KNOWN_BUNDLE_DEPARTURES = {
         ),
     ),
     # Seven references, four in Enterprise and three in ICS, name a log their
-    # data component does not list, such as `linus:syslog` for `linux:syslog`,
-    # `device:cli` or a bare `WinEventLog`, or a channel the component words
-    # otherwise, such as `EventCode=13` beside its `EventCode=13, 14`.
+    # data component does not list, or a channel the component words
+    # otherwise. The logs include `linus:syslog` for `linux:syslog`,
+    # `device:cli` and a bare `WinEventLog`, and a channel is `EventCode=13`
+    # beside the component's `EventCode=13, 14`.
     "log source references to a log the data component lacks": BundleDeparture(
         "log source",
         frozenset(
