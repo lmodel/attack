@@ -12,7 +12,7 @@
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -31,7 +31,7 @@
 --     * Slot: x_mitre_shortname Description: The tactic's short name, which a technique's kill chain phase uses as its phase name.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -53,7 +53,7 @@
 --     * Slot: primary_motivation Description: The primary reason, motivation or purpose behind the activity.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -73,10 +73,10 @@
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: first_seen Description: The time at which the object was first seen.
 --     * Slot: last_seen Description: The time at which the object was last seen.
---     * Slot: objective Description: This field defines the Campaign's primary goal, objective, desired outcome, or intended effect.
+--     * Slot: objective Description: The campaign's primary goal, objective, desired outcome or intended effect.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -97,7 +97,7 @@
 --     * Slot: is_family Description: Whether the object represents a malware family (if true) or a malware instance (if false).
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -116,7 +116,7 @@
 --     * Slot: tool_version Description: The version identifier associated with the tool.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -134,7 +134,7 @@
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -152,7 +152,7 @@
 --     * Slot: x_mitre_modified_by_ref Description: The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -170,7 +170,7 @@
 --     * Slot: x_mitre_modified_by_ref Description: The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -188,7 +188,7 @@
 --     * Slot: x_mitre_modified_by_ref Description: The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -206,7 +206,7 @@
 --     * Slot: x_mitre_modified_by_ref Description: The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -225,7 +225,7 @@
 --     * Slot: x_mitre_data_source_ref Description: The data source the data component belongs to.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -242,7 +242,7 @@
 --     * Slot: x_mitre_modified_by_ref Description: The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -260,7 +260,7 @@
 --     * Slot: x_mitre_modified_by_ref Description: The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -281,7 +281,7 @@
 --     * Slot: stop_time Description: The latest time at which the Relationship between the objects exists. If this property is a future timestamp, at the time the updated property is defined, then this represents an estimate by the producer of the intelligence of the latest time at which relationship will be asserted to be true.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -295,11 +295,11 @@
 --     * Slot: x_mitre_old_attack_id Description: An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.
 --     * Slot: name Description: A name that identifies the object.
 --     * Slot: description Description: A description of the object, which may be long.
---     * Slot: identity_class Description: The type of entity that this Identity describes, e.g., an individual or organization. Open Vocab - identity-class-ov.
+--     * Slot: identity_class Description: The kind of entity the identity describes, such as an individual or an organization.
 --     * Slot: contact_information Description: The contact information (e-mail, phone number, etc.) for this Identity.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -361,7 +361,7 @@
 -- # Abstract Class: StixCommonObject Description: The base of the objects that carry STIX's common properties: the domain and relationship objects, language content and extension definitions.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -372,7 +372,7 @@
 -- # Abstract Class: StixDomainObject Description: A STIX Domain Object (SDO): a higher-level concept of cyber threat intelligence, such as an attack pattern, a malware family or a threat actor.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -383,7 +383,7 @@
 -- # Abstract Class: StixRelationshipObject Description: A STIX Relationship Object (SRO): a relationship or a sighting that links other objects.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -397,14 +397,14 @@
 --     * Slot: type Description: The STIX type name of the object, such as attack-pattern. Each class pins its own.
 --     * Slot: spec_version Description: The version of the STIX specification used to represent the object.
 --     * Slot: extensions_id Description: The object's extensions, as a dictionary keyed by extension name.
--- # Class: StixIdentity Description: Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of individuals, organizations, or groups.
+-- # Class: StixIdentity Description: An individual, organization or group, such as ACME, Inc., or a class of them.
 --     * Slot: name Description: A name that identifies the object.
 --     * Slot: description Description: A description of the object, which may be long.
---     * Slot: identity_class Description: The type of entity that this Identity describes, e.g., an individual or organization. Open Vocab - identity-class-ov.
+--     * Slot: identity_class Description: The kind of entity the identity describes, such as an individual or an organization.
 --     * Slot: contact_information Description: The contact information (e-mail, phone number, etc.) for this Identity.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -427,7 +427,7 @@
 --     * Slot: object_modified Description: Identifies the modified time of the object that this Language Content applies to.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -443,7 +443,7 @@
 --     * Slot: version Description: A version, as a string; each class says of what.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -513,7 +513,7 @@
 --     * Slot: StixInfrastructure_id Description: Autocreated FK slot
 --     * Slot: StixMalware_id Description: Autocreated FK slot
 --     * Slot: StixTool_id Description: Autocreated FK slot
--- # Class: StixGranularMarking Description: The granular-marking type defines how the list of marking-definition objects referenced by the marking_refs property to apply to a set of content identified by the list of selectors in the selectors property.
+-- # Class: StixGranularMarking Description: A marking of parts of an object: the properties its selectors name, marked either by a marking definition or with a language.
 --     * Slot: id
 --     * Slot: marking_ref Description: The marking_ref property specifies the ID of the marking-definition object that describes the marking.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -598,8 +598,8 @@
 --     * Slot: id
 -- # Class: StixLanguageContents Description: The translations of a language content object, keyed by language code. Each value maps the translated properties to their translations.
 --     * Slot: id
--- # Class: StixArtifact Description: The Artifact Object permits capturing an array of bytes (8-bits), as a base64-encoded string string, or linking to a file-like payload.
---     * Slot: mime_type Description: The value of this property MUST be a valid MIME type as specified in the IANA Media Types registry.
+-- # Class: StixArtifact Description: An array of bytes, carried as base64 in payload_bin, or a link to a file-like payload.
+--     * Slot: mime_type Description: The MIME type of the content, as the IANA Media Types registry names it.
 --     * Slot: payload_bin Description: Specifies the binary data contained in the artifact as a base64-encoded string.
 --     * Slot: url Description: A URL.
 --     * Slot: encryption_algorithm Description: If the artifact is encrypted, specifies the type of encryption algorithm the binary data (either via payload_bin or url) is encoded in.
@@ -667,7 +667,7 @@
 --     * Slot: name Description: A name that identifies the object.
 --     * Slot: name_enc Description: Specifies the observed encoding for the name of the file.
 --     * Slot: magic_number_hex Description: Specifies the hexadecimal constant ('magic number') associated with a specific file format that corresponds to the file, if applicable.
---     * Slot: mime_type Description: The value of this property MUST be a valid MIME type as specified in the IANA Media Types registry.
+--     * Slot: mime_type Description: The MIME type of the content, as the IANA Media Types registry names it.
 --     * Slot: ctime Description: The time at which the object was created.
 --     * Slot: mtime Description: The time at which the object was last written to.
 --     * Slot: atime Description: The time at which the object was last accessed.
@@ -712,8 +712,8 @@
 --     * Slot: end Description: Specifies the date/time the network traffic ended, if known.
 --     * Slot: src_ref Description: Specifies the source of the network traffic, as a reference to an Observable Object.
 --     * Slot: dst_ref Description: Specifies the destination of the network traffic, as a reference to an Observable Object.
---     * Slot: src_port Description: Specifies the source port used in the network traffic, as an integer. The port value MUST be in the range of 0 - 65535.
---     * Slot: dst_port Description: Specifies the destination port used in the network traffic, as an integer. The port value MUST be in the range of 0 - 65535.
+--     * Slot: src_port Description: The source port of the traffic.
+--     * Slot: dst_port Description: The destination port of the traffic.
 --     * Slot: src_byte_count Description: Specifies the number of bytes sent from the source to the destination.
 --     * Slot: dst_byte_count Description: Specifies the number of bytes sent from the destination to the source.
 --     * Slot: src_packets Description: Specifies the number of packets sent from the source to the destination.
@@ -745,7 +745,7 @@
 --     * Slot: extensions_id Description: The object's extensions, as a dictionary keyed by extension name.
 -- # Class: StixSoftware Description: The Software Object represents high-level properties associated with software, including software products.
 --     * Slot: name Description: A name that identifies the object.
---     * Slot: cpe Description: Specifies the Common Platform Enumeration (CPE) entry for the software, if available. The value for this property MUST be a CPE v2.3 entry from the official NVD CPE Dictionary.
+--     * Slot: cpe Description: The Common Platform Enumeration (CPE) 2.3 name of the software, if it has one.
 --     * Slot: swid Description: Specifies the Software Identification (SWID) Tags entry for the software, if available.
 --     * Slot: vendor Description: Specifies the name of the vendor of the software.
 --     * Slot: version Description: A version, as a string; each class says of what.
@@ -763,9 +763,9 @@
 --     * Slot: extensions_id Description: The object's extensions, as a dictionary keyed by extension name.
 -- # Class: StixUserAccount Description: The User Account Object represents an instance of any type of user account, including but not limited to operating system, device, messaging service, and social media platform accounts.
 --     * Slot: user_id Description: Specifies the identifier of the account.
---     * Slot: credential Description: Specifies a cleartext credential. This is only intended to be used in capturing metadata from malware analysis (e.g., a hard-coded domain administrator password that the malware attempts to use for lateral movement) and SHOULD NOT be used for sharing of PII.
+--     * Slot: credential Description: A cleartext credential, such as a hard-coded password that malware tries for lateral movement.
 --     * Slot: account_login Description: Specifies the account login string, used in cases where the user_id property specifies something other than what a user would type when they login.
---     * Slot: account_type Description: Specifies the type of the account. This is an open vocabulary and values SHOULD come from the account-type-ov vocabulary.
+--     * Slot: account_type Description: The type of the account, such as unix or ldap.
 --     * Slot: display_name Description: A name for display.
 --     * Slot: is_service_account Description: Indicates that the account is associated with a network service or system process (daemon), not a specific individual.
 --     * Slot: is_privileged Description: Specifies that the account has elevated privileges (i.e., in the case of root on Unix or the Windows Administrator account).
@@ -831,11 +831,11 @@
 --     * Slot: comment Description: Specifies a comment included as part of the archive file.
 -- # Class: StixWindowsPeBinaryExtension Description: The Windows PE Binary File extension specifies a default extension for capturing properties specific to Windows portable executable (PE) files.
 --     * Slot: id
---     * Slot: pe_type Description: Specifies the type of the PE binary. Open Vocabulary - windows-pebinary-type-ov.
+--     * Slot: pe_type Description: The type of the PE binary, such as exe or dll.
 --     * Slot: imphash Description: Specifies the special import hash, or 'imphash', calculated for the PE Binary based on its imported libraries and functions.
 --     * Slot: machine_hex Description: Specifies the type of target machine.
 --     * Slot: number_of_sections Description: Specifies the number of sections in the PE binary, as a non-negative integer.
---     * Slot: time_date_stamp Description: Specifies the time when the PE binary was created. The timestamp value MUST BE precise to the second.
+--     * Slot: time_date_stamp Description: The time at which the PE binary was created.
 --     * Slot: pointer_to_symbol_table_hex Description: Specifies the file offset of the COFF symbol table.
 --     * Slot: number_of_symbols Description: Specifies the number of entries in the symbol table of the PE binary, as a non-negative integer.
 --     * Slot: size_of_optional_header Description: Specifies the size of the optional header of the PE binary.
@@ -884,7 +884,7 @@
 --     * Slot: start_type Description: Specifies the start options defined for the service. windows-service-start-enum.
 --     * Slot: service_type Description: Specifies the type of the service. windows-service-enum.
 --     * Slot: service_status Description: Specifies the current status of the service. windows-service-status-enum.
--- # Class: StixUnixAccountExtension Description: The User Account Object defines the following extensions. In addition to these, producers MAY create their own.
+-- # Class: StixUnixAccountExtension Description: The UNIX account extension of a user account: its group, its other groups, its home directory and its shell.
 --     * Slot: id
 --     * Slot: gid Description: Specifies the primary group ID of the account.
 --     * Slot: home_dir Description: Specifies the home directory of the account.
@@ -926,7 +926,7 @@
 --     * Slot: size_of_image Description: Specifies the size, in bytes, of the image, including all headers, as the image is loaded in memory.
 --     * Slot: size_of_headers Description: Specifies the combined size of the MS-DOS, PE header, and section headers, rounded up a multiple of the value specified in the file_alignment header.
 --     * Slot: checksum_hex Description: Specifies the checksum of the PE binary.
---     * Slot: subsystem_hex Description: Specifies the subsystem (e.g., GUI, device driver, etc.) that is required to run this image.
+--     * Slot: subsystem_hex Description: The subsystem, such as a GUI or a device driver, needed to run the image.
 --     * Slot: dll_characteristics_hex Description: Specifies the flags that characterize the PE binary.
 --     * Slot: size_of_stack_reserve Description: Specifies the size of the stack to reserve.
 --     * Slot: size_of_stack_commit Description: Specifies the size of the stack to commit.
@@ -959,7 +959,7 @@
 --     * Slot: authority_key_identifier Description: Specifies the identifier that provides a means of identifying the public key corresponding to the private key used to sign a certificate.
 --     * Slot: subject_alternative_name Description: Specifies the additional identities to be bound to the subject of the certificate.
 --     * Slot: issuer_alternative_name Description: Specifies the additional identities to be bound to the issuer of the certificate.
---     * Slot: subject_directory_attributes Description: Specifies the identification attributes (e.g., nationality) of the subject.
+--     * Slot: subject_directory_attributes Description: The identification attributes of the subject, such as nationality.
 --     * Slot: crl_distribution_points Description: Specifies how CRL information is obtained.
 --     * Slot: inhibit_any_policy Description: Specifies the number of additional certificates that may appear in the path before anyPolicy is no longer permitted.
 --     * Slot: private_key_usage_period_not_before Description: Specifies the date on which the validity period begins for the private key, if it is different from the validity period of the certificate.
@@ -985,7 +985,7 @@
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -998,10 +998,10 @@
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: first_seen Description: The time at which the object was first seen.
 --     * Slot: last_seen Description: The time at which the object was last seen.
---     * Slot: objective Description: This field defines the Campaign's primary goal, objective, desired outcome, or intended effect.
+--     * Slot: objective Description: The campaign's primary goal, objective, desired outcome or intended effect.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1014,7 +1014,7 @@
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1028,7 +1028,7 @@
 --     * Slot: context Description: A short description of the particular context shared by the content referenced by the Grouping.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1041,7 +1041,7 @@
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1059,7 +1059,7 @@
 --     * Slot: valid_until Description: The time at which this indicator should no longer be considered valuable intelligence.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1074,7 +1074,7 @@
 --     * Slot: last_seen Description: The time at which the object was last seen.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1091,7 +1091,7 @@
 --     * Slot: primary_motivation Description: The primary reason, motivation or purpose behind the activity.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1099,7 +1099,7 @@
 --     * Slot: type Description: The STIX type name of the object, such as attack-pattern. Each class pins its own.
 --     * Slot: spec_version Description: The version of the STIX specification used to represent the object.
 --     * Slot: extensions_id Description: The object's extensions, as a dictionary keyed by extension name.
--- # Class: StixLocation Description: A Location represents a geographic location. The location may be described as any, some or all of the following: region (e.g., North America), civic address (e.g. New York, US), latitude and longitude.
+-- # Class: StixLocation Description: A geographic location, given as a region, a civic address, a latitude and longitude, or any mix of them.
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: name Description: A name that identifies the object.
 --     * Slot: latitude Description: The latitude of the Location in decimal degrees.
@@ -1113,7 +1113,7 @@
 --     * Slot: postal_code Description: The postal code for this Location.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1121,7 +1121,7 @@
 --     * Slot: type Description: The STIX type name of the object, such as attack-pattern. Each class pins its own.
 --     * Slot: spec_version Description: The version of the STIX specification used to represent the object.
 --     * Slot: extensions_id Description: The object's extensions, as a dictionary keyed by extension name.
--- # Class: StixMalware Description: Malware is a type of TTP that is also known as malicious code and malicious software, refers to a program that is inserted into a system, usually covertly, with the intent of compromising the confidentiality, integrity, or availability of the victim's data, applications, or operating system (OS) or of otherwise annoying or disrupting the victim.
+-- # Class: StixMalware Description: Malicious code: a program inserted into a system, usually covertly, to compromise its data, applications or operating system, or to disrupt its owner.
 --     * Slot: first_seen Description: The time at which the object was first seen.
 --     * Slot: last_seen Description: The time at which the object was last seen.
 --     * Slot: name Description: A name that identifies the object.
@@ -1129,7 +1129,7 @@
 --     * Slot: is_family Description: Whether the object represents a malware family (if true) or a malware instance (if false).
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1153,7 +1153,7 @@
 --     * Slot: sample_ref Description: Refers to the object this analysis was performed against.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1166,7 +1166,7 @@
 --     * Slot: content Description: The content of the note.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1177,10 +1177,10 @@
 -- # Class: StixObservedData Description: Observed data conveys information that was observed on systems and networks, such as log data or network traffic, using the Cyber Observable specification.
 --     * Slot: first_observed Description: The beginning of the time window that the data was observed during.
 --     * Slot: last_observed Description: The end of the time window that the data was observed during.
---     * Slot: number_observed Description: The number of times the data represented in the objects property was observed. This MUST be an integer between 1 and 999,999,999 inclusive.
+--     * Slot: number_observed Description: The number of times the data in objects or object_refs was observed.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1191,10 +1191,10 @@
 --     * Slot: extensions_id Description: The object's extensions, as a dictionary keyed by extension name.
 -- # Class: StixOpinion Description: An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity and captures the level of agreement or disagreement using a fixed scale.
 --     * Slot: explanation Description: An explanation of why the producer has this Opinion.
---     * Slot: opinion Description: The opinion that the producer has about about all of the STIX Object(s) listed in the object_refs property.
+--     * Slot: opinion Description: The producer's opinion of the objects that object_refs lists.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1208,7 +1208,7 @@
 --     * Slot: published Description: The date that this report object was officially published by the creator of this report.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1221,12 +1221,12 @@
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: first_seen Description: The time at which the object was first seen.
 --     * Slot: last_seen Description: The time at which the object was last seen.
---     * Slot: sophistication Description: The skill, specific knowledge, special training, or expertise a Threat Actor must have to perform the attack. Open Vocab - threat-actor-sophistication-ov.
+--     * Slot: sophistication Description: The skill, knowledge, training or expertise the threat actor needs to carry out an attack.
 --     * Slot: resource_level Description: The organizational level at which the actor typically works.
 --     * Slot: primary_motivation Description: The primary reason, motivation or purpose behind the activity.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1240,7 +1240,7 @@
 --     * Slot: tool_version Description: The version identifier associated with the tool.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1253,7 +1253,7 @@
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1272,7 +1272,7 @@
 --     * Slot: stop_time Description: The latest time at which the Relationship between the objects exists. If this property is a future timestamp, at the time the updated property is defined, then this represents an estimate by the producer of the intelligence of the latest time at which relationship will be asserted to be true.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1280,16 +1280,16 @@
 --     * Slot: type Description: The STIX type name of the object, such as attack-pattern. Each class pins its own.
 --     * Slot: spec_version Description: The version of the STIX specification used to represent the object.
 --     * Slot: extensions_id Description: The object's extensions, as a dictionary keyed by extension name.
--- # Class: StixSighting Description: A Sighting denotes the belief that something in CTI (e.g., an indicator, malware, tool, threat actor, etc.) was seen.
+-- # Class: StixSighting Description: The belief that something in cyber threat intelligence, such as an indicator, malware or a threat actor, was seen.
 --     * Slot: description Description: A description of the object, which may be long.
 --     * Slot: first_seen Description: The time at which the object was first seen.
 --     * Slot: last_seen Description: The time at which the object was last seen.
 --     * Slot: count Description: This is an integer between 0 and 999,999,999 inclusive and represents the number of times the object was sighted.
---     * Slot: sighting_of_ref Description: An ID reference to the object that has been sighted.
+--     * Slot: sighting_of_ref Description: A reference to the domain object that was sighted.
 --     * Slot: summary Description: The summary property indicates whether the Sighting should be considered summary data.
 --     * Slot: created_by_ref Description: A reference to the identity of the object's creator.
 --     * Slot: created Description: The time at which the object, or its first version, was created.
---     * Slot: modified Description: The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.
+--     * Slot: modified Description: The time at which this version of the object was modified.
 --     * Slot: revoked Description: The revoked property indicates whether the object has been revoked.
 --     * Slot: confidence Description: Identifies the confidence that the creator has in the correctness of their data.
 --     * Slot: lang Description: The language of the text content, as an RFC 5646 language code.
@@ -1407,19 +1407,19 @@
 --     * Slot: operating_system_refs_id Description: The operating systems that the malware family or malware instance is executable on.
 -- # Class: AttackMalware_architecture_execution_envs
 --     * Slot: AttackMalware_id Description: Autocreated FK slot
---     * Slot: architecture_execution_envs Description: The processor architectures (e.g., x86, ARM, etc.) that the malware instance or family is executable on. Open Vocab - processor-architecture-os.
+--     * Slot: architecture_execution_envs Description: The processor architectures, such as x86 or ARM, that the malware runs on.
 -- # Class: AttackMalware_implementation_languages
 --     * Slot: AttackMalware_id Description: Autocreated FK slot
---     * Slot: implementation_languages Description: The programming language(s) used to implement the malware instance or family. Open Vocab - implementation-language-ov.
+--     * Slot: implementation_languages Description: The programming languages used to write the malware instance or family.
 -- # Class: AttackMalware_capabilities
 --     * Slot: AttackMalware_id Description: Autocreated FK slot
---     * Slot: capabilities Description: Specifies any capabilities identified for the malware instance or family. Open Vocab - malware-capabilities-ov.
+--     * Slot: capabilities Description: The capabilities identified in the malware instance or family.
 -- # Class: AttackMalware_sample_refs
 --     * Slot: AttackMalware_id Description: Autocreated FK slot
 --     * Slot: sample_refs_id Description: The sample_refs property specifies a list of identifiers of the SCO file or artifact objects associated with this malware instance(s) or family.
 -- # Class: AttackMalware_malware_types
 --     * Slot: AttackMalware_id Description: Autocreated FK slot
---     * Slot: malware_types Description: The type of malware being described. Open Vocab - malware-type-ov.
+--     * Slot: malware_types Description: The kinds of malware, such as ransomware.
 -- # Class: AttackMalware_labels
 --     * Slot: AttackMalware_id Description: Autocreated FK slot
 --     * Slot: labels Description: The labels property specifies a set of terms used to describe this object.
@@ -1443,7 +1443,7 @@
 --     * Slot: aliases Description: Other names by which the object is known.
 -- # Class: AttackTool_tool_types
 --     * Slot: AttackTool_id Description: Autocreated FK slot
---     * Slot: tool_types Description: The kind(s) of tool(s) being described. Open Vocab - tool-type-ov.
+--     * Slot: tool_types Description: The kinds of tool, such as remote-access.
 -- # Class: AttackTool_labels
 --     * Slot: AttackTool_id Description: Autocreated FK slot
 --     * Slot: labels Description: The labels property specifies a set of terms used to describe this object.
@@ -1563,7 +1563,7 @@
 --     * Slot: roles Description: The roles that the identity or threat actor plays.
 -- # Class: AttackIdentity_sectors
 --     * Slot: AttackIdentity_id Description: Autocreated FK slot
---     * Slot: sectors Description: The list of sectors that this Identity belongs to. Open Vocab - industry-sector-ov.
+--     * Slot: sectors Description: The industry sectors that the identity belongs to.
 -- # Class: AttackIdentity_labels
 --     * Slot: AttackIdentity_id Description: Autocreated FK slot
 --     * Slot: labels Description: The labels property specifies a set of terms used to describe this object.
@@ -1605,7 +1605,7 @@
 --     * Slot: roles Description: The roles that the identity or threat actor plays.
 -- # Class: StixIdentity_sectors
 --     * Slot: StixIdentity_id Description: Autocreated FK slot
---     * Slot: sectors Description: The list of sectors that this Identity belongs to. Open Vocab - industry-sector-ov.
+--     * Slot: sectors Description: The industry sectors that the identity belongs to.
 -- # Class: StixIdentity_labels
 --     * Slot: StixIdentity_id Description: Autocreated FK slot
 --     * Slot: labels Description: The labels property specifies a set of terms used to describe this object.
@@ -1722,7 +1722,7 @@
 --     * Slot: object_marking_refs_id Description: References to the marking definitions that apply to the object.
 -- # Class: StixSoftware_languages
 --     * Slot: StixSoftware_id Description: Autocreated FK slot
---     * Slot: languages Description: Specifies the languages supported by the software. The value of each list member MUST be an RFC 5646 language code. ISO 639-2 codes are accepted for backward compatibility.
+--     * Slot: languages Description: The languages the software supports, as RFC 5646 language codes.
 -- # Class: StixSoftware_object_marking_refs
 --     * Slot: StixSoftware_id Description: Autocreated FK slot
 --     * Slot: object_marking_refs_id Description: References to the marking definitions that apply to the object.
@@ -1791,7 +1791,7 @@
 --     * Slot: object_marking_refs_id Description: References to the marking definitions that apply to the object.
 -- # Class: StixIndicator_indicator_types
 --     * Slot: StixIndicator_id Description: Autocreated FK slot
---     * Slot: indicator_types Description: This field is an Open Vocabulary that specifies the type of indicator. Open vocab - indicator-type-ov.
+--     * Slot: indicator_types Description: The kinds of indicator, such as malicious-activity.
 -- # Class: StixIndicator_labels
 --     * Slot: StixIndicator_id Description: Autocreated FK slot
 --     * Slot: labels Description: The labels property specifies a set of terms used to describe this object.
@@ -1800,7 +1800,7 @@
 --     * Slot: object_marking_refs_id Description: References to the marking definitions that apply to the object.
 -- # Class: StixInfrastructure_infrastructure_types
 --     * Slot: StixInfrastructure_id Description: Autocreated FK slot
---     * Slot: infrastructure_types Description: This field is an Open Vocabulary that specifies the type of infrastructure. Open vocab - infrastructure-type-ov.
+--     * Slot: infrastructure_types Description: The kinds of infrastructure, such as botnet.
 -- # Class: StixInfrastructure_aliases
 --     * Slot: StixInfrastructure_id Description: Autocreated FK slot
 --     * Slot: aliases Description: Other names by which the object is known.
@@ -1839,19 +1839,19 @@
 --     * Slot: operating_system_refs_id Description: The operating systems that the malware family or malware instance is executable on.
 -- # Class: StixMalware_architecture_execution_envs
 --     * Slot: StixMalware_id Description: Autocreated FK slot
---     * Slot: architecture_execution_envs Description: The processor architectures (e.g., x86, ARM, etc.) that the malware instance or family is executable on. Open Vocab - processor-architecture-os.
+--     * Slot: architecture_execution_envs Description: The processor architectures, such as x86 or ARM, that the malware runs on.
 -- # Class: StixMalware_implementation_languages
 --     * Slot: StixMalware_id Description: Autocreated FK slot
---     * Slot: implementation_languages Description: The programming language(s) used to implement the malware instance or family. Open Vocab - implementation-language-ov.
+--     * Slot: implementation_languages Description: The programming languages used to write the malware instance or family.
 -- # Class: StixMalware_capabilities
 --     * Slot: StixMalware_id Description: Autocreated FK slot
---     * Slot: capabilities Description: Specifies any capabilities identified for the malware instance or family. Open Vocab - malware-capabilities-ov.
+--     * Slot: capabilities Description: The capabilities identified in the malware instance or family.
 -- # Class: StixMalware_sample_refs
 --     * Slot: StixMalware_id Description: Autocreated FK slot
 --     * Slot: sample_refs_id Description: The sample_refs property specifies a list of identifiers of the SCO file or artifact objects associated with this malware instance(s) or family.
 -- # Class: StixMalware_malware_types
 --     * Slot: StixMalware_id Description: Autocreated FK slot
---     * Slot: malware_types Description: The type of malware being described. Open Vocab - malware-type-ov.
+--     * Slot: malware_types Description: The kinds of malware, such as ransomware.
 -- # Class: StixMalware_labels
 --     * Slot: StixMalware_id Description: Autocreated FK slot
 --     * Slot: labels Description: The labels property specifies a set of terms used to describe this object.
@@ -1866,7 +1866,7 @@
 --     * Slot: installed_software_refs_id Description: Any non-standard software installed on the operating system used for the dynamic analysis of the malware instance or family.
 -- # Class: StixMalwareAnalysis_analysis_sco_refs
 --     * Slot: StixMalwareAnalysis_id Description: Autocreated FK slot
---     * Slot: analysis_sco_refs_id Description: The list of STIX objects that were captured during the analysis process.
+--     * Slot: analysis_sco_refs_id Description: The cyber-observable objects captured during the analysis.
 -- # Class: StixMalwareAnalysis_labels
 --     * Slot: StixMalwareAnalysis_id Description: Autocreated FK slot
 --     * Slot: labels Description: The labels property specifies a set of terms used to describe this object.
@@ -1875,7 +1875,7 @@
 --     * Slot: object_marking_refs_id Description: References to the marking definitions that apply to the object.
 -- # Class: StixNote_authors
 --     * Slot: StixNote_id Description: Autocreated FK slot
---     * Slot: authors Description: The name of the author(s) of this note (e.g., the analyst(s) that created it).
+--     * Slot: authors Description: The names of the note's authors, such as the analysts who wrote it.
 -- # Class: StixNote_object_refs
 --     * Slot: StixNote_id Description: Autocreated FK slot
 --     * Slot: object_refs_id Description: References to the STIX objects that this object is about or holds.
@@ -1896,7 +1896,7 @@
 --     * Slot: object_marking_refs_id Description: References to the marking definitions that apply to the object.
 -- # Class: StixOpinion_authors
 --     * Slot: StixOpinion_id Description: Autocreated FK slot
---     * Slot: authors Description: The name of the author(s) of this note (e.g., the analyst(s) that created it).
+--     * Slot: authors Description: The names of the note's authors, such as the analysts who wrote it.
 -- # Class: StixOpinion_object_refs
 --     * Slot: StixOpinion_id Description: Autocreated FK slot
 --     * Slot: object_refs_id Description: References to the STIX objects that this object is about or holds.
@@ -1908,7 +1908,7 @@
 --     * Slot: object_marking_refs_id Description: References to the marking definitions that apply to the object.
 -- # Class: StixReport_report_types
 --     * Slot: StixReport_id Description: Autocreated FK slot
---     * Slot: report_types Description: This field is an Open Vocabulary that specifies the primary subject of this report. The suggested values for this field are in report-type-ov.
+--     * Slot: report_types Description: The primary subjects of the report, such as threat-actor.
 -- # Class: StixReport_object_refs
 --     * Slot: StixReport_id Description: Autocreated FK slot
 --     * Slot: object_refs_id Description: References to the STIX objects that this object is about or holds.
@@ -1920,7 +1920,7 @@
 --     * Slot: object_marking_refs_id Description: References to the marking definitions that apply to the object.
 -- # Class: StixThreatActor_threat_actor_types
 --     * Slot: StixThreatActor_id Description: Autocreated FK slot
---     * Slot: threat_actor_types Description: This field specifies the type of threat actor. Open Vocab - threat-actor-type-ov.
+--     * Slot: threat_actor_types Description: The kinds of threat actor, such as nation-state.
 -- # Class: StixThreatActor_aliases
 --     * Slot: StixThreatActor_id Description: Autocreated FK slot
 --     * Slot: aliases Description: Other names by which the object is known.
@@ -1935,7 +1935,7 @@
 --     * Slot: secondary_motivations Description: The secondary reasons, motivations or purposes behind the activity.
 -- # Class: StixThreatActor_personal_motivations
 --     * Slot: StixThreatActor_id Description: Autocreated FK slot
---     * Slot: personal_motivations Description: The personal reasons, motivations, or purposes of the Threat Actor regardless of organizational goals. Open Vocab - attack-motivation-ov.
+--     * Slot: personal_motivations Description: The threat actor's personal reasons or motivations, apart from its organization's goals.
 -- # Class: StixThreatActor_labels
 --     * Slot: StixThreatActor_id Description: Autocreated FK slot
 --     * Slot: labels Description: The labels property specifies a set of terms used to describe this object.
@@ -1947,7 +1947,7 @@
 --     * Slot: aliases Description: Other names by which the object is known.
 -- # Class: StixTool_tool_types
 --     * Slot: StixTool_id Description: Autocreated FK slot
---     * Slot: tool_types Description: The kind(s) of tool(s) being described. Open Vocab - tool-type-ov.
+--     * Slot: tool_types Description: The kinds of tool, such as remote-access.
 -- # Class: StixTool_labels
 --     * Slot: StixTool_id Description: Autocreated FK slot
 --     * Slot: labels Description: The labels property specifies a set of terms used to describe this object.
@@ -5829,7 +5829,7 @@ CREATE INDEX "ix_StixExternalReference_id" ON "StixExternalReference" (id);
 
 CREATE TABLE "StixGranularMarking" (
 	id INTEGER NOT NULL,
-	marking_ref TEXT NOT NULL,
+	marking_ref TEXT,
 	lang TEXT,
 	"AttackTechnique_id" TEXT,
 	"AttackTactic_id" TEXT,

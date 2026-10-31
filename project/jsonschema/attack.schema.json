@@ -81,7 +81,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -291,7 +291,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -800,7 +800,7 @@
                     "type": "string"
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -818,7 +818,7 @@
                     "type": "array"
                 },
                 "objective": {
-                    "description": "This field defines the Campaign's primary goal, objective, desired outcome, or intended effect.",
+                    "description": "The campaign's primary goal, objective, desired outcome or intended effect.",
                     "type": [
                         "string",
                         "null"
@@ -1008,7 +1008,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -1199,7 +1199,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -1390,7 +1390,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -1591,7 +1591,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -1850,7 +1850,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -2089,7 +2089,7 @@
                             "type": "string"
                         }
                     ],
-                    "description": "The type of entity that this Identity describes, e.g., an individual or organization. Open Vocab - identity-class-ov."
+                    "description": "The kind of entity the identity describes, such as an individual or an organization."
                 },
                 "labels": {
                     "description": "The labels property specifies a set of terms used to describe this object.",
@@ -2110,7 +2110,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -2146,7 +2146,7 @@
                     ]
                 },
                 "sectors": {
-                    "description": "The list of sectors that this Identity belongs to. Open Vocab - industry-sector-ov.",
+                    "description": "The industry sectors that the identity belongs to.",
                     "items": {
                         "anyOf": [
                             {
@@ -2312,7 +2312,7 @@
                     ]
                 },
                 "architecture_execution_envs": {
-                    "description": "The processor architectures (e.g., x86, ARM, etc.) that the malware instance or family is executable on. Open Vocab - processor-architecture-os.",
+                    "description": "The processor architectures, such as x86 or ARM, that the malware runs on.",
                     "items": {
                         "anyOf": [
                             {
@@ -2330,7 +2330,7 @@
                     ]
                 },
                 "capabilities": {
-                    "description": "Specifies any capabilities identified for the malware instance or family. Open Vocab - malware-capabilities-ov.",
+                    "description": "The capabilities identified in the malware instance or family.",
                     "items": {
                         "anyOf": [
                             {
@@ -2414,7 +2414,7 @@
                     "type": "string"
                 },
                 "implementation_languages": {
-                    "description": "The programming language(s) used to implement the malware instance or family. Open Vocab - implementation-language-ov.",
+                    "description": "The programming languages used to write the malware instance or family.",
                     "items": {
                         "anyOf": [
                             {
@@ -2480,7 +2480,7 @@
                     ]
                 },
                 "malware_types": {
-                    "description": "The type of malware being described. Open Vocab - malware-type-ov.",
+                    "description": "The kinds of malware, such as ransomware.",
                     "items": {
                         "anyOf": [
                             {
@@ -2498,7 +2498,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -2675,7 +2675,7 @@
             "properties": {
                 "created": {
                     "description": "The time at which the object, or its first version, was created.",
-                    "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\\.[0-9]+)?Z$",
+                    "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
                 "created_by_ref": {
@@ -2881,7 +2881,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -3064,7 +3064,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -3571,7 +3571,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -3793,7 +3793,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -4049,7 +4049,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -4382,7 +4382,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -4414,7 +4414,7 @@
                     "description": "The version of the STIX specification used to represent the object."
                 },
                 "tool_types": {
-                    "description": "The kind(s) of tool(s) being described. Open Vocab - tool-type-ov.",
+                    "description": "The kinds of tool, such as remote-access.",
                     "items": {
                         "anyOf": [
                             {
@@ -4710,7 +4710,7 @@
                     ]
                 }
             ],
-            "description": "The Artifact Object permits capturing an array of bytes (8-bits), as a base64-encoded string string, or linking to a file-like payload.",
+            "description": "An array of bytes, carried as base64 in payload_bin, or a link to a file-like payload.",
             "properties": {
                 "decryption_key": {
                     "description": "Specifies the decryption key for the encrypted binary data (either via payload_bin or url).",
@@ -4776,7 +4776,7 @@
                     "type": "string"
                 },
                 "mime_type": {
-                    "description": "The value of this property MUST be a valid MIME type as specified in the IANA Media Types registry.",
+                    "description": "The MIME type of the content, as the IANA Media Types registry names it.",
                     "pattern": "^(application|audio|font|image|message|model|multipart|text|video)/[a-zA-Z0-9.+_-]+",
                     "type": [
                         "string",
@@ -4972,7 +4972,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -5457,7 +5457,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -5478,7 +5478,7 @@
                     ]
                 },
                 "objective": {
-                    "description": "This field defines the Campaign's primary goal, objective, desired outcome, or intended effect.",
+                    "description": "The campaign's primary goal, objective, desired outcome or intended effect.",
                     "type": [
                         "string",
                         "null"
@@ -5596,7 +5596,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -5729,7 +5729,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -6167,7 +6167,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -6348,7 +6348,7 @@
                     ]
                 },
                 "body_multipart": {
-                    "description": "Specifies a list of the MIME parts that make up the email body. This property MAY only be used if is_multipart is true.",
+                    "description": "The MIME parts that make up a multipart email body.",
                     "items": {
                         "$ref": "#/$defs/StixMimePart"
                     },
@@ -6687,7 +6687,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -6927,7 +6927,7 @@
                 "contains_refs": {
                     "description": "References to other cyber-observable objects that this one contains.",
                     "items": {
-                        "pattern": "^[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                        "pattern": "^(?!(attack-pattern|campaign|course-of-action|grouping|identity|incident|indicator|infrastructure|intrusion-set|location|malware|malware-analysis|note|observed-data|opinion|report|threat-actor|tool|vulnerability|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
                         "type": "string"
                     },
                     "minItems": 1,
@@ -7006,7 +7006,7 @@
                     ]
                 },
                 "mime_type": {
-                    "description": "The value of this property MUST be a valid MIME type as specified in the IANA Media Types registry.",
+                    "description": "The MIME type of the content, as the IANA Media Types registry names it.",
                     "type": [
                         "string",
                         "null"
@@ -7120,7 +7120,25 @@
         },
         "StixGranularMarking": {
             "additionalProperties": false,
-            "description": "The granular-marking type defines how the list of marking-definition objects referenced by the marking_refs property to apply to a set of content identified by the list of selectors in the selectors property.",
+            "description": "A marking of parts of an object: the properties its selectors name, marked either by a marking definition or with a language.",
+            "oneOf": [
+                {
+                    "properties": {
+                        "marking_ref": {}
+                    },
+                    "required": [
+                        "marking_ref"
+                    ]
+                },
+                {
+                    "properties": {
+                        "lang": {}
+                    },
+                    "required": [
+                        "lang"
+                    ]
+                }
+            ],
             "properties": {
                 "lang": {
                     "description": "The language of the text content, as an RFC 5646 language code.",
@@ -7132,7 +7150,10 @@
                 "marking_ref": {
                     "description": "The marking_ref property specifies the ID of the marking-definition object that describes the marking.",
                     "pattern": "^marking-definition--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
-                    "type": "string"
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 },
                 "selectors": {
                     "description": "A list of selectors for content contained within the STIX object in which this property appears.",
@@ -7145,7 +7166,6 @@
                 }
             },
             "required": [
-                "marking_ref",
                 "selectors"
             ],
             "title": "StixGranularMarking",
@@ -7252,7 +7272,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -7427,7 +7447,7 @@
         },
         "StixIdentity": {
             "additionalProperties": false,
-            "description": "Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of individuals, organizations, or groups.",
+            "description": "An individual, organization or group, such as ACME, Inc., or a class of them.",
             "properties": {
                 "confidence": {
                     "description": "Identifies the confidence that the creator has in the correctness of their data.",
@@ -7515,7 +7535,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The type of entity that this Identity describes, e.g., an individual or organization. Open Vocab - identity-class-ov."
+                    "description": "The kind of entity the identity describes, such as an individual or an organization."
                 },
                 "labels": {
                     "description": "The labels property specifies a set of terms used to describe this object.",
@@ -7536,7 +7556,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -7575,7 +7595,7 @@
                     ]
                 },
                 "sectors": {
-                    "description": "The list of sectors that this Identity belongs to. Open Vocab - industry-sector-ov.",
+                    "description": "The industry sectors that the identity belongs to.",
                     "items": {
                         "anyOf": [
                             {
@@ -7745,7 +7765,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -7866,7 +7886,7 @@
                     "type": "string"
                 },
                 "indicator_types": {
-                    "description": "This field is an Open Vocabulary that specifies the type of indicator. Open vocab - indicator-type-ov.",
+                    "description": "The kinds of indicator, such as malicious-activity.",
                     "items": {
                         "anyOf": [
                             {
@@ -7920,7 +7940,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -8155,7 +8175,7 @@
                     "type": "string"
                 },
                 "infrastructure_types": {
-                    "description": "This field is an Open Vocabulary that specifies the type of infrastructure. Open vocab - infrastructure-type-ov.",
+                    "description": "The kinds of infrastructure, such as botnet.",
                     "items": {
                         "anyOf": [
                             {
@@ -8217,7 +8237,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -8416,7 +8436,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -8828,7 +8848,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -8990,7 +9010,7 @@
                     ]
                 }
             ],
-            "description": "A Location represents a geographic location. The location may be described as any, some or all of the following: region (e.g., North America), civic address (e.g. New York, US), latitude and longitude.",
+            "description": "A geographic location, given as a region, a civic address, a latitude and longitude, or any mix of them.",
             "properties": {
                 "administrative_area": {
                     "description": "The state, province, or other sub-national administrative area that this Location describes.",
@@ -9117,7 +9137,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -9286,7 +9306,7 @@
         },
         "StixMalware": {
             "additionalProperties": false,
-            "description": "Malware is a type of TTP that is also known as malicious code and malicious software, refers to a program that is inserted into a system, usually covertly, with the intent of compromising the confidentiality, integrity, or availability of the victim's data, applications, or operating system (OS) or of otherwise annoying or disrupting the victim.",
+            "description": "Malicious code: a program inserted into a system, usually covertly, to compromise its data, applications or operating system, or to disrupt its owner.",
             "properties": {
                 "aliases": {
                     "description": "Other names by which the object is known.",
@@ -9300,7 +9320,7 @@
                     ]
                 },
                 "architecture_execution_envs": {
-                    "description": "The processor architectures (e.g., x86, ARM, etc.) that the malware instance or family is executable on. Open Vocab - processor-architecture-os.",
+                    "description": "The processor architectures, such as x86 or ARM, that the malware runs on.",
                     "items": {
                         "anyOf": [
                             {
@@ -9318,7 +9338,7 @@
                     ]
                 },
                 "capabilities": {
-                    "description": "Specifies any capabilities identified for the malware instance or family. Open Vocab - malware-capabilities-ov.",
+                    "description": "The capabilities identified in the malware instance or family.",
                     "items": {
                         "anyOf": [
                             {
@@ -9411,7 +9431,7 @@
                     "type": "string"
                 },
                 "implementation_languages": {
-                    "description": "The programming language(s) used to implement the malware instance or family. Open Vocab - implementation-language-ov.",
+                    "description": "The programming languages used to write the malware instance or family.",
                     "items": {
                         "anyOf": [
                             {
@@ -9477,7 +9497,7 @@
                     ]
                 },
                 "malware_types": {
-                    "description": "The type of malware being described. Open Vocab - malware-type-ov.",
+                    "description": "The kinds of malware, such as ransomware.",
                     "items": {
                         "anyOf": [
                             {
@@ -9495,7 +9515,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -9624,9 +9644,9 @@
                     ]
                 },
                 "analysis_sco_refs": {
-                    "description": "The list of STIX objects that were captured during the analysis process.",
+                    "description": "The cyber-observable objects captured during the analysis.",
                     "items": {
-                        "pattern": "^[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                        "pattern": "^(?!(attack-pattern|campaign|course-of-action|grouping|identity|incident|indicator|infrastructure|intrusion-set|location|malware|malware-analysis|note|observed-data|opinion|report|threat-actor|tool|vulnerability|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
                         "type": "string"
                     },
                     "minItems": 1,
@@ -9749,7 +9769,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -9966,7 +9986,7 @@
             "properties": {
                 "created": {
                     "description": "The time at which the object, or its first version, was created.",
-                    "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)(\\.[0-9]+)?Z$",
+                    "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
                 "created_by_ref": {
@@ -10338,7 +10358,7 @@
                     ]
                 },
                 "dst_port": {
-                    "description": "Specifies the destination port used in the network traffic, as an integer. The port value MUST be in the range of 0 - 65535.",
+                    "description": "The destination port of the traffic.",
                     "maximum": 65535,
                     "minimum": 0,
                     "type": [
@@ -10486,7 +10506,7 @@
                     ]
                 },
                 "src_port": {
-                    "description": "Specifies the source port used in the network traffic, as an integer. The port value MUST be in the range of 0 - 65535.",
+                    "description": "The source port of the traffic.",
                     "maximum": 65535,
                     "minimum": 0,
                     "type": [
@@ -10569,7 +10589,7 @@
                     ]
                 },
                 "authors": {
-                    "description": "The name of the author(s) of this note (e.g., the analyst(s) that created it).",
+                    "description": "The names of the note's authors, such as the analysts who wrote it.",
                     "items": {
                         "type": "string"
                     },
@@ -10662,7 +10682,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -10953,12 +10973,12 @@
                     "type": "string"
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
                 "number_observed": {
-                    "description": "The number of times the data represented in the objects property was observed. This MUST be an integer between 1 and 999,999,999 inclusive.",
+                    "description": "The number of times the data in objects or object_refs was observed.",
                     "maximum": 999999999,
                     "minimum": 1,
                     "type": "integer"
@@ -11118,7 +11138,7 @@
             "description": "An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity and captures the level of agreement or disagreement using a fixed scale.",
             "properties": {
                 "authors": {
-                    "description": "The name of the author(s) of this note (e.g., the analyst(s) that created it).",
+                    "description": "The names of the note's authors, such as the analysts who wrote it.",
                     "items": {
                         "type": "string"
                     },
@@ -11214,7 +11234,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -11241,7 +11261,7 @@
                 },
                 "opinion": {
                     "$ref": "#/$defs/StixAgreement",
-                    "description": "The opinion that the producer has about about all of the STIX Object(s) listed in the object_refs property."
+                    "description": "The producer's opinion of the objects that object_refs lists."
                 },
                 "revoked": {
                     "description": "The revoked property indicates whether the object has been revoked.",
@@ -11411,6 +11431,14 @@
                     },
                     "required": [
                         "pid"
+                    ]
+                },
+                {
+                    "properties": {
+                        "created_time": {}
+                    },
+                    "required": [
+                        "created_time"
                     ]
                 },
                 {
@@ -11888,7 +11916,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -12059,7 +12087,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -12192,7 +12220,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -12227,7 +12255,7 @@
                     "type": "string"
                 },
                 "report_types": {
-                    "description": "This field is an Open Vocabulary that specifies the primary subject of this report. The suggested values for this field are in report-type-ov.",
+                    "description": "The primary subjects of the report, such as threat-actor.",
                     "items": {
                         "anyOf": [
                             {
@@ -12295,7 +12323,7 @@
         },
         "StixSighting": {
             "additionalProperties": false,
-            "description": "A Sighting denotes the belief that something in CTI (e.g., an indicator, malware, tool, threat actor, etc.) was seen.",
+            "description": "The belief that something in cyber threat intelligence, such as an indicator, malware or a threat actor, was seen.",
             "properties": {
                 "confidence": {
                     "description": "Identifies the confidence that the creator has in the correctness of their data.",
@@ -12408,7 +12436,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -12444,8 +12472,8 @@
                     ]
                 },
                 "sighting_of_ref": {
-                    "description": "An ID reference to the object that has been sighted.",
-                    "pattern": "^(?!(relationship|sighting|bundle|marking-definition|language-content)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+                    "description": "A reference to the domain object that was sighted.",
+                    "pattern": "^(?!(artifact|autonomous-system|directory|domain-name|email-addr|email-message|file|ipv4-addr|ipv6-addr|mac-addr|mutex|network-traffic|process|software|url|user-account|windows-registry-key|x509-certificate|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
                     "type": "string"
                 },
                 "spec_version": {
@@ -12576,7 +12604,7 @@
             "description": "The Software Object represents high-level properties associated with software, including software products.",
             "properties": {
                 "cpe": {
-                    "description": "Specifies the Common Platform Enumeration (CPE) entry for the software, if available. The value for this property MUST be a CPE v2.3 entry from the official NVD CPE Dictionary.",
+                    "description": "The Common Platform Enumeration (CPE) 2.3 name of the software, if it has one.",
                     "pattern": "cpe:2\\.3:[aho\\*\\-](:(((\\?*|\\*?)([a-zA-Z0-9\\-\\._]|(\\\\[\\\\\\*\\?!\\x22#$$%&\\x27\\(\\)\\+,/:;<=>@\\[\\]\\^`\\{\\|}~]))+(\\?*|\\*?))|[\\*\\-])){5}(:(([a-zA-Z]{2,3}(-([a-zA-Z]{2}|[0-9]{3}))?)|[\\*\\-]))(:(((\\?*|\\*?)([a-zA-Z0-9\\-\\._]|(\\\\[\\\\\\*\\?!\\x22#$$%&\\x27\\(\\)\\+,/:;<=>@\\[\\]\\^`\\{\\|}~]))+(\\?*|\\*?))|[\\*\\-])){4}",
                     "type": [
                         "string",
@@ -12618,7 +12646,7 @@
                     "type": "string"
                 },
                 "languages": {
-                    "description": "Specifies the languages supported by the software. The value of each list member MUST be an RFC 5646 language code. ISO 639-2 codes are accepted for backward compatibility.",
+                    "description": "The languages the software supports, as RFC 5646 language codes.",
                     "items": {
                         "pattern": "^([a-z]{2}(-[A-Z]{2})?(-[a-z]{4})?(-[A-Z]{2}|[0-9]{3})?(-[a-z0-9]{5,8}|[0-9][a-z0-9]{3})*(-[a-z0-9]{1,8})*|[a-z]{3})$",
                         "type": "string"
@@ -12886,7 +12914,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -12907,7 +12935,7 @@
                     ]
                 },
                 "personal_motivations": {
-                    "description": "The personal reasons, motivations, or purposes of the Threat Actor regardless of organizational goals. Open Vocab - attack-motivation-ov.",
+                    "description": "The threat actor's personal reasons or motivations, apart from its organization's goals.",
                     "items": {
                         "anyOf": [
                             {
@@ -13007,14 +13035,14 @@
                             "type": "null"
                         }
                     ],
-                    "description": "The skill, specific knowledge, special training, or expertise a Threat Actor must have to perform the attack. Open Vocab - threat-actor-sophistication-ov."
+                    "description": "The skill, knowledge, training or expertise the threat actor needs to carry out an attack."
                 },
                 "spec_version": {
                     "$ref": "#/$defs/StixSpecVersion",
                     "description": "The version of the STIX specification used to represent the object."
                 },
                 "threat_actor_types": {
-                    "description": "This field specifies the type of threat actor. Open Vocab - threat-actor-type-ov.",
+                    "description": "The kinds of threat actor, such as nation-state.",
                     "items": {
                         "anyOf": [
                             {
@@ -13241,7 +13269,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -13273,7 +13301,7 @@
                     "description": "The version of the STIX specification used to represent the object."
                 },
                 "tool_types": {
-                    "description": "The kind(s) of tool(s) being described. Open Vocab - tool-type-ov.",
+                    "description": "The kinds of tool, such as remote-access.",
                     "items": {
                         "anyOf": [
                             {
@@ -13369,7 +13397,7 @@
                     ]
                 }
             ],
-            "description": "The User Account Object defines the following extensions. In addition to these, producers MAY create their own.",
+            "description": "The UNIX account extension of a user account: its group, its other groups, its home directory and its shell.",
             "properties": {
                 "gid": {
                     "description": "Specifies the primary group ID of the account.",
@@ -13665,7 +13693,7 @@
                             "type": "null"
                         }
                     ],
-                    "description": "Specifies the type of the account. This is an open vocabulary and values SHOULD come from the account-type-ov vocabulary."
+                    "description": "The type of the account, such as unix or ldap."
                 },
                 "can_escalate_privs": {
                     "description": "Specifies that the account has the ability to escalate privileges (i.e., in the case of sudo on Unix or a Windows Domain Admin account).",
@@ -13675,7 +13703,7 @@
                     ]
                 },
                 "credential": {
-                    "description": "Specifies a cleartext credential. This is only intended to be used in capturing metadata from malware analysis (e.g., a hard-coded domain administrator password that the malware attempts to use for lateral movement) and SHOULD NOT be used for sharing of PII.",
+                    "description": "A cleartext credential, such as a hard-coded password that malware tries for lateral movement.",
                     "type": [
                         "string",
                         "null"
@@ -13903,7 +13931,7 @@
                     ]
                 },
                 "modified": {
-                    "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+                    "description": "The time at which this version of the object was modified.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)\\.[0-9]{3,}Z$",
                     "type": "string"
                 },
@@ -14130,7 +14158,7 @@
                             "type": "string"
                         }
                     ],
-                    "description": "Specifies the type of the PE binary. Open Vocabulary - windows-pebinary-type-ov."
+                    "description": "The type of the PE binary, such as exe or dll."
                 },
                 "pointer_to_symbol_table_hex": {
                     "description": "Specifies the file offset of the COFF symbol table.",
@@ -14160,7 +14188,7 @@
                     ]
                 },
                 "time_date_stamp": {
-                    "description": "Specifies the time when the PE binary was created. The timestamp value MUST BE precise to the second.",
+                    "description": "The time at which the PE binary was created.",
                     "pattern": "^[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9]|60)Z$",
                     "type": [
                         "string",
@@ -14186,6 +14214,256 @@
         },
         "StixWindowsPeOptionalHeader": {
             "additionalProperties": false,
+            "anyOf": [
+                {
+                    "properties": {
+                        "magic_hex": {}
+                    },
+                    "required": [
+                        "magic_hex"
+                    ]
+                },
+                {
+                    "properties": {
+                        "major_linker_version": {}
+                    },
+                    "required": [
+                        "major_linker_version"
+                    ]
+                },
+                {
+                    "properties": {
+                        "minor_linker_version": {}
+                    },
+                    "required": [
+                        "minor_linker_version"
+                    ]
+                },
+                {
+                    "properties": {
+                        "size_of_code": {}
+                    },
+                    "required": [
+                        "size_of_code"
+                    ]
+                },
+                {
+                    "properties": {
+                        "size_of_initialized_data": {}
+                    },
+                    "required": [
+                        "size_of_initialized_data"
+                    ]
+                },
+                {
+                    "properties": {
+                        "size_of_uninitialized_data": {}
+                    },
+                    "required": [
+                        "size_of_uninitialized_data"
+                    ]
+                },
+                {
+                    "properties": {
+                        "address_of_entry_point": {}
+                    },
+                    "required": [
+                        "address_of_entry_point"
+                    ]
+                },
+                {
+                    "properties": {
+                        "base_of_code": {}
+                    },
+                    "required": [
+                        "base_of_code"
+                    ]
+                },
+                {
+                    "properties": {
+                        "base_of_data": {}
+                    },
+                    "required": [
+                        "base_of_data"
+                    ]
+                },
+                {
+                    "properties": {
+                        "image_base": {}
+                    },
+                    "required": [
+                        "image_base"
+                    ]
+                },
+                {
+                    "properties": {
+                        "section_alignment": {}
+                    },
+                    "required": [
+                        "section_alignment"
+                    ]
+                },
+                {
+                    "properties": {
+                        "file_alignment": {}
+                    },
+                    "required": [
+                        "file_alignment"
+                    ]
+                },
+                {
+                    "properties": {
+                        "major_os_version": {}
+                    },
+                    "required": [
+                        "major_os_version"
+                    ]
+                },
+                {
+                    "properties": {
+                        "minor_os_version": {}
+                    },
+                    "required": [
+                        "minor_os_version"
+                    ]
+                },
+                {
+                    "properties": {
+                        "major_image_version": {}
+                    },
+                    "required": [
+                        "major_image_version"
+                    ]
+                },
+                {
+                    "properties": {
+                        "minor_image_version": {}
+                    },
+                    "required": [
+                        "minor_image_version"
+                    ]
+                },
+                {
+                    "properties": {
+                        "major_subsystem_version": {}
+                    },
+                    "required": [
+                        "major_subsystem_version"
+                    ]
+                },
+                {
+                    "properties": {
+                        "minor_subsystem_version": {}
+                    },
+                    "required": [
+                        "minor_subsystem_version"
+                    ]
+                },
+                {
+                    "properties": {
+                        "win32_version_value_hex": {}
+                    },
+                    "required": [
+                        "win32_version_value_hex"
+                    ]
+                },
+                {
+                    "properties": {
+                        "size_of_image": {}
+                    },
+                    "required": [
+                        "size_of_image"
+                    ]
+                },
+                {
+                    "properties": {
+                        "size_of_headers": {}
+                    },
+                    "required": [
+                        "size_of_headers"
+                    ]
+                },
+                {
+                    "properties": {
+                        "checksum_hex": {}
+                    },
+                    "required": [
+                        "checksum_hex"
+                    ]
+                },
+                {
+                    "properties": {
+                        "subsystem_hex": {}
+                    },
+                    "required": [
+                        "subsystem_hex"
+                    ]
+                },
+                {
+                    "properties": {
+                        "dll_characteristics_hex": {}
+                    },
+                    "required": [
+                        "dll_characteristics_hex"
+                    ]
+                },
+                {
+                    "properties": {
+                        "size_of_stack_reserve": {}
+                    },
+                    "required": [
+                        "size_of_stack_reserve"
+                    ]
+                },
+                {
+                    "properties": {
+                        "size_of_stack_commit": {}
+                    },
+                    "required": [
+                        "size_of_stack_commit"
+                    ]
+                },
+                {
+                    "properties": {
+                        "size_of_heap_reserve": {}
+                    },
+                    "required": [
+                        "size_of_heap_reserve"
+                    ]
+                },
+                {
+                    "properties": {
+                        "size_of_heap_commit": {}
+                    },
+                    "required": [
+                        "size_of_heap_commit"
+                    ]
+                },
+                {
+                    "properties": {
+                        "loader_flags_hex": {}
+                    },
+                    "required": [
+                        "loader_flags_hex"
+                    ]
+                },
+                {
+                    "properties": {
+                        "number_of_rva_and_sizes": {}
+                    },
+                    "required": [
+                        "number_of_rva_and_sizes"
+                    ]
+                },
+                {
+                    "properties": {
+                        "hashes": {}
+                    },
+                    "required": [
+                        "hashes"
+                    ]
+                }
+            ],
             "description": "The optional header of a Windows PE binary.",
             "properties": {
                 "address_of_entry_point": {
@@ -14409,7 +14687,7 @@
                     ]
                 },
                 "subsystem_hex": {
-                    "description": "Specifies the subsystem (e.g., GUI, device driver, etc.) that is required to run this image.",
+                    "description": "The subsystem, such as a GUI or a device driver, needed to run the image.",
                     "pattern": "^([a-fA-F0-9]{2})+$",
                     "type": [
                         "string",
@@ -14518,6 +14796,14 @@
                     },
                     "required": [
                         "startup_info"
+                    ]
+                },
+                {
+                    "properties": {
+                        "integrity_level": {}
+                    },
+                    "required": [
+                        "integrity_level"
                     ]
                 }
             ],
@@ -15536,7 +15822,7 @@
                     ]
                 },
                 "subject_directory_attributes": {
-                    "description": "Specifies the identification attributes (e.g., nationality) of the subject.",
+                    "description": "The identification attributes of the subject, such as nationality.",
                     "type": [
                         "string",
                         "null"

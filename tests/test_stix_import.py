@@ -16,14 +16,14 @@ COPY = Path(__file__).parent.parent / "src" / "attack" / "schema" / "stix"
 # The lmodel/stix commit the copy was taken from, and the git object hash of
 # each module there, under src/stix/schema/. Move them with the copy, from a
 # release of lmodel/stix.
-STIX_COMMIT = "de2122f3c48d90fe7358a6b1fe7df21ded124cc3"
+STIX_COMMIT = "267064dd932cb3357491a98753260c37c2be3dcb"
 PINNED_BLOBS = {
     "stix.yaml": "73a65518799fd35e4cd3a87fd3bdf84f7954f4d8",
     "stix_vocabularies.yaml": "cdffbb96b3b30ee6228668a8c7d90ac2d1d0d0d4",
-    "stix_core.yaml": "8fe13214d95237fa8967f99f642c734614144bd9",
-    "stix_sco.yaml": "f27074d5757118342675898a3ba14f8f3a18efb2",
-    "stix_sdo.yaml": "bf0746d02cec3507859a601d903e1c045dac716c",
-    "stix_sro.yaml": "a259d8a5c64c3888e3b5c0f8d9a068ed790a3831",
+    "stix_core.yaml": "0e07741edaccaabe2b1f19973308d2c82abc0f53",
+    "stix_sco.yaml": "bbbe559d725f7e15aead56e3e254ca284372555e",
+    "stix_sdo.yaml": "a56fa094541523bce1078aaabc6f2b3d7b1ae686",
+    "stix_sro.yaml": "be34ba102fcd2d74a7d4b6eb696eab470f1c68f5",
 }
 
 

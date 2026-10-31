@@ -1544,8 +1544,7 @@ class StixCyberObservableObject(StixObject):
 @dataclass(repr=False)
 class StixIdentity(StixDomainObject):
     """
-    Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of
-    individuals, organizations, or groups.
+    An individual, organization or group, such as ACME, Inc., or a class of them.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -1687,7 +1686,7 @@ class StixMarkingDefinition(StixObject):
     class_model_uri: ClassVar[URIRef] = ATTACK.StixMarkingDefinition
 
     id: Union[str, StixMarkingDefinitionId] = None
-    created: Union[str, StixTimestamp] = None
+    created: Union[str, StixTimestampMillis] = None
     type: str = None
     spec_version: Union[str, "StixSpecVersion"] = None
     created_by_ref: Optional[Union[str, StixIdentityId]] = None
@@ -1704,8 +1703,8 @@ class StixMarkingDefinition(StixObject):
 
         if self._is_empty(self.created):
             self.MissingRequiredField("created")
-        if not isinstance(self.created, StixTimestamp):
-            self.created = StixTimestamp(self.created)
+        if not isinstance(self.created, StixTimestampMillis):
+            self.created = StixTimestampMillis(self.created)
 
         if self._is_empty(self.type):
             self.MissingRequiredField("type")
@@ -1764,7 +1763,7 @@ class AttackMarkingDefinition(StixMarkingDefinition):
     class_model_uri: ClassVar[URIRef] = ATTACK.AttackMarkingDefinition
 
     id: Union[str, AttackMarkingDefinitionId] = None
-    created: Union[str, StixTimestamp] = None
+    created: Union[str, StixTimestampMillis] = None
     type: str = None
     spec_version: Union[str, "StixSpecVersion"] = None
     created_by_ref: Union[str, StixIdentityId] = None
@@ -2007,8 +2006,8 @@ class AttackKillChainPhase(StixKillChainPhase):
 @dataclass(repr=False)
 class StixGranularMarking(YAMLRoot):
     """
-    The granular-marking type defines how the list of marking-definition objects referenced by the marking_refs
-    property to apply to a set of content identified by the list of selectors in the selectors property.
+    A marking of parts of an object: the properties its selectors name, marked either by a marking definition or with
+    a language.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -2017,21 +2016,19 @@ class StixGranularMarking(YAMLRoot):
     class_name: ClassVar[str] = "StixGranularMarking"
     class_model_uri: ClassVar[URIRef] = ATTACK.StixGranularMarking
 
-    marking_ref: Union[str, StixMarkingDefinitionId] = None
     selectors: Union[str, list[str]] = None
+    marking_ref: Optional[Union[str, StixMarkingDefinitionId]] = None
     lang: Optional[str] = None
 
     def __post_init__(self, *_: str, **kwargs: Any):
-        if self._is_empty(self.marking_ref):
-            self.MissingRequiredField("marking_ref")
-        if not isinstance(self.marking_ref, StixMarkingDefinitionId):
-            self.marking_ref = StixMarkingDefinitionId(self.marking_ref)
-
         if self._is_empty(self.selectors):
             self.MissingRequiredField("selectors")
         if not isinstance(self.selectors, list):
             self.selectors = [self.selectors] if self.selectors is not None else []
         self.selectors = [v if isinstance(v, str) else str(v) for v in self.selectors]
+
+        if self.marking_ref is not None and not isinstance(self.marking_ref, StixMarkingDefinitionId):
+            self.marking_ref = StixMarkingDefinitionId(self.marking_ref)
 
         if self.lang is not None and not isinstance(self.lang, str):
             self.lang = str(self.lang)
@@ -3074,8 +3071,7 @@ class AttackGroup(StixIntrusionSet):
 @dataclass(repr=False)
 class StixLocation(StixDomainObject):
     """
-    A Location represents a geographic location. The location may be described as any, some or all of the following:
-    region (e.g., North America), civic address (e.g. New York, US), latitude and longitude.
+    A geographic location, given as a region, a civic address, a latitude and longitude, or any mix of them.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -3159,10 +3155,8 @@ class StixLocation(StixDomainObject):
 @dataclass(repr=False)
 class StixMalware(StixDomainObject):
     """
-    Malware is a type of TTP that is also known as malicious code and malicious software, refers to a program that is
-    inserted into a system, usually covertly, with the intent of compromising the confidentiality, integrity, or
-    availability of the victim's data, applications, or operating system (OS) or of otherwise annoying or disrupting
-    the victim.
+    Malicious code: a program inserted into a system, usually covertly, to compromise its data, applications or
+    operating system, or to disrupt its owner.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -4154,8 +4148,7 @@ class AttackRelationship(StixRelationship):
 @dataclass(repr=False)
 class StixSighting(StixRelationshipObject):
     """
-    A Sighting denotes the belief that something in CTI (e.g., an indicator, malware, tool, threat actor, etc.) was
-    seen.
+    The belief that something in cyber threat intelligence, such as an indicator, malware or a threat actor, was seen.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -4281,8 +4274,7 @@ class AttackBundle(StixBundle):
 @dataclass(repr=False)
 class StixArtifact(StixCyberObservableObject):
     """
-    The Artifact Object permits capturing an array of bytes (8-bits), as a base64-encoded string string, or linking to
-    a file-like payload.
+    An array of bytes, carried as base64 in payload_bin, or a link to a file-like payload.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -5819,7 +5811,7 @@ class StixWindowsServiceExtension(YAMLRoot):
 @dataclass(repr=False)
 class StixUnixAccountExtension(YAMLRoot):
     """
-    The User Account Object defines the following extensions. In addition to these, producers MAY create their own.
+    The UNIX account extension of a user account: its group, its other groups, its home directory and its shell.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -7979,7 +7971,7 @@ slots.installed_software_refs = Slot(uri=STIX.installed_software_refs, name="ins
 
 slots.analysis_sco_refs = Slot(uri=STIX.analysis_sco_refs, name="analysis_sco_refs", curie=STIX.curie('analysis_sco_refs'),
                    model_uri=ATTACK.analysis_sco_refs, domain=None, range=Optional[Union[Union[str, StixCyberObservableObjectId], list[Union[str, StixCyberObservableObjectId]]]],
-                   pattern=re.compile(r'^[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'))
+                   pattern=re.compile(r'^(?!(attack-pattern|campaign|course-of-action|grouping|identity|incident|indicator|infrastructure|intrusion-set|location|malware|malware-analysis|note|observed-data|opinion|report|threat-actor|tool|vulnerability|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'))
 
 slots.sample_ref = Slot(uri=STIX.sample_ref, name="sample_ref", curie=STIX.curie('sample_ref'),
                    model_uri=ATTACK.sample_ref, domain=None, range=Optional[Union[str, StixFileId, StixNetworkTrafficId, StixArtifactId]],
@@ -8053,7 +8045,7 @@ slots.count = Slot(uri=STIX.count, name="count", curie=STIX.curie('count'),
 
 slots.sighting_of_ref = Slot(uri=STIX.sighting_of_ref, name="sighting_of_ref", curie=STIX.curie('sighting_of_ref'),
                    model_uri=ATTACK.sighting_of_ref, domain=None, range=Optional[Union[str, StixDomainObjectId]],
-                   pattern=re.compile(r'^(?!(relationship|sighting|bundle|marking-definition|language-content)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'))
+                   pattern=re.compile(r'^(?!(artifact|autonomous-system|directory|domain-name|email-addr|email-message|file|ipv4-addr|ipv6-addr|mac-addr|mutex|network-traffic|process|software|url|user-account|windows-registry-key|x509-certificate|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'))
 
 slots.observed_data_refs = Slot(uri=STIX.observed_data_refs, name="observed_data_refs", curie=STIX.curie('observed_data_refs'),
                    model_uri=ATTACK.observed_data_refs, domain=None, range=Optional[Union[Union[str, StixObservedDataId], list[Union[str, StixObservedDataId]]]],
@@ -8102,7 +8094,7 @@ slots.atime = Slot(uri=STIX.atime, name="atime", curie=STIX.curie('atime'),
 
 slots.contains_refs = Slot(uri=STIX.contains_refs, name="contains_refs", curie=STIX.curie('contains_refs'),
                    model_uri=ATTACK.contains_refs, domain=None, range=Optional[Union[Union[str, StixCyberObservableObjectId], list[Union[str, StixCyberObservableObjectId]]]],
-                   pattern=re.compile(r'^[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'))
+                   pattern=re.compile(r'^(?!(attack-pattern|campaign|course-of-action|grouping|identity|incident|indicator|infrastructure|intrusion-set|location|malware|malware-analysis|note|observed-data|opinion|report|threat-actor|tool|vulnerability|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'))
 
 slots.value = Slot(uri=STIX.value, name="value", curie=STIX.curie('value'),
                    model_uri=ATTACK.value, domain=None, range=Optional[str])
@@ -9309,7 +9301,7 @@ slots.StixMarkingDefinition_spec_version = Slot(uri=STIX.spec_version, name="Sti
                    model_uri=ATTACK.StixMarkingDefinition_spec_version, domain=StixMarkingDefinition, range=Union[str, "StixSpecVersion"])
 
 slots.StixMarkingDefinition_created = Slot(uri=STIX.created, name="StixMarkingDefinition_created", curie=STIX.curie('created'),
-                   model_uri=ATTACK.StixMarkingDefinition_created, domain=StixMarkingDefinition, range=Union[str, StixTimestamp])
+                   model_uri=ATTACK.StixMarkingDefinition_created, domain=StixMarkingDefinition, range=Union[str, StixTimestampMillis])
 
 slots.StixLanguageContent_id = Slot(uri=STIX.id, name="StixLanguageContent_id", curie=STIX.curie('id'),
                    model_uri=ATTACK.StixLanguageContent_id, domain=StixLanguageContent, range=Union[str, StixLanguageContentId],
@@ -9354,10 +9346,6 @@ slots.StixKillChainPhase_kill_chain_name = Slot(uri=STIX.kill_chain_name, name="
 
 slots.StixKillChainPhase_phase_name = Slot(uri=STIX.phase_name, name="StixKillChainPhase_phase_name", curie=STIX.curie('phase_name'),
                    model_uri=ATTACK.StixKillChainPhase_phase_name, domain=StixKillChainPhase, range=str)
-
-slots.StixGranularMarking_marking_ref = Slot(uri=STIX.marking_ref, name="StixGranularMarking_marking_ref", curie=STIX.curie('marking_ref'),
-                   model_uri=ATTACK.StixGranularMarking_marking_ref, domain=StixGranularMarking, range=Union[str, StixMarkingDefinitionId],
-                   pattern=re.compile(r'^marking-definition--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'))
 
 slots.StixGranularMarking_selectors = Slot(uri=STIX.selectors, name="StixGranularMarking_selectors", curie=STIX.curie('selectors'),
                    model_uri=ATTACK.StixGranularMarking_selectors, domain=StixGranularMarking, range=Union[str, list[str]],
@@ -9638,7 +9626,7 @@ slots.StixSighting_type = Slot(uri=STIX.type, name="StixSighting_type", curie=ST
 
 slots.StixSighting_sighting_of_ref = Slot(uri=STIX.sighting_of_ref, name="StixSighting_sighting_of_ref", curie=STIX.curie('sighting_of_ref'),
                    model_uri=ATTACK.StixSighting_sighting_of_ref, domain=StixSighting, range=Union[str, StixDomainObjectId],
-                   pattern=re.compile(r'^(?!(relationship|sighting|bundle|marking-definition|language-content)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'))
+                   pattern=re.compile(r'^(?!(artifact|autonomous-system|directory|domain-name|email-addr|email-message|file|ipv4-addr|ipv6-addr|mac-addr|mutex|network-traffic|process|software|url|user-account|windows-registry-key|x509-certificate|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$'))
 
 slots.StixBundle_id = Slot(uri=STIX.id, name="StixBundle_id", curie=STIX.curie('id'),
                    model_uri=ATTACK.StixBundle_id, domain=StixBundle, range=Union[str, StixBundleId],

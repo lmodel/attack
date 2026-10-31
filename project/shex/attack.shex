@@ -990,7 +990,7 @@ stix:StixFileExtensions CLOSED {
 }
 
 stix:StixGranularMarking CLOSED {
-    (  $stix:StixGranularMarking_tes (  stix:marking_ref @stix:StixMarkingDefinition ;
+    (  $stix:StixGranularMarking_tes (  stix:marking_ref @stix:StixMarkingDefinition ? ;
           stix:selectors @linkml:String + ;
           stix:lang @linkml:String ?
        ) ;
@@ -1255,7 +1255,7 @@ stix:StixMarkingDefinition  (
        (  $stix:StixMarkingDefinition_tes (  &stix:StixObject_tes ;
              rdf:type [ stix:StixObject ] ? ;
              stix:created_by_ref @stix:StixIdentity ? ;
-             stix:created @stix:StixTimestamp ;
+             stix:created @stix:StixTimestampMillis ;
              stix:external_references @stix:StixExternalReference * ;
              stix:name @linkml:String ? ;
              stix:definition_type @linkml:String ? ;

@@ -3607,7 +3607,7 @@
     {
       "name": "modified",
       "definition_uri": "https://w3id.org/lmodel/stix/modified",
-      "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+      "description": "The time at which this version of the object was modified.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_core",
       "mappings": [
         "https://w3id.org/lmodel/stix/modified"
@@ -3859,7 +3859,7 @@
     {
       "name": "identity_class",
       "definition_uri": "https://w3id.org/lmodel/stix/identity_class",
-      "description": "The type of entity that this Identity describes, e.g., an individual or organization. Open Vocab - identity-class-ov.",
+      "description": "The kind of entity the identity describes, such as an individual or an organization.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_core",
       "mappings": [
         "https://w3id.org/lmodel/stix/identity_class"
@@ -3885,7 +3885,7 @@
     {
       "name": "sectors",
       "definition_uri": "https://w3id.org/lmodel/stix/sectors",
-      "description": "The list of sectors that this Identity belongs to. Open Vocab - industry-sector-ov.",
+      "description": "The industry sectors that the identity belongs to.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_core",
       "mappings": [
         "https://w3id.org/lmodel/stix/sectors"
@@ -4421,7 +4421,7 @@
     {
       "name": "objective",
       "definition_uri": "https://w3id.org/lmodel/stix/objective",
-      "description": "This field defines the Campaign's primary goal, objective, desired outcome, or intended effect.",
+      "description": "The campaign's primary goal, objective, desired outcome or intended effect.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/objective"
@@ -4486,7 +4486,7 @@
     {
       "name": "indicator_types",
       "definition_uri": "https://w3id.org/lmodel/stix/indicator_types",
-      "description": "This field is an Open Vocabulary that specifies the type of indicator. Open vocab - indicator-type-ov.",
+      "description": "The kinds of indicator, such as malicious-activity.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/indicator_types"
@@ -4604,7 +4604,7 @@
     {
       "name": "infrastructure_types",
       "definition_uri": "https://w3id.org/lmodel/stix/infrastructure_types",
-      "description": "This field is an Open Vocabulary that specifies the type of infrastructure. Open vocab - infrastructure-type-ov.",
+      "description": "The kinds of infrastructure, such as botnet.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/infrastructure_types"
@@ -4911,7 +4911,7 @@
     {
       "name": "architecture_execution_envs",
       "definition_uri": "https://w3id.org/lmodel/stix/architecture_execution_envs",
-      "description": "The processor architectures (e.g., x86, ARM, etc.) that the malware instance or family is executable on. Open Vocab - processor-architecture-os.",
+      "description": "The processor architectures, such as x86 or ARM, that the malware runs on.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/architecture_execution_envs"
@@ -4939,7 +4939,7 @@
     {
       "name": "implementation_languages",
       "definition_uri": "https://w3id.org/lmodel/stix/implementation_languages",
-      "description": "The programming language(s) used to implement the malware instance or family. Open Vocab - implementation-language-ov.",
+      "description": "The programming languages used to write the malware instance or family.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/implementation_languages"
@@ -4967,7 +4967,7 @@
     {
       "name": "capabilities",
       "definition_uri": "https://w3id.org/lmodel/stix/capabilities",
-      "description": "Specifies any capabilities identified for the malware instance or family. Open Vocab - malware-capabilities-ov.",
+      "description": "The capabilities identified in the malware instance or family.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/capabilities"
@@ -5024,7 +5024,7 @@
     {
       "name": "malware_types",
       "definition_uri": "https://w3id.org/lmodel/stix/malware_types",
-      "description": "The type of malware being described. Open Vocab - malware-type-ov.",
+      "description": "The kinds of malware, such as ransomware.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/malware_types"
@@ -5293,7 +5293,7 @@
     {
       "name": "analysis_sco_refs",
       "definition_uri": "https://w3id.org/lmodel/stix/analysis_sco_refs",
-      "description": "The list of STIX objects that were captured during the analysis process.",
+      "description": "The cyber-observable objects captured during the analysis.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/analysis_sco_refs"
@@ -5305,7 +5305,7 @@
       ],
       "range": "StixCyberObservableObject",
       "multivalued": true,
-      "pattern": "^[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+      "pattern": "^(?!(attack-pattern|campaign|course-of-action|grouping|identity|incident|indicator|infrastructure|intrusion-set|location|malware|malware-analysis|note|observed-data|opinion|report|threat-actor|tool|vulnerability|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
       "minimum_cardinality": 1,
       "@type": "SlotDefinition"
     },
@@ -5375,7 +5375,7 @@
     {
       "name": "authors",
       "definition_uri": "https://w3id.org/lmodel/stix/authors",
-      "description": "The name of the author(s) of this note (e.g., the analyst(s) that created it).",
+      "description": "The names of the note's authors, such as the analysts who wrote it.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/authors"
@@ -5426,7 +5426,7 @@
     {
       "name": "number_observed",
       "definition_uri": "https://w3id.org/lmodel/stix/number_observed",
-      "description": "The number of times the data represented in the objects property was observed. This MUST be an integer between 1 and 999,999,999 inclusive.",
+      "description": "The number of times the data in objects or object_refs was observed.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/number_observed"
@@ -5460,7 +5460,7 @@
     {
       "name": "opinion",
       "definition_uri": "https://w3id.org/lmodel/stix/opinion",
-      "description": "The opinion that the producer has about about all of the STIX Object(s) listed in the object_refs property.",
+      "description": "The producer's opinion of the objects that object_refs lists.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/opinion"
@@ -5476,7 +5476,7 @@
     {
       "name": "report_types",
       "definition_uri": "https://w3id.org/lmodel/stix/report_types",
-      "description": "This field is an Open Vocabulary that specifies the primary subject of this report. The suggested values for this field are in report-type-ov.",
+      "description": "The primary subjects of the report, such as threat-actor.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/report_types"
@@ -5520,7 +5520,7 @@
     {
       "name": "threat_actor_types",
       "definition_uri": "https://w3id.org/lmodel/stix/threat_actor_types",
-      "description": "This field specifies the type of threat actor. Open Vocab - threat-actor-type-ov.",
+      "description": "The kinds of threat actor, such as nation-state.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/threat_actor_types"
@@ -5548,7 +5548,7 @@
     {
       "name": "sophistication",
       "definition_uri": "https://w3id.org/lmodel/stix/sophistication",
-      "description": "The skill, specific knowledge, special training, or expertise a Threat Actor must have to perform the attack. Open Vocab - threat-actor-sophistication-ov.",
+      "description": "The skill, knowledge, training or expertise the threat actor needs to carry out an attack.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/sophistication"
@@ -5574,7 +5574,7 @@
     {
       "name": "personal_motivations",
       "definition_uri": "https://w3id.org/lmodel/stix/personal_motivations",
-      "description": "The personal reasons, motivations, or purposes of the Threat Actor regardless of organizational goals. Open Vocab - attack-motivation-ov.",
+      "description": "The threat actor's personal reasons or motivations, apart from its organization's goals.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/personal_motivations"
@@ -5602,7 +5602,7 @@
     {
       "name": "tool_types",
       "definition_uri": "https://w3id.org/lmodel/stix/tool_types",
-      "description": "The kind(s) of tool(s) being described. Open Vocab - tool-type-ov.",
+      "description": "The kinds of tool, such as remote-access.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/tool_types"
@@ -5782,7 +5782,10 @@
     {
       "name": "sighting_of_ref",
       "definition_uri": "https://w3id.org/lmodel/stix/sighting_of_ref",
-      "description": "An ID reference to the object that has been sighted.",
+      "description": "A reference to the domain object that was sighted.",
+      "comments": [
+        "The pattern refuses an observable, a relationship and a meta object, as STIX 2.1 does. OASIS's JSON schema refuses only some of them."
+      ],
       "from_schema": "https://w3id.org/lmodel/stix/stix_sro",
       "mappings": [
         "https://w3id.org/lmodel/stix/sighting_of_ref"
@@ -5793,7 +5796,7 @@
         "StixSighting"
       ],
       "range": "StixDomainObject",
-      "pattern": "^(?!(relationship|sighting|bundle|marking-definition|language-content)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+      "pattern": "^(?!(artifact|autonomous-system|directory|domain-name|email-addr|email-message|file|ipv4-addr|ipv6-addr|mac-addr|mutex|network-traffic|process|software|url|user-account|windows-registry-key|x509-certificate|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
       "@type": "SlotDefinition"
     },
     {
@@ -5863,7 +5866,7 @@
     {
       "name": "mime_type",
       "definition_uri": "https://w3id.org/lmodel/stix/mime_type",
-      "description": "The value of this property MUST be a valid MIME type as specified in the IANA Media Types registry.",
+      "description": "The MIME type of the content, as the IANA Media Types registry names it.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/mime_type"
@@ -6058,7 +6061,7 @@
       ],
       "range": "StixCyberObservableObject",
       "multivalued": true,
-      "pattern": "^[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+      "pattern": "^(?!(attack-pattern|campaign|course-of-action|grouping|identity|incident|indicator|infrastructure|intrusion-set|location|malware|malware-analysis|note|observed-data|opinion|report|threat-actor|tool|vulnerability|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
       "minimum_cardinality": 1,
       "@type": "SlotDefinition"
     },
@@ -6386,7 +6389,10 @@
     {
       "name": "body_multipart",
       "definition_uri": "https://w3id.org/lmodel/stix/body_multipart",
-      "description": "Specifies a list of the MIME parts that make up the email body. This property MAY only be used if is_multipart is true.",
+      "description": "The MIME parts that make up a multipart email body.",
+      "comments": [
+        "Present only when is_multipart is true."
+      ],
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/body_multipart"
@@ -6614,7 +6620,7 @@
     {
       "name": "src_port",
       "definition_uri": "https://w3id.org/lmodel/stix/src_port",
-      "description": "Specifies the source port used in the network traffic, as an integer. The port value MUST be in the range of 0 - 65535.",
+      "description": "The source port of the traffic.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/src_port"
@@ -6632,7 +6638,7 @@
     {
       "name": "dst_port",
       "definition_uri": "https://w3id.org/lmodel/stix/dst_port",
-      "description": "Specifies the destination port used in the network traffic, as an integer. The port value MUST be in the range of 0 - 65535.",
+      "description": "The destination port of the traffic.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/dst_port"
@@ -7024,7 +7030,10 @@
     {
       "name": "cpe",
       "definition_uri": "https://w3id.org/lmodel/stix/cpe",
-      "description": "Specifies the Common Platform Enumeration (CPE) entry for the software, if available. The value for this property MUST be a CPE v2.3 entry from the official NVD CPE Dictionary.",
+      "description": "The Common Platform Enumeration (CPE) 2.3 name of the software, if it has one.",
+      "comments": [
+        "STIX asks for an entry of the NVD CPE Dictionary."
+      ],
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/cpe"
@@ -7057,7 +7066,10 @@
     {
       "name": "languages",
       "definition_uri": "https://w3id.org/lmodel/stix/languages",
-      "description": "Specifies the languages supported by the software. The value of each list member MUST be an RFC 5646 language code. ISO 639-2 codes are accepted for backward compatibility.",
+      "description": "The languages the software supports, as RFC 5646 language codes.",
+      "comments": [
+        "ISO 639-2 codes are accepted too, for backward compatibility."
+      ],
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/languages"
@@ -7108,7 +7120,10 @@
     {
       "name": "credential",
       "definition_uri": "https://w3id.org/lmodel/stix/credential",
-      "description": "Specifies a cleartext credential. This is only intended to be used in capturing metadata from malware analysis (e.g., a hard-coded domain administrator password that the malware attempts to use for lateral movement) and SHOULD NOT be used for sharing of PII.",
+      "description": "A cleartext credential, such as a hard-coded password that malware tries for lateral movement.",
+      "comments": [
+        "Meant for metadata from malware analysis, not for sharing personal information."
+      ],
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/credential"
@@ -7140,7 +7155,7 @@
     {
       "name": "account_type",
       "definition_uri": "https://w3id.org/lmodel/stix/account_type",
-      "description": "Specifies the type of the account. This is an open vocabulary and values SHOULD come from the account-type-ov vocabulary.",
+      "description": "The type of the account, such as unix or ldap.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/account_type"
@@ -7724,7 +7739,7 @@
     {
       "name": "pe_type",
       "definition_uri": "https://w3id.org/lmodel/stix/pe_type",
-      "description": "Specifies the type of the PE binary. Open Vocabulary - windows-pebinary-type-ov.",
+      "description": "The type of the PE binary, such as exe or dll.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/pe_type"
@@ -7799,7 +7814,7 @@
     {
       "name": "time_date_stamp",
       "definition_uri": "https://w3id.org/lmodel/stix/time_date_stamp",
-      "description": "Specifies the time when the PE binary was created. The timestamp value MUST BE precise to the second.",
+      "description": "The time at which the PE binary was created.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/time_date_stamp"
@@ -8885,7 +8900,7 @@
     {
       "name": "subsystem_hex",
       "definition_uri": "https://w3id.org/lmodel/stix/subsystem_hex",
-      "description": "Specifies the subsystem (e.g., GUI, device driver, etc.) that is required to run this image.",
+      "description": "The subsystem, such as a GUI or a device driver, needed to run the image.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/subsystem_hex"
@@ -9236,7 +9251,7 @@
     {
       "name": "subject_directory_attributes",
       "definition_uri": "https://w3id.org/lmodel/stix/subject_directory_attributes",
-      "description": "Specifies the identification attributes (e.g., nationality) of the subject.",
+      "description": "The identification attributes of the subject, such as nationality.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/subject_directory_attributes"
@@ -12786,7 +12801,7 @@
     {
       "name": "AttackIdentity_identity_class",
       "definition_uri": "https://w3id.org/lmodel/stix/identity_class",
-      "description": "The type of entity that this Identity describes, e.g., an individual or organization. Open Vocab - identity-class-ov.",
+      "description": "The kind of entity the identity describes, such as an individual or an organization.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_core",
       "mappings": [
         "https://w3id.org/lmodel/stix/identity_class"
@@ -13278,7 +13293,7 @@
     {
       "name": "StixCommonObject_modified",
       "definition_uri": "https://w3id.org/lmodel/stix/modified",
-      "description": "The modified property represents the time that this particular version of the object was modified. The timestamp value MUST be precise to the nearest millisecond.",
+      "description": "The time at which this version of the object was modified.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_core",
       "mappings": [
         "https://w3id.org/lmodel/stix/modified"
@@ -13464,7 +13479,7 @@
       ],
       "is_usage_slot": true,
       "usage_slot_name": "created",
-      "range": "stix_timestamp",
+      "range": "stix_timestamp_millis",
       "required": true,
       "@type": "SlotDefinition"
     },
@@ -13768,32 +13783,6 @@
       "usage_slot_name": "phase_name",
       "range": "string",
       "required": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "StixGranularMarking_marking_ref",
-      "definition_uri": "https://w3id.org/lmodel/stix/marking_ref",
-      "description": "The marking_ref property specifies the ID of the marking-definition object that describes the marking.",
-      "from_schema": "https://w3id.org/lmodel/stix/stix_core",
-      "mappings": [
-        "https://w3id.org/lmodel/stix/marking_ref"
-      ],
-      "close_mappings": [
-        "https://ontology.unifiedcyberontology.org/uco/marking/marking"
-      ],
-      "is_a": "marking_ref",
-      "domain": "StixGranularMarking",
-      "slot_uri": "https://w3id.org/lmodel/stix/marking_ref",
-      "alias": "marking_ref",
-      "owner": "StixGranularMarking",
-      "domain_of": [
-        "StixGranularMarking"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "marking_ref",
-      "range": "StixMarkingDefinition",
-      "required": true,
-      "pattern": "^marking-definition--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
       "@type": "SlotDefinition"
     },
     {
@@ -14938,7 +14927,7 @@
     {
       "name": "StixObservedData_number_observed",
       "definition_uri": "https://w3id.org/lmodel/stix/number_observed",
-      "description": "The number of times the data represented in the objects property was observed. This MUST be an integer between 1 and 999,999,999 inclusive.",
+      "description": "The number of times the data in objects or object_refs was observed.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/number_observed"
@@ -15092,7 +15081,7 @@
     {
       "name": "StixOpinion_opinion",
       "definition_uri": "https://w3id.org/lmodel/stix/opinion",
-      "description": "The opinion that the producer has about about all of the STIX Object(s) listed in the object_refs property.",
+      "description": "The producer's opinion of the objects that object_refs lists.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "mappings": [
         "https://w3id.org/lmodel/stix/opinion"
@@ -15680,7 +15669,10 @@
     {
       "name": "StixSighting_sighting_of_ref",
       "definition_uri": "https://w3id.org/lmodel/stix/sighting_of_ref",
-      "description": "An ID reference to the object that has been sighted.",
+      "description": "A reference to the domain object that was sighted.",
+      "comments": [
+        "The pattern refuses an observable, a relationship and a meta object, as STIX 2.1 does. OASIS's JSON schema refuses only some of them."
+      ],
       "from_schema": "https://w3id.org/lmodel/stix/stix_sro",
       "mappings": [
         "https://w3id.org/lmodel/stix/sighting_of_ref"
@@ -15697,7 +15689,7 @@
       "usage_slot_name": "sighting_of_ref",
       "range": "StixDomainObject",
       "required": true,
-      "pattern": "^(?!(relationship|sighting|bundle|marking-definition|language-content)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+      "pattern": "^(?!(artifact|autonomous-system|directory|domain-name|email-addr|email-message|file|ipv4-addr|ipv6-addr|mac-addr|mutex|network-traffic|process|software|url|user-account|windows-registry-key|x509-certificate|relationship|sighting|bundle|marking-definition|language-content|extension-definition)--)[a-z][a-z0-9-]+[a-z0-9]--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
       "@type": "SlotDefinition"
     },
     {
@@ -15824,7 +15816,7 @@
     {
       "name": "StixArtifact_mime_type",
       "definition_uri": "https://w3id.org/lmodel/stix/mime_type",
-      "description": "The value of this property MUST be a valid MIME type as specified in the IANA Media Types registry.",
+      "description": "The MIME type of the content, as the IANA Media Types registry names it.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/mime_type"
@@ -17184,7 +17176,7 @@
     {
       "name": "StixWindowsPeBinaryExtension_pe_type",
       "definition_uri": "https://w3id.org/lmodel/stix/pe_type",
-      "description": "Specifies the type of the PE binary. Open Vocabulary - windows-pebinary-type-ov.",
+      "description": "The type of the PE binary, such as exe or dll.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "mappings": [
         "https://w3id.org/lmodel/stix/pe_type"
@@ -18667,7 +18659,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of individuals, organizations, or groups.",
+      "description": "An individual, organization or group, such as ACME, Inc., or a class of them.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_core",
       "close_mappings": [
         "uco-identity:Identity"
@@ -18710,6 +18702,9 @@
         }
       ],
       "description": "A marking definition: a statement, a Traffic Light Protocol (TLP) level or another marking that applies to the objects that reference it.",
+      "comments": [
+        "created keeps the millisecond precision STIX 2.1 gives every object's created. OASIS's JSON schema asks a marking definition for a timestamp of any precision."
+      ],
       "from_schema": "https://w3id.org/lmodel/stix/stix_core",
       "close_mappings": [
         "uco-marking:MarkingDefinition"
@@ -18958,18 +18953,43 @@
     {
       "name": "StixGranularMarking",
       "definition_uri": "https://w3id.org/lmodel/stix/StixGranularMarking",
-      "description": "The granular-marking type defines how the list of marking-definition objects referenced by the marking_refs property to apply to a set of content identified by the list of selectors in the selectors property.",
+      "description": "A marking of parts of an object: the properties its selectors name, marked either by a marking definition or with a language.",
+      "comments": [
+        "STIX 2.1 requires exactly one of marking_ref and lang. OASIS's JSON schema requires marking_ref, which rejects a language marking. The schema follows the standard."
+      ],
       "from_schema": "https://w3id.org/lmodel/stix/stix_core",
       "close_mappings": [
         "uco-marking:GranularMarking"
       ],
       "slots": [
-        "StixGranularMarking_marking_ref",
+        "marking_ref",
         "StixGranularMarking_selectors",
         "lang"
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/lmodel/stix/StixGranularMarking",
+      "exactly_one_of": [
+        {
+          "slot_conditions": [
+            {
+              "name": "marking_ref",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "lang",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        }
+      ],
       "@type": "ClassDefinition"
     },
     {
@@ -19396,7 +19416,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A Location represents a geographic location. The location may be described as any, some or all of the following: region (e.g., North America), civic address (e.g. New York, US), latitude and longitude.",
+      "description": "A geographic location, given as a region, a civic address, a latitude and longitude, or any mix of them.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "close_mappings": [
         "uco-location:Location"
@@ -19559,7 +19579,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "Malware is a type of TTP that is also known as malicious code and malicious software, refers to a program that is inserted into a system, usually covertly, with the intent of compromising the confidentiality, integrity, or availability of the victim's data, applications, or operating system (OS) or of otherwise annoying or disrupting the victim.",
+      "description": "Malicious code: a program inserted into a system, usually covertly, to compromise its data, applications or operating system, or to disrupt its owner.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sdo",
       "is_a": "StixDomainObject",
       "slots": [
@@ -20056,7 +20076,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A Sighting denotes the belief that something in CTI (e.g., an indicator, malware, tool, threat actor, etc.) was seen.",
+      "description": "The belief that something in cyber threat intelligence, such as an indicator, malware or a threat actor, was seen.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sro",
       "is_a": "StixRelationshipObject",
       "slots": [
@@ -20122,7 +20142,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "The Artifact Object permits capturing an array of bytes (8-bits), as a base64-encoded string string, or linking to a file-like payload.",
+      "description": "An array of bytes, carried as base64 in payload_bin, or a link to a file-like payload.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "is_a": "StixCyberObservableObject",
       "slots": [
@@ -20755,6 +20775,16 @@
           "slot_conditions": [
             {
               "name": "pid",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "created_time",
               "required": true,
               "@type": "SlotDefinition"
             }
@@ -21925,6 +21955,16 @@
             }
           ],
           "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "integrity_level",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
         }
       ],
       "@type": "ClassDefinition"
@@ -22050,7 +22090,7 @@
           "@type": "Annotation"
         }
       ],
-      "description": "The User Account Object defines the following extensions. In addition to these, producers MAY create their own.",
+      "description": "The UNIX account extension of a user account: its group, its other groups, its home directory and its shell.",
       "from_schema": "https://w3id.org/lmodel/stix/stix_sco",
       "close_mappings": [
         "uco-observable:UNIXAccountFacet"
@@ -22185,6 +22225,318 @@
       ],
       "slot_usage": {},
       "class_uri": "https://w3id.org/lmodel/stix/StixWindowsPeOptionalHeader",
+      "any_of": [
+        {
+          "slot_conditions": [
+            {
+              "name": "magic_hex",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "major_linker_version",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "minor_linker_version",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "size_of_code",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "size_of_initialized_data",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "size_of_uninitialized_data",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "address_of_entry_point",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "base_of_code",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "base_of_data",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "image_base",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "section_alignment",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "file_alignment",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "major_os_version",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "minor_os_version",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "major_image_version",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "minor_image_version",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "major_subsystem_version",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "minor_subsystem_version",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "win32_version_value_hex",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "size_of_image",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "size_of_headers",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "checksum_hex",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "subsystem_hex",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "dll_characteristics_hex",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "size_of_stack_reserve",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "size_of_stack_commit",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "size_of_heap_reserve",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "size_of_heap_commit",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "loader_flags_hex",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "number_of_rva_and_sizes",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        },
+        {
+          "slot_conditions": [
+            {
+              "name": "hashes",
+              "required": true,
+              "@type": "SlotDefinition"
+            }
+          ],
+          "@type": "AnonymousClassExpression"
+        }
+      ],
       "@type": "ClassDefinition"
     },
     {

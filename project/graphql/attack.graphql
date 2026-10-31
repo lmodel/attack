@@ -990,7 +990,7 @@ type AttackMarkingDefinition
     objectMarkingRefs: [StixMarkingDefinition]
     granularMarkings: [StixGranularMarking]
     extensions: StixExtensions
-    created: StixTimestamp!
+    created: StixTimestampMillis!
     externalReferences: [StixExternalReference]
     name: String
     definition: String
@@ -1517,7 +1517,7 @@ type StixFileExtensions
 
 type StixGranularMarking
   {
-    markingRef: StixMarkingDefinition!
+    markingRef: StixMarkingDefinition
     selectors: [String]!
     lang: String
   }
@@ -1858,7 +1858,7 @@ type StixMarkingDefinition
     granularMarkings: [StixGranularMarking]
     extensions: StixExtensions
     createdByRef: StixIdentity
-    created: StixTimestamp!
+    created: StixTimestampMillis!
     externalReferences: [StixExternalReference]
     name: String
     definitionType: String
