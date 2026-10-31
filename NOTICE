@@ -52,8 +52,8 @@ lmodel/stix
 
 src/attack/schema/stix/ holds the modules of the Structured Threat
 Information Expression (STIX) 2.1 LinkML schema of lmodel/stix
-(https://github.com/lmodel/stix) at commit
-267064dd932cb3357491a98753260c37c2be3dcb, under the Apache License,
+(https://github.com/lmodel/stix) at release v0.1.0 (commit
+53336445d0f0a8cbae3d7a940c199a177470e003), under the Apache License,
 Version 2.0, copied unchanged. tests/test_stix_import.py pins each
 module's git object hash. Some of their descriptions reuse those of the
 STIX 2.1 JSON schemas of OASIS

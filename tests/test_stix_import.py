@@ -13,10 +13,10 @@ from pathlib import Path
 
 COPY = Path(__file__).parent.parent / "src" / "attack" / "schema" / "stix"
 
-# The lmodel/stix commit the copy was taken from, and the git object hash of
-# each module there, under src/stix/schema/. Move them with the copy, from a
-# release of lmodel/stix.
-STIX_COMMIT = "267064dd932cb3357491a98753260c37c2be3dcb"
+# The commit of the lmodel/stix release the copy equals, v0.1.0, and the git
+# object hash of each module there, under src/stix/schema/. Move them with the
+# copy, from a later release of lmodel/stix.
+STIX_COMMIT = "53336445d0f0a8cbae3d7a940c199a177470e003"
 PINNED_BLOBS = {
     "stix.yaml": "73a65518799fd35e4cd3a87fd3bdf84f7954f4d8",
     "stix_vocabularies.yaml": "cdffbb96b3b30ee6228668a8c7d90ac2d1d0d0d4",

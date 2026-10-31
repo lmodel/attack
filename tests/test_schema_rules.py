@@ -34,9 +34,8 @@ NEIGHBOURS = {
     # lmodel/in-toto v0.1.1, schema-v0.1.1-in-toto.yaml
     "in-toto.yaml": "feb2711d782643dfeb670648508540f29393c437aaceae5318849f62e8e14c6d",
 }
-# lmodel/stix's own adapt copy, .lokf/stix.yaml at commit 267064d, the commit
-# src/attack/schema/stix/ was vendored from. lmodel/stix has no release yet;
-# take schema-v0.1.0-stix.yaml from its first release in its place.
+# lmodel/stix v0.1.0, schema-v0.1.0-stix.yaml, the release whose modules
+# src/attack/schema/stix/ holds.
 STIX = {"stix.yaml": "3837d097c0cd48e0d2a98d118003c099d1290333f5b973aee85a7017bae344c9"}
 NEIGHBOUR_DIR = ROOT / "tests" / "neighbours"
 ELEMENT_KINDS = ("classes", "enums", "types", "subsets")

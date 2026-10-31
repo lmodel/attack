@@ -6,6 +6,10 @@ The `v0.0.0` tag is a baseline, not a release: it marks where versioning starts 
 
 ## [Unreleased]
 
+### Fixed
+
+- **The stix pin names lmodel/stix v0.1.0.** `tests/test_stix_import.py` and NOTICE named a branch commit that stix's squash merge left unreachable; the vendored modules equal the release's, so no file changed.
+
 ## [0.1.0] - 2026-10-31
 
 ### Added
