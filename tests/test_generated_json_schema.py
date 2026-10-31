@@ -58,7 +58,7 @@ def errors(schema, data):
     """Validate a bundle against the schema's root, AttackBundle."""
     return [
         e.message[:200]
-        for e in jsonschema.Draft202012Validator(schema).iter_errors(data)
+        for e in jsonschema.validators.validator_for(schema)(schema).iter_errors(data)
     ]
 
 
