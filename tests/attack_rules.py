@@ -259,6 +259,73 @@ def bundle_problems(bundle):
     return found
 
 
+def bundle_breaches(bundle):
+    """The breaches in a bundle of three statements that the ADM's
+    documentation makes and MITRE's v20.0 data breaks in known places. Each
+    breach is a triple: the statement's rule, a key that names the object,
+    and what is wrong. tests/test_upstream.py lists the known ones. The
+    statements:
+
+    - a sub-technique has exactly one parent;
+    - a sub-technique's platforms are among its parent's;
+    - each log source reference of an analytic names a data component of the
+      bundle, and a log and channel that the data component lists.
+    """
+    found = []
+    objects = bundle.get("objects") or []
+    by_id = {obj["id"]: obj for obj in objects}
+    parents = {}
+    for obj in objects:
+        if obj.get("relationship_type") == "subtechnique-of":
+            parents.setdefault(obj["source_ref"], []).append(obj["target_ref"])
+    for obj in objects:
+        if obj.get("type") != "attack-pattern" or not obj.get(
+            "x_mitre_is_subtechnique"
+        ):
+            continue
+        key, refs = _attack_id(obj), parents.get(obj["id"], [])
+        if len(refs) != 1:
+            found.append(("one parent", key, f"{len(refs)} parents"))
+        # A parent outside the bundle is bundle_problems' relationship rule.
+        for ref in (r for r in refs if r in by_id):
+            lacked = set(obj.get("x_mitre_platforms") or []) - set(
+                by_id[ref].get("x_mitre_platforms") or []
+            )
+            if lacked:
+                found.append(
+                    ("parent platforms", key, f"its parent lacks {sorted(lacked)}")
+                )
+    for obj in objects:
+        if obj.get("type") != "x-mitre-analytic":
+            continue
+        for index, ref in enumerate(obj.get("x_mitre_log_source_references") or []):
+            key = f"{_attack_id(obj)}/{index}"
+            component = by_id.get(ref["x_mitre_data_component_ref"])
+            if component is None:
+                found.append(
+                    (
+                        "log source component",
+                        key,
+                        f"{ref['x_mitre_data_component_ref']} is not in the bundle",
+                    )
+                )
+                continue
+            logs = {
+                (log["name"], log["channel"])
+                for log in component.get("x_mitre_log_sources") or []
+            }
+            if (ref["name"], ref["channel"]) not in logs:
+                found.append(
+                    (
+                        "log source",
+                        key,
+                        f"{_attack_id(component)} lists no {ref['name']!r} "
+                        f"with the channel {ref['channel']!r}",
+                    )
+                )
+    return found
+
+
 def _attack_id(obj):
     """An object's ATT&CK ID: the external ID of its first external reference."""
     return ((obj.get("external_references") or [{}])[0]).get("external_id", "")

@@ -8,7 +8,7 @@ tests check that the manifest is consistent with itself, that the schema
 header names the same releases, that the copied licence is the pinned file,
 and that NOTICE reproduces MITRE's copyright designation and licence, as the
 licence asks of every copy. They also list where the v20.0 data departs from
-the ADM.
+the ADM, in one object and across a bundle.
 """
 
 import hashlib
@@ -113,6 +113,115 @@ def excused(obj, rule, what):
     )
 
 
+@dataclass(frozen=True)
+class BundleDeparture:
+    """A place where MITRE's v20.0 data breaks a statement of the ADM's
+    documentation that holds across a bundle: the rule of
+    `bundle_breaches` in tests/attack_rules.py, and the key of each breach.
+    A key is a sub-technique's ATT&CK ID, or an analytic's and the index of
+    its log source reference."""
+
+    rule: str
+    keys: frozenset[str]
+
+
+# The ADM's documentation says more than its code checks. Where the v20.0
+# data breaks such a statement, the breaches are listed here, each group with
+# its reason. tests/test_attack_data.py holds the list to the v20.0 bundles
+# exactly, so a release that adds a breach or mends a listed one fails until
+# this list follows it.
+KNOWN_BUNDLE_DEPARTURES = {
+    # Sixteen retired Enterprise sub-techniques keep no subtechnique-of
+    # relationship, where the ADM says each sub-technique has one parent.
+    "retired sub-techniques without a parent": BundleDeparture(
+        "one parent",
+        frozenset(
+            {
+                "T1053.001",
+                "T1070.001",
+                "T1070.002",
+                "T1547.011",
+                "T1562.001",
+                "T1562.002",
+                "T1562.003",
+                "T1562.004",
+                "T1562.006",
+                "T1562.007",
+                "T1562.008",
+                "T1562.009",
+                "T1562.010",
+                "T1562.011",
+                "T1562.012",
+                "T1562.013",
+            }
+        ),
+    ),
+    # Nine current sub-techniques, six in Enterprise and three in ICS, name a
+    # platform their parent technique lacks, where the ADM says a
+    # sub-technique's platforms are a subset of its parent's.
+    "sub-techniques on a platform their parent lacks": BundleDeparture(
+        "parent platforms",
+        frozenset(
+            {
+                "T1020.001",
+                "T1021.007",
+                "T1036.010",
+                "T1685.002",
+                "T1685.007",
+                "T1686.001",
+                "T1691.002",
+                "T1692.002",
+                "T1693.001",
+            }
+        ),
+    ),
+    # Seven references, four in Enterprise and three in ICS, name a log their
+    # data component does not list, such as `linus:syslog` for `linux:syslog`,
+    # `device:cli` or a bare `WinEventLog`, or a channel the component words
+    # otherwise, such as `EventCode=13` beside its `EventCode=13, 14`.
+    "log source references to a log the data component lacks": BundleDeparture(
+        "log source",
+        frozenset(
+            {
+                "AN0272/1",
+                "AN0580/2",
+                "AN0861/3",
+                "AN1331/1",
+                "AN2085/0",
+                "AN2090/0",
+                "AN2091/1",
+            }
+        ),
+    ),
+    # Twelve ICS references name one of four Enterprise data components
+    # (DC0035, DC0051, DC0053 and DC0079), which the ICS bundle does not hold.
+    "ICS references to an Enterprise data component": BundleDeparture(
+        "log source component",
+        frozenset(
+            {
+                "AN1855/2",
+                "AN1899/0",
+                "AN1932/0",
+                "AN2154/0",
+                "AN2167/1",
+                "AN2261/1",
+                "AN2264/0",
+                "AN2266/0",
+                "AN2267/0",
+                "AN2269/0",
+                "AN2272/0",
+                "AN2279/0",
+            }
+        ),
+    ),
+}
+
+
+def known_bundle_breaches():
+    """Every listed breach across a bundle, as a pair of its rule and key."""
+    return {(d.rule, key) for d in KNOWN_BUNDLE_DEPARTURES.values() for key in d.keys}
+
+
 @cache
 def _watch():
     spec = importlib.util.spec_from_file_location(
@@ -196,6 +305,22 @@ def test_notice_names_the_pinned_data_model():
     watch = _watch()
     assert f"release {watch.PINNED_ADM_TAG} of" in notice
     assert watch.PINNED_ADM_COMMIT in notice
+
+
+def test_the_bundle_departures_name_objects_once():
+    """Each listed breach across a bundle has a key of its rule's form and
+    sits in one group only. The full bundles alone can show the breaches, so
+    tests/test_attack_data.py holds the list to them."""
+    forms = {
+        "one parent": r"T\d{4}\.\d{3}",
+        "parent platforms": r"T\d{4}\.\d{3}",
+        "log source": r"AN\d{4}/\d+",
+        "log source component": r"AN\d{4}/\d+",
+    }
+    listed = [(d.rule, key) for d in KNOWN_BUNDLE_DEPARTURES.values() for key in d.keys]
+    assert len(listed) == len(set(listed))
+    for rule, key in listed:
+        assert re.fullmatch(forms[rule], key), (rule, key)
 
 
 def test_each_departure_has_a_witness():

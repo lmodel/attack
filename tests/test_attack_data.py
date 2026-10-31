@@ -18,9 +18,14 @@ from pathlib import Path
 
 import pytest
 
-from tests.attack_rules import bundle_problems, class_of, problems
+from tests.attack_rules import bundle_breaches, bundle_problems, class_of, problems
 from tests.test_data import errors, pointer
-from tests.test_upstream import KNOWN_DEPARTURES, MANIFEST, excused
+from tests.test_upstream import (
+    KNOWN_DEPARTURES,
+    MANIFEST,
+    excused,
+    known_bundle_breaches,
+)
 
 ROOT = Path(__file__).parent.parent
 DATA = Path(os.environ.get("ATTACK_DATA_DIR", ROOT / "tmp" / "attack-stix-data"))
@@ -87,6 +92,21 @@ def test_each_departure_covers_as_many_objects_as_it_says():
     # The identity and the marking definition are in every bundle, but no
     # departure covers them, so each object counts once.
     assert dict(covered) == {k: d.count for k, d in KNOWN_DEPARTURES.items()}
+
+
+def test_the_bundle_breaches_are_the_known_ones():
+    """Every breach of the ADM's statements across a bundle is a known
+    departure, and every known departure is still a breach, so a release that
+    adds one or mends one fails here until KNOWN_BUNDLE_DEPARTURES in
+    tests/test_upstream.py follows it."""
+    found = {
+        (rule, key)
+        for name in BUNDLES
+        for rule, key, _ in bundle_breaches(_bundle(name))
+    }
+    known = known_bundle_breaches()
+    assert not found - known, sorted(found - known)[:20]
+    assert not known - found, sorted(known - found)[:20]
 
 
 def test_the_extract_is_copied_unchanged():

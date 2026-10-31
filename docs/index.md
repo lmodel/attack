@@ -55,7 +55,13 @@ in `just test-attack-data`, every object of the bundles:
   relationship's ends, are objects of the bundle;
 - each kill chain phase of a technique names a tactic of its bundle;
 - a sub-technique's parent is a technique that is not one, whose ID the
-  sub-technique's extends and whose tactics it shares.
+  sub-technique's extends and whose tactics it shares;
+- a sub-technique has exactly one parent, and its platforms are among its
+  parent's;
+- each log source reference of an analytic names a data component of its
+  bundle, and a log and channel that the data component lists.
 
 Where MITRE's data breaks one of them, `tests/test_upstream.py` lists the
-departure with its reason.
+departure with its reason. The last two rules it lists by the ATT&CK ID of
+each object that breaks them, and `just test-attack-data` fails both on a
+new breach and on a listed one that no longer occurs.

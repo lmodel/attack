@@ -18,7 +18,7 @@ from linkml.generators.jsonschemagen import JsonSchemaGenerator
 from linkml.validator import validate
 from linkml_runtime import SchemaView
 
-from tests.attack_rules import bundle_problems, class_of, problems
+from tests.attack_rules import bundle_breaches, bundle_problems, class_of, problems
 from tests.test_upstream import excused
 
 ROOT = Path(__file__).parent.parent
@@ -159,6 +159,7 @@ def test_valid_examples_keep_the_adm_rules(path):
     assert not [p for item in items for p in unexcused(item)]
     if data.get("type") == "bundle":
         assert not bundle_problems(data)
+        assert not bundle_breaches(data)
 
 
 def test_each_rule_finds_its_breach():
@@ -329,3 +330,69 @@ def test_each_bundle_rule_finds_its_breach():
     tactics = [tactic, tactic | {"id": "x-mitre-tactic--2", "x_mitre_shortname": "x"}]
     broad = technique("T0001", False, ["impact", "x"])
     assert rules(*tactics, broad, child, subtechnique_of(child, broad)) == {"parent"}
+
+
+def test_each_bundle_statement_finds_its_breach():
+    """Each statement of the ADM's documentation across a bundle reports a
+    breach of it, keyed by the object, and a bundle that keeps them all
+    reports nothing."""
+    parent = {
+        "type": "attack-pattern",
+        "id": "attack-pattern--1",
+        "external_references": [{"external_id": "T0001"}],
+        "x_mitre_is_subtechnique": False,
+        "x_mitre_platforms": ["Linux", "Windows"],
+    }
+    child = parent | {
+        "id": "attack-pattern--2",
+        "external_references": [{"external_id": "T0001.001"}],
+        "x_mitre_is_subtechnique": True,
+        "x_mitre_platforms": ["Linux"],
+    }
+    component = {
+        "type": "x-mitre-data-component",
+        "id": "x-mitre-data-component--1",
+        "external_references": [{"external_id": "DC0001"}],
+        "x_mitre_log_sources": [{"name": "auditd:SYSCALL", "channel": "execve"}],
+    }
+
+    def subtechnique_of(target, number=1):
+        return {
+            "type": "relationship",
+            "id": f"relationship--{number}",
+            "relationship_type": "subtechnique-of",
+            "source_ref": child["id"],
+            "target_ref": target["id"],
+        }
+
+    def analytic(**ref):
+        return {
+            "type": "x-mitre-analytic",
+            "id": "x-mitre-analytic--1",
+            "external_references": [{"external_id": "AN0001"}],
+            "x_mitre_log_source_references": [
+                {
+                    "x_mitre_data_component_ref": component["id"],
+                    "name": "auditd:SYSCALL",
+                    "channel": "execve",
+                }
+                | ref
+            ],
+        }
+
+    def breaches(*objects):
+        return {(rule, key) for rule, key, _ in bundle_breaches({"objects": objects})}
+
+    whole = (parent, child, subtechnique_of(parent), component, analytic())
+    assert breaches(*whole) == set()
+    assert breaches(parent, child) == {("one parent", "T0001.001")}
+    second = parent | {"id": "attack-pattern--3"}
+    assert breaches(
+        parent, second, child, subtechnique_of(parent), subtechnique_of(second, 2)
+    ) == {("one parent", "T0001.001")}
+    narrow = parent | {"x_mitre_platforms": ["Windows"]}
+    assert breaches(narrow, child, subtechnique_of(narrow)) == {
+        ("parent platforms", "T0001.001")
+    }
+    assert breaches(component, analytic(channel="open")) == {("log source", "AN0001/0")}
+    assert breaches(analytic()) == {("log source component", "AN0001/0")}
