@@ -18,8 +18,9 @@ so this script downloads them instead. For each bundle it:
   been tried.
 
 It reads addresses from the manifest only, and refuses any that is not https
-on raw.githubusercontent.com. It writes nothing outside the destination, which
-is tmp/attack-stix-data/ unless --dest names another folder. Usage::
+on raw.githubusercontent.com, and any redirect to such an address. It writes
+nothing outside the destination, which is tmp/attack-stix-data/ unless --dest
+names another folder. Usage::
 
     python scripts/fetch_attack_data.py [--dest DIR]
 """
@@ -28,10 +29,10 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import http.client
 import json
 import os
 import sys
-import urllib.error
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -82,14 +83,35 @@ def _target(dest: Path, name: str) -> Path:
     return target
 
 
-def _download(url: str, part: Path, size: int) -> None:
-    """Download an address into a file, stopping one byte past the pinned size
-    so that an oversized answer fails the check without filling the disk."""
+def _check_address(url: str) -> None:
+    """Refuse an address that is not https on the pinned host."""
     parsed = urllib.parse.urlsplit(url)
     if parsed.scheme != "https" or parsed.hostname != HOST:
         raise ValueError(f"{url} is not an https address on {HOST}")
+
+
+class _PinnedHostRedirect(urllib.request.HTTPRedirectHandler):
+    """Follow a redirect only to an https address on the pinned host."""
+
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        _check_address(newurl)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
+
+
+# An opener without the default redirect handler, which follows a redirect to
+# any address.
+_open = urllib.request.build_opener(_PinnedHostRedirect).open
+
+
+def _download(url: str, part: Path, size: int) -> None:
+    """Download an address into a file, stopping one byte past the pinned size
+    so that an oversized answer fails the check without filling the disk."""
+    _check_address(url)
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=120) as resp, part.open("wb") as out:
+    # A file left at the temporary name, even a link, is replaced, not
+    # written through.
+    part.unlink(missing_ok=True)
+    with _open(req, timeout=120) as resp, part.open("wb") as out:
         left = size + 1
         while left > 0 and (chunk := resp.read(min(CHUNK, left))):
             out.write(chunk)
@@ -113,7 +135,10 @@ def fetch(dest: Path, manifest: dict) -> list[str]:
         part = target.with_name(target.name + ".part")
         try:
             _download(pin["url"], part, pin["size"])
-        except (ValueError, urllib.error.URLError, TimeoutError, OSError) as err:
+        # OSError covers a refused or failed request and a timeout,
+        # HTTPException a download cut off mid-read, and ValueError an
+        # address or a redirect off the pinned host.
+        except (OSError, http.client.HTTPException, ValueError) as err:
             part.unlink(missing_ok=True)
             problems.append(f"{name}: the download failed: {err}")
             continue
