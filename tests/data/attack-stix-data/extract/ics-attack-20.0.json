@@ -1,0 +1,933 @@
+[
+  {
+    "type": "campaign",
+    "spec_version": "2.1",
+    "id": "campaign--65281d3e-b03c-46b8-8cd8-716363ac3cb2",
+    "created": "2022-09-20T20:53:14.373Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/campaigns/C0009",
+        "external_id": "C0009"
+      },
+      {
+        "source_name": "CISA AA21-042A Water Treatment Intrusion Feb 2021",
+        "description": "CISA. (2021, February 11). Compromise of U.S. Water Treatment Facility . Retrieved October 18, 2022.",
+        "url": "https://www.cisa.gov/uscert/ncas/alerts/aa21-042a"
+      },
+      {
+        "source_name": "Pinellas County Sheriffs Office February 2021",
+        "description": "Pinellas County Sheriffs Office 2021, February 8 Treatment Plant Intrusion Press Conference Retrieved. 2021/10/08 ",
+        "url": "https://www.youtube.com/watch?v=MkXDSOgLQ6M"
+      },
+      {
+        "source_name": "Dragos Oldsmar Feb 2021",
+        "description": "Serino, G., et al . (2021, February 8). Recommendations Following the Oldsmar Water Treatment Facility Cyber Attack. Retrieved October 21, 2022.",
+        "url": "https://www.dragos.com/blog/industry-news/recommendations-following-the-oldsmar-water-treatment-facility-cyber-attack/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:15.905Z",
+    "name": "Oldsmar Treatment Plant Intrusion",
+    "description": "[Oldsmar Treatment Plant Intrusion](https://attack.mitre.org/campaigns/C0009) was a cyber incident involving a water treatment facility in Florida. During this incident, unidentified threat actors leveraged features of the system to access and modify setpoints for a specific chemical required in the treatment process. The incident was detected immediately and prevented before it could cause any harm to the public.(Citation: Pinellas County Sheriffs Office February 2021)(Citation: CISA AA21-042A Water Treatment Intrusion Feb 2021)(Citation: Dragos Oldsmar Feb 2021)",
+    "aliases": [
+      "Oldsmar Treatment Plant Intrusion"
+    ],
+    "first_seen": "2021-02-01T05:00:00.000Z",
+    "last_seen": "2021-02-01T05:00:00.000Z",
+    "x_mitre_first_seen_citation": "(Citation: Pinellas County Sheriffs Office February 2021)",
+    "x_mitre_last_seen_citation": "(Citation: Pinellas County Sheriffs Office February 2021)",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": true,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_domains": [
+      "ics-attack"
+    ]
+  },
+  {
+    "type": "campaign",
+    "spec_version": "2.1",
+    "id": "campaign--70cab19e-1745-425e-b3db-c02cd5ff157a",
+    "created": "2023-03-10T20:01:08.133Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/campaigns/C0020",
+        "external_id": "C0020"
+      },
+      {
+        "source_name": "Marshall Abrams July 2008",
+        "description": "Marshall Abrams 2008, July 23 Malicious Control System Cyber Security Attack Case Study Maroochy Water Services, Australia Retrieved. 2018/03/27 ",
+        "url": "https://www.mitre.org/sites/default/files/pdf/08_1145.pdf"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:15.915Z",
+    "name": "Maroochy Water Breach",
+    "description": "[Maroochy Water Breach](https://attack.mitre.org/campaigns/C0020) was an incident in 2000 where an adversary leveraged the local government’s wastewater control system and stolen engineering equipment to disrupt and eventually release 800,000 liters of raw sewage into the local community.(Citation: Marshall Abrams July 2008)",
+    "aliases": [
+      "Maroochy Water Breach"
+    ],
+    "first_seen": "2000-02-01T05:00:00.000Z",
+    "last_seen": "2000-04-01T05:00:00.000Z",
+    "x_mitre_first_seen_citation": "(Citation: Marshall Abrams July 2008)",
+    "x_mitre_last_seen_citation": "(Citation: Marshall Abrams July 2008)",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--6a02e38a-9629-40c0-8c7d-e98e3470315c",
+    "created": "2019-06-06T20:15:34.146Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/mitigations/M0920",
+        "external_id": "M0920"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:39:15.463Z",
+    "name": "SSL/TLS Inspection",
+    "description": "Break and inspect SSL/TLS sessions to look at encrypted web traffic for adversary activity.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "type": "intrusion-set",
+    "spec_version": "2.1",
+    "id": "intrusion-set--190242d7-73fc-4738-af68-20162f7a5aae",
+    "created": "2017-05-31T21:31:57.307Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/groups/G1000",
+        "external_id": "G1000"
+      },
+      {
+        "source_name": "Dragos",
+        "description": "Dragos   Allanite Retrieved. 2019/10/27 ",
+        "url": "https://dragos.com/resource/allanite/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:27.733Z",
+    "name": "ALLANITE",
+    "description": "[ALLANITE](https://attack.mitre.org/groups/G1000) is a suspected Russian cyber espionage group, that has primarily targeted the electric utility sector within the United States and United Kingdom. The group's tactics and techniques are reportedly similar to [Dragonfly](https://attack.mitre.org/groups/G0035), although [ALLANITE](https://attack.mitre.org/groups/G1000)s technical capabilities have not exhibited disruptive or destructive abilities. It has been suggested that the group maintains a presence in ICS for the purpose of gaining understanding of processes and to maintain persistence. (Citation: Dragos)",
+    "aliases": [
+      "ALLANITE",
+      "Palmetto Fusion"
+    ],
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_contributors": [
+      "Dragos Threat Intelligence"
+    ]
+  },
+  {
+    "type": "intrusion-set",
+    "spec_version": "2.1",
+    "id": "intrusion-set--68ba94ab-78b8-43e7-83e2-aed3466882c6",
+    "created": "2018-01-16T16:13:52.465Z",
+    "revoked": true,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/groups/G0057",
+        "external_id": "G0057"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:36.792Z",
+    "name": "APT34",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_domains": [
+      "enterprise-attack",
+      "ics-attack"
+    ]
+  },
+  {
+    "type": "malware",
+    "spec_version": "2.1",
+    "id": "malware--89ab0ca5-f7e0-4d16-bf2a-17d68117fa4b",
+    "created": "2017-05-31T21:32:59.661Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-ics-attack",
+        "url": "https://collaborate.mitre.org/attackics/index.php/Software/S0004",
+        "external_id": "S1002"
+      },
+      {
+        "source_name": "Booz Allen Hamilton",
+        "description": "Booz Allen Hamilton. (n.d.). When The Lights Went Out. Retrieved October 22, 2019.",
+        "url": "https://www.boozallen.com/content/dam/boozallen/documents/2016/09/ukraine-report-when-the-lights-went-out.pdf"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-18T18:00:55.679Z",
+    "name": "BlackEnergy 3",
+    "description": "[BlackEnergy 3](https://collaborate.mitre.org/attackics/index.php/Software/S0004) is a malware toolkit that has been used by both criminal and APT actors. It support various plug-ins including a variant of KillDisk. It is known to have been used against the Ukrainian power grid. (Citation: Booz Allen Hamilton)",
+    "is_family": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Windows"
+    ],
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_aliases": [
+      "BlackEnergy 3"
+    ]
+  },
+  {
+    "type": "malware",
+    "spec_version": "2.1",
+    "id": "malware--a4a98eab-b691-45d9-8c48-869ef8fefd57",
+    "created": "2017-05-31T21:32:59.661Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S1000",
+        "external_id": "S1000"
+      },
+      {
+        "source_name": "ESET",
+        "description": "ESET   ACAD/Medre.A: 10000s of AutoCAD Designs Leaked in Suspected Industrial Espionage Retrieved. 2021/04/13 ",
+        "url": "https://www.welivesecurity.com/wp-content/uploads/200x/white-papers/ESET_ACAD_Medre_A_whitepaper.pdf"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-16T21:26:25.077Z",
+    "name": "ACAD/Medre.A",
+    "description": "[ACAD/Medre.A](https://attack.mitre.org/software/S1000) is a worm that steals operational information. The worm collects AutoCAD files with drawings. [ACAD/Medre.A](https://attack.mitre.org/software/S1000) has the capability to be used for industrial espionage.(Citation: ESET)",
+    "is_family": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_aliases": [
+      "ACAD/Medre.A"
+    ]
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--19a71d1e-6334-4233-8260-b749cae37953",
+    "created": "2020-05-21T17:43:26.506Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T0800",
+        "external_id": "T0800"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-10-13T17:48:54.157Z",
+    "name": "Activate Firmware Update Mode",
+    "description": "Adversaries may activate firmware update mode on devices to prevent expected response functions from engaging in reaction to an emergency or process malfunction. For example, devices such as protection relays may have an operation mode designed for firmware installation. This mode may halt process monitoring and related functions to allow new firmware to be loaded. A device left in update mode may be placed in an inactive holding state if no firmware is provided to it. By entering and leaving a device in this mode, the adversary may deny its usual functionalities.",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-ics-attack",
+        "phase_name": "inhibit-response-function"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_contributors": [
+      "Joe Slowik - Dragos"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Embedded",
+      "Windows",
+      "Linux",
+      "Network Devices"
+    ],
+    "x_mitre_version": "1.0"
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805",
+    "created": "2020-05-21T17:43:26.506Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T0872",
+        "external_id": "T0872"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-10-13T17:48:40.569Z",
+    "name": "Indicator Removal on Host",
+    "description": "Adversaries may attempt to remove indicators of their presence on a system in an effort to cover their tracks. In cases where an adversary may feel detection is imminent, they may try to overwrite, delete, or cover up changes they have made to the device.",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-ics-attack",
+        "phase_name": "evasion"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Embedded",
+      "Windows",
+      "Linux",
+      "Network Devices"
+    ],
+    "x_mitre_version": "1.0"
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--77015a55-eef8-4f71-a071-b152f82ec1ef",
+    "created": "2026-04-20T20:54:23.982Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T0843/001",
+        "external_id": "T0843.001"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-10-13T17:48:59.072Z",
+    "name": "Download All",
+    "description": "Adversaries may execute a full program download to a PLC to overwrite the entire PLC program and configuration to deploy a new project or make major changes. This typically requires stopping the PLC and adversely impacting control processes.\n\nThe ability to perform a full program download to the PLC typically relies on access to a workstation with the vendor-specific PLC programming software installed.\n",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-ics-attack",
+        "phase_name": "lateral-movement"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_is_subtechnique": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Embedded"
+    ],
+    "x_mitre_version": "1.0"
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--a8cfd474-9358-464f-a169-9c6f099a8e8a",
+    "created": "2020-05-21T17:43:26.506Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-ics-attack",
+        "url": "https://attack.mitre.org/techniques/T0875",
+        "external_id": "T0875"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-24T17:49:11.949Z",
+    "name": "Change Program State",
+    "description": "Adversaries may attempt to change the state of the current program on a control device. Program state changes may be used to allow for another program to take over control or be loaded onto the device.",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-ics-attack",
+        "phase_name": "execution"
+      },
+      {
+        "kill_chain_name": "mitre-ics-attack",
+        "phase_name": "impair-process-control"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Field Controller/RTU/PLC/IED"
+    ],
+    "x_mitre_version": "1.0"
+  },
+  {
+    "type": "x-mitre-asset",
+    "spec_version": "2.1",
+    "id": "x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d",
+    "created": "2025-09-29T18:56:19.712Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/assets/A0018",
+        "external_id": "A0018"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T15:12:00.768Z",
+    "name": "Programmable Automation Controller (PAC)",
+    "description": "A Programmable Automation Controller (PAC) is an embedded programmable control device. PACs are designed to enable automation applications across integrated software applications, peer controllers (e.g., PLC), Human Machine Interfaces, and other systems. PACs often include advanced features for process control, motion control, drive control, and vision applications. PACs are programmed using traditional process automation programming languages (IEC-61131) and sometimes languages such as C and C++ to support more advanced controls.",
+    "x_mitre_sectors": [
+      "General"
+    ],
+    "x_mitre_related_assets": [
+      {
+        "name": "Field Device / Controller",
+        "related_asset_sectors": [
+          "General"
+        ],
+        "description": "Programmable Automation Controller (PAC) may be referred to as Field Controllers or Field Devices as a general function name."
+      },
+      {
+        "name": "Programmable Logic Controller (PLC)",
+        "related_asset_sectors": [
+          "General"
+        ],
+        "description": "Programmable Logic Controllers (PLC) share some of the same functionality as PACs, although often without more advanced control features. Historically, differences between PLCs and PACs were minimal, resulting in varying use of the terms across industry. "
+      }
+    ],
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Embedded"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "1.1",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "x-mitre-asset",
+    "spec_version": "2.1",
+    "id": "x-mitre-asset--dcb1d1c1-b195-45bf-b4cf-5b98c5b859a5",
+    "created": "2023-09-29T18:55:09.319Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/assets/A0014",
+        "external_id": "A0014"
+      },
+      {
+        "source_name": "IETF RFC4949 2007",
+        "description": "Internet Engineering Task Force. (2007, August). Internet Security Glossary, Version 2. Retrieved September 29, 2023.",
+        "url": "https://www.ietf.org/rfc/rfc4949.txt"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-10-13T16:50:45.686Z",
+    "name": "Routers",
+    "description": "A computer that is a gateway between two networks at OSI layer 3 and that relays and directs data packets through that inter-network. The most common form of router operates on IP packets.(Citation: IETF RFC4949 2007)",
+    "x_mitre_sectors": [
+      "General"
+    ],
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Embedded",
+      "Network Devices"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "2.1",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "x-mitre-matrix",
+    "spec_version": "2.1",
+    "id": "x-mitre-matrix--575f48f4-8897-4468-897b-48bb364af6c7",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/matrices/ics",
+        "external_id": "ics-attack"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:58.509Z",
+    "name": "ATT&CK for ICS",
+    "description": "Below are the tactics and techniques representing the MITRE ATT&CK Matrix for ICS.",
+    "tactic_refs": [
+      "x-mitre-tactic--69da72d2-f550-41c5-ab9e-e8255707f28a",
+      "x-mitre-tactic--93bf9a8e-b14c-4587-b6d5-9efc7c12eb45",
+      "x-mitre-tactic--78f1d2ae-a579-44c4-8fc5-3e1775c73fac",
+      "x-mitre-tactic--33752ae7-f875-4f43-bdb6-d8d02d341046",
+      "x-mitre-tactic--ddf70682-f3ce-479c-a9a4-7eadf9bfead7",
+      "x-mitre-tactic--696af733-728e-49d7-8261-75fdc590f453",
+      "x-mitre-tactic--51c25a9e-8615-40c0-8afd-1da578847924",
+      "x-mitre-tactic--b2a67b1e-913c-46f6-b219-048a90560bb9",
+      "x-mitre-tactic--97c8ff73-bd14-4b6c-ac32-3d91d2c41e3f",
+      "x-mitre-tactic--298fe907-7931-4fd2-8131-2814dd493134",
+      "x-mitre-tactic--ff048b6c-b872-4218-b68c-3735ebd1f024",
+      "x-mitre-tactic--77542f83-70d0-40c2-8a9d-ad2eb8b00279"
+    ],
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "x-mitre-tactic",
+    "spec_version": "2.1",
+    "id": "x-mitre-tactic--33752ae7-f875-4f43-bdb6-d8d02d341046",
+    "created": "2021-04-10T17:32:33.899Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/tactics/TA0111",
+        "external_id": "TA0111"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-16T21:26:21.215Z",
+    "name": "Privilege Escalation",
+    "description": "The adversary is trying to gain higher-level permissions.\n\nPrivilege Escalation consists of techniques that adversaries use to gain higher-level permissions on a system or network. Adversaries can often enter and explore a network with unprivileged access but require elevated permissions to follow through on their objectives. Common approaches are to take advantage of system weaknesses, misconfigurations, and vulnerabilities.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_shortname": "privilege-escalation"
+  },
+  {
+    "type": "x-mitre-analytic",
+    "spec_version": "2.1",
+    "id": "x-mitre-analytic--1e9c5d46-14e2-4efc-8861-e6dc942b3b9c",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0763#AN1895",
+        "external_id": "AN1895"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "name": "Analytic 1895",
+    "description": "No standard detection method currently exists for this technique.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_platforms": [
+      "None"
+    ],
+    "x_mitre_deprecated": false
+  },
+  {
+    "type": "x-mitre-data-component",
+    "spec_version": "2.1",
+    "id": "x-mitre-data-component--faa34cf6-cf32-4dc9-bd6a-8f7a606ff65b",
+    "created": "2021-10-20T15:05:19.271Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/datacomponents/DC0012",
+        "external_id": "DC0012"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:14:38.292Z",
+    "name": "Scheduled Job Modification",
+    "description": "Changes made to an existing scheduled job, including modifications to its execution parameters, command payload, or execution timing.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "ics-attack",
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "2.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_log_sources": [
+      {
+        "name": "Scheduled Job",
+        "channel": "None"
+      },
+      {
+        "name": "auditd:CONFIG_CHANGE",
+        "channel": "/var/log/audit/audit.log"
+      },
+      {
+        "name": "m365:exchange",
+        "channel": "Remove-InboxRule, Clear-Mailbox"
+      },
+      {
+        "name": "WinEventLog:Security",
+        "channel": "EventCode=4702"
+      }
+    ]
+  },
+  {
+    "type": "x-mitre-data-source",
+    "spec_version": "2.1",
+    "id": "x-mitre-data-source--b1717cb4-d536-4e2b-b5e5-07e67e26183c",
+    "created": "2022-05-11T16:22:58.802Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/datasources/DS0039",
+        "external_id": "DS0039"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "name": "Asset",
+    "description": "Data sources with information about the set of devices found within the network, along with their current software and configurations",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_collection_layers": [
+      "Host"
+    ]
+  },
+  {
+    "type": "x-mitre-detection-strategy",
+    "spec_version": "2.1",
+    "id": "x-mitre-detection-strategy--c94af5cb-61c3-4180-81e7-30c1669f4252",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0774",
+        "external_id": "DET0774"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T16:34:50.692Z",
+    "name": "Detection of I/O Image",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_analytic_refs": [
+      "x-mitre-analytic--c40ddd75-f2fc-4899-bda1-bff164c96622"
+    ]
+  },
+  {
+    "type": "x-mitre-analytic",
+    "spec_version": "2.1",
+    "id": "x-mitre-analytic--c41ec8c0-34b0-4573-8643-7366cfbbe4ac",
+    "created": "2026-10-13T17:45:47.613Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0753#AN2183",
+        "external_id": "AN2183"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-10-13T17:45:47.613Z",
+    "name": "Analytic 2183",
+    "description": "Use an OT-capable protocol decoder to monitor SNMP requests/responses and identify access to vendor-internal or undocumented OIDs from sources outside the approved NMS inventory, especially SET operations or unusual walks against control-network infrastructure. This is network-protocol observation, not OS API execution; require decoded SNMP transaction content or equivalent packet inspection.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "ics-attack"
+    ],
+    "x_mitre_platforms": [
+      "Network Devices"
+    ],
+    "x_mitre_log_source_references": [
+      {
+        "x_mitre_data_component_ref": "x-mitre-data-component--3772e279-27d6-477a-9fe3-c6beb363594c",
+        "name": "otids:ProtocolDecoder",
+        "channel": "SNMP request/response decoder: OID, operation type, source/destination; flag access to undocumented/vendor-internal OIDs from non-approved NMS sources"
+      }
+    ],
+    "x_mitre_mutable_elements": [
+      {
+        "field": "AuthorizedICSApplications",
+        "description": "Allowlist of processes expected to interact with ICS hardware/protocols."
+      }
+    ],
+    "x_mitre_deprecated": false
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--004d6d78-390b-4969-9e88-8b92d33fbfc0",
+    "created": "2023-09-28T21:09:50.956Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-04-29T14:23:05.903Z",
+    "relationship_type": "targets",
+    "source_ref": "attack-pattern--55e7e5c1-3760-4451-bae0-e79b29f452c5",
+    "target_ref": "x-mitre-asset--ecb81a8b-022e-4529-a404-55cffca7d3a3",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--052da7dd-e7c9-4ab3-a8f9-eb734b24ec60",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "relationship_type": "detects",
+    "source_ref": "x-mitre-detection-strategy--0f2e4927-401d-430e-96ed-90feb8df1b03",
+    "target_ref": "attack-pattern--cfe68e93-ce94-4c0f-a57d-3aa72cedd618",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--0665de34-d5a5-46ae-a0e5-3021bf48c294",
+    "created": "2026-04-20T20:54:17.554Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-04-20T20:54:17.554Z",
+    "relationship_type": "subtechnique-of",
+    "source_ref": "attack-pattern--527106b3-95a2-4ed2-bf89-db7f0e4d0da0",
+    "target_ref": "attack-pattern--e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--119aea8f-443f-4831-8143-ec6cd43021cb",
+    "created": "2026-04-20T20:58:48.359Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-04-20T20:58:48.359Z",
+    "relationship_type": "revoked-by",
+    "source_ref": "attack-pattern--8bb4538f-f16f-49f0-a431-70b5444c7349",
+    "target_ref": "attack-pattern--5658ad88-7510-490e-a351-95d50b1bcd91",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--9a55e351-d3b7-460a-9a9d-6714c00db5f0",
+    "created": "2024-03-25T19:59:09.628Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "CISA AA23-335A IRGC-Affiliated December 2023",
+        "description": "DHS/CISA. (2023, December 1). IRGC-Affiliated Cyber Actors Exploit PLCs in Multiple Sectors, Including U.S. Water and Wastewater Systems Facilities. Retrieved March 25, 2024.",
+        "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-335a"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:43.028Z",
+    "description": "(Citation: CISA AA23-335A IRGC-Affiliated December 2023)",
+    "relationship_type": "attributed-to",
+    "source_ref": "campaign--8fda050f-470d-4401-994e-35c1a6c301de",
+    "target_ref": "intrusion-set--a07a367a-146c-45a8-a830-d3d337b9befa",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--9b825e77-2b18-4bc8-8e1d-5f645d570dca",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "Dragos Xenotime 2018",
+        "description": "Dragos, Inc.. (n.d.). Xenotime. Retrieved April 16, 2019.",
+        "url": "https://dragos.com/resource/xenotime/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:42.187Z",
+    "description": "(Citation: Dragos Xenotime 2018)",
+    "relationship_type": "uses",
+    "source_ref": "intrusion-set--9538b1a4-4120-4e2d-bf59-3b11fcab05a4",
+    "target_ref": "malware--80099a91-4c86-4bea-9ccb-dac55d61960e",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--b9e82422-b072-494f-99c1-fcab07b90133",
+    "created": "2020-09-21T17:59:24.739Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-04-29T14:23:06.179Z",
+    "description": "Require signed binaries.\n",
+    "relationship_type": "mitigates",
+    "source_ref": "course-of-action--71eb7dad-07eb-4bbc-9df0-ac57bf2fba4a",
+    "target_ref": "attack-pattern--ba203963-3182-41ac-af14-7e7ebc83cd61",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "identity",
+    "spec_version": "2.1",
+    "id": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "created": "2017-06-01T00:00:00.000Z",
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T16:33:30.227Z",
+    "name": "The MITRE Corporation",
+    "identity_class": "organization",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "definition": {
+      "statement": "Copyright 2015-2026, The MITRE Corporation. MITRE ATT&CK and ATT&CK are registered trademarks of The MITRE Corporation."
+    },
+    "id": "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168",
+    "type": "marking-definition",
+    "spec_version": "2.1",
+    "created": "2017-06-01T00:00:00.000Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "definition_type": "statement"
+  }
+]

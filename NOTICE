@@ -16,9 +16,10 @@ this project's rendering, written in its own words; they are not MITRE's,
 and their use does not imply endorsement by MITRE. ATT&CK® is a
 registered trademark of The MITRE Corporation.
 
-tests/data/attack-stix-data/ holds ATT&CK objects copied unchanged from
-MITRE's bundles, beside MITRE's LICENSE.txt from the same tag, and the
-example data under tests/data/ quotes ATT&CK's names and identifiers.
+tests/data/attack-stix-data/extract/ holds ATT&CK objects copied
+unchanged from MITRE's bundles, beside MITRE's LICENSE.txt from the same
+tag, and the examples under tests/data/valid/ and tests/data/invalid/ are
+ATT&CK objects written as YAML, some shortened or broken on purpose.
 MITRE's licence authorises such copies provided that each reproduces
 MITRE's copyright designation and the licence, which are:
 

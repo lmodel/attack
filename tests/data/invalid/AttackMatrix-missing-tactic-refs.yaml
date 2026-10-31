@@ -1,0 +1,23 @@
+# Fails at: /
+type: x-mitre-matrix
+spec_version: '2.1'
+id: x-mitre-matrix--575f48f4-8897-4468-897b-48bb364af6c7
+created: '2018-10-17T00:14:20.652Z'
+created_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+revoked: false
+external_references:
+  - source_name: mitre-attack
+    url: https://attack.mitre.org/matrices/ics
+    external_id: ics-attack
+object_marking_refs:
+  - marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+modified: '2026-07-31T20:48:58.509Z'
+name: ATT&CK for ICS
+description: Below are the tactics and techniques representing the MITRE ATT&CK
+  Matrix for ICS.
+x_mitre_modified_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+x_mitre_deprecated: false
+x_mitre_domains:
+  - ics-attack
+x_mitre_version: '1.0'
+x_mitre_attack_spec_version: 3.3.0

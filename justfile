@@ -219,9 +219,12 @@ _test-schema:
 _test-python: gen-python
   uv run python -m pytest
 
-# Run example tests
+# Run example tests. A bundle's objects range over the abstract StixObject,
+# and STIX's type is not a type designator, so the examples load without one;
+# tests/test_data.py validates each against its own class.
 _test-examples: _ensure_examples_output
   uv run linkml-run-examples \
+    --no-use-type-designators \
     --input-formats json \
     --input-formats yaml \
     --output-formats json \

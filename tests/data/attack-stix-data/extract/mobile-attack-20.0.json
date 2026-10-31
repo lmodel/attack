@@ -1,0 +1,979 @@
+[
+  {
+    "type": "campaign",
+    "spec_version": "2.1",
+    "id": "campaign--d0695b5f-b761-49e0-b3e3-2e5307f8def3",
+    "created": "2025-03-28T14:45:30.132Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/campaigns/C0054",
+        "external_id": "C0054"
+      },
+      {
+        "source_name": "SecureList OpTriangulation 01Jun2023",
+        "description": "Kuznetsov, I., et al. (2023, June 1). Operation Triangulation: iOS devices targeted with previously unknown malware. Retrieved April 18, 2024.",
+        "url": "https://securelist.com/operation-triangulation/109842/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:21.820Z",
+    "name": "Operation Triangulation",
+    "description": "[Operation Triangulation](https://attack.mitre.org/campaigns/C0054) is a mobile campaign targeting iOS devices.(Citation: SecureList OpTriangulation 01Jun2023) The unidentified actors used zero-click exploits in iMessage attachments to gain [Initial Access](https://attack.mitre.org/tactics/TA0027), then executed exploits and validators, such as [Binary Validator](https://attack.mitre.org/software/S1215) before finally executing the [TriangleDB](https://attack.mitre.org/software/S1216) implant.  ",
+    "aliases": [
+      "Operation Triangulation"
+    ],
+    "first_seen": "2019-01-01T08:00:00.000Z",
+    "last_seen": "2023-06-01T07:00:00.000Z",
+    "x_mitre_first_seen_citation": "(Citation: SecureList OpTriangulation 01Jun2023)",
+    "x_mitre_last_seen_citation": "(Citation: SecureList OpTriangulation 01Jun2023)",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--653492e3-27be-4a0e-b08c-938dd2b7e0e1",
+    "created": "2019-10-18T12:53:03.508Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/mitigations/M1011",
+        "external_id": "M1011"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:40:09.845Z",
+    "name": "User Guidance",
+    "description": "Describes any guidance or training given to users to set particular configuration settings or avoid specific potentially risky behaviors.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--e944670c-d03a-4e93-a21c-b3d4c53ec4c9",
+    "created": "2017-10-25T14:48:51.365Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/mitigations/M1007",
+        "external_id": "M1007"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-18T18:00:49.835Z",
+    "name": "Caution with Device Administrator Access",
+    "description": "Warn device users not to accept requests to grant Device Administrator access to applications without good reason.\n\nAdditionally, application vetting should include a check on whether the application requests Device Administrator access. Applications that do request Device Administrator access should be carefully scrutinized and only allowed to be used if a valid reason exists.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "type": "intrusion-set",
+    "spec_version": "2.1",
+    "id": "intrusion-set--1f322d74-4822-4d60-8f64-414eea8a9258",
+    "created": "2024-04-02T18:58:36.186Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/groups/G1029",
+        "external_id": "G1029"
+      },
+      {
+        "source_name": "Meta Adversarial Threat Report 2022",
+        "description": "Agranovich, D., et al. (2022, April). Adversarial Threat Report. Retrieved April 2, 2024.",
+        "url": "https://about.fb.com/wp-content/uploads/2022/04/Meta-Quarterly-Adversarial-Threat-Report_Q1-2022.pdf"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:28.893Z",
+    "name": "UNC788",
+    "description": "[UNC788](https://attack.mitre.org/groups/G1029) is a group of hackers from Iran that has targeted people in the Middle East.(Citation: Meta Adversarial Threat Report 2022)",
+    "aliases": [
+      "UNC788"
+    ],
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_contributors": [
+      "Denise Tan"
+    ]
+  },
+  {
+    "type": "intrusion-set",
+    "spec_version": "2.1",
+    "id": "intrusion-set--9559ecaf-2e75-48a7-aee8-9974020bc772",
+    "created": "2017-05-31T21:32:07.928Z",
+    "revoked": true,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/groups/G0042",
+        "external_id": "G0042"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:42.233Z",
+    "name": "MONSOON",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_domains": [
+      "enterprise-attack",
+      "mobile-attack"
+    ]
+  },
+  {
+    "type": "malware",
+    "spec_version": "2.1",
+    "id": "malware--22faaa56-a8ac-4292-9be6-b571b255ee40",
+    "created": "2020-07-27T14:14:56.729Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S0494",
+        "external_id": "S0494"
+      },
+      {
+        "source_name": "Google Security Zen",
+        "description": "Siewierski, L. (2019, January 11). PHA Family Highlights: Zen and its cousins . Retrieved July 27, 2020.",
+        "url": "https://security.googleblog.com/2019/01/pha-family-highlights-zen-and-its.html"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:40:18.792Z",
+    "name": "Zen",
+    "description": "[Zen](https://attack.mitre.org/software/S0494) is Android malware that was first seen in 2013.(Citation: Google Security Zen)",
+    "is_family": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Android"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_aliases": [
+      "Zen"
+    ]
+  },
+  {
+    "type": "malware",
+    "spec_version": "2.1",
+    "id": "malware--c709da93-20c3-4d17-ab68-48cba76b2137",
+    "created": "2017-10-25T14:48:43.527Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S0291",
+        "external_id": "S0291"
+      },
+      {
+        "source_name": "PJApps",
+        "description": "(Citation: Lookout-EnterpriseApps)"
+      },
+      {
+        "source_name": "Lookout-EnterpriseApps",
+        "description": "Lookout. (2016, May 25). 5 active mobile threats spoofing enterprise apps. Retrieved December 19, 2016.",
+        "url": "https://blog.lookout.com/blog/2016/05/25/spoofed-apps/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:40:39.221Z",
+    "name": "PJApps",
+    "description": "[PJApps](https://attack.mitre.org/software/S0291) is an Android malware family. (Citation: Lookout-EnterpriseApps)",
+    "is_family": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "type": "malware",
+    "spec_version": "2.1",
+    "id": "malware--f9854ba6-989d-43bf-828b-7240b8a65291",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S0317",
+        "external_id": "S0317"
+      },
+      {
+        "source_name": "Proofpoint-Marcher",
+        "description": "Proofpoint. (2017, November 3). Credential phishing and an Android banking Trojan combine in Austrian mobile attacks. Retrieved July 6, 2018.",
+        "url": "https://www.proofpoint.com/us/threat-insight/post/credential-phishing-and-android-banking-trojan-combine-austrian-mobile-attacks"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-09-02T18:45:34.987Z",
+    "name": "Marcher",
+    "description": "[Marcher](https://attack.mitre.org/software/S0317) is Android malware that is used for financial fraud. (Citation: Proofpoint-Marcher)",
+    "is_family": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_aliases": [
+      "Marcher"
+    ]
+  },
+  {
+    "type": "tool",
+    "spec_version": "2.1",
+    "id": "tool--1622fd3d-fcfc-4d02-ac49-f2d786f79b81",
+    "created": "2019-09-04T15:38:56.070Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S0408",
+        "external_id": "S0408"
+      },
+      {
+        "source_name": "FortiGuard-FlexiSpy",
+        "description": "K. Lu. (n.d.). Deep Technical Analysis of the Spyware FlexiSpy for Android. Retrieved September 10, 2019.",
+        "url": "https://d3gpjj9d20n0p3.cloudfront.net/fortiguard/research/Dig%20Deep%20into%20FlexiSpy%20for%20Android%28white%20paper%29_KaiLu.pdf"
+      },
+      {
+        "source_name": "CyberMerchants-FlexiSpy",
+        "description": "Actis B. (2017, April 22). FlexSpy Application Analysis. Retrieved September 4, 2019.",
+        "url": "http://www.cybermerchantsofdeath.com/blog/2017/04/22/FlexiSpy.html"
+      },
+      {
+        "source_name": "FlexiSpy-Website",
+        "description": "FlexiSpy. (n.d.). FlexiSpy. Retrieved September 4, 2019.",
+        "url": "https://www.flexispy.com/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:40:48.201Z",
+    "name": "FlexiSpy",
+    "description": "[FlexiSpy](https://attack.mitre.org/software/S0408) is sophisticated surveillanceware for iOS and Android. Publicly-available, comprehensive analysis has only been found for the Android version.(Citation: FortiGuard-FlexiSpy)(Citation: CyberMerchants-FlexiSpy)\n\n[FlexiSpy](https://attack.mitre.org/software/S0408) markets itself as a parental control and employee monitoring application.(Citation: FlexiSpy-Website)",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Android"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_contributors": [
+      "Emily Ratliff, IBM"
+    ],
+    "x_mitre_aliases": [
+      "FlexiSpy"
+    ]
+  },
+  {
+    "type": "tool",
+    "spec_version": "2.1",
+    "id": "tool--da21929e-40c0-443d-bdf4-6b60d15448b4",
+    "created": "2017-10-25T14:48:48.609Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S0298",
+        "external_id": "S0298"
+      },
+      {
+        "source_name": "Xbot",
+        "description": "(Citation: PaloAlto-Xbot)"
+      },
+      {
+        "source_name": "PaloAlto-Xbot",
+        "description": "Cong Zheng, Claud Xiao and Zhi Xu. (2016, February 18). New Android Trojan “Xbot” Phishes Credit Cards and Bank Accounts, Encrypts Devices for Ransom. Retrieved December 21, 2016.",
+        "url": "http://researchcenter.paloaltonetworks.com/2016/02/new-android-trojan-xbot-phishes-credit-cards-and-bank-accounts-encrypts-devices-for-ransom/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:40:48.566Z",
+    "name": "Xbot",
+    "description": "[Xbot](https://attack.mitre.org/software/S0298) is an Android malware family that was observed in 2016 primarily targeting Android users in Russia and Australia. (Citation: PaloAlto-Xbot)",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--45dcbc83-4abc-4de1-b643-e528d1e9df09",
+    "created": "2017-10-25T14:48:24.069Z",
+    "revoked": true,
+    "external_references": [
+      {
+        "source_name": "mitre-mobile-attack",
+        "url": "https://attack.mitre.org/techniques/T1460",
+        "external_id": "T1460"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-24T17:48:43.592Z",
+    "name": "Biometric Spoofing",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_version": "1.0"
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--ccde43e4-78f9-4f32-b401-c081e7db71ea",
+    "created": "2021-09-24T14:47:34.182Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T1617",
+        "external_id": "T1617"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-24T17:49:24.183Z",
+    "name": "Hooking",
+    "description": "Adversaries may utilize hooking to hide the presence of artifacts associated with their behaviors to evade detection. Hooking can be used to modify return values or data structures of system APIs and function calls. This process typically involves using 3rd party root frameworks, such as Xposed or Magisk, with either a system exploit or pre-existing root access. By including custom modules for root frameworks, adversaries can hook system APIs and alter the return value and/or system data structures to alter functionality/visibility of various aspects of the system.",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-mobile-attack",
+        "phase_name": "defense-evasion"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_contributors": [
+      "Jörg Abraham, EclecticIQ"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Android"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_tactic_type": [
+      "Post-Adversary Device Access"
+    ]
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--fa801609-ca8e-415e-815e-65f3826ff4df",
+    "created": "2022-03-30T19:19:23.777Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T1406/001",
+        "external_id": "T1406.001"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-24T17:49:38.813Z",
+    "name": "Steganography",
+    "description": "Adversaries may use steganography techniques in order to prevent the detection of hidden information. Steganographic techniques can be used to hide data in digital media such as images, audio tracks, video clips, or text files.",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-mobile-attack",
+        "phase_name": "defense-evasion"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_is_subtechnique": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Android"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_tactic_type": [
+      "Post-Adversary Device Access"
+    ]
+  },
+  {
+    "type": "x-mitre-matrix",
+    "spec_version": "2.1",
+    "id": "x-mitre-matrix--5104d5f0-16b7-4aec-8ae3-0a90cd5494fc",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/matrices/mobile-attack",
+        "external_id": "mobile-attack"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-18T18:00:50.259Z",
+    "name": "Network-Based Effects",
+    "description": "Below are the tactics and techniques representing the two MITRE ATT&CK Matrices for Mobile. The Matrices cover techniques involving device access and network-based effects that can be used by adversaries without device access. The Matrices contains information for the following platforms: Android, iOS.",
+    "tactic_refs": [
+      "x-mitre-tactic--9eb4c21e-4fa8-44c9-b167-dbfc455f9210",
+      "x-mitre-tactic--e78d7d60-41b5-49b7-b0a9-5c5d4cbabe17"
+    ],
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "type": "x-mitre-matrix",
+    "spec_version": "2.1",
+    "id": "x-mitre-matrix--a382db5e-d009-4135-b893-0e0ff021c95b",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/matrices/mobile",
+        "external_id": "mobile-attack"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:58.758Z",
+    "name": "Mobile ATT&CK",
+    "description": "Below are the tactics and techniques representing the MITRE ATT&CK Matrix for Mobile. The Matrix covers techniques involving device access and network-based effects that can be used by adversaries without device access. The Matrix contains information for the following platforms: Android, iOS.",
+    "tactic_refs": [
+      "x-mitre-tactic--0a93fd8e-4a83-4c15-8203-db290e5f2ac6",
+      "x-mitre-tactic--4a800987-a3a8-4d56-a1bd-0d7171431756",
+      "x-mitre-tactic--363bbeff-bb2a-4734-ac74-d6d37202fe54",
+      "x-mitre-tactic--3e962de5-3280-43b7-bc10-334fbc1d6fa8",
+      "x-mitre-tactic--987cda6d-eb77-406b-bf68-bcb5f3d2e1df",
+      "x-mitre-tactic--6fcb36b8-3776-483b-8699-42215714fb10",
+      "x-mitre-tactic--d418cdeb-1b9f-4a6b-a15d-2f89f549f8c1",
+      "x-mitre-tactic--7be441c2-0095-4b1e-8125-fa8ffda29b0f",
+      "x-mitre-tactic--7a0d25d3-f0c0-40bf-bf90-c743871b19ba",
+      "x-mitre-tactic--3f660805-fa2e-42e8-8851-57f9e9b653e3",
+      "x-mitre-tactic--10fa8d8d-1b04-4176-917e-738724239981",
+      "x-mitre-tactic--6ebce653-294a-444a-bffb-14c04c8d137e"
+    ],
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "2.0",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "x-mitre-tactic",
+    "spec_version": "2.1",
+    "id": "x-mitre-tactic--0a93fd8e-4a83-4c15-8203-db290e5f2ac6",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/tactics/TA0027",
+        "external_id": "TA0027"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:40:48.923Z",
+    "name": "Initial Access",
+    "description": "The adversary is trying to get into your device.\n\nThe initial access tactic represents the vectors adversaries use to gain an initial foothold onto a mobile device.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_shortname": "initial-access"
+  },
+  {
+    "type": "x-mitre-tactic",
+    "spec_version": "2.1",
+    "id": "x-mitre-tactic--9eb4c21e-4fa8-44c9-b167-dbfc455f9210",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/tactics/TA0038",
+        "external_id": "TA0038"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-18T18:00:48.173Z",
+    "name": "Network Effects",
+    "description": "The adversary is trying to intercept or manipulate network traffic to or from a device.\n\nThis category refers to network-based techniques that an adversary may be able to use to fulfill his or her objectives without access to the mobile device itself. These include techniques to intercept or manipulate network traffic to and from the mobile device.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_shortname": "network-effects"
+  },
+  {
+    "type": "x-mitre-analytic",
+    "spec_version": "2.1",
+    "id": "x-mitre-analytic--369938c8-6b9e-4eb3-8105-eb76a373dc35",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0641#AN1717",
+        "external_id": "AN1717"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T16:30:18.376Z",
+    "name": "Analytic 1717",
+    "description": "Indirect evidence of application-layer encrypted channel usage inferred through anomalous background processing and network transmission patterns following application activity, where encryption operations are not directly observable. Detection correlates background execution + network behavior + application entitlement posture to identify misuse of encrypted communication channels.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.1",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_platforms": [
+      "iOS"
+    ],
+    "x_mitre_mutable_elements": [
+      {
+        "field": "TimeWindow",
+        "description": "Correlation window between background processing and network transmission"
+      },
+      {
+        "field": "AllowedAppList",
+        "description": "Apps expected to use encrypted communication channels"
+      },
+      {
+        "field": "EntropyThreshold",
+        "description": "Threshold for identifying encoded/encrypted payloads"
+      },
+      {
+        "field": "BeaconIntervalVariance",
+        "description": "Tolerance for periodic communication patterns"
+      }
+    ]
+  },
+  {
+    "type": "x-mitre-analytic",
+    "spec_version": "2.1",
+    "id": "x-mitre-analytic--7247d454-c307-417a-90c7-a15452d0d83e",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0659#AN1749",
+        "external_id": "AN1749"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "name": "Analytic 1749",
+    "description": "No standard detection method currently exists for this technique.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_platforms": [
+      "Android"
+    ],
+    "x_mitre_deprecated": false
+  },
+  {
+    "type": "x-mitre-analytic",
+    "spec_version": "2.1",
+    "id": "x-mitre-analytic--964fc2e0-96fc-4992-b89a-8101d47b7d8c",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0640#AN1715",
+        "external_id": "AN1715"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-10-13T17:42:48.238Z",
+    "name": "Analytic 1715",
+    "description": "For Android, detect Hide Artifacts from documented management, network, or vetting evidence; treat state queries as periodic observations rather than real-time events. Correlate Application Permission via Android Enterprise DPC / Application Vetting [DevicePolicyManager.getPermissionGrantState(); PackageManager manifest/requested-permission review]. Alert on a sequence or state change inconsistent with the device/app baseline, approved management policy, or expected user workflow; do not infer unobserved API calls, file/process activity, or payload content from management state alone.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.1",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_platforms": [
+      "Android"
+    ],
+    "x_mitre_log_source_references": [
+      {
+        "x_mitre_data_component_ref": "x-mitre-data-component--b1e0bb80-23d4-44f2-b919-7e9c54898f43",
+        "name": "android:DevicePolicyManager",
+        "channel": "DevicePolicyManager.getPermissionGrantState(); PackageManager manifest/requested-permission review"
+      }
+    ],
+    "x_mitre_mutable_elements": [
+      {
+        "field": "KnownHeadlessApps",
+        "description": "Apps designed to operate without launcher icons (MDM agent, enterprise background services). Derive from MDM catalog. Any non-whitelisted app that suppresses its launcher while remaining active is anomalous."
+      }
+    ]
+  },
+  {
+    "type": "x-mitre-data-component",
+    "spec_version": "2.1",
+    "id": "x-mitre-data-component--e2f72131-14d1-411f-8e8c-aa3453dd5456",
+    "created": "2023-03-13T20:47:24.038Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/datacomponents/DC0116",
+        "external_id": "DC0116"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-10-13T17:40:39.609Z",
+    "name": "Permissions Request",
+    "description": "System prompts triggered when an application requests new or additional permissions",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "2.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_log_sources": [
+      {
+        "name": "User Interface",
+        "channel": "None"
+      },
+      {
+        "name": "android:DevicePolicyManager",
+        "channel": "DevicePolicyManager.getPermissionGrantState(); PackageManager manifest/requested-permission review"
+      },
+      {
+        "name": "mobile:ApplicationVetting",
+        "channel": "Code-signing entitlements and Info.plist privacy usage-description keys"
+      }
+    ]
+  },
+  {
+    "type": "x-mitre-data-source",
+    "spec_version": "2.1",
+    "id": "x-mitre-data-source--e156f007-c5bf-45cc-8dd5-d442ffb0d203",
+    "created": "2023-03-13T19:30:41.131Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/datasources/DS0041",
+        "external_id": "DS0041"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "name": "Application Vetting",
+    "description": "Application vetting report generated by an external cloud service.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Android",
+      "iOS"
+    ],
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_collection_layers": [
+      "Report"
+    ]
+  },
+  {
+    "type": "x-mitre-detection-strategy",
+    "spec_version": "2.1",
+    "id": "x-mitre-detection-strategy--2d8db41e-e12e-46ff-be11-2810b0a2acb5",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0719",
+        "external_id": "DET0719"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T16:34:50.673Z",
+    "name": "Detection of Hooking",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "mobile-attack"
+    ],
+    "x_mitre_analytic_refs": [
+      "x-mitre-analytic--dd1b3351-f8e5-480e-9e7d-f9cfbbf01409"
+    ]
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--024a2ca8-c0c4-456d-a9e6-5596c5569870",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "relationship_type": "detects",
+    "source_ref": "x-mitre-detection-strategy--9935655b-cd9b-485f-84ea-1b3b4b765413",
+    "target_ref": "attack-pattern--1d44f529-6fe6-489f-8a01-6261ac43f05e",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--04ae1d87-1741-4cfd-84ff-3c5e46c0b112",
+    "created": "2022-04-05T19:59:03.285Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-04-29T14:23:05.909Z",
+    "relationship_type": "subtechnique-of",
+    "source_ref": "attack-pattern--fd211238-f767-4599-8c0d-9dca36624626",
+    "target_ref": "attack-pattern--2ccc3d39-9598-4d32-9657-42e1c7095d26",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--26bf27dc-f65d-477d-abbd-f4c3ce475c51",
+    "created": "2022-04-01T12:37:17.515Z",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-04-29T14:23:05.958Z",
+    "description": "OS feature updates often enhance security and privacy around permissions. ",
+    "relationship_type": "mitigates",
+    "source_ref": "course-of-action--0beabf44-e8d8-4ae4-9122-ef56369a2564",
+    "target_ref": "attack-pattern--11c2c2b7-1fd4-408f-bc2e-fe772ef9df5e",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--3680408d-e56e-4d68-a74d-2678093ed53f",
+    "created": "2018-04-18T17:59:24.739Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:26.240Z",
+    "relationship_type": "revoked-by",
+    "source_ref": "intrusion-set--9559ecaf-2e75-48a7-aee8-9974020bc772",
+    "target_ref": "intrusion-set--17862c7d-9e60-48a0-b48e-da4dc4c3f6b0",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--6b623a18-a3cf-4f94-b3a8-19f7369a2b61",
+    "created": "2024-03-26T18:43:59.377Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:39.919Z",
+    "relationship_type": "uses",
+    "source_ref": "intrusion-set--8332952e-b86b-486b-acc3-1c2a85d39394",
+    "target_ref": "malware--3271c107-92c4-442e-9506-e76d62230ee8",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--f372697e-b661-4995-9920-4ec0a9060ebb",
+    "created": "2024-03-28T18:01:08.468Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "Talos Promethium June 2020",
+        "description": "Mercer, W. et al. (2020, June 29). PROMETHIUM extends global reach with StrongPity3 APT. Retrieved July 20, 2020.",
+        "url": "https://blog.talosintelligence.com/2020/06/promethium-extends-with-strongpity3.html"
+      },
+      {
+        "source_name": "Bitdefender StrongPity June 2020",
+        "description": "Tudorica, R. et al. (2020, June 30). StrongPity APT - Revealing Trojanized Tools, Working Hours and Infrastructure. Retrieved July 20, 2020.",
+        "url": "https://www.bitdefender.com/files/News/CaseStudies/study/353/Bitdefender-Whitepaper-StrongPity-APT.pdf"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:51.352Z",
+    "description": "(Citation: Talos Promethium June 2020)(Citation: Bitdefender StrongPity June 2020)",
+    "relationship_type": "attributed-to",
+    "source_ref": "campaign--a82bc5ad-5f95-4c6a-9f25-aaf6f476a3c4",
+    "target_ref": "intrusion-set--efed95ba-d7e8-47ff-8c53-99c42426ee7c",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "identity",
+    "spec_version": "2.1",
+    "id": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "created": "2017-06-01T00:00:00.000Z",
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T16:33:30.227Z",
+    "name": "The MITRE Corporation",
+    "identity_class": "organization",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "definition": {
+      "statement": "Copyright 2015-2026, The MITRE Corporation. MITRE ATT&CK and ATT&CK are registered trademarks of The MITRE Corporation."
+    },
+    "id": "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168",
+    "type": "marking-definition",
+    "spec_version": "2.1",
+    "created": "2017-06-01T00:00:00.000Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "definition_type": "statement"
+  }
+]

@@ -1,15 +1,17 @@
 # Example data for attack
 
-This folder contains example data for testing and demonstrating the datamodel`
-sorted in subfolders:
+The examples are objects of MITRE ATT&CK v20.0, copied from MITRE's bundles
+and written as YAML, under the licence that [NOTICE](../../NOTICE)
+reproduces. The collection example has its contents cut to the objects of
+the bundle example, and each file says so where it differs from MITRE's.
 
-- `valid` for data conforming to the datamodel. Used to verify the datamodel.
-- `invalid` for data not conforming to the datamodel. Used to verify the validation.
-- `problem` for data which are not yet handled correctly in the current schema version,
-   again separated into valid/invalid.
-- `[tests/data/attack-stix-data](tests/data/attack-stix-data)`: STIX data representing MITRE ATT&CK 
+- `valid/` holds an example of each ATT&CK class. `tests/test_data.py`
+  validates each, and checks that every ATT&CK class has one.
+- `invalid/` holds a counter-example per constraint: a valid example with one
+  thing broken. Its first line, `# Fails at: <JSON pointer>`, names where the
+  validator must report it, and `tests/test_data.py` holds it to that.
+- `attack-stix-data/` pins the ATT&CK release and holds the extract that the
+  default tests validate; its README says how.
 
-The filenames of all example data must conform to the scheme `classname-###.yaml`
-where classname must be a the name of a class from the schema. "###" can be a number
-or one or more other characters allowed in filenames. The classname is derived by
-splitting at the first "-" and taking the part before the "-".
+Each file is named `ClassName-suffix.yaml`, where `ClassName` is the class it
+is an example of.
