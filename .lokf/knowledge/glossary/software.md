@@ -22,6 +22,6 @@ status: draft
 
 # Software
 
-ATT&CK counts malware and tools as software, each with an ATT&CK ID of S and four digits. `AttackMalware` is a STIX malware object and `AttackTool` a STIX tool. Each gives its other names in `x_mitre_aliases`, the first of which is its own name, and software uses techniques.[^attack.yaml]
+ATT&CK counts malware and tools as software, each with an ATT&CK ID of S and four digits. `AttackMalware` is a STIX malware object and `AttackTool` a STIX tool. Each gives its other names in `x_mitre_aliases`, the first of which is its own name. Software uses techniques.[^attack.yaml]
 
 [^attack.yaml]: src/attack/schema/attack.yaml, the class AttackMalware

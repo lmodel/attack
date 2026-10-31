@@ -17,6 +17,6 @@ status: draft
 
 # Knowledge Librarian (knowledge-librarian.yaml)
 
-`.github/workflows/knowledge-librarian.yaml` is the workflow named "Knowledge Librarian", a copy of the ktl-sidecar template. It runs on Mondays at 05:00 UTC and by hand. Its `refresh` job, in the `knowledge-librarian` Environment, installs the ktl-librarian skill pinned to v0.59.0 and runs an agent with no write token; its `publish` job runs no agent and opens a pull request with the patch. It does nothing until the repository variable `KNOWLEDGE_LIBRARIAN_ENABLED` is `true`, and the agent reads its key from the `AGENT_API_KEY` secret.[^knowledge-librarian.yaml]
+`.github/workflows/knowledge-librarian.yaml` is the workflow named "Knowledge Librarian", a copy of the ktl-sidecar template. It runs on Mondays at 05:00 UTC and by hand. Its `refresh` job, in the `knowledge-librarian` Environment, installs the ktl-librarian skill pinned to v0.59.0 and runs an agent with no write token. Its `publish` job runs no agent and opens a pull request with the patch. It does nothing until the repository variable `KNOWLEDGE_LIBRARIAN_ENABLED` is `true`, and the agent reads its key from the `AGENT_API_KEY` secret.[^knowledge-librarian.yaml]
 
 [^knowledge-librarian.yaml]: .github/workflows/knowledge-librarian.yaml, the header comment, the on key and the jobs

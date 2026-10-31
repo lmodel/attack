@@ -47,7 +47,7 @@ Each class names its STIX type in a `stix_type` annotation and, where ATT&CK giv
 
 ## As the bundle's domain schema
 
-The bundle's domain schema is `.lokf/attack.yaml`, which `lokf adapt` writes from this file; edit the source, never the copy.[^readme.md] The `schema :=` line of `.lokf/justfile` and the `[tool.lokf]` table of `.lokf/pyproject.toml` both name it. `project.justfile` roots the copy on `StixObject` and `StixBundle` and passes `--prefix stix`, so the STIX keys LOKF also defines become `stix_type`, `stix_name` and the like, as in lmodel/stix's own copy.[^project.justfile] The copy's notes record those renames and the two roots.[^lokf-attack.yaml]
+The bundle's domain schema is `.lokf/attack.yaml`, which `lokf adapt` writes from this file. Edit the source, never the copy.[^readme.md] The `schema :=` line of `.lokf/justfile` and the `[tool.lokf]` table of `.lokf/pyproject.toml` both name it. `project.justfile` roots the copy on `StixObject` and `StixBundle` and passes `--prefix stix`, so the STIX keys LOKF also defines become `stix_type`, `stix_name` and the like, as in lmodel/stix's own copy.[^project.justfile] The copy's notes record those renames and the two roots.[^lokf-attack.yaml]
 
 [^attack.yaml]: src/attack/schema/attack.yaml, the header and the classes
 [^readme.md]: README.md, the Knowledge Trust Ladder (KTL) section

@@ -23,7 +23,7 @@ status: draft
 
 # Release the schema
 
-1. Write the change under `## [Unreleased]` in `CHANGELOG.md` as you go; the release job refuses an empty section.[^contributing.md]
+1. Write the change under `## [Unreleased]` in `CHANGELOG.md` as you go. The release job refuses an empty section.[^contributing.md]
 2. Type each commit as Conventional Commits do. Only `feat:`, `fix:`, `security:` and a breaking `!` start a release, and a pull request that would release carries a releasing type in its title, since a squash merge takes its subject from it.
 3. Before the first releasing merge, push the signed `v0.0.0` baseline tag on `main`. Without a `v*` tag both release jobs refuse to run, because semantic-release would start at 1.0.0.
 4. On merge, `semantic-release.yml` retitles the section with the version and date, commits `CHANGELOG.md`, tags `vX.Y.Z` and publishes the GitHub release, in the `release` Environment.[^semantic-release.yml] `.releaserc.json` maps a breaking change to a minor release, so the schema stays below 1.0.0.[^releaserc]

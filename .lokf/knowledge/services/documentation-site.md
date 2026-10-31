@@ -23,7 +23,7 @@ status: draft
 
 # Documentation site
 
-`website/` is the knowledge website, an Astro Starlight site for `lmodel/attack` at `https://lmodel.github.io/attack`. It shows the README as its home page, the `docs/` pages, a page for each schema element and each concept, and redirects each page of the retired mkdocs site, such as `/elements/Technique/`, to its successor or to the schema's index.[^site.config.mjs] `website/README.md` says how to build it.[^website-readme.md] The Knowledge website workflow builds it and deploys it to GitHub Pages once `KNOWLEDGE_WEBSITE_ENABLED` is `true`.[^knowledge-website.yaml]
+`website/` is the knowledge website, an Astro Starlight site for `lmodel/attack` at `https://lmodel.github.io/attack`. It shows the README as its home page, the `docs/` pages, and a page for each schema element and each concept. It redirects each page of the retired mkdocs site, such as `/elements/Technique/`, to its successor or to the schema's index.[^site.config.mjs] `website/README.md` says how to build it.[^website-readme.md] The Knowledge website workflow builds it and deploys it to GitHub Pages once `KNOWLEDGE_WEBSITE_ENABLED` is `true`.[^knowledge-website.yaml]
 
 [^site.config.mjs]: website/site.config.mjs, REPO, SITE, BASE, DOCS and REDIRECTS
 [^website-readme.md]: website/README.md

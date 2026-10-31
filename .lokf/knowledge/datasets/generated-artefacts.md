@@ -25,7 +25,7 @@ status: draft
 
 `just gen-project` writes the project's formats under `project/`: Excel, GraphQL, Java, JSON-LD, JSON Schema, OWL, a prefix map, Protocol Buffers, SHACL, ShEx, SQL and TypeScript. It also writes the Python dataclasses and the Pydantic models under `src/attack/datamodel/`. `just gen-doc` writes `docs/schema/attack.yaml` and the schema pages under `docs/elements/`, which git ignores.[^justfile]
 
-`.linkml/generators.yaml` holds the generators' settings. Its JSON Schema settings take `AttackBundle` as the top class and offer each concrete class a bundle's objects may be, since they range over the abstract `StixObject`.[^generators.yaml] The models check less than the JSON Schema: the dataclasses check no pattern, the Pydantic models no timestamp form, and neither the relationship rules.[^docs-index.md]
+`.linkml/generators.yaml` holds the generators' settings. Its JSON Schema settings take `AttackBundle` as the top class. A bundle's objects range over the abstract `StixObject`, so the settings offer each concrete class an object may be.[^generators.yaml] The models check less than the JSON Schema: the dataclasses check no pattern, the Pydantic models no timestamp form, and neither checks the relationship rules.[^docs-index.md]
 
 [^justfile]: justfile, the gen-project and gen-doc recipes
 [^generators.yaml]: .linkml/generators.yaml, the jsonschema settings

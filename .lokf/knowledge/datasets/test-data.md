@@ -35,9 +35,11 @@ status: draft
 
 # Test data and tests
 
-`tests/data/valid/` holds 21 examples, one of each ATT&CK class and more of a technique, and `tests/data/invalid/` holds 71 counter-examples. Each example is an object of MITRE's v20.0 data written as YAML; each counter-example is a valid example with one thing broken, whose first line, `# Fails at:`, names where the validator must report it.[^data-readme.md] `tests/test_data.py` validates them against the JSON Schema the validator generates, and checks that every ATT&CK class has an example.[^test_data.py]
+`tests/data/valid/` holds 21 examples, one of each ATT&CK class and more of a technique, and `tests/data/invalid/` holds 71 counter-examples. Each example is an object of MITRE's v20.0 data written as YAML. Each counter-example is a valid example with one thing broken, and its first line, `# Fails at:`, names where the validator must report it.[^data-readme.md] `tests/test_data.py` validates them against the JSON Schema the validator generates, and checks that every ATT&CK class has an example.[^test_data.py]
 
-`tests/data/attack-stix-data/extract/` holds 97 objects copied unchanged from the three bundles: 37 from Enterprise, 31 from Mobile and 29 from ICS.[^extract] The default tests validate each one. `tests/attack_rules.py` holds the ADM's rules that no validator checks, and the tests apply them to the examples and the extract.[^attack_rules.py] `tests/test_upstream.py` lists the six places where the data departs from the ADM, each with its reason, and holds the schema header to the pins.[^test_upstream.py] `tests/test_attack_data.py` runs only under `just test-attack-data` and validates every object of the full bundles, one at a time.[^test_attack_data.py]
+`tests/data/attack-stix-data/extract/` holds 97 objects copied unchanged from the three bundles: 37 from Enterprise, 31 from Mobile and 29 from ICS.[^extract] The default tests validate each one.
+
+`tests/attack_rules.py` holds the ADM's rules that no validator checks, and the tests apply them to the examples and the extract.[^attack_rules.py] `tests/test_upstream.py` lists the six places where the data departs from the ADM, each with its reason, and holds the schema header to the pins.[^test_upstream.py] `tests/test_attack_data.py` runs only under `just test-attack-data` and validates every object of the full bundles, one at a time.[^test_attack_data.py]
 
 `tests/neighbours/` holds the adapt copies of nine released lmodel schemas and of lmodel/stix, which `tests/test_schema_rules.py` pins by SHA-256 and holds this schema's copy apart from.[^test_schema_rules.py]
 

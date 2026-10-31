@@ -25,7 +25,7 @@ status: draft
 
 `src/attack/schema/stix/` holds six files: the umbrella `stix.yaml`, which holds the bundle, and the modules `stix_vocabularies`, `stix_core`, `stix_sco`, `stix_sdo` and `stix_sro`. The ATT&CK schema extends classes of the core, domain-object and relationship-object modules and the bundle, and uses the vocabularies. The domain-object module imports the cyber-observable module, so that one is copied too.[^test_stix_import.py]
 
-`tests/test_stix_import.py` pins the stix commit, de2122f, and each module's git object hash, and fails when another file sits beside them. NOTICE says the modules are under the Apache License 2.0 and reuse some descriptions of OASIS's STIX 2.1 JSON schemas, whose BSD-3-Clause licence it reproduces.[^notice] lmodel/stix has no release yet: the files are to be copied again from its first release, with the pins moved, before this repository's first release.
+`tests/test_stix_import.py` pins the stix commit, de2122f, and each module's git object hash, and fails when another file sits beside them. NOTICE says the modules are under the Apache License 2.0. They reuse some descriptions of OASIS's STIX 2.1 JSON schemas, whose BSD-3-Clause licence NOTICE reproduces.[^notice] lmodel/stix has no release yet. Before this repository's first release, the files are copied again from stix's first release, and the pins move with them.
 
 [^test_stix_import.py]: tests/test_stix_import.py, the docstring, STIX_COMMIT and PINNED_BLOBS
 [^notice]: NOTICE, the lmodel/stix section

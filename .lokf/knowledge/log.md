@@ -2,6 +2,7 @@
 
 ## 2026-10-31
 
+* **Prose**: reworded 13 concept bodies in plain English. No fact, link, number or frontmatter changed.
 * **Changed**: the documentation site's description names its address as code, so the index bullets carry no bare address.
 * **Changed**: the map leaves out `docs/elements/.gitkeep`, the marker of the folder gen-doc fills.
 * **Added**: Build and test (main.yaml), from `.github/workflows/main.yaml`.
