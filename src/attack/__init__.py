@@ -1,3 +1,8 @@
+"""attack.
+
+MITRE ATT&CK®: LinkML Schema
+"""
+
 try:
     from attack._version import __version__, __version_tuple__
 except ImportError:  # pragma: no cover
