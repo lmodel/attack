@@ -6,12 +6,12 @@ build-backend = "hatchling.build"
 # Named like lmodel/slsa's slsa-linkml, so the PyPI name says what it holds;
 # the import package stays attack. PyPI publishing is off.
 name = "attack-linkml"
-description = "MITRE ATT&CK®: LinkML Schema"
+description = "MITRE ATT&CK v20.0 (LinkML)"
 authors = [
   {name = "Noel McLoughlin", email = "noel.mcloughlin@gmail.com"},
 ]
 license = "Apache-2.0"
-license-files = ["LICENSE"]
+license-files = ["LICENSE", "NOTICE"]
 readme = "README.md"
 requires-python = ">=3.10"
 dynamic = ["version"]
@@ -67,6 +67,11 @@ skip = [
   "project/*",
   "src/attack/datamodel/attack_pydantic.py",
   "src/attack/datamodel/attack.py",
+  # Files copied in by the KTL sidecar sync or written by npm, not by hand.
+  ".lokf/scripts/*",
+  "website/package-lock.json",
+  # MITRE's data and licence, copied unchanged.
+  "tests/data/attack-stix-data/*",
 ]
 
 # Reminder: words have to be lowercased for the ignore-words-list
@@ -85,4 +90,7 @@ extend-exclude = [
   "project/*",
   "src/attack/datamodel/attack_pydantic.py",
   "src/attack/datamodel/attack.py",
+  ".lokf/scripts/*",
+  "website/package-lock.json",
+  "tests/data/attack-stix-data/*",
 ]

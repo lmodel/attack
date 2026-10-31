@@ -1,0 +1,76 @@
+MITRE ATT&CK LinkML Schema (attack)
+Copyright 2026 Noel McLoughlin
+
+The code in this repository is licensed under the Apache License,
+Version 2.0 (see LICENSE). Some of the content it carries is third-party
+work under its own terms, listed below.
+
+MITRE ATT&CK
+------------
+
+src/attack/schema/attack.yaml, src/attack/datamodel/ and project/ model
+MITRE ATT&CK, version 20.0 (13 October 2026), as The MITRE Corporation
+(MITRE) publishes it in STIX 2.1 at
+https://github.com/mitre-attack/attack-stix-data (tag v20.0). They are
+this project's rendering, written in its own words; they are not MITRE's,
+and their use does not imply endorsement by MITRE. ATT&CK® is a
+registered trademark of The MITRE Corporation.
+
+tests/data/attack-stix-data/ holds ATT&CK objects copied unchanged from
+MITRE's bundles, beside MITRE's LICENSE.txt from the same tag, and the
+example data under tests/data/ quotes ATT&CK's names and identifiers.
+MITRE's licence authorises such copies provided that each reproduces
+MITRE's copyright designation and the licence, which are:
+
+  "© 2026 The MITRE Corporation. This work is reproduced and distributed
+  with the permission of The MITRE Corporation."
+
+  The MITRE Corporation (MITRE) hereby grants you a non-exclusive,
+  royalty-free license to use ATT&CK® for research, development, and
+  commercial purposes. Any copy you make for such purposes is authorized
+  provided that you reproduce MITRE's copyright designation and this
+  license in any such copy.
+
+tests/data/attack-stix-data/LICENSE.txt holds the licence in full, with
+MITRE's disclaimers. The bundles themselves are not in this repository:
+scripts/fetch_attack_data.py downloads them from MITRE's repository at
+the pinned tag into tmp/ and checks each against the hashes in
+tests/data/attack-stix-data/manifest.json.
+
+The ATT&CK Data Model
+---------------------
+
+The schema follows the ATT&CK Data Model (ADM), which defines ATT&CK's
+STIX extensions, at release v4.11.7 of
+https://github.com/mitre-attack/attack-data-model (commit
+99558689a7efecbb9eec74b1b1a5b6fbfad25f8a), licensed under the Apache
+License, Version 2.0. No code or text of the ADM is copied here.
+
+linkml-project-copier
+---------------------
+
+This project was generated from linkml-project-copier
+(https://github.com/linkml/linkml-project-copier), and its justfile,
+configuration and documentation scaffolding derive from that template:
+
+  The MIT License (MIT)
+  Copyright (c) 2025 David Linke
+
+  Permission is hereby granted, free of charge, to any person obtaining a
+  copy of this software and associated documentation files (the
+  "Software"), to deal in the Software without restriction, including
+  without limitation the rights to use, copy, modify, merge, publish,
+  distribute, sublicense, and/or sell copies of the Software, and to permit
+  persons to whom the Software is furnished to do so, subject to the
+  following conditions:
+
+  The above copyright notice and this permission notice shall be included
+  in all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+  OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+  NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+  DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+  OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+  USE OR OTHER DEALINGS IN THE SOFTWARE.

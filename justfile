@@ -115,7 +115,7 @@ deploy: site
 [group('model development')]
 test: _test-schema _test-python _test-examples test-data test-data-strict
 
-# Run linting
+# Run linting; a warning fails as an error does (CI runs the same command)
 [group('model development')]
 lint:
   uv run linkml-lint {{source_schema_dir}}
