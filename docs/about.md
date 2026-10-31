@@ -41,7 +41,16 @@ The schema follows the data MITRE publishes. In the v20.0 data:
 - 224 deprecated mitigations carry a technique's ID;
 - one malware is revoked by a tool.
 
-`tests/test_upstream.py` gives each departure's reason.
+`tests/test_upstream.py` gives each departure's reason. Across a bundle, the
+data also breaks three statements of the ADM's documentation, and the same
+file lists each breach by ATT&CK ID:
+
+- 16 retired Enterprise sub-techniques have no parent;
+- 9 current sub-techniques name a platform their parent lacks;
+- 7 log source references name a log and channel their data component does
+  not list;
+- 12 ICS log source references name an Enterprise data component, which
+  the ICS bundle does not hold.
 
 ## What is left out
 
