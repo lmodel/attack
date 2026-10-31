@@ -165,6 +165,8 @@ def problems(obj):
         seen = [tuple(i[f] for f in fields) if fields else i for i in items]
         if len(seen) != len(set(seen)):
             found.append(("unique", f"{key} repeats an item"))
+    for where in _blank(obj):
+        found.append(("blank", where))
     for platform in obj.get("x_mitre_platforms") or []:
         if platform not in ADM_PLATFORMS:
             found.append(("platform", platform))
@@ -175,6 +177,20 @@ def problems(obj):
         if source != target:
             found.append(("revoked-by type", f"{source} revoked by {target}"))
     return found
+
+
+def _blank(node, path=""):
+    """The pointer of each string in a value that is empty or only whitespace,
+    which the ADM refuses wherever it takes text."""
+    if isinstance(node, str):
+        if not node.strip():
+            yield path or "/"
+    elif isinstance(node, dict):
+        for key, value in node.items():
+            yield from _blank(value, f"{path}/{key}")
+    elif isinstance(node, list):
+        for index, value in enumerate(node):
+            yield from _blank(value, f"{path}/{index}")
 
 
 def bundle_problems(bundle):

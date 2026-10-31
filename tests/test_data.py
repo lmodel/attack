@@ -213,6 +213,11 @@ def test_each_rule_finds_its_breach():
     )
     assert "tactic" in rules(technique | {"x_mitre_remote_support": False})
     assert "unique" in rules(technique | {"x_mitre_platforms": ["Linux", "Linux"]})
+    assert "blank" in rules(technique | {"name": " "})
+    assert "blank" in rules(
+        technique
+        | {"external_references": [{"source_name": "mitre-attack", "external_id": ""}]}
+    )
     assert "platform" in rules(technique | {"x_mitre_platforms": ["Office 365"]})
     assert "first alias" in rules(
         {"type": "malware", "name": "Example", "x_mitre_aliases": ["Other", "Example"]}

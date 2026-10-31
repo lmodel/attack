@@ -47,6 +47,8 @@ in `just test-attack-data`, every object of the bundles:
   object of those, and one with `attack_tactic` only beside a kill chain
   phase of that tactic;
 - a technique has at least one kill chain phase;
+- no text of an object, such as a name, a description or an external
+  reference's source, is empty or only whitespace;
 - a list of platforms, analytics, log sources, log source references or
   mutable elements names each item once;
 - a bundle starts with its one collection, whose contents, like every
