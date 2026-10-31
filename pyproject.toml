@@ -3,31 +3,30 @@ requires = ["hatchling", "uv-dynamic-versioning"]
 build-backend = "hatchling.build"
 
 [project]
-name = "attack"
-description = "MITRE ATT&CK®: LinkML Schema"
+# Named like lmodel/slsa's slsa-linkml, so the PyPI name says what it holds;
+# the import package stays attack. PyPI publishing is off.
+name = "attack-linkml"
+description = "MITRE ATT&CK v20.0 (LinkML)"
 authors = [
   {name = "Noel McLoughlin", email = "noel.mcloughlin@gmail.com"},
 ]
 license = "Apache-2.0"
-license-files = ["LICENSE"]
+license-files = ["LICENSE", "NOTICE"]
 readme = "README.md"
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.10"
 dynamic = ["version"]
 
 dependencies = [
   "linkml-runtime >=1.9.4",
-  "yamllint>=1.37.1",
 ]
 
 [dependency-groups]
 dev = [
     "linkml>=1.9.3",
-    "mkdocs-material>=8.2.8",
-    "mkdocs-mermaid2-plugin>=1.1.1",
-    "mkdocs-pymdownx-material-extras>=2.5.6",
-    "jupyter>=1.0.0",
-    "mknotebooks>= 0.8.0",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/attack"]
 
 # See https://hatch.pypa.io/latest/config/build/#file-selection for how to
 # explicitly include files other than default into the build distributions.
@@ -45,6 +44,14 @@ fallback-version = "0.0.0"
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 
+# https://docs.astral.sh/ruff/configuration/
+[tool.ruff]
+exclude = [
+    "src/attack/_version.py",
+]
+# Set oldest supported Python version
+target-version = "py310"
+
 # Ref.: https://github.com/codespell-project/codespell
 [tool.codespell]
 skip = [
@@ -54,6 +61,14 @@ skip = [
   "project/*",
   "src/attack/datamodel/attack_pydantic.py",
   "src/attack/datamodel/attack.py",
+  # The neighbours' adapt copies, copied as released, and files copied in by
+  # the KTL sidecar sync or written by npm, not by hand.
+  "tests/neighbours/*",
+  ".lokf/scripts/*",
+  "website/package-lock.json",
+  # MITRE's data and licence, and lmodel/stix's modules, copied unchanged.
+  "tests/data/attack-stix-data/*",
+  "src/attack/schema/stix/*",
 ]
 
 # Reminder: words have to be lowercased for the ignore-words-list
@@ -63,6 +78,9 @@ quiet-level = 3
 # Ref.: https://github.com/crate-ci/typos (spell checker)
 [tool.typos.default.extend-words]
 linke = "linke"
+# Operational technology, in the ATT&CK text the examples copy unchanged.
+OT = "OT"
+
 [tool.typos.files]
 extend-exclude = [
   "LICENSE",
@@ -71,4 +89,9 @@ extend-exclude = [
   "project/*",
   "src/attack/datamodel/attack_pydantic.py",
   "src/attack/datamodel/attack.py",
+  "tests/neighbours/*",
+  ".lokf/scripts/*",
+  "website/package-lock.json",
+  "tests/data/attack-stix-data/*",
+  "src/attack/schema/stix/*",
 ]

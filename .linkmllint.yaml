@@ -1,0 +1,13 @@
+# linkml-lint reads this file from the directory `just lint` runs in.
+# The recommended rules apply, with one exception. Permissible values keep
+# the spelling MITRE's data uses, so that ATT&CK's bundles validate
+# unchanged: platforms such as Field Controller/RTU/PLC/IED and macOS,
+# tactic short names such as command-and-control, and the mixed-case
+# spellings of the defenses a technique bypasses. The naming rule therefore
+# leaves permissible values out, as lmodel/stix's does; classes, enums,
+# slots and types still follow it.
+extends: recommended
+rules:
+  standard_naming:
+    exclude_type:
+      - permissible_value

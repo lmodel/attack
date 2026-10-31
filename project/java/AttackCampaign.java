@@ -1,22 +1,30 @@
-package None;
+package example;
 
-/* metamodel_version: 1.7.0 */
+/* metamodel_version: 1.12.0 */
+/* version: 20.0 */
+import java.net.URI;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 import lombok.*;
 
 /**
-  Campaigns represent a grouping of adversary behaviors and resources with a common objective, occurring over a defined time period. A campaign may be attributed to one or more Groups via 'attributed-to' relationships.
-Campaigns require mandatory temporal properties: first_seen and last_seen document when the campaign was active, and the corresponding citation properties (x_mitre_first_seen_citation, x_mitre_last_seen_citation) cite the intelligence sources that established those observations.
-The aliases array is required; its first entry MUST match the campaign's name.
+  A campaign: intrusion activity over a stated period against common targets, with the sources for when it was first and last seen. Its ATT&CK ID is C and four digits.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class AttackCampaign extends AttackObject {
+public class AttackCampaign extends StixCampaign {
 
+  private String xMitreAttackSpecVersion;
+  private String xMitreVersion;
+  private Boolean xMitreDeprecated;
+  private String xMitreOldAttackId;
   private List<String> xMitreDomains;
+  private StixIdentity xMitreModifiedByRef;
   private List<String> xMitreContributors;
-  private String xMitreModifiedByRef;
   private String xMitreFirstSeenCitation;
   private String xMitreLastSeenCitation;
+
 
 }

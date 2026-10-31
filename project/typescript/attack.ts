@@ -1,26 +1,127 @@
+export type StixObjectId = string;
+export type StixCommonObjectId = string;
+export type StixDomainObjectId = string;
+export type StixRelationshipObjectId = string;
+export type StixCyberObservableObjectId = string;
+export type StixIdentityId = string;
+export type StixMarkingDefinitionId = string;
+export type StixLanguageContentId = string;
+export type StixExtensionDefinitionId = string;
+export type StixArtifactId = string;
+export type StixAutonomousSystemId = string;
+export type StixDirectoryId = string;
+export type StixDomainNameId = string;
+export type StixEmailAddressId = string;
+export type StixEmailMessageId = string;
+export type StixFileId = string;
+export type StixIpv4AddressId = string;
+export type StixIpv6AddressId = string;
+export type StixMacAddressId = string;
+export type StixMutexId = string;
+export type StixNetworkTrafficId = string;
+export type StixProcessId = string;
+export type StixSoftwareId = string;
+export type StixUrlId = string;
+export type StixUserAccountId = string;
+export type StixWindowsRegistryKeyId = string;
+export type StixX509CertificateId = string;
+export type StixAttackPatternId = string;
+export type StixCampaignId = string;
+export type StixCourseOfActionId = string;
+export type StixGroupingId = string;
+export type StixIncidentId = string;
+export type StixIndicatorId = string;
+export type StixInfrastructureId = string;
+export type StixIntrusionSetId = string;
+export type StixLocationId = string;
+export type StixMalwareId = string;
+export type StixMalwareAnalysisId = string;
+export type StixNoteId = string;
+export type StixObservedDataId = string;
+export type StixOpinionId = string;
+export type StixReportId = string;
+export type StixThreatActorId = string;
+export type StixToolId = string;
+export type StixVulnerabilityId = string;
+export type StixRelationshipId = string;
+export type StixSightingId = string;
+export type StixBundleId = string;
+export type AttackTechniqueId = string;
+export type AttackTacticId = string;
+export type AttackGroupId = string;
+export type AttackCampaignId = string;
+export type AttackMalwareId = string;
+export type AttackToolId = string;
+export type AttackMitigationId = string;
+export type AttackMatrixId = string;
+export type AttackCollectionId = string;
+export type AttackAssetId = string;
+export type AttackDataSourceId = string;
+export type AttackDataComponentId = string;
+export type AttackDetectionStrategyId = string;
+export type AttackAnalyticId = string;
+export type AttackRelationshipId = string;
+export type AttackIdentityId = string;
+export type AttackMarkingDefinitionId = string;
+export type AttackBundleId = string;
 /**
-* STIX specification versions allowed by the upstream JSON Schema.
+* Types of user account. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum SpecVersionEnum {
+export enum StixAccountType {
     
-    number_2FULL_STOP0 = "2.0",
-    number_2FULL_STOP1 = "2.1",
+    facebook = "facebook",
+    ldap = "ldap",
+    nis = "nis",
+    openid = "openid",
+    radius = "radius",
+    skype = "skype",
+    tacacs = "tacacs",
+    twitter = "twitter",
+    unix = "unix",
+    windows_local = "windows-local",
+    windows_domain = "windows-domain",
 };
 /**
-* Opinion vocabulary from STIX opinion object.
+* Reasons, motivations or purposes behind an attack. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum OpinionEnum {
+export enum StixAttackMotivation {
     
-    strongly_disagree = "strongly-disagree",
-    disagree = "disagree",
-    neutral = "neutral",
-    agree = "agree",
-    strongly_agree = "strongly-agree",
+    accidental = "accidental",
+    coercion = "coercion",
+    dominance = "dominance",
+    ideology = "ideology",
+    notoriety = "notoriety",
+    organizational_gain = "organizational-gain",
+    personal_gain = "personal-gain",
+    personal_satisfaction = "personal-satisfaction",
+    revenge = "revenge",
+    unpredictable = "unpredictable",
 };
 /**
-* Extension-definition extension type vocabulary.
+* Levels of the resources that an actor may have, from an individual to a government. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum ExtensionTypeEnum {
+export enum StixAttackResourceLevel {
+    
+    individual = "individual",
+    club = "club",
+    contest = "contest",
+    team = "team",
+    organization = "organization",
+    government = "government",
+};
+/**
+* Encryption algorithms for sharing defanged or confidential artifacts. A closed enumeration: no other value is valid.
+*/
+export enum StixEncryptionAlgorithm {
+    
+    AES_256_GCM = "AES-256-GCM",
+    ChaCha20_Poly1305 = "ChaCha20-Poly1305",
+    mime_type_indicated = "mime-type-indicated",
+};
+/**
+* The kinds of extension that an extension definition can define. A closed enumeration: no other value is valid.
+*/
+export enum StixExtensionType {
     
     new_sdo = "new-sdo",
     new_sco = "new-sco",
@@ -29,29 +130,32 @@ export enum ExtensionTypeEnum {
     toplevel_property_extension = "toplevel-property-extension",
 };
 /**
-* Windows registry data type vocabulary.
+* Contexts of a grouping. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum RegistryDataTypeEnum {
+export enum StixGroupingContext {
     
-    REG_NONE = "REG_NONE",
-    REG_SZ = "REG_SZ",
-    REG_EXPAND_SZ = "REG_EXPAND_SZ",
-    REG_BINARY = "REG_BINARY",
-    REG_DWORD = "REG_DWORD",
-    REG_DWORD_BIG_ENDIAN = "REG_DWORD_BIG_ENDIAN",
-    REG_DWORD_LITTLE_ENDIAN = "REG_DWORD_LITTLE_ENDIAN",
-    REG_LINK = "REG_LINK",
-    REG_MULTI_SZ = "REG_MULTI_SZ",
-    REG_RESOURCE_LIST = "REG_RESOURCE_LIST",
-    REG_FULL_RESOURCE_DESCRIPTION = "REG_FULL_RESOURCE_DESCRIPTION",
-    REG_RESOURCE_REQUIREMENTS_LIST = "REG_RESOURCE_REQUIREMENTS_LIST",
-    REG_QWORD = "REG_QWORD",
-    REG_INVALID_TYPE = "REG_INVALID_TYPE",
+    suspicious_activity = "suspicious-activity",
+    malware_analysis = "malware-analysis",
+    unspecified = "unspecified",
 };
 /**
-* Open vocabulary for identity class (identity-class-ov). Additional string values are allowed.
+* Hash algorithms, as the keys of a hashes dictionary name them. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum IdentityClassOv {
+export enum StixHashAlgorithm {
+    
+    MD5 = "MD5",
+    SHA_1 = "SHA-1",
+    SHA_256 = "SHA-256",
+    SHA_512 = "SHA-512",
+    SHA3_256 = "SHA3-256",
+    SHA3_512 = "SHA3-512",
+    SSDEEP = "SSDEEP",
+    TLSH = "TLSH",
+};
+/**
+* Kinds of entity that an identity describes. An open vocabulary: a slot that names it also takes any other string.
+*/
+export enum StixIdentityClass {
     
     individual = "individual",
     group = "group",
@@ -61,9 +165,49 @@ export enum IdentityClassOv {
     unknown = "unknown",
 };
 /**
-* Open vocabulary for industry sector (industry-sector-ov). Additional string values are allowed.
+* Programming languages in which malware may be implemented. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum IndustrySectorOv {
+export enum StixImplementationLanguage {
+    
+    applescript = "applescript",
+    bash = "bash",
+    c = "c",
+    cPLUS_SIGNPLUS_SIGN = "c++",
+    cNUMBER_SIGN = "c#",
+    go = "go",
+    java = "java",
+    javascript = "javascript",
+    lua = "lua",
+    objective_c = "objective-c",
+    perl = "perl",
+    php = "php",
+    powershell = "powershell",
+    python = "python",
+    ruby = "ruby",
+    scala = "scala",
+    swift = "swift",
+    typescript = "typescript",
+    visual_basic = "visual-basic",
+    x86_32 = "x86-32",
+    x86_64 = "x86-64",
+};
+/**
+* High-level categories of indicator. An open vocabulary: a slot that names it also takes any other string.
+*/
+export enum StixIndicatorType {
+    
+    anomalous_activity = "anomalous-activity",
+    anonymization = "anonymization",
+    benign = "benign",
+    compromised = "compromised",
+    malicious_activity = "malicious-activity",
+    attribution = "attribution",
+    unknown = "unknown",
+};
+/**
+* Industrial and commercial sectors. An open vocabulary: a slot that names it also takes any other string.
+*/
+export enum StixIndustrySector {
     
     agriculture = "agriculture",
     aerospace = "aerospace",
@@ -86,9 +230,9 @@ export enum IndustrySectorOv {
     healthcare = "healthcare",
     hospitality_leisure = "hospitality-leisure",
     infrastructure = "infrastructure",
-    infrastructure_dams = "infrastructure-dams",
-    infrastructure_nuclear = "infrastructure-nuclear",
-    infrastructure_water = "infrastructure-water",
+    dams = "dams",
+    nuclear = "nuclear",
+    water = "water",
     insurance = "insurance",
     manufacturing = "manufacturing",
     mining = "mining",
@@ -101,109 +245,40 @@ export enum IndustrySectorOv {
     utilities = "utilities",
 };
 /**
-* Open vocabulary for threat actor type (threat-actor-type-ov). Additional string values are allowed.
+* Types of infrastructure. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum ThreatActorTypeOv {
+export enum StixInfrastructureType {
     
-    activist = "activist",
-    competitor = "competitor",
-    crime_syndicate = "crime-syndicate",
-    criminal = "criminal",
-    hacker = "hacker",
-    insider_accidental = "insider-accidental",
-    insider_disgruntled = "insider-disgruntled",
-    nation_state = "nation-state",
-    sensationalist = "sensationalist",
-    spy = "spy",
-    terrorist = "terrorist",
+    amplification = "amplification",
+    anonymization = "anonymization",
+    botnet = "botnet",
+    command_and_control = "command-and-control",
+    control_system = "control-system",
+    exfiltration = "exfiltration",
+    firewall = "firewall",
+    hosting_malware = "hosting-malware",
+    hosting_target_lists = "hosting-target-lists",
+    phishing = "phishing",
+    reconnaissance = "reconnaissance",
+    routers_switches = "routers-switches",
+    staging = "staging",
+    workstation = "workstation",
     unknown = "unknown",
 };
 /**
-* Open vocabulary for threat actor role (threat-actor-role-ov). Additional string values are allowed.
+* Results of a scanner's or tool's analysis of malware. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum ThreatActorRoleOv {
+export enum StixMalwareResult {
     
-    agent = "agent",
-    director = "director",
-    independent = "independent",
-    infrastructure_architect = "infrastructure-architect",
-    infrastructure_operator = "infrastructure-operator",
-    malware_author = "malware-author",
-    sponsor = "sponsor",
-};
-/**
-* Open vocabulary for threat actor sophistication (threat-actor-sophistication-ov). Additional string values are allowed.
-*/
-export enum ThreatActorSophisticationOv {
-    
-    none = "none",
-    minimal = "minimal",
-    intermediate = "intermediate",
-    advanced = "advanced",
-    expert = "expert",
-    innovator = "innovator",
-    strategic = "strategic",
-};
-/**
-* Open vocabulary for attack resource level (attack-resource-level-ov). Additional string values are allowed.
-*/
-export enum AttackResourceLevelOv {
-    
-    individual = "individual",
-    club = "club",
-    contest = "contest",
-    team = "team",
-    organization = "organization",
-    government = "government",
-};
-/**
-* Open vocabulary for attack motivation (attack-motivation-ov). Additional string values are allowed.
-*/
-export enum AttackMotivationOv {
-    
-    accidental = "accidental",
-    coercion = "coercion",
-    dominance = "dominance",
-    ideology = "ideology",
-    notoriety = "notoriety",
-    organizational_gain = "organizational-gain",
-    personal_gain = "personal-gain",
-    personal_satisfaction = "personal-satisfaction",
-    revenge = "revenge",
-    unpredictable = "unpredictable",
-};
-/**
-* Open vocabulary for malware type (malware-type-ov). Additional string values are allowed.
-*/
-export enum MalwareTypeOv {
-    
-    adware = "adware",
-    backdoor = "backdoor",
-    bot = "bot",
-    bootkit = "bootkit",
-    ddos = "ddos",
-    downloader = "downloader",
-    dropper = "dropper",
-    exploit_kit = "exploit-kit",
-    keylogger = "keylogger",
-    ransomware = "ransomware",
-    remote_access_trojan = "remote-access-trojan",
-    resource_exploitation = "resource-exploitation",
-    rogue_security_software = "rogue-security-software",
-    rootkit = "rootkit",
-    screen_capture = "screen-capture",
-    spyware = "spyware",
-    trojan = "trojan",
+    malicious = "malicious",
+    suspicious = "suspicious",
+    benign = "benign",
     unknown = "unknown",
-    virus = "virus",
-    webshell = "webshell",
-    wiper = "wiper",
-    worm = "worm",
 };
 /**
-* Open vocabulary for malware capabilities (malware-capabilities-ov). Additional string values are allowed.
+* Capabilities that malware may have. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum MalwareCapabilityOv {
+export enum StixMalwareCapability {
     
     accesses_remote_machines = "accesses-remote-machines",
     anti_debugging = "anti-debugging",
@@ -244,40 +319,134 @@ export enum MalwareCapabilityOv {
     violates_system_operational_integrity = "violates-system-operational-integrity",
 };
 /**
-* Open vocabulary for infrastructure type (infrastructure-type-ov). Additional string values are allowed.
+* Types of malware. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum InfrastructureTypeOv {
+export enum StixMalwareType {
     
-    amplification = "amplification",
-    anonymization = "anonymization",
-    botnet = "botnet",
-    command_and_control = "command-and-control",
-    exfiltration = "exfiltration",
-    hosting_malware = "hosting-malware",
-    hosting_target_lists = "hosting-target-lists",
-    phishing = "phishing",
-    reconnaissance = "reconnaissance",
-    staging = "staging",
-    undefined = "undefined",
-};
-/**
-* Open vocabulary for tool type (tool-type-ov). Additional string values are allowed.
-*/
-export enum ToolTypeOv {
-    
-    denial_of_service = "denial-of-service",
-    exploitation = "exploitation",
-    information_gathering = "information-gathering",
-    network_capture = "network-capture",
-    credential_exploitation = "credential-exploitation",
-    remote_access = "remote-access",
-    vulnerability_scanning = "vulnerability-scanning",
+    adware = "adware",
+    backdoor = "backdoor",
+    bot = "bot",
+    bootkit = "bootkit",
+    ddos = "ddos",
+    downloader = "downloader",
+    dropper = "dropper",
+    exploit_kit = "exploit-kit",
+    keylogger = "keylogger",
+    ransomware = "ransomware",
+    remote_access_trojan = "remote-access-trojan",
+    resource_exploitation = "resource-exploitation",
+    rogue_security_software = "rogue-security-software",
+    rootkit = "rootkit",
+    screen_capture = "screen-capture",
+    spyware = "spyware",
+    trojan = "trojan",
     unknown = "unknown",
+    virus = "virus",
+    webshell = "webshell",
+    wiper = "wiper",
+    worm = "worm",
 };
 /**
-* Open vocabulary for report type (report-type-ov). Additional string values are allowed.
+* Address families of a network socket. A closed enumeration: no other value is valid.
 */
-export enum ReportTypeOv {
+export enum StixNetworkSocketAddressFamily {
+    
+    AF_UNSPEC = "AF_UNSPEC",
+    AF_INET = "AF_INET",
+    AF_IPX = "AF_IPX",
+    AF_APPLETALK = "AF_APPLETALK",
+    AF_NETBIOS = "AF_NETBIOS",
+    AF_INET6 = "AF_INET6",
+    AF_IRDA = "AF_IRDA",
+    AF_BTH = "AF_BTH",
+};
+/**
+* Types of network socket. A closed enumeration: no other value is valid.
+*/
+export enum StixNetworkSocketType {
+    
+    SOCK_STREAM = "SOCK_STREAM",
+    SOCK_DGRAM = "SOCK_DGRAM",
+    SOCK_RAW = "SOCK_RAW",
+    SOCK_RDM = "SOCK_RDM",
+    SOCK_SEQPACKET = "SOCK_SEQPACKET",
+};
+/**
+* Degrees of agreement with the information in a STIX object, from disagreement to agreement. A closed enumeration: no other value is valid.
+*/
+export enum StixAgreement {
+    
+    strongly_disagree = "strongly-disagree",
+    disagree = "disagree",
+    neutral = "neutral",
+    agree = "agree",
+    strongly_agree = "strongly-agree",
+};
+/**
+* Pattern languages in which an indicator's pattern may be written. An open vocabulary: a slot that names it also takes any other string.
+*/
+export enum StixPatternType {
+    
+    stix = "stix",
+    pcre = "pcre",
+    sigma = "sigma",
+    snort = "snort",
+    suricata = "suricata",
+    yara = "yara",
+};
+/**
+* Processor architectures. An open vocabulary: a slot that names it also takes any other string.
+*/
+export enum StixProcessorArchitecture {
+    
+    alpha = "alpha",
+    arm = "arm",
+    ia_64 = "ia-64",
+    mips = "mips",
+    powerpc = "powerpc",
+    sparc = "sparc",
+    x86 = "x86",
+    x86_64 = "x86-64",
+};
+/**
+* World regions, after the United Nations geoscheme (UNSD M49). An open vocabulary: a slot that names it also takes any other string.
+*/
+export enum StixRegion {
+    
+    africa = "africa",
+    eastern_africa = "eastern-africa",
+    middle_africa = "middle-africa",
+    northern_africa = "northern-africa",
+    southern_africa = "southern-africa",
+    western_africa = "western-africa",
+    americas = "americas",
+    caribbean = "caribbean",
+    central_america = "central-america",
+    latin_america_caribbean = "latin-america-caribbean",
+    northern_america = "northern-america",
+    south_america = "south-america",
+    asia = "asia",
+    central_asia = "central-asia",
+    eastern_asia = "eastern-asia",
+    southern_asia = "southern-asia",
+    south_eastern_asia = "south-eastern-asia",
+    western_asia = "western-asia",
+    europe = "europe",
+    eastern_europe = "eastern-europe",
+    northern_europe = "northern-europe",
+    southern_europe = "southern-europe",
+    western_europe = "western-europe",
+    oceania = "oceania",
+    antarctica = "antarctica",
+    australia_new_zealand = "australia-new-zealand",
+    melanesia = "melanesia",
+    micronesia = "micronesia",
+    polynesia = "polynesia",
+};
+/**
+* Primary subjects of a report. An open vocabulary: a slot that names it also takes any other string.
+*/
+export enum StixReportType {
     
     attack_pattern = "attack-pattern",
     campaign = "campaign",
@@ -292,103 +461,67 @@ export enum ReportTypeOv {
     vulnerability = "vulnerability",
 };
 /**
-* Open vocabulary for indicator type (indicator-type-ov). Additional string values are allowed.
+* Types of threat actor. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum IndicatorTypeOv {
+export enum StixThreatActorType {
     
-    anomalous_activity = "anomalous-activity",
-    anonymization = "anonymization",
-    benign = "benign",
-    compromised = "compromised",
-    malicious_activity = "malicious-activity",
-    attribution = "attribution",
+    activist = "activist",
+    competitor = "competitor",
+    crime_syndicate = "crime-syndicate",
+    criminal = "criminal",
+    hacker = "hacker",
+    insider_accidental = "insider-accidental",
+    insider_disgruntled = "insider-disgruntled",
+    nation_state = "nation-state",
+    sensationalist = "sensationalist",
+    spy = "spy",
+    terrorist = "terrorist",
     unknown = "unknown",
 };
 /**
-* Open vocabulary for pattern type (pattern-type-ov). Additional string values are allowed.
+* Roles that a threat actor may play. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum PatternTypeOv {
+export enum StixThreatActorRole {
     
-    stix = "stix",
-    pcre = "pcre",
-    sigma = "sigma",
-    snort = "snort",
-    suricata = "suricata",
-    yara = "yara",
+    agent = "agent",
+    director = "director",
+    independent = "independent",
+    infrastructure_architect = "infrastructure-architect",
+    infrastructure_operator = "infrastructure-operator",
+    malware_author = "malware-author",
+    sponsor = "sponsor",
 };
 /**
-* Open vocabulary for malware AV result (malware-av-result-ov). Additional string values are allowed.
+* Skill levels of a threat actor. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum MalwareAvResultOv {
+export enum StixThreatActorSophistication {
     
-    malicious = "malicious",
-    suspicious = "suspicious",
-    benign = "benign",
+    none = "none",
+    minimal = "minimal",
+    intermediate = "intermediate",
+    advanced = "advanced",
+    expert = "expert",
+    innovator = "innovator",
+    strategic = "strategic",
+};
+/**
+* Categories of tool that may be used to perform attacks. An open vocabulary: a slot that names it also takes any other string.
+*/
+export enum StixToolType {
+    
+    denial_of_service = "denial-of-service",
+    exploitation = "exploitation",
+    information_gathering = "information-gathering",
+    network_capture = "network-capture",
+    credential_exploitation = "credential-exploitation",
+    remote_access = "remote-access",
+    vulnerability_scanning = "vulnerability-scanning",
     unknown = "unknown",
 };
 /**
-* Open vocabulary for implementation languages (implementation-language-ov). Additional string values are allowed.
+* Windows integrity levels. A closed enumeration: no other value is valid.
 */
-export enum ImplementationLanguageOv {
-    
-    applescript = "applescript",
-    bash = "bash",
-    c = "c",
-    cPLUS_SIGNPLUS_SIGN = "c++",
-    cNUMBER_SIGN = "c#",
-    go = "go",
-    java = "java",
-    javascript = "javascript",
-    lua = "lua",
-    objective_c = "objective-c",
-    perl = "perl",
-    php = "php",
-    powershell = "powershell",
-    python = "python",
-    ruby = "ruby",
-    scala = "scala",
-    swift = "swift",
-    typescript = "typescript",
-    visual_basic = "visual-basic",
-    x86_32 = "x86-32",
-    x86_64 = "x86-64",
-};
-/**
-* Open vocabulary for processor architecture (processor-architecture-ov). Additional string values are allowed.
-*/
-export enum ProcessorArchitectureOv {
-    
-    alpha = "alpha",
-    arm = "arm",
-    ia_64 = "ia-64",
-    mips = "mips",
-    powerpc = "powerpc",
-    sparc = "sparc",
-    x86 = "x86",
-    x86_64 = "x86-64",
-};
-/**
-* Open vocabulary for user account type (account-type-ov). Additional string values are allowed.
-*/
-export enum AccountTypeOv {
-    
-    unix = "unix",
-    windows_local = "windows-local",
-    windows_domain = "windows-domain",
-    ldap = "ldap",
-    tacacs = "tacacs",
-    radius = "radius",
-    nis = "nis",
-    openid = "openid",
-    facebook = "facebook",
-    skype = "skype",
-    twitter = "twitter",
-    kavi = "kavi",
-};
-/**
-* Windows process integrity level (trustworthiness) enumeration.
-*/
-export enum WindowsIntegrityLevelEnum {
+export enum StixWindowsIntegrityLevel {
     
     low = "low",
     medium = "medium",
@@ -396,9 +529,38 @@ export enum WindowsIntegrityLevelEnum {
     system = "system",
 };
 /**
-* Windows service start type enumeration.
+* Types of Windows PE binary. An open vocabulary: a slot that names it also takes any other string.
 */
-export enum WindowsServiceStartEnum {
+export enum StixWindowsPeBinaryType {
+    
+    dll = "dll",
+    exe = "exe",
+    sys = "sys",
+};
+/**
+* Data types of a Windows registry value. A closed enumeration: no other value is valid.
+*/
+export enum StixWindowsRegistryDatatype {
+    
+    REG_NONE = "REG_NONE",
+    REG_SZ = "REG_SZ",
+    REG_EXPAND_SZ = "REG_EXPAND_SZ",
+    REG_BINARY = "REG_BINARY",
+    REG_DWORD = "REG_DWORD",
+    REG_DWORD_BIG_ENDIAN = "REG_DWORD_BIG_ENDIAN",
+    REG_DWORD_LITTLE_ENDIAN = "REG_DWORD_LITTLE_ENDIAN",
+    REG_LINK = "REG_LINK",
+    REG_MULTI_SZ = "REG_MULTI_SZ",
+    REG_RESOURCE_LIST = "REG_RESOURCE_LIST",
+    REG_FULL_RESOURCE_DESCRIPTION = "REG_FULL_RESOURCE_DESCRIPTION",
+    REG_RESOURCE_REQUIREMENTS_LIST = "REG_RESOURCE_REQUIREMENTS_LIST",
+    REG_QWORD = "REG_QWORD",
+    REG_INVALID_TYPE = "REG_INVALID_TYPE",
+};
+/**
+* Start types of a Windows service. A closed enumeration: no other value is valid.
+*/
+export enum StixWindowsServiceStartType {
     
     SERVICE_AUTO_START = "SERVICE_AUTO_START",
     SERVICE_BOOT_START = "SERVICE_BOOT_START",
@@ -407,9 +569,9 @@ export enum WindowsServiceStartEnum {
     SERVICE_SYSTEM_ALERT = "SERVICE_SYSTEM_ALERT",
 };
 /**
-* Windows service type enumeration.
+* Types of Windows service. A closed enumeration: no other value is valid.
 */
-export enum WindowsServiceTypeEnum {
+export enum StixWindowsServiceType {
     
     SERVICE_KERNEL_DRIVER = "SERVICE_KERNEL_DRIVER",
     SERVICE_FILE_SYSTEM_DRIVER = "SERVICE_FILE_SYSTEM_DRIVER",
@@ -417,9 +579,9 @@ export enum WindowsServiceTypeEnum {
     SERVICE_WIN32_SHARE_PROCESS = "SERVICE_WIN32_SHARE_PROCESS",
 };
 /**
-* Windows service status enumeration.
+* Statuses of a Windows service. A closed enumeration: no other value is valid.
 */
-export enum WindowsServiceStatusEnum {
+export enum StixWindowsServiceStatus {
     
     SERVICE_CONTINUE_PENDING = "SERVICE_CONTINUE_PENDING",
     SERVICE_PAUSE_PENDING = "SERVICE_PAUSE_PENDING",
@@ -430,971 +592,997 @@ export enum WindowsServiceStatusEnum {
     SERVICE_STOPPED = "SERVICE_STOPPED",
 };
 /**
-* Network socket address family enumeration.
+* The STIX versions that an object may declare. The JSON schemas accept 2.0 beside 2.1. A closed enumeration.
 */
-export enum NetworkSocketAddressFamilyEnum {
+export enum StixSpecVersion {
     
-    AF_UNSPEC = "AF_UNSPEC",
-    AF_INET = "AF_INET",
-    AF_IPX = "AF_IPX",
-    AF_APPLETALK = "AF_APPLETALK",
-    AF_NETBIOS = "AF_NETBIOS",
-    AF_INET6 = "AF_INET6",
-    AF_IRDA = "AF_IRDA",
-    AF_BTH = "AF_BTH",
+    number_2FULL_STOP0 = "2.0",
+    number_2FULL_STOP1 = "2.1",
 };
 /**
-* Network socket type enumeration.
+* The four levels of the Traffic Light Protocol (TLP) that STIX 2.1 defines marking definitions for. A closed enumeration.
 */
-export enum NetworkSocketTypeEnum {
+export enum StixTlpLevel {
     
-    SOCK_STREAM = "SOCK_STREAM",
-    SOCK_DGRAM = "SOCK_DGRAM",
-    SOCK_RAW = "SOCK_RAW",
-    SOCK_RDM = "SOCK_RDM",
-    SOCK_SEQPACKET = "SOCK_SEQPACKET",
+    white = "white",
+    green = "green",
+    amber = "amber",
+    red = "red",
 };
 /**
-* Open vocabulary for Windows PE binary type (windows-pebinary-type-ov). Suggested values are exe, dll, sys; additional string values are allowed.
+* The marking definition types that STIX 2.1 defines, statement and tlp. A slot that names it also takes any other string, as the JSON schemas do.
 */
-export enum WindowsPEBinaryTypeOv {
+export enum StixMarkingDefinitionType {
     
-    exe = "exe",
-    dll = "dll",
-    sys = "sys",
+    statement = "statement",
+    tlp = "tlp",
 };
 /**
-* Closed enumeration of the three ATT&CK technology domains. ATT&CK is organized into domains that represent the ecosystems adversaries operate within. All ATT&CK objects that carry x_mitre_domains must reference at least one of these domains.
+* An ATT&CK technology domain, a separate knowledge base with its own matrix.
 */
-export enum AttackDomainEnum {
+export enum AttackDomain {
     
-    /** Enterprise domain covering Windows, Linux, macOS, cloud platforms (IaaS, SaaS, Office 365, Google Workspace, Azure AD), containers, network devices, and PRE. */
+    /** Enterprise ATT&CK. */
     enterprise_attack = "enterprise-attack",
-    /** Mobile domain covering Android and iOS operating systems. Techniques describe adversary behavior targeting mobile devices. */
+    /** Mobile ATT&CK. */
     mobile_attack = "mobile-attack",
-    /** ICS (Industrial Control Systems) domain covering Operational Technology environments including SCADA, DCS, PLCs, RTUs, and other OT components. */
+    /** ATT&CK for Industrial Control Systems (ICS). */
     ics_attack = "ics-attack",
 };
 /**
-* Closed enumeration of all technology platforms supported across ATT&CK domains. Platforms represent specific operating environments or technology stacks within which adversary techniques are applicable. Values must be unique within any x_mitre_platforms array; duplicates are not permitted.
+* The kill chain of an ATT&CK domain, named in a kill chain phase.
 */
-export enum AttackPlatformEnum {
+export enum AttackKillChainName {
     
-    /** Microsoft Windows desktop and server operating systems. */
-    Windows = "Windows",
-    /** Linux-based operating systems (all distributions). */
-    Linux = "Linux",
-    /** Apple macOS operating system. */
-    macOS = "macOS",
-    /** Google Android mobile operating system. */
-    Android = "Android",
-    /** Apple iOS and iPadOS mobile operating systems. */
-    iOS = "iOS",
-    /** Microsoft Azure Active Directory — cloud identity and access management. */
-    Azure_AD = "Azure AD",
-    /** Google Workspace productivity suite (formerly G Suite), including Gmail, Drive, etc. */
-    Google_Workspace = "Google Workspace",
-    /** Office productivity suites (Microsoft 365, etc.). */
-    Office_Suite = "Office Suite",
-    /** Software-as-a-Service cloud applications accessible via a web browser. */
-    SaaS = "SaaS",
-    /** Infrastructure-as-a-Service cloud platforms (AWS, Azure, GCP compute, storage, etc.). */
-    IaaS = "IaaS",
-    /** Container runtimes and orchestration platforms (Docker, Kubernetes, etc.). */
-    Containers = "Containers",
-    /** VMware ESXi hypervisor platform. */
-    ESXi = "ESXi",
-    /** Identity and Access Management (IAM) provider systems. */
-    Identity_Provider = "Identity Provider",
-    /** Network infrastructure devices such as routers, switches, and firewalls. */
-    Network_Devices = "Network Devices",
-    /** Pre-compromise activities such as reconnaissance and resource development. */
-    PRE = "PRE",
-    /** No specific platform dependency; technique applies generically. */
-    None = "None",
-    /** ICS field controllers, Remote Terminal Units (RTUs), Programmable Logic Controllers (PLCs), and Intelligent Electronic Devices (IEDs). */
-    Field_ControllerSOLIDUSRTUSOLIDUSPLCSOLIDUSIED = "Field Controller/RTU/PLC/IED",
-    /** ICS data historian systems that record and store process data over time. */
-    Data_Historian = "Data Historian",
-    /** ICS engineering workstations used to program and configure field devices. */
-    Engineering_Workstation = "Engineering Workstation",
-    /** ICS supervisory control servers including SCADA and DCS master stations. */
-    Control_Server = "Control Server",
-    /** ICS HMI systems providing operator visualization and control interfaces. */
-    Human_Machine_Interface = "Human-Machine Interface",
-    /** ICS Input/Output servers that interface between control networks and field devices. */
-    InputSOLIDUSOutput_Server = "Input/Output Server",
-    /** ICS safety systems including Safety Instrumented Systems (SIS) and protection relays. */
-    Safety_Instrumented_SystemSOLIDUSProtection_Relay = "Safety Instrumented System/Protection Relay",
-    /** Embedded systems and firmware environments in specialized hardware. */
-    Embedded = "Embedded",
-};
-/**
-* Closed enumeration of ATT&CK kill chain identifiers used in kill_chain_phases. These three values correspond to the three ATT&CK domains and are used to map techniques to their associated tactics. The phase_name in each kill_chain_phase must match the x_mitre_shortname of the corresponding x-mitre-tactic object.
-*/
-export enum KillChainNameEnum {
-    
-    /** Enterprise ATT&CK kill chain (used in the enterprise-attack domain). */
+    /** The kill chain of Enterprise ATT&CK. */
     mitre_attack = "mitre-attack",
-    /** Mobile ATT&CK kill chain (used in the mobile-attack domain). */
+    /** The kill chain of Mobile ATT&CK. */
     mitre_mobile_attack = "mitre-mobile-attack",
-    /** ICS ATT&CK kill chain (used in the ics-attack domain). */
+    /** The kill chain of ATT&CK for ICS. */
     mitre_ics_attack = "mitre-ics-attack",
 };
 /**
-* Closed enumeration of all ATT&CK tactic short names (x_mitre_shortname). Short names use lowercase hyphen-separated words and are used as the kill_chain_phases.phase_name value by techniques belonging to a tactic. This enumeration covers short names across all three ATT&CK domains (Enterprise, Mobile, ICS). Some short names appear in multiple domains.
+* A technology environment or operating system that a technique, software, analytic or asset applies to.
 */
-export enum AttackTacticShortNameEnum {
+export enum AttackPlatform {
     
-    /** Enterprise: Adversaries gather information to plan future operations. */
-    reconnaissance = "reconnaissance",
-    /** Enterprise: Adversaries establish resources to support operations. */
-    resource_development = "resource-development",
-    /** Enterprise / Mobile / ICS: Adversaries gain a foothold in the environment. */
-    initial_access = "initial-access",
-    /** Enterprise / Mobile / ICS: Adversaries run malicious code. */
-    execution = "execution",
-    /** Enterprise / Mobile / ICS: Adversaries maintain their foothold. */
-    persistence = "persistence",
-    /** Enterprise / Mobile / ICS: Adversaries gain higher-level permissions. */
-    privilege_escalation = "privilege-escalation",
-    /** Enterprise / Mobile: Adversaries avoid being detected. */
-    defense_evasion = "defense-evasion",
-    /** Enterprise / Mobile: Adversaries steal account names and passwords. */
-    credential_access = "credential-access",
-    /** Enterprise / Mobile / ICS: Adversaries figure out the environment. */
-    discovery = "discovery",
-    /** Enterprise / Mobile / ICS: Adversaries move through the environment. */
-    lateral_movement = "lateral-movement",
-    /** Enterprise / Mobile / ICS: Adversaries gather data of interest. */
+    Android = "Android",
+    Containers = "Containers",
+    Control_Server = "Control Server",
+    Data_Historian = "Data Historian",
+    Embedded = "Embedded",
+    Engineering_Workstation = "Engineering Workstation",
+    ESXi = "ESXi",
+    Field_ControllerSOLIDUSRTUSOLIDUSPLCSOLIDUSIED = "Field Controller/RTU/PLC/IED",
+    Human_Machine_Interface = "Human-Machine Interface",
+    IaaS = "IaaS",
+    Identity_Provider = "Identity Provider",
+    InputSOLIDUSOutput_Server = "Input/Output Server",
+    iOS = "iOS",
+    Linux = "Linux",
+    macOS = "macOS",
+    Network = "Network",
+    Network_Devices = "Network Devices",
+    None = "None",
+    Office_365 = "Office 365",
+    Office_Suite = "Office Suite",
+    PRE = "PRE",
+    SaaS = "SaaS",
+    Safety_Instrumented_SystemSOLIDUSProtection_Relay = "Safety Instrumented System/Protection Relay",
+    Windows = "Windows",
+};
+/**
+* The short name of a tactic. A technique's kill chain phase names a tactic of its domain by this name.
+*/
+export enum AttackTacticShortname {
+    
     collection = "collection",
-    /** Enterprise / Mobile / ICS: Adversaries communicate with compromised systems. */
     command_and_control = "command-and-control",
-    /** Enterprise / Mobile: Adversaries steal data. */
-    exfiltration = "exfiltration",
-    /** Enterprise / Mobile / ICS: Adversaries manipulate, interrupt, or destroy systems and data. */
-    impact = "impact",
-    /** Mobile: Adversaries evade analysis and defenses on mobile platforms. */
+    credential_access = "credential-access",
+    defense_evasion = "defense-evasion",
+    /** Enterprise's TA0112. */
+    defense_impairment = "defense-impairment",
+    discovery = "discovery",
     evasion = "evasion",
-    /** Mobile (legacy): Adversaries intercept or manipulate network traffic. */
-    network_effects = "network-effects",
-    /** Mobile (legacy): Adversaries control or monitor remote services on mobile devices. */
-    remote_service_effects = "remote-service-effects",
-    /** ICS: Adversaries prevent safety mechanisms from responding to events. */
-    inhibit_response_function = "inhibit-response-function",
-    /** ICS: Adversaries manipulate physical control processes. */
+    execution = "execution",
+    exfiltration = "exfiltration",
+    impact = "impact",
     impair_process_control = "impair-process-control",
+    inhibit_response_function = "inhibit-response-function",
+    initial_access = "initial-access",
+    lateral_movement = "lateral-movement",
+    network_effects = "network-effects",
+    persistence = "persistence",
+    privilege_escalation = "privilege-escalation",
+    reconnaissance = "reconnaissance",
+    remote_service_effects = "remote-service-effects",
+    resource_development = "resource-development",
+    /** Enterprise's TA0005. */
+    stealth = "stealth",
 };
 /**
-* Closed enumeration of relationship types used in ATT&CK relationship objects. Each value defines a specific semantic connection between ATT&CK STIX objects. Not all (source, relationship, target) type combinations are valid; see the ATT&CK Data Model specification for the full relationship compatibility matrix.
+* Whether a Mobile technique needs access to the device.
 */
-export enum AttackRelationshipTypeEnum {
+export enum AttackTacticType {
     
-    /** A Group (intrusion-set), Campaign, Malware, or Tool uses a Technique (attack-pattern), Malware, or Tool. Constraint: Malware CANNOT use Malware; Tool CANNOT use Tool. Campaign --uses--> Technique/Malware/Tool is also valid. */
-    uses = "uses",
-    /** A Mitigation (course-of-action) mitigates a Technique (attack-pattern). Only valid source type: course-of-action. Only valid target type: attack-pattern. */
-    mitigates = "mitigates",
-    /** A sub-technique (attack-pattern) is a specialized implementation of a parent technique (attack-pattern). Source is the sub-technique; target is the parent. Each sub-technique has exactly one parent; parent techniques may have many sub-techniques. */
-    subtechnique_of = "subtechnique-of",
-    /** A DataComponent (x-mitre-data-component) or DetectionStrategy (x-mitre-detection-strategy) detects a Technique (attack-pattern). Note: x-mitre-data-component --detects--> attack-pattern is DEPRECATED as of v3.3.0. */
-    detects = "detects",
-    /** A Campaign is attributed to a Group (intrusion-set). Represents the intelligence assessment linking a campaign to a known threat actor group. */
-    attributed_to = "attributed-to",
-    /** A Technique (attack-pattern) targets an Asset (x-mitre-asset). Only applicable in the ICS domain to model technique-to-asset targeting relationships. */
-    targets = "targets",
-    /** An ATT&CK object has been revoked and replaced by another object of the same STIX type. Both source and target must be the same STIX type (e.g., both attack-pattern). */
-    revoked_by = "revoked-by",
-};
-/**
-* DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. Closed enumeration of the effective Windows or Unix permission levels that an adversary achieves after successfully exploiting a technique. Only four values are recognized.
-*/
-export enum AttackEffectivePermissionsEnum {
-    
-    /** Windows Administrator-level permissions (local or domain admin). */
-    Administrator = "Administrator",
-    /** Windows SYSTEM account privileges — highest built-in Windows privilege level. */
-    SYSTEM = "SYSTEM",
-    /** Standard unprivileged user-level permissions. */
-    User = "User",
-    /** Unix/Linux root (superuser) privileges. */
-    root = "root",
-};
-/**
-* Closed enumeration of impact type categories applicable to techniques in the Enterprise ATT&CK Impact tactic. Indicates whether the technique can be used to affect system availability, data integrity, or both.
-*/
-export enum AttackImpactTypeEnum {
-    
-    /** The technique can be used to impact system or service availability (e.g., denial-of-service, ransomware data encryption, destructive malware). */
-    Availability = "Availability",
-    /** The technique can be used to impact data or system integrity (e.g., unauthorized data modification, firmware compromise, log tampering). */
-    Integrity = "Integrity",
-};
-/**
-* DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. Closed enumeration of the minimum permission level required for an adversary to execute the technique on a target system.
-*/
-export enum AttackPermissionsRequiredEnum {
-    
-    /** Membership in the Remote Desktop Users group is required. */
-    Remote_Desktop_Users = "Remote Desktop Users",
-    /** SYSTEM account context is required. */
-    SYSTEM = "SYSTEM",
-    /** Local or domain Administrator privilege is required. */
-    Administrator = "Administrator",
-    /** Unix/Linux root (superuser) privilege is required. */
-    root = "root",
-    /** Standard (non-privileged) user access is sufficient. */
-    User = "User",
-};
-/**
-* Closed enumeration of tactic types for Mobile ATT&CK techniques (x_mitre_tactic_type). Indicates the adversary's device access model for executing the technique. Only used in the Mobile ATT&CK domain.
-*/
-export enum AttackTacticTypeEnum {
-    
-    /** The technique is executed after the adversary has gained access to the device. */
     Post_Adversary_Device_Access = "Post-Adversary Device Access",
-    /** The technique is performed before the adversary gains access to the device. */
     Pre_Adversary_Device_Access = "Pre-Adversary Device Access",
-    /** The technique does not require the adversary to have direct device access. */
     Without_Adversary_Device_Access = "Without Adversary Device Access",
 };
 /**
-* DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. Closed enumeration of defensive tools, methodologies, or processes that a technique is documented to bypass, circumvent, or evade. Values are sourced from the historical ATT&CK data model and have been preserved verbatim including case variants.
+* Whether an Enterprise impact technique attacks integrity or availability.
 */
-export enum AttackDefenseBypassEnum {
+export enum AttackImpactType {
     
-    Signature_based_detection = "Signature-based detection",
-    Signature_based_Detection = "Signature-based Detection",
+    Availability = "Availability",
+    Integrity = "Integrity",
+};
+/**
+* A level of permission a technique needs to run on a system.
+*/
+export enum AttackRequiredPermission {
+    
+    Administrator = "Administrator",
+    Remote_Desktop_Users = "Remote Desktop Users",
+    root = "root",
+    SYSTEM = "SYSTEM",
+    User = "User",
+};
+/**
+* A level of permission an adversary gains by a technique.
+*/
+export enum AttackEffectivePermission {
+    
+    Administrator = "Administrator",
+    root = "root",
+    SYSTEM = "SYSTEM",
+    User = "User",
+};
+/**
+* A defensive tool, method or process that a technique can get past, in the spellings the ADM lists.
+*/
+export enum AttackBypassedDefense {
+    
+    Anti_Virus = "Anti Virus",
+    Anti_virus = "Anti-virus",
+    Application_Control = "Application Control",
+    Application_control = "Application control",
+    Application_whitelisting = "Application whitelisting",
+    Autoruns_Analysis = "Autoruns Analysis",
+    Binary_Analysis = "Binary Analysis",
+    Data_Execution_Prevention = "Data Execution Prevention",
+    Defensive_network_service_scanning = "Defensive network service scanning",
+    Digital_Certificate_Validation = "Digital Certificate Validation",
+    Encryption = "Encryption",
+    Exploit_Prevention = "Exploit Prevention",
+    File_Monitoring = "File Monitoring",
+    File_monitoring = "File monitoring",
+    File_system_access_controls = "File system access controls",
+    Firewall = "Firewall",
+    Gatekeeper = "Gatekeeper",
+    Heuristic_Detection = "Heuristic Detection",
+    Heuristic_detection = "Heuristic detection",
+    Host_Forensic_Analysis = "Host Forensic Analysis",
+    Host_forensic_analysis = "Host forensic analysis",
+    Host_Intrusion_Prevention_Systems = "Host Intrusion Prevention Systems",
+    Host_intrusion_prevention_systems = "Host intrusion prevention systems",
+    Log_Analysis = "Log Analysis",
+    Log_analysis = "Log analysis",
+    Logon_Credentials = "Logon Credentials",
     Multi_Factor_Authentication = "Multi-Factor Authentication",
     Network_Intrusion_Detection_System = "Network Intrusion Detection System",
     Network_intrusion_detection_system = "Network intrusion detection system",
-    Application_Control = "Application Control",
-    Application_control = "Application control",
-    Host_forensic_analysis = "Host forensic analysis",
-    Host_Forensic_Analysis = "Host Forensic Analysis",
-    Exploit_Prevention = "Exploit Prevention",
-    Data_Execution_Prevention = "Data Execution Prevention",
-    Heuristic_Detection = "Heuristic Detection",
-    Heuristic_detection = "Heuristic detection",
-    File_system_access_controls = "File system access controls",
-    File_Monitoring = "File Monitoring",
-    File_monitoring = "File monitoring",
-    Digital_Certificate_Validation = "Digital Certificate Validation",
-    Logon_Credentials = "Logon Credentials",
-    Firewall = "Firewall",
-    Static_File_Analysis = "Static File Analysis",
     Notarization = "Notarization",
-    System_access_controls = "System access controls",
-    System_Access_Controls = "System Access Controls",
-    Binary_Analysis = "Binary Analysis",
-    Web_Content_Filters = "Web Content Filters",
-    Host_intrusion_prevention_systems = "Host intrusion prevention systems",
-    Host_Intrusion_Prevention_Systems = "Host Intrusion Prevention Systems",
-    Application_whitelisting = "Application whitelisting",
-    Defensive_network_service_scanning = "Defensive network service scanning",
-    User_Mode_Signature_Validation = "User Mode Signature Validation",
-    Encryption = "Encryption",
-    Log_Analysis = "Log Analysis",
-    Log_analysis = "Log analysis",
-    Autoruns_Analysis = "Autoruns Analysis",
-    Anti_Virus = "Anti Virus",
-    Anti_virus = "Anti-virus",
-    Gatekeeper = "Gatekeeper",
     Process_whitelisting = "Process whitelisting",
-    Windows_User_Account_Control = "Windows User Account Control",
+    Signature_based_Detection = "Signature-based Detection",
+    Signature_based_detection = "Signature-based detection",
+    Static_File_Analysis = "Static File Analysis",
+    System_Access_Controls = "System Access Controls",
+    System_access_controls = "System access controls",
+    User_Mode_Signature_Validation = "User Mode Signature Validation",
+    Web_Content_Filters = "Web Content Filters",
     Whitelisting_by_file_name_or_path = "Whitelisting by file name or path",
+    Windows_User_Account_Control = "Windows User Account Control",
 };
 /**
-* Closed enumeration of industry sectors in which ICS Assets (x-mitre-asset) are commonly observed. Used to associate assets with specific industrial environments. Only applicable in the ICS ATT&CK domain.
+* A place where a data source's data can be collected.
 */
-export enum AttackAssetSectorEnum {
+export enum AttackCollectionLayer {
     
-    /** Electric power generation, transmission, and distribution sector. */
-    Electric = "Electric",
-    /** Water treatment, distribution, and wastewater management sector. */
-    Water_and_Wastewater = "Water and Wastewater",
-    /** Industrial manufacturing and production environments. */
-    Manufacturing = "Manufacturing",
-    /** Rail transportation and signaling systems. */
-    Rail = "Rail",
-    /** Maritime and port operations including vessel management systems. */
-    Maritime = "Maritime",
-    /** Applicable across multiple industry sectors without a specific focus. */
-    General = "General",
-};
-/**
-* Closed enumeration of collection layers for ATT&CK Data Sources. A collection layer identifies the location or tier within a technology stack where telemetry for a data source can be collected for detection purposes.
-*/
-export enum AttackCollectionLayerEnum {
-    
-    /** Cloud provider API and management plane logs (e.g., AWS CloudTrail, Azure Activity Log). */
     Cloud_Control_Plane = "Cloud Control Plane",
-    /** Host-based collection from endpoint agents, OS audit logs, and EDR sensors. */
-    Host = "Host",
-    /** Container runtime logs and orchestration platform events (Docker, Kubernetes). */
     Container = "Container",
-    /** Network traffic capture, flow records, and packet data (PCAP, NetFlow, DNS logs). */
-    Network = "Network",
-    /** Device-level logs from hardware sensors, embedded systems, or field devices. */
     Device = "Device",
-    /** Open-source intelligence gathered from publicly available sources. */
+    Host = "Host",
+    Network = "Network",
     OSINT = "OSINT",
-    /** Third-party threat intelligence reports and publications. */
     Report = "Report",
 };
 /**
-* Closed enumeration of ATT&CK marking definition types. ATT&CK uses two variants: TLP traffic-light protocol markings and plain text statement (copyright) markings.
+* An industry sector in which an ICS asset is commonly found.
 */
-export enum MarkingDefinitionTypeEnum {
+export enum AttackAssetSector {
     
-    /** Traffic Light Protocol (TLP) marking definition for information sharing restrictions. */
-    tlp = "tlp",
-    /** Statement marking definition carrying a copyright or terms-of-use notice. */
-    statement = "statement",
+    Electric = "Electric",
+    General = "General",
+    Manufacturing = "Manufacturing",
+    Maritime = "Maritime",
+    Rail = "Rail",
+    Water_and_Wastewater = "Water and Wastewater",
 };
 /**
-* Closed enumeration of Traffic Light Protocol (TLP) sharing sensitivity levels. The four standard TLP levels control how broadly shared information can be distributed. ATT&CK uses canonical TLP marking definitions with fixed, immutable STIX IDs.
+* The seven relationship types ATT&CK uses. Each allows only some types of source and target object, which AttackRelationship's rules state.
 */
-export enum TlpLevelEnum {
+export enum AttackRelationshipType {
     
-    /** TLP:WHITE — unrestricted information sharing. Canonical ID: marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9 */
-    white = "white",
-    /** TLP:GREEN — sharing within the broader community; not for public release. Canonical ID: marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da */
-    green = "green",
-    /** TLP:AMBER — limited sharing on a need-to-know basis within the recipient organization. Canonical ID: marking-definition--f88d31f6-486f-44da-b317-01333bde0b82 */
-    amber = "amber",
-    /** TLP:RED — not for disclosure; recipient eyes and ears only. Canonical ID: marking-definition--5e57c739-391a-4eb3-b6be-7d15ca92d5ed */
-    red = "red",
+    /** A group, campaign or software uses a technique or software. */
+    uses = "uses",
+    /** A mitigation mitigates a technique. */
+    mitigates = "mitigates",
+    /** A sub-technique belongs to its parent technique. */
+    subtechnique_of = "subtechnique-of",
+    /** A detection strategy, or a data component, detects a technique. */
+    detects = "detects",
+    /** A campaign is attributed to a group. */
+    attributed_to = "attributed-to",
+    /** An ICS technique targets an asset. */
+    targets = "targets",
+    /** An object was revoked and replaced by the target object. */
+    revoked_by = "revoked-by",
 };
 
 
-
-export interface StixEntity {
-    /** STIX object identifier. */
-    id?: string,
-    /** STIX object type. */
-    type?: string,
-    /** Human-readable name. */
-    name?: string,
-    /** Human-readable description. */
-    description?: string,
-}
-
-
-
-export interface CommonSchemaComponent extends StixEntity {
-}
-
-
-
-export interface CyberObservableObject extends CyberObservableCore {
-}
-
-
-
-export interface StixDomainObject extends Core {
-}
-
-
-
-export interface StixRelationshipObject extends Core {
-}
-
-
 /**
- * A Bundle is a collection of arbitrary STIX Objects and Marking Definitions grouped together in a single container. 
+ * Any STIX object: the base of the domain, relationship and cyber-observable objects and of the meta objects.
  */
-export interface Bundle extends CommonSchemaComponent {
-    /** STIX object type. */
-    type: string,
-    /** STIX object identifier. */
+export interface StixObject {
+    /** The identifier of the object: its STIX type, two hyphens and a UUID. Each class narrows the type. */
     id: string,
-    /** Objects contained in a bundle. */
-    bundle_objects?: StixEntity[],
-}
-
-
-/**
- * Common properties and behavior across all STIX Domain Objects and STIX Relationship Objects. 
- */
-export interface Core extends CommonSchemaComponent {
-    /** STIX object type. */
+    /** The STIX type name of the object, such as attack-pattern. Each class pins its own. */
     type: string,
-    /** STIX specification version. */
-    spec_version: string,
-    /** STIX object identifier. */
-    id: string,
-    /** Creation timestamp. */
-    created: string,
-    /** Modification timestamp. */
-    modified: string,
-    /** ID of the object that created this object. */
-    created_by_ref?: string,
-    /** Terms used to describe this object. */
-    labels?: string[],
-    /** Indicates whether this object has been revoked. */
-    revoked?: boolean,
-    /** Confidence that the producer has in this data. */
-    confidence?: number,
-    /** Language of textual properties. */
-    lang?: string,
-    /** External references to non-STIX information. */
-    external_references?: ExternalReference[],
-    /** Marking definition references applied to this object. */
-    object_marking_refs?: string[],
-    /** Granular markings that apply to selected content. */
-    granular_markings?: GranularMarking[],
-    /** Open-ended extension payloads. */
-    extensions?: string[],
-}
-
-
-/**
- * Common properties and behavior across all Cyber Observable Objects. 
- */
-export interface CyberObservableCore extends CommonSchemaComponent {
-    /** STIX object type. */
-    type: string,
-    /** STIX specification version. */
+    /** The version of the STIX specification used to represent the object. */
     spec_version?: string,
-    /** STIX object identifier. */
-    id: string,
-    /** Marking definition references applied to this object. */
-    object_marking_refs?: string[],
-    /** Granular markings that apply to selected content. */
-    granular_markings?: GranularMarking[],
+    /** References to the marking definitions that apply to the object. */
+    object_marking_refs?: StixMarkingDefinitionId[],
+    /** The granular markings that apply to parts of the object. */
+    granular_markings?: StixGranularMarking[],
+    /** The object's extensions, as a dictionary keyed by extension name. */
+    extensions?: StixExtensions,
+}
+
+
+/**
+ * The base of the objects that carry STIX's common properties: the domain and relationship objects, language content and extension definitions.
+ */
+export interface StixCommonObject extends StixObject {
+    /** A reference to the identity of the object's creator. */
+    created_by_ref?: StixIdentityId,
+    /** The time at which the object, or its first version, was created. */
+    created: string,
+    /** The time at which this version of the object was modified. */
+    modified: string,
+    /** The revoked property indicates whether the object has been revoked. */
+    revoked?: boolean,
+    /** The labels property specifies a set of terms used to describe this object. */
+    labels?: string[],
+    /** Identifies the confidence that the creator has in the correctness of their data. */
+    confidence?: number,
+    /** The language of the text content, as an RFC 5646 language code. */
+    lang?: string,
+    /** References to non-STIX information about the object. */
+    external_references?: StixExternalReference[],
+}
+
+
+/**
+ * A STIX Domain Object (SDO): a higher-level concept of cyber threat intelligence, such as an attack pattern, a malware family or a threat actor.
+ */
+export interface StixDomainObject extends StixCommonObject {
+}
+
+
+/**
+ * A STIX Relationship Object (SRO): a relationship or a sighting that links other objects.
+ */
+export interface StixRelationshipObject extends StixCommonObject {
+}
+
+
+/**
+ * A STIX Cyber-observable Object (SCO): a fact observed on a network or host, such as a file, an address or a process.
+ */
+export interface StixCyberObservableObject extends StixObject {
     /** Defines whether or not the data contained within the object has been defanged. */
     defanged?: boolean,
-    /** Open-ended extension payloads. */
-    extensions?: string[],
 }
 
 
 /**
- * A dictionary captures a set of key/value pairs 
+ * An individual, organization or group, such as ACME, Inc., or a class of them.
  */
-export interface Dictionary extends CommonSchemaComponent {
-}
-
-
-/**
- * The STIX Extension Definition object allows producers of threat intelligence to extend existing STIX objects or to create entirely new STIX objects in a standardized way. 
- */
-export interface ExtensionDefinition extends Core {
-    /** STIX object type. */
-    type: string,
-    /** STIX object identifier. */
-    id: string,
-    /** Human-readable name. */
+export interface StixIdentity extends StixDomainObject {
+    /** The roles that the identity or threat actor plays. */
+    roles?: string[],
+    /** A name that identifies the object. */
     name: string,
-    /** Human-readable description. */
+    /** A description of the object, which may be long. */
     description?: string,
-    /** Extension schema definition or URL. */
+    /** The kind of entity the identity describes, such as an individual or an organization. */
+    identity_class?: string,
+    /** The industry sectors that the identity belongs to. */
+    sectors?: string[],
+    /** The contact information (e-mail, phone number, etc.) for this Identity. */
+    contact_information?: string,
+}
+
+
+/**
+ * A marking definition: a statement, a Traffic Light Protocol (TLP) level or another marking that applies to the objects that reference it.
+ */
+export interface StixMarkingDefinition extends StixObject {
+    /** A reference to the identity of the object's creator. */
+    created_by_ref?: StixIdentityId,
+    /** The time at which the object, or its first version, was created. */
+    created: string,
+    /** References to non-STIX information about the object. */
+    external_references?: StixExternalReference[],
+    /** A name that identifies the object. */
+    name?: string,
+    /** The type of the marking definition, such as statement or tlp. */
+    definition_type?: string,
+    /** The marking itself: a statement, or a Traffic Light Protocol (TLP) level. */
+    definition?: string,
+}
+
+
+/**
+ * The language-content object represents text content for STIX Objects represented in languages other than that of the original object.
+ */
+export interface StixLanguageContent extends StixCommonObject {
+    /** Identifies the object that this Language Content applies to. */
+    object_ref: StixObjectId,
+    /** Identifies the modified time of the object that this Language Content applies to. */
+    object_modified?: string,
+    /** Contains the actual Language Content (translation). */
+    contents: StixLanguageContents,
+}
+
+
+/**
+ * The STIX Extension Definition object allows producers of threat intelligence to extend existing STIX objects or to create entirely new STIX objects in a standardized way.
+ */
+export interface StixExtensionDefinition extends StixCommonObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** The normative definition of the extension, either as a URL or as plain text explaining the definition. */
     schema: string,
-    /** Version string. */
+    /** A version, as a string; each class says of what. */
     version: string,
-    /** Extension-definition type list. */
+    /** Which extension types are contained within this extension. */
     extension_types: string,
-    /** Extension-defined property names. */
+    /** The list of new property names that are added to an object by this extension. */
     extension_properties?: string[],
 }
 
 
 /**
- * Converted from common/extension.json
+ * External references are used to describe pointers to information represented outside of STIX.
  */
-export interface Extension extends CommonSchemaComponent {
-    /** Type discriminator for extension payloads. */
-    extension_type: string,
-}
-
-
-/**
- * External references are used to describe pointers to information represented outside of STIX. 
- */
-export interface ExternalReference extends CommonSchemaComponent {
-    /** Name of the external source. */
+export interface StixExternalReference {
+    /** The source, such as a system, registry or organization, that defines the reference. */
     source_name: string,
-    /** Human-readable description. */
+    /** A description of the object, which may be long. */
     description?: string,
-    /** A URL reference to an external resource. */
+    /** A URL. */
     url?: string,
-    /** Specifies a dictionary of hashes for the file or content. */
-    hashes?: HashesType,
-    /** An identifier for the external reference content. */
+    /** A dictionary of hashes of the content, keyed by hash algorithm. */
+    hashes?: StixHashes,
+    /** An identifier of the external content in its source, such as CVE-2016-1234. */
     external_id?: string,
 }
 
 
 /**
- * The granular-marking type defines how the list of marking-definition objects referenced by the marking_refs property to apply to a set of content identified by the list of selectors in the selectors property. 
+ * A phase in a kill chain, named by the chain and the phase.
  */
-export interface GranularMarking extends CommonSchemaComponent {
-    /** Marking-definition reference. */
-    marking_ref: string,
-    /** A list of selectors for content contained within the STIX object in which this property appears. */
-    selectors: string[],
-    /** Language of textual properties. */
-    lang?: string,
-}
-
-
-/**
- * The Hashes type represents one or more cryptographic hashes, as a special set of key/value pairs 
- */
-export interface HashesType extends CommonSchemaComponent {
-}
-
-
-/**
- * The hex data type encodes an array of octets (8-bit bytes) as hexadecimal. The string MUST consist of an even number of hexadecimal characters, which are the digits '0' through '9' and the letters 'a' through 'f'. In order to allow pattern matching on custom objects, all properties that use the hex type, the property name MUST end with '_hex'. 
- */
-export interface Hex extends CommonSchemaComponent {
-}
-
-
-/**
- * Represents identifiers across the CTI specifications. The format consists of the name of the top-level object being identified, followed by two dashes (--), followed by a UUIDv4. 
- */
-export interface Identifier extends CommonSchemaComponent {
-}
-
-
-/**
- * The kill-chain-phase represents a phase in a kill chain. 
- */
-export interface KillChainPhase extends CommonSchemaComponent {
-    /** Name of the kill chain. */
+export interface StixKillChainPhase {
+    /** The name of the kill chain. */
     kill_chain_name: string,
-    /** Name of the kill chain phase. */
+    /** The name of the phase in the kill chain. */
     phase_name: string,
 }
 
 
 /**
- * The language-content object represents text content for STIX Objects represented in languages other than that of the original object. 
+ * A marking of parts of an object: the properties its selectors name, marked either by a marking definition or with a language.
  */
-export interface LanguageContent extends Core {
-    /** STIX object type. */
-    type: string,
-    /** STIX object identifier. */
-    id: string,
-    /** Single object reference. */
-    object_ref: string,
-    /** Referenced object modified timestamp. */
-    object_modified?: string,
-    /** Language content dictionary payload. */
-    contents: string,
+export interface StixGranularMarking {
+    /** The marking_ref property specifies the ID of the marking-definition object that describes the marking. */
+    marking_ref?: StixMarkingDefinitionId,
+    /** A list of selectors for content contained within the STIX object in which this property appears. */
+    selectors: string[],
+    /** The language of the text content, as an RFC 5646 language code. */
+    lang?: string,
 }
 
 
 /**
- * The marking-definition object represents a specific marking. 
+ * The definition of a statement marking: a statement, such as a copyright or terms of use.
  */
-export interface MarkingDefinition extends CommonSchemaComponent {
-    /** STIX object type. */
-    type: string,
-    /** STIX specification version. */
-    spec_version: string,
-    /** STIX object identifier. */
-    id: string,
-    /** Human-readable name. */
-    name?: string,
-    /** ID of the object that created this object. */
-    created_by_ref?: string,
-    /** Creation timestamp. */
-    created: string,
-    /** External references to non-STIX information. */
-    external_references?: ExternalReference[],
-    /** Marking definition references applied to this object. */
-    object_marking_refs?: string[],
-    /** Granular markings that apply to selected content. */
-    granular_markings?: GranularMarking[],
-    /** Open-ended extension payloads. */
-    extensions?: string[],
-    /** Type discriminator for marking definition content. */
-    definition_type?: string,
-    /** Marking definition payload. */
-    definition?: string,
-    /** A statement (e.g., copyright, terms of use) applied to the content marked by this marking definition. */
-    statement?: string,
+export interface StixStatementMarking {
+    /** A statement, such as a copyright or terms of use, that applies to the marked content. */
+    statement: string,
 }
 
 
 /**
- * Rules for custom properties 
+ * The definition of a Traffic Light Protocol (TLP) marking: its level.
  */
-export interface Properties extends CommonSchemaComponent {
+export interface StixTlpMarking {
+    /** The Traffic Light Protocol level. */
+    tlp: string,
 }
 
 
 /**
- * Represents timestamps across the CTI specifications. The format is an RFC3339 timestamp, with a required timezone specification of 'Z'. 
+ * An extension of an object that an extension definition defines. Besides its extension type it carries the properties that its definition's schema states.
  */
-export interface Timestamp extends CommonSchemaComponent {
+export interface StixExtension {
+    /** The kind of extension, as the extension's definition declares it. */
+    extension_type: string,
 }
 
 
 /**
- * Matches a URI according to RFC 3986. 
+ * A dictionary of hashes. Each key names a hash algorithm, from the hash-algorithm-ov vocabulary (StixHashAlgorithm) or a custom one, and each value is the hash as a string.
  */
-export interface UrlRegex extends CommonSchemaComponent {
+export interface StixHashes {
 }
 
 
 /**
- * The Artifact Object permits capturing an array of bytes (8-bits), as a base64-encoded string string, or linking to a file-like payload. 
+ * A dictionary of extensions, keyed by an extension definition's identifier.
  */
-export interface Artifact extends CyberObservableObject {
-    /** MIME type value. */
+export interface StixExtensions {
+}
+
+
+/**
+ * A dictionary of key and value pairs that STIX leaves open.
+ */
+export interface StixDictionary {
+}
+
+
+/**
+ * The translations of a language content object, keyed by language code. Each value maps the translated properties to their translations.
+ */
+export interface StixLanguageContents {
+}
+
+
+/**
+ * An array of bytes, carried as base64 in payload_bin, or a link to a file-like payload.
+ */
+export interface StixArtifact extends StixCyberObservableObject {
+    /** The MIME type of the content, as the IANA Media Types registry names it. */
     mime_type?: string,
-    /** Base64 binary payload. */
+    /** Specifies the binary data contained in the artifact as a base64-encoded string. */
     payload_bin?: string,
-    /** A URL reference to an external resource. */
+    /** A URL. */
     url?: string,
-    /** Specifies a dictionary of hashes for the file or content. */
-    hashes?: HashesType,
-    /** Artifact encryption algorithm. */
+    /** A dictionary of hashes of the content, keyed by hash algorithm. */
+    hashes?: StixHashes,
+    /** If the artifact is encrypted, specifies the type of encryption algorithm the binary data (either via payload_bin or url) is encoded in. */
     encryption_algorithm?: string,
-    /** Decryption key material. */
+    /** Specifies the decryption key for the encrypted binary data (either via payload_bin or url). */
     decryption_key?: string,
 }
 
 
 /**
- * The AS object represents the properties of an Autonomous Systems (AS). 
+ * The AS object represents the properties of an Autonomous Systems (AS).
  */
-export interface AutonomousSystem extends CyberObservableObject {
-    /** Numeric identifier value. */
+export interface StixAutonomousSystem extends StixCyberObservableObject {
+    /** Specifies the number assigned to the AS. Such assignments are typically performed by a Regional Internet Registries (RIR). */
     number: number,
-    /** Human-readable name. */
+    /** A name that identifies the object. */
     name?: string,
-    /** Regional Internet Registry name. */
+    /** Specifies the name of the Regional Internet Registry (RIR) that assigned the number to the AS. */
     rir?: string,
 }
 
 
 /**
- * The Directory Object represents the properties common to a file system directory. 
+ * The Directory Object represents the properties common to a file system directory.
  */
-export interface Directory extends CyberObservableObject {
-    /** Filesystem path. */
+export interface StixDirectory extends StixCyberObservableObject {
+    /** A path, as it was observed. */
     path: string,
-    /** Encoding used for a filesystem path. */
+    /** Specifies the observed encoding for the path. */
     path_enc?: string,
-    /** Creation time. */
+    /** The time at which the object was created. */
     ctime?: string,
-    /** Last modification time. */
+    /** The time at which the object was last written to. */
     mtime?: string,
-    /** Last access time. */
+    /** The time at which the object was last accessed. */
     atime?: string,
-    /** References to contained objects. */
-    contains_refs?: string[],
+    /** References to other cyber-observable objects that this one contains. */
+    contains_refs?: StixCyberObservableObjectId[],
 }
 
 
 /**
- * The Domain Name represents the properties of a network domain name. 
+ * The Domain Name represents the properties of a network domain name.
  */
-export interface DomainName extends CyberObservableObject {
-    /** Canonical string value for simple cyber observables. */
+export interface StixDomainName extends StixCyberObservableObject {
+    /** The value of the observable, in the form each class states. */
     value: string,
-    /** References this observable resolves to. */
-    resolves_to_refs?: string[],
+    /** References to the cyber-observable objects that this one resolves to. */
+    resolves_to_refs?: StixCyberObservableObjectId[],
 }
 
 
 /**
- * The Email Address Object represents a single email address. 
+ * The Email Address Object represents a single email address.
  */
-export interface EmailAddr extends CyberObservableObject {
-    /** Canonical string value for simple cyber observables. */
+export interface StixEmailAddress extends StixCyberObservableObject {
+    /** The value of the observable, in the form each class states. */
     value: string,
-    /** Human-friendly display name. */
+    /** A name for display. */
     display_name?: string,
-    /** Single reference this observable belongs to. */
-    belongs_to_ref?: string,
+    /** Specifies the user account that the email address belongs to, as a reference to a User Account Object. */
+    belongs_to_ref?: StixUserAccountId,
 }
 
 
 /**
- * The Email Message Object represents an instance of an email message. 
+ * The Email Message Object represents an instance of an email message.
  */
-export interface EmailMessage extends CyberObservableObject {
-    /** Date/time the email message was sent. */
-    email_date?: string,
-    /** Specifies the value of the 'Content-Type' header of the email message. */
+export interface StixEmailMessage extends StixCyberObservableObject {
+    /** Specifies the date/time that the email message was sent. */
+    date?: string,
+    /** The value of a Content-Type header field. */
     content_type?: string,
-    /** Sender mailbox reference. */
-    from_ref?: string,
-    /** Sender reference. */
-    sender_ref?: string,
-    /** To-recipient references. */
-    to_refs?: string[],
-    /** Cc-recipient references. */
-    cc_refs?: string[],
-    /** Bcc-recipient references. */
-    bcc_refs?: string[],
-    /** Message identifier field. */
+    /** Specifies the value of the 'From:' header of the email message. */
+    from_ref?: StixEmailAddressId,
+    /** Specifies the value of the 'From' field of the email message. */
+    sender_ref?: StixEmailAddressId,
+    /** Specifies the mailboxes that are 'To:' recipients of the email message. */
+    to_refs?: StixEmailAddressId[],
+    /** Specifies the mailboxes that are 'CC:' recipients of the email message. */
+    cc_refs?: StixEmailAddressId[],
+    /** Specifies the mailboxes that are 'BCC:' recipients of the email message. */
+    bcc_refs?: StixEmailAddressId[],
+    /** Specifies the Message-ID field of the email message. */
     message_id?: string,
-    /** Subject value. */
+    /** A subject, as a string; each class says of what. */
     subject?: string,
-    /** Received header lines. */
+    /** Specifies one or more Received header fields that may be included in the email headers. */
     received_lines?: string[],
-    /** Additional email headers. */
-    additional_header_fields?: string,
-    /** Reference to raw email artifact. */
-    raw_email_ref?: string,
+    /** Specifies any other header fields found in the email message, as a dictionary. */
+    additional_header_fields?: StixDictionary,
+    /** Specifies the raw binary contents of the email message, including both the headers and body, as a reference to an Artifact Object. */
+    raw_email_ref?: StixArtifactId,
     /** Indicates whether the email body contains multiple MIME parts. */
-    is_multipart?: boolean,
-    /** Specifies a string containing the email body. This field MAY only be used if is_multipart is false. */
+    is_multipart: boolean,
+    /** A body of text. */
     body?: string,
-    /** List of MIME parts comprising the email body (multipart emails only). */
-    body_multipart?: MimePartType[],
+    /** The MIME parts that make up a multipart email body. */
+    body_multipart?: StixMimePart[],
 }
 
 
 /**
- * The File Object represents the properties of a file. 
+ * The File Object represents the properties of a file.
  */
-export interface File extends CyberObservableObject {
-    /** STIX object type. */
-    type: string,
-    /** STIX object identifier. */
-    id: string,
-    /** Specifies a dictionary of hashes for the file or content. */
-    hashes?: HashesType,
-    /** Object size in bytes. */
+export interface StixFile extends StixCyberObservableObject {
+    /** A dictionary of hashes of the content, keyed by hash algorithm. */
+    hashes?: StixHashes,
+    /** A size in bytes, as a non-negative integer. */
     size?: number,
-    /** Human-readable name. */
+    /** A name that identifies the object. */
     name?: string,
-    /** Encoding for a name field. */
+    /** Specifies the observed encoding for the name of the file. */
     name_enc?: string,
-    /** Hex magic number. */
+    /** Specifies the hexadecimal constant ('magic number') associated with a specific file format that corresponds to the file, if applicable. */
     magic_number_hex?: string,
-    /** MIME type value. */
+    /** The MIME type of the content, as the IANA Media Types registry names it. */
     mime_type?: string,
-    /** Creation time. */
+    /** The time at which the object was created. */
     ctime?: string,
-    /** Last modification time. */
+    /** The time at which the object was last written to. */
     mtime?: string,
-    /** Last access time. */
+    /** The time at which the object was last accessed. */
     atime?: string,
-    /** Parent directory reference. */
-    parent_directory_ref?: string,
-    /** References to contained objects. */
-    contains_refs?: string[],
-    /** Referenced content object. */
-    content_ref?: string,
-    /** Open-ended extension payloads. */
-    extensions?: string[],
+    /** Specifies the parent directory of the file, as a reference to a Directory Object. */
+    parent_directory_ref?: StixDirectoryId,
+    /** References to other cyber-observable objects that this one contains. */
+    contains_refs?: StixCyberObservableObjectId[],
+    /** Specifies the content of the file, represented as an Artifact Object. */
+    content_ref?: StixArtifactId,
 }
 
 
 /**
- * The IPv4 Address Object represents one or more IPv4 addresses expressed using CIDR notation. 
+ * The IPv4 Address Object represents one or more IPv4 addresses expressed using CIDR notation.
  */
-export interface Ipv4Addr extends CyberObservableObject {
-    /** Canonical string value for simple cyber observables. */
+export interface StixIpv4Address extends StixCyberObservableObject {
+    /** The value of the observable, in the form each class states. */
     value: string,
-    /** References this observable resolves to. */
-    resolves_to_refs?: string[],
-    /** References this observable belongs to. */
-    belongs_to_refs?: string[],
+    /** References to the cyber-observable objects that this one resolves to. */
+    resolves_to_refs?: StixMacAddressId[],
+    /** References to the autonomous systems that this address belongs to. */
+    belongs_to_refs?: StixAutonomousSystemId[],
 }
 
 
 /**
- * The IPv6 Address Object represents one or more IPv6 addresses expressed using CIDR notation. 
+ * The IPv6 Address Object represents one or more IPv6 addresses expressed using CIDR notation.
  */
-export interface Ipv6Addr extends CyberObservableObject {
-    /** Canonical string value for simple cyber observables. */
+export interface StixIpv6Address extends StixCyberObservableObject {
+    /** The value of the observable, in the form each class states. */
     value: string,
-    /** References this observable resolves to. */
-    resolves_to_refs?: string[],
-    /** References this observable belongs to. */
-    belongs_to_refs?: string[],
+    /** References to the cyber-observable objects that this one resolves to. */
+    resolves_to_refs?: StixMacAddressId[],
+    /** References to the autonomous systems that this address belongs to. */
+    belongs_to_refs?: StixAutonomousSystemId[],
 }
 
 
 /**
- * The MAC Address Object represents a single Media Access Control (MAC) address. 
+ * The MAC Address Object represents a single Media Access Control (MAC) address.
  */
-export interface MacAddr extends CyberObservableObject {
-    /** Canonical string value for simple cyber observables. */
+export interface StixMacAddress extends StixCyberObservableObject {
+    /** The value of the observable, in the form each class states. */
     value: string,
 }
 
 
 /**
- * The Mutex Object represents the properties of a mutual exclusion (mutex) object. 
+ * The Mutex Object represents the properties of a mutual exclusion (mutex) object.
  */
-export interface Mutex extends CyberObservableObject {
+export interface StixMutex extends StixCyberObservableObject {
+    /** A name that identifies the object. */
+    name: string,
 }
 
 
 /**
- * The Network Traffic Object represents arbitrary network traffic that originates from a source and is addressed to a destination. 
+ * The Network Traffic Object represents arbitrary network traffic that originates from a source and is addressed to a destination.
  */
-export interface NetworkTraffic extends CyberObservableObject {
-    /** Network traffic start time. */
+export interface StixNetworkTraffic extends StixCyberObservableObject {
+    /** Specifies the date/time the network traffic was initiated, if known. */
     start?: string,
-    /** Network traffic end time. */
+    /** Specifies the date/time the network traffic ended, if known. */
     end?: string,
-    /** Source observable reference. */
-    src_ref?: string,
-    /** Destination observable reference. */
-    dst_ref?: string,
-    /** Source port number. */
+    /** Specifies the source of the network traffic, as a reference to an Observable Object. */
+    src_ref?: StixCyberObservableObjectId,
+    /** Specifies the destination of the network traffic, as a reference to an Observable Object. */
+    dst_ref?: StixCyberObservableObjectId,
+    /** The source port of the traffic. */
     src_port?: number,
-    /** Destination port number. */
+    /** The destination port of the traffic. */
     dst_port?: number,
-    /** Network protocols list. */
+    /** Specifies the protocols observed in the network traffic, along with their corresponding state. */
     protocols: string[],
-    /** Bytes sent source to destination. */
+    /** Specifies the number of bytes sent from the source to the destination. */
     src_byte_count?: number,
-    /** Bytes sent destination to source. */
+    /** Specifies the number of bytes sent from the destination to the source. */
     dst_byte_count?: number,
-    /** Source-to-destination packet count. */
+    /** Specifies the number of packets sent from the source to the destination. */
     src_packets?: number,
-    /** Destination-to-source packet count. */
+    /** Specifies the number of packets sent destination to the source. */
     dst_packets?: number,
     /** Specifies any IP Flow Information Export (IPFIX) data for the traffic. */
-    ipfix?: string,
-    /** Source payload reference. */
-    src_payload_ref?: string,
-    /** Destination payload reference. */
-    dst_payload_ref?: string,
-    /** Referenced encapsulated network-traffic objects. */
-    encapsulates_refs?: string[],
-    /** Referencing encapsulating network-traffic object. */
-    encapsulated_by_ref?: string,
-    /** Indicates traffic is still active. */
+    ipfix?: StixDictionary,
+    /** Specifies the bytes sent from the source to the destination. */
+    src_payload_ref?: StixArtifactId,
+    /** Specifies the bytes sent from the source to the destination. */
+    dst_payload_ref?: StixArtifactId,
+    /** Links to other network-traffic objects encapsulated by a network-traffic. */
+    encapsulates_refs?: StixNetworkTrafficId[],
+    /** Links to another network-traffic object which encapsulates this object. */
+    encapsulated_by_ref?: StixNetworkTrafficId,
+    /** Indicates whether the network traffic is still ongoing. */
     is_active?: boolean,
 }
 
 
 /**
- * The Process Object represents common properties of an instance of a computer program as executed on an operating system. 
+ * The Process Object represents common properties of an instance of a computer program as executed on an operating system.
  */
-export interface Process extends CyberObservableObject {
+export interface StixProcess extends StixCyberObservableObject {
     /** Specifies whether the process is hidden. */
     is_hidden?: boolean,
     /** Specifies the Process ID, or PID, of the process. */
     pid?: number,
-    /** Process creation time. */
+    /** Specifies the date/time at which the process was created. */
     created_time?: string,
-    /** Current working directory. */
+    /** Specifies the current working directory of the process. */
     cwd?: string,
-    /** Process command line. */
+    /** Specifies the full command line used in executing the process, including the process name (which may be specified individually via the binary_ref.name property) and any arguments. */
     command_line?: string,
-    /** Environment variable payload. */
-    environment_variables?: string,
-    /** Referenced opened network connections. */
-    opened_connection_refs?: string[],
-    /** Creating user reference. */
-    creator_user_ref?: string,
-    /** Process image file reference. */
-    image_ref?: string,
-    /** Parent process reference. */
-    parent_ref?: string,
-    /** Child process references. */
-    child_refs?: string[],
+    /** Specifies the list of environment variables associated with the process as a dictionary. */
+    environment_variables?: StixDictionary,
+    /** Specifies the list of network connections opened by the process, as a reference to one or more Network Traffic Objects. */
+    opened_connection_refs?: StixNetworkTrafficId[],
+    /** A reference to the user account that created the object. */
+    creator_user_ref?: StixUserAccountId,
+    /** Specifies the executable binary that was executed as the process image, as a reference to a File Object. */
+    image_ref?: StixFileId,
+    /** Specifies the other process that spawned (i.e. is the parent of) this one, as represented by a Process Object. */
+    parent_ref?: StixProcessId,
+    /** Specifies the other processes that were spawned by (i.e. children of) this process, as a reference to one or more other Process Objects. */
+    child_refs?: StixProcessId[],
 }
 
 
 /**
- * The Software Object represents high-level properties associated with software, including software products. 
+ * The Software Object represents high-level properties associated with software, including software products.
  */
-export interface Software extends CyberObservableObject {
-    /** Specifies the Common Platform Enumeration (CPE) entry for the software. */
+export interface StixSoftware extends StixCyberObservableObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** The Common Platform Enumeration (CPE) 2.3 name of the software, if it has one. */
     cpe?: string,
-    /** SWID tag value. */
+    /** Specifies the Software Identification (SWID) Tags entry for the software, if available. */
     swid?: string,
-    /** Specifies the languages supported by the software. */
+    /** The languages the software supports, as RFC 5646 language codes. */
     languages?: string[],
-    /** Vendor name. */
+    /** Specifies the name of the vendor of the software. */
     vendor?: string,
-    /** Version string. */
+    /** A version, as a string; each class says of what. */
     version?: string,
 }
 
 
 /**
- * The URL Object represents the properties of a uniform resource locator (URL). 
+ * The URL Object represents the properties of a uniform resource locator (URL).
  */
-export interface Url extends CyberObservableObject {
-    /** Canonical string value for simple cyber observables. */
+export interface StixUrl extends StixCyberObservableObject {
+    /** The value of the observable, in the form each class states. */
     value: string,
 }
 
 
 /**
- * The User Account Object represents an instance of any type of user account, including but not limited to operating system, device, messaging service, and social media platform accounts. 
+ * The User Account Object represents an instance of any type of user account, including but not limited to operating system, device, messaging service, and social media platform accounts.
  */
-export interface UserAccount extends CyberObservableObject {
-    /** User account identifier. */
+export interface StixUserAccount extends StixCyberObservableObject {
+    /** Specifies the identifier of the account. */
     user_id?: string,
-    /** Account credential value. */
+    /** A cleartext credential, such as a hard-coded password that malware tries for lateral movement. */
     credential?: string,
-    /** Account login string. */
+    /** Specifies the account login string, used in cases where the user_id property specifies something other than what a user would type when they login. */
     account_login?: string,
-    /** Account type value (account-type-ov). */
+    /** The type of the account, such as unix or ldap. */
     account_type?: string,
-    /** Human-friendly display name. */
+    /** A name for display. */
     display_name?: string,
-    /** Service account flag. */
+    /** Indicates that the account is associated with a network service or system process (daemon), not a specific individual. */
     is_service_account?: boolean,
-    /** Privileged account flag. */
+    /** Specifies that the account has elevated privileges (i.e., in the case of root on Unix or the Windows Administrator account). */
     is_privileged?: boolean,
-    /** Privilege escalation capability flag. */
+    /** Specifies that the account has the ability to escalate privileges (i.e., in the case of sudo on Unix or a Windows Domain Admin account). */
     can_escalate_privs?: boolean,
-    /** Disabled account flag. */
+    /** Specifies if the account is disabled. */
     is_disabled?: boolean,
-    /** Account creation timestamp. */
+    /** Specifies when the account was created. */
     account_created?: string,
-    /** Account expiration timestamp. */
+    /** Specifies the expiration date of the account. */
     account_expires?: string,
-    /** Credential last-changed timestamp. */
+    /** Specifies when the account credential was last changed. */
     credential_last_changed?: string,
-    /** Account first-login timestamp. */
+    /** Specifies when the account was first accessed. */
     account_first_login?: string,
-    /** Account last-login timestamp. */
+    /** Specifies when the account was last accessed. */
     account_last_login?: string,
 }
 
 
 /**
- * Structured value entry under a Windows registry key.
+ * The Registry Key Object represents the properties of a Windows registry key.
  */
-export interface WindowsRegistryValue extends CommonSchemaComponent {
-    /** Registry value name. */
-    registry_value_name?: string,
-    /** Registry value data content. */
-    registry_value_data?: string,
-    /** Registry value data type. */
-    registry_value_data_type?: string,
+export interface StixWindowsRegistryKey extends StixCyberObservableObject {
+    /** Specifies the full registry key including the hive. */
+    key?: string,
+    /** Specifies the values found under the registry key. */
+    values?: StixWindowsRegistryValue[],
+    /** Specifies the last date/time that the registry key was modified. */
+    modified_time?: string,
+    /** A reference to the user account that created the object. */
+    creator_user_ref?: StixUserAccountId,
+    /** Specifies the number of subkeys contained under the registry key. */
+    number_of_subkeys?: number,
 }
 
 
 /**
- * Specifies a component of a multi-part email body as defined in the email-message observable.
+ * The X509 Certificate Object represents the properties of an X.509 certificate.
  */
-export interface MimePartType extends CommonSchemaComponent {
-    /** Specifies a string containing the email body. This field MAY only be used if is_multipart is false. */
-    body?: string,
-    /** Reference to an Artifact or File object for non-textual MIME part content. */
-    body_raw_ref?: string,
-    /** Specifies the value of the 'Content-Type' header of the email message. */
-    content_type?: string,
-    /** Value of the Content-Disposition header field of the MIME part. */
-    content_disposition?: string,
+export interface StixX509Certificate extends StixCyberObservableObject {
+    /** Specifies whether the certificate is self-signed, i.e., whether it is signed by the same entity whose identity it certifies. */
+    is_self_signed?: boolean,
+    /** A dictionary of hashes of the content, keyed by hash algorithm. */
+    hashes?: StixHashes,
+    /** A version, as a string; each class says of what. */
+    version?: string,
+    /** Specifies the unique identifier for the certificate, as issued by a specific Certificate Authority. */
+    serial_number?: string,
+    /** Specifies the name of the algorithm used to sign the certificate. */
+    signature_algorithm?: string,
+    /** Specifies the name of the Certificate Authority that issued the certificate. */
+    issuer?: string,
+    /** Specifies the date on which the certificate validity period begins. */
+    validity_not_before?: string,
+    /** Specifies the date on which the certificate validity period ends. */
+    validity_not_after?: string,
+    /** A subject, as a string; each class says of what. */
+    subject?: string,
+    /** Specifies the name of the algorithm with which to encrypt data being sent to the subject. */
+    subject_public_key_algorithm?: string,
+    /** Specifies the modulus portion of the subject's public RSA key. */
+    subject_public_key_modulus?: string,
+    /** Specifies the exponent portion of the subject's public RSA key, as an integer. */
+    subject_public_key_exponent?: number,
+    /** Specifies any standard X.509 v3 extensions that may be used in the certificate. */
+    x509_v3_extensions?: StixX509V3Extensions,
 }
 
 
 /**
- * The Windows Process extension specifies properties specific to Windows processes. Used as the value of the 'windows-process-ext' key in a Process object's extensions dictionary.
+ * The NTFS file extension specifies a default extension for capturing properties specific to the storage of the file on the NTFS file system.
  */
-export interface WindowsProcessExt extends CommonSchemaComponent {
+export interface StixNtfsExtension {
+    /** Specifies the security ID (SID) value assigned to the file. */
+    sid?: string,
+    /** Specifies a list of NTFS alternate data streams that exist for the file. */
+    alternate_data_streams?: StixAlternateDataStream[],
+}
+
+
+/**
+ * The Raster Image file extension specifies a default extension for capturing properties specific to image files.
+ */
+export interface StixRasterImageExtension {
+    /** Specifies the height of the image in the image file, in pixels. */
+    image_height?: number,
+    /** Specifies the width of the image in the image file, in pixels. */
+    image_width?: number,
+    /** Specifies the sum of bits used for each color channel in the image in the image file, and thus the total number of pixels used for expressing the color depth of the image. */
+    bits_per_pixel?: number,
+    /** Specifies the set of EXIF tags found in the image file, as a dictionary. Each key/value pair in the dictionary represents the name/value of a single EXIF tag. */
+    exif_tags?: StixExifTags,
+}
+
+
+/**
+ * The PDF file extension specifies a default extension for capturing properties specific to PDF files.
+ */
+export interface StixPdfExtension {
+    /** A version, as a string; each class says of what. */
+    version?: string,
+    /** Specifies whether the PDF file has been optimized. */
+    is_optimized?: boolean,
+    /** Specifies details of the PDF document information dictionary (DID), which includes properties like the document creation data and producer, as a dictionary. */
+    document_info_dict?: StixPdfDocumentInfo,
+    /** Specifies the first file identifier found for the PDF file. */
+    pdfid0?: string,
+    /** Specifies the second file identifier found for the PDF file. */
+    pdfid1?: string,
+}
+
+
+/**
+ * The Archive File extension specifies a default extension for capturing properties specific to archive files.
+ */
+export interface StixArchiveExtension {
+    /** References to other cyber-observable objects that this one contains. */
+    contains_refs: StixCyberObservableObjectId[],
+    /** Specifies a comment included as part of the archive file. */
+    comment?: string,
+}
+
+
+/**
+ * The Windows PE Binary File extension specifies a default extension for capturing properties specific to Windows portable executable (PE) files.
+ */
+export interface StixWindowsPeBinaryExtension {
+    /** The type of the PE binary, such as exe or dll. */
+    pe_type: string,
+    /** Specifies the special import hash, or 'imphash', calculated for the PE Binary based on its imported libraries and functions. */
+    imphash?: string,
+    /** Specifies the type of target machine. */
+    machine_hex?: string,
+    /** Specifies the number of sections in the PE binary, as a non-negative integer. */
+    number_of_sections?: number,
+    /** The time at which the PE binary was created. */
+    time_date_stamp?: string,
+    /** Specifies the file offset of the COFF symbol table. */
+    pointer_to_symbol_table_hex?: string,
+    /** Specifies the number of entries in the symbol table of the PE binary, as a non-negative integer. */
+    number_of_symbols?: number,
+    /** Specifies the size of the optional header of the PE binary. */
+    size_of_optional_header?: number,
+    /** Specifies the flags that indicate the file's characteristics. */
+    characteristics_hex?: string,
+    /** Specifies any hashes that were computed for the file header. */
+    file_header_hashes?: StixHashes,
+    /** Specifies the PE optional header of the PE binary. */
+    optional_header?: StixWindowsPeOptionalHeader,
+    /** Specifies metadata about the sections in the PE file. */
+    sections?: StixWindowsPeSection[],
+}
+
+
+/**
+ * The HTTP request extension specifies a default extension for capturing network traffic properties specific to HTTP requests.
+ */
+export interface StixHttpRequestExtension {
+    /** Specifies the HTTP method portion of the HTTP request line, as a lowercase string. */
+    request_method: string,
+    /** Specifies the value (typically a resource path) portion of the HTTP request line. */
+    request_value: string,
+    /** Specifies the HTTP version portion of the HTTP request line, as a lowercase string. */
+    request_version?: string,
+    /** Specifies all of the HTTP header fields that may be found in the HTTP client request, as a dictionary. */
+    request_header?: StixDictionary,
+    /** Specifies the length of the HTTP message body, if included, in bytes. */
+    message_body_length?: number,
+    /** Specifies the data contained in the HTTP message body, if included. */
+    message_body_data_ref?: StixArtifactId,
+}
+
+
+/**
+ * The ICMP extension specifies a default extension for capturing network traffic properties specific to ICMP.
+ */
+export interface StixIcmpExtension {
+    /** Specifies the ICMP type byte. */
+    icmp_type_hex: string,
+    /** Specifies the ICMP code byte. */
+    icmp_code_hex: string,
+}
+
+
+/**
+ * The Network Socket extension specifies a default extension for capturing network traffic properties associated with network sockets.
+ */
+export interface StixSocketExtension {
+    /** Specifies the address family (AF_*) that the socket is configured for. */
+    address_family: string,
+    /** Specifies whether the socket is in blocking mode. */
+    is_blocking?: boolean,
+    /** Specifies whether the socket is in listening mode. */
+    is_listening?: boolean,
+    /** Specifies any options (SO_*) that may be used by the socket, as a dictionary. */
+    options?: StixSocketOptions,
+    /** Specifies the type of the socket. */
+    socket_type?: string,
+    /** Specifies the socket file descriptor value associated with the socket, as a non-negative integer. */
+    socket_descriptor?: number,
+    /** Specifies the handle or inode value associated with the socket. */
+    socket_handle?: number,
+}
+
+
+/**
+ * The TCP extension specifies a default extension for capturing network traffic properties specific to TCP.
+ */
+export interface StixTcpExtension {
+    /** Specifies the source TCP flags, as the union of all TCP flags observed between the start of the traffic (as defined by the start property) and the end of the traffic (as defined by the end property). */
+    src_flags_hex?: string,
+    /** Specifies the destination TCP flags, as the union of all TCP flags observed between the start of the traffic (as defined by the start property) and the end of the traffic (as defined by the end property). */
+    dst_flags_hex?: string,
+}
+
+
+/**
+ * The Windows Process extension specifies a default extension for capturing properties specific to Windows processes.
+ */
+export interface StixWindowsProcessExtension {
     /** Specifies whether Address Space Layout Randomization (ASLR) is enabled for the process. */
     aslr_enabled?: boolean,
     /** Specifies whether Data Execution Prevention (DEP) is enabled for the process. */
@@ -1405,105 +1593,43 @@ export interface WindowsProcessExt extends CommonSchemaComponent {
     owner_sid?: string,
     /** Specifies the title of the main window of the process. */
     window_title?: string,
-    /** Specifies the STARTUP_INFO struct used by the process. */
-    startup_info?: string,
-    /** Specifies the Windows integrity level of the process. */
+    /** Specifies the STARTUP_INFO struct used by the process, as a dictionary. */
+    startup_info?: StixDictionary,
+    /** Specifies the Windows integrity level, or trustworthiness, of the process. */
     integrity_level?: string,
 }
 
 
 /**
- * The Windows Service extension specifies properties specific to Windows services. Used as the value of the 'windows-service-ext' key in a Process object's extensions dictionary.
+ * The Windows Service extension specifies a default extension for capturing properties specific to Windows services.
  */
-export interface WindowsServiceExt extends CommonSchemaComponent {
+export interface StixWindowsServiceExtension {
     /** Specifies the name of the service. */
     service_name?: string,
     /** Specifies the descriptions defined for the service. */
     descriptions?: string[],
-    /** Human-friendly display name. */
+    /** A name for display. */
     display_name?: string,
     /** Specifies the name of the load ordering group of which the service is a member. */
     group_name?: string,
-    /** Specifies the start options defined for the service. */
+    /** Specifies the start options defined for the service. windows-service-start-enum. */
     start_type?: string,
-    /** Specifies the DLLs loaded by the service. */
-    service_dll_refs?: string[],
-    /** Specifies the type of the service. */
+    /** Specifies the DLLs loaded by the service, as a reference to one or more File Objects. */
+    service_dll_refs?: StixFileId[],
+    /** Specifies the type of the service. windows-service-enum. */
     service_type?: string,
-    /** Specifies the current status of the service. */
+    /** Specifies the current status of the service. windows-service-status-enum. */
     service_status?: string,
 }
 
 
 /**
- * The HTTP Request extension specifies a default extension for capturing network traffic properties specific to HTTP requests. Used as the value of the 'http-request-ext' key in a NetworkTraffic object's extensions dictionary.
+ * The UNIX account extension of a user account: its group, its other groups, its home directory and its shell.
  */
-export interface HttpRequestExt extends CommonSchemaComponent {
-    /** Specifies the HTTP method portion of the HTTP request line. */
-    request_method: string,
-    /** Specifies the value (typically a resource path) portion of the HTTP request line. */
-    request_value: string,
-    /** Specifies the HTTP version portion of the HTTP request line. */
-    request_version?: string,
-    /** Specifies all of the HTTP header fields that may be found in the HTTP client request. */
-    request_header?: string,
-    /** Specifies the length of the HTTP message body, if included in the request. */
-    message_body_length?: number,
-    /** Specifies the data contained in the HTTP message body, as a reference to an Artifact object. */
-    message_body_data_ref?: string,
-}
-
-
-/**
- * The ICMP extension specifies a default extension for capturing network traffic properties specific to ICMP. Used as the value of the 'icmp-ext' key in a NetworkTraffic object's extensions dictionary.
- */
-export interface IcmpExt extends CommonSchemaComponent {
-    /** Specifies the ICMP type byte. */
-    icmp_type_hex: string,
-    /** Specifies the ICMP code byte. */
-    icmp_code_hex: string,
-}
-
-
-/**
- * The Socket extension specifies a default extension for capturing network traffic properties specific to network sockets. Used as the value of the 'socket-ext' key in a NetworkTraffic object's extensions dictionary.
- */
-export interface SocketExt extends CommonSchemaComponent {
-    /** Specifies the address family (AF_*) that the socket is configured for. */
-    address_family: string,
-    /** Specifies whether the socket is in blocking mode. */
-    is_blocking?: boolean,
-    /** Specifies whether the socket is in listening mode. */
-    is_listening?: boolean,
-    /** Specifies any options (SO_*) that may be used by the socket. */
-    socket_options?: string,
-    /** Specifies the type of the socket. */
-    socket_type?: string,
-    /** Specifies the socket file descriptor value associated with the socket. */
-    socket_descriptor?: number,
-    /** Specifies the handle or inode value associated with the socket. */
-    socket_handle?: number,
-}
-
-
-/**
- * The TCP extension specifies a default extension for capturing network traffic properties specific to TCP. Used as the value of the 'tcp-ext' key in a NetworkTraffic object's extensions dictionary.
- */
-export interface TcpExt extends CommonSchemaComponent {
-    /** Specifies the source TCP flags, as the union of all TCP flags observed between the start and end of the session. */
-    src_flags_hex?: string,
-    /** Specifies the destination TCP flags, as the union of all TCP flags observed between the start and end of the session. */
-    dst_flags_hex?: string,
-}
-
-
-/**
- * The Unix Account extension specifies a default extension for capturing the additional information for an account on a Unix system. Used as the value of the 'unix-account-ext' key in a UserAccount object's extensions dictionary.
- */
-export interface UnixAccountExt extends CommonSchemaComponent {
+export interface StixUnixAccountExtension {
     /** Specifies the primary group ID of the account. */
     gid?: number,
-    /** Specifies a list of names of groups the account is a member of. */
+    /** Specifies a list of names of groups that the account is a member of. */
     groups?: string[],
     /** Specifies the home directory of the account. */
     home_dir?: string,
@@ -1513,131 +1639,38 @@ export interface UnixAccountExt extends CommonSchemaComponent {
 
 
 /**
- * Specifies any standard X.509 v3 extensions that may be used in the certificate.
+ * An NTFS alternate data stream of a file.
  */
-export interface X509V3ExtensionsType extends CommonSchemaComponent {
-    /** Specifies a multi-valued extension which indicates whether a certificate is a CA certificate. */
-    basic_constraints?: string,
-    /** Specifies a namespace within which all subject names in subsequent certificates in a certification path must be located. */
-    name_constraints?: string,
-    /** Specifies any constraints on path validation for certificates issued to CAs. */
-    policy_constraints?: string,
-    /** Specifies a multi-valued extension consisting of a list of names of the permitted key usages. */
-    key_usage?: string,
-    /** Specifies a list of usages indicating purposes for which the certificate public key can be used. */
-    extended_key_usage?: string,
-    /** Specifies the identifier that provides a means of identifying certificates that contain a particular public key. */
-    subject_key_identifier?: string,
-    /** Specifies the identifier that provides a means of identifying the public key corresponding to the private key used to sign a certificate. */
-    authority_key_identifier?: string,
-    /** Specifies the additional identities to be bound to the subject of the certificate. */
-    subject_alternative_name?: string,
-    /** Specifies the additional identities to be bound to the issuer of the certificate. */
-    issuer_alternative_name?: string,
-    /** Specifies the identification attributes (e.g., nationality) of the subject. */
-    subject_directory_attributes?: string,
-    /** Specifies how CRL information is obtained. */
-    crl_distribution_points?: string,
-    /** Specifies the number of additional certificates that may appear in the path before anyPolicy is no longer permitted. */
-    inhibit_any_policy?: string,
-    /** Specifies the date on which the validity period begins for the private key, if it is different from the validity period of the certificate. */
-    private_key_usage_period_not_before?: string,
-    /** Specifies the date on which the validity period ends for the private key, if it is different from the validity period of the certificate. */
-    private_key_usage_period_not_after?: string,
-    /** Specifies a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. */
-    certificate_policies?: string,
-    /** Specifies one or more pairs of OIDs; each pair includes an issuerDomainPolicy and a subjectDomainPolicy. */
-    policy_mappings?: string,
+export interface StixAlternateDataStream {
+    /** A name that identifies the object. */
+    name: string,
+    /** A dictionary of hashes of the content, keyed by hash algorithm. */
+    hashes?: StixHashes,
+    /** A size in bytes, as a non-negative integer. */
+    size?: number,
 }
 
 
 /**
- * Specifies properties of an NTFS alternate data stream.
+ * A section of a Windows PE binary.
  */
-export interface AlternateDataStreamType extends CommonSchemaComponent {
-    /** Specifies the name of the alternate data stream. */
-    ads_name: string,
-    /** Specifies the size of the alternate data stream, in bytes. */
-    ads_size?: number,
-    /** Specifies a dictionary of hashes for the alternate data stream. */
-    ads_hashes?: HashesType,
-}
-
-
-/**
- * The NTFS extension specifies a default extension for capturing properties specific to the storage of the file on the NTFS file system.
- */
-export interface NtfsExt extends CommonSchemaComponent {
-    /** Specifies the security ID (SID) value assigned to the file. */
-    sid?: string,
-    /** Specifies a list of NTFS alternate data streams that exist for the file. */
-    alternate_data_streams?: AlternateDataStreamType[],
-}
-
-
-/**
- * The Raster Image extension specifies a default extension for capturing properties specific to raster image files.
- */
-export interface RasterImageExt extends CommonSchemaComponent {
-    /** Specifies the height of the image in the image file, in pixels. */
-    image_height?: number,
-    /** Specifies the width of the image in the image file, in pixels. */
-    image_width?: number,
-    /** Specifies the sum of bits used for each color channel in the image in the image file, and thus the total number of pixels used for expressing the color depth of the image. */
-    bits_per_pixel?: number,
-    /** Specifies the set of EXIF tags found in the image file, as a dictionary. Each key/value pair in the dictionary represents the name/value of a single EXIF tag. */
-    exif_tags?: string,
-}
-
-
-/**
- * The PDF extension specifies a default extension for capturing properties specific to PDF files.
- */
-export interface PdfExt extends CommonSchemaComponent {
-    /** Version string. */
-    version?: string,
-    /** Specifies whether the PDF file has been optimized. */
-    is_optimized?: boolean,
-    /** Specifies details of the PDF document information dictionary (DID), which includes properties like the document creation date and producer, as a dictionary. */
-    document_info_dict?: string,
-    /** Specifies the first file identifier found for the PDF file. */
-    pdfid0?: string,
-    /** Specifies the second file identifier found for the PDF file. */
-    pdfid1?: string,
-}
-
-
-/**
- * The Archive File extension specifies a default extension for capturing properties specific to archive files, such as ZIP.
- */
-export interface ArchiveExt extends CommonSchemaComponent {
-    /** References to contained objects. */
-    contains_refs: string[],
-    /** Specifies a comment included as part of the archive file. */
-    comment?: string,
-}
-
-
-/**
- * The Windows PE Section type specifies metadata about a PE file section.
- */
-export interface WindowsPESection extends CommonSchemaComponent {
-    /** Specifies the name of the PE section. */
-    pe_section_name: string,
-    /** Specifies the size of the PE section, in bytes. */
-    pe_section_size?: number,
+export interface StixWindowsPeSection {
+    /** A name that identifies the object. */
+    name: string,
+    /** A size in bytes, as a non-negative integer. */
+    size?: number,
     /** Specifies the calculated entropy for the section, as calculated using the Shannon algorithm. */
     entropy?: number,
-    /** Specifies any hashes computed over the section. */
-    pe_section_hashes?: HashesType,
+    /** A dictionary of hashes of the content, keyed by hash algorithm. */
+    hashes?: StixHashes,
 }
 
 
 /**
- * The Windows PE Optional Header type represents the properties of the PE optional header. At least one property from this type MUST be included.
+ * The optional header of a Windows PE binary.
  */
-export interface WindowsPEOptionalHeaderType extends CommonSchemaComponent {
-    /** Specifies the unsigned integer that indicates the type of the PE binary (e.g. PE32 or PE32+). */
+export interface StixWindowsPeOptionalHeader {
+    /** Specifies the unsigned integer that indicates the type of the PE binary. */
     magic_hex?: string,
     /** Specifies the linker major version number. */
     major_linker_version?: number,
@@ -1655,7 +1688,7 @@ export interface WindowsPEOptionalHeaderType extends CommonSchemaComponent {
     base_of_code?: number,
     /** Specifies the address that is relative to the image base of the beginning-of-data section when it is loaded into memory. */
     base_of_data?: number,
-    /** Specifies the preferred address of the first byte of the image when it is loaded into memory. */
+    /** Specifies the preferred address of the first byte of the image when loaded into memory. */
     image_base?: number,
     /** Specifies the alignment (in bytes) of PE sections when they are loaded into memory. */
     section_alignment?: number,
@@ -1677,11 +1710,11 @@ export interface WindowsPEOptionalHeaderType extends CommonSchemaComponent {
     win32_version_value_hex?: string,
     /** Specifies the size, in bytes, of the image, including all headers, as the image is loaded in memory. */
     size_of_image?: number,
-    /** Specifies the combined size of the MS-DOS, PE header, and section headers, rounded to a multiple of the value specified in file_alignment. */
+    /** Specifies the combined size of the MS-DOS, PE header, and section headers, rounded up a multiple of the value specified in the file_alignment header. */
     size_of_headers?: number,
     /** Specifies the checksum of the PE binary. */
     checksum_hex?: string,
-    /** Specifies the subsystem (e.g., GUI, device driver, etc.) that is required to run this image. */
+    /** The subsystem, such as a GUI or a device driver, needed to run the image. */
     subsystem_hex?: string,
     /** Specifies the flags that characterize the PE binary. */
     dll_characteristics_hex?: string,
@@ -1697,162 +1730,208 @@ export interface WindowsPEOptionalHeaderType extends CommonSchemaComponent {
     loader_flags_hex?: string,
     /** Specifies the number of data-directory entries in the remainder of the optional header. */
     number_of_rva_and_sizes?: number,
+    /** A dictionary of hashes of the content, keyed by hash algorithm. */
+    hashes?: StixHashes,
 }
 
 
 /**
- * The Windows PE Binary File extension specifies a default extension for capturing properties specific to Windows portable executable (PE) files.
+ * One MIME part of a multipart email body.
  */
-export interface PEBinaryExt extends CommonSchemaComponent {
-    /** Specifies the type of the PE binary. Open Vocabulary - windows-pebinary-type-ov */
-    pe_type: string,
-    /** Specifies the special import hash, or 'imphash', calculated for the PE binary. */
-    imphash?: string,
-    /** Specifies the type of target machine. */
-    machine_hex?: string,
-    /** Specifies the number of sections in the PE binary, as a non-negative integer. */
-    number_of_sections?: number,
-    /** Specifies the time when the PE binary was created. The timestamp value MUST BE precise to the second. */
-    time_date_stamp?: string,
-    /** Specifies the file offset of the COFF symbol table. */
-    pointer_to_symbol_table_hex?: string,
-    /** Specifies the number of entries in the symbol table of the PE binary, as a non-negative integer. */
-    number_of_symbols?: number,
-    /** Specifies the size of the optional header of the PE binary. */
-    size_of_optional_header?: number,
-    /** Specifies the flags that indicate the file's characteristics. */
-    characteristics_hex?: string,
-    /** Specifies any hashes that were computed for the file header. */
-    file_header_hashes?: HashesType,
-    /** Specifies the PE optional header of the PE binary. */
-    optional_header?: WindowsPEOptionalHeaderType,
-    /** Specifies metadata about the sections in the PE file. */
-    sections?: WindowsPESection[],
+export interface StixMimePart {
+    /** A body of text. */
+    body?: string,
+    /** Specifies the contents of non-textual MIME parts, that is those whose content_type does not start with text/, as a reference to an Artifact Object or File Object. */
+    body_raw_ref?: StixCyberObservableObjectId,
+    /** The value of a Content-Type header field. */
+    content_type?: string,
+    /** Specifies the value of the 'Content-Disposition' header field of the MIME part. */
+    content_disposition?: string,
 }
 
 
 /**
- * The Registry Key Object represents the properties of a Windows registry key. 
+ * A value found under a Windows registry key.
  */
-export interface WindowsRegistryKey extends CyberObservableObject {
-    /** Registry key path. */
-    key?: string,
-    /** Registry value entries. */
-    values?: WindowsRegistryValue[],
-    /** Modification timestamp. */
-    modified_time?: string,
-    /** Creating user reference. */
-    creator_user_ref?: string,
-    /** Number of registry subkeys. */
-    number_of_subkeys?: number,
+export interface StixWindowsRegistryValue {
+    /** A name that identifies the object. */
+    name?: string,
+    /** Specifies the data contained in the registry value. */
+    data?: string,
+    /** Specifies the registry (REG_*) data type used in the registry value. */
+    data_type?: string,
 }
 
 
 /**
- * The X509 Certificate Object represents the properties of an X.509 certificate. 
+ * The standard X.509 v3 extensions of a certificate.
  */
-export interface X509Certificate extends CyberObservableObject {
-    /** Specifies whether the certificate is self-signed. */
-    is_self_signed?: boolean,
-    /** Specifies a dictionary of hashes for the file or content. */
-    hashes?: HashesType,
-    /** Version string. */
-    version?: string,
-    /** X509 serial number. */
-    serial_number?: string,
-    /** X509 signature algorithm. */
-    signature_algorithm?: string,
-    /** Certificate issuer. */
-    issuer?: string,
-    /** Certificate validity start. */
-    validity_not_before?: string,
-    /** Certificate validity end. */
-    validity_not_after?: string,
-    /** Subject value. */
-    subject?: string,
-    /** Subject public key algorithm. */
-    subject_public_key_algorithm?: string,
-    /** Subject public key modulus. */
-    subject_public_key_modulus?: string,
-    /** Subject public key exponent. */
-    subject_public_key_exponent?: number,
-    /** X509 v3 extensions payload. */
-    x509_v3_extensions?: X509V3ExtensionsType,
+export interface StixX509V3Extensions {
+    /** Specifies a multi-valued extension which indicates whether a certificate is a CA certificate. */
+    basic_constraints?: string,
+    /** Specifies a namespace within which all subject names in subsequent certificates in a certification path MUST be located. */
+    name_constraints?: string,
+    /** Specifies any constraints on path validation for certificates issued to CAs. */
+    policy_constraints?: string,
+    /** Specifies a multi-valued extension consisting of a list of names of the permitted key usages. */
+    key_usage?: string,
+    /** Specifies a list of usages indicating purposes for which the certificate public key can be used for. */
+    extended_key_usage?: string,
+    /** Specifies the identifier that provides a means of identifying certificates that contain a particular public key. */
+    subject_key_identifier?: string,
+    /** Specifies the identifier that provides a means of identifying the public key corresponding to the private key used to sign a certificate. */
+    authority_key_identifier?: string,
+    /** Specifies the additional identities to be bound to the subject of the certificate. */
+    subject_alternative_name?: string,
+    /** Specifies the additional identities to be bound to the issuer of the certificate. */
+    issuer_alternative_name?: string,
+    /** The identification attributes of the subject, such as nationality. */
+    subject_directory_attributes?: string,
+    /** Specifies how CRL information is obtained. */
+    crl_distribution_points?: string,
+    /** Specifies the number of additional certificates that may appear in the path before anyPolicy is no longer permitted. */
+    inhibit_any_policy?: string,
+    /** Specifies the date on which the validity period begins for the private key, if it is different from the validity period of the certificate. */
+    private_key_usage_period_not_before?: string,
+    /** Specifies the date on which the validity period ends for the private key, if it is different from the validity period of the certificate. */
+    private_key_usage_period_not_after?: string,
+    /** Specifies a sequence of one or more policy information terms, each of which consists of an object identifier (OID) and optional qualifiers. */
+    certificate_policies?: string,
+    /** Specifies one or more pairs of OIDs; each pair includes an issuerDomainPolicy and a subjectDomainPolicy. */
+    policy_mappings?: string,
 }
 
 
 /**
- * Attack Patterns are a type of TTP that describe ways that adversaries attempt to compromise targets. 
+ * The extensions of a file: the predefined ntfs-ext, raster-image-ext, pdf-ext, archive-ext and windows-pebinary-ext, and extensions that an extension definition defines.
  */
-export interface AttackPattern extends StixDomainObject {
-    /** Alternative names for the object. */
+export interface StixFileExtensions {
+}
+
+
+/**
+ * The extensions of network traffic: the predefined http-request-ext, icmp-ext, socket-ext and tcp-ext, and extensions that an extension definition defines.
+ */
+export interface StixNetworkTrafficExtensions {
+}
+
+
+/**
+ * The extensions of a process: the predefined windows-process-ext and windows-service-ext, and extensions that an extension definition defines.
+ */
+export interface StixProcessExtensions {
+}
+
+
+/**
+ * The extensions of a user account: the predefined unix-account-ext, and extensions that an extension definition defines.
+ */
+export interface StixUserAccountExtensions {
+}
+
+
+/**
+ * The options of a network socket, as a dictionary of option names, such as SO_RCVBUF, to integer values.
+ */
+export interface StixSocketOptions {
+}
+
+
+/**
+ * The EXIF tags of an image file, as a dictionary of tag names to string or integer values.
+ */
+export interface StixExifTags {
+}
+
+
+/**
+ * The document information dictionary of a PDF file, as a dictionary of string values.
+ */
+export interface StixPdfDocumentInfo {
+}
+
+
+/**
+ * Attack Patterns are a type of TTP that describe ways that adversaries attempt to compromise targets.
+ */
+export interface StixAttackPattern extends StixDomainObject {
+    /** Other names by which the object is known. */
     aliases?: string[],
-    /** Kill chain phases associated with this object. */
-    kill_chain_phases?: KillChainPhase[],
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** The kill chain phases to which the object corresponds. */
+    kill_chain_phases?: StixKillChainPhase[],
 }
 
 
 /**
- * A Campaign is a grouping of adversary behavior that describes a set of malicious activities or attacks that occur over a period of time against a specific set of targets. 
+ * A Campaign is a grouping of adversary behavior that describes a set of malicious activities or attacks that occur over a period of time against a specific set of targets.
  */
-export interface Campaign extends StixDomainObject {
-    /** Alternative names for the object. */
+export interface StixCampaign extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** Other names by which the object is known. */
     aliases?: string[],
-    /** First time observed. */
+    /** The time at which the object was first seen. */
     first_seen?: string,
-    /** Last time observed. */
+    /** The time at which the object was last seen. */
     last_seen?: string,
-    /** Campaign objective. */
+    /** The campaign's primary goal, objective, desired outcome or intended effect. */
     objective?: string,
 }
 
 
 /**
- * A Course of Action is an action taken either to prevent an attack or to respond to an attack that is in progress. 
+ * A Course of Action is an action taken either to prevent an attack or to respond to an attack that is in progress.
  */
-export interface CourseOfAction extends StixDomainObject {
+export interface StixCourseOfAction extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
 }
 
 
 /**
- * A Grouping object explicitly asserts that the referenced STIX Objects have a shared content. 
+ * A Grouping object explicitly asserts that the referenced STIX Objects have a shared content.
  */
-export interface Grouping extends StixDomainObject {
-    /** Grouping context classifier. */
+export interface StixGrouping extends StixDomainObject {
+    /** A name that identifies the object. */
+    name?: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** A short description of the particular context shared by the content referenced by the Grouping. */
     context: string,
-    /** Referenced STIX objects. */
-    object_refs: string[],
+    /** References to the STIX objects that this object is about or holds. */
+    object_refs: StixObjectId[],
 }
 
 
 /**
- * Identities can represent actual individuals, organizations, or groups (e.g., ACME, Inc.) as well as classes of individuals, organizations, or groups. 
+ * The Incident object in STIX 2.1 is a stub, to be expanded in future STIX 2 releases.
  */
-export interface Identity extends StixDomainObject {
-    /** Open-vocabulary threat actor roles. */
-    roles?: string[],
-    /** Identity class value (identity-class-ov). */
-    identity_class?: string,
-    /** Identity sector values (industry-sector-ov). */
-    sectors?: string[],
-    /** Identity contact information. */
-    contact_information?: string,
+export interface StixIncident extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
 }
 
 
 /**
- * The Incident object in STIX 2.1 is a stub, to be expanded in future STIX 2 releases. 
+ * Indicators contain a pattern that can be used to detect suspicious or malicious cyber activity.
  */
-export interface Incident extends StixDomainObject {
-}
-
-
-/**
- * Indicators contain a pattern that can be used to detect suspicious or malicious cyber activity. 
- */
-export interface Indicator extends StixDomainObject {
-    /** This field is an Open Vocabulary that specifies the type of indicator. Open vocab - indicator-type-ov */
+export interface StixIndicator extends StixDomainObject {
+    /** The kinds of indicator, such as malicious-activity. */
     indicator_types?: string[],
+    /** A name that identifies the object. */
+    name?: string,
+    /** A description of the object, which may be long. */
+    description?: string,
     /** The detection pattern for this indicator. */
     pattern: string,
     /** The type of pattern used in this indicator. */
@@ -1863,759 +1942,830 @@ export interface Indicator extends StixDomainObject {
     valid_from: string,
     /** The time at which this indicator should no longer be considered valuable intelligence. */
     valid_until?: string,
-    /** Kill chain phases associated with this object. */
-    kill_chain_phases?: KillChainPhase[],
+    /** The kill chain phases to which the object corresponds. */
+    kill_chain_phases?: StixKillChainPhase[],
 }
 
 
 /**
- * Infrastructure objects describe systems, software services, and associated physical or virtual resources. 
+ * Infrastructure objects describe systems, software services, and associated physical or virtual resources.
  */
-export interface Infrastructure extends StixDomainObject {
-    /** Open-vocabulary infrastructure categories (infrastructure-type-ov). */
+export interface StixInfrastructure extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** The kinds of infrastructure, such as botnet. */
     infrastructure_types?: string[],
-    /** Alternative names for the object. */
+    /** Other names by which the object is known. */
     aliases?: string[],
-    /** Kill chain phases associated with this object. */
-    kill_chain_phases?: KillChainPhase[],
-    /** First time observed. */
+    /** The kill chain phases to which the object corresponds. */
+    kill_chain_phases?: StixKillChainPhase[],
+    /** The time at which the object was first seen. */
     first_seen?: string,
-    /** Last time observed. */
+    /** The time at which the object was last seen. */
     last_seen?: string,
 }
 
 
 /**
- * An Intrusion Set is a grouped set of adversary behavior and resources with common properties that is believed to be orchestrated by a single organization. 
+ * An Intrusion Set is a grouped set of adversary behavior and resources with common properties that is believed to be orchestrated by a single organization.
  */
-export interface IntrusionSet extends StixDomainObject {
-    /** Alternative names for the object. */
+export interface StixIntrusionSet extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** Other names by which the object is known. */
     aliases?: string[],
-    /** First time observed. */
+    /** The time at which the object was first seen. */
     first_seen?: string,
-    /** Last time observed. */
+    /** The time at which the object was last seen. */
     last_seen?: string,
-    /** Threat actor goals. */
+    /** The high-level goals. */
     goals?: string[],
-    /** Threat actor resource level (attack-resource-level-ov). */
+    /** The organizational level at which the actor typically works. */
     resource_level?: string,
-    /** Primary motivation (attack-motivation-ov). */
+    /** The primary reason, motivation or purpose behind the activity. */
     primary_motivation?: string,
-    /** Secondary motivations (attack-motivation-ov). */
+    /** The secondary reasons, motivations or purposes behind the activity. */
     secondary_motivations?: string[],
 }
 
 
 /**
- * A Location represents a geographic location. The location may be described as any, some or all of the following: region (e.g., North America), civic address (e.g. New York, US), latitude and longitude. 
+ * A geographic location, given as a region, a civic address, a latitude and longitude, or any mix of them.
  */
-export interface Location extends StixDomainObject {
-    /** Latitude in decimal degrees. */
+export interface StixLocation extends StixDomainObject {
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** A name that identifies the object. */
+    name?: string,
+    /** The latitude of the Location in decimal degrees. */
     latitude?: number,
-    /** Longitude in decimal degrees. */
+    /** The longitude of the Location in decimal degrees. */
     longitude?: number,
-    /** Coordinate precision in meters. */
+    /** Defines the precision of the coordinates specified by the latitude and longitude properties, measured in meters. */
     precision?: number,
-    /** Geographic region. */
+    /** The region that this Location describes. */
     region?: string,
-    /** Country name. */
+    /** The country that this Location describes. */
     country?: string,
-    /** Sub-national administrative area. */
+    /** The state, province, or other sub-national administrative area that this Location describes. */
     administrative_area?: string,
-    /** City name. */
+    /** The city that this Location describes. */
     city?: string,
-    /** Street address. */
+    /** The street address that this Location describes. */
     street_address?: string,
-    /** Postal code. */
+    /** The postal code for this Location. */
     postal_code?: string,
 }
 
 
 /**
- * Malware Analysis captures the metadata and results of a particular analysis performed (static or dynamic) on the malware instance or family. 
+ * Malicious code: a program inserted into a system, usually covertly, to compromise its data, applications or operating system, or to disrupt its owner.
  */
-export interface MalwareAnalysis extends StixDomainObject {
-    /** Malware analysis product name. */
-    product: string,
-    /** Version string. */
-    version?: string,
-    /** Malware analysis product configuration version. */
-    configuration_version?: string,
-    /** Malware analysis module names. */
-    modules?: string[],
-    /** Malware analysis engine version. */
-    analysis_engine_version?: string,
-    /** Malware analysis definition version. */
-    analysis_definition_version?: string,
-    /** Malware sample submission timestamp. */
-    submitted?: string,
-    /** Analysis start timestamp. */
-    analysis_started?: string,
-    /** Analysis end timestamp. */
-    analysis_ended?: string,
-    /** Analysis result name. */
-    result_name?: string,
-    /** Malware analysis result value (malware-av-result-ov). */
-    result?: string,
-    /** Host VM software reference. */
-    host_vm_ref?: string,
-    /** Operating system software reference. */
-    operating_system_ref?: string,
-    /** Installed software references. */
-    installed_software_refs?: string[],
-    /** Referenced SCOs captured in analysis. */
-    analysis_sco_refs?: string[],
-    /** Analysis subject sample reference. */
-    sample_ref?: string,
-}
-
-
-/**
- * Malware is a type of TTP that is also known as malicious code and malicious software, refers to a program that is inserted into a system, usually covertly, with the intent of compromising the confidentiality, integrity, or availability of the victim's data, applications, or operating system (OS) or of otherwise annoying or disrupting the victim. 
- */
-export interface Malware extends StixDomainObject {
-    /** Alternative names for the object. */
+export interface StixMalware extends StixDomainObject {
+    /** Other names by which the object is known. */
     aliases?: string[],
-    /** First time observed. */
+    /** The time at which the object was first seen. */
     first_seen?: string,
-    /** Last time observed. */
+    /** The time at which the object was last seen. */
     last_seen?: string,
-    /** References to software operating systems. */
-    operating_system_refs?: string[],
-    /** Open-vocabulary processor architectures (processor-architecture-ov). */
+    /** The operating systems that the malware family or malware instance is executable on. */
+    operating_system_refs?: StixSoftwareId[],
+    /** The processor architectures, such as x86 or ARM, that the malware runs on. */
     architecture_execution_envs?: string[],
-    /** Open-vocabulary implementation languages (implementation-language-ov). */
+    /** The programming languages used to write the malware instance or family. */
     implementation_languages?: string[],
-    /** Open-vocabulary malware capabilities (malware-capabilities-ov). */
+    /** The capabilities identified in the malware instance or family. */
     capabilities?: string[],
-    /** References to associated sample artifacts/files. */
-    sample_refs?: string[],
-    /** Open-vocabulary malware types (malware-type-ov). */
+    /** The sample_refs property specifies a list of identifiers of the SCO file or artifact objects associated with this malware instance(s) or family. */
+    sample_refs?: StixCyberObservableObjectId[],
+    /** The kinds of malware, such as ransomware. */
     malware_types?: string[],
-    /** Indicates if malware object is a family. */
+    /** A name that identifies the object. */
+    name?: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** The kill chain phases to which the object corresponds. */
+    kill_chain_phases?: StixKillChainPhase[],
+    /** Whether the object represents a malware family (if true) or a malware instance (if false). */
     is_family: boolean,
-    /** Kill chain phases associated with this object. */
-    kill_chain_phases?: KillChainPhase[],
 }
 
 
 /**
- * A Note is a comment or note containing informative text to help explain the context of one or more STIX Objects (SDOs or SROs) or to provide additional analysis that is not contained in the original object. 
+ * Malware Analysis captures the metadata and results of a particular analysis performed (static or dynamic) on the malware instance or family.
  */
-export interface Note extends StixDomainObject {
-    /** Brief summary text. */
+export interface StixMalwareAnalysis extends StixDomainObject {
+    /** The name of the analysis engine or product that was used for this analysis. */
+    product: string,
+    /** A version, as a string; each class says of what. */
+    version?: string,
+    /** The version of the analysis product configuration that was used to perform this analysis. */
+    configuration_version?: string,
+    /** The particular analysis product modules that were used to perform the analysis. */
+    modules?: string[],
+    /** The version of the analysis engine or product that was used to perform this analysis. */
+    analysis_engine_version?: string,
+    /** The version of the analysis definitions used by the analysis tool. */
+    analysis_definition_version?: string,
+    /** The date and time that this malware was first submitted for scanning or analysis. */
+    submitted?: string,
+    /** The date and time that the malware analysis was initiated. */
+    analysis_started?: string,
+    /** The date and time that the malware analysis ended. */
+    analysis_ended?: string,
+    /** The classification result or name assigned to the malware instance by the scanner tool. */
+    result_name?: string,
+    /** The classification result as determined by the scanner or tool analysis process. */
+    result?: string,
+    /** A description of the virtual machine environment used to host the guest operating system (if applicable) that was used for the dynamic analysis of the malware instance or family. */
+    host_vm_ref?: StixSoftwareId,
+    /** The operating system that was used to perform the dynamic analysis. */
+    operating_system_ref?: StixSoftwareId,
+    /** Any non-standard software installed on the operating system used for the dynamic analysis of the malware instance or family. */
+    installed_software_refs?: StixSoftwareId[],
+    /** The cyber-observable objects captured during the analysis. */
+    analysis_sco_refs?: StixCyberObservableObjectId[],
+    /** Refers to the object this analysis was performed against. */
+    sample_ref?: StixCyberObservableObjectId,
+}
+
+
+/**
+ * A Note is a comment or note containing informative text to help explain the context of one or more STIX Objects (SDOs or SROs) or to provide additional analysis that is not contained in the original object.
+ */
+export interface StixNote extends StixDomainObject {
+    /** A brief summary of the note. */
     abstract?: string,
-    /** Main text content payload. */
+    /** The content of the note. */
     content: string,
-    /** Author list. */
+    /** The names of the note's authors, such as the analysts who wrote it. */
     authors?: string[],
-    /** Referenced STIX objects. */
-    object_refs: string[],
+    /** References to the STIX objects that this object is about or holds. */
+    object_refs: StixObjectId[],
 }
 
 
 /**
- * Observed data conveys information that was observed on systems and networks, such as log data or network traffic, using the Cyber Observable specification. 
+ * Observed data conveys information that was observed on systems and networks, such as log data or network traffic, using the Cyber Observable specification.
  */
-export interface ObservedData extends StixDomainObject {
-    /** Start of observation window. */
+export interface StixObservedData extends StixDomainObject {
+    /** The beginning of the time window that the data was observed during. */
     first_observed: string,
-    /** End of observation window. */
+    /** The end of the time window that the data was observed during. */
     last_observed: string,
-    /** Number of observations. */
+    /** The number of times the data in objects or object_refs was observed. */
     number_observed: number,
-    /** Embedded cyber observable dictionary payload. */
-    objects?: CyberObservableObject[],
-    /** Referenced STIX objects. */
-    object_refs?: string[],
+    /** The observed cyber-observable objects, as a dictionary keyed by index. Deprecated in STIX 2.1; use object_refs. */
+    objects?: StixObservedObjects,
+    /** References to the STIX objects that this object is about or holds. */
+    object_refs?: StixObjectId[],
 }
 
 
 /**
- * An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity and captures the level of agreement or disagreement using a fixed scale. 
+ * An Opinion is an assessment of the correctness of the information in a STIX Object produced by a different entity and captures the level of agreement or disagreement using a fixed scale.
  */
-export interface Opinion extends StixDomainObject {
-    /** Explanation text for an opinion. */
+export interface StixOpinion extends StixDomainObject {
+    /** An explanation of why the producer has this Opinion. */
     explanation?: string,
-    /** Author list. */
+    /** The names of the note's authors, such as the analysts who wrote it. */
     authors?: string[],
-    /** Referenced STIX objects. */
-    object_refs: string[],
-    /** Opinion value. */
+    /** References to the STIX objects that this object is about or holds. */
+    object_refs: StixObjectId[],
+    /** The producer's opinion of the objects that object_refs lists. */
     opinion: string,
 }
 
 
 /**
- * Reports are collections of threat intelligence focused on one or more topics, such as a description of a threat actor, malware, or attack technique, including context and related details. 
+ * Reports are collections of threat intelligence focused on one or more topics, such as a description of a threat actor, malware, or attack technique, including context and related details.
  */
-export interface Report extends StixDomainObject {
-    /** Open-vocabulary report categories. */
+export interface StixReport extends StixDomainObject {
+    /** The primary subjects of the report, such as threat-actor. */
     report_types?: string[],
-    /** Timestamp when a report was published. */
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** The date that this report object was officially published by the creator of this report. */
     published: string,
-    /** Referenced STIX objects. */
-    object_refs: string[],
+    /** References to the STIX objects that this object is about or holds. */
+    object_refs: StixObjectId[],
 }
 
 
 /**
- * Threat Actors are actual individuals, groups, or organizations believed to be operating with malicious intent. 
+ * Threat Actors are actual individuals, groups, or organizations believed to be operating with malicious intent.
  */
-export interface ThreatActor extends StixDomainObject {
-    /** Open-vocabulary threat actor categories. */
+export interface StixThreatActor extends StixDomainObject {
+    /** The kinds of threat actor, such as nation-state. */
     threat_actor_types?: string[],
-    /** Alternative names for the object. */
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** Other names by which the object is known. */
     aliases?: string[],
-    /** Open-vocabulary threat actor roles. */
+    /** The roles that the identity or threat actor plays. */
     roles?: string[],
-    /** Threat actor goals. */
+    /** The high-level goals. */
     goals?: string[],
-    /** First time observed. */
+    /** The time at which the object was first seen. */
     first_seen?: string,
-    /** Last time observed. */
+    /** The time at which the object was last seen. */
     last_seen?: string,
-    /** Threat actor sophistication level. */
+    /** The skill, knowledge, training or expertise the threat actor needs to carry out an attack. */
     sophistication?: string,
-    /** Threat actor resource level (attack-resource-level-ov). */
+    /** The organizational level at which the actor typically works. */
     resource_level?: string,
-    /** Primary motivation (attack-motivation-ov). */
+    /** The primary reason, motivation or purpose behind the activity. */
     primary_motivation?: string,
-    /** Secondary motivations (attack-motivation-ov). */
+    /** The secondary reasons, motivations or purposes behind the activity. */
     secondary_motivations?: string[],
-    /** Personal motivations of the threat actor (attack-motivation-ov). */
+    /** The threat actor's personal reasons or motivations, apart from its organization's goals. */
     personal_motivations?: string[],
 }
 
 
 /**
- * Tools are legitimate software that can be used by threat actors to perform attacks. 
+ * Tools are legitimate software that can be used by threat actors to perform attacks.
  */
-export interface Tool extends StixDomainObject {
-    /** Alternative names for the object. */
+export interface StixTool extends StixDomainObject {
+    /** Other names by which the object is known. */
     aliases?: string[],
-    /** Open-vocabulary tool categories (tool-type-ov). */
+    /** The kinds of tool, such as remote-access. */
     tool_types?: string[],
-    /** Version identifier for a tool. */
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** The version identifier associated with the tool. */
     tool_version?: string,
-    /** Kill chain phases associated with this object. */
-    kill_chain_phases?: KillChainPhase[],
+    /** The kill chain phases to which the object corresponds. */
+    kill_chain_phases?: StixKillChainPhase[],
 }
 
 
 /**
- * A Vulnerability is a mistake in software that can be directly used by a hacker to gain access to a system or network. 
+ * A Vulnerability is a mistake in software that can be directly used by a hacker to gain access to a system or network.
  */
-export interface Vulnerability extends StixDomainObject {
+export interface StixVulnerability extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
 }
 
 
 /**
- * The Relationship object is used to link together two SDOs in order to describe how they are related to each other. 
+ * The cyber-observable objects of an observed data object, keyed by an index such as "0". STIX 2.1 deprecates this form in favour of object_refs.
  */
-export interface Relationship extends StixRelationshipObject {
-    /** Name of the relationship type. */
+export interface StixObservedObjects {
+}
+
+
+/**
+ * The Relationship object is used to link together two SDOs in order to describe how they are related to each other.
+ */
+export interface StixRelationship extends StixRelationshipObject {
+    /** The name used to identify the type of relationship. */
     relationship_type: string,
-    /** Relationship source object reference. */
-    source_ref: string,
-    /** Relationship target object reference. */
-    target_ref: string,
-    /** Start timestamp for temporal relationship validity. */
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** The ID of the source (from) object. */
+    source_ref: StixObjectId,
+    /** The ID of the target (to) object. */
+    target_ref: StixObjectId,
+    /** This optional timestamp represents the earliest time at which the Relationship between the objects exists. If this property is a future timestamp, at the time the updated property is defined, then this represents an estimate by the producer of the intelligence of the earliest time at which relationship will be asserted to be true. */
     start_time?: string,
-    /** End timestamp for temporal relationship validity. */
+    /** The latest time at which the Relationship between the objects exists. If this property is a future timestamp, at the time the updated property is defined, then this represents an estimate by the producer of the intelligence of the latest time at which relationship will be asserted to be true. */
     stop_time?: string,
 }
 
 
 /**
- * A Sighting denotes the belief that something in CTI (e.g., an indicator, malware, tool, threat actor, etc.) was seen. 
+ * The belief that something in cyber threat intelligence, such as an indicator, malware or a threat actor, was seen.
  */
-export interface Sighting extends StixRelationshipObject {
-    /** Reference to the object being sighted. */
-    sighting_of_ref: string,
-    /** References to observed-data objects. */
-    observed_data_refs?: string[],
-    /** References to identities or locations where sighted. */
-    where_sighted_refs?: string[],
-    /** First time observed. */
+export interface StixSighting extends StixRelationshipObject {
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** The time at which the object was first seen. */
     first_seen?: string,
-    /** Last time observed. */
+    /** The time at which the object was last seen. */
     last_seen?: string,
     /** This is an integer between 0 and 999,999,999 inclusive and represents the number of times the object was sighted. */
     count?: number,
+    /** A reference to the domain object that was sighted. */
+    sighting_of_ref: StixDomainObjectId,
+    /** A list of ID references to the Observed Data objects that contain the raw cyber data for this Sighting. */
+    observed_data_refs?: StixObservedDataId[],
+    /** A list of ID references to the Identity or Location objects describing the entities or types of entities that saw the sighting. */
+    where_sighted_refs?: StixDomainObjectId[],
     /** The summary property indicates whether the Sighting should be considered summary data. */
     summary?: boolean,
 }
 
 
 /**
- * An ATT&CK-constrained kill chain phase restricting kill_chain_name to the three ATT&CK domain identifiers: 'mitre-attack', 'mitre-mobile-attack', and 'mitre-ics-attack'. The phase_name must match the x_mitre_shortname of the associated x-mitre-tactic object in the same domain. Used in the kill_chain_phases property of Technique, Malware, and Tool objects to map them to their applicable tactic(s).
+ * A bundle: a collection of STIX objects grouped together in one container. A bundle is a container for transport, not a STIX object, so it carries no spec_version.
  */
-export interface AttackKillChainPhase extends KillChainPhase {
+export interface StixBundle {
+    /** The identifier of the object: its STIX type, two hyphens and a UUID. Each class narrows the type. */
+    id: string,
+    /** The STIX type name of the object, such as attack-pattern. Each class pins its own. */
+    type: string,
+    /** The STIX objects in the bundle. */
+    objects?: StixObject[],
 }
 
 
 /**
- * A sector-specific alias or variant name for a primary ATT&CK Asset object. Related assets capture how the same physical or logical device may be known by different names in different industrial contexts. For example, the primary asset 'Programmable Logic Controller (PLC)' may be called 'Field Controller' in the water treatment sector. Each related asset entry optionally scopes the alias to one or more industry sectors.
+ * A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
  */
-export interface RelatedAsset {
-    /** Sector-specific name or alias used to identify this asset variant in a particular industrial context. */
-    name: string,
-    /** The industry sectors in which this related (aliased) asset variant is observed under the given name. Provides sector-specific scoping for the alias entry, indicating which industries use this naming convention for the asset. */
-    related_asset_sectors?: string,
-    /** Explanation of how this related asset variant relates to or differs from the primary asset definition. */
-    description?: string,
-}
-
-
-/**
- * A platform-specific log collection configuration embedded within a data component. Defines a specific log provider (name) and event category or channel identifier (channel) that together specify where to collect telemetry relevant to the parent data component's detection context. The (name, channel) pair must be unique within the x_mitre_log_sources array of a given data component.
- */
-export interface LogSource {
-    /** The log source provider or service name (e.g., 'sysmon', 'auditd', 'unified_logs', 'windows_security'). Together with log_source_channel, uniquely identifies a specific log collection configuration. */
-    log_source_name: string,
-    /** The specific log channel, event ID, or event category within the log source (e.g., '1' for Sysmon Process Creation event, 'SYSCALL' for Linux auditd, 'process' for macOS unified logs). Together with log_source_name, uniquely identifies a log collection configuration. */
-    log_source_channel: string,
-}
-
-
-/**
- * A reference linking an analytic to a specific data component and log source pair. Specifies both the data component by STIX ID and the precise (name, channel) log source within that component that provides the raw data consumed by the analytic. Each (x_mitre_data_component_ref, name, channel) tuple must be unique within the x_mitre_log_source_references array of a given analytic.
- */
-export interface LogSourceReference {
-    /** The STIX ID of the x-mitre-data-component object that this log source reference is associated with. Links the analytic's required data collection to a specific data component's log source definition. */
-    x_mitre_data_component_ref: string,
-    /** The log source provider or service name (e.g., 'sysmon', 'auditd', 'unified_logs', 'windows_security'). Together with log_source_channel, uniquely identifies a specific log collection configuration. */
-    log_source_name: string,
-    /** The specific log channel, event ID, or event category within the log source (e.g., '1' for Sysmon Process Creation event, 'SYSCALL' for Linux auditd, 'process' for macOS unified logs). Together with log_source_name, uniquely identifies a log collection configuration. */
-    log_source_channel: string,
-}
-
-
-/**
- * An environment-tunable parameter within an ATT&CK analytic. Mutable elements identify specific fields in the detection logic that defenders can adjust to adapt the analytic to their operational environment without altering its fundamental detection behavior. For example, 'TimeWindow' could be tuned to match an organization's normal authentication patterns, or 'PortRange' adjusted to reflect monitored network segments.
- */
-export interface MutableElement {
-    /** The name of the analytic field or parameter that can be tuned by a defender to adapt it to their environment (e.g., 'TimeWindow', 'UserContext', 'PortRange', 'SubnetFilter'). Provides a clear identifier for the tunable aspect of the analytic. */
-    mutable_field: string,
-    /** Rationale for why this field is tunable and guidance for environment-specific configuration considerations. */
-    description: string,
-}
-
-
-/**
- * A versioned reference to a specific state of a STIX object, consisting of the object's STIX identifier paired with the exact modified timestamp of the version being referenced. Used in the x_mitre_contents property of Collection objects to designate the precise snapshot of each included object. The object_modified value must exactly match the corresponding object's modified property.
- */
-export interface ObjectVersionReference {
-    /** The STIX ID of the referenced ATT&CK object. */
-    object_ref: string,
-    /** The exact modified timestamp of the referenced object version. Must be a precise, millisecond-accurate match to the STIX object's modified property. */
-    object_modified: string,
-}
-
-
-/**
- * The definition payload for a TLP (Traffic Light Protocol) marking definition. Contains a single tlp field carrying the TLP level value. Only instances corresponding to the four canonical ATT&CK TLP marking definitions are valid; new TLP marking objects must not be created.
- */
-export interface TlpMarkingObject {
-    /** The Traffic Light Protocol level assigned by this TLP marking definition. Must be one of the four standard TLP values: 'white', 'green', 'amber', 'red'. Each TLP level carries distinct sharing semantics governing how marked content may be further distributed by recipients. */
-    tlp: string,
-}
-
-
-/**
- * The definition payload for a statement marking definition. Contains a single statement field with a copyright notice or terms-of-use text. ATT&CK uses this for its standard copyright statement applied to all distributed content.
- */
-export interface StatementMarkingObject {
-    /** The full copyright or terms-of-use statement text. Example: "Copyright 2023, The MITRE Corporation. ATT&CK content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license." */
-    statement: string,
-}
-
-
-/**
- * Abstract base class for all versioned ATT&CK objects (SDOs and SROs). Extends the STIX Core (Common Properties) object with ATT&CK-specific universal properties: the required x_mitre_attack_spec_version (which ATT&CK specification the object conforms to), x_mitre_version (the object's content version), and optional x_mitre_deprecated and x_mitre_old_attack_id for lifecycle management. The name property inherited from StixEntity is required on all AttackObject subclasses (except Relationship, where it is not present).
- */
-export interface AttackObject extends Core {
-    /** The version of the ATT&CK Data Model specification used to construct this object, in MAJOR.MINOR.PATCH (semantic versioning) format. Helps consuming software determine whether the data format is supported. Objects lacking this property are assumed to conform to ATT&CK spec version 2.0.0. Refer to the ATT&CK CHANGELOG for all supported versions. */
+export interface AttackTechnique extends StixAttackPattern {
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
     x_mitre_attack_spec_version: string,
-    /** The version of this ATT&CK object content in 'major.minor' format, where both components are integers between 0 and 99. Incremented by ATT&CK whenever the substantive content of the object changes. Does not apply to relationship objects. Example: "1.0", "12.5". */
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
     x_mitre_version: string,
-    /** Boolean flag indicating that this ATT&CK object has been deprecated and should no longer be used in new analyses or tooling implementations. Deprecated objects are retained in the knowledge base for historical reference and legacy compatibility, but are not actively maintained with new information. */
+    /** Whether ATT&CK has deprecated the object. */
     x_mitre_deprecated?: boolean,
-    /** A legacy ATT&CK ID previously assigned to this object before a knowledge base restructuring or domain migration event. Format mirrors the current ATT&CK ID format but from the prior numbering scheme (e.g., "MOB-T1001" for a mobile technique previously in the pre-unification Mobile ATT&CK dataset). */
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
     x_mitre_old_attack_id?: string,
-}
-
-
-/**
- * Abstract superclass for ATT&CK Software objects, representing both Malware and Tool STIX types. Software in ATT&CK encompasses all programs used by adversaries to accomplish their objectives. Both Malware and Tool share the ATT&CK ID format S#### and the same set of ATT&CK-specific properties (x_mitre_aliases, x_mitre_platforms, x_mitre_domains, etc.). Concrete subclasses: Malware (stix type 'malware') and Tool (stix type 'tool').
- */
-export interface AttackSoftware extends AttackObject {
-}
-
-
-/**
- * Techniques describe the specific methods adversaries use to achieve tactical objectives. They are implemented as STIX attack-pattern objects and represent the "how" of adversary behavior — the concrete actions taken to accomplish a tactic.
-A Technique may be a top-level technique (x_mitre_is_subtechnique: false) or a sub-technique (x_mitre_is_subtechnique: true). Sub-techniques provide more granular detail about specific implementations of their parent technique.
-Sub-technique constraints:
-  - ATT&CK ID format: T####.### where T#### is the parent's ID
-  - Connected to parent via 'subtechnique-of' relationship (source = sub, target = parent)
-  - Each sub-technique has exactly one parent; parents may have many sub-techniques
-  - Sub-techniques inherit all parent tactics; platforms must be a subset of parent's
-
-Tactics mapping: kill_chain_phases entries use the tactic's x_mitre_shortname as phase_name, with kill_chain_name set to the appropriate ATT&CK domain value.
- */
-export interface Technique extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** Boolean flag indicating whether this attack-pattern is a sub-technique (true) or a top-level technique (false). Sub-techniques represent more specific implementations of parent techniques with ATT&CK IDs in the format T####.###. Each sub-technique is connected to its parent via a 'subtechnique-of' relationship where this object is the source_ref and the parent technique is the target_ref. Sub-techniques inherit all of their parent's tactics and must use a subset of the parent's platforms. */
-    x_mitre_is_subtechnique: boolean,
-    /** The set of technology platforms or operating environments to which this ATT&CK object applies. Each value must be a supported ATT&CK platform identifier. Values within the array must be unique; duplicate platforms are not permitted. */
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref?: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
+    x_mitre_contributors?: string[],
+    /** The platforms the object applies to, each named once. */
     x_mitre_platforms?: string,
-    /** DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. Narrative text describing analytic strategies that defenders can use to identify whether an adversary has used this technique. Superseded by Detection Strategies and Analytics referenced via 'detects' relationships. */
-    x_mitre_detection?: string,
-    /** DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. A list of data sources that can provide evidence for detecting this technique. Each entry must follow the format 'Data Source Name: Data Component Name' (e.g., 'Process: Process Creation'). Superseded by 'detects' relationships from x-mitre-data-component and x-mitre-detection-strategy objects. */
-    x_mitre_data_sources?: string[],
-    /** DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. List of defensive tools, methodologies, or security controls that this technique can bypass, evade, or otherwise circumvent when used by an adversary. */
-    x_mitre_defense_bypassed?: string,
-    /** DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. The lowest permission level at which an adversary must be operating to execute this technique on a target system. If multiple values are present, the technique can be used at any of the listed permission levels. */
-    x_mitre_permissions_required?: string,
-    /** DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. The effective permission level(s) that an adversary achieves on the target system after successfully executing this technique. Represents the post-exploitation privilege gain. */
-    x_mitre_effective_permissions?: string,
-    /** DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. Boolean indicating whether this technique can be used to execute commands or payloads on a remote system without requiring local presence. When true, the technique supports remote execution scenarios. */
-    x_mitre_remote_support?: boolean,
-    /** DEPRECATED in ATT&CK Specification v3.3.0. Will be removed in v4.0.0. Additional preconditions about the state of the target system that may be required for the technique to succeed, such as required software, configuration settings, patch levels, or service states. */
-    x_mitre_system_requirements?: string[],
-    /** Indicates whether this technique can be used for availability attacks, integrity attacks, or both. Only applicable to techniques in the Enterprise ATT&CK Impact tactic. A technique with 'Availability' affects the availability of systems or data; 'Integrity' indicates unauthorized modification of data or configuration. */
+    /** Whether the technique is a sub-technique of another. */
+    x_mitre_is_subtechnique: boolean,
+    /** Whether an impact technique attacks integrity, availability or both. */
     x_mitre_impact_type?: string,
-    /** Boolean indicating whether this technique requires network connectivity as a precondition for execution. When true, the adversary must have network access to the target environment for the technique to be applicable. */
+    /** Whether the technique needs a network to run. */
     x_mitre_network_requirements?: boolean,
-    /** Indicates the adversary's device access model for Mobile ATT&CK techniques. Specifies whether the technique requires post-device-access, pre-device-access, or no device access at all. Only used in the Mobile ATT&CK domain. */
+    /** Whether a Mobile technique needs access to the device. */
     x_mitre_tactic_type?: string,
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref?: string,
-    /** Names of people and organizations who have contributed to the creation or enrichment of this ATT&CK object. Contributors are credited for providing information, examples, or analysis that informed the object's content. Not present on relationship objects. */
-    x_mitre_contributors?: string[],
+    /** How to tell that the technique has been used. */
+    x_mitre_detection?: string,
+    /** The data that can reveal the technique, each as "Data Source Name: Data Component Name". */
+    x_mitre_data_sources?: string[],
+    /** The defenses a defense-evasion technique can get past. */
+    x_mitre_defense_bypassed?: string,
+    /** The lowest level of permission a privilege-escalation technique needs on a system. */
+    x_mitre_permissions_required?: string,
+    /** The level of permission a privilege-escalation technique gains. */
+    x_mitre_effective_permissions?: string,
+    /** What the system must have or be, such as software or a patch level, for the technique to work. */
+    x_mitre_system_requirements?: string[],
+    /** Whether an execution technique can run something on a remote system. */
+    x_mitre_remote_support?: boolean,
 }
 
 
 /**
- * Tactics represent the adversary's high-level strategic objectives during an attack — the "why" behind individual techniques. Tactics form the columns of the ATT&CK matrix and organize techniques into coherent operational categories.
-Tactics are implemented as x-mitre-tactic custom STIX objects that extend the STIX Domain Object pattern. They are specific to ATT&CK and not defined by the core STIX 2.1 specification.
-The x_mitre_shortname property is the machine-readable tactic identifier used to link techniques: a technique's kill_chain_phases entry uses x_mitre_shortname as phase_name when kill_chain_name matches the appropriate ATT&CK domain value.
+ * A tactic: an adversary's goal, the reason for a technique. Its ATT&CK ID is TA and four digits.
  */
-export interface Tactic extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+export interface AttackTactic extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description: string,
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** The machine-readable short identifier for an ATT&CK tactic. Used to map techniques to their associated tactic: a technique's kill_chain_phases entry uses this value as its phase_name when the kill_chain_name matches the tactic's domain. For example, the 'Initial Access' tactic has x_mitre_shortname 'initial-access'. Must be unique across all tactics within a domain. */
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
+    x_mitre_contributors?: string[],
+    /** The tactic's short name, which a technique's kill chain phase uses as its phase name. */
     x_mitre_shortname: string,
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
-    /** Names of people and organizations who have contributed to the creation or enrichment of this ATT&CK object. Contributors are credited for providing information, examples, or analysis that informed the object's content. Not present on relationship objects. */
+}
+
+
+/**
+ * A group: a set of related intrusion activity that the security community tracks under a name. Its ATT&CK ID is G and four digits.
+ */
+export interface AttackGroup extends StixIntrusionSet {
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
+    x_mitre_domains: string,
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref?: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
     x_mitre_contributors?: string[],
 }
 
 
 /**
- * Groups represent clusters of adversary activity attributed to a common actor, sharing characteristics such as tools, tactics, techniques, infrastructure, or targeting. They may represent nation-state actors, criminal organizations, hacktivist collectives, or other tracked threat entities.
-Groups are implemented as standard STIX intrusion-set objects without additional ATT&CK-specific custom properties beyond the shared ATT&CK base fields. The aliases array provides alternative names; the first alias MUST match the group's name property.
-Note: Several STIX Intrusion Set properties (goals, resource_level, primary_motivation, secondary_motivations, first_seen, last_seen) are inherited from STIX but are not actively used or populated in ATT&CK Group objects.
+ * A campaign: intrusion activity over a stated period against common targets, with the sources for when it was first and last seen. Its ATT&CK ID is C and four digits.
  */
-export interface Group extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+export interface AttackCampaign extends StixCampaign {
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** Names of people and organizations who have contributed to the creation or enrichment of this ATT&CK object. Contributors are credited for providing information, examples, or analysis that informed the object's content. Not present on relationship objects. */
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
     x_mitre_contributors?: string[],
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref?: string,
-}
-
-
-/**
- * Campaigns represent a grouping of adversary behaviors and resources with a common objective, occurring over a defined time period. A campaign may be attributed to one or more Groups via 'attributed-to' relationships.
-Campaigns require mandatory temporal properties: first_seen and last_seen document when the campaign was active, and the corresponding citation properties (x_mitre_first_seen_citation, x_mitre_last_seen_citation) cite the intelligence sources that established those observations.
-The aliases array is required; its first entry MUST match the campaign's name.
- */
-export interface AttackCampaign extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
-    x_mitre_domains: string,
-    /** Names of people and organizations who have contributed to the creation or enrichment of this ATT&CK object. Contributors are credited for providing information, examples, or analysis that informed the object's content. Not present on relationship objects. */
-    x_mitre_contributors?: string[],
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
-    /** One or more inline citation references documenting the original sources that established when this campaign was first observed. Each citation references a source_name from the object's external_references array. Multiple citations are concatenated without separators: '(Citation: Source1)(Citation: Source2)'. This property is required on all Campaign objects. */
+    /** The sources for when the campaign was first seen, each written "(Citation: name)" with no separator, where each name is the source name of one of the campaign's external references. */
     x_mitre_first_seen_citation: string,
-    /** One or more inline citation references documenting the original sources that established when this campaign was last observed. Each citation references a source_name from the object's external_references array. Multiple citations are concatenated without separators: '(Citation: Source1)(Citation: Source2)'. This property is required on all Campaign objects. */
+    /** The sources for when the campaign was last seen, written as x_mitre_first_seen_citation is. */
     x_mitre_last_seen_citation: string,
 }
 
 
 /**
- * Mitigations describe defensive measures, security controls, and configuration changes that can prevent or reduce the effectiveness of adversary techniques. Mitigations are implemented as STIX course-of-action objects.
-Historical note — Legacy 1:1 Mitigations: Prior to ATT&CK v5 (July 2019), mitigations had a 1:1 relationship with techniques and shared their ATT&CK IDs. This design was deprecated to support the current many-to-many model where one mitigation can address multiple techniques. Legacy 1:1 mitigation objects may cause ATT&CK ID collisions and can be filtered by their deprecated or revoked status.
+ * Malware: commercial, custom or open-source software an adversary uses for malicious ends. ATT&CK counts it as software, with an ATT&CK ID of S and four digits, and gives its other names in x_mitre_aliases.
  */
-export interface Mitigation extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+export interface AttackMalware extends StixMalware {
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** Names of people and organizations who have contributed to the creation or enrichment of this ATT&CK object. Contributors are credited for providing information, examples, or analysis that informed the object's content. Not present on relationship objects. */
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
     x_mitre_contributors?: string[],
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
-}
-
-
-/**
- * Malware represents malicious software programs that adversaries use to accomplish their operational objectives, such as data exfiltration, persistent access, lateral movement, or destructive impact. ATT&CK tracks both malware families (is_family: true) and specific malware instances or samples (is_family: false).
-Together with Tool objects, Malware forms the ATT&CK 'Software' category. Both share the ATT&CK ID format S#### and are often linked to Groups and Techniques via 'uses' relationships.
-The x_mitre_aliases field holds ATT&CK-recognized alternative names; the first alias MUST match the object's name. The STIX 'aliases' property is defined in the STIX specification but is not actively maintained in ATT&CK Malware objects.
-Note: Several STIX Malware properties (malware_types, kill_chain_phases, first_seen, last_seen, architecture_execution_envs, implementation_languages, capabilities) are available from the STIX specification but not actively used in ATT&CK.
- */
-export interface AttackMalware extends AttackSoftware {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
-    x_mitre_domains: string,
-    /** The set of technology platforms or operating environments to which this ATT&CK object applies. Each value must be a supported ATT&CK platform identifier. Values within the array must be unique; duplicate platforms are not permitted. */
+    /** The platforms the object applies to, each named once. */
     x_mitre_platforms?: string,
-    /** Names of people and organizations who have contributed to the creation or enrichment of this ATT&CK object. Contributors are credited for providing information, examples, or analysis that informed the object's content. Not present on relationship objects. */
-    x_mitre_contributors?: string[],
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
-    /** ATT&CK-recognized alternative names or aliases for this software object (Malware or Tool). The first alias in the array MUST match the object's name property. This is the preferred alias field for ATT&CK software objects, distinct from the STIX-standard 'aliases' property which is present but not actively maintained in ATT&CK software objects. */
+    /** Other names of a piece of software. The first is the software's own name. */
     x_mitre_aliases?: string[],
 }
 
 
 /**
- * Tools represent legitimate software programs that adversaries may abuse or repurpose to accomplish their attack objectives. Unlike Malware, tools are not inherently malicious — they serve legitimate purposes but can be weaponized by adversaries (e.g., Cobalt Strike, Mimikatz, PsExec, Metasploit).
-Together with Malware objects, Tools form the ATT&CK 'Software' category and share the same ATT&CK ID format (S####). Both are linked to Groups and Techniques via 'uses' relationships.
-The x_mitre_aliases field holds ATT&CK-recognized alternative names; the first alias MUST match the object's name. The STIX 'aliases' property is not actively maintained in ATT&CK Tool objects.
-Note: STIX Tool properties (tool_types, kill_chain_phases, tool_version, aliases) are available from the STIX specification but not actively used in ATT&CK Tool objects.
+ * A tool: software, often legitimate, that an adversary uses, such as a penetration-testing or administration tool. ATT&CK counts it as software, with an ATT&CK ID of S and four digits.
  */
-export interface AttackTool extends AttackSoftware {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+export interface AttackTool extends StixTool {
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** The set of technology platforms or operating environments to which this ATT&CK object applies. Each value must be a supported ATT&CK platform identifier. Values within the array must be unique; duplicate platforms are not permitted. */
-    x_mitre_platforms?: string,
-    /** Names of people and organizations who have contributed to the creation or enrichment of this ATT&CK object. Contributors are credited for providing information, examples, or analysis that informed the object's content. Not present on relationship objects. */
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
     x_mitre_contributors?: string[],
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
-    /** ATT&CK-recognized alternative names or aliases for this software object (Malware or Tool). The first alias in the array MUST match the object's name property. This is the preferred alias field for ATT&CK software objects, distinct from the STIX-standard 'aliases' property which is present but not actively maintained in ATT&CK software objects. */
+    /** The platforms the object applies to, each named once. */
+    x_mitre_platforms?: string,
+    /** Other names of a piece of software. The first is the software's own name. */
     x_mitre_aliases?: string[],
 }
 
 
 /**
- * Assets represent physical or logical systems, devices, and technologies within Operational Technology (OT) and Industrial Control System (ICS) environments that adversaries may target when attacking critical infrastructure. Assets are specific to the ICS ATT&CK domain.
-Examples include Programmable Logic Controllers (PLCs), Remote Terminal Units (RTUs), Engineering Workstations, and Safety Instrumented Systems.
-Related assets (x_mitre_related_assets) capture sector-specific alias names and variants of the same device type used across different industrial sectors. Asset sectors (x_mitre_sectors) scope the asset to one or more industry verticals.
+ * A mitigation: a security concept or class of technology that can stop a technique from succeeding. Its ATT&CK ID is M and four digits.
  */
-export interface Asset extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+export interface AttackMitigation extends StixCourseOfAction {
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** The set of technology platforms or operating environments to which this ATT&CK object applies. Each value must be a supported ATT&CK platform identifier. Values within the array must be unique; duplicate platforms are not permitted. */
-    x_mitre_platforms?: string,
-    /** Names of people and organizations who have contributed to the creation or enrichment of this ATT&CK object. Contributors are credited for providing information, examples, or analysis that informed the object's content. Not present on relationship objects. */
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
     x_mitre_contributors?: string[],
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref?: string,
-    /** The industry sectors in which this ICS Asset is commonly observed or deployed. Provides context for which operational environments the asset appears in. Only applicable in the ICS ATT&CK domain. At least one sector must be specified when this property is present. */
+}
+
+
+/**
+ * A matrix: the tactics of a domain, in order, under which its techniques are laid out. Its first external reference names the domain.
+ */
+export interface AttackMatrix extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description: string,
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
+    x_mitre_domains: string,
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
+    /** The tactics of the matrix, in the order the matrix shows them. MITRE's data writes this ATT&CK property without the x_mitre_ prefix. */
+    tactic_refs: AttackTacticId[],
+}
+
+
+/**
+ * A collection: a set of objects, each at one version, published together. Each release of a domain is a collection, the first object of its bundle.
+ */
+export interface AttackCollection extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description: string,
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref?: StixIdentityId,
+    /** The objects the collection holds, each at one version. */
+    x_mitre_contents: AttackObjectVersionReference[],
+}
+
+
+/**
+ * An asset: a device or system in an industrial control system that techniques target. Its ATT&CK ID is A and four digits.
+ */
+export interface AttackAsset extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description?: string,
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
+    x_mitre_domains: string,
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref?: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
+    x_mitre_contributors?: string[],
+    /** The platforms the object applies to, each named once. */
+    x_mitre_platforms?: string,
+    /** The industry sectors in which the asset is commonly found. */
     x_mitre_sectors?: string,
-    /** Sector-specific aliases and related device types associated with this primary asset definition. Related assets describe how the same physical or logical asset may be named or categorized differently across industrial sectors (e.g., a 'Programmable Logic Controller' in manufacturing may be called a 'Field Controller' in water treatment). Each related asset entry may include sector scoping. */
-    x_mitre_related_assets?: RelatedAsset[],
+    /** The names a sector gives to devices like the asset, each with how it relates to the asset. */
+    x_mitre_related_assets?: AttackRelatedAsset[],
 }
 
 
 /**
- * DEPRECATED as of ATT&CK Specification 3.3.0. Superseded by the Detection Strategy and Analytic framework. Will be removed in ATT&CK Specification 4.0.0.
-Data Sources represented categories of information that could be collected from a computing environment to identify signs of adversary technique execution. They were organized hierarchically: each Data Source contained one or more Data Components specifying observable events within that source category.
-The data source hierarchy was:
-  DataSource (x-mitre-data-source) →
-    DataComponent (x-mitre-data-component) →
-      detects →
-        Technique (attack-pattern)
-
-Retained for backward compatibility with ATT&CK datasets prior to Spec 3.3.0.
+ * A data source: a kind of information that can be collected to detect techniques, made of data components. Its ATT&CK ID is DS and four digits.
  */
-export interface DataSource extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+export interface AttackDataSource extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description: string,
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** The set of technology platforms or operating environments to which this ATT&CK object applies. Each value must be a supported ATT&CK platform identifier. Values within the array must be unique; duplicate platforms are not permitted. */
-    x_mitre_platforms?: string,
-    /** Names of people and organizations who have contributed to the creation or enrichment of this ATT&CK object. Contributors are credited for providing information, examples, or analysis that informed the object's content. Not present on relationship objects. */
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
     x_mitre_contributors?: string[],
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
-    /** The technology stack layers from which telemetry for this Data Source can be collected. Indicates where in the environment defenders should look to obtain the raw data this source provides. At least one collection layer must be specified. */
+    /** The platforms the object applies to, each named once. */
+    x_mitre_platforms?: string,
+    /** Where the data source's data can be collected. */
     x_mitre_collection_layers: string,
 }
 
 
 /**
- * Data Components represent specific types of observable events or artifacts within a Data Source that can be collected to detect adversary technique execution. For example, 'Process Creation' and 'Process Termination' are data components within the 'Process' data source.
-Data Components serve as the bridge between defensive telemetry and ATT&CK techniques. They detect techniques via 'detects' relationship objects.
-The x_mitre_log_sources property (optional in Spec 3.x, required in Spec 4.x) provides platform-specific log collection configurations specifying exactly which log provider and event channel to monitor.
-The x_mitre_data_source_ref property establishing the parent data source link is DEPRECATED in ATT&CK Specification 3.3.0 and will be removed in 4.0.0.
+ * A data component: a specific kind of data, such as process creation, with the logs that hold it. Its ATT&CK ID is DC and four digits.
  */
-export interface DataComponent extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+export interface AttackDataComponent extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description: string,
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
-    /** DEPRECATED. Reference to the parent x-mitre-data-source object. Will be removed in ATT&CK Specification 4.0.0. */
-    x_mitre_data_source_ref?: string,
-    /** Platform-specific log collection configurations for detecting this event type. Optional in ATT&CK Spec 3.x; will become required in Spec 4.x. */
-    x_mitre_log_sources?: LogSource[],
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
+    /** The data source the data component belongs to. */
+    x_mitre_data_source_ref?: AttackDataSourceId,
+    /** The logs that hold the data component's data, each a pair of log and channel that appears once. */
+    x_mitre_log_sources?: AttackLogSource[],
 }
 
 
 /**
- * ATT&CK Matrices define the structural layout and organization of tactics and techniques within each ATT&CK domain. The matrix arranges tactics as columns and techniques (with sub-techniques nested beneath parents) as rows, providing a comprehensive visual map of adversary behavior within a domain.
-Each ATT&CK domain has exactly one Matrix object. The tactic_refs property contains an ordered list of x-mitre-tactic STIX IDs that defines the left-to-right display order of columns in the ATT&CK matrix. The matrix does not directly enumerate techniques — technique-to-tactic associations are captured via kill_chain_phases on the Technique objects.
+ * A detection strategy: an approach to detecting a technique, carried out by analytics, one for each platform. Its ATT&CK ID is DET and four digits.
  */
-export interface Matrix extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+export interface AttackDetectionStrategy extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
-    /** Ordered list of x-mitre-tactic STIX IDs defining the column order of tactics in this ATT&CK matrix visualization. */
-    tactic_refs: string[],
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
+    /** The people and organizations who contributed to the object. */
+    x_mitre_contributors?: string[],
+    /** The analytics that carry out the detection strategy, each named once. */
+    x_mitre_analytic_refs: AttackAnalyticId[],
 }
 
 
 /**
- * Collections are versioned snapshots of an ATT&CK dataset grouping all STIX objects that constitute a specific release of an ATT&CK domain or curated subset. ATT&CK distributes one collection per domain per release.
-The x_mitre_contents property provides an ordered list of versioned object references (ID + modified timestamp pairs) enumerating every STIX object included in this collection. This precise versioning allows consumers to reconstruct the exact state of the knowledge base at any given ATT&CK release.
-Bundle validation: In a distributing STIX Bundle, the Collection must be the first object in the bundle's 'objects' array. All STIX IDs referenced in x_mitre_contents must be present as objects within the same bundle.
-See the ATT&CK Workbench collections documentation for detailed design rationale and usage guidance.
+ * An analytic: detection logic for one platform, with the logs it reads and the parts a defender may tune. Its ATT&CK ID is AN and four digits.
  */
-export interface Collection extends AttackObject {
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref?: string,
-    /** Ordered list of versioned references to all ATT&CK STIX objects included in this collection release. */
-    x_mitre_contents: ObjectVersionReference[],
-}
-
-
-/**
- * The ATT&CK Identity object represents MITRE Corporation, the organization that maintains the ATT&CK knowledge base. The canonical ATT&CK Identity object has:
-  STIX ID: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
-  Name: The MITRE Corporation
-  identity_class: organization
-
-This Identity is referenced by created_by_ref and x_mitre_modified_by_ref throughout all ATT&CK objects to attribute creation and modification to MITRE.
-Key differences from the standard ATT&CK object:
-  - x_mitre_version is absent on Identity objects
-  - Several STIX Identity properties (roles, sectors, contact_information) are
-    defined in STIX but not actively used in ATT&CK Identity objects
- */
-export interface AttackIdentity extends AttackObject {
-}
-
-
-/**
- * Detection Strategies define high-level, platform-agnostic approaches for detecting specific adversary techniques. They function as containers organizing one or more platform-specific Analytics (x-mitre-analytic objects) into cohesive detection methodologies, describing what data to collect and what behavioral patterns to look for.
-Detection Strategies were introduced in ATT&CK Specification 3.3.0 as part of the new detection framework, superseding the deprecated x-mitre-data-source and x-mitre-data-component approach for technique detection.
-A Detection Strategy links to its implementing analytics via x_mitre_analytic_refs. Analytics in turn link back to data components via x_mitre_log_source_references, creating a complete detection chain from technique to observable log event.
- */
-export interface DetectionStrategy extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
+export interface AttackAnalytic extends StixDomainObject {
+    /** A name that identifies the object. */
+    name: string,
+    /** A description of the object, which may be long. */
+    description: string,
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes. */
+    x_mitre_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The ATT&CK domains the object belongs to. */
     x_mitre_domains: string,
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
-    /** People and organizations who contributed to this detection strategy. At least one contributor is required on DetectionStrategy objects. */
-    x_mitre_contributors: string[],
-    /** STIX IDs of x-mitre-analytic objects implementing this strategy. Each analytic provides platform-specific detection logic. At least one analytic reference is required; references must be unique. */
-    x_mitre_analytic_refs: string[],
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref?: StixIdentityId,
+    /** The platforms the object applies to, each named once. */
+    x_mitre_platforms: string,
+    /** The logs the analytic reads, each a data component with a log and channel of its own, named once. */
+    x_mitre_log_source_references?: AttackLogSourceReference[],
+    /** The parts of the analytic a defender may tune to their environment, such as a time window, each named once. */
+    x_mitre_mutable_elements?: AttackMutableElement[],
 }
 
 
 /**
- * Analytics contain the concrete, platform-specific detection logic implementing a Detection Strategy for a specific operating environment. An analytic specifies the exact log data sources to query (via x_mitre_log_source_references), the detection logic or query pattern, and optionally defines tunable parameters (x_mitre_mutable_elements) allowing defenders to adapt it to their environment.
-Each analytic targets exactly one platform (x_mitre_platforms maximum cardinality is 1). Multiple analytics may implement the same detection strategy, one per supported platform.
-The detection chain is:
-  DetectionStrategy (x_mitre_analytic_refs →)
-    Analytic (x_mitre_log_source_references →)
-      DataComponent (log_source name/channel →)
-        detects →
-          Technique
+ * A relationship between two ATT&CK objects, of one of the seven types ATT&CK uses. Its rules say which types of object each type of relationship may join.
  */
-export interface Analytic extends AttackObject {
-    /** The ATT&CK technology domains to which this object belongs. At least one domain must be specified. An object may belong to multiple domains when the same technique, group, or software is relevant across domain boundaries. */
-    x_mitre_domains: string,
-    /** The single target platform for this analytic. Maximum cardinality is 1; each analytic targets exactly one platform. */
-    x_mitre_platforms?: string,
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref?: string,
-    /** A list of log source references that link this analytic to specific data components and their associated log sources. Each reference identifies a data component by STIX ID and specifies the (name, channel) pair of the log source within that component to target. Each (x_mitre_data_component_ref, name, channel) tuple must be unique within the array. */
-    x_mitre_log_source_references?: LogSourceReference[],
-    /** Environment-tunable parameters within this analytic that defenders can adjust to adapt the detection logic to their specific environment without altering its fundamental detection behavior. Examples include time windows, user context filters, or port ranges. Each element names a tunable field and explains the rationale for tunability. */
-    x_mitre_mutable_elements?: MutableElement[],
+export interface AttackRelationship extends StixRelationship {
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
+    /** The identity that made the current version of the object: always The MITRE Corporation's. Earlier versions may have had other authors. */
+    x_mitre_modified_by_ref: StixIdentityId,
 }
 
 
 /**
- * ATT&CK Relationship objects connect ATT&CK STIX objects using typed semantic relationships. ATT&CK restricts STIX relationship semantics to a closed set of relationship_type values and enforces valid (source_type, relationship_type, target_type) combinations.
-Valid relationship combinations:
-  uses:
-    malware | tool | intrusion-set | campaign  →  attack-pattern | malware | tool
-    (malware→malware and tool→tool combinations are explicitly prohibited)
-  mitigates:
-    course-of-action  →  attack-pattern
-  subtechnique-of:
-    attack-pattern  →  attack-pattern  (source=sub-technique, target=parent)
-  detects:
-    x-mitre-data-component | x-mitre-detection-strategy  →  attack-pattern
-    (x-mitre-data-component→attack-pattern DEPRECATED as of Spec 3.3.0)
-  attributed-to:
-    campaign  →  intrusion-set
-  targets:
-    attack-pattern  →  x-mitre-asset
-  revoked-by:
-    <any> → <same STIX type>  (source and target must be the same type)
-
-ATT&CK Relationship objects do not carry a 'name' property or 'x_mitre_version'. The x_mitre_modified_by_ref is required on all ATT&CK relationships.
+ * The identity of an organization that creates ATT&CK objects; in MITRE's data, The MITRE Corporation.
  */
-export interface AttackRelationship extends AttackObject {
-    /** The STIX ID of the identity object that created the current version of this object. In practice, always references MITRE's canonical identity object: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5. May differ from created_by_ref if the object was originally created by a third party and subsequently adopted or updated by MITRE. */
-    x_mitre_modified_by_ref: string,
+export interface AttackIdentity extends StixIdentity {
+    /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
+    x_mitre_attack_spec_version: string,
+    /** Whether ATT&CK has deprecated the object. */
+    x_mitre_deprecated?: boolean,
+    /** An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012. */
+    x_mitre_old_attack_id?: string,
 }
 
 
 /**
- * ATT&CK Marking Definition objects apply data handling constraints to ATT&CK content. ATT&CK uses two categories of marking definitions:
-1. TLP (Traffic Light Protocol) markings — four canonical instances with fixed IDs:
-     TLP:WHITE  → marking-definition--613f2e26-407d-48c7-9eca-b8e91df99dc9
-     TLP:GREEN  → marking-definition--34098fce-860f-48ae-8e50-ebd3cc5e41da
-     TLP:AMBER  → marking-definition--f88d31f6-486f-44da-b317-01333bde0b82
-     TLP:RED    → marking-definition--5e57c739-391a-4eb3-b6be-7d15ca92d5ed
-
-2. Statement markings — copyright and terms-of-use text applied to ATT&CK content.
-     Example: "Copyright 2023, The MITRE Corporation. ATT&CK® is a registered trademark."
-
-Marking Definition objects are STIX Meta Objects (SMOs). They do NOT have a 'modified' property and do NOT carry ATT&CK versioning fields (x_mitre_attack_spec_version, x_mitre_version, x_mitre_deprecated).
-The canonical TLP marking definition instances MUST NOT be recreated; only the four fixed instances listed above are valid TLP markings for ATT&CK content.
+ * A marking definition for ATT&CK objects, such as MITRE's copyright statement, which every object of MITRE's data names.
  */
-export interface AttackMarkingDefinition extends MarkingDefinition {
+export interface AttackMarkingDefinition extends StixMarkingDefinition {
 }
 
 
 /**
- * An ATT&CK STIX Bundle is the top-level distribution container for an ATT&CK domain dataset. ATT&CK publishes one bundle per domain per release:
-  - enterprise-attack  (Enterprise ATT&CK)
-  - mobile-attack      (Mobile ATT&CK)
-  - ics-attack         (ATT&CK for ICS)
-
-A Bundle is NOT a STIX Object — it has no ATT&CK-specific versioning fields, no created_by_ref, and no marking definitions of its own. It serves purely as a JSON container grouping all objects that constitute a release.
-ATT&CK Bundle structural requirements:
-  1. The bundle MUST contain exactly one x-mitre-collection object.
-  2. The x-mitre-collection MUST be the first object in the 'objects' array.
-  3. All STIX IDs referenced in the collection's x_mitre_contents MUST be
-     present in the bundle's 'objects' array (no dangling references).
-  4. No duplicate STIX IDs are permitted within a bundle's objects array.
-
-Note: A STIX Bundle Object is not a STIX Object (Section 7.1, STIX 2.1 spec). Objects within the bundle are not semantically related by virtue of sharing a container; all relationships are expressed via Relationship SRO objects.
+ * A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds.
  */
-export interface AttackBundle extends Bundle {
+export interface AttackBundle extends StixBundle {
+}
+
+
+/**
+ * A phase of an ATT&CK domain's kill chain: the kill chain of the domain and the short name of one of its tactics.
+ */
+export interface AttackKillChainPhase extends StixKillChainPhase {
+}
+
+
+/**
+ * An object a collection holds, at the version its modified time names.
+ */
+export interface AttackObjectVersionReference {
+    /** Identifies the object that this Language Content applies to. */
+    object_ref: StixObjectId,
+    /** Identifies the modified time of the object that this Language Content applies to. */
+    object_modified: string,
+}
+
+
+/**
+ * A name a sector gives to devices like an asset, and how such a device relates to the asset.
+ */
+export interface AttackRelatedAsset {
+    /** A name that identifies the object. */
+    name: string,
+    /** The sectors that use the related asset's name. */
+    related_asset_sectors: string,
+    /** A description of the object, which may be long. */
+    description: string,
+}
+
+
+/**
+ * A log that holds a data component's data, and a channel within it.
+ */
+export interface AttackLogSource {
+    /** A name that identifies the object. */
+    name: string,
+    /** A channel or event type within a log, such as 1 for process creation in Sysmon. */
+    channel: string,
+}
+
+
+/**
+ * A log an analytic reads: a data component and one of its logs and channels.
+ */
+export interface AttackLogSourceReference {
+    /** The data component whose log the reference names. */
+    x_mitre_data_component_ref: AttackDataComponentId,
+    /** A name that identifies the object. */
+    name: string,
+    /** A channel or event type within a log, such as 1 for process creation in Sysmon. */
+    channel: string,
+}
+
+
+/**
+ * A part of an analytic a defender may tune, and why it can vary.
+ */
+export interface AttackMutableElement {
+    /** The name of the part of an analytic that can be tuned. */
+    field: string,
+    /** A description of the object, which may be long. */
+    description: string,
 }
 
 

@@ -1,0 +1,175 @@
+# A bundle of a few objects of ATT&CK for ICS v20.0, led by the shortened
+# collection. The bundle's identifier is this example's own.
+type: bundle
+id: bundle--3f1d1b8e-6a39-4c4e-9a0b-6a8d2f0c5e71
+objects:
+  - type: x-mitre-collection
+    id: x-mitre-collection--90c00720-636b-4485-b342-8751d232bf09
+    x_mitre_attack_spec_version: 3.3.0
+    name: ICS ATT&CK
+    x_mitre_version: '20.0'
+    description: The ATT&CK for Industrial Control Systems (ICS) knowledge base
+      categorizes the unique set of tactics, techniques, and procedures (TTPs) used
+      by threat actors in the ICS technology domain. ATT&CK for ICS outlines the
+      portions of an ICS attack that are out of scope of Enterprise and reflects
+      the various phases of an adversary’s attack life cycle and the assets and
+      systems they are known to target.
+    created_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    created: '2026-08-04T20:31:11.216Z'
+    modified: '2026-10-13T17:54:18.154Z'
+    x_mitre_contents:
+      - object_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+        object_modified: '2026-05-12T16:33:30.227Z'
+      - object_ref: marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+        object_modified: '2017-06-01T00:00:00.000Z'
+      - object_ref: x-mitre-tactic--ddf70682-f3ce-479c-a9a4-7eadf9bfead7
+        object_modified: '2025-04-25T14:39:30.353Z'
+      - object_ref: attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805
+        object_modified: '2026-10-13T17:48:40.569Z'
+      - object_ref: x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d
+        object_modified: '2026-05-12T15:12:00.768Z'
+      - object_ref: relationship--a4e9cd0c-75aa-47ec-9fdc-ad9dd8935af2
+        object_modified: '2026-04-29T14:23:06.149Z'
+    object_marking_refs:
+      - marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+    spec_version: '2.1'
+  - type: identity
+    spec_version: '2.1'
+    id: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    created: '2017-06-01T00:00:00.000Z'
+    object_marking_refs:
+      - marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+    modified: '2026-05-12T16:33:30.227Z'
+    name: The MITRE Corporation
+    identity_class: organization
+    x_mitre_attack_spec_version: 3.2.0
+  - definition:
+      statement: Copyright 2015-2026, The MITRE Corporation. MITRE ATT&CK and ATT&CK
+        are registered trademarks of The MITRE Corporation.
+    id: marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+    type: marking-definition
+    spec_version: '2.1'
+    created: '2017-06-01T00:00:00.000Z'
+    created_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    definition_type: statement
+  - type: x-mitre-tactic
+    spec_version: '2.1'
+    id: x-mitre-tactic--ddf70682-f3ce-479c-a9a4-7eadf9bfead7
+    created: '2018-10-17T00:14:20.652Z'
+    created_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    external_references:
+      - source_name: mitre-attack
+        url: https://attack.mitre.org/tactics/TA0103
+        external_id: TA0103
+    object_marking_refs:
+      - marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+    modified: '2025-04-25T14:39:30.353Z'
+    name: Evasion
+    description: 'The adversary is trying to avoid security defenses.
+
+
+      Evasion consists of techniques that adversaries use to avoid technical defenses
+      throughout their campaign. Techniques used for evasion include removal of indicators
+      of compromise, spoofing communications, and exploiting software vulnerabilities.
+      Adversaries may also leverage and abuse trusted devices and processes to hide
+      their activity, possibly by masquerading as master devices or native software.
+      Methods of defense evasion for this purpose are often more passive in nature.'
+    x_mitre_modified_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    x_mitre_deprecated: false
+    x_mitre_domains:
+      - ics-attack
+    x_mitre_version: '1.0'
+    x_mitre_attack_spec_version: 3.2.0
+    x_mitre_shortname: evasion
+  - type: attack-pattern
+    spec_version: '2.1'
+    id: attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805
+    created: '2020-05-21T17:43:26.506Z'
+    created_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    revoked: false
+    external_references:
+      - source_name: mitre-attack
+        url: https://attack.mitre.org/techniques/T0872
+        external_id: T0872
+    object_marking_refs:
+      - marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+    modified: '2026-10-13T17:48:40.569Z'
+    name: Indicator Removal on Host
+    description: Adversaries may attempt to remove indicators of their presence
+      on a system in an effort to cover their tracks. In cases where an adversary
+      may feel detection is imminent, they may try to overwrite, delete, or cover
+      up changes they have made to the device.
+    kill_chain_phases:
+      - kill_chain_name: mitre-ics-attack
+        phase_name: evasion
+    x_mitre_attack_spec_version: 3.3.0
+    x_mitre_deprecated: false
+    x_mitre_domains:
+      - ics-attack
+    x_mitre_is_subtechnique: false
+    x_mitre_modified_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    x_mitre_platforms:
+      - Embedded
+      - Windows
+      - Linux
+      - Network Devices
+    x_mitre_version: '1.0'
+  - type: x-mitre-asset
+    spec_version: '2.1'
+    id: x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d
+    created: '2025-09-29T18:56:19.712Z'
+    created_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    revoked: false
+    external_references:
+      - source_name: mitre-attack
+        url: https://attack.mitre.org/assets/A0018
+        external_id: A0018
+    object_marking_refs:
+      - marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+    modified: '2026-05-12T15:12:00.768Z'
+    name: Programmable Automation Controller (PAC)
+    description: A Programmable Automation Controller (PAC) is an embedded programmable
+      control device. PACs are designed to enable automation applications across
+      integrated software applications, peer controllers (e.g., PLC), Human Machine
+      Interfaces, and other systems. PACs often include advanced features for process
+      control, motion control, drive control, and vision applications. PACs are
+      programmed using traditional process automation programming languages (IEC-61131)
+      and sometimes languages such as C and C++ to support more advanced controls.
+    x_mitre_sectors:
+      - General
+    x_mitre_related_assets:
+      - name: Field Device / Controller
+        related_asset_sectors:
+          - General
+        description: Programmable Automation Controller (PAC) may be referred to
+          as Field Controllers or Field Devices as a general function name.
+      - name: Programmable Logic Controller (PLC)
+        related_asset_sectors:
+          - General
+        description: 'Programmable Logic Controllers (PLC) share some of the same
+          functionality as PACs, although often without more advanced control features.
+          Historically, differences between PLCs and PACs were minimal, resulting
+          in varying use of the terms across industry. '
+    x_mitre_modified_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    x_mitre_platforms:
+      - Embedded
+    x_mitre_deprecated: false
+    x_mitre_domains:
+      - ics-attack
+    x_mitre_version: '1.1'
+    x_mitre_attack_spec_version: 3.3.0
+  - type: relationship
+    spec_version: '2.1'
+    id: relationship--a4e9cd0c-75aa-47ec-9fdc-ad9dd8935af2
+    created: '2025-09-29T19:07:27.830Z'
+    created_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    revoked: false
+    object_marking_refs:
+      - marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+    modified: '2026-04-29T14:23:06.149Z'
+    relationship_type: targets
+    source_ref: attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805
+    target_ref: x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d
+    x_mitre_modified_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    x_mitre_deprecated: false
+    x_mitre_attack_spec_version: 3.3.0

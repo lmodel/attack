@@ -1,0 +1,1182 @@
+[
+  {
+    "type": "campaign",
+    "spec_version": "2.1",
+    "id": "campaign--7ab2f1a1-26af-4204-ad84-d640fde391da",
+    "created": "2024-11-25T20:35:10.872Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/campaigns/C0044",
+        "external_id": "C0044"
+      },
+      {
+        "source_name": "ESET OilRig Campaigns Sep 2023",
+        "description": "Hromcova, Z. and Burgher, A. (2023, September 21). OilRig’s Outer Space and Juicy Mix: Same ol’ rig, new drill pipes. Retrieved November 21, 2024.",
+        "url": "https://www.welivesecurity.com/en/eset-research/oilrigs-outer-space-juicy-mix-same-ol-rig-new-drill-pipes/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T21:13:47.266Z",
+    "name": "Juicy Mix",
+    "description": "[Juicy Mix](https://attack.mitre.org/campaigns/C0044) was a campaign conducted by [OilRig](https://attack.mitre.org/groups/G0049) throughout 2022 that targeted Israeli organizations with the [Mango](https://attack.mitre.org/software/S1169) backdoor.(Citation: ESET OilRig Campaigns Sep 2023)",
+    "aliases": [
+      "Juicy Mix"
+    ],
+    "first_seen": "2022-01-01T05:00:00.000Z",
+    "last_seen": "2022-12-01T05:00:00.000Z",
+    "x_mitre_first_seen_citation": "(Citation: ESET OilRig Campaigns Sep 2023)",
+    "x_mitre_last_seen_citation": "(Citation: ESET OilRig Campaigns Sep 2023)",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ]
+  },
+  {
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--121b2863-5b97-4538-acb3-f8aae070ec13",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/mitigations/T1159",
+        "external_id": "T1159"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-18T17:59:42.298Z",
+    "name": "Launch Agent Mitigation",
+    "description": "Restrict user's abilities to create Launch Agents with group policy.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "type": "course-of-action",
+    "spec_version": "2.1",
+    "id": "course-of-action--12241367-a8b7-49b4-b86e-2236901ba50c",
+    "created": "2019-06-10T20:46:02.263Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/mitigations/M1031",
+        "external_id": "M1031"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-09-03T19:46:42.143Z",
+    "name": "Network Intrusion Prevention",
+    "description": "Use intrusion detection signatures to block traffic at network boundaries.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "intrusion-set",
+    "spec_version": "2.1",
+    "id": "intrusion-set--1f0f9a14-11aa-49aa-9174-bcd0eaa979de",
+    "created": "2021-01-22T16:46:17.790Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/groups/G0120",
+        "external_id": "G0120"
+      },
+      {
+        "source_name": "Evilnum",
+        "description": "(Citation: ESET EvilNum July 2020)"
+      },
+      {
+        "source_name": "ESET EvilNum July 2020",
+        "description": "Porolli, M. (2020, July 9). More evil: A deep look at Evilnum and its toolset. Retrieved January 22, 2021.",
+        "url": "https://www.welivesecurity.com/2020/07/09/more-evil-deep-look-evilnum-toolset/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T18:47:41.686Z",
+    "name": "Evilnum",
+    "description": "[Evilnum](https://attack.mitre.org/groups/G0120) is a financially motivated threat group that has been active since at least 2018.(Citation: ESET EvilNum July 2020)",
+    "aliases": [
+      "Evilnum"
+    ],
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "intrusion-set",
+    "spec_version": "2.1",
+    "id": "intrusion-set--68ba94ab-78b8-43e7-83e2-aed3466882c6",
+    "created": "2018-01-16T16:13:52.465Z",
+    "revoked": true,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/groups/G0057",
+        "external_id": "G0057"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T20:48:36.792Z",
+    "name": "APT34",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_domains": [
+      "enterprise-attack",
+      "ics-attack"
+    ]
+  },
+  {
+    "type": "malware",
+    "spec_version": "2.1",
+    "id": "malware--310f437b-29e7-4844-848c-7220868d074a",
+    "created": "2018-04-18T17:59:24.739Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": true,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S0209",
+        "external_id": "S0209"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-10-08T18:56:18.127Z",
+    "name": "Darkmoon",
+    "description": ".",
+    "is_family": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_aliases": [
+      "Darkmoon"
+    ]
+  },
+  {
+    "type": "malware",
+    "spec_version": "2.1",
+    "id": "malware--552462b9-ae79-49dd-855c-5973014e157f",
+    "created": "2017-05-31T21:32:20.949Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S0027",
+        "external_id": "S0027"
+      },
+      {
+        "source_name": "Sophos ZeroAccess",
+        "description": "Wyke, J. (2012, April). ZeroAccess. Retrieved July 18, 2016.",
+        "url": "https://sophosnews.files.wordpress.com/2012/04/zeroaccess2.pdf"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:43:22.946Z",
+    "name": "Zeroaccess",
+    "description": "[Zeroaccess](https://attack.mitre.org/software/S0027) is a kernel-mode [Rootkit](https://attack.mitre.org/techniques/T1014) that attempts to add victims to the ZeroAccess botnet, often for monetary gain. (Citation: Sophos ZeroAccess)",
+    "is_family": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "type": "malware",
+    "spec_version": "2.1",
+    "id": "malware--c5e9cb46-aced-466c-85ea-7db5572ad9ec",
+    "created": "2017-05-31T21:32:11.148Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S0001",
+        "external_id": "S0001"
+      },
+      {
+        "source_name": "Ge 2011",
+        "description": "Ge, L. (2011, September 9). BIOS Threat is Showing up Again!. Retrieved November 14, 2014.",
+        "url": "http://www.symantec.com/connect/blogs/bios-threat-showing-again"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:44:38.888Z",
+    "name": "Trojan.Mebromi",
+    "description": "[Trojan.Mebromi](https://attack.mitre.org/software/S0001) is BIOS-level malware that takes control of the victim before MBR. (Citation: Ge 2011)",
+    "is_family": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Windows"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.1",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_aliases": [
+      "Trojan.Mebromi"
+    ]
+  },
+  {
+    "type": "tool",
+    "spec_version": "2.1",
+    "id": "tool--65370d0b-3bd4-4653-8cf9-daf56f6be830",
+    "created": "2018-01-16T16:13:52.465Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/software/S0175",
+        "external_id": "S0175"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:45:20.648Z",
+    "name": "meek",
+    "description": "[meek](https://attack.mitre.org/software/S0175) is an open-source Tor plugin that tunnels Tor traffic through HTTPS connections.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Linux",
+      "Windows",
+      "macOS"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_aliases": [
+      "meek"
+    ]
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--5909f20f-3c39-4795-be06-ef1ea40d350b",
+    "created": "2019-04-08T17:51:41.390Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T1491",
+        "external_id": "T1491"
+      },
+      {
+        "source_name": "Defacement Attacks",
+        "description": "HKCERT. (2024, March 20). Defacement Attacks: Understanding and Prevention. Retrieved September 2, 2026.",
+        "url": "https://www.hkcert.org/blog/defacement-attacks-understanding-and-prevention"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-09-02T20:02:31.002Z",
+    "name": "Defacement",
+    "description": "Adversaries may modify visual content available internally or externally to an enterprise network, thus affecting the integrity of the original content. Reasons for [Defacement](https://attack.mitre.org/techniques/T1491) include delivering messaging, intimidation, or claiming (possibly false) credit for an intrusion. Disturbing or offensive images may be used as a part of [Defacement](https://attack.mitre.org/techniques/T1491) in order to cause user discomfort, or to pressure compliance with accompanying messages.(Citation: Defacement Attacks)\n",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-attack",
+        "phase_name": "impact"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Windows",
+      "IaaS",
+      "Linux",
+      "macOS",
+      "ESXi"
+    ],
+    "x_mitre_version": "1.5",
+    "x_mitre_impact_type": [
+      "Integrity"
+    ]
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--86a96bf6-cf8b-411c-aaeb-8959944d64f7",
+    "created": "2020-03-09T14:51:11.772Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T1567/001",
+        "external_id": "T1567.001"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T15:12:00.686Z",
+    "name": "Exfiltration to Code Repository",
+    "description": "Adversaries may exfiltrate data to a code repository rather than over their primary command and control channel. Code repositories are often accessible via an API (ex: https://api.github.com). Access to these APIs are often over HTTPS, which gives the adversary an additional level of protection.\n\nExfiltration to a code repository can also provide a significant amount of cover to the adversary if it is a popular service already used by hosts within the network. ",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-attack",
+        "phase_name": "exfiltration"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_is_subtechnique": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "ESXi",
+      "Linux",
+      "macOS",
+      "Windows"
+    ],
+    "x_mitre_version": "1.2"
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--92d7da27-2d91-488e-a00c-059dc162766d",
+    "created": "2017-05-31T21:30:41.804Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T1041",
+        "external_id": "T1041"
+      },
+      {
+        "source_name": "C2 FRAMEWORKS",
+        "description": "Karen Patel, CEO. (2025, October 26). INTRODUCTION TO C2 FRAMEWORKS: HOW ATTACKERS OPERATE. Retrieved September 2, 2026.",
+        "url": "https://www.redfoxsec.com/blog/introduction-to-c2-frameworks-how-attackers-control-compromised-systems"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-09-11T19:45:01.540Z",
+    "name": "Exfiltration Over C2 Channel",
+    "description": "Adversaries may steal data by exfiltrating it over an existing command and control channel. Stolen data is encoded into the normal communications channel using the same protocol as command and control communications.(Citation: C2 FRAMEWORKS)",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-attack",
+        "phase_name": "exfiltration"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_contributors": [
+      "William Cain"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "ESXi",
+      "Linux",
+      "macOS",
+      "Windows"
+    ],
+    "x_mitre_version": "2.4"
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--c5e31fb5-fcbd-48a4-af8c-5a6ed5b932e5",
+    "created": "2019-10-08T20:08:56.205Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": true,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T1506",
+        "external_id": "T1506"
+      },
+      {
+        "source_name": "Pass The Cookie",
+        "description": "Rehberger, J. (2018, December). Pivot to the Cloud using Pass the Cookie. Retrieved April 5, 2019.",
+        "url": "https://wunderwuzzi23.github.io/blog/passthecookie.html"
+      },
+      {
+        "source_name": "Unit 42 Mac Crypto Cookies January 2019",
+        "description": "Chen, Y., Hu, W., Xu, Z., et. al. (2019, January 31). Mac Malware Steals Cryptocurrency Exchanges’ Cookies. Retrieved October 14, 2019.",
+        "url": "https://unit42.paloaltonetworks.com/mac-malware-steals-cryptocurrency-exchanges-cookies/"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-04-14T22:53:14.887Z",
+    "name": "Web Session Cookie",
+    "description": "Adversaries can use stolen session cookies to authenticate to web applications and services. This technique bypasses some multi-factor authentication protocols since the session is already authenticated.(Citation: Pass The Cookie)\n\nAuthentication cookies are commonly used in web applications, including cloud-based services, after a user has authenticated to the service so credentials are not passed and re-authentication does not need to occur as frequently. Cookies are often valid for an extended period of time, even if the web application is not actively used. After the cookie is obtained through [Steal Web Session Cookie](https://attack.mitre.org/techniques/T1539), the adversary then imports the cookie into a browser they control and is able to use the site or application as the user for as long as the session cookie is active. Once logged into the site, an adversary can access sensitive information, read email, or perform actions that the victim account has permissions to perform.\n\nThere have been examples of malware targeting session cookies to bypass multi-factor authentication systems.(Citation: Unit 42 Mac Crypto Cookies January 2019) ",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-attack",
+        "phase_name": "stealth"
+      },
+      {
+        "kill_chain_name": "mitre-attack",
+        "phase_name": "lateral-movement"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_contributors": [
+      "Johann Rehberger"
+    ],
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Office 365",
+      "SaaS"
+    ],
+    "x_mitre_version": "1.1"
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--c848fcf7-6b62-4bde-8216-b6c157d48da0",
+    "created": "2017-05-31T21:30:53.408Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": true,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T1065",
+        "external_id": "T1065"
+      },
+      {
+        "source_name": "University of Birmingham C2",
+        "description": "Gardiner, J.,  Cova, M., Nagaraja, S. (2014, February). Command & Control Understanding, Denying and Detecting. Retrieved April 20, 2016.",
+        "url": "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-24T17:49:22.451Z",
+    "name": "Uncommonly Used Port",
+    "description": "Adversaries may conduct C2 communications over a non-standard port to bypass proxies and firewalls that have been improperly configured.",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-attack",
+        "phase_name": "command-and-control"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Linux",
+      "macOS",
+      "Windows"
+    ],
+    "x_mitre_version": "1.1"
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--ef67e13e-5598-4adc-bdb2-998225874fa9",
+    "created": "2020-03-11T14:43:31.706Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T1204/001",
+        "external_id": "T1204.001"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-09-11T19:19:57.658Z",
+    "name": "Malicious Link",
+    "description": "An adversary may rely upon a user clicking a malicious link in order to gain execution. Users may be subjected to social engineering to get them to click on a link that will lead to code execution. This user action will typically be observed as follow-on behavior from [Spearphishing Link](https://attack.mitre.org/techniques/T1566/002). Clicking on a link may also lead to other execution techniques such as exploitation of a browser or application vulnerability via [Exploitation for Client Execution](https://attack.mitre.org/techniques/T1203). Links may also lead users to download files that require execution via [Malicious File](https://attack.mitre.org/techniques/T1204/002).",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-attack",
+        "phase_name": "execution"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_is_subtechnique": true,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "Linux",
+      "macOS",
+      "Windows"
+    ],
+    "x_mitre_version": "1.2",
+    "x_mitre_remote_support": false
+  },
+  {
+    "type": "attack-pattern",
+    "spec_version": "2.1",
+    "id": "attack-pattern--f24faf46-3b26-4dbb-98f2-63460498e433",
+    "created": "2017-05-31T21:30:21.689Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/techniques/T1008",
+        "external_id": "T1008"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-09-09T18:39:15.900Z",
+    "name": "Fallback Channels",
+    "description": "Adversaries may use fallback or alternate communication channels if the primary channel is compromised or inaccessible in order to maintain reliable command and control and to avoid data transfer thresholds.",
+    "kill_chain_phases": [
+      {
+        "kill_chain_name": "mitre-attack",
+        "phase_name": "command-and-control"
+      }
+    ],
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_is_subtechnique": false,
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "ESXi",
+      "Linux",
+      "macOS",
+      "Windows"
+    ],
+    "x_mitre_version": "1.1"
+  },
+  {
+    "type": "x-mitre-matrix",
+    "spec_version": "2.1",
+    "id": "x-mitre-matrix--eafc1b4c-5e56-4965-bd4e-66a6a89c88cc",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/matrices/enterprise",
+        "external_id": "enterprise-attack"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T18:48:31.315Z",
+    "name": "Enterprise ATT&CK",
+    "description": "Below are the tactics and techniques representing the MITRE ATT&CK Matrix for Enterprise. The Matrix contains information for the following platforms: Windows, macOS, Linux, PRE, Office Suite, Identity Provider, SaaS, IaaS, Network Devices, Containers, ESXi.",
+    "tactic_refs": [
+      "x-mitre-tactic--daa4cbb1-b4f4-4723-a824-7f1efd6e0592",
+      "x-mitre-tactic--d679bca2-e57d-4935-8650-8031c87a4400",
+      "x-mitre-tactic--ffd5bcee-6e16-4dd2-8eca-7b3beedf33ca",
+      "x-mitre-tactic--4ca45d45-df4d-4613-8980-bac22d278fa5",
+      "x-mitre-tactic--5bc1d813-693e-4823-9961-abf9af4b0e92",
+      "x-mitre-tactic--5e29b093-294e-49e9-a803-dab3d73b77dd",
+      "x-mitre-tactic--78b23412-0651-46d7-a540-170a1ce8bd5a",
+      "x-mitre-tactic--43c49635-f2fa-44f2-92b9-0ee980bbf4ef",
+      "x-mitre-tactic--2558fd61-8c75-4730-94c4-11926db2a263",
+      "x-mitre-tactic--c17c5845-175e-4421-9713-829d0573dbc9",
+      "x-mitre-tactic--7141578b-e50b-4dcc-bfa4-08a8dd689e9e",
+      "x-mitre-tactic--d108ce10-2419-4cf9-a774-46161d6c6cfe",
+      "x-mitre-tactic--f72804c5-f15a-449e-a5da-2eecd181f813",
+      "x-mitre-tactic--9a4e74ab-5008-408c-84bf-a10dfbc53462",
+      "x-mitre-tactic--5569339b-94c2-49ee-afb3-2222936582c8"
+    ],
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "2.0",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "x-mitre-tactic",
+    "spec_version": "2.1",
+    "id": "x-mitre-tactic--2558fd61-8c75-4730-94c4-11926db2a263",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/tactics/TA0006",
+        "external_id": "TA0006"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-25T14:45:32.408Z",
+    "name": "Credential Access",
+    "description": "The adversary is trying to steal account names and passwords.\n\nCredential Access consists of techniques for stealing credentials like account names and passwords. Techniques used to get credentials include keylogging or credential dumping. Using legitimate credentials can give adversaries access to systems, make them harder to detect, and provide the opportunity to create more accounts to help achieve their goals.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_shortname": "credential-access"
+  },
+  {
+    "type": "x-mitre-tactic",
+    "spec_version": "2.1",
+    "id": "x-mitre-tactic--43c49635-f2fa-44f2-92b9-0ee980bbf4ef",
+    "created": "2026-04-14T22:53:16.228Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/tactics/TA0112",
+        "external_id": "TA0112"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T15:12:00.780Z",
+    "name": "Defense Impairment",
+    "description": "The adversary is trying to break security mechanisms, pipelines, and tooling so defenders can’t see or trust what’s happening.\n\nDefense Impairment consists of techniques that degrade, disable, or undermine the effectiveness and trustworthiness of security controls and monitoring mechanisms. These techniques are characterized by direct interference with defensive systems. The goal is to reduce defenders’ ability to detect, interpret, or respond to adversary activity.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_shortname": "defense-impairment"
+  },
+  {
+    "type": "x-mitre-tactic",
+    "spec_version": "2.1",
+    "id": "x-mitre-tactic--78b23412-0651-46d7-a540-170a1ce8bd5a",
+    "created": "2018-10-17T00:14:20.652Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/tactics/TA0005",
+        "external_id": "TA0005"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T15:12:00.780Z",
+    "name": "Stealth",
+    "description": "The adversary is trying to hide and conceal their actions, appearing as normal behavior.\n\nStealth consists of techniques that reduce the likelihood of detection by blending in with legitimate activity or minimizing observable signals. These techniques are characterized by concealment behaviors, such as avoiding, obfuscating, or mimicking normal operations, without modifying security controls or compromising collection and monitoring feeds. The goal is to remain indistinguishable from benign activity while leaving defensive systems intact.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_shortname": "stealth"
+  },
+  {
+    "type": "x-mitre-analytic",
+    "spec_version": "2.1",
+    "id": "x-mitre-analytic--1313533a-06c7-44ea-8d75-9a23d3ea23cc",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0338#AN0959",
+        "external_id": "AN0959"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "name": "Analytic 0959",
+    "description": "Access token reuse to connect to SharePoint or Outlook APIs without interactive user context.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_platforms": [
+      "Office Suite"
+    ],
+    "x_mitre_log_source_references": [
+      {
+        "x_mitre_data_component_ref": "x-mitre-data-component--ff93f688-d7a4-49cf-9c79-a14454da8428",
+        "name": "m365:unified",
+        "channel": "TokenIssued, FileAccessed"
+      }
+    ],
+    "x_mitre_mutable_elements": [
+      {
+        "field": "UserAgentCheck",
+        "description": "Tune to detect access from CLI agents or scripts rather than interactive browsers"
+      }
+    ],
+    "x_mitre_deprecated": false
+  },
+  {
+    "type": "x-mitre-analytic",
+    "spec_version": "2.1",
+    "id": "x-mitre-analytic--80e453fd-8191-474a-b577-7a575ef5fe87",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0886#AN2018",
+        "external_id": "AN2018"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "name": "Analytic 2018",
+    "description": "Monitor call logs from corporate devices to identify patterns of potential voice phishing, such as calls to/from known malicious phone numbers.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_platforms": [
+      "PRE"
+    ],
+    "x_mitre_log_source_references": [
+      {
+        "x_mitre_data_component_ref": "x-mitre-data-component--9c2fa0ae-7abc-485a-97f6-699e3b6cf9fa",
+        "name": "Application Log",
+        "channel": "None"
+      }
+    ],
+    "x_mitre_deprecated": false
+  },
+  {
+    "type": "x-mitre-data-component",
+    "spec_version": "2.1",
+    "id": "x-mitre-data-component--0f72bf50-35b3-419d-ab95-70f9b6a818dd",
+    "created": "2021-10-20T15:05:19.275Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/datacomponents/DC0100",
+        "external_id": "DC0100"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-11-12T22:03:39.105Z",
+    "name": "Volume Metadata",
+    "description": "Contextual data about a cloud volume and activity around it, such as id, type, state, and size",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "2.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_log_sources": [
+      {
+        "name": "Metadata",
+        "channel": "None"
+      }
+    ]
+  },
+  {
+    "type": "x-mitre-data-component",
+    "spec_version": "2.1",
+    "id": "x-mitre-data-component--c0edd522-0aef-46b3-8efa-2bd334ce4242",
+    "created": "2021-10-20T15:05:19.272Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/datacomponents/DC0121",
+        "external_id": "DC0121"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-11-12T22:03:39.105Z",
+    "name": "Pod Metadata",
+    "description": "Contextual data about a pod and activity around it such as name, ID, namespace, or status",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "x-mitre-data-component",
+    "spec_version": "2.1",
+    "id": "x-mitre-data-component--ec225357-8197-47a4-a9cd-57741d592877",
+    "created": "2021-10-20T15:05:19.275Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/datacomponents/DC0095",
+        "external_id": "DC0095"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "name": "Volume Enumeration",
+    "description": "An extracted list of available volumes within a cloud environment (ex: AWS describe-volumes)",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "2.0",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "x-mitre-data-source",
+    "spec_version": "2.1",
+    "id": "x-mitre-data-source--3bef4799-906c-409c-ac00-3fb7a1e352e6",
+    "created": "2021-10-20T15:05:19.273Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/datasources/DS0021",
+        "external_id": "DS0021"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "name": "Persona",
+    "description": "A malicious online profile representing a user commonly used by adversaries to social engineer or otherwise target victims",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_platforms": [
+      "PRE"
+    ],
+    "x_mitre_deprecated": true,
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.2.0",
+    "x_mitre_collection_layers": [
+      "OSINT"
+    ]
+  },
+  {
+    "type": "x-mitre-detection-strategy",
+    "spec_version": "2.1",
+    "id": "x-mitre-detection-strategy--0596d971-9552-4cd0-a5aa-4385cf707371",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0239",
+        "external_id": "DET0239"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T18:48:41.298Z",
+    "name": "Detection Strategy for Impair Defenses Indicator Blocking",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": true,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_analytic_refs": [
+      "x-mitre-analytic--945f8192-6f4f-4183-b457-40b5c6d9b4ca",
+      "x-mitre-analytic--63e17792-17f5-48ae-8002-da6b62b4bcaa",
+      "x-mitre-analytic--9274294a-dfc3-4084-b228-dfb36448f077",
+      "x-mitre-analytic--b3828af6-912b-493b-b621-3448a8f07972"
+    ],
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ]
+  },
+  {
+    "type": "x-mitre-detection-strategy",
+    "spec_version": "2.1",
+    "id": "x-mitre-detection-strategy--3058b630-ede1-4bbb-b8ce-985d802e1e8d",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0843",
+        "external_id": "DET0843"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T16:34:50.673Z",
+    "name": "Detection of DNS",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_analytic_refs": [
+      "x-mitre-analytic--e9808ca9-3019-4395-b2d8-717f5d4863fe"
+    ]
+  },
+  {
+    "type": "x-mitre-analytic",
+    "spec_version": "2.1",
+    "id": "x-mitre-analytic--dde1f5e7-6aea-454c-9521-231257bb53c3",
+    "created": "2026-10-07T20:02:54.626Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "external_references": [
+      {
+        "source_name": "mitre-attack",
+        "url": "https://attack.mitre.org/detectionstrategies/DET0939#AN2106",
+        "external_id": "AN2106"
+      }
+    ],
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-10-07T20:04:34.224Z",
+    "name": "Analytic 2106",
+    "description": "No target-side behavioral Detection Strategy exists for CAPTCHA based solely on CAPTCHA telemetry.",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_version": "1.0",
+    "x_mitre_attack_spec_version": "3.3.0",
+    "x_mitre_domains": [
+      "enterprise-attack"
+    ],
+    "x_mitre_platforms": [
+      "SaaS"
+    ]
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--00b2d214-7126-4b80-866c-4321d6ace9b0",
+    "created": "2025-10-21T15:10:28.402Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-10-21T15:10:28.402Z",
+    "relationship_type": "detects",
+    "source_ref": "x-mitre-detection-strategy--be6a466c-40c6-4611-9b68-7cfcbcb35fb0",
+    "target_ref": "attack-pattern--dca670cf-eeec-438f-8185-fd959d9ef211",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--01691c6e-9432-4297-8dab-632bf5ee87bc",
+    "created": "2026-04-14T22:54:02.514Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-04-14T22:54:02.514Z",
+    "relationship_type": "subtechnique-of",
+    "source_ref": "attack-pattern--34ff60a3-a3f8-42e4-bed0-af9a2cb563d7",
+    "target_ref": "attack-pattern--bbde9781-60aa-4b8a-a911-895b0c1b3872",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--0dd04e16-ad64-4b7d-af2f-12ad644cfe3e",
+    "created": "2026-04-20T17:12:17.096Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T21:13:10.969Z",
+    "relationship_type": "attributed-to",
+    "source_ref": "campaign--7e21077d-2589-43a7-a5f9-490061289526",
+    "target_ref": "intrusion-set--ebd7ce77-c9ba-4fba-bb28-58296ac66559",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--3e646993-2414-4382-b709-6c5bc02740e3",
+    "created": "2020-02-10T19:49:46.839Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-04-29T14:23:06.010Z",
+    "description": "Require signed binaries.",
+    "relationship_type": "mitigates",
+    "source_ref": "course-of-action--590777b3-b475-4c7c-aaf8-f4a73b140312",
+    "target_ref": "attack-pattern--b4b7458f-81f2-4d38-84be-1c5ba0167a52",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--69aa300b-3e31-438c-99bf-4822141046c5",
+    "created": "2020-05-12T22:05:50.826Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "revoked": false,
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-07-31T18:48:06.572Z",
+    "relationship_type": "uses",
+    "source_ref": "intrusion-set--88489675-d216-4884-a98f-49a89fcc1643",
+    "target_ref": "tool--115f88dd-0618-4389-83cb-98d33ae81848",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.3.0"
+  },
+  {
+    "type": "relationship",
+    "spec_version": "2.1",
+    "id": "relationship--be840605-e9ad-44f2-9494-6babc7a63c23",
+    "created": "2023-09-25T18:56:12.161Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2025-04-16T22:43:47.203Z",
+    "relationship_type": "revoked-by",
+    "source_ref": "malware--911fe4c3-444d-4e92-83b8-cc761ac5fd3b",
+    "target_ref": "tool--2f7f03bb-f367-4a5a-ad9b-310a12a48906",
+    "x_mitre_modified_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "x_mitre_deprecated": false,
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "type": "identity",
+    "spec_version": "2.1",
+    "id": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "created": "2017-06-01T00:00:00.000Z",
+    "object_marking_refs": [
+      "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168"
+    ],
+    "modified": "2026-05-12T16:33:30.227Z",
+    "name": "The MITRE Corporation",
+    "identity_class": "organization",
+    "x_mitre_attack_spec_version": "3.2.0"
+  },
+  {
+    "definition": {
+      "statement": "Copyright 2015-2026, The MITRE Corporation. MITRE ATT&CK and ATT&CK are registered trademarks of The MITRE Corporation."
+    },
+    "id": "marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168",
+    "type": "marking-definition",
+    "spec_version": "2.1",
+    "created": "2017-06-01T00:00:00.000Z",
+    "created_by_ref": "identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5",
+    "definition_type": "statement"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "repository": "mitre-attack/attack-stix-data",
+  "tag": "v20.0",
+  "commit": "20664a889568dce884a1dac0ec7b12ae3a199f51",
+  "copied": {
+    "LICENSE.txt": {
+      "git_blob": "7d8dc97542672cc9ec78de1b643b5b39ca7e2fba"
+    }
+  },
+  "fetched": {
+    "enterprise-attack/enterprise-attack-20.0.json": {
+      "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/v20.0/enterprise-attack/enterprise-attack-20.0.json",
+      "size": 55271014,
+      "sha256": "81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352",
+      "git_blob": "b39ce73c609d0f028841546e042ec16ffd7fe63f"
+    },
+    "mobile-attack/mobile-attack-20.0.json": {
+      "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/v20.0/mobile-attack/mobile-attack-20.0.json",
+      "size": 6095145,
+      "sha256": "824f7d8a37e7893b29e4c6ca6d87b5fbbf3b228ec6384f1a69ee20d523ff59e5",
+      "git_blob": "eabce70343f34fd16ee2af178018fbae9fe70c4f"
+    },
+    "ics-attack/ics-attack-20.0.json": {
+      "url": "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/v20.0/ics-attack/ics-attack-20.0.json",
+      "size": 5266683,
+      "sha256": "c9ca0ce523a1b5e512060a390415e8aefe8f6d32c5f82d7de81264960c1e1183",
+      "git_blob": "a297c812712c7298238485f9005b779e2e95c07f"
+    }
+  }
+}

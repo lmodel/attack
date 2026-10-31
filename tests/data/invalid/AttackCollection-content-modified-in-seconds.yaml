@@ -1,0 +1,30 @@
+# Fails at: /x_mitre_contents/0/object_modified
+type: x-mitre-collection
+id: x-mitre-collection--90c00720-636b-4485-b342-8751d232bf09
+x_mitre_attack_spec_version: 3.3.0
+name: ICS ATT&CK
+x_mitre_version: '20.0'
+description: The ATT&CK for Industrial Control Systems (ICS) knowledge base categorizes
+  the unique set of tactics, techniques, and procedures (TTPs) used by threat actors
+  in the ICS technology domain. ATT&CK for ICS outlines the portions of an ICS attack
+  that are out of scope of Enterprise and reflects the various phases of an adversary’s
+  attack life cycle and the assets and systems they are known to target.
+created_by_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+created: '2026-08-04T20:31:11.216Z'
+modified: '2026-10-13T17:54:18.154Z'
+x_mitre_contents:
+  - object_ref: identity--c78cb6e5-0c4b-4611-8297-d1b8b55e40b5
+    object_modified: '2026-01-01T00:00:00Z'
+  - object_ref: marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+    object_modified: '2017-06-01T00:00:00.000Z'
+  - object_ref: x-mitre-tactic--ddf70682-f3ce-479c-a9a4-7eadf9bfead7
+    object_modified: '2025-04-25T14:39:30.353Z'
+  - object_ref: attack-pattern--53a26eee-1080-4d17-9762-2027d5a1b805
+    object_modified: '2026-10-13T17:48:40.569Z'
+  - object_ref: x-mitre-asset--459e4335-74e1-4136-b730-0f116f0d541d
+    object_modified: '2026-05-12T15:12:00.768Z'
+  - object_ref: relationship--a4e9cd0c-75aa-47ec-9fdc-ad9dd8935af2
+    object_modified: '2026-04-29T14:23:06.149Z'
+object_marking_refs:
+  - marking-definition--fa42a846-8d90-4e51-bc29-71d5b4802168
+spec_version: '2.1'

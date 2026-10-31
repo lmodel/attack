@@ -1,0 +1,5 @@
+# Policies
+
+* [AI covenant](ai-covenant.md) - The rules for AI-assisted work here: the contributor owns what they submit, an element says what ATT&CK says, MITRE's data is never edited to pass a test, AI systems post no comments, and the scheduled librarian works only through pull requests a person reviews.
+* [Licence and attribution](license-and-attribution.md) - The licences that apply here: Apache 2.0 for the schema and code, MITRE's licence for the copies of ATT&CK's data (with its copyright designation reproduced), Apache 2.0 and OASIS's BSD-3-Clause for the stix modules, MIT for the copier template, and CC BY 4.0 for the knowledge bundle.
+* [Security policy](security-policy.md) - How to report a vulnerability (GitHub's private reporting), which release receives fixes (the latest), what each workflow may do, and what the main branch's ruleset holds: no deletion, no force-push and a linear history; required reviewers on the release Environment and secret scanning are not yet in force.
