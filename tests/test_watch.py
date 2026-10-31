@@ -32,10 +32,23 @@ def watch():
     return module
 
 
-def _answers(watch, latest, adm_releases=None):
+# The data model's releases as GitHub lists them on the day of the pin: the
+# v4.11 line and the v5.0.0 betas are marked as pre-releases, and v4.10.1 is
+# the newest stable release.
+ADM_RELEASES = [
+    ("v4.11.7", True),
+    ("v4.11.6", True),
+    ("v4.10.1", False),
+    ("v5.0.0-beta.3", True),
+    ("v4.10.0", False),
+]
+
+
+def _answers(watch, latest, adm_releases=ADM_RELEASES):
     """What the API answers when nothing has changed since the pins, with
-    `latest` as ATT&CK's latest release, keyed by the address the script
-    asks."""
+    `latest` as ATT&CK's latest release and `adm_releases` as the data
+    model's releases, each a tag and its pre-release flag, keyed by the
+    address the script asks."""
     data, adm = f"{watch.API}/{watch.DATA_REPO}", f"{watch.API}/{watch.ADM_REPO}"
     folders = {}
     for name, pin in watch.MANIFEST["fetched"].items():
@@ -63,8 +76,8 @@ def _answers(watch, latest, adm_releases=None):
             "object": {"type": "commit", "sha": watch.PINNED_ADM_COMMIT}
         },
         f"{adm}/releases?per_page=100": [
-            {"tag_name": t}
-            for t in adm_releases or ["v5.0.0-beta.3", watch.PINNED_ADM_TAG, "v4.10.1"]
+            {"tag_name": tag, "prerelease": pre, "draft": False}
+            for tag, pre in adm_releases
         ],
     }
     for ref in {watch.PINNED_COMMIT, latest, BRANCH}:
@@ -97,8 +110,8 @@ def _run(watch, tmp_path):
 
 def test_nothing_changed(watch, tmp_path):
     """With the pinned releases the latest and every blob as pinned, the watch
-    reports the pins current and exits 0. A beta of the data model is not a
-    release to move to."""
+    reports the pins current and exits 0. The data model's older stable
+    release and its beta of another major line are not releases to move to."""
     _stub(watch, _answers(watch, watch.PINNED_TAG))
     code, text = _run(watch, tmp_path)
     assert code == 0, text
@@ -106,10 +119,7 @@ def test_nothing_changed(watch, tmp_path):
     assert (
         f"The licence at {watch.PINNED_TAG} and on {BRANCH} is the pinned one." in text
     )
-    assert (
-        f"Newest release without a pre-release suffix: {watch.PINNED_ADM_TAG}, "
-        "the pinned one." in text
-    )
+    assert "No newer stable release, and no newer pre-release on the 4.x line." in text
 
 
 def test_a_newer_attack_release(watch, tmp_path):
@@ -175,14 +185,28 @@ def test_a_copied_licence_that_differs(watch, tmp_path):
     )
 
 
-def test_a_newer_stable_data_model(watch, tmp_path):
-    """A data model release without a pre-release suffix, newer than the pin,
-    sets attention."""
-    releases = ["v5.0.0-beta.3", "v4.12.0", watch.PINNED_ADM_TAG]
-    _stub(watch, _answers(watch, watch.PINNED_TAG, releases))
+@pytest.mark.parametrize(
+    "release, found",
+    [
+        (("v4.11.8", True), "a newer pre-release on the pinned 4.x line, v4.11.8"),
+        (("v5.0.0-beta.4", True), None),
+        (("v4.12.0", False), "a newer stable release, v4.12.0"),
+        (("v5.0.0", False), "a newer stable release, v5.0.0"),
+    ],
+)
+def test_a_newer_data_model_release(watch, tmp_path, release, found):
+    """GitHub's pre-release flag and the version decide, not the tag's form.
+    A newer stable release of any version is reported, and so is a newer
+    pre-release on the pinned 4.x line, such as a 4.11.8, although its tag
+    carries no suffix. A beta of another major line is left out."""
+    _stub(watch, _answers(watch, watch.PINNED_TAG, [release, *ADM_RELEASES]))
     code, text = _run(watch, tmp_path)
-    assert code == 1
-    assert f"**{watch.ADM_REPO} has a newer release, v4.12.0.**" in text
+    if found is None:
+        assert code == 0, text
+        assert "No newer stable release" in text
+    else:
+        assert code == 1
+        assert f"**{watch.ADM_REPO} has {found}.**" in text
 
 
 def test_a_moved_tag(watch, tmp_path):

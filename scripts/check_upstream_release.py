@@ -26,8 +26,12 @@ bundle. It prints a Markdown report and exits 1 when:
   pinned bundle;
 - the licence at the latest release or on the default branch is not the
   pinned one, or the copy of it differs;
-- the ADM has a newer release whose tag carries no pre-release suffix, such
-  as v4.12.0 or v5.0.0 but not v5.0.0-beta.4;
+- the ADM has a newer stable release, of any version, or a newer
+  pre-release on the pinned major line, such as a 4.11.8 after 4.11.7.
+  GitHub's pre-release flag and the version decide, not the form of the
+  tag: MITRE marks its v4.11 line as pre-releases although their tags
+  carry no suffix. A pre-release of another major line, such as a 5.0.0
+  beta, is left out, so it does not report every week;
 - a pinned tag names another commit, or a pinned file is not the pinned blob
   at the pinned commit;
 - a check could not finish.
@@ -66,13 +70,16 @@ PINNED_COMMIT = MANIFEST["commit"]
 LICENCE = "LICENSE.txt"
 
 # The ADM release whose documentation the schema follows, and the commit its
-# tag names. Move them together, with the schema header's annotations.
+# tag names. MITRE marks every release of the v4.11 line as a pre-release
+# and publishes it under npm's `next` tag, while npm's `latest` is v4.10.1.
+# The pin follows v4.11.7 all the same, because the schema fixes of v4.11.1
+# to v4.11.6 match the v20.0 data, which post-dates them: the platform list,
+# the required fields of a related asset, no duplicate mutable elements on
+# an analytic, and at least one kill-chain phase on a technique. Move the
+# pins together, with the schema header's annotations and NOTICE.
 ADM_REPO = "mitre-attack/attack-data-model"
 PINNED_ADM_TAG = "v4.11.7"
 PINNED_ADM_COMMIT = "99558689a7efecbb9eec74b1b1a5b6fbfad25f8a"
-
-# A release tag with no pre-release suffix, such as v4.11.7.
-FINAL_TAG = re.compile(r"^v?\d+(?:\.\d+)*$")
 
 
 def _get(url: str) -> bytes:
@@ -90,9 +97,13 @@ def _get(url: str) -> bytes:
 
 
 def _version_key(tag: str) -> tuple[int, ...]:
-    """Numeric parts of a tag, padded so that v20 and v20.0 order alike."""
-    parts = [int(x) for x in re.findall(r"\d+", tag)]
-    return tuple(parts + [0] * (4 - len(parts)))
+    """A tag's place in version order: its numbers, padded so that v20 and
+    v20.0 order alike, then a pre-release suffix such as -beta.4 before the
+    release it leads up to."""
+    core, _, suffix = tag.removeprefix("v").partition("-")
+    numbers = [int(x) for x in re.findall(r"\d+", core)]
+    tail = [0, *(int(x) for x in re.findall(r"\d+", suffix))] if suffix else [1]
+    return (*numbers, *[0] * (4 - len(numbers)), *tail)
 
 
 def _blob_sha(path: Path) -> str:
@@ -228,25 +239,43 @@ def check_data() -> tuple[list[str], bool]:
 
 
 def check_adm() -> tuple[list[str], bool]:
-    """Report whether the ADM has a newer release without a pre-release
-    suffix, and whether the pinned tag still names the pinned commit."""
+    """Report a newer ADM release, and whether the pinned tag still names the
+    pinned commit. A newer stable release of any version counts, and so does
+    a newer pre-release on the pinned major line; a pre-release of another
+    major line does not."""
     report = [
         f"- Pinned ATT&CK Data Model: {ADM_REPO} {PINNED_ADM_TAG}, commit "
         f"`{PINNED_ADM_COMMIT[:12]}`."
     ]
     problems = _moved_tag(ADM_REPO, PINNED_ADM_TAG, PINNED_ADM_COMMIT)
+    pinned = _version_key(PINNED_ADM_TAG)
     releases = json.loads(_get(f"{API}/{ADM_REPO}/releases?per_page=100"))
-    final = [r["tag_name"] for r in releases if FINAL_TAG.match(r["tag_name"])]
-    newest = max(final, key=_version_key, default=PINNED_ADM_TAG)
-    if _version_key(newest) <= _version_key(PINNED_ADM_TAG):
-        report.append(
-            f"- Newest release without a pre-release suffix: {newest}, the pinned one."
-        )
-    else:
+    newer = [
+        r for r in releases if not r["draft"] and _version_key(r["tag_name"]) > pinned
+    ]
+    stable = [r["tag_name"] for r in newer if not r["prerelease"]]
+    on_line = [
+        r["tag_name"]
+        for r in newer
+        if r["prerelease"] and _version_key(r["tag_name"])[0] == pinned[0]
+    ]
+    if stable:
         problems.append(
-            f"- **{ADM_REPO} has a newer release, {newest}.** Read its change log, "
-            "check the schema against the extensions it defines, and move the pins "
-            "here and in the schema header together."
+            f"- **{ADM_REPO} has a newer stable release, "
+            f"{max(stable, key=_version_key)}.** Read its change log, check the "
+            "schema against the extensions it defines, and move the pins here and "
+            "in the schema header together."
+        )
+    if on_line:
+        problems.append(
+            f"- **{ADM_REPO} has a newer pre-release on the pinned {pinned[0]}.x "
+            f"line, {max(on_line, key=_version_key)}.** The pin follows that line, "
+            "so read its change log and decide whether the schema moves to it."
+        )
+    if not stable and not on_line:
+        report.append(
+            f"- No newer stable release, and no newer pre-release on the {pinned[0]}.x "
+            "line."
         )
     return report + problems, bool(problems)
 
