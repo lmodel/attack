@@ -81,9 +81,10 @@ LICENCE = "LICENSE.txt"
 # tag names. MITRE marks every release of the v4.11 line as a pre-release
 # and publishes it under npm's `next` tag, while npm's `latest` is v4.10.1.
 # The pin follows v4.11.7 all the same, because the schema fixes of v4.11.1
-# to v4.11.6 match the v20.0 data, which post-dates them: the platform list,
-# the required fields of a related asset, no duplicate mutable elements on
-# an analytic, and at least one kill-chain phase on a technique. Move the
+# to v4.11.6 match the v20.0 data, which post-dates them. Those fixes are
+# the platform list, the required fields of a related asset, no duplicate
+# mutable elements on an analytic, and at least one kill-chain phase on a
+# technique. Move the
 # pins together, with the schema header's annotations and NOTICE.
 ADM_REPO = "mitre-attack/attack-data-model"
 PINNED_ADM_TAG = "v4.11.7"

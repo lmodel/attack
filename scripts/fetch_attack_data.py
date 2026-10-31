@@ -17,8 +17,8 @@ so this script downloads them instead. For each bundle it:
 - deletes a download that does not match, and exits 1 once every bundle has
   been tried.
 
-It reads addresses from the manifest only, and refuses any that is not https
-on raw.githubusercontent.com, and any redirect to such an address. It writes
+It reads addresses from the manifest only. It refuses an address, or a
+redirect to one, that is not https on raw.githubusercontent.com. It writes
 nothing outside the destination, which is tmp/attack-stix-data/ unless --dest
 names another folder. Usage::
 

@@ -197,12 +197,15 @@ def _blank(node, path=""):
 
 
 def bundle_problems(bundle):
-    """Each ADM rule a whole bundle breaks: its first object is its one
-    collection; the collection's contents and every relationship name objects
-    of the bundle, the contents at the version the bundle holds; each kill
-    chain phase of a technique names a tactic of the bundle; and a
-    sub-technique's parent is a technique that is not one, whose ID its own
-    extends and whose tactics it has."""
+    """Each ADM rule a whole bundle breaks. The rules:
+
+    - the bundle's first object is its one collection;
+    - the collection's contents and every relationship name objects of the
+      bundle, the contents at the version the bundle holds;
+    - each kill chain phase of a technique names a tactic of the bundle;
+    - a sub-technique's parent is a technique that is not one, whose ID the
+      sub-technique's ID extends and whose tactics it has.
+    """
     found = []
     objects = bundle.get("objects") or []
     collections = [

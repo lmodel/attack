@@ -2,10 +2,10 @@
 
 scripts/fetch_attack_data.py downloads each bundle the manifest pins and keeps
 it only when its size and both hashes match. These tests replace its opener
-with a stub, so they run offline, and show that a matching download lands,
-that a wrong, oversized or cut-off one is deleted, and that the script refuses
-an address or a redirect off raw.githubusercontent.com and a name that leaves
-the destination.
+with a stub, so they run offline. They show that a matching download is
+kept, that a wrong, oversized or cut-off one is deleted, and that the script
+refuses an address or a redirect off raw.githubusercontent.com and a name
+that leaves the destination.
 """
 
 import hashlib
