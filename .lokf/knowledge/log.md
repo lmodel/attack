@@ -2,6 +2,7 @@
 
 ## 2026-10-31
 
+* **Changed**: lmodel/stix modules names stix commit 267064d, which `tests/test_stix_import.py` and NOTICE now pin.
 * **Changed**: Test data and tests counts 72 counter-examples, since `tests/data/invalid/` gained one for a citation name with a colon.
 * **Prose**: reworded 13 concept bodies in plain English. No fact, link, number or frontmatter changed.
 * **Changed**: the documentation site's description names its address as code, so the index bullets carry no bare address.
