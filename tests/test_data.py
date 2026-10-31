@@ -74,6 +74,15 @@ def unexcused(obj):
     return [(r, w) for r, w in problems(obj) if not excused(obj, r, w)]
 
 
+def test_each_folder_holds_data():
+    """A test parametrized over an empty folder passes without checking
+    anything, so each folder the tests read must hold files, and each
+    counter-example must name a class of the schema."""
+    assert VALID and INVALID and EXTRACT
+    classes = set(definitions())
+    assert {class_of_file(path) for path in INVALID} <= classes
+
+
 @pytest.mark.parametrize("path", VALID, ids=lambda p: p.stem)
 def test_valid_examples_validate(path):
     """Every valid example passes."""
