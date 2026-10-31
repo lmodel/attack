@@ -2,6 +2,7 @@
 
 ## 2026-10-31
 
+* **Changed**: lmodel/stix modules names stix v0.1.0, the release the six files equal, which `tests/test_stix_import.py` and NOTICE now pin.
 * **Prose**: reworded 2 concept bodies in plain English. No fact, link, number or frontmatter changed.
 * **Changed**: Test data and tests says `tests/test_upstream.py` also lists the 44 breaches across a bundle, in KNOWN_BUNDLE_DEPARTURES.
 * **Changed**: Where the data departs from the ATT&CK Data Model adds the four groups of breaches across a bundle that KNOWN_BUNDLE_DEPARTURES lists.
