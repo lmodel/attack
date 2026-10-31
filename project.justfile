@@ -4,17 +4,8 @@
 # name in this file is not possible until a known issue in just is fixed,
 # https://github.com/casey/just/issues/2540
 
-# Run data fixture tests only
+# Download the pinned ATT&CK bundles into tmp/attack-stix-data/, checking
+# each against the size and hashes in tests/data/attack-stix-data/manifest.json
 [group('model development')]
-test-data:
-	uv run python -m pytest tests/test_data.py tests/test_attack_stix_data.py
-
-# Run data fixture tests in strict/string mode with optional sample size
-[group('model development')]
-test-data-string sample_size='25':
-	ATTACK_VENDOR_TEST_MODE=string ATTACK_VENDOR_STRICT_SAMPLE_SIZE={{sample_size}} uv run python -m pytest tests/test_data.py tests/test_attack_stix_data.py
-
-# Alias for teams that prefer strict terminology
-[group('model development')]
-test-data-strict sample_size='25':
-	ATTACK_VENDOR_TEST_MODE=strict ATTACK_VENDOR_STRICT_SAMPLE_SIZE={{sample_size}} uv run python -m pytest tests/test_data.py tests/test_attack_stix_data.py
+fetch-attack-data:
+  uv run scripts/fetch_attack_data.py

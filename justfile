@@ -113,7 +113,7 @@ deploy: site
 
 # Run all tests
 [group('model development')]
-test: _test-schema _test-python _test-examples test-data test-data-strict
+test: _test-schema _test-python _test-examples
 
 # Run linting; a warning fails as an error does (CI runs the same command)
 [group('model development')]
