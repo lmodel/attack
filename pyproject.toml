@@ -66,7 +66,9 @@ skip = [
   "project/*",
   "src/attack/datamodel/attack_pydantic.py",
   "src/attack/datamodel/attack.py",
-  # Files copied in by the KTL sidecar sync or written by npm, not by hand.
+  # The neighbours' adapt copies, copied as released, and files copied in by
+  # the KTL sidecar sync or written by npm, not by hand.
+  "tests/neighbours/*",
   ".lokf/scripts/*",
   "website/package-lock.json",
   # MITRE's data and licence, and lmodel/stix's modules, copied unchanged.
@@ -90,6 +92,7 @@ extend-exclude = [
   "project/*",
   "src/attack/datamodel/attack_pydantic.py",
   "src/attack/datamodel/attack.py",
+  "tests/neighbours/*",
   ".lokf/scripts/*",
   "website/package-lock.json",
   "tests/data/attack-stix-data/*",
