@@ -68,17 +68,6 @@ ADM_SHORTNAMES = {
     "remote-service-effects",
     "resource-development",
 }
-# The types an object of a revoked-by relationship may have.
-REVOCABLE = {
-    "attack-pattern",
-    "campaign",
-    "course-of-action",
-    "intrusion-set",
-    "malware",
-    "tool",
-    "x-mitre-asset",
-    "x-mitre-data-component",
-}
 CITATION = re.compile(r"\(Citation: ([^)]+)\)")
 # Lists whose items the ADM forbids to repeat, with the keys that identify an
 # item; no keys means the item itself.
