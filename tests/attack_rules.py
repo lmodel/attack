@@ -3,9 +3,12 @@
 The schema states what LinkML can: required properties, patterns, enums and
 the relationship rules. The ATT&CK Data Model (ADM) v4.11.7 has more rules,
 which turn on the order of a list, on another property's value or on the
-domain an object belongs to. `problems` applies them to one object, as
-strictly as the ADM does, and the schema's annotations name the classes' ATT&CK
-ID patterns and the properties that belong to one domain or tactic.
+domain an object belongs to. `problems` applies them to one object, and
+`bundle_problems` those across a bundle, as strictly as the ADM does. The
+schema's annotations name the classes' ATT&CK ID patterns and the properties
+that belong to one domain or tactic. Two of the patterns go further than the
+ADM, which asks a matrix's and a data component's first external reference
+for no ATT&CK ID; MITRE's data gives one all the same, and the tests ask for it.
 
 Where MITRE's v20.0 data departs from the ADM, the schema follows the data:
 tests/test_upstream.py lists each departure, which excuses the problems it

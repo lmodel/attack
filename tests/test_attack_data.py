@@ -92,8 +92,9 @@ def test_each_departure_covers_as_many_objects_as_it_says():
 def test_the_extract_is_copied_unchanged():
     """Each object of the extract is the object of the same identifier in its
     domain's bundle."""
+    edition = MANIFEST["tag"].removeprefix("v")
     for path in sorted(EXTRACT.glob("*.json")):
-        domain = path.name.removesuffix("-20.0.json")
+        domain = path.name.removesuffix(f"-{edition}.json")
         by_id = {o["id"]: o for o in _bundle(f"{domain}/{path.name}")["objects"]}
         for obj in json.loads(path.read_text(encoding="utf-8")):
             assert obj == by_id[obj["id"]], obj["id"]
