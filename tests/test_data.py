@@ -162,12 +162,23 @@ def test_each_rule_finds_its_breach():
         return {rule for rule, _ in problems(obj)}
 
     assert rules(technique) == set()
+    assert rules(technique | {"x_mitre_is_subtechnique": False}) == set()
     assert "attack id" in rules(
         technique
         | {
             "external_references": [
                 {"source_name": "mitre-attack", "external_id": "TA0001"}
             ]
+        }
+    )
+    assert "sub-technique id" in rules(technique | {"x_mitre_is_subtechnique": True})
+    assert "sub-technique id" in rules(
+        technique
+        | {
+            "x_mitre_is_subtechnique": False,
+            "external_references": [
+                {"source_name": "mitre-attack", "external_id": "T0001.001"}
+            ],
         }
     )
     assert "attack id source" in rules(

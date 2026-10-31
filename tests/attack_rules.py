@@ -68,6 +68,8 @@ ADM_SHORTNAMES = {
     "remote-service-effects",
     "resource-development",
 }
+# A sub-technique's ATT&CK ID: its parent's, a full stop and three digits.
+SUBTECHNIQUE_ID = re.compile(r"T\d{4}\.\d{3}")
 CITATION = re.compile(r"\(Citation: ([^)]+)\)")
 # Lists whose items the ADM forbids to repeat, with the keys that identify an
 # item; no keys means the item itself.
@@ -116,6 +118,16 @@ def problems(obj):
         first = refs[0].get("external_id", "") if refs else ""
         if not re.fullmatch(pattern, first):
             found.append(("attack id", f"first external reference {first!r}"))
+        elif kind == "attack-pattern":
+            dotted = SUBTECHNIQUE_ID.fullmatch(first) is not None
+            if obj.get("x_mitre_is_subtechnique", dotted) != dotted:
+                found.append(
+                    (
+                        "sub-technique id",
+                        f"{first!r} beside x_mitre_is_subtechnique "
+                        f"{obj['x_mitre_is_subtechnique']}",
+                    )
+                )
     if (
         kind == "attack-pattern"
         and refs

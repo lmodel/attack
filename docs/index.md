@@ -38,6 +38,8 @@ in `just test-attack-data`, every object of the bundles:
 - the first external reference of an object carries its ATT&CK ID, in the
   form its class's `attack_id_pattern` annotation gives, and a technique's
   first reference names `mitre-attack` as its source;
+- a technique's ID has a sub-technique's form exactly when
+  `x_mitre_is_subtechnique` is true;
 - the first alias of a group, campaign or piece of software is its name;
 - each citation of a campaign names one of its external references;
 - a property with an `attack_domains` annotation appears only on an object
