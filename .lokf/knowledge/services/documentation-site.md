@@ -3,7 +3,7 @@ type: Service
 id: https://w3id.org/lmodel/attack/knowledge/services/documentation-site
 genre: reference
 title: Documentation site
-description: The knowledge website at https://lmodel.github.io/attack/, an Astro Starlight site in `website/` built from the README, `docs/`, the schema's pages and the knowledge bundle, which redirects the retired mkdocs site's addresses and serves the four `lokf export` files under `/knowledge/`.
+description: The knowledge website at `https://lmodel.github.io/attack/`, an Astro Starlight site in `website/` built from the README, `docs/`, the schema's pages and the knowledge bundle, which redirects the retired mkdocs site's addresses and serves the four `lokf export` files under `/knowledge/`.
 resource: website/site.config.mjs
 sources:
   - id: site.config.mjs
@@ -17,7 +17,7 @@ sources:
     title: the build and deploy jobs
 generated:
   by: process:ktl-librarian
-  at: "2026-10-31T02:20:54Z"
+  at: "2026-10-31T02:23:30Z"
 status: draft
 ---
 

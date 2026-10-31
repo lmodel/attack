@@ -2,6 +2,7 @@
 
 ## 2026-10-31
 
+* **Changed**: the documentation site's description names its address as code, so the index bullets carry no bare address.
 * **Changed**: the map leaves out `docs/elements/.gitkeep`, the marker of the folder gen-doc fills.
 * **Added**: Build and test (main.yaml), from `.github/workflows/main.yaml`.
 * **Added**: Lint and docs (lint-and-docs.yaml), from `.github/workflows/lint-and-docs.yaml`.
