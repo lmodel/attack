@@ -2475,6 +2475,8 @@ slots:
     slot_uri: attack:x_mitre_deprecated
   x_mitre_old_attack_id:
     description: An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.
+    deprecated: The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile IDs that current ATT&CK
+      IDs replaced, and names no release that removes it.
     pattern: ^MOB-(M|S)\d{4}$
     slot_uri: attack:x_mitre_old_attack_id
   x_mitre_domains:

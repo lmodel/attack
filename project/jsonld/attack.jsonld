@@ -2692,6 +2692,7 @@
       "name": "x_mitre_old_attack_id",
       "definition_uri": "https://w3id.org/lmodel/attack/x_mitre_old_attack_id",
       "description": "An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.",
+      "deprecated": "The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile IDs that current ATT&CK IDs replaced, and names no release that removes it.",
       "from_schema": "https://w3id.org/lmodel/attack",
       "mappings": [
         "https://w3id.org/lmodel/attack/x_mitre_old_attack_id"
@@ -10396,6 +10397,7 @@
       "name": "AttackMalware_x_mitre_old_attack_id",
       "definition_uri": "https://w3id.org/lmodel/attack/x_mitre_old_attack_id",
       "description": "An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.",
+      "deprecated": "The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile IDs that current ATT&CK IDs replaced, and names no release that removes it.",
       "from_schema": "https://w3id.org/lmodel/attack",
       "mappings": [
         "https://w3id.org/lmodel/attack/x_mitre_old_attack_id"
@@ -10591,6 +10593,7 @@
       "name": "AttackTool_x_mitre_old_attack_id",
       "definition_uri": "https://w3id.org/lmodel/attack/x_mitre_old_attack_id",
       "description": "An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.",
+      "deprecated": "The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile IDs that current ATT&CK IDs replaced, and names no release that removes it.",
       "from_schema": "https://w3id.org/lmodel/attack",
       "mappings": [
         "https://w3id.org/lmodel/attack/x_mitre_old_attack_id"
@@ -10814,6 +10817,7 @@
       "name": "AttackMitigation_x_mitre_old_attack_id",
       "definition_uri": "https://w3id.org/lmodel/attack/x_mitre_old_attack_id",
       "description": "An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.",
+      "deprecated": "The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile IDs that current ATT&CK IDs replaced, and names no release that removes it.",
       "from_schema": "https://w3id.org/lmodel/attack",
       "mappings": [
         "https://w3id.org/lmodel/attack/x_mitre_old_attack_id"
@@ -22676,8 +22680,8 @@
   ],
   "metamodel_version": "1.12.0",
   "source_file": "attack.yaml",
-  "source_file_date": "2026-10-31T10:21:55",
-  "source_file_size": 43181,
+  "source_file_date": "2026-10-31T10:28:53",
+  "source_file_size": 43351,
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/attack.context.jsonld",

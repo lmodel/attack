@@ -8674,7 +8674,10 @@ class AttackTechnique(StixAttackPattern):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -9216,7 +9219,10 @@ class AttackTactic(StixDomainObject):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -9491,7 +9497,10 @@ class AttackGroup(StixIntrusionSet):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -9878,7 +9887,10 @@ class AttackCampaign(StixCampaign):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -10278,7 +10290,10 @@ class AttackMalware(StixMalware):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -10718,7 +10733,10 @@ class AttackTool(StixTool):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -11108,7 +11126,10 @@ class AttackMitigation(StixCourseOfAction):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -11527,7 +11548,10 @@ class AttackMatrix(StixDomainObject):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -11863,7 +11887,10 @@ class AttackCollection(StixDomainObject):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -12174,7 +12201,10 @@ class AttackAsset(StixDomainObject):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -12541,7 +12571,10 @@ class AttackDataSource(StixDomainObject):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -12901,7 +12934,10 @@ class AttackDataComponent(StixDomainObject):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -13219,7 +13255,10 @@ class AttackDetectionStrategy(StixDomainObject):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -13587,7 +13626,10 @@ class AttackAnalytic(StixDomainObject):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -13890,7 +13932,10 @@ class AttackRelationship(StixRelationship):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
@@ -14181,7 +14226,10 @@ class AttackIdentity(StixIdentity):
                        'AttackRelationship',
                        'AttackIdentity'],
          'slot_uri': 'attack:x_mitre_deprecated'} })
-    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackTechnique',
+    x_mitre_old_attack_id: Optional[str] = Field(default=None, description="""An ATT&CK ID the object had before Mobile ATT&CK's objects were renumbered, such as MOB-S0012.""", json_schema_extra = { "linkml_meta": {'deprecated': 'The ADM v4.11.7 marks it as deprecated, a legacy of the Mobile '
+                       'IDs that current ATT&CK IDs replaced, and names no release '
+                       'that removes it.',
+         'domain_of': ['AttackTechnique',
                        'AttackTactic',
                        'AttackGroup',
                        'AttackCampaign',
