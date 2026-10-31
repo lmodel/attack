@@ -10,7 +10,7 @@ import java.util.List;
 import lombok.*;
 
 /**
-  A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
+  A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

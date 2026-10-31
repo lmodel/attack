@@ -110,7 +110,7 @@ message AttackAsset {
   // References to non-STIX information about the object.
   repeated StixExternalReference external_references = 26;
 }
-// A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class.
+// A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds.
 message AttackBundle {
   // The identifier of the object: its STIX type, two hyphens and a UUID. Each class narrows the type.
   string id = 1;
@@ -840,7 +840,7 @@ message AttackTactic {
   // References to non-STIX information about the object.
   repeated StixExternalReference external_references = 24;
 }
-// A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
+// A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
 message AttackTechnique {
   // References to the marking definitions that apply to the object.
   repeated StixMarkingDefinition object_marking_refs = 1;

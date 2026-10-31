@@ -664,7 +664,6 @@ export enum AttackPlatform {
     Network = "Network",
     Network_Devices = "Network Devices",
     None = "None",
-    /** Not in the ADM's platform list. Three revoked Enterprise techniques of the v20.0 data still carry it. */
     Office_365 = "Office 365",
     Office_Suite = "Office Suite",
     PRE = "PRE",
@@ -681,7 +680,7 @@ export enum AttackTacticShortname {
     command_and_control = "command-and-control",
     credential_access = "credential-access",
     defense_evasion = "defense-evasion",
-    /** Enterprise's TA0112. Not in the ADM's list of short names. */
+    /** Enterprise's TA0112. */
     defense_impairment = "defense-impairment",
     discovery = "discovery",
     evasion = "evasion",
@@ -698,7 +697,7 @@ export enum AttackTacticShortname {
     reconnaissance = "reconnaissance",
     remote_service_effects = "remote-service-effects",
     resource_development = "resource-development",
-    /** Enterprise's TA0005. Not in the ADM's list of short names. */
+    /** Enterprise's TA0005. */
     stealth = "stealth",
 };
 /**
@@ -2285,7 +2284,7 @@ export interface StixBundle {
 
 
 /**
- * A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
+ * A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
  */
 export interface AttackTechnique extends StixAttackPattern {
     /** The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0. */
@@ -2698,7 +2697,7 @@ export interface AttackMarkingDefinition extends StixMarkingDefinition {
 
 
 /**
- * A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class.
+ * A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds.
  */
 export interface AttackBundle extends StixBundle {
 }

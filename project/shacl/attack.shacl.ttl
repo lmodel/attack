@@ -17,7 +17,7 @@ attack:AttackAsset a sh:NodeShape ;
 	sh:property _:c14n1006 , _:c14n1032 , _:c14n1094 , _:c14n1140 , _:c14n1159 , _:c14n1173 , _:c14n1178 , _:c14n1192 , _:c14n1215 , _:c14n1263 , _:c14n1268 , _:c14n1355 , _:c14n1400 , _:c14n1435 , _:c14n1451 , _:c14n1502 , _:c14n356 , _:c14n374 , _:c14n668 , _:c14n76 , _:c14n769 , _:c14n784 , _:c14n806 , _:c14n895 , _:c14n912 , _:c14n965 ;
 	sh:targetClass attack:AttackAsset .
 attack:AttackBundle a sh:NodeShape ;
-	rdfs:comment "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class." ;
+	rdfs:comment "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds." ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n1645 ;
 	sh:property _:c14n1011 , _:c14n1583 , _:c14n871 ;
@@ -137,7 +137,7 @@ attack:AttackTactic a sh:NodeShape ;
 	sh:property _:c14n1021 , _:c14n1083 , _:c14n1244 , _:c14n1293 , _:c14n1349 , _:c14n1503 , _:c14n1574 , _:c14n1605 , _:c14n1613 , _:c14n1617 , _:c14n1665 , _:c14n1673 , _:c14n279 , _:c14n301 , _:c14n401 , _:c14n426 , _:c14n436 , _:c14n494 , _:c14n50 , _:c14n513 , _:c14n619 , _:c14n689 , _:c14n698 , _:c14n988 ;
 	sh:targetClass attack:AttackTactic .
 attack:AttackTechnique a sh:NodeShape ;
-	rdfs:comment "A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits." ;
+	rdfs:comment "A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits." ;
 	sh:closed true ;
 	sh:ignoredProperties _:c14n375 ;
 	sh:property _:c14n100 , _:c14n1057 , _:c14n1128 , _:c14n1132 , _:c14n120 , _:c14n1217 , _:c14n1357 , _:c14n1372 , _:c14n1411 , _:c14n1453 , _:c14n1484 , _:c14n1493 , _:c14n1521 , _:c14n1545 , _:c14n1628 , _:c14n1750 , _:c14n190 , _:c14n208 , _:c14n223 , _:c14n226 , _:c14n323 , _:c14n36 , _:c14n396 , _:c14n398 , _:c14n411 , _:c14n559 , _:c14n609 , _:c14n648 , _:c14n66 , _:c14n68 , _:c14n680 , _:c14n699 , _:c14n744 , _:c14n75 , _:c14n752 , _:c14n837 , _:c14n89 ;

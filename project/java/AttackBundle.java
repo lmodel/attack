@@ -10,7 +10,7 @@ import java.util.List;
 import lombok.*;
 
 /**
-  A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class.
+  A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)

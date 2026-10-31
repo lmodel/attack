@@ -32,7 +32,7 @@
     "The version is the ATT&CK release the schema renders, and source is that release of mitre-attack/attack-stix-data, at the commit in the annotations. tests/data/attack-stix-data/manifest.json pins its bundles by hash, and scripts/check_upstream_release.py reports a newer release.",
     "The ATT&CK Data Model (ADM), mitre-attack/attack-data-model, defines the STIX extensions ATT&CK uses. MITRE marks every release of its v4.11 line as a pre-release, published under npm's next tag, while npm's latest is v4.10.1. The schema follows v4.11.7 all the same, because the schema fixes of v4.11.1 to v4.11.6 match the v20.0 data, which post-dates them.",
     "The schema follows the data MITRE publishes. Where the v20.0 data departs from the ADM, the schema accepts the data, and tests/test_upstream.py lists each departure with its reason.",
-    "Some of the ADM's rules are beyond the validator, and the tests check them over the examples and the bundles: the first external reference of an object carries its ATT&CK ID, in the form the class's attack_id_pattern annotation gives; the first alias of an object is its name; a campaign's citations name its external references; a property annotated with attack_domains appears only on an object of one of those domains, one annotated with attack_excluded_domains never on an object of those, and one annotated with attack_tactic only beside a kill chain phase of that tactic; some lists name each item once; and a technique has at least one kill chain phase."
+    "Some of the ADM's rules are beyond the validator, such as the order of a list or a rule across a bundle. tests/attack_rules.py checks them over the examples and the bundles, and docs/index.md lists them; the annotations attack_id_pattern, attack_domains, attack_excluded_domains and attack_tactic give the values those rules read."
   ],
   "source": "https://github.com/mitre-attack/attack-stix-data/releases/tag/v20.0",
   "see_also": [
@@ -559,7 +559,9 @@
         },
         {
           "text": "Office 365",
-          "description": "Not in the ADM's platform list. Three revoked Enterprise techniques of the v20.0 data still carry it."
+          "comments": [
+            "Not in the ADM's platform list. Three revoked Enterprise techniques of the v20.0 data still carry it."
+          ]
         },
         {
           "text": "Office Suite"
@@ -598,7 +600,10 @@
         },
         {
           "text": "defense-impairment",
-          "description": "Enterprise's TA0112. Not in the ADM's list of short names."
+          "description": "Enterprise's TA0112.",
+          "comments": [
+            "Not in the ADM's list of short names."
+          ]
         },
         {
           "text": "discovery"
@@ -647,7 +652,10 @@
         },
         {
           "text": "stealth",
-          "description": "Enterprise's TA0005. Not in the ADM's list of short names."
+          "description": "Enterprise's TA0005.",
+          "comments": [
+            "Not in the ADM's list of short names."
+          ]
         }
       ]
     },
@@ -17372,7 +17380,10 @@
           "@type": "Annotation"
         }
       ],
-      "description": "A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.",
+      "description": "A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.",
+      "comments": [
+        "A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent."
+      ],
       "from_schema": "https://w3id.org/lmodel/attack",
       "is_a": "StixAttackPattern",
       "slots": [
@@ -18336,7 +18347,10 @@
             ],
             "@type": "AnonymousClassExpression"
           },
-          "description": "An object that can be revoked is replaced by another such object. The ADM asks for one of the same type; the v20.0 data has a malware revoked by a tool, so the rule does not.",
+          "description": "An object that can be revoked is replaced by another such object.",
+          "comments": [
+            "The ADM asks for one of the same type; the v20.0 data has a malware revoked by a tool, so the rule does not."
+          ],
           "@type": "ClassRule"
         }
       ],
@@ -18418,7 +18432,10 @@
     {
       "name": "AttackBundle",
       "definition_uri": "https://w3id.org/lmodel/attack/AttackBundle",
-      "description": "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class.",
+      "description": "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds.",
+      "notes": [
+        "It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class."
+      ],
       "from_schema": "https://w3id.org/lmodel/attack",
       "is_a": "StixBundle",
       "slots": [
@@ -22659,8 +22676,8 @@
   ],
   "metamodel_version": "1.12.0",
   "source_file": "attack.yaml",
-  "source_file_date": "2026-10-31T01:54:44",
-  "source_file_size": 43360,
+  "source_file_date": "2026-10-31T10:21:55",
+  "source_file_size": 43181,
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/attack.context.jsonld",

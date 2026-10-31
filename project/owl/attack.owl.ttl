@@ -24,7 +24,7 @@ xsd:string a rdfs:Datatype ;
 	rdfs:label "attack" ;
 	rdfs:seeAlso <https://attack.mitre.org/resources/versions/> , <https://lmodel.github.io/attack> , <https://mitre-attack.github.io/attack-data-model/schemas/> ;
 	skos:definition "A LinkML model of MITRE ATT&CK as MITRE publishes it in STIX 2.1: the tactics, techniques, groups, campaigns, software, mitigations, assets, data sources, data components, detection strategies and analytics of the Enterprise, Mobile and ICS domains, and the matrices, collections, relationships, identity and marking that hold them together. Each class extends the lmodel/stix class it builds on, and ATT&CK's own properties keep the keys MITRE's data writes, so MITRE's bundles validate unchanged." ;
-	skos:note "Some of the ADM's rules are beyond the validator, and the tests check them over the examples and the bundles: the first external reference of an object carries its ATT&CK ID, in the form the class's attack_id_pattern annotation gives; the first alias of an object is its name; a campaign's citations name its external references; a property annotated with attack_domains appears only on an object of one of those domains, one annotated with attack_excluded_domains never on an object of those, and one annotated with attack_tactic only beside a kill chain phase of that tactic; some lists name each item once; and a technique has at least one kill chain phase." , "The ATT&CK Data Model (ADM), mitre-attack/attack-data-model, defines the STIX extensions ATT&CK uses. MITRE marks every release of its v4.11 line as a pre-release, published under npm's next tag, while npm's latest is v4.10.1. The schema follows v4.11.7 all the same, because the schema fixes of v4.11.1 to v4.11.6 match the v20.0 data, which post-dates them." , "The schema follows the data MITRE publishes. Where the v20.0 data departs from the ADM, the schema accepts the data, and tests/test_upstream.py lists each departure with its reason." , "The version is the ATT&CK release the schema renders, and source is that release of mitre-attack/attack-stix-data, at the commit in the annotations. tests/data/attack-stix-data/manifest.json pins its bundles by hash, and scripts/check_upstream_release.py reports a newer release." ;
+	skos:note "Some of the ADM's rules are beyond the validator, such as the order of a list or a rule across a bundle. tests/attack_rules.py checks them over the examples and the bundles, and docs/index.md lists them; the annotations attack_id_pattern, attack_domains, attack_excluded_domains and attack_tactic give the values those rules read." , "The ATT&CK Data Model (ADM), mitre-attack/attack-data-model, defines the STIX extensions ATT&CK uses. MITRE marks every release of its v4.11 line as a pre-release, published under npm's next tag, while npm's latest is v4.10.1. The schema follows v4.11.7 all the same, because the schema fixes of v4.11.1 to v4.11.6 match the v20.0 data, which post-dates them." , "The schema follows the data MITRE publishes. Where the v20.0 data departs from the ADM, the schema accepts the data, and tests/test_upstream.py lists each departure with its reason." , "The version is the ATT&CK release the schema renders, and source is that release of mitre-attack/attack-stix-data, at the commit in the annotations. tests/data/attack-stix-data/manifest.json pins its bundles by hash, and scripts/check_upstream_release.py reports a newer release." ;
 	attack:attack_data_model_commit "99558689a7efecbb9eec74b1b1a5b6fbfad25f8a" ;
 	attack:attack_data_model_release "v4.11.7" ;
 	attack:attack_release_date "2026-10-13" ;
@@ -72,7 +72,8 @@ attack:AttackAssetSector a owl:Class ;
 attack:AttackBundle a owl:Class ;
 	rdfs:label "AttackBundle" ;
 	rdfs:subClassOf stix:StixBundle ;
-	skos:definition "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class." ;
+	skos:definition "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds." ;
+	skos:editorialNote "It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class." ;
 	skos:inScheme <https://w3id.org/lmodel/attack> .
 attack:AttackBypassedDefense\#Anti\%20Virus a owl:Class ;
 	rdfs:label "Anti Virus" ;
@@ -443,7 +444,7 @@ attack:AttackPlatform\#None a owl:Class ;
 attack:AttackPlatform\#Office\%20365 a owl:Class ;
 	rdfs:label "Office 365" ;
 	rdfs:subClassOf attack:AttackPlatform ;
-	skos:definition "Not in the ADM's platform list. Three revoked Enterprise techniques of the v20.0 data still carry it." .
+	skos:note "Not in the ADM's platform list. Three revoked Enterprise techniques of the v20.0 data still carry it." .
 attack:AttackPlatform\#Office\%20Suite a owl:Class ;
 	rdfs:label "Office Suite" ;
 	rdfs:subClassOf attack:AttackPlatform .
@@ -559,7 +560,8 @@ attack:AttackTacticShortname\#defense-evasion a owl:Class ;
 attack:AttackTacticShortname\#defense-impairment a owl:Class ;
 	rdfs:label "defense-impairment" ;
 	rdfs:subClassOf attack:AttackTacticShortname ;
-	skos:definition "Enterprise's TA0112. Not in the ADM's list of short names." .
+	skos:definition "Enterprise's TA0112." ;
+	skos:note "Not in the ADM's list of short names." .
 attack:AttackTacticShortname\#discovery a owl:Class ;
 	rdfs:label "discovery" ;
 	rdfs:subClassOf attack:AttackTacticShortname .
@@ -608,7 +610,8 @@ attack:AttackTacticShortname\#resource-development a owl:Class ;
 attack:AttackTacticShortname\#stealth a owl:Class ;
 	rdfs:label "stealth" ;
 	rdfs:subClassOf attack:AttackTacticShortname ;
-	skos:definition "Enterprise's TA0005. Not in the ADM's list of short names." .
+	skos:definition "Enterprise's TA0005." ;
+	skos:note "Not in the ADM's list of short names." .
 attack:AttackTacticShortname a owl:Class ;
 	rdfs:label "AttackTacticShortname" ;
 	owl:unionOf _:c14n130 ;
@@ -633,8 +636,9 @@ attack:AttackTacticType a owl:Class ;
 attack:AttackTechnique a owl:Class ;
 	rdfs:label "AttackTechnique" ;
 	rdfs:subClassOf stix:StixAttackPattern , _:c14n1181 , _:c14n1188 , _:c14n1409 , _:c14n1443 , _:c14n1470 , _:c14n161 , _:c14n1642 , _:c14n1714 , _:c14n1717 , _:c14n1735 , _:c14n1743 , _:c14n1905 , _:c14n1993 , _:c14n2037 , _:c14n2099 , _:c14n2127 , _:c14n2133 , _:c14n2146 , _:c14n2168 , _:c14n2267 , _:c14n2269 , _:c14n2379 , _:c14n240 , _:c14n2420 , _:c14n2527 , _:c14n2546 , _:c14n2619 , _:c14n2678 , _:c14n2804 , _:c14n2815 , _:c14n2855 , _:c14n2857 , _:c14n2860 , _:c14n2919 , _:c14n2923 , _:c14n2971 , _:c14n2986 , _:c14n309 , _:c14n314 , _:c14n4 , _:c14n436 , _:c14n551 , _:c14n723 , _:c14n727 , _:c14n753 , _:c14n838 , _:c14n916 , _:c14n927 , _:c14n932 , _:c14n992 , _:c14n999 ;
-	skos:definition "A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits." ;
+	skos:definition "A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits." ;
 	skos:inScheme <https://w3id.org/lmodel/attack> ;
+	skos:note "A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent." ;
 	attack:attack_id_pattern "^T\\d{4}(\\.\\d{3})?$" ;
 	attack:stix_type "attack-pattern" .
 attack:AttackTool a owl:Class ;

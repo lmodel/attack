@@ -444,7 +444,7 @@
         },
         "AttackBundle": {
             "additionalProperties": false,
-            "description": "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class.",
+            "description": "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds.",
             "properties": {
                 "id": {
                     "description": "The identifier of the object: its STIX type, two hyphens and a UUID. Each class narrows the type.",
@@ -3942,7 +3942,7 @@
         },
         "AttackTechnique": {
             "additionalProperties": false,
-            "description": "A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.",
+            "description": "A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.",
             "properties": {
                 "aliases": {
                     "description": "Other names by which the object is known.",
@@ -15557,7 +15557,7 @@
     "$id": "https://w3id.org/lmodel/attack",
     "$schema": "https://json-schema.org/draft/2019-09/schema",
     "additionalProperties": false,
-    "description": "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class.",
+    "description": "A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds.",
     "metamodel_version": "1.12.0",
     "properties": {
         "id": {

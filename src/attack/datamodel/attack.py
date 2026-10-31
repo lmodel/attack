@@ -2212,9 +2212,8 @@ class StixAttackPattern(StixDomainObject):
 @dataclass(repr=False)
 class AttackTechnique(StixAttackPattern):
     """
-    A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with
-    x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits,
-    and a sub-technique's adds a full stop and three digits.
+    A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's
+    adds a full stop and three digits.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -4258,8 +4257,7 @@ class StixBundle(YAMLRoot):
 class AttackBundle(StixBundle):
     """
     A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the
-    objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema
-    takes AttackBundle as its top class.
+    objects it holds.
     """
     _inherited_slots: ClassVar[list[str]] = []
 
@@ -6390,9 +6388,7 @@ class AttackPlatform(EnumDefinitionImpl):
         setattr(cls, "None",
             PermissibleValue(text="None"))
         setattr(cls, "Office 365",
-            PermissibleValue(
-                text="Office 365",
-                description="""Not in the ADM's platform list. Three revoked Enterprise techniques of the v20.0 data still carry it."""))
+            PermissibleValue(text="Office 365"))
         setattr(cls, "Office Suite",
             PermissibleValue(text="Office Suite"))
         setattr(cls, "Safety Instrumented System/Protection Relay",
@@ -6412,7 +6408,7 @@ class AttackTacticShortname(EnumDefinitionImpl):
     reconnaissance = PermissibleValue(text="reconnaissance")
     stealth = PermissibleValue(
         text="stealth",
-        description="Enterprise's TA0005. Not in the ADM's list of short names.")
+        description="Enterprise's TA0005.")
 
     _defn = EnumDefinition(
         name="AttackTacticShortname",
@@ -6430,7 +6426,7 @@ class AttackTacticShortname(EnumDefinitionImpl):
         setattr(cls, "defense-impairment",
             PermissibleValue(
                 text="defense-impairment",
-                description="Enterprise's TA0112. Not in the ADM's list of short names."))
+                description="Enterprise's TA0112."))
         setattr(cls, "impair-process-control",
             PermissibleValue(text="impair-process-control"))
         setattr(cls, "inhibit-response-function",

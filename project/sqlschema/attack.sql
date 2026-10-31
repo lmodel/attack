@@ -1,4 +1,4 @@
--- # Class: AttackTechnique Description: A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
+-- # Class: AttackTechnique Description: A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
 --     * Slot: x_mitre_attack_spec_version Description: The version of the ATT&CK specification the object follows, as MAJOR.MINOR.PATCH. Without it, an object is read as version 2.0.0.
 --     * Slot: x_mitre_version Description: The version of the object's content, as MAJOR.MINOR with each number between 0 and 99. ATT&CK raises it when the content changes.
 --     * Slot: x_mitre_deprecated Description: Whether ATT&CK has deprecated the object.
@@ -317,7 +317,7 @@
 --     * Slot: type Description: The STIX type name of the object, such as attack-pattern. Each class pins its own.
 --     * Slot: spec_version Description: The version of the STIX specification used to represent the object.
 --     * Slot: extensions_id Description: The object's extensions, as a dictionary keyed by extension name.
--- # Class: AttackBundle Description: A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class.
+-- # Class: AttackBundle Description: A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds.
 --     * Slot: id Description: The identifier of the object: its STIX type, two hyphens and a UUID. Each class narrows the type.
 --     * Slot: type Description: The STIX type name of the object, such as attack-pattern. Each class pins its own.
 -- # Class: AttackKillChainPhase Description: A phase of an ATT&CK domain's kill chain: the kill chain of the domain and the short name of one of its tactics.

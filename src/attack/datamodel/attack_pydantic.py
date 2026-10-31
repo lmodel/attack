@@ -92,17 +92,12 @@ linkml_meta = LinkMLMeta({'annotations': {'attack_data_model_commit': {'tag': 'a
                   'The schema follows the data MITRE publishes. Where the v20.0 '
                   'data departs from the ADM, the schema accepts the data, and '
                   'tests/test_upstream.py lists each departure with its reason.',
-                  "Some of the ADM's rules are beyond the validator, and the tests "
-                  'check them over the examples and the bundles: the first '
-                  'external reference of an object carries its ATT&CK ID, in the '
-                  "form the class's attack_id_pattern annotation gives; the first "
-                  "alias of an object is its name; a campaign's citations name its "
-                  'external references; a property annotated with attack_domains '
-                  'appears only on an object of one of those domains, one '
-                  'annotated with attack_excluded_domains never on an object of '
-                  'those, and one annotated with attack_tactic only beside a kill '
-                  'chain phase of that tactic; some lists name each item once; and '
-                  'a technique has at least one kill chain phase.'],
+                  "Some of the ADM's rules are beyond the validator, such as the "
+                  'order of a list or a rule across a bundle. '
+                  'tests/attack_rules.py checks them over the examples and the '
+                  'bundles, and docs/index.md lists them; the annotations '
+                  'attack_id_pattern, attack_domains, attack_excluded_domains and '
+                  'attack_tactic give the values those rules read.'],
      'default_prefix': 'attack',
      'default_range': 'string',
      'description': 'A LinkML model of MITRE ATT&CK as MITRE publishes it in STIX '
@@ -748,9 +743,6 @@ class AttackPlatform(str, Enum):
     Network_Devices = "Network Devices"
     None_ = "None"
     Office_365 = "Office 365"
-    """
-    Not in the ADM's platform list. Three revoked Enterprise techniques of the v20.0 data still carry it.
-    """
     Office_Suite = "Office Suite"
     PRE = "PRE"
     SaaS = "SaaS"
@@ -768,7 +760,7 @@ class AttackTacticShortname(str, Enum):
     defense_evasion = "defense-evasion"
     defense_impairment = "defense-impairment"
     """
-    Enterprise's TA0112. Not in the ADM's list of short names.
+    Enterprise's TA0112.
     """
     discovery = "discovery"
     evasion = "evasion"
@@ -787,7 +779,7 @@ class AttackTacticShortname(str, Enum):
     resource_development = "resource-development"
     stealth = "stealth"
     """
-    Enterprise's TA0005. Not in the ADM's list of short names.
+    Enterprise's TA0005.
     """
 
 
@@ -8611,11 +8603,14 @@ class StixBundle(ConfiguredBaseModel):
 
 class AttackTechnique(StixAttackPattern):
     """
-    A technique: how an adversary achieves a tactic's goal. A sub-technique is a technique too, with x_mitre_is_subtechnique set and a subtechnique-of relationship to its parent. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
+    A technique: how an adversary achieves a tactic's goal. Its ATT&CK ID is T and four digits, and a sub-technique's adds a full stop and three digits.
     """
     linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'annotations': {'attack_id_pattern': {'tag': 'attack_id_pattern',
                                                'value': '^T\\d{4}(\\.\\d{3})?$'},
                          'stix_type': {'tag': 'stix_type', 'value': 'attack-pattern'}},
+         'comments': ['A sub-technique is a technique too, with '
+                      'x_mitre_is_subtechnique set and a subtechnique-of relationship '
+                      'to its parent.'],
          'from_schema': 'https://w3id.org/lmodel/attack',
          'slot_usage': {'external_references': {'name': 'external_references',
                                                 'required': True},
@@ -13843,10 +13838,11 @@ class AttackRelationship(StixRelationship):
                                                                           'pattern': '^x-mitre-asset--'}}},
                     'preconditions': {'slot_conditions': {'relationship_type': {'equals_string': 'targets',
                                                                                 'name': 'relationship_type'}}}},
-                   {'description': 'An object that can be revoked is replaced by '
-                                   'another such object. The ADM asks for one of the '
-                                   'same type; the v20.0 data has a malware revoked by '
-                                   'a tool, so the rule does not.',
+                   {'comments': ['The ADM asks for one of the same type; the v20.0 '
+                                 'data has a malware revoked by a tool, so the rule '
+                                 'does not.'],
+                    'description': 'An object that can be revoked is replaced by '
+                                   'another such object.',
                     'postconditions': {'slot_conditions': {'source_ref': {'name': 'source_ref',
                                                                           'pattern': '^(attack-pattern|campaign|course-of-action|intrusion-set|malware|tool|x-mitre-asset|x-mitre-data-component)--'},
                                                            'target_ref': {'name': 'target_ref',
@@ -14532,9 +14528,11 @@ class AttackMarkingDefinition(StixMarkingDefinition):
 
 class AttackBundle(StixBundle):
     """
-    A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds. It adds no slot to StixBundle, which stays the schema's tree root; the generated JSON Schema takes AttackBundle as its top class.
+    A bundle of ATT&CK objects, as MITRE publishes each release of a domain: the domain's collection first, then the objects it holds.
     """
-    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/lmodel/attack'})
+    linkml_meta: ClassVar[LinkMLMeta] = LinkMLMeta({'from_schema': 'https://w3id.org/lmodel/attack',
+         'notes': ["It adds no slot to StixBundle, which stays the schema's tree root; "
+                   'the generated JSON Schema takes AttackBundle as its top class.']})
 
     id: str = Field(default=..., description="""The identifier of the object: its STIX type, two hyphens and a UUID. Each class narrows the type.""", json_schema_extra = { "linkml_meta": {'domain_of': ['StixObject', 'StixBundle'], 'slot_uri': 'stix:id'} })
     type: Literal["bundle"] = Field(default=..., description="""The STIX type name of the object, such as attack-pattern. Each class pins its own.""", json_schema_extra = { "linkml_meta": {'domain_of': ['StixObject', 'StixBundle'],
