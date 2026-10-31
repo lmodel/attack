@@ -5,9 +5,10 @@ attack-stix-data and attack-data-model repositories. These tests replace its
 one network call, `_get`, with a table of answers, so they run offline. They
 show what the report says when MITRE releases a newer ATT&CK or data model,
 changes or drops a bundle, changes the licence or moves a tag, and when the
-network fails.
+network fails or answers with more than the script reads.
 """
 
+import http.client
 import importlib.util
 import json
 import shutil
@@ -115,9 +116,10 @@ def test_nothing_changed(watch, tmp_path):
     _stub(watch, _answers(watch, watch.PINNED_TAG))
     code, text = _run(watch, tmp_path)
     assert code == 0, text
-    assert f"Latest release: {watch.PINNED_TAG}, the pinned one." in text
+    assert f"Latest release: `{watch.PINNED_TAG}`, the pinned one." in text
     assert (
-        f"The licence at {watch.PINNED_TAG} and on {BRANCH} is the pinned one." in text
+        f"The licence at `{watch.PINNED_TAG}` and on `{BRANCH}` is the pinned one."
+        in text
     )
     assert "No newer stable release, and no newer pre-release on the 4.x line." in text
 
@@ -133,27 +135,53 @@ def test_a_newer_attack_release(watch, tmp_path):
     _stub(watch, answers)
     code, text = _run(watch, tmp_path)
     assert code == 1
-    assert f"**{watch.DATA_REPO} has a newer release, {NEWER}.**" in text
+    assert f"**{watch.DATA_REPO} has a newer release, `{NEWER}`.**" in text
     assert (
-        f"For information, {NEWER} adds `enterprise-attack/enterprise-attack-21.0.json`."
-        in text
+        f"For information, `{NEWER}` adds "
+        "`enterprise-attack/enterprise-attack-21.0.json`." in text
     )
 
 
 def test_a_release_that_changes_or_drops_a_bundle(watch, tmp_path):
-    """A pinned bundle that a newer release changes, or a folder it drops, is
-    named."""
+    """A pinned bundle that a newer release changes or drops, or a folder it
+    drops, is named."""
     answers = _answers(watch, NEWER)
     data = f"{watch.API}/{watch.DATA_REPO}"
     answers[f"{data}/contents/ics-attack?ref={NEWER}"] = [
         {"name": "ics-attack-20.0.json", "type": "file", "sha": "3" * 40}
     ]
+    answers[f"{data}/contents/enterprise-attack?ref={NEWER}"] = [
+        {"name": "enterprise-attack-21.0.json", "type": "file", "sha": "2" * 40}
+    ]
     del answers[f"{data}/contents/mobile-attack?ref={NEWER}"]
     _stub(watch, answers)
     code, text = _run(watch, tmp_path)
     assert code == 1
-    assert f"**{NEWER} changes `ics-attack/ics-attack-20.0.json`.**" in text
-    assert f"**{NEWER} no longer holds `mobile-attack/`.**" in text
+    assert f"**`{NEWER}` changes `ics-attack/ics-attack-20.0.json`.**" in text
+    assert (
+        f"**`{NEWER}` no longer holds `enterprise-attack/enterprise-attack-20.0.json`.**"
+        in text
+    )
+    assert f"**`{NEWER}` no longer holds `mobile-attack/`.**" in text
+
+
+def test_a_pinned_file_that_is_not_the_pinned_blob(watch, tmp_path):
+    """A bundle at the pinned commit that is not the pinned blob sets attention,
+    although the tag still names that commit."""
+    answers = _answers(watch, watch.PINNED_TAG)
+    folder = (
+        f"{watch.API}/{watch.DATA_REPO}/contents/ics-attack?ref={watch.PINNED_COMMIT}"
+    )
+    answers[folder] = [
+        {"name": "ics-attack-20.0.json", "type": "file", "sha": "7" * 40}
+    ]
+    _stub(watch, answers)
+    code, text = _run(watch, tmp_path)
+    assert code == 1
+    assert (
+        f"**`ics-attack/ics-attack-20.0.json` at commit `{watch.PINNED_COMMIT[:12]}` "
+        "is not the pinned blob.**" in text
+    )
 
 
 def test_a_changed_licence_on_the_default_branch(watch, tmp_path):
@@ -167,7 +195,8 @@ def test_a_changed_licence_on_the_default_branch(watch, tmp_path):
     code, text = _run(watch, tmp_path)
     assert code == 1
     assert (
-        f"**The licence at {watch.DATA_REPO} {BRANCH} is not the pinned one.**" in text
+        f"**The licence at {watch.DATA_REPO} `{BRANCH}` is not the pinned one.**"
+        in text
     )
 
 
@@ -188,17 +217,23 @@ def test_a_copied_licence_that_differs(watch, tmp_path):
 @pytest.mark.parametrize(
     "release, found",
     [
-        (("v4.11.8", True), "a newer pre-release on the pinned 4.x line, v4.11.8"),
+        (("v4.11.8", True), "a newer pre-release on the pinned 4.x line, `v4.11.8`"),
+        (
+            ("v4.12.0-rc.1", True),
+            "a newer pre-release on the pinned 4.x line, `v4.12.0-rc.1`",
+        ),
         (("v5.0.0-beta.4", True), None),
-        (("v4.12.0", False), "a newer stable release, v4.12.0"),
-        (("v5.0.0", False), "a newer stable release, v5.0.0"),
+        (("v4.10.2", False), None),
+        (("v4.12.0", False), "a newer stable release, `v4.12.0`"),
+        (("v5.0.0", False), "a newer stable release, `v5.0.0`"),
     ],
 )
 def test_a_newer_data_model_release(watch, tmp_path, release, found):
     """GitHub's pre-release flag and the version decide, not the tag's form.
     A newer stable release of any version is reported, and so is a newer
     pre-release on the pinned 4.x line, such as a 4.11.8, although its tag
-    carries no suffix. A beta of another major line is left out."""
+    carries no suffix. A beta of another major line, and a stable release
+    older than the pin, are left out."""
     _stub(watch, _answers(watch, watch.PINNED_TAG, [release, *ADM_RELEASES]))
     code, text = _run(watch, tmp_path)
     if found is None:
@@ -209,16 +244,30 @@ def test_a_newer_data_model_release(watch, tmp_path, release, found):
         assert f"**{watch.ADM_REPO} has {found}.**" in text
 
 
-def test_a_moved_tag(watch, tmp_path):
-    """A pinned tag that names another commit sets attention."""
+def test_a_draft_is_left_out(watch, tmp_path):
+    """A draft names no release yet, however new its version."""
+    answers = _answers(watch, watch.PINNED_TAG)
+    answers[f"{watch.API}/{watch.ADM_REPO}/releases?per_page=100"].insert(
+        0, {"tag_name": "v5.0.0", "prerelease": False, "draft": True}
+    )
+    _stub(watch, answers)
+    code, text = _run(watch, tmp_path)
+    assert code == 0, text
+
+
+def test_a_moved_or_deleted_tag(watch, tmp_path):
+    """A pinned tag that names another commit, or no longer exists, sets
+    attention."""
     answers = _answers(watch, watch.PINNED_TAG)
     answers[f"{watch.API}/{watch.DATA_REPO}/git/tags/{'1' * 40}"] = {
         "object": {"type": "commit", "sha": "6" * 40}
     }
+    del answers[f"{watch.API}/{watch.ADM_REPO}/git/ref/tags/{watch.PINNED_ADM_TAG}"]
     _stub(watch, answers)
     code, text = _run(watch, tmp_path)
     assert code == 1
     assert f"tag {watch.PINNED_TAG} now names commit `666666666666`" in text
+    assert f"tag {watch.PINNED_ADM_TAG} now names nothing" in text
 
 
 def test_a_network_failure_still_writes_a_report(watch, tmp_path):
@@ -233,9 +282,65 @@ def test_a_network_failure_still_writes_a_report(watch, tmp_path):
     assert code == 1
     assert (
         "**The ATT&CK Data Model check could not finish: "
-        "<urlopen error Connection refused>.**" in text
+        "`<urlopen error Connection refused>`.**" in text
     )
-    assert f"Latest release: {watch.PINNED_TAG}, the pinned one." in text
+    assert f"Latest release: `{watch.PINNED_TAG}`, the pinned one." in text
+
+
+def test_a_cut_answer_or_another_shape_could_not_finish(watch, tmp_path):
+    """An answer cut off mid-read, and one that is JSON of another shape, are
+    checks that could not finish, and neither stops the other check."""
+    answers = _answers(watch, watch.PINNED_TAG)
+    answers[f"{watch.API}/{watch.DATA_REPO}/releases/latest"] = (
+        http.client.IncompleteRead(b"{")
+    )
+    answers[f"{watch.API}/{watch.ADM_REPO}/releases?per_page=100"] = {
+        "message": "Not a list"
+    }
+    _stub(watch, answers)
+    code, text = _run(watch, tmp_path)
+    assert code == 1
+    assert "**The ATT&CK data check could not finish: `IncompleteRead" in text
+    assert "**The ATT&CK Data Model check could not finish: `" in text
+
+
+def test_text_the_api_chose_is_quoted(watch, tmp_path):
+    """A tag name is quoted as code, so it cannot mention a person in the
+    issue, a backtick in it cannot end the quotation, and it cannot add to the
+    query of a later request."""
+    odd = "v21.0`@someone&per_page=1"
+    _stub(watch, _answers(watch, odd))
+    asked = []
+    get = watch._get
+
+    def logged(url):
+        asked.append(url)
+        return get(url)
+
+    watch._get = logged
+    text = _run(watch, tmp_path)[1]
+    assert "has a newer release, `v21.0'@someone&per_page=1`." in text
+    assert "@someone&" not in "".join(asked)
+
+
+def test_an_oversized_answer_is_refused(watch, monkeypatch):
+    """The script reads at most MAX_BYTES of an answer, and refuses a larger
+    one rather than parse part of it."""
+
+    class Answer:
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *exc):
+            return False
+
+        def read(self, size):
+            return b"x" * size
+
+    monkeypatch.setattr(urllib.request, "urlopen", lambda req, timeout: Answer())
+    monkeypatch.setattr(watch, "MAX_BYTES", 10)
+    with pytest.raises(ValueError, match="larger than 10 bytes"):
+        watch._get(f"{watch.API}/{watch.DATA_REPO}/releases/latest")
 
 
 def test_the_token_never_follows_a_redirect(watch, monkeypatch):
@@ -250,7 +355,7 @@ def test_the_token_never_follows_a_redirect(watch, monkeypatch):
         def __exit__(self, *exc):
             return False
 
-        def read(self):
+        def read(self, size):
             return b"{}"
 
     def urlopen(req, timeout):

@@ -34,11 +34,14 @@ bundle. It prints a Markdown report and exits 1 when:
   beta, is left out, so it does not report every week;
 - a pinned tag names another commit, or a pinned file is not the pinned blob
   at the pinned commit;
-- a check could not finish.
+- a check could not finish, which includes an answer larger than
+  ``MAX_BYTES``.
 
 A bundle that a newer release adds beside the pinned ones is listed for
-information. Set ``GITHUB_TOKEN`` to raise the API rate limit; the token goes
-to api.github.com alone and never on to a redirect. Usage::
+information. Text the API chose, such as a tag name or an error, is quoted as
+code, so the issue the workflow opens cannot mention anyone. Set
+``GITHUB_TOKEN`` to raise the API rate limit; the token goes to
+api.github.com alone and never on to a redirect. Usage::
 
     python scripts/check_upstream_release.py [--report FILE]
 """
@@ -47,11 +50,13 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import http.client
 import json
 import os
 import re
 import sys
 import urllib.error
+import urllib.parse
 import urllib.request
 from functools import cache
 from pathlib import Path
@@ -61,6 +66,9 @@ COPY = ROOT / "tests" / "data" / "attack-stix-data"
 MANIFEST = json.loads((COPY / "manifest.json").read_text(encoding="utf-8"))
 API = "https://api.github.com/repos"
 USER_AGENT = "lmodel-attack-upstream-check"
+# The most one API answer may hold. The largest the script asks for, the data
+# model's list of releases, held about 0.2 MB on 2026-10-31.
+MAX_BYTES = 5_000_000
 
 # The ATT&CK release and the commit its tag names, from the manifest. Move
 # them there, with the schema header's `version` and `source`.
@@ -93,7 +101,22 @@ def _get(url: str) -> bytes:
         # an unredirected one and reaches api.github.com alone.
         req.add_unredirected_header("Authorization", f"Bearer {token}")
     with urllib.request.urlopen(req, timeout=60) as resp:
-        return resp.read()
+        body = resp.read(MAX_BYTES + 1)
+    if len(body) > MAX_BYTES:
+        raise ValueError(f"the answer from {url} is larger than {MAX_BYTES} bytes")
+    return body
+
+
+def _code(text: object) -> str:
+    """Text the API chose, such as a tag name or an error, as a code span, so
+    it cannot mention a person or add a link in the issue."""
+    return "`" + str(text).replace("`", "'") + "`"
+
+
+def _ref(ref: str) -> str:
+    """A ref as a query value, so a tag name the API chose cannot add to the
+    query."""
+    return urllib.parse.quote(ref, safe="")
 
 
 def _version_key(tag: str) -> tuple[int, ...]:
@@ -119,7 +142,7 @@ def _listing(repo: str, path: str, ref: str) -> dict[str, dict]:
     changes what it returns."""
     suffix = f"/{path}" if path else ""
     try:
-        entries = json.loads(_get(f"{API}/{repo}/contents{suffix}?ref={ref}"))
+        entries = json.loads(_get(f"{API}/{repo}/contents{suffix}?ref={_ref(ref)}"))
     except urllib.error.HTTPError as err:
         if err.code == 404:
             return {}
@@ -153,7 +176,7 @@ def _moved_tag(repo: str, tag: str, pinned: str) -> list[str]:
     commit = _tag_commit(repo, tag)
     if commit == pinned:
         return []
-    named = f"commit `{commit[:12]}`" if commit else "nothing"
+    named = f"commit {_code(commit[:12])}" if commit else "nothing"
     return [
         f"- **{repo}'s tag {tag} now names {named}, not the pinned commit "
         f"`{pinned[:12]}`.** Find out why MITRE moved it before trusting either."
@@ -191,31 +214,31 @@ def check_data() -> tuple[list[str], bool]:
 
     latest = json.loads(_get(f"{API}/{DATA_REPO}/releases/latest"))["tag_name"]
     if _version_key(latest) <= _version_key(PINNED_TAG):
-        report.append(f"- Latest release: {latest}, the pinned one.")
+        report.append(f"- Latest release: {_code(latest)}, the pinned one.")
     else:
         problems.append(
-            f"- **{DATA_REPO} has a newer release, {latest}.** Read MITRE's release "
-            "notes, move the schema to it if it changes the model, fetch its bundles, "
-            "and move the pins in `tests/data/attack-stix-data/manifest.json` and the "
-            "schema header together."
+            f"- **{DATA_REPO} has a newer release, {_code(latest)}.** Read MITRE's "
+            "release notes, move the schema to it if it changes the model, fetch its "
+            "bundles, and move the pins in `tests/data/attack-stix-data/manifest.json` "
+            "and the schema header together."
         )
         added = set()
         for name, pin in sorted(MANIFEST["fetched"].items()):
             folder = name.rpartition("/")[0]
             listing = _listing(DATA_REPO, folder, latest)
             if not listing:
-                problems.append(f"- **{latest} no longer holds `{folder}/`.**")
+                problems.append(f"- **{_code(latest)} no longer holds `{folder}/`.**")
                 continue
             found = listing.get(name.rpartition("/")[2], {}).get("sha")
             if found is None:
-                problems.append(f"- **{latest} no longer holds `{name}`.**")
+                problems.append(f"- **{_code(latest)} no longer holds `{name}`.**")
             elif found != pin["git_blob"]:
-                problems.append(f"- **{latest} changes `{name}`.**")
+                problems.append(f"- **{_code(latest)} changes `{name}`.**")
             before = _listing(DATA_REPO, folder, PINNED_COMMIT)
             added |= {f"{folder}/{n}" for n in listing if n not in before}
         if added:
             report.append(
-                f"- For information, {latest} adds "
+                f"- For information, {_code(latest)} adds "
                 + ", ".join(f"`{n}`" for n in sorted(added))
                 + "."
             )
@@ -229,12 +252,14 @@ def check_data() -> tuple[list[str], bool]:
     ]
     for ref in changed:
         problems.append(
-            f"- **The licence at {DATA_REPO} {ref} is not the pinned one.** Read "
+            f"- **The licence at {DATA_REPO} {_code(ref)} is not the pinned one.** Read "
             f"it, update NOTICE and `tests/data/attack-stix-data/{LICENCE}` if it "
             "applies to the copies here, and move the pin."
         )
     if not changed:
-        report.append(f"- The licence at {latest} and on {branch} is the pinned one.")
+        report.append(
+            f"- The licence at {_code(latest)} and on {_code(branch)} is the pinned one."
+        )
     return report + problems, bool(problems)
 
 
@@ -262,14 +287,14 @@ def check_adm() -> tuple[list[str], bool]:
     if stable:
         problems.append(
             f"- **{ADM_REPO} has a newer stable release, "
-            f"{max(stable, key=_version_key)}.** Read its change log, check the "
+            f"{_code(max(stable, key=_version_key))}.** Read its change log, check the "
             "schema against the extensions it defines, and move the pins here and "
             "in the schema header together."
         )
     if on_line:
         problems.append(
             f"- **{ADM_REPO} has a newer pre-release on the pinned {pinned[0]}.x "
-            f"line, {max(on_line, key=_version_key)}.** The pin follows that line, "
+            f"line, {_code(max(on_line, key=_version_key))}.** The pin follows that line, "
             "so read its change log and decide whether the schema moves to it."
         )
     if not stable and not on_line:
@@ -294,14 +319,19 @@ def main(argv: list[str] | None = None) -> int:
     for label, check in CHECKS:
         try:
             found, needs = check()
+        # OSError covers a refused or failed request and a timeout,
+        # HTTPException an answer cut off mid-read, ValueError one that is
+        # not JSON or is too large, and LookupError and TypeError JSON of
+        # another shape than the API's.
         except (
-            urllib.error.URLError,
-            TimeoutError,
             OSError,
-            KeyError,
+            http.client.HTTPException,
             ValueError,
+            LookupError,
+            TypeError,
         ) as err:
-            found, needs = [f"- **The {label} check could not finish: {err}.**"], True
+            found = [f"- **The {label} check could not finish: {_code(err)}.**"]
+            needs = True
         lines += found
         attention = attention or needs
     text = "\n".join(lines) + "\n"
