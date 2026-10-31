@@ -7644,11 +7644,11 @@ slots.x_mitre_shortname = Slot(uri=ATTACK.x_mitre_shortname, name="x_mitre_short
 
 slots.x_mitre_first_seen_citation = Slot(uri=ATTACK.x_mitre_first_seen_citation, name="x_mitre_first_seen_citation", curie=ATTACK.curie('x_mitre_first_seen_citation'),
                    model_uri=ATTACK.x_mitre_first_seen_citation, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(\(Citation: [^)]+\))+$'))
+                   pattern=re.compile(r'^(\(Citation: [^):]*[^):\s][^):]*\))+$'))
 
 slots.x_mitre_last_seen_citation = Slot(uri=ATTACK.x_mitre_last_seen_citation, name="x_mitre_last_seen_citation", curie=ATTACK.curie('x_mitre_last_seen_citation'),
                    model_uri=ATTACK.x_mitre_last_seen_citation, domain=None, range=Optional[str],
-                   pattern=re.compile(r'^(\(Citation: [^)]+\))+$'))
+                   pattern=re.compile(r'^(\(Citation: [^):]*[^):\s][^):]*\))+$'))
 
 slots.x_mitre_sectors = Slot(uri=ATTACK.x_mitre_sectors, name="x_mitre_sectors", curie=ATTACK.curie('x_mitre_sectors'),
                    model_uri=ATTACK.x_mitre_sectors, domain=None, range=Optional[Union[Union[str, "AttackAssetSector"], list[Union[str, "AttackAssetSector"]]]])
@@ -8831,11 +8831,11 @@ slots.AttackCampaign_x_mitre_modified_by_ref = Slot(uri=ATTACK.x_mitre_modified_
 
 slots.AttackCampaign_x_mitre_first_seen_citation = Slot(uri=ATTACK.x_mitre_first_seen_citation, name="AttackCampaign_x_mitre_first_seen_citation", curie=ATTACK.curie('x_mitre_first_seen_citation'),
                    model_uri=ATTACK.AttackCampaign_x_mitre_first_seen_citation, domain=AttackCampaign, range=str,
-                   pattern=re.compile(r'^(\(Citation: [^)]+\))+$'))
+                   pattern=re.compile(r'^(\(Citation: [^):]*[^):\s][^):]*\))+$'))
 
 slots.AttackCampaign_x_mitre_last_seen_citation = Slot(uri=ATTACK.x_mitre_last_seen_citation, name="AttackCampaign_x_mitre_last_seen_citation", curie=ATTACK.curie('x_mitre_last_seen_citation'),
                    model_uri=ATTACK.AttackCampaign_x_mitre_last_seen_citation, domain=AttackCampaign, range=str,
-                   pattern=re.compile(r'^(\(Citation: [^)]+\))+$'))
+                   pattern=re.compile(r'^(\(Citation: [^):]*[^):\s][^):]*\))+$'))
 
 slots.AttackMalware_created_by_ref = Slot(uri=STIX.created_by_ref, name="AttackMalware_created_by_ref", curie=STIX.curie('created_by_ref'),
                    model_uri=ATTACK.AttackMalware_created_by_ref, domain=AttackMalware, range=Union[str, StixIdentityId],

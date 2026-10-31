@@ -3154,6 +3154,9 @@
       "name": "x_mitre_first_seen_citation",
       "definition_uri": "https://w3id.org/lmodel/attack/x_mitre_first_seen_citation",
       "description": "The sources for when the campaign was first seen, each written \"(Citation: name)\" with no separator, where each name is the source name of one of the campaign's external references.",
+      "comments": [
+        "As in the ADM, a name holds no colon and is not blank."
+      ],
       "from_schema": "https://w3id.org/lmodel/attack",
       "mappings": [
         "https://w3id.org/lmodel/attack/x_mitre_first_seen_citation"
@@ -3164,7 +3167,7 @@
         "AttackCampaign"
       ],
       "range": "string",
-      "pattern": "^(\\(Citation: [^)]+\\))+$",
+      "pattern": "^(\\(Citation: [^):]*[^):\\s][^):]*\\))+$",
       "@type": "SlotDefinition"
     },
     {
@@ -3181,7 +3184,7 @@
         "AttackCampaign"
       ],
       "range": "string",
-      "pattern": "^(\\(Citation: [^)]+\\))+$",
+      "pattern": "^(\\(Citation: [^):]*[^):\\s][^):]*\\))+$",
       "@type": "SlotDefinition"
     },
     {
@@ -10178,6 +10181,9 @@
       "name": "AttackCampaign_x_mitre_first_seen_citation",
       "definition_uri": "https://w3id.org/lmodel/attack/x_mitre_first_seen_citation",
       "description": "The sources for when the campaign was first seen, each written \"(Citation: name)\" with no separator, where each name is the source name of one of the campaign's external references.",
+      "comments": [
+        "As in the ADM, a name holds no colon and is not blank."
+      ],
       "from_schema": "https://w3id.org/lmodel/attack",
       "mappings": [
         "https://w3id.org/lmodel/attack/x_mitre_first_seen_citation"
@@ -10194,7 +10200,7 @@
       "usage_slot_name": "x_mitre_first_seen_citation",
       "range": "string",
       "required": true,
-      "pattern": "^(\\(Citation: [^)]+\\))+$",
+      "pattern": "^(\\(Citation: [^):]*[^):\\s][^):]*\\))+$",
       "@type": "SlotDefinition"
     },
     {
@@ -10217,7 +10223,7 @@
       "usage_slot_name": "x_mitre_last_seen_citation",
       "range": "string",
       "required": true,
-      "pattern": "^(\\(Citation: [^)]+\\))+$",
+      "pattern": "^(\\(Citation: [^):]*[^):\\s][^):]*\\))+$",
       "@type": "SlotDefinition"
     },
     {
@@ -22680,8 +22686,8 @@
   ],
   "metamodel_version": "1.12.0",
   "source_file": "attack.yaml",
-  "source_file_date": "2026-10-31T10:28:53",
-  "source_file_size": 43351,
+  "source_file_date": "2026-10-31T10:34:34",
+  "source_file_size": 43467,
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/attack.context.jsonld",

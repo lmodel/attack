@@ -9948,7 +9948,8 @@ class AttackCampaign(StixCampaign):
                        'AttackDataSource',
                        'AttackDetectionStrategy'],
          'slot_uri': 'attack:x_mitre_contributors'} })
-    x_mitre_first_seen_citation: str = Field(default=..., description="""The sources for when the campaign was first seen, each written \"(Citation: name)\" with no separator, where each name is the source name of one of the campaign's external references.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackCampaign'],
+    x_mitre_first_seen_citation: str = Field(default=..., description="""The sources for when the campaign was first seen, each written \"(Citation: name)\" with no separator, where each name is the source name of one of the campaign's external references.""", json_schema_extra = { "linkml_meta": {'comments': ['As in the ADM, a name holds no colon and is not blank.'],
+         'domain_of': ['AttackCampaign'],
          'slot_uri': 'attack:x_mitre_first_seen_citation'} })
     x_mitre_last_seen_citation: str = Field(default=..., description="""The sources for when the campaign was last seen, written as x_mitre_first_seen_citation is.""", json_schema_extra = { "linkml_meta": {'domain_of': ['AttackCampaign'],
          'slot_uri': 'attack:x_mitre_last_seen_citation'} })
@@ -10141,7 +10142,7 @@ class AttackCampaign(StixCampaign):
 
     @field_validator('x_mitre_first_seen_citation')
     def pattern_x_mitre_first_seen_citation(cls, v):
-        pattern=re.compile(r"^(\(Citation: [^)]+\))+$")
+        pattern=re.compile(r"^(\(Citation: [^):]*[^):\s][^):]*\))+$")
         if isinstance(v, list):
             for element in v:
                 if isinstance(element, str) and not pattern.search(element):
@@ -10154,7 +10155,7 @@ class AttackCampaign(StixCampaign):
 
     @field_validator('x_mitre_last_seen_citation')
     def pattern_x_mitre_last_seen_citation(cls, v):
-        pattern=re.compile(r"^(\(Citation: [^)]+\))+$")
+        pattern=re.compile(r"^(\(Citation: [^):]*[^):\s][^):]*\))+$")
         if isinstance(v, list):
             for element in v:
                 if isinstance(element, str) and not pattern.search(element):

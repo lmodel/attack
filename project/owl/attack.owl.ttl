@@ -2052,7 +2052,8 @@ attack:x_mitre_first_seen_citation a owl:DatatypeProperty ;
 	rdfs:label "x_mitre_first_seen_citation" ;
 	rdfs:range _:c14n2010 ;
 	skos:definition "The sources for when the campaign was first seen, each written \"(Citation: name)\" with no separator, where each name is the source name of one of the campaign's external references." ;
-	skos:inScheme <https://w3id.org/lmodel/attack> .
+	skos:inScheme <https://w3id.org/lmodel/attack> ;
+	skos:note "As in the ADM, a name holds no colon and is not blank." .
 attack:x_mitre_impact_type a owl:ObjectProperty ;
 	rdfs:label "x_mitre_impact_type" ;
 	rdfs:range attack:AttackImpactType ;
@@ -4214,7 +4215,7 @@ _:c14n1003 a owl:Restriction ;
 _:c14n1004 rdf:first stix:StixDomainObject ;
 	rdf:rest rdf:nil .
 _:c14n1005 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4186 ;
+	owl:allValuesFrom _:c14n4179 ;
 	owl:onProperty stix:id .
 _:c14n1006 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -4322,7 +4323,7 @@ _:c14n1039 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:name .
 _:c14n104 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4328 ;
+	owl:allValuesFrom _:c14n4324 ;
 	owl:onProperty stix:type .
 _:c14n1040 a owl:Restriction ;
 	owl:allValuesFrom xsd:boolean ;
@@ -4330,10 +4331,10 @@ _:c14n1040 a owl:Restriction ;
 _:c14n1041 rdf:first attack:StixIndustrySector\#utilities ;
 	rdf:rest rdf:nil .
 _:c14n1042 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4310 ;
+	owl:allValuesFrom _:c14n4306 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n1043 a rdfs:Datatype ;
-	owl:unionOf _:c14n4494 .
+	owl:unionOf _:c14n4490 .
 _:c14n1044 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:loader_flags_hex .
@@ -4382,7 +4383,7 @@ _:c14n1060 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:created_by_ref .
 _:c14n1061 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4376 ;
+	owl:allValuesFrom _:c14n4372 ;
 	owl:onProperty stix:id .
 _:c14n1062 rdf:first attack:StixReportType\#tool ;
 	rdf:rest _:c14n683 .
@@ -4399,7 +4400,7 @@ _:c14n1066 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n1067 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4285 ;
+	owl:allValuesFrom _:c14n4278 ;
 	owl:onProperty stix:type .
 _:c14n1068 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
@@ -4415,7 +4416,7 @@ _:c14n1071 a owl:Restriction ;
 	owl:allValuesFrom stix:StixSoftware ;
 	owl:onProperty stix:operating_system_refs .
 _:c14n1072 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4195 ;
+	owl:allValuesFrom _:c14n4188 ;
 	owl:onProperty stix:id .
 _:c14n1073 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -4444,7 +4445,7 @@ _:c14n1081 rdf:first attack:StixWindowsServiceType\#SERVICE_WIN32_OWN_PROCESS ;
 	rdf:rest _:c14n1372 .
 _:c14n1082 owl:intersectionOf _:c14n3215 .
 _:c14n1083 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4270 ;
+	owl:allValuesFrom _:c14n4263 ;
 	owl:onProperty stix:type .
 _:c14n1084 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -4462,16 +4463,16 @@ _:c14n1088 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:implementation_languages .
 _:c14n1089 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4382 ;
+	owl:allValuesFrom _:c14n4378 ;
 	owl:onProperty stix:id .
 _:c14n109 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4554 ;
+	owl:allValuesFrom _:c14n4550 ;
 	owl:onProperty stix:region .
 _:c14n1090 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:subject_key_identifier .
 _:c14n1091 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4101 ;
+	owl:allValuesFrom _:c14n4094 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n1092 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -4492,7 +4493,7 @@ _:c14n1097 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:primary_motivation .
 _:c14n1098 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4209 ;
+	owl:allValuesFrom _:c14n4202 ;
 	owl:onProperty stix:type .
 _:c14n1099 a owl:Restriction ;
 	owl:allValuesFrom stix:StixDirectory ;
@@ -4546,7 +4547,7 @@ _:c14n1114 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:id .
 _:c14n1115 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4082 ;
+	owl:allValuesFrom _:c14n4075 ;
 	owl:onProperty stix:id .
 _:c14n1116 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -4639,7 +4640,7 @@ _:c14n1145 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:is_self_signed .
 _:c14n1146 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4307 ;
+	owl:allValuesFrom _:c14n4303 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n1147 xsd:pattern "^mutex--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n1148 a owl:Restriction ;
@@ -4658,7 +4659,7 @@ _:c14n1151 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:id .
 _:c14n1152 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4338 ;
+	owl:allValuesFrom _:c14n4334 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n1153 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -4716,7 +4717,7 @@ _:c14n1171 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:description .
 _:c14n1172 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4162 ;
+	owl:allValuesFrom _:c14n4155 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n1173 rdf:first attack:StixMalwareCapability\#cleans-traces-of-infection ;
 	rdf:rest _:c14n1163 .
@@ -4761,7 +4762,7 @@ _:c14n1187 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:summary .
 _:c14n1188 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4333 ;
+	owl:allValuesFrom _:c14n4329 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n1189 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -4810,7 +4811,7 @@ _:c14n1203 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:phase_name .
 _:c14n1204 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4283 ;
+	owl:allValuesFrom _:c14n4276 ;
 	owl:onProperty stix:id .
 _:c14n1205 rdf:first attack:StixToolType\#unknown ;
 	rdf:rest rdf:nil .
@@ -4822,7 +4823,7 @@ _:c14n1207 a owl:Restriction ;
 	owl:onProperty stix:ctime .
 _:c14n1208 rdf:first attack:AttackAssetSector\#Water\%20and\%20Wastewater ;
 	rdf:rest rdf:nil .
-_:c14n1209 owl:unionOf _:c14n4418 .
+_:c14n1209 owl:unionOf _:c14n4414 .
 _:c14n121 rdf:first attack:StixNetworkSocketAddressFamily\#AF_BTH ;
 	rdf:rest rdf:nil .
 _:c14n1210 a owl:Restriction ;
@@ -4855,7 +4856,7 @@ _:c14n122 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:command_line .
 _:c14n1220 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4133 ;
+	owl:allValuesFrom _:c14n4126 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n1221 rdf:first attack:AttackRequiredPermission\#SYSTEM ;
 	rdf:rest _:c14n1229 .
@@ -4914,7 +4915,7 @@ _:c14n1239 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:type .
 _:c14n124 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4485 ;
+	owl:allValuesFrom _:c14n4481 ;
 	owl:onProperty stix:secondary_motivations .
 _:c14n1240 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -4945,7 +4946,7 @@ _:c14n125 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:size_of_stack_reserve .
 _:c14n1250 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4241 ;
+	owl:allValuesFrom _:c14n4234 ;
 	owl:onProperty stix:type .
 _:c14n1251 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
@@ -4953,7 +4954,7 @@ _:c14n1251 a owl:Restriction ;
 _:c14n1252 rdf:first attack:AttackTacticShortname\#exfiltration ;
 	rdf:rest _:c14n2495 .
 _:c14n1253 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4250 ;
+	owl:allValuesFrom _:c14n4243 ;
 	owl:onProperty stix:type .
 _:c14n1254 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -5022,13 +5023,13 @@ _:c14n1276 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:object_ref .
 _:c14n1277 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4063 ;
+	owl:allValuesFrom _:c14n4056 ;
 	owl:onProperty stix:id .
 _:c14n1278 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:received_lines .
 _:c14n1279 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4157 ;
+	owl:allValuesFrom _:c14n4150 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n128 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -5058,7 +5059,7 @@ _:c14n1287 a owl:Restriction ;
 _:c14n1288 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:is_service_account .
-_:c14n1289 owl:unionOf _:c14n4406 .
+_:c14n1289 owl:unionOf _:c14n4402 .
 _:c14n129 rdf:first attack:AttackPlatform\#Input\%2FOutput\%20Server ;
 	rdf:rest _:c14n1968 .
 _:c14n1290 a owl:Restriction ;
@@ -5074,7 +5075,7 @@ _:c14n1293 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n1294 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4165 ;
+	owl:allValuesFrom _:c14n4158 ;
 	owl:onProperty stix:type .
 _:c14n1295 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -5086,7 +5087,7 @@ _:c14n1297 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:minor_os_version .
 _:c14n1298 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4072 ;
+	owl:allValuesFrom _:c14n4065 ;
 	owl:onProperty stix:type .
 _:c14n1299 rdf:first attack:StixIndustrySector\#energy ;
 	rdf:rest _:c14n2950 .
@@ -5191,7 +5192,7 @@ _:c14n1331 a owl:Restriction ;
 _:c14n1332 rdf:first attack:StixNetworkSocketAddressFamily\#AF_NETBIOS ;
 	rdf:rest _:c14n1649 .
 _:c14n1333 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4396 ;
+	owl:allValuesFrom _:c14n4392 ;
 	owl:onProperty stix:type .
 _:c14n1334 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -5209,7 +5210,7 @@ _:c14n1338 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:pid .
 _:c14n1339 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4548 ;
+	owl:allValuesFrom _:c14n4544 ;
 	owl:onProperty stix:resource_level .
 _:c14n134 xsd:pattern "^threat-actor--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n1340 a owl:Restriction ;
@@ -5258,7 +5259,7 @@ _:c14n1355 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:message_id .
 _:c14n1356 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4529 ;
+	owl:allValuesFrom _:c14n4525 ;
 	owl:onProperty stix:implementation_languages .
 _:c14n1357 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -5328,7 +5329,7 @@ _:c14n1378 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:abstract .
 _:c14n1379 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4052 ;
+	owl:allValuesFrom _:c14n4042 ;
 	owl:onProperty stix:type .
 _:c14n138 rdf:first attack:StixMalwareType\#trojan ;
 	rdf:rest _:c14n2406 .
@@ -5393,7 +5394,7 @@ _:c14n14 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:aliases .
 _:c14n140 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4505 ;
+	owl:allValuesFrom _:c14n4501 ;
 	owl:onProperty stix:resource_level .
 _:c14n1400 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -5430,13 +5431,13 @@ _:c14n1410 a owl:Restriction ;
 	owl:onProperty stix:marking_ref .
 _:c14n1411 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4477 .
+	owl:withRestrictions _:c14n4473 .
 _:c14n1412 rdf:first attack:StixRegion\#americas ;
 	rdf:rest _:c14n1716 .
 _:c14n1413 a rdfs:Datatype ;
-	owl:unionOf _:c14n4502 .
+	owl:unionOf _:c14n4498 .
 _:c14n1414 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4482 ;
+	owl:allValuesFrom _:c14n4478 ;
 	owl:onProperty stix:primary_motivation .
 _:c14n1415 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -5468,7 +5469,7 @@ _:c14n1425 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:url .
 _:c14n1426 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4326 ;
+	owl:allValuesFrom _:c14n4322 ;
 	owl:onProperty stix:type .
 _:c14n1427 rdf:first "subtechnique-of" ;
 	rdf:rest rdf:nil .
@@ -5487,14 +5488,14 @@ _:c14n1430 a owl:Restriction ;
 _:c14n1431 rdf:first attack:StixNetworkSocketType\#SOCK_RAW ;
 	rdf:rest _:c14n219 .
 _:c14n1432 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4221 ;
+	owl:allValuesFrom _:c14n4214 ;
 	owl:onProperty stix:type .
 _:c14n1433 owl:intersectionOf _:c14n3355 .
 _:c14n1434 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:type .
 _:c14n1435 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4559 ;
+	owl:allValuesFrom _:c14n4555 ;
 	owl:onProperty stix:personal_motivations .
 _:c14n1436 a rdfs:Datatype ;
 	owl:intersectionOf _:c14n3134 .
@@ -5502,10 +5503,10 @@ _:c14n1437 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:request_method .
 _:c14n1438 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4317 ;
+	owl:allValuesFrom _:c14n4313 ;
 	owl:onProperty stix:id .
 _:c14n1439 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4124 ;
+	owl:allValuesFrom _:c14n4117 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n144 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -5523,7 +5524,7 @@ _:c14n1443 a owl:Restriction ;
 	owl:allValuesFrom _:c14n3839 ;
 	owl:onProperty attack:x_mitre_system_requirements .
 _:c14n1444 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4148 ;
+	owl:allValuesFrom _:c14n4141 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n1445 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -5592,7 +5593,7 @@ _:c14n1465 a owl:Restriction ;
 _:c14n1466 rdf:first attack:AttackTacticShortname\#discovery ;
 	rdf:rest _:c14n477 .
 _:c14n1467 a rdfs:Datatype ;
-	owl:unionOf _:c14n4510 .
+	owl:unionOf _:c14n4506 .
 _:c14n1468 a owl:Restriction ;
 	owl:allValuesFrom _:c14n3719 ;
 	owl:onProperty stix:size .
@@ -5639,11 +5640,11 @@ _:c14n1482 a owl:Restriction ;
 	owl:allValuesFrom attack:AttackTactic ;
 	owl:onProperty attack:tactic_refs .
 _:c14n1483 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4275 ;
+	owl:allValuesFrom _:c14n4268 ;
 	owl:onProperty stix:type .
 _:c14n1484 owl:intersectionOf _:c14n3172 .
 _:c14n1485 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4551 ;
+	owl:allValuesFrom _:c14n4547 ;
 	owl:onProperty stix:primary_motivation .
 _:c14n1486 rdf:first attack:StixIndustrySector\#financial-services ;
 	rdf:rest _:c14n13 .
@@ -5702,7 +5703,7 @@ _:c14n1503 a owl:Restriction ;
 _:c14n1504 rdf:first attack:AttackAsset ;
 	rdf:rest _:c14n1880 .
 _:c14n1505 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4356 ;
+	owl:allValuesFrom _:c14n4352 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n1506 rdf:first attack:StixIndustrySector\#insurance ;
 	rdf:rest _:c14n2314 .
@@ -5802,9 +5803,9 @@ _:c14n1538 a owl:Restriction ;
 _:c14n1539 rdf:first attack:AttackBypassedDefense\#Host\%20forensic\%20analysis ;
 	rdf:rest _:c14n1128 .
 _:c14n154 a rdfs:Datatype ;
-	owl:unionOf _:c14n4526 .
+	owl:unionOf _:c14n4522 .
 _:c14n1540 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4380 ;
+	owl:allValuesFrom _:c14n4376 ;
 	owl:onProperty stix:type .
 _:c14n1541 owl:unionOf _:c14n1059 .
 _:c14n1542 rdf:first attack:AttackBypassedDefense\#File\%20system\%20access\%20controls ;
@@ -5882,7 +5883,7 @@ _:c14n1566 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:data .
 _:c14n1567 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4099 ;
+	owl:allValuesFrom _:c14n4092 ;
 	owl:onProperty stix:type .
 _:c14n1568 rdf:first attack:StixTlpLevel\#amber ;
 	rdf:rest _:c14n2181 .
@@ -5917,10 +5918,10 @@ _:c14n1578 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:file_alignment .
 _:c14n1579 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4089 ;
+	owl:allValuesFrom _:c14n4082 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n158 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4086 ;
+	owl:allValuesFrom _:c14n4079 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n1580 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -5989,10 +5990,10 @@ _:c14n1600 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:is_listening .
 _:c14n1601 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4398 ;
+	owl:allValuesFrom _:c14n4394 ;
 	owl:onProperty stix:id .
 _:c14n1602 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4190 ;
+	owl:allValuesFrom _:c14n4183 ;
 	owl:onProperty stix:id .
 _:c14n1603 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -6026,7 +6027,7 @@ _:c14n1612 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:last_seen .
 _:c14n1613 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4207 ;
+	owl:allValuesFrom _:c14n4200 ;
 	owl:onProperty stix:value .
 _:c14n1614 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -6173,7 +6174,7 @@ _:c14n1661 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:account_type .
 _:c14n1662 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4068 ;
+	owl:allValuesFrom _:c14n4061 ;
 	owl:onProperty stix:definition_type .
 _:c14n1663 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -6184,7 +6185,7 @@ _:c14n1665 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:id .
 _:c14n1666 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4359 ;
+	owl:allValuesFrom _:c14n4355 ;
 	owl:onProperty stix:id .
 _:c14n1667 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -6266,7 +6267,7 @@ _:c14n1692 a owl:Restriction ;
 _:c14n1693 a owl:Restriction ;
 	owl:allValuesFrom xsd:boolean ;
 	owl:onProperty stix:is_blocking .
-_:c14n1694 owl:unionOf _:c14n4434 .
+_:c14n1694 owl:unionOf _:c14n4430 .
 _:c14n1695 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:description .
@@ -6279,7 +6280,7 @@ _:c14n1698 a owl:Restriction ;
 	owl:allValuesFrom xsd:dateTime ;
 	owl:onProperty stix:ctime .
 _:c14n1699 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4219 ;
+	owl:allValuesFrom _:c14n4212 ;
 	owl:onProperty stix:type .
 _:c14n17 rdf:first attack:AttackTacticShortname\#resource-development ;
 	rdf:rest _:c14n464 .
@@ -6375,7 +6376,7 @@ _:c14n173 a owl:Restriction ;
 	owl:onProperty stix:number .
 _:c14n1730 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4027 .
+	owl:withRestrictions _:c14n4562 .
 _:c14n1731 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:contains_refs .
@@ -6406,7 +6407,7 @@ _:c14n1739 a owl:Restriction ;
 _:c14n174 rdf:first attack:StixExtensionType\#property-extension ;
 	rdf:rest _:c14n3003 .
 _:c14n1740 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4109 ;
+	owl:allValuesFrom _:c14n4102 ;
 	owl:onProperty stix:id .
 _:c14n1741 a owl:Restriction ;
 	owl:allValuesFrom xsd:dateTime ;
@@ -6498,7 +6499,7 @@ _:c14n1769 a owl:Restriction ;
 _:c14n177 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_version .
-_:c14n1770 owl:unionOf _:c14n4466 .
+_:c14n1770 owl:unionOf _:c14n4462 .
 _:c14n1771 a owl:Restriction ;
 	owl:allValuesFrom stix:StixObservedData ;
 	owl:onProperty stix:observed_data_refs .
@@ -6531,7 +6532,7 @@ _:c14n1780 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:result_name .
 _:c14n1781 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4303 ;
+	owl:allValuesFrom _:c14n4299 ;
 	owl:onProperty stix:type .
 _:c14n1782 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -6544,7 +6545,7 @@ _:c14n1785 a owl:Restriction ;
 	owl:allValuesFrom xsd:integer ;
 	owl:onProperty stix:message_body_length .
 _:c14n1786 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4104 ;
+	owl:allValuesFrom _:c14n4097 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n1787 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -6587,7 +6588,7 @@ _:c14n1799 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:major_linker_version .
 _:c14n18 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4374 ;
+	owl:allValuesFrom _:c14n4370 ;
 	owl:onProperty stix:id .
 _:c14n180 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -6668,10 +6669,10 @@ _:c14n1824 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:is_hidden .
 _:c14n1825 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4023 ;
+	owl:allValuesFrom _:c14n4053 ;
 	owl:onProperty attack:x_mitre_first_seen_citation .
 _:c14n1826 xsd:pattern "^\\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)(\\.(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]?\\d)){3}))|:)))(%.+)?\\s*(\\/(12[0-8]|1[0-1][0-9]|[1-9][0-9]|[0-9]))?$" .
-_:c14n1827 owl:unionOf _:c14n4408 .
+_:c14n1827 owl:unionOf _:c14n4404 .
 _:c14n1828 owl:intersectionOf _:c14n3385 .
 _:c14n1829 rdf:first attack:AttackPlatform\#None ;
 	rdf:rest _:c14n785 .
@@ -6757,7 +6758,7 @@ _:c14n1853 a owl:Restriction ;
 _:c14n1854 rdf:first attack:StixThreatActorType\#sensationalist ;
 	rdf:rest _:c14n2865 .
 _:c14n1855 a rdfs:Datatype ;
-	owl:unionOf _:c14n4492 .
+	owl:unionOf _:c14n4488 .
 _:c14n1856 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:name .
@@ -6779,7 +6780,7 @@ _:c14n1862 a rdfs:Datatype ;
 _:c14n1863 rdf:first attack:StixMalwareCapability\#anti-debugging ;
 	rdf:rest _:c14n918 .
 _:c14n1864 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4030 ;
+	owl:allValuesFrom _:c14n4020 ;
 	owl:onProperty stix:id .
 _:c14n1865 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -6789,10 +6790,10 @@ _:c14n1866 rdf:first attack:StixMalwareCapability\#determines-c2-server ;
 _:c14n1867 rdf:first attack:StixThreatActorRole\#infrastructure-architect ;
 	rdf:rest _:c14n1388 .
 _:c14n1868 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4223 ;
+	owl:allValuesFrom _:c14n4216 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n1869 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4200 ;
+	owl:allValuesFrom _:c14n4193 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n187 a owl:Restriction ;
 	owl:allValuesFrom attack:AttackKillChainName ;
@@ -6822,7 +6823,7 @@ _:c14n1877 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:key_usage .
 _:c14n1878 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4232 ;
+	owl:allValuesFrom _:c14n4225 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n1879 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -6845,7 +6846,7 @@ _:c14n1885 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:creator_user_ref .
 _:c14n1886 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4315 ;
+	owl:allValuesFrom _:c14n4311 ;
 	owl:onProperty stix:id .
 _:c14n1887 xsd:pattern "^(file|artifact)--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n1888 a owl:Restriction ;
@@ -6957,7 +6958,7 @@ _:c14n1924 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:content_disposition .
 _:c14n1925 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4272 ;
+	owl:allValuesFrom _:c14n4265 ;
 	owl:onProperty stix:id .
 _:c14n1926 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -6971,7 +6972,7 @@ _:c14n193 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:description .
 _:c14n1930 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4277 ;
+	owl:allValuesFrom _:c14n4270 ;
 	owl:onProperty stix:type .
 _:c14n1931 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -7004,7 +7005,7 @@ _:c14n1940 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:name .
 _:c14n1941 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4211 ;
+	owl:allValuesFrom _:c14n4204 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n1942 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
@@ -7013,7 +7014,7 @@ _:c14n1943 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:description .
 _:c14n1944 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4047 ;
+	owl:allValuesFrom _:c14n4037 ;
 	owl:onProperty stix:phase_name .
 _:c14n1945 owl:intersectionOf _:c14n3335 .
 _:c14n1946 a owl:Restriction ;
@@ -7102,7 +7103,7 @@ _:c14n1974 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:start .
 _:c14n1975 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4229 ;
+	owl:allValuesFrom _:c14n4222 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n1976 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -7124,7 +7125,7 @@ _:c14n1981 a owl:Restriction ;
 	owl:allValuesFrom _:c14n3773 ;
 	owl:onProperty stix:relationship_type .
 _:c14n1982 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4074 ;
+	owl:allValuesFrom _:c14n4067 ;
 	owl:onProperty stix:id .
 _:c14n1983 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -7152,13 +7153,13 @@ _:c14n1990 a owl:Restriction ;
 _:c14n1991 rdf:first stix:StixEmailMessage ;
 	rdf:rest rdf:nil .
 _:c14n1992 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4146 ;
+	owl:allValuesFrom _:c14n4139 ;
 	owl:onProperty stix:type .
 _:c14n1993 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty attack:x_mitre_network_requirements .
 _:c14n1994 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4065 ;
+	owl:allValuesFrom _:c14n4058 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n1995 a owl:Restriction ;
 	owl:allValuesFrom xsd:integer ;
@@ -7209,11 +7210,11 @@ _:c14n2009 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:bits_per_pixel .
 _:c14n201 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4254 ;
+	owl:allValuesFrom _:c14n4247 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n2010 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4025 .
+	owl:withRestrictions _:c14n4560 .
 _:c14n2011 rdf:first attack:AttackEffectivePermission\#SYSTEM ;
 	rdf:rest _:c14n2110 .
 _:c14n2012 a owl:Restriction ;
@@ -7231,7 +7232,7 @@ _:c14n2016 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:type .
 _:c14n2017 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4281 ;
+	owl:allValuesFrom _:c14n4274 ;
 	owl:onProperty stix:id .
 _:c14n2018 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -7251,7 +7252,7 @@ _:c14n2022 a owl:Restriction ;
 	owl:allValuesFrom stix:StixKillChainPhase ;
 	owl:onProperty stix:kill_chain_phases .
 _:c14n2023 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4060 ;
+	owl:allValuesFrom _:c14n4050 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n2024 rdf:first attack:StixRegion\#middle-africa ;
 	rdf:rest _:c14n1689 .
@@ -7395,7 +7396,7 @@ _:c14n2071 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:spec_version .
 _:c14n2072 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4248 ;
+	owl:allValuesFrom _:c14n4241 ;
 	owl:onProperty stix:type .
 _:c14n2073 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -7460,7 +7461,7 @@ _:c14n2092 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:kill_chain_name .
 _:c14n2093 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4076 ;
+	owl:allValuesFrom _:c14n4069 ;
 	owl:onProperty stix:type .
 _:c14n2094 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -7469,7 +7470,7 @@ _:c14n2095 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:type .
 _:c14n2096 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4084 ;
+	owl:allValuesFrom _:c14n4077 ;
 	owl:onProperty stix:id .
 _:c14n2097 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -7486,7 +7487,7 @@ _:c14n210 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:image_base .
 _:c14n2100 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4262 ;
+	owl:allValuesFrom _:c14n4255 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n2101 rdf:first stix:StixLocation ;
 	rdf:rest _:c14n86 .
@@ -7498,7 +7499,7 @@ _:c14n2103 rdf:first attack:StixThreatActorSophistication\#minimal ;
 _:c14n2104 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:message_body_length .
-_:c14n2105 owl:unionOf _:c14n4402 .
+_:c14n2105 owl:unionOf _:c14n4398 .
 _:c14n2106 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:major_subsystem_version .
@@ -7537,7 +7538,7 @@ _:c14n2117 a owl:Restriction ;
 _:c14n2118 a owl:Restriction ;
 	owl:allValuesFrom xsd:boolean ;
 	owl:onProperty stix:is_listening .
-_:c14n2119 owl:unionOf _:c14n4438 .
+_:c14n2119 owl:unionOf _:c14n4434 .
 _:c14n212 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:message_body_data_ref .
@@ -7568,7 +7569,7 @@ _:c14n2128 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:extensions .
 _:c14n2129 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4020 ;
+	owl:allValuesFrom _:c14n4291 ;
 	owl:onProperty attack:x_mitre_last_seen_citation .
 _:c14n213 xsd:pattern "^ipv4-addr--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n2130 a owl:Restriction ;
@@ -7584,7 +7585,7 @@ _:c14n2133 a owl:Restriction ;
 	owl:allValuesFrom attack:AttackEffectivePermission ;
 	owl:onProperty attack:x_mitre_effective_permissions .
 _:c14n2134 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4347 ;
+	owl:allValuesFrom _:c14n4343 ;
 	owl:onProperty stix:path_enc .
 _:c14n2135 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -7629,7 +7630,7 @@ _:c14n2147 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:id .
 _:c14n2148 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4400 ;
+	owl:allValuesFrom _:c14n4396 ;
 	owl:onProperty stix:type .
 _:c14n2149 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -7707,7 +7708,7 @@ _:c14n2173 rdf:first attack:StixAccountType\#nis ;
 	rdf:rest _:c14n263 .
 _:c14n2174 xsd:pattern "incident" .
 _:c14n2175 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4202 ;
+	owl:allValuesFrom _:c14n4195 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n2176 a owl:Restriction ;
 	owl:onProperty stix:definition ;
@@ -7745,7 +7746,7 @@ _:c14n2186 a owl:Restriction ;
 	owl:allValuesFrom attack:StixNetworkSocketType ;
 	owl:onProperty stix:socket_type .
 _:c14n2187 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4292 ;
+	owl:allValuesFrom _:c14n4285 ;
 	owl:onProperty stix:type .
 _:c14n2188 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -7811,12 +7812,12 @@ _:c14n2206 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:administrative_area .
 _:c14n2207 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4384 ;
+	owl:allValuesFrom _:c14n4380 ;
 	owl:onProperty stix:id .
 _:c14n2208 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4257 ;
+	owl:allValuesFrom _:c14n4250 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
-_:c14n2209 owl:unionOf _:c14n4463 .
+_:c14n2209 owl:unionOf _:c14n4459 .
 _:c14n221 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
@@ -7858,13 +7859,13 @@ _:c14n2222 rdf:first attack:StixNetworkSocketAddressFamily\#AF_IPX ;
 	rdf:rest _:c14n2840 .
 _:c14n2223 owl:intersectionOf _:c14n3405 .
 _:c14n2224 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4033 ;
+	owl:allValuesFrom _:c14n4023 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n2225 a owl:Restriction ;
 	owl:allValuesFrom xsd:dateTime ;
 	owl:onProperty stix:valid_until .
 _:c14n2226 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4078 ;
+	owl:allValuesFrom _:c14n4071 ;
 	owl:onProperty stix:type .
 _:c14n2227 xsd:pattern "vulnerability" .
 _:c14n2228 a owl:Restriction ;
@@ -7872,7 +7873,7 @@ _:c14n2228 a owl:Restriction ;
 	owl:onProperty stix:longitude .
 _:c14n2229 xsd:pattern "^attack-pattern--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n223 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4138 ;
+	owl:allValuesFrom _:c14n4131 ;
 	owl:onProperty stix:type .
 _:c14n2230 rdf:first attack:StixMalwareType\#dropper ;
 	rdf:rest _:c14n2798 .
@@ -7888,13 +7889,13 @@ _:c14n2234 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:revoked .
 _:c14n2235 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4290 ;
+	owl:allValuesFrom _:c14n4283 ;
 	owl:onProperty stix:id .
 _:c14n2236 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:name .
 _:c14n2237 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4243 ;
+	owl:allValuesFrom _:c14n4236 ;
 	owl:onProperty stix:type .
 _:c14n2238 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -7967,7 +7968,7 @@ _:c14n226 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:version .
 _:c14n2260 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4354 ;
+	owl:allValuesFrom _:c14n4350 ;
 	owl:onProperty stix:id .
 _:c14n2261 rdf:first attack:StixMalwareCapability\#evades-av ;
 	rdf:rest _:c14n1354 .
@@ -8034,7 +8035,7 @@ _:c14n2280 a owl:Restriction ;
 _:c14n2281 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_version .
-_:c14n2282 owl:unionOf _:c14n4472 .
+_:c14n2282 owl:unionOf _:c14n4468 .
 _:c14n2283 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:start .
@@ -8070,7 +8071,7 @@ _:c14n2294 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:extension_properties .
 _:c14n2295 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4119 ;
+	owl:allValuesFrom _:c14n4112 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n2296 rdf:first attack:StixIndustrySector\#pharmaceuticals ;
 	rdf:rest _:c14n1675 .
@@ -8086,7 +8087,7 @@ _:c14n2299 a owl:Restriction ;
 _:c14n23 rdf:first attack:AttackRequiredPermission\#Administrator ;
 	rdf:rest _:c14n93 .
 _:c14n230 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4499 ;
+	owl:allValuesFrom _:c14n4495 ;
 	owl:onProperty stix:indicator_types .
 _:c14n2300 a owl:Restriction ;
 	owl:allValuesFrom stix:StixIdentity ;
@@ -8097,7 +8098,7 @@ _:c14n2301 a owl:Restriction ;
 _:c14n2302 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:id .
-_:c14n2303 owl:unionOf _:c14n4412 .
+_:c14n2303 owl:unionOf _:c14n4408 .
 _:c14n2304 rdf:first attack:AttackKillChainName\#mitre-attack ;
 	rdf:rest _:c14n1144 .
 _:c14n2305 a owl:Restriction ;
@@ -8140,7 +8141,7 @@ _:c14n2317 a owl:Restriction ;
 	owl:onProperty stix:created_by_ref .
 _:c14n2318 owl:intersectionOf _:c14n3440 .
 _:c14n2319 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4320 ;
+	owl:allValuesFrom _:c14n4316 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n232 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -8161,7 +8162,7 @@ _:c14n2325 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:description .
 _:c14n2326 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4245 ;
+	owl:allValuesFrom _:c14n4238 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n2327 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -8170,7 +8171,7 @@ _:c14n2328 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:name .
 _:c14n2329 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4160 ;
+	owl:allValuesFrom _:c14n4153 ;
 	owl:onProperty stix:type .
 _:c14n233 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -8194,7 +8195,7 @@ _:c14n2336 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:last_seen .
 _:c14n2337 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4122 ;
+	owl:allValuesFrom _:c14n4115 ;
 	owl:onProperty stix:id .
 _:c14n2338 rdf:first attack:StixMalwareCapability\#captures-output-peripherals ;
 	rdf:rest _:c14n2047 .
@@ -8287,7 +8288,7 @@ _:c14n2366 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:hashes .
 _:c14n2367 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4095 ;
+	owl:allValuesFrom _:c14n4088 ;
 	owl:onProperty stix:type .
 _:c14n2368 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -8334,7 +8335,7 @@ _:c14n2381 a owl:Restriction ;
 	owl:allValuesFrom stix:StixIdentity ;
 	owl:onProperty attack:x_mitre_modified_by_ref .
 _:c14n2382 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4298 ;
+	owl:allValuesFrom _:c14n4294 ;
 	owl:onProperty stix:id .
 _:c14n2383 rdf:first attack:StixAccountType\#windows-domain ;
 	rdf:rest rdf:nil .
@@ -8345,7 +8346,7 @@ _:c14n2385 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:subsystem_hex .
 _:c14n2386 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4038 ;
+	owl:allValuesFrom _:c14n4028 ;
 	owl:onProperty stix:type .
 _:c14n2387 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -8361,13 +8362,13 @@ _:c14n239 rdf:first attack:StixMalwareCapability\#self-modifies ;
 _:c14n2390 rdf:first "cve" ;
 	rdf:rest rdf:nil .
 _:c14n2391 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4214 ;
+	owl:allValuesFrom _:c14n4207 ;
 	owl:onProperty stix:id .
 _:c14n2392 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:display_name .
 _:c14n2393 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4386 ;
+	owl:allValuesFrom _:c14n4382 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n2394 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -8424,7 +8425,7 @@ _:c14n2410 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:parent_directory_ref .
 _:c14n2411 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4364 ;
+	owl:allValuesFrom _:c14n4360 ;
 	owl:onProperty stix:id .
 _:c14n2412 rdf:first attack:StixThreatActorSophistication\#expert ;
 	rdf:rest _:c14n2932 .
@@ -8482,7 +8483,7 @@ _:c14n243 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty attack:x_mitre_modified_by_ref .
 _:c14n2430 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4170 ;
+	owl:allValuesFrom _:c14n4163 ;
 	owl:onProperty stix:id .
 _:c14n2431 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -8491,7 +8492,7 @@ _:c14n2432 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:created .
 _:c14n2433 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4350 ;
+	owl:allValuesFrom _:c14n4346 ;
 	owl:onProperty stix:value .
 _:c14n2434 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -8509,7 +8510,7 @@ _:c14n2439 a owl:Restriction ;
 	owl:allValuesFrom stix:StixNetworkTraffic ;
 	owl:onProperty stix:opened_connection_refs .
 _:c14n244 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4294 ;
+	owl:allValuesFrom _:c14n4287 ;
 	owl:onProperty stix:mime_type .
 _:c14n2440 a owl:Restriction ;
 	owl:allValuesFrom xsd:dateTime ;
@@ -8572,7 +8573,7 @@ _:c14n2459 xsd:pattern "ipv6-addr" .
 _:c14n246 rdf:first attack:StixThreatActorType\#competitor ;
 	rdf:rest _:c14n1696 .
 _:c14n2460 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4197 ;
+	owl:allValuesFrom _:c14n4190 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n2461 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -8661,7 +8662,7 @@ _:c14n249 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:magic_number_hex .
 _:c14n2490 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4517 ;
+	owl:allValuesFrom _:c14n4513 ;
 	owl:onProperty stix:tool_types .
 _:c14n2491 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -8670,7 +8671,7 @@ _:c14n2492 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:private_key_usage_period_not_before .
 _:c14n2493 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4142 ;
+	owl:allValuesFrom _:c14n4135 ;
 	owl:onProperty stix:type .
 _:c14n2494 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -8714,10 +8715,10 @@ _:c14n2506 a owl:Restriction ;
 _:c14n2507 rdf:first attack:AttackPlatform\#macOS ;
 	rdf:rest _:c14n1268 .
 _:c14n2508 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4036 ;
+	owl:allValuesFrom _:c14n4026 ;
 	owl:onProperty stix:id .
 _:c14n2509 a rdfs:Datatype ;
-	owl:unionOf _:c14n4539 .
+	owl:unionOf _:c14n4535 .
 _:c14n251 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:mime_type .
@@ -8782,7 +8783,7 @@ _:c14n2529 a owl:Restriction ;
 	owl:onProperty stix:name .
 _:c14n253 xsd:pattern "^tool--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n2530 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4305 ;
+	owl:allValuesFrom _:c14n4301 ;
 	owl:onProperty stix:id .
 _:c14n2531 rdf:first attack:AttackPlatform\#SaaS ;
 	rdf:rest _:c14n624 .
@@ -8840,7 +8841,7 @@ _:c14n255 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:is_multipart .
 _:c14n2550 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4226 ;
+	owl:allValuesFrom _:c14n4219 ;
 	owl:onProperty stix:id .
 _:c14n2551 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -8855,7 +8856,7 @@ _:c14n2554 a owl:Restriction ;
 	owl:allValuesFrom _:c14n3240 ;
 	owl:onProperty stix:type .
 _:c14n2555 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4260 ;
+	owl:allValuesFrom _:c14n4253 ;
 	owl:onProperty stix:id .
 _:c14n2556 a owl:Restriction ;
 	owl:allValuesFrom _:c14n3790 ;
@@ -8869,7 +8870,7 @@ _:c14n2558 a owl:Restriction ;
 _:c14n2559 rdf:first attack:StixMalwareCapability\#anti-sandbox ;
 	rdf:rest _:c14n75 .
 _:c14n256 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4107 ;
+	owl:allValuesFrom _:c14n4100 ;
 	owl:onProperty stix:type .
 _:c14n2560 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -8892,7 +8893,7 @@ _:c14n2567 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:subject_alternative_name .
 _:c14n2568 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4180 ;
+	owl:allValuesFrom _:c14n4173 ;
 	owl:onProperty stix:languages .
 _:c14n2569 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -8959,7 +8960,7 @@ _:c14n2590 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:indicator_types .
 _:c14n2591 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4144 ;
+	owl:allValuesFrom _:c14n4137 ;
 	owl:onProperty stix:type .
 _:c14n2592 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -8994,7 +8995,7 @@ _:c14n2600 a owl:Restriction ;
 	owl:onProperty stix:address_family .
 _:c14n2601 owl:intersectionOf _:c14n3096 .
 _:c14n2602 a rdfs:Datatype ;
-	owl:unionOf _:c14n4496 .
+	owl:unionOf _:c14n4492 .
 _:c14n2603 a owl:Restriction ;
 	owl:allValuesFrom stix:StixX509V3Extensions ;
 	owl:onProperty stix:x509_v3_extensions .
@@ -9062,7 +9063,7 @@ _:c14n2624 a owl:Restriction ;
 	owl:onProperty attack:field .
 _:c14n2625 xsd:pattern "^report--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n2626 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4136 ;
+	owl:allValuesFrom _:c14n4129 ;
 	owl:onProperty stix:id .
 _:c14n2627 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -9090,13 +9091,13 @@ _:c14n2634 a owl:Restriction ;
 _:c14n2635 rdf:first attack:AttackTacticShortname\#defense-impairment ;
 	rdf:rest _:c14n1466 .
 _:c14n2636 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4562 ;
+	owl:allValuesFrom _:c14n4558 ;
 	owl:onProperty stix:infrastructure_types .
 _:c14n2637 xsd:pattern "^indicator--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n2638 rdf:first attack:StixAttackResourceLevel\#team ;
 	rdf:rest _:c14n1387 .
 _:c14n2639 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4130 ;
+	owl:allValuesFrom _:c14n4123 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n264 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -9120,7 +9121,7 @@ _:c14n2645 a owl:Restriction ;
 	owl:allValuesFrom xsd:boolean ;
 	owl:onProperty attack:x_mitre_deprecated .
 _:c14n2646 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4378 ;
+	owl:allValuesFrom _:c14n4374 ;
 	owl:onProperty stix:id .
 _:c14n2647 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -9214,7 +9215,7 @@ _:c14n2677 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:id .
 _:c14n2678 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4167 ;
+	owl:allValuesFrom _:c14n4160 ;
 	owl:onProperty attack:x_mitre_data_sources .
 _:c14n2679 rdf:first attack:AttackTacticType\#Without\%20Adversary\%20Device\%20Access ;
 	rdf:rest rdf:nil .
@@ -9250,12 +9251,12 @@ _:c14n2688 a owl:Restriction ;
 _:c14n2689 a owl:Restriction ;
 	owl:allValuesFrom attack:AttackDomain ;
 	owl:onProperty attack:x_mitre_domains .
-_:c14n269 owl:unionOf _:c14n4449 .
+_:c14n269 owl:unionOf _:c14n4445 .
 _:c14n2690 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:body_raw_ref .
 _:c14n2691 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4330 ;
+	owl:allValuesFrom _:c14n4326 ;
 	owl:onProperty stix:id .
 _:c14n2692 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -9373,7 +9374,7 @@ _:c14n2729 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:source_ref .
 _:c14n273 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4522 ;
+	owl:allValuesFrom _:c14n4518 ;
 	owl:onProperty stix:identity_class .
 _:c14n2730 a owl:Restriction ;
 	owl:allValuesFrom _:c14n3793 ;
@@ -9388,7 +9389,7 @@ _:c14n2734 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:type .
 _:c14n2735 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4366 ;
+	owl:allValuesFrom _:c14n4362 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n2736 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -9410,7 +9411,7 @@ _:c14n2741 a owl:Restriction ;
 	owl:allValuesFrom xsd:boolean ;
 	owl:onProperty attack:x_mitre_deprecated .
 _:c14n2742 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4111 ;
+	owl:allValuesFrom _:c14n4104 ;
 	owl:onProperty stix:id .
 _:c14n2743 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -9456,7 +9457,7 @@ _:c14n2757 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:description .
 _:c14n2758 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4534 ;
+	owl:allValuesFrom _:c14n4530 ;
 	owl:onProperty stix:threat_actor_types .
 _:c14n2759 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -9474,10 +9475,10 @@ _:c14n2763 rdf:first attack:AttackBypassedDefense\#Heuristic\%20Detection ;
 _:c14n2764 rdf:first attack:StixWindowsRegistryDatatype\#REG_EXPAND_SZ ;
 	rdf:rest _:c14n470 .
 _:c14n2765 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4490 ;
+	owl:allValuesFrom _:c14n4486 ;
 	owl:onProperty stix:secondary_motivations .
 _:c14n2766 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4117 ;
+	owl:allValuesFrom _:c14n4110 ;
 	owl:onProperty stix:type .
 _:c14n2767 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -9496,7 +9497,7 @@ _:c14n2771 a owl:Restriction ;
 _:c14n2772 rdf:first attack:StixAccountType\#unix ;
 	rdf:rest _:c14n2976 .
 _:c14n2773 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4542 ;
+	owl:allValuesFrom _:c14n4538 ;
 	owl:onProperty stix:context .
 _:c14n2774 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
@@ -9558,7 +9559,7 @@ _:c14n2793 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:source_name .
 _:c14n2794 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4301 ;
+	owl:allValuesFrom _:c14n4297 ;
 	owl:onProperty stix:type .
 _:c14n2795 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -9567,7 +9568,7 @@ _:c14n2796 a owl:Restriction ;
 	owl:allValuesFrom xsd:dateTime ;
 	owl:onProperty stix:last_seen .
 _:c14n2797 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4389 ;
+	owl:allValuesFrom _:c14n4385 ;
 	owl:onProperty stix:type .
 _:c14n2798 rdf:first attack:StixMalwareType\#exploit-kit ;
 	rdf:rest _:c14n318 .
@@ -9670,10 +9671,10 @@ _:c14n283 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:name_constraints .
 _:c14n2830 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4341 ;
+	owl:allValuesFrom _:c14n4337 ;
 	owl:onProperty stix:id .
 _:c14n2831 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4140 ;
+	owl:allValuesFrom _:c14n4133 ;
 	owl:onProperty stix:id .
 _:c14n2832 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -9684,7 +9685,7 @@ _:c14n2834 a owl:Restriction ;
 	owl:allValuesFrom stix:StixEmailAddress ;
 	owl:onProperty stix:bcc_refs .
 _:c14n2835 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4178 ;
+	owl:allValuesFrom _:c14n4171 ;
 	owl:onProperty stix:value .
 _:c14n2836 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -9693,7 +9694,7 @@ _:c14n2837 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n2838 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4044 ;
+	owl:allValuesFrom _:c14n4034 ;
 	owl:onProperty stix:name_enc .
 _:c14n2839 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -9710,7 +9711,7 @@ _:c14n2842 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:issuer_alternative_name .
 _:c14n2843 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4508 ;
+	owl:allValuesFrom _:c14n4504 ;
 	owl:onProperty stix:pattern_type .
 _:c14n2844 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -9745,9 +9746,9 @@ _:c14n2853 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:version .
 _:c14n2854 a rdfs:Datatype ;
-	owl:unionOf _:c14n4487 .
+	owl:unionOf _:c14n4483 .
 _:c14n2855 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4267 ;
+	owl:allValuesFrom _:c14n4260 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n2856 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -9841,9 +9842,9 @@ _:c14n2885 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:descriptions .
 _:c14n2886 a rdfs:Datatype ;
-	owl:unionOf _:c14n4479 .
+	owl:unionOf _:c14n4475 .
 _:c14n2887 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4127 ;
+	owl:allValuesFrom _:c14n4120 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n2888 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
@@ -9880,7 +9881,7 @@ _:c14n2898 a owl:Restriction ;
 _:c14n2899 rdf:first attack:StixIdentityClass\#individual ;
 	rdf:rest _:c14n897 .
 _:c14n29 a rdfs:Datatype ;
-	owl:unionOf _:c14n4512 .
+	owl:unionOf _:c14n4508 .
 _:c14n290 xsd:pattern "malware" .
 _:c14n2900 a owl:Restriction ;
 	owl:allValuesFrom attack:AttackDomain ;
@@ -9917,7 +9918,7 @@ _:c14n2911 a owl:Restriction ;
 	owl:onProperty stix:hashes ;
 	owl:someValuesFrom owl:Thing .
 _:c14n2912 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4265 ;
+	owl:allValuesFrom _:c14n4258 ;
 	owl:onProperty stix:id .
 _:c14n2913 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
@@ -10001,7 +10002,7 @@ _:c14n294 a owl:Restriction ;
 _:c14n2940 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:name .
-_:c14n2941 owl:unionOf _:c14n4457 .
+_:c14n2941 owl:unionOf _:c14n4453 .
 _:c14n2942 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:description .
@@ -10065,18 +10066,18 @@ _:c14n2961 rdf:first attack:StixInfrastructureType\#botnet ;
 _:c14n2962 rdf:first attack:AttackDetectionStrategy ;
 	rdf:rest _:c14n657 .
 _:c14n2963 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4371 ;
+	owl:allValuesFrom _:c14n4367 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n2964 a owl:Restriction ;
 	owl:allValuesFrom xsd:float ;
 	owl:onProperty stix:gid .
 _:c14n2965 a rdfs:Datatype ;
-	owl:unionOf _:c14n4524 .
+	owl:unionOf _:c14n4520 .
 _:c14n2966 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4336 ;
+	owl:allValuesFrom _:c14n4332 ;
 	owl:onProperty stix:type .
 _:c14n2967 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4176 ;
+	owl:allValuesFrom _:c14n4169 ;
 	owl:onProperty stix:type .
 _:c14n2968 rdf:first attack:AttackCollectionLayer\#Device ;
 	rdf:rest _:c14n1923 .
@@ -10110,7 +10111,7 @@ _:c14n2979 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:last_seen .
 _:c14n298 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4352 ;
+	owl:allValuesFrom _:c14n4348 ;
 	owl:onProperty stix:id .
 _:c14n2980 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -10177,7 +10178,7 @@ _:c14n3001 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:owner_sid .
 _:c14n3002 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4252 ;
+	owl:allValuesFrom _:c14n4245 ;
 	owl:onProperty stix:id .
 _:c14n3003 rdf:first attack:StixExtensionType\#toplevel-property-extension ;
 	rdf:rest rdf:nil .
@@ -10449,7 +10450,7 @@ _:c14n3118 rdf:first _:c14n3119 ;
 	rdf:rest rdf:nil .
 _:c14n3119 xsd:minInclusive 0 .
 _:c14n312 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4114 ;
+	owl:allValuesFrom _:c14n4107 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n3120 xsd:maxInclusive 100 .
 _:c14n3121 rdf:first _:c14n3120 ;
@@ -11212,7 +11213,7 @@ _:c14n3448 rdf:first stix:StixCyberObservableObject ;
 _:c14n3449 rdf:first stix:StixMarkingDefinition ;
 	rdf:rest rdf:nil .
 _:c14n345 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4323 ;
+	owl:allValuesFrom _:c14n4319 ;
 	owl:onProperty stix:selectors .
 _:c14n3450 xsd:maxInclusive 180 .
 _:c14n3451 rdf:first _:c14n3450 ;
@@ -11279,7 +11280,7 @@ _:c14n3477 rdf:first xsd:float ;
 _:c14n3478 xsd:minInclusive -90 .
 _:c14n3479 rdf:first _:c14n3478 ;
 	rdf:rest rdf:nil .
-_:c14n348 owl:unionOf _:c14n4453 .
+_:c14n348 owl:unionOf _:c14n4449 .
 _:c14n3480 a rdfs:Datatype ;
 	owl:onDatatype xsd:integer ;
 	owl:withRestrictions _:c14n3479 .
@@ -11635,7 +11636,7 @@ _:c14n3638 a rdfs:Datatype ;
 _:c14n3639 rdf:first _:c14n3640 ;
 	rdf:rest rdf:nil .
 _:c14n364 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4391 ;
+	owl:allValuesFrom _:c14n4387 ;
 	owl:onProperty stix:type .
 _:c14n3640 xsd:minInclusive 0 .
 _:c14n3641 a rdfs:Datatype ;
@@ -12376,7 +12377,7 @@ _:c14n3959 a owl:Restriction ;
 	owl:onProperty stix:relationship_type ;
 	owl:someValuesFrom _:c14n3960 .
 _:c14n396 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4151 ;
+	owl:allValuesFrom _:c14n4144 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n3960 a rdfs:Datatype ;
 	owl:oneOf _:c14n1427 .
@@ -12517,7 +12518,7 @@ _:c14n4016 rdf:first _:c14n2431 ;
 	rdf:rest _:c14n4015 .
 _:c14n4017 rdf:first _:c14n679 ;
 	rdf:rest _:c14n4016 .
-_:c14n4018 xsd:pattern "^(\\(Citation: [^)]+\\))+$" .
+_:c14n4018 xsd:pattern "^artifact--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n4019 rdf:first _:c14n4018 ;
 	rdf:rest rdf:nil .
 _:c14n402 a owl:Restriction ;
@@ -12526,422 +12527,426 @@ _:c14n402 a owl:Restriction ;
 _:c14n4020 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4019 .
-_:c14n4021 xsd:pattern "^(\\(Citation: [^)]+\\))+$" .
-_:c14n4022 rdf:first _:c14n4021 ;
+_:c14n4021 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4022 .
+_:c14n4022 rdf:first _:c14n631 ;
 	rdf:rest rdf:nil .
 _:c14n4023 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4022 .
-_:c14n4024 xsd:pattern "^(\\(Citation: [^)]+\\))+$" .
-_:c14n4025 rdf:first _:c14n4024 ;
+	owl:withRestrictions _:c14n4024 .
+_:c14n4024 rdf:first _:c14n4025 ;
 	rdf:rest rdf:nil .
-_:c14n4026 xsd:pattern "^(\\(Citation: [^)]+\\))+$" .
-_:c14n4027 rdf:first _:c14n4026 ;
+_:c14n4025 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4026 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4027 .
+_:c14n4027 rdf:first _:c14n935 ;
 	rdf:rest rdf:nil .
-_:c14n4028 xsd:pattern "^artifact--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
-_:c14n4029 rdf:first _:c14n4028 ;
+_:c14n4028 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4029 .
+_:c14n4029 rdf:first _:c14n2699 ;
 	rdf:rest rdf:nil .
 _:c14n403 a owl:Restriction ;
 	owl:allValuesFrom xsd:dateTime ;
 	owl:onProperty stix:account_first_login .
 _:c14n4030 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4029 .
-_:c14n4031 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4032 .
-_:c14n4032 rdf:first _:c14n631 ;
+	owl:withRestrictions _:c14n4031 .
+_:c14n4031 rdf:first _:c14n2229 ;
 	rdf:rest rdf:nil .
-_:c14n4033 a rdfs:Datatype ;
+_:c14n4032 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4034 .
-_:c14n4034 rdf:first _:c14n4035 ;
+	owl:withRestrictions _:c14n4033 .
+_:c14n4033 rdf:first _:c14n2174 ;
 	rdf:rest rdf:nil .
-_:c14n4035 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
-_:c14n4036 a rdfs:Datatype ;
+_:c14n4034 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4037 .
-_:c14n4037 rdf:first _:c14n935 ;
+	owl:withRestrictions _:c14n4035 .
+_:c14n4035 rdf:first _:c14n4036 ;
 	rdf:rest rdf:nil .
-_:c14n4038 a rdfs:Datatype ;
+_:c14n4036 xsd:pattern "^[a-zA-Z0-9/\\.+_:-]{2,250}$" .
+_:c14n4037 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4039 .
-_:c14n4039 rdf:first _:c14n2699 ;
+	owl:withRestrictions _:c14n4038 .
+_:c14n4038 rdf:first _:c14n2090 ;
 	rdf:rest rdf:nil .
+_:c14n4039 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4040 .
 _:c14n404 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4217 ;
+	owl:allValuesFrom _:c14n4210 ;
 	owl:onProperty stix:id .
-_:c14n4040 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4041 .
-_:c14n4041 rdf:first _:c14n2229 ;
+_:c14n4040 rdf:first _:c14n4041 ;
 	rdf:rest rdf:nil .
+_:c14n4041 xsd:pattern "^MOB-(M|S)\\d{4}$" .
 _:c14n4042 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4043 .
-_:c14n4043 rdf:first _:c14n2174 ;
+_:c14n4043 rdf:first _:c14n904 ;
 	rdf:rest rdf:nil .
 _:c14n4044 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4045 .
 _:c14n4045 rdf:first _:c14n4046 ;
 	rdf:rest rdf:nil .
-_:c14n4046 xsd:pattern "^[a-zA-Z0-9/\\.+_:-]{2,250}$" .
+_:c14n4046 xsd:pattern "^email-addr--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n4047 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4048 .
-_:c14n4048 rdf:first _:c14n2090 ;
+_:c14n4048 rdf:first _:c14n4049 ;
 	rdf:rest rdf:nil .
-_:c14n4049 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4050 .
+_:c14n4049 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n405 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:request_header .
-_:c14n4050 rdf:first _:c14n4051 ;
-	rdf:rest rdf:nil .
-_:c14n4051 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4052 a rdfs:Datatype ;
+_:c14n4050 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4053 .
-_:c14n4053 rdf:first _:c14n904 ;
+	owl:withRestrictions _:c14n4051 .
+_:c14n4051 rdf:first _:c14n4052 ;
 	rdf:rest rdf:nil .
-_:c14n4054 a rdfs:Datatype ;
+_:c14n4052 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4053 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4055 .
-_:c14n4055 rdf:first _:c14n4056 ;
+	owl:withRestrictions _:c14n4054 .
+_:c14n4054 rdf:first _:c14n4055 ;
 	rdf:rest rdf:nil .
-_:c14n4056 xsd:pattern "^email-addr--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
-_:c14n4057 a rdfs:Datatype ;
+_:c14n4055 xsd:pattern "^(\\(Citation: [^):]*[^):\\s][^):]*\\))+$" .
+_:c14n4056 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4058 .
-_:c14n4058 rdf:first _:c14n4059 ;
+	owl:withRestrictions _:c14n4057 .
+_:c14n4057 rdf:first _:c14n213 ;
 	rdf:rest rdf:nil .
-_:c14n4059 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4058 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4059 .
+_:c14n4059 rdf:first _:c14n4060 ;
+	rdf:rest rdf:nil .
 _:c14n406 rdf:first attack:StixMalwareCapability\#violates-system-operational-integrity ;
 	rdf:rest rdf:nil .
-_:c14n4060 a rdfs:Datatype ;
+_:c14n4060 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4061 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4061 .
-_:c14n4061 rdf:first _:c14n4062 ;
+	owl:withRestrictions _:c14n4062 .
+_:c14n4062 rdf:first _:c14n1217 ;
 	rdf:rest rdf:nil .
-_:c14n4062 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n4063 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4064 .
-_:c14n4064 rdf:first _:c14n213 ;
+_:c14n4064 rdf:first _:c14n1608 ;
 	rdf:rest rdf:nil .
 _:c14n4065 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4066 .
-_:c14n4066 rdf:first _:c14n4067 ;
+_:c14n4066 rdf:first _:c14n1703 ;
 	rdf:rest rdf:nil .
-_:c14n4067 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
-_:c14n4068 a rdfs:Datatype ;
+_:c14n4067 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4069 .
-_:c14n4069 rdf:first _:c14n1217 ;
+	owl:withRestrictions _:c14n4068 .
+_:c14n4068 rdf:first _:c14n2625 ;
 	rdf:rest rdf:nil .
+_:c14n4069 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4070 .
 _:c14n407 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:name_enc .
-_:c14n4070 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4071 .
-_:c14n4071 rdf:first _:c14n1608 ;
+_:c14n4070 rdf:first _:c14n1320 ;
 	rdf:rest rdf:nil .
-_:c14n4072 a rdfs:Datatype ;
+_:c14n4071 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4073 .
-_:c14n4073 rdf:first _:c14n1703 ;
+	owl:withRestrictions _:c14n4072 .
+_:c14n4072 rdf:first _:c14n73 ;
 	rdf:rest rdf:nil .
-_:c14n4074 a rdfs:Datatype ;
+_:c14n4073 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4075 .
-_:c14n4075 rdf:first _:c14n2625 ;
+	owl:withRestrictions _:c14n4074 .
+_:c14n4074 rdf:first _:c14n1653 ;
 	rdf:rest rdf:nil .
-_:c14n4076 a rdfs:Datatype ;
+_:c14n4075 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4077 .
-_:c14n4077 rdf:first _:c14n1320 ;
+	owl:withRestrictions _:c14n4076 .
+_:c14n4076 rdf:first _:c14n1884 ;
 	rdf:rest rdf:nil .
-_:c14n4078 a rdfs:Datatype ;
+_:c14n4077 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4079 .
-_:c14n4079 rdf:first _:c14n73 ;
+	owl:withRestrictions _:c14n4078 .
+_:c14n4078 rdf:first _:c14n1147 ;
 	rdf:rest rdf:nil .
+_:c14n4079 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4080 .
 _:c14n408 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty attack:x_mitre_contributors .
-_:c14n4080 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4081 .
-_:c14n4081 rdf:first _:c14n1653 ;
+_:c14n4080 rdf:first _:c14n4081 ;
 	rdf:rest rdf:nil .
+_:c14n4081 xsd:pattern "^MOB-(M|S)\\d{4}$" .
 _:c14n4082 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4083 .
-_:c14n4083 rdf:first _:c14n1884 ;
+_:c14n4083 rdf:first _:c14n4084 ;
 	rdf:rest rdf:nil .
-_:c14n4084 a rdfs:Datatype ;
+_:c14n4084 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4085 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4085 .
-_:c14n4085 rdf:first _:c14n1147 ;
+	owl:withRestrictions _:c14n4086 .
+_:c14n4086 rdf:first _:c14n4087 ;
 	rdf:rest rdf:nil .
-_:c14n4086 a rdfs:Datatype ;
+_:c14n4087 xsd:pattern "^MOB-(M|S)\\d{4}$" .
+_:c14n4088 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4087 .
-_:c14n4087 rdf:first _:c14n4088 ;
+	owl:withRestrictions _:c14n4089 .
+_:c14n4089 rdf:first _:c14n1676 ;
 	rdf:rest rdf:nil .
-_:c14n4088 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4089 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4090 .
 _:c14n409 a owl:Restriction ;
 	owl:allValuesFrom stix:StixHashes ;
 	owl:onProperty stix:hashes .
-_:c14n4090 rdf:first _:c14n4091 ;
+_:c14n4090 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4091 .
+_:c14n4091 rdf:first _:c14n2227 ;
 	rdf:rest rdf:nil .
-_:c14n4091 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n4092 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4093 .
-_:c14n4093 rdf:first _:c14n4094 ;
+_:c14n4093 rdf:first _:c14n313 ;
 	rdf:rest rdf:nil .
-_:c14n4094 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4095 a rdfs:Datatype ;
+_:c14n4094 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4096 .
-_:c14n4096 rdf:first _:c14n1676 ;
+	owl:withRestrictions _:c14n4095 .
+_:c14n4095 rdf:first _:c14n4096 ;
 	rdf:rest rdf:nil .
+_:c14n4096 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n4097 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4098 .
-_:c14n4098 rdf:first _:c14n2227 ;
+_:c14n4098 rdf:first _:c14n4099 ;
 	rdf:rest rdf:nil .
-_:c14n4099 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4100 .
+_:c14n4099 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n41 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n410 xsd:pattern "^x-mitre-matrix--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
-_:c14n4100 rdf:first _:c14n313 ;
-	rdf:rest rdf:nil .
-_:c14n4101 a rdfs:Datatype ;
+_:c14n4100 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4102 .
-_:c14n4102 rdf:first _:c14n4103 ;
+	owl:withRestrictions _:c14n4101 .
+_:c14n4101 rdf:first _:c14n2651 ;
 	rdf:rest rdf:nil .
-_:c14n4103 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4102 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4103 .
+_:c14n4103 rdf:first _:c14n2032 ;
+	rdf:rest rdf:nil .
 _:c14n4104 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4105 .
 _:c14n4105 rdf:first _:c14n4106 ;
 	rdf:rest rdf:nil .
-_:c14n4106 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4106 xsd:pattern "^identity--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n4107 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4108 .
-_:c14n4108 rdf:first _:c14n2651 ;
+_:c14n4108 rdf:first _:c14n4109 ;
 	rdf:rest rdf:nil .
-_:c14n4109 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4110 .
+_:c14n4109 xsd:pattern "^MOB-S\\d{4}$" .
 _:c14n411 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:precision .
-_:c14n4110 rdf:first _:c14n2032 ;
-	rdf:rest rdf:nil .
-_:c14n4111 a rdfs:Datatype ;
+_:c14n4110 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4112 .
-_:c14n4112 rdf:first _:c14n4113 ;
+	owl:withRestrictions _:c14n4111 .
+_:c14n4111 rdf:first _:c14n1913 ;
 	rdf:rest rdf:nil .
-_:c14n4113 xsd:pattern "^identity--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
-_:c14n4114 a rdfs:Datatype ;
+_:c14n4112 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4115 .
-_:c14n4115 rdf:first _:c14n4116 ;
+	owl:withRestrictions _:c14n4113 .
+_:c14n4113 rdf:first _:c14n4114 ;
 	rdf:rest rdf:nil .
-_:c14n4116 xsd:pattern "^MOB-S\\d{4}$" .
+_:c14n4114 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4115 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4116 .
+_:c14n4116 rdf:first _:c14n2952 ;
+	rdf:rest rdf:nil .
 _:c14n4117 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4118 .
-_:c14n4118 rdf:first _:c14n1913 ;
+_:c14n4118 rdf:first _:c14n4119 ;
 	rdf:rest rdf:nil .
-_:c14n4119 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4120 .
+_:c14n4119 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n412 rdf:first attack:AttackBypassedDefense\#System\%20Access\%20Controls ;
 	rdf:rest _:c14n2008 .
-_:c14n4120 rdf:first _:c14n4121 ;
-	rdf:rest rdf:nil .
-_:c14n4121 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
-_:c14n4122 a rdfs:Datatype ;
+_:c14n4120 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4123 .
-_:c14n4123 rdf:first _:c14n2952 ;
+	owl:withRestrictions _:c14n4121 .
+_:c14n4121 rdf:first _:c14n4122 ;
 	rdf:rest rdf:nil .
-_:c14n4124 a rdfs:Datatype ;
+_:c14n4122 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4123 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4125 .
-_:c14n4125 rdf:first _:c14n4126 ;
+	owl:withRestrictions _:c14n4124 .
+_:c14n4124 rdf:first _:c14n4125 ;
 	rdf:rest rdf:nil .
-_:c14n4126 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
-_:c14n4127 a rdfs:Datatype ;
+_:c14n4125 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4126 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4128 .
-_:c14n4128 rdf:first _:c14n4129 ;
+	owl:withRestrictions _:c14n4127 .
+_:c14n4127 rdf:first _:c14n4128 ;
 	rdf:rest rdf:nil .
-_:c14n4129 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4128 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4129 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4130 .
 _:c14n413 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:mtime .
-_:c14n4130 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4131 .
-_:c14n4131 rdf:first _:c14n4132 ;
+_:c14n4130 rdf:first _:c14n1921 ;
 	rdf:rest rdf:nil .
-_:c14n4132 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4131 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4132 .
+_:c14n4132 rdf:first _:c14n162 ;
+	rdf:rest rdf:nil .
 _:c14n4133 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4134 .
-_:c14n4134 rdf:first _:c14n4135 ;
+_:c14n4134 rdf:first _:c14n253 ;
 	rdf:rest rdf:nil .
-_:c14n4135 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
-_:c14n4136 a rdfs:Datatype ;
+_:c14n4135 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4137 .
-_:c14n4137 rdf:first _:c14n1921 ;
+	owl:withRestrictions _:c14n4136 .
+_:c14n4136 rdf:first _:c14n2700 ;
 	rdf:rest rdf:nil .
-_:c14n4138 a rdfs:Datatype ;
+_:c14n4137 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4139 .
-_:c14n4139 rdf:first _:c14n162 ;
+	owl:withRestrictions _:c14n4138 .
+_:c14n4138 rdf:first _:c14n2969 ;
 	rdf:rest rdf:nil .
+_:c14n4139 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4140 .
 _:c14n414 rdf:first attack:AttackPlatform\#Control\%20Server ;
 	rdf:rest _:c14n629 .
-_:c14n4140 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4141 .
-_:c14n4141 rdf:first _:c14n253 ;
+_:c14n4140 rdf:first _:c14n293 ;
 	rdf:rest rdf:nil .
-_:c14n4142 a rdfs:Datatype ;
+_:c14n4141 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4143 .
-_:c14n4143 rdf:first _:c14n2700 ;
+	owl:withRestrictions _:c14n4142 .
+_:c14n4142 rdf:first _:c14n4143 ;
 	rdf:rest rdf:nil .
+_:c14n4143 xsd:pattern "^MOB-(M|S)\\d{4}$" .
 _:c14n4144 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4145 .
-_:c14n4145 rdf:first _:c14n2969 ;
+_:c14n4145 rdf:first _:c14n4146 ;
 	rdf:rest rdf:nil .
-_:c14n4146 a rdfs:Datatype ;
+_:c14n4146 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4147 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4147 .
-_:c14n4147 rdf:first _:c14n293 ;
+	owl:withRestrictions _:c14n4148 .
+_:c14n4148 rdf:first _:c14n4149 ;
 	rdf:rest rdf:nil .
-_:c14n4148 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4149 .
-_:c14n4149 rdf:first _:c14n4150 ;
-	rdf:rest rdf:nil .
+_:c14n4149 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n415 rdf:first attack:StixIndustrySector\#transportation ;
 	rdf:rest _:c14n1041 .
-_:c14n4150 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4151 a rdfs:Datatype ;
+_:c14n4150 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4152 .
-_:c14n4152 rdf:first _:c14n4153 ;
+	owl:withRestrictions _:c14n4151 .
+_:c14n4151 rdf:first _:c14n4152 ;
 	rdf:rest rdf:nil .
-_:c14n4153 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
-_:c14n4154 a rdfs:Datatype ;
+_:c14n4152 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4153 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4155 .
-_:c14n4155 rdf:first _:c14n4156 ;
+	owl:withRestrictions _:c14n4154 .
+_:c14n4154 rdf:first _:c14n1914 ;
 	rdf:rest rdf:nil .
-_:c14n4156 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
-_:c14n4157 a rdfs:Datatype ;
+_:c14n4155 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4158 .
-_:c14n4158 rdf:first _:c14n4159 ;
+	owl:withRestrictions _:c14n4156 .
+_:c14n4156 rdf:first _:c14n4157 ;
 	rdf:rest rdf:nil .
-_:c14n4159 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4157 xsd:pattern "^MOB-(M|S)\\d{4}$" .
+_:c14n4158 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4159 .
+_:c14n4159 rdf:first _:c14n816 ;
+	rdf:rest rdf:nil .
 _:c14n416 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:body .
 _:c14n4160 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4161 .
-_:c14n4161 rdf:first _:c14n1914 ;
+_:c14n4161 rdf:first _:c14n4162 ;
 	rdf:rest rdf:nil .
-_:c14n4162 a rdfs:Datatype ;
+_:c14n4162 xsd:pattern "^\\s*[^:\\s][^:]*:\\s*[^:\\s][^:]*$" .
+_:c14n4163 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4163 .
-_:c14n4163 rdf:first _:c14n4164 ;
+	owl:withRestrictions _:c14n4164 .
+_:c14n4164 rdf:first _:c14n4165 ;
 	rdf:rest rdf:nil .
-_:c14n4164 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4165 a rdfs:Datatype ;
+_:c14n4165 xsd:pattern "^x-mitre-data-source--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4166 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4166 .
-_:c14n4166 rdf:first _:c14n816 ;
+	owl:withRestrictions _:c14n4167 .
+_:c14n4167 rdf:first _:c14n4168 ;
 	rdf:rest rdf:nil .
-_:c14n4167 a rdfs:Datatype ;
+_:c14n4168 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4169 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4168 .
-_:c14n4168 rdf:first _:c14n4169 ;
-	rdf:rest rdf:nil .
-_:c14n4169 xsd:pattern "^\\s*[^:\\s][^:]*:\\s*[^:\\s][^:]*$" .
+	owl:withRestrictions _:c14n4170 .
 _:c14n417 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:resolves_to_refs .
-_:c14n4170 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4171 .
-_:c14n4171 rdf:first _:c14n4172 ;
+_:c14n4170 rdf:first _:c14n2893 ;
 	rdf:rest rdf:nil .
-_:c14n4172 xsd:pattern "^x-mitre-data-source--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4171 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4172 .
+_:c14n4172 rdf:first _:c14n343 ;
+	rdf:rest rdf:nil .
 _:c14n4173 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4174 .
 _:c14n4174 rdf:first _:c14n4175 ;
 	rdf:rest rdf:nil .
-_:c14n4175 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4175 xsd:pattern "^([a-z]{2}(-[A-Z]{2})?(-[a-z]{4})?(-[A-Z]{2}|[0-9]{3})?(-[a-z0-9]{5,8}|[0-9][a-z0-9]{3})*(-[a-z0-9]{1,8})*|[a-z]{3})$" .
 _:c14n4176 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4177 .
-_:c14n4177 rdf:first _:c14n2893 ;
+_:c14n4177 rdf:first _:c14n4178 ;
 	rdf:rest rdf:nil .
-_:c14n4178 a rdfs:Datatype ;
+_:c14n4178 xsd:pattern "^MOB-(M|S)\\d{4}$" .
+_:c14n4179 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4179 .
-_:c14n4179 rdf:first _:c14n343 ;
-	rdf:rest rdf:nil .
+	owl:withRestrictions _:c14n4180 .
 _:c14n418 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:request_version .
-_:c14n4180 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4181 .
-_:c14n4181 rdf:first _:c14n4182 ;
+_:c14n4180 rdf:first _:c14n553 ;
 	rdf:rest rdf:nil .
-_:c14n4182 xsd:pattern "^([a-z]{2}(-[A-Z]{2})?(-[a-z]{4})?(-[A-Z]{2}|[0-9]{3})?(-[a-z0-9]{5,8}|[0-9][a-z0-9]{3})*(-[a-z0-9]{1,8})*|[a-z]{3})$" .
+_:c14n4181 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4182 .
+_:c14n4182 rdf:first _:c14n1265 ;
+	rdf:rest rdf:nil .
 _:c14n4183 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4184 .
 _:c14n4184 rdf:first _:c14n4185 ;
 	rdf:rest rdf:nil .
-_:c14n4185 xsd:pattern "^MOB-(M|S)\\d{4}$" .
+_:c14n4185 xsd:pattern "^process--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n4186 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4187 .
-_:c14n4187 rdf:first _:c14n553 ;
+_:c14n4187 rdf:first _:c14n1804 ;
 	rdf:rest rdf:nil .
 _:c14n4188 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4189 .
-_:c14n4189 rdf:first _:c14n1265 ;
+_:c14n4189 rdf:first _:c14n1927 ;
 	rdf:rest rdf:nil .
 _:c14n419 rdf:first attack:StixMalwareCapability\#infects-files ;
 	rdf:rest _:c14n1177 .
@@ -12950,23 +12955,23 @@ _:c14n4190 a rdfs:Datatype ;
 	owl:withRestrictions _:c14n4191 .
 _:c14n4191 rdf:first _:c14n4192 ;
 	rdf:rest rdf:nil .
-_:c14n4192 xsd:pattern "^process--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4192 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n4193 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4194 .
-_:c14n4194 rdf:first _:c14n1804 ;
+_:c14n4194 rdf:first _:c14n956 ;
 	rdf:rest rdf:nil .
 _:c14n4195 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4196 .
-_:c14n4196 rdf:first _:c14n1927 ;
+_:c14n4196 rdf:first _:c14n4197 ;
 	rdf:rest rdf:nil .
-_:c14n4197 a rdfs:Datatype ;
+_:c14n4197 xsd:pattern "^MOB-S\\d{4}$" .
+_:c14n4198 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4198 .
-_:c14n4198 rdf:first _:c14n4199 ;
+	owl:withRestrictions _:c14n4199 .
+_:c14n4199 rdf:first _:c14n2459 ;
 	rdf:rest rdf:nil .
-_:c14n4199 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n42 rdf:first attack:StixTlpLevel\#white ;
 	rdf:rest _:c14n661 .
 _:c14n420 a owl:Restriction ;
@@ -12975,93 +12980,93 @@ _:c14n420 a owl:Restriction ;
 _:c14n4200 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4201 .
-_:c14n4201 rdf:first _:c14n956 ;
+_:c14n4201 rdf:first _:c14n2468 ;
 	rdf:rest rdf:nil .
 _:c14n4202 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4203 .
-_:c14n4203 rdf:first _:c14n4204 ;
+_:c14n4203 rdf:first _:c14n584 ;
 	rdf:rest rdf:nil .
-_:c14n4204 xsd:pattern "^MOB-S\\d{4}$" .
-_:c14n4205 a rdfs:Datatype ;
+_:c14n4204 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4206 .
-_:c14n4206 rdf:first _:c14n2459 ;
+	owl:withRestrictions _:c14n4205 .
+_:c14n4205 rdf:first _:c14n4206 ;
 	rdf:rest rdf:nil .
+_:c14n4206 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n4207 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4208 .
-_:c14n4208 rdf:first _:c14n2468 ;
+_:c14n4208 rdf:first _:c14n4209 ;
 	rdf:rest rdf:nil .
-_:c14n4209 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4210 .
+_:c14n4209 xsd:pattern "^x-mitre-data-component--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n421 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:hashes .
-_:c14n4210 rdf:first _:c14n584 ;
-	rdf:rest rdf:nil .
-_:c14n4211 a rdfs:Datatype ;
+_:c14n4210 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4212 .
-_:c14n4212 rdf:first _:c14n4213 ;
+	owl:withRestrictions _:c14n4211 .
+_:c14n4211 rdf:first _:c14n2438 ;
 	rdf:rest rdf:nil .
-_:c14n4213 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4212 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4213 .
+_:c14n4213 rdf:first _:c14n2549 ;
+	rdf:rest rdf:nil .
 _:c14n4214 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4215 .
-_:c14n4215 rdf:first _:c14n4216 ;
+_:c14n4215 rdf:first _:c14n105 ;
 	rdf:rest rdf:nil .
-_:c14n4216 xsd:pattern "^x-mitre-data-component--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
-_:c14n4217 a rdfs:Datatype ;
+_:c14n4216 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4218 .
-_:c14n4218 rdf:first _:c14n2438 ;
+	owl:withRestrictions _:c14n4217 .
+_:c14n4217 rdf:first _:c14n4218 ;
 	rdf:rest rdf:nil .
+_:c14n4218 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n4219 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4220 .
 _:c14n422 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:size .
-_:c14n4220 rdf:first _:c14n2549 ;
+_:c14n4220 rdf:first _:c14n4221 ;
 	rdf:rest rdf:nil .
-_:c14n4221 a rdfs:Datatype ;
+_:c14n4221 xsd:pattern "^x-mitre-analytic--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4222 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4222 .
-_:c14n4222 rdf:first _:c14n105 ;
+	owl:withRestrictions _:c14n4223 .
+_:c14n4223 rdf:first _:c14n4224 ;
 	rdf:rest rdf:nil .
-_:c14n4223 a rdfs:Datatype ;
+_:c14n4224 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4225 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4224 .
-_:c14n4224 rdf:first _:c14n4225 ;
+	owl:withRestrictions _:c14n4226 .
+_:c14n4226 rdf:first _:c14n4227 ;
 	rdf:rest rdf:nil .
-_:c14n4225 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
-_:c14n4226 a rdfs:Datatype ;
+_:c14n4227 xsd:pattern "^MOB-(M|S)\\d{4}$" .
+_:c14n4228 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4227 .
-_:c14n4227 rdf:first _:c14n4228 ;
+	owl:withRestrictions _:c14n4229 .
+_:c14n4229 rdf:first _:c14n4230 ;
 	rdf:rest rdf:nil .
-_:c14n4228 xsd:pattern "^x-mitre-analytic--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
-_:c14n4229 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4230 .
 _:c14n423 owl:intersectionOf _:c14n3205 .
-_:c14n4230 rdf:first _:c14n4231 ;
-	rdf:rest rdf:nil .
-_:c14n4231 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
-_:c14n4232 a rdfs:Datatype ;
+_:c14n4230 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4231 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4233 .
-_:c14n4233 rdf:first _:c14n4234 ;
+	owl:withRestrictions _:c14n4232 .
+_:c14n4232 rdf:first _:c14n4233 ;
 	rdf:rest rdf:nil .
-_:c14n4234 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4235 a rdfs:Datatype ;
+_:c14n4233 xsd:pattern "^directory--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4234 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4236 .
-_:c14n4236 rdf:first _:c14n4237 ;
+	owl:withRestrictions _:c14n4235 .
+_:c14n4235 rdf:first _:c14n2740 ;
 	rdf:rest rdf:nil .
-_:c14n4237 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4236 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4237 .
+_:c14n4237 rdf:first _:c14n982 ;
+	rdf:rest rdf:nil .
 _:c14n4238 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4239 .
@@ -13070,361 +13075,361 @@ _:c14n4239 rdf:first _:c14n4240 ;
 _:c14n424 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:id .
-_:c14n4240 xsd:pattern "^directory--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4240 xsd:pattern "^MOB-(M|S)\\d{4}$" .
 _:c14n4241 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4242 .
-_:c14n4242 rdf:first _:c14n2740 ;
+_:c14n4242 rdf:first _:c14n1987 ;
 	rdf:rest rdf:nil .
 _:c14n4243 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4244 .
-_:c14n4244 rdf:first _:c14n982 ;
+_:c14n4244 rdf:first _:c14n600 ;
 	rdf:rest rdf:nil .
 _:c14n4245 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4246 .
-_:c14n4246 rdf:first _:c14n4247 ;
+_:c14n4246 rdf:first _:c14n15 ;
 	rdf:rest rdf:nil .
-_:c14n4247 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4248 a rdfs:Datatype ;
+_:c14n4247 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4249 .
-_:c14n4249 rdf:first _:c14n1987 ;
+	owl:withRestrictions _:c14n4248 .
+_:c14n4248 rdf:first _:c14n4249 ;
 	rdf:rest rdf:nil .
+_:c14n4249 xsd:pattern "^MOB-(M|S)\\d{4}$" .
 _:c14n425 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:id .
 _:c14n4250 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4251 .
-_:c14n4251 rdf:first _:c14n600 ;
+_:c14n4251 rdf:first _:c14n4252 ;
 	rdf:rest rdf:nil .
-_:c14n4252 a rdfs:Datatype ;
+_:c14n4252 xsd:pattern "^MOB-(M|S)\\d{4}$" .
+_:c14n4253 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4253 .
-_:c14n4253 rdf:first _:c14n15 ;
+	owl:withRestrictions _:c14n4254 .
+_:c14n4254 rdf:first _:c14n1420 ;
 	rdf:rest rdf:nil .
-_:c14n4254 a rdfs:Datatype ;
+_:c14n4255 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4255 .
-_:c14n4255 rdf:first _:c14n4256 ;
+	owl:withRestrictions _:c14n4256 .
+_:c14n4256 rdf:first _:c14n4257 ;
 	rdf:rest rdf:nil .
-_:c14n4256 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4257 a rdfs:Datatype ;
+_:c14n4257 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4258 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4258 .
-_:c14n4258 rdf:first _:c14n4259 ;
+	owl:withRestrictions _:c14n4259 .
+_:c14n4259 rdf:first _:c14n2760 ;
 	rdf:rest rdf:nil .
-_:c14n4259 xsd:pattern "^MOB-(M|S)\\d{4}$" .
 _:c14n426 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:analysis_sco_refs .
 _:c14n4260 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4261 .
-_:c14n4261 rdf:first _:c14n1420 ;
+_:c14n4261 rdf:first _:c14n4262 ;
 	rdf:rest rdf:nil .
-_:c14n4262 a rdfs:Datatype ;
+_:c14n4262 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4263 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4263 .
-_:c14n4263 rdf:first _:c14n4264 ;
+	owl:withRestrictions _:c14n4264 .
+_:c14n4264 rdf:first _:c14n290 ;
 	rdf:rest rdf:nil .
-_:c14n4264 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
 _:c14n4265 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4266 .
-_:c14n4266 rdf:first _:c14n2760 ;
+_:c14n4266 rdf:first _:c14n4267 ;
 	rdf:rest rdf:nil .
-_:c14n4267 a rdfs:Datatype ;
+_:c14n4267 xsd:pattern "^file--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4268 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4268 .
-_:c14n4268 rdf:first _:c14n4269 ;
+	owl:withRestrictions _:c14n4269 .
+_:c14n4269 rdf:first _:c14n1988 ;
 	rdf:rest rdf:nil .
-_:c14n4269 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n427 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:values .
 _:c14n4270 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4271 .
-_:c14n4271 rdf:first _:c14n290 ;
+_:c14n4271 rdf:first _:c14n495 ;
 	rdf:rest rdf:nil .
 _:c14n4272 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4273 .
-_:c14n4273 rdf:first _:c14n4274 ;
+_:c14n4273 rdf:first _:c14n2676 ;
 	rdf:rest rdf:nil .
-_:c14n4274 xsd:pattern "^file--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
-_:c14n4275 a rdfs:Datatype ;
+_:c14n4274 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4276 .
-_:c14n4276 rdf:first _:c14n1988 ;
+	owl:withRestrictions _:c14n4275 .
+_:c14n4275 rdf:first _:c14n1687 ;
 	rdf:rest rdf:nil .
-_:c14n4277 a rdfs:Datatype ;
+_:c14n4276 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4278 .
-_:c14n4278 rdf:first _:c14n495 ;
+	owl:withRestrictions _:c14n4277 .
+_:c14n4277 rdf:first _:c14n2637 ;
 	rdf:rest rdf:nil .
-_:c14n4279 a rdfs:Datatype ;
+_:c14n4278 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4280 .
+	owl:withRestrictions _:c14n4279 .
+_:c14n4279 rdf:first _:c14n931 ;
+	rdf:rest rdf:nil .
 _:c14n428 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:name .
-_:c14n4280 rdf:first _:c14n2676 ;
-	rdf:rest rdf:nil .
-_:c14n4281 a rdfs:Datatype ;
+_:c14n4280 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4282 .
-_:c14n4282 rdf:first _:c14n1687 ;
+	owl:withRestrictions _:c14n4281 .
+_:c14n4281 rdf:first _:c14n4282 ;
 	rdf:rest rdf:nil .
+_:c14n4282 xsd:pattern "^autonomous-system--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n4283 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4284 .
-_:c14n4284 rdf:first _:c14n2637 ;
+_:c14n4284 rdf:first _:c14n134 ;
 	rdf:rest rdf:nil .
 _:c14n4285 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4286 .
-_:c14n4286 rdf:first _:c14n931 ;
+_:c14n4286 rdf:first _:c14n1286 ;
 	rdf:rest rdf:nil .
 _:c14n4287 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4288 .
-_:c14n4288 rdf:first _:c14n4289 ;
+_:c14n4288 rdf:first _:c14n1860 ;
 	rdf:rest rdf:nil .
-_:c14n4289 xsd:pattern "^autonomous-system--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4289 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4290 .
 _:c14n429 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
 	owl:onProperty stix:external_references .
-_:c14n4290 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4291 .
-_:c14n4291 rdf:first _:c14n134 ;
+_:c14n4290 rdf:first _:c14n924 ;
 	rdf:rest rdf:nil .
-_:c14n4292 a rdfs:Datatype ;
+_:c14n4291 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4293 .
-_:c14n4293 rdf:first _:c14n1286 ;
+	owl:withRestrictions _:c14n4292 .
+_:c14n4292 rdf:first _:c14n4293 ;
 	rdf:rest rdf:nil .
+_:c14n4293 xsd:pattern "^(\\(Citation: [^):]*[^):\\s][^):]*\\))+$" .
 _:c14n4294 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4295 .
-_:c14n4295 rdf:first _:c14n1860 ;
+_:c14n4295 rdf:first _:c14n4296 ;
 	rdf:rest rdf:nil .
-_:c14n4296 a rdfs:Datatype ;
+_:c14n4296 xsd:pattern "^network-traffic--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4297 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4297 .
-_:c14n4297 rdf:first _:c14n924 ;
+	owl:withRestrictions _:c14n4298 .
+_:c14n4298 rdf:first _:c14n2909 ;
 	rdf:rest rdf:nil .
-_:c14n4298 a rdfs:Datatype ;
+_:c14n4299 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4299 .
-_:c14n4299 rdf:first _:c14n4300 ;
-	rdf:rest rdf:nil .
+	owl:withRestrictions _:c14n4300 .
 _:c14n43 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:size_of_stack_reserve .
 _:c14n430 rdf:first attack:StixMalwareCapability\#compromises-data-integrity ;
 	rdf:rest _:c14n2442 .
-_:c14n4300 xsd:pattern "^network-traffic--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4300 rdf:first _:c14n2987 ;
+	rdf:rest rdf:nil .
 _:c14n4301 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4302 .
-_:c14n4302 rdf:first _:c14n2909 ;
+_:c14n4302 rdf:first _:c14n1537 ;
 	rdf:rest rdf:nil .
 _:c14n4303 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4304 .
-_:c14n4304 rdf:first _:c14n2987 ;
+_:c14n4304 rdf:first _:c14n4305 ;
 	rdf:rest rdf:nil .
-_:c14n4305 a rdfs:Datatype ;
+_:c14n4305 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4306 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4306 .
-_:c14n4306 rdf:first _:c14n1537 ;
+	owl:withRestrictions _:c14n4307 .
+_:c14n4307 rdf:first _:c14n4308 ;
 	rdf:rest rdf:nil .
-_:c14n4307 a rdfs:Datatype ;
+_:c14n4308 xsd:pattern "^MOB-(M|S)\\d{4}$" .
+_:c14n4309 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4308 .
-_:c14n4308 rdf:first _:c14n4309 ;
-	rdf:rest rdf:nil .
-_:c14n4309 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+	owl:withRestrictions _:c14n4310 .
 _:c14n431 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:name .
-_:c14n4310 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4311 .
-_:c14n4311 rdf:first _:c14n4312 ;
+_:c14n4310 rdf:first _:c14n1712 ;
 	rdf:rest rdf:nil .
-_:c14n4312 xsd:pattern "^MOB-(M|S)\\d{4}$" .
+_:c14n4311 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4312 .
+_:c14n4312 rdf:first _:c14n560 ;
+	rdf:rest rdf:nil .
 _:c14n4313 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4314 .
-_:c14n4314 rdf:first _:c14n1712 ;
+_:c14n4314 rdf:first _:c14n4315 ;
 	rdf:rest rdf:nil .
-_:c14n4315 a rdfs:Datatype ;
+_:c14n4315 xsd:pattern "^observed-data--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4316 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4316 .
-_:c14n4316 rdf:first _:c14n560 ;
+	owl:withRestrictions _:c14n4317 .
+_:c14n4317 rdf:first _:c14n4318 ;
 	rdf:rest rdf:nil .
-_:c14n4317 a rdfs:Datatype ;
+_:c14n4318 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4319 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4318 .
-_:c14n4318 rdf:first _:c14n4319 ;
-	rdf:rest rdf:nil .
-_:c14n4319 xsd:pattern "^observed-data--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+	owl:withRestrictions _:c14n4320 .
 _:c14n432 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:type .
-_:c14n4320 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4321 .
-_:c14n4321 rdf:first _:c14n4322 ;
+_:c14n4320 rdf:first _:c14n4321 ;
 	rdf:rest rdf:nil .
-_:c14n4322 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
-_:c14n4323 a rdfs:Datatype ;
+_:c14n4321 xsd:pattern "^([a-z0-9_-]{3,249}(\\.(\\[\\d+\\]|[a-z0-9_-]{1,250}))*|id)$" .
+_:c14n4322 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4324 .
-_:c14n4324 rdf:first _:c14n4325 ;
+	owl:withRestrictions _:c14n4323 .
+_:c14n4323 rdf:first _:c14n335 ;
 	rdf:rest rdf:nil .
-_:c14n4325 xsd:pattern "^([a-z0-9_-]{3,249}(\\.(\\[\\d+\\]|[a-z0-9_-]{1,250}))*|id)$" .
+_:c14n4324 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4325 .
+_:c14n4325 rdf:first _:c14n2582 ;
+	rdf:rest rdf:nil .
 _:c14n4326 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4327 .
-_:c14n4327 rdf:first _:c14n335 ;
+_:c14n4327 rdf:first _:c14n4328 ;
 	rdf:rest rdf:nil .
-_:c14n4328 a rdfs:Datatype ;
+_:c14n4328 xsd:pattern "^x-mitre-tactic--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4329 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4329 .
-_:c14n4329 rdf:first _:c14n2582 ;
-	rdf:rest rdf:nil .
+	owl:withRestrictions _:c14n4330 .
 _:c14n433 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:operating_system_ref .
-_:c14n4330 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4331 .
-_:c14n4331 rdf:first _:c14n4332 ;
+_:c14n4330 rdf:first _:c14n4331 ;
 	rdf:rest rdf:nil .
-_:c14n4332 xsd:pattern "^x-mitre-tactic--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
-_:c14n4333 a rdfs:Datatype ;
+_:c14n4331 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4332 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4334 .
-_:c14n4334 rdf:first _:c14n4335 ;
+	owl:withRestrictions _:c14n4333 .
+_:c14n4333 rdf:first _:c14n1135 ;
 	rdf:rest rdf:nil .
-_:c14n4335 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
-_:c14n4336 a rdfs:Datatype ;
+_:c14n4334 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4337 .
-_:c14n4337 rdf:first _:c14n1135 ;
+	owl:withRestrictions _:c14n4335 .
+_:c14n4335 rdf:first _:c14n4336 ;
 	rdf:rest rdf:nil .
-_:c14n4338 a rdfs:Datatype ;
+_:c14n4336 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4337 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4339 .
-_:c14n4339 rdf:first _:c14n4340 ;
+	owl:withRestrictions _:c14n4338 .
+_:c14n4338 rdf:first _:c14n11 ;
 	rdf:rest rdf:nil .
+_:c14n4339 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4340 .
 _:c14n434 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
-_:c14n4340 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4340 rdf:first _:c14n2313 ;
+	rdf:rest rdf:nil .
 _:c14n4341 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4342 .
-_:c14n4342 rdf:first _:c14n11 ;
+_:c14n4342 rdf:first _:c14n2220 ;
 	rdf:rest rdf:nil .
 _:c14n4343 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4344 .
-_:c14n4344 rdf:first _:c14n2313 ;
+_:c14n4344 rdf:first _:c14n4345 ;
 	rdf:rest rdf:nil .
-_:c14n4345 a rdfs:Datatype ;
+_:c14n4345 xsd:pattern "^[a-zA-Z0-9/\\.+_:-]{2,250}$" .
+_:c14n4346 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4346 .
-_:c14n4346 rdf:first _:c14n2220 ;
+	owl:withRestrictions _:c14n4347 .
+_:c14n4347 rdf:first _:c14n1826 ;
 	rdf:rest rdf:nil .
-_:c14n4347 a rdfs:Datatype ;
+_:c14n4348 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4348 .
-_:c14n4348 rdf:first _:c14n4349 ;
+	owl:withRestrictions _:c14n4349 .
+_:c14n4349 rdf:first _:c14n948 ;
 	rdf:rest rdf:nil .
-_:c14n4349 xsd:pattern "^[a-zA-Z0-9/\\.+_:-]{2,250}$" .
 _:c14n435 rdf:first attack:StixThreatActorRole\#director ;
 	rdf:rest _:c14n2344 .
 _:c14n4350 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4351 .
-_:c14n4351 rdf:first _:c14n1826 ;
+_:c14n4351 rdf:first _:c14n2500 ;
 	rdf:rest rdf:nil .
 _:c14n4352 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4353 .
-_:c14n4353 rdf:first _:c14n948 ;
+_:c14n4353 rdf:first _:c14n4354 ;
 	rdf:rest rdf:nil .
-_:c14n4354 a rdfs:Datatype ;
+_:c14n4354 xsd:pattern "^MOB-(M|S)\\d{4}$" .
+_:c14n4355 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4355 .
-_:c14n4355 rdf:first _:c14n2500 ;
+	owl:withRestrictions _:c14n4356 .
+_:c14n4356 rdf:first _:c14n645 ;
 	rdf:rest rdf:nil .
-_:c14n4356 a rdfs:Datatype ;
+_:c14n4357 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4357 .
-_:c14n4357 rdf:first _:c14n4358 ;
+	owl:withRestrictions _:c14n4358 .
+_:c14n4358 rdf:first _:c14n4359 ;
 	rdf:rest rdf:nil .
-_:c14n4358 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4359 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4360 .
+_:c14n4359 xsd:pattern "^MOB-(M|S)\\d{4}$" .
 _:c14n436 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_deprecated .
-_:c14n4360 rdf:first _:c14n645 ;
-	rdf:rest rdf:nil .
-_:c14n4361 a rdfs:Datatype ;
+_:c14n4360 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4362 .
-_:c14n4362 rdf:first _:c14n4363 ;
+	owl:withRestrictions _:c14n4361 .
+_:c14n4361 rdf:first _:c14n642 ;
 	rdf:rest rdf:nil .
-_:c14n4363 xsd:pattern "^MOB-(M|S)\\d{4}$" .
-_:c14n4364 a rdfs:Datatype ;
+_:c14n4362 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4365 .
-_:c14n4365 rdf:first _:c14n642 ;
+	owl:withRestrictions _:c14n4363 .
+_:c14n4363 rdf:first _:c14n4364 ;
 	rdf:rest rdf:nil .
-_:c14n4366 a rdfs:Datatype ;
+_:c14n4364 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4365 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4367 .
-_:c14n4367 rdf:first _:c14n4368 ;
+	owl:withRestrictions _:c14n4366 .
+_:c14n4366 rdf:first _:c14n2583 ;
 	rdf:rest rdf:nil .
-_:c14n4368 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
-_:c14n4369 a rdfs:Datatype ;
+_:c14n4367 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4370 .
+	owl:withRestrictions _:c14n4368 .
+_:c14n4368 rdf:first _:c14n4369 ;
+	rdf:rest rdf:nil .
+_:c14n4369 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
 _:c14n437 rdf:first stix:StixCourseOfAction ;
 	rdf:rest _:c14n9 .
-_:c14n4370 rdf:first _:c14n2583 ;
-	rdf:rest rdf:nil .
-_:c14n4371 a rdfs:Datatype ;
+_:c14n4370 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4372 .
-_:c14n4372 rdf:first _:c14n4373 ;
+	owl:withRestrictions _:c14n4371 .
+_:c14n4371 rdf:first _:c14n410 ;
 	rdf:rest rdf:nil .
-_:c14n4373 xsd:pattern "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$" .
+_:c14n4372 a rdfs:Datatype ;
+	owl:onDatatype xsd:string ;
+	owl:withRestrictions _:c14n4373 .
+_:c14n4373 rdf:first _:c14n1078 ;
+	rdf:rest rdf:nil .
 _:c14n4374 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4375 .
-_:c14n4375 rdf:first _:c14n410 ;
+_:c14n4375 rdf:first _:c14n2981 ;
 	rdf:rest rdf:nil .
 _:c14n4376 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4377 .
-_:c14n4377 rdf:first _:c14n1078 ;
+_:c14n4377 rdf:first _:c14n502 ;
 	rdf:rest rdf:nil .
 _:c14n4378 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4379 .
-_:c14n4379 rdf:first _:c14n2981 ;
+_:c14n4379 rdf:first _:c14n1156 ;
 	rdf:rest rdf:nil .
 _:c14n438 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -13432,432 +13437,428 @@ _:c14n438 a owl:Restriction ;
 _:c14n4380 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4381 .
-_:c14n4381 rdf:first _:c14n502 ;
+_:c14n4381 rdf:first _:c14n817 ;
 	rdf:rest rdf:nil .
 _:c14n4382 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4383 .
-_:c14n4383 rdf:first _:c14n1156 ;
+_:c14n4383 rdf:first _:c14n4384 ;
 	rdf:rest rdf:nil .
-_:c14n4384 a rdfs:Datatype ;
+_:c14n4384 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4385 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4385 .
-_:c14n4385 rdf:first _:c14n817 ;
+	owl:withRestrictions _:c14n4386 .
+_:c14n4386 rdf:first _:c14n2809 ;
 	rdf:rest rdf:nil .
-_:c14n4386 a rdfs:Datatype ;
+_:c14n4387 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4387 .
-_:c14n4387 rdf:first _:c14n4388 ;
+	owl:withRestrictions _:c14n4388 .
+_:c14n4388 rdf:first _:c14n2902 ;
 	rdf:rest rdf:nil .
-_:c14n4388 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
 _:c14n4389 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4390 .
 _:c14n439 rdf:first attack:StixAccountType\#ldap ;
 	rdf:rest _:c14n2173 .
-_:c14n4390 rdf:first _:c14n2809 ;
+_:c14n4390 rdf:first _:c14n4391 ;
 	rdf:rest rdf:nil .
-_:c14n4391 a rdfs:Datatype ;
+_:c14n4391 xsd:pattern "^software--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
+_:c14n4392 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4392 .
-_:c14n4392 rdf:first _:c14n2902 ;
+	owl:withRestrictions _:c14n4393 .
+_:c14n4393 rdf:first _:c14n1377 ;
 	rdf:rest rdf:nil .
-_:c14n4393 a rdfs:Datatype ;
+_:c14n4394 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4394 .
-_:c14n4394 rdf:first _:c14n4395 ;
+	owl:withRestrictions _:c14n4395 .
+_:c14n4395 rdf:first _:c14n2761 ;
 	rdf:rest rdf:nil .
-_:c14n4395 xsd:pattern "^software--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
 _:c14n4396 a rdfs:Datatype ;
 	owl:onDatatype xsd:string ;
 	owl:withRestrictions _:c14n4397 .
-_:c14n4397 rdf:first _:c14n1377 ;
+_:c14n4397 rdf:first _:c14n2733 ;
 	rdf:rest rdf:nil .
-_:c14n4398 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4399 .
-_:c14n4399 rdf:first _:c14n2761 ;
-	rdf:rest rdf:nil .
-_:c14n44 owl:intersectionOf _:c14n2487 .
-_:c14n440 owl:unionOf _:c14n4436 .
-_:c14n4400 a rdfs:Datatype ;
-	owl:onDatatype xsd:string ;
-	owl:withRestrictions _:c14n4401 .
-_:c14n4401 rdf:first _:c14n2733 ;
-	rdf:rest rdf:nil .
-_:c14n4402 rdf:first _:c14n4403 ;
-	rdf:rest _:c14n4404 .
-_:c14n4403 a owl:Restriction ;
+_:c14n4398 rdf:first _:c14n4399 ;
+	rdf:rest _:c14n4400 .
+_:c14n4399 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:name .
-_:c14n4404 rdf:first _:c14n1118 ;
+_:c14n44 owl:intersectionOf _:c14n2487 .
+_:c14n440 owl:unionOf _:c14n4432 .
+_:c14n4400 rdf:first _:c14n1118 ;
+	rdf:rest _:c14n4401 .
+_:c14n4401 rdf:first _:c14n2736 ;
+	rdf:rest rdf:nil .
+_:c14n4402 rdf:first _:c14n1406 ;
+	rdf:rest _:c14n4403 .
+_:c14n4403 rdf:first _:c14n353 ;
+	rdf:rest rdf:nil .
+_:c14n4404 rdf:first _:c14n2199 ;
 	rdf:rest _:c14n4405 .
-_:c14n4405 rdf:first _:c14n2736 ;
-	rdf:rest rdf:nil .
-_:c14n4406 rdf:first _:c14n1406 ;
+_:c14n4405 rdf:first _:c14n1346 ;
+	rdf:rest _:c14n4406 .
+_:c14n4406 rdf:first _:c14n2708 ;
 	rdf:rest _:c14n4407 .
-_:c14n4407 rdf:first _:c14n353 ;
+_:c14n4407 rdf:first _:c14n2 ;
 	rdf:rest rdf:nil .
-_:c14n4408 rdf:first _:c14n2199 ;
+_:c14n4408 rdf:first _:c14n4411 ;
 	rdf:rest _:c14n4409 .
-_:c14n4409 rdf:first _:c14n1346 ;
-	rdf:rest _:c14n4410 .
+_:c14n4409 rdf:first _:c14n4410 ;
+	rdf:rest rdf:nil .
 _:c14n441 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:lang .
-_:c14n4410 rdf:first _:c14n2708 ;
-	rdf:rest _:c14n4411 .
-_:c14n4411 rdf:first _:c14n2 ;
-	rdf:rest rdf:nil .
-_:c14n4412 rdf:first _:c14n4415 ;
-	rdf:rest _:c14n4413 .
-_:c14n4413 rdf:first _:c14n4414 ;
-	rdf:rest rdf:nil .
-_:c14n4414 a owl:Restriction ;
+_:c14n4410 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:name .
-_:c14n4415 a owl:Restriction ;
+_:c14n4411 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
 	owl:onProperty stix:hashes .
-_:c14n4416 rdf:first _:c14n2774 ;
-	rdf:rest _:c14n4417 .
-_:c14n4417 rdf:first _:c14n1047 ;
+_:c14n4412 rdf:first _:c14n2774 ;
+	rdf:rest _:c14n4413 .
+_:c14n4413 rdf:first _:c14n1047 ;
 	rdf:rest rdf:nil .
-_:c14n4418 rdf:first _:c14n2907 ;
+_:c14n4414 rdf:first _:c14n2907 ;
+	rdf:rest _:c14n4415 .
+_:c14n4415 rdf:first _:c14n2944 ;
+	rdf:rest _:c14n4416 .
+_:c14n4416 rdf:first _:c14n2441 ;
+	rdf:rest _:c14n4417 .
+_:c14n4417 rdf:first _:c14n1877 ;
+	rdf:rest _:c14n4418 .
+_:c14n4418 rdf:first _:c14n596 ;
 	rdf:rest _:c14n4419 .
-_:c14n4419 rdf:first _:c14n2944 ;
+_:c14n4419 rdf:first _:c14n2702 ;
 	rdf:rest _:c14n4420 .
 _:c14n442 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:id .
-_:c14n4420 rdf:first _:c14n2441 ;
+_:c14n4420 rdf:first _:c14n765 ;
 	rdf:rest _:c14n4421 .
-_:c14n4421 rdf:first _:c14n1877 ;
+_:c14n4421 rdf:first _:c14n996 ;
 	rdf:rest _:c14n4422 .
-_:c14n4422 rdf:first _:c14n596 ;
+_:c14n4422 rdf:first _:c14n2842 ;
 	rdf:rest _:c14n4423 .
-_:c14n4423 rdf:first _:c14n2702 ;
+_:c14n4423 rdf:first _:c14n2548 ;
 	rdf:rest _:c14n4424 .
-_:c14n4424 rdf:first _:c14n765 ;
+_:c14n4424 rdf:first _:c14n2737 ;
 	rdf:rest _:c14n4425 .
-_:c14n4425 rdf:first _:c14n996 ;
+_:c14n4425 rdf:first _:c14n514 ;
 	rdf:rest _:c14n4426 .
-_:c14n4426 rdf:first _:c14n2842 ;
+_:c14n4426 rdf:first _:c14n2492 ;
 	rdf:rest _:c14n4427 .
-_:c14n4427 rdf:first _:c14n2548 ;
+_:c14n4427 rdf:first _:c14n206 ;
 	rdf:rest _:c14n4428 .
-_:c14n4428 rdf:first _:c14n2737 ;
+_:c14n4428 rdf:first _:c14n1766 ;
 	rdf:rest _:c14n4429 .
-_:c14n4429 rdf:first _:c14n514 ;
-	rdf:rest _:c14n4430 .
+_:c14n4429 rdf:first _:c14n2461 ;
+	rdf:rest rdf:nil .
 _:c14n443 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:name .
-_:c14n4430 rdf:first _:c14n2492 ;
+_:c14n4430 rdf:first _:c14n1287 ;
 	rdf:rest _:c14n4431 .
-_:c14n4431 rdf:first _:c14n206 ;
-	rdf:rest _:c14n4432 .
-_:c14n4432 rdf:first _:c14n1766 ;
+_:c14n4431 rdf:first _:c14n2036 ;
+	rdf:rest rdf:nil .
+_:c14n4432 rdf:first _:c14n106 ;
 	rdf:rest _:c14n4433 .
-_:c14n4433 rdf:first _:c14n2461 ;
+_:c14n4433 rdf:first _:c14n1605 ;
 	rdf:rest rdf:nil .
-_:c14n4434 rdf:first _:c14n1287 ;
+_:c14n4434 rdf:first _:c14n1976 ;
 	rdf:rest _:c14n4435 .
-_:c14n4435 rdf:first _:c14n2036 ;
-	rdf:rest rdf:nil .
-_:c14n4436 rdf:first _:c14n106 ;
+_:c14n4435 rdf:first _:c14n1951 ;
+	rdf:rest _:c14n4436 .
+_:c14n4436 rdf:first _:c14n1736 ;
 	rdf:rest _:c14n4437 .
-_:c14n4437 rdf:first _:c14n1605 ;
-	rdf:rest rdf:nil .
-_:c14n4438 rdf:first _:c14n1976 ;
+_:c14n4437 rdf:first _:c14n101 ;
+	rdf:rest _:c14n4438 .
+_:c14n4438 rdf:first _:c14n728 ;
 	rdf:rest _:c14n4439 .
-_:c14n4439 rdf:first _:c14n1951 ;
+_:c14n4439 rdf:first _:c14n1230 ;
 	rdf:rest _:c14n4440 .
 _:c14n444 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4287 ;
+	owl:allValuesFrom _:c14n4280 ;
 	owl:onProperty stix:id .
-_:c14n4440 rdf:first _:c14n1736 ;
+_:c14n4440 rdf:first _:c14n331 ;
 	rdf:rest _:c14n4441 .
-_:c14n4441 rdf:first _:c14n101 ;
+_:c14n4441 rdf:first _:c14n299 ;
 	rdf:rest _:c14n4442 .
-_:c14n4442 rdf:first _:c14n728 ;
+_:c14n4442 rdf:first _:c14n2399 ;
 	rdf:rest _:c14n4443 .
-_:c14n4443 rdf:first _:c14n1230 ;
+_:c14n4443 rdf:first _:c14n2107 ;
 	rdf:rest _:c14n4444 .
-_:c14n4444 rdf:first _:c14n331 ;
-	rdf:rest _:c14n4445 .
-_:c14n4445 rdf:first _:c14n299 ;
-	rdf:rest _:c14n4446 .
-_:c14n4446 rdf:first _:c14n2399 ;
-	rdf:rest _:c14n4447 .
-_:c14n4447 rdf:first _:c14n2107 ;
-	rdf:rest _:c14n4448 .
-_:c14n4448 rdf:first _:c14n2927 ;
+_:c14n4444 rdf:first _:c14n2927 ;
 	rdf:rest rdf:nil .
-_:c14n4449 rdf:first _:c14n157 ;
+_:c14n4445 rdf:first _:c14n157 ;
+	rdf:rest _:c14n4446 .
+_:c14n4446 rdf:first _:c14n2000 ;
+	rdf:rest _:c14n4447 .
+_:c14n4447 rdf:first _:c14n2009 ;
+	rdf:rest _:c14n4448 .
+_:c14n4448 rdf:first _:c14n2407 ;
+	rdf:rest rdf:nil .
+_:c14n4449 rdf:first _:c14n184 ;
 	rdf:rest _:c14n4450 .
 _:c14n445 a owl:Restriction ;
 	owl:allValuesFrom xsd:integer ;
 	owl:onProperty stix:file_alignment .
-_:c14n4450 rdf:first _:c14n2000 ;
-	rdf:rest _:c14n4451 .
-_:c14n4451 rdf:first _:c14n2009 ;
+_:c14n4450 rdf:first _:c14n1834 ;
+	rdf:rest rdf:nil .
+_:c14n4451 rdf:first _:c14n2014 ;
 	rdf:rest _:c14n4452 .
-_:c14n4452 rdf:first _:c14n2407 ;
+_:c14n4452 rdf:first _:c14n682 ;
 	rdf:rest rdf:nil .
-_:c14n4453 rdf:first _:c14n184 ;
+_:c14n4453 rdf:first _:c14n165 ;
 	rdf:rest _:c14n4454 .
-_:c14n4454 rdf:first _:c14n1834 ;
-	rdf:rest rdf:nil .
-_:c14n4455 rdf:first _:c14n2014 ;
+_:c14n4454 rdf:first _:c14n2578 ;
+	rdf:rest _:c14n4455 .
+_:c14n4455 rdf:first _:c14n1424 ;
 	rdf:rest _:c14n4456 .
-_:c14n4456 rdf:first _:c14n682 ;
-	rdf:rest rdf:nil .
-_:c14n4457 rdf:first _:c14n165 ;
+_:c14n4456 rdf:first _:c14n2489 ;
+	rdf:rest _:c14n4457 .
+_:c14n4457 rdf:first _:c14n110 ;
 	rdf:rest _:c14n4458 .
-_:c14n4458 rdf:first _:c14n2578 ;
-	rdf:rest _:c14n4459 .
-_:c14n4459 rdf:first _:c14n1424 ;
+_:c14n4458 rdf:first _:c14n1722 ;
+	rdf:rest rdf:nil .
+_:c14n4459 rdf:first _:c14n2719 ;
 	rdf:rest _:c14n4460 .
 _:c14n446 rdf:first stix:StixMalwareAnalysis ;
 	rdf:rest _:c14n1783 .
-_:c14n4460 rdf:first _:c14n2489 ;
-	rdf:rest _:c14n4461 .
-_:c14n4461 rdf:first _:c14n110 ;
-	rdf:rest _:c14n4462 .
-_:c14n4462 rdf:first _:c14n1722 ;
+_:c14n4460 rdf:first _:c14n4461 ;
 	rdf:rest rdf:nil .
-_:c14n4463 rdf:first _:c14n2719 ;
-	rdf:rest _:c14n4464 .
-_:c14n4464 rdf:first _:c14n4465 ;
-	rdf:rest rdf:nil .
-_:c14n4465 a owl:Restriction ;
+_:c14n4461 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:url .
-_:c14n4466 rdf:first _:c14n227 ;
-	rdf:rest _:c14n4467 .
-_:c14n4467 rdf:first _:c14n705 ;
-	rdf:rest _:c14n4468 .
-_:c14n4468 rdf:first _:c14n2682 ;
-	rdf:rest _:c14n4469 .
-_:c14n4469 rdf:first _:c14n4471 ;
-	rdf:rest _:c14n4470 .
-_:c14n447 owl:unionOf _:c14n4455 .
-_:c14n4470 rdf:first _:c14n581 ;
+_:c14n4462 rdf:first _:c14n227 ;
+	rdf:rest _:c14n4463 .
+_:c14n4463 rdf:first _:c14n705 ;
+	rdf:rest _:c14n4464 .
+_:c14n4464 rdf:first _:c14n2682 ;
+	rdf:rest _:c14n4465 .
+_:c14n4465 rdf:first _:c14n4467 ;
+	rdf:rest _:c14n4466 .
+_:c14n4466 rdf:first _:c14n581 ;
 	rdf:rest rdf:nil .
-_:c14n4471 a owl:Restriction ;
+_:c14n4467 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
 	owl:onProperty stix:creator_user_ref .
-_:c14n4472 rdf:first _:c14n72 ;
-	rdf:rest _:c14n4473 .
-_:c14n4473 rdf:first _:c14n971 ;
-	rdf:rest _:c14n4474 .
-_:c14n4474 rdf:first _:c14n4475 ;
+_:c14n4468 rdf:first _:c14n72 ;
+	rdf:rest _:c14n4469 .
+_:c14n4469 rdf:first _:c14n971 ;
+	rdf:rest _:c14n4470 .
+_:c14n447 owl:unionOf _:c14n4451 .
+_:c14n4470 rdf:first _:c14n4471 ;
 	rdf:rest rdf:nil .
-_:c14n4475 a owl:Restriction ;
+_:c14n4471 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:url .
-_:c14n4476 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
-_:c14n4477 rdf:first _:c14n4476 ;
+_:c14n4472 xsd:pattern "^\\d{1,2}\\.\\d{1,2}$" .
+_:c14n4473 rdf:first _:c14n4472 ;
 	rdf:rest rdf:nil .
-_:c14n4478 rdf:first xsd:string ;
+_:c14n4474 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4479 rdf:first attack:StixToolType ;
-	rdf:rest _:c14n4478 .
+_:c14n4475 rdf:first attack:StixToolType ;
+	rdf:rest _:c14n4474 .
+_:c14n4476 rdf:first xsd:string ;
+	rdf:rest rdf:nil .
+_:c14n4477 rdf:first attack:StixAttackMotivation ;
+	rdf:rest _:c14n4476 .
+_:c14n4478 a rdfs:Datatype ;
+	owl:unionOf _:c14n4477 .
+_:c14n4479 rdf:first xsd:string ;
+	rdf:rest rdf:nil .
 _:c14n448 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
-_:c14n4480 rdf:first xsd:string ;
+_:c14n4480 rdf:first attack:StixAttackMotivation ;
+	rdf:rest _:c14n4479 .
+_:c14n4481 a rdfs:Datatype ;
+	owl:unionOf _:c14n4480 .
+_:c14n4482 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4481 rdf:first attack:StixAttackMotivation ;
-	rdf:rest _:c14n4480 .
-_:c14n4482 a rdfs:Datatype ;
-	owl:unionOf _:c14n4481 .
-_:c14n4483 rdf:first xsd:string ;
+_:c14n4483 rdf:first attack:StixMalwareType ;
+	rdf:rest _:c14n4482 .
+_:c14n4484 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4484 rdf:first attack:StixAttackMotivation ;
-	rdf:rest _:c14n4483 .
-_:c14n4485 a rdfs:Datatype ;
-	owl:unionOf _:c14n4484 .
-_:c14n4486 rdf:first xsd:string ;
+_:c14n4485 rdf:first attack:StixAttackMotivation ;
+	rdf:rest _:c14n4484 .
+_:c14n4486 a rdfs:Datatype ;
+	owl:unionOf _:c14n4485 .
+_:c14n4487 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4487 rdf:first attack:StixMalwareType ;
-	rdf:rest _:c14n4486 .
-_:c14n4488 rdf:first xsd:string ;
+_:c14n4488 rdf:first attack:StixThreatActorType ;
+	rdf:rest _:c14n4487 .
+_:c14n4489 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4489 rdf:first attack:StixAttackMotivation ;
-	rdf:rest _:c14n4488 .
 _:c14n449 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
 	owl:onProperty stix:external_references .
-_:c14n4490 a rdfs:Datatype ;
-	owl:unionOf _:c14n4489 .
+_:c14n4490 rdf:first attack:StixPatternType ;
+	rdf:rest _:c14n4489 .
 _:c14n4491 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4492 rdf:first attack:StixThreatActorType ;
+_:c14n4492 rdf:first attack:StixAccountType ;
 	rdf:rest _:c14n4491 .
 _:c14n4493 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4494 rdf:first attack:StixPatternType ;
+_:c14n4494 rdf:first attack:StixIndicatorType ;
 	rdf:rest _:c14n4493 .
-_:c14n4495 rdf:first xsd:string ;
+_:c14n4495 a rdfs:Datatype ;
+	owl:unionOf _:c14n4494 .
+_:c14n4496 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4496 rdf:first attack:StixAccountType ;
-	rdf:rest _:c14n4495 .
 _:c14n4497 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4498 rdf:first attack:StixIndicatorType ;
+_:c14n4498 rdf:first attack:StixAttackMotivation ;
 	rdf:rest _:c14n4497 .
-_:c14n4499 a rdfs:Datatype ;
-	owl:unionOf _:c14n4498 .
+_:c14n4499 rdf:first xsd:string ;
+	rdf:rest rdf:nil .
 _:c14n45 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n450 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:request_version .
-_:c14n4500 rdf:first xsd:string ;
+_:c14n4500 rdf:first attack:StixAttackResourceLevel ;
+	rdf:rest _:c14n4499 .
+_:c14n4501 a rdfs:Datatype ;
+	owl:unionOf _:c14n4500 .
+_:c14n4502 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4501 rdf:first xsd:string ;
+_:c14n4503 rdf:first attack:StixPatternType ;
+	rdf:rest _:c14n4502 .
+_:c14n4504 a rdfs:Datatype ;
+	owl:unionOf _:c14n4503 .
+_:c14n4505 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4502 rdf:first attack:StixAttackMotivation ;
-	rdf:rest _:c14n4501 .
-_:c14n4503 rdf:first xsd:string ;
+_:c14n4506 rdf:first attack:StixIndicatorType ;
+	rdf:rest _:c14n4505 .
+_:c14n4507 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4504 rdf:first attack:StixAttackResourceLevel ;
-	rdf:rest _:c14n4503 .
-_:c14n4505 a rdfs:Datatype ;
-	owl:unionOf _:c14n4504 .
-_:c14n4506 rdf:first xsd:string ;
-	rdf:rest rdf:nil .
-_:c14n4507 rdf:first attack:StixPatternType ;
-	rdf:rest _:c14n4506 .
-_:c14n4508 a rdfs:Datatype ;
-	owl:unionOf _:c14n4507 .
+_:c14n4508 rdf:first attack:StixAttackMotivation ;
+	rdf:rest _:c14n4507 .
 _:c14n4509 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
 _:c14n451 a owl:Restriction ;
 	owl:allValuesFrom stix:StixExternalReference ;
 	owl:onProperty stix:external_references .
-_:c14n4510 rdf:first attack:StixIndicatorType ;
+_:c14n4510 rdf:first attack:StixImplementationLanguage ;
 	rdf:rest _:c14n4509 .
 _:c14n4511 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4512 rdf:first attack:StixAttackMotivation ;
+_:c14n4512 rdf:first attack:StixToolType ;
 	rdf:rest _:c14n4511 .
-_:c14n4513 rdf:first xsd:string ;
+_:c14n4513 a rdfs:Datatype ;
+	owl:unionOf _:c14n4512 .
+_:c14n4514 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4514 rdf:first attack:StixImplementationLanguage ;
-	rdf:rest _:c14n4513 .
-_:c14n4515 rdf:first xsd:string ;
+_:c14n4515 rdf:first attack:StixAttackResourceLevel ;
+	rdf:rest _:c14n4514 .
+_:c14n4516 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4516 rdf:first attack:StixToolType ;
-	rdf:rest _:c14n4515 .
-_:c14n4517 a rdfs:Datatype ;
-	owl:unionOf _:c14n4516 .
-_:c14n4518 rdf:first xsd:string ;
+_:c14n4517 rdf:first attack:StixIdentityClass ;
+	rdf:rest _:c14n4516 .
+_:c14n4518 a rdfs:Datatype ;
+	owl:unionOf _:c14n4517 .
+_:c14n4519 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4519 rdf:first attack:StixAttackResourceLevel ;
-	rdf:rest _:c14n4518 .
 _:c14n452 rdf:first attack:StixWindowsRegistryDatatype\#REG_RESOURCE_REQUIREMENTS_LIST ;
 	rdf:rest _:c14n1318 .
-_:c14n4520 rdf:first xsd:string ;
+_:c14n4520 rdf:first attack:StixRegion ;
+	rdf:rest _:c14n4519 .
+_:c14n4521 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4521 rdf:first attack:StixIdentityClass ;
-	rdf:rest _:c14n4520 .
-_:c14n4522 a rdfs:Datatype ;
-	owl:unionOf _:c14n4521 .
+_:c14n4522 rdf:first attack:StixGroupingContext ;
+	rdf:rest _:c14n4521 .
 _:c14n4523 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4524 rdf:first attack:StixRegion ;
+_:c14n4524 rdf:first attack:StixImplementationLanguage ;
 	rdf:rest _:c14n4523 .
-_:c14n4525 rdf:first xsd:string ;
+_:c14n4525 a rdfs:Datatype ;
+	owl:unionOf _:c14n4524 .
+_:c14n4526 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4526 rdf:first attack:StixGroupingContext ;
-	rdf:rest _:c14n4525 .
-_:c14n4527 rdf:first xsd:string ;
+_:c14n4527 rdf:first attack:StixInfrastructureType ;
+	rdf:rest _:c14n4526 .
+_:c14n4528 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4528 rdf:first attack:StixImplementationLanguage ;
-	rdf:rest _:c14n4527 .
-_:c14n4529 a rdfs:Datatype ;
-	owl:unionOf _:c14n4528 .
+_:c14n4529 rdf:first attack:StixThreatActorType ;
+	rdf:rest _:c14n4528 .
 _:c14n453 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4092 ;
+	owl:allValuesFrom _:c14n4085 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
-_:c14n4530 rdf:first xsd:string ;
+_:c14n4530 a rdfs:Datatype ;
+	owl:unionOf _:c14n4529 .
+_:c14n4531 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4531 rdf:first attack:StixInfrastructureType ;
-	rdf:rest _:c14n4530 .
-_:c14n4532 rdf:first xsd:string ;
+_:c14n4532 rdf:first attack:StixAccountType ;
+	rdf:rest _:c14n4531 .
+_:c14n4533 a rdfs:Datatype ;
+	owl:unionOf _:c14n4532 .
+_:c14n4534 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4533 rdf:first attack:StixThreatActorType ;
-	rdf:rest _:c14n4532 .
-_:c14n4534 a rdfs:Datatype ;
-	owl:unionOf _:c14n4533 .
-_:c14n4535 rdf:first xsd:string ;
+_:c14n4535 rdf:first attack:StixIdentityClass ;
+	rdf:rest _:c14n4534 .
+_:c14n4536 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4536 rdf:first attack:StixAccountType ;
-	rdf:rest _:c14n4535 .
-_:c14n4537 a rdfs:Datatype ;
-	owl:unionOf _:c14n4536 .
-_:c14n4538 rdf:first xsd:string ;
+_:c14n4537 rdf:first attack:StixGroupingContext ;
+	rdf:rest _:c14n4536 .
+_:c14n4538 a rdfs:Datatype ;
+	owl:unionOf _:c14n4537 .
+_:c14n4539 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4539 rdf:first attack:StixIdentityClass ;
-	rdf:rest _:c14n4538 .
 _:c14n454 a rdfs:Datatype ;
 	owl:intersectionOf _:c14n3680 .
-_:c14n4540 rdf:first xsd:string ;
+_:c14n4540 rdf:first attack:StixMalwareType ;
+	rdf:rest _:c14n4539 .
+_:c14n4541 a rdfs:Datatype ;
+	owl:unionOf _:c14n4540 .
+_:c14n4542 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4541 rdf:first attack:StixGroupingContext ;
-	rdf:rest _:c14n4540 .
-_:c14n4542 a rdfs:Datatype ;
-	owl:unionOf _:c14n4541 .
-_:c14n4543 rdf:first xsd:string ;
+_:c14n4543 rdf:first attack:StixAttackResourceLevel ;
+	rdf:rest _:c14n4542 .
+_:c14n4544 a rdfs:Datatype ;
+	owl:unionOf _:c14n4543 .
+_:c14n4545 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4544 rdf:first attack:StixMalwareType ;
-	rdf:rest _:c14n4543 .
-_:c14n4545 a rdfs:Datatype ;
-	owl:unionOf _:c14n4544 .
-_:c14n4546 rdf:first xsd:string ;
+_:c14n4546 rdf:first attack:StixAttackMotivation ;
+	rdf:rest _:c14n4545 .
+_:c14n4547 a rdfs:Datatype ;
+	owl:unionOf _:c14n4546 .
+_:c14n4548 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4547 rdf:first attack:StixAttackResourceLevel ;
-	rdf:rest _:c14n4546 .
-_:c14n4548 a rdfs:Datatype ;
-	owl:unionOf _:c14n4547 .
-_:c14n4549 rdf:first xsd:string ;
-	rdf:rest rdf:nil .
+_:c14n4549 rdf:first attack:StixRegion ;
+	rdf:rest _:c14n4548 .
 _:c14n455 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
-_:c14n4550 rdf:first attack:StixAttackMotivation ;
-	rdf:rest _:c14n4549 .
-_:c14n4551 a rdfs:Datatype ;
-	owl:unionOf _:c14n4550 .
-_:c14n4552 rdf:first xsd:string ;
+_:c14n4550 a rdfs:Datatype ;
+	owl:unionOf _:c14n4549 .
+_:c14n4551 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4553 rdf:first attack:StixRegion ;
-	rdf:rest _:c14n4552 .
-_:c14n4554 a rdfs:Datatype ;
-	owl:unionOf _:c14n4553 .
-_:c14n4555 rdf:first xsd:string ;
+_:c14n4552 rdf:first attack:StixAttackMotivation ;
+	rdf:rest _:c14n4551 .
+_:c14n4553 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4556 rdf:first attack:StixAttackMotivation ;
-	rdf:rest _:c14n4555 .
-_:c14n4557 rdf:first xsd:string ;
+_:c14n4554 rdf:first attack:StixAttackMotivation ;
+	rdf:rest _:c14n4553 .
+_:c14n4555 a rdfs:Datatype ;
+	owl:unionOf _:c14n4554 .
+_:c14n4556 rdf:first xsd:string ;
 	rdf:rest rdf:nil .
-_:c14n4558 rdf:first attack:StixAttackMotivation ;
-	rdf:rest _:c14n4557 .
-_:c14n4559 a rdfs:Datatype ;
-	owl:unionOf _:c14n4558 .
+_:c14n4557 rdf:first attack:StixInfrastructureType ;
+	rdf:rest _:c14n4556 .
+_:c14n4558 a rdfs:Datatype ;
+	owl:unionOf _:c14n4557 .
+_:c14n4559 xsd:pattern "^(\\(Citation: [^):]*[^):\\s][^):]*\\))+$" .
 _:c14n456 a owl:Restriction ;
 	owl:allValuesFrom xsd:integer ;
 	owl:onProperty stix:image_base .
-_:c14n4560 rdf:first xsd:string ;
+_:c14n4560 rdf:first _:c14n4559 ;
 	rdf:rest rdf:nil .
-_:c14n4561 rdf:first attack:StixInfrastructureType ;
-	rdf:rest _:c14n4560 .
-_:c14n4562 a rdfs:Datatype ;
-	owl:unionOf _:c14n4561 .
+_:c14n4561 xsd:pattern "^(\\(Citation: [^):]*[^):\\s][^):]*\\))+$" .
+_:c14n4562 rdf:first _:c14n4561 ;
+	rdf:rest rdf:nil .
 _:c14n4563 a rdfs:Datatype ;
 	owl:unionOf _:c14n482 .
 _:c14n4564 rdf:first stix:StixNetworkTraffic ;
@@ -13942,7 +13943,7 @@ _:c14n473 a owl:Restriction ;
 _:c14n474 a rdfs:Datatype ;
 	owl:intersectionOf _:c14n3153 .
 _:c14n475 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4537 ;
+	owl:allValuesFrom _:c14n4533 ;
 	owl:onProperty stix:account_type .
 _:c14n476 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -13964,7 +13965,7 @@ _:c14n481 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:id .
 _:c14n482 rdf:first attack:StixThreatActorRole ;
-	rdf:rest _:c14n4500 .
+	rdf:rest _:c14n4496 .
 _:c14n483 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty attack:x_mitre_last_seen_citation .
@@ -14072,7 +14073,7 @@ _:c14n516 a owl:Restriction ;
 _:c14n517 rdf:first attack:AttackDomain\#enterprise-attack ;
 	rdf:rest _:c14n862 .
 _:c14n518 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4183 ;
+	owl:allValuesFrom _:c14n4176 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n519 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -14084,7 +14085,7 @@ _:c14n520 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:name .
 _:c14n521 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4070 ;
+	owl:allValuesFrom _:c14n4063 ;
 	owl:onProperty stix:type .
 _:c14n522 rdf:first attack:StixIndicatorType\#compromised ;
 	rdf:rest _:c14n1056 .
@@ -14104,7 +14105,7 @@ _:c14n527 a owl:Restriction ;
 	owl:allValuesFrom stix:StixWindowsPeSection ;
 	owl:onProperty stix:sections .
 _:c14n528 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4040 ;
+	owl:allValuesFrom _:c14n4030 ;
 	owl:onProperty stix:id .
 _:c14n529 a owl:Restriction ;
 	owl:allValuesFrom stix:StixMarkingDefinition ;
@@ -14167,7 +14168,7 @@ _:c14n546 a owl:Restriction ;
 _:c14n547 rdf:first attack:AttackRelationshipType\#uses ;
 	rdf:rest _:c14n2293 .
 _:c14n548 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4343 ;
+	owl:allValuesFrom _:c14n4339 ;
 	owl:onProperty stix:id .
 _:c14n549 rdf:first attack:AttackEffectivePermission\#root ;
 	rdf:rest _:c14n2011 .
@@ -14206,10 +14207,10 @@ _:c14n561 a owl:Restriction ;
 	owl:allValuesFrom xsd:dateTime ;
 	owl:onProperty stix:last_seen .
 _:c14n562 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4173 ;
+	owl:allValuesFrom _:c14n4166 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n563 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4279 ;
+	owl:allValuesFrom _:c14n4272 ;
 	owl:onProperty stix:type .
 _:c14n564 a owl:Restriction ;
 	owl:allValuesFrom xsd:boolean ;
@@ -14224,7 +14225,7 @@ _:c14n567 owl:intersectionOf _:c14n3426 .
 _:c14n568 a rdfs:Datatype ;
 	owl:intersectionOf _:c14n3612 .
 _:c14n569 a rdfs:Datatype ;
-	owl:unionOf _:c14n4531 .
+	owl:unionOf _:c14n4527 .
 _:c14n57 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:extension_type .
@@ -14288,13 +14289,13 @@ _:c14n590 rdf:first attack:StixMalwareCapability\#compromises-data-availability 
 	rdf:rest _:c14n430 .
 _:c14n591 owl:intersectionOf _:c14n3010 .
 _:c14n592 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4313 ;
+	owl:allValuesFrom _:c14n4309 ;
 	owl:onProperty stix:type .
 _:c14n593 a owl:Restriction ;
 	owl:allValuesFrom attack:AttackCollectionLayer ;
 	owl:onProperty attack:x_mitre_collection_layers .
 _:c14n594 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4205 ;
+	owl:allValuesFrom _:c14n4198 ;
 	owl:onProperty stix:type .
 _:c14n595 a owl:Restriction ;
 	owl:allValuesFrom xsd:boolean ;
@@ -14342,7 +14343,7 @@ _:c14n609 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:window_title .
 _:c14n61 a rdfs:Datatype ;
-	owl:unionOf _:c14n4514 .
+	owl:unionOf _:c14n4510 .
 _:c14n610 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:extensions .
@@ -14382,7 +14383,7 @@ _:c14n621 a owl:Restriction ;
 _:c14n622 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:service_name .
-_:c14n623 owl:unionOf _:c14n4416 .
+_:c14n623 owl:unionOf _:c14n4412 .
 _:c14n624 rdf:first attack:AttackPlatform\#Safety\%20Instrumented\%20System\%2FProtection\%20Relay ;
 	rdf:rest _:c14n1552 .
 _:c14n625 rdf:first attack:AttackBypassedDefense\#Network\%20Intrusion\%20Detection\%20System ;
@@ -14468,7 +14469,7 @@ _:c14n653 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_deprecated .
 _:c14n654 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4097 ;
+	owl:allValuesFrom _:c14n4090 ;
 	owl:onProperty stix:type .
 _:c14n655 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -14514,7 +14515,7 @@ _:c14n669 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty stix:raw_email_ref .
 _:c14n67 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4049 ;
+	owl:allValuesFrom _:c14n4039 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n670 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -14529,13 +14530,13 @@ _:c14n673 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:name .
 _:c14n674 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4054 ;
+	owl:allValuesFrom _:c14n4044 ;
 	owl:onProperty stix:id .
 _:c14n675 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:city .
 _:c14n676 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4296 ;
+	owl:allValuesFrom _:c14n4289 ;
 	owl:onProperty stix:type .
 _:c14n677 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -14594,7 +14595,7 @@ _:c14n695 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_data_source_ref .
 _:c14n696 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4057 ;
+	owl:allValuesFrom _:c14n4047 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n697 a owl:Restriction ;
 	owl:minCardinality 1 ;
@@ -14686,9 +14687,9 @@ _:c14n724 a owl:Restriction ;
 	owl:allValuesFrom stix:StixExtensions ;
 	owl:onProperty stix:extensions .
 _:c14n725 a rdfs:Datatype ;
-	owl:unionOf _:c14n4519 .
+	owl:unionOf _:c14n4515 .
 _:c14n726 a rdfs:Datatype ;
-	owl:unionOf _:c14n4556 .
+	owl:unionOf _:c14n4552 .
 _:c14n727 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty attack:x_mitre_defense_bypassed .
@@ -14738,7 +14739,7 @@ _:c14n741 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:name .
 _:c14n742 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4235 ;
+	owl:allValuesFrom _:c14n4228 ;
 	owl:onProperty attack:x_mitre_version .
 _:c14n743 a owl:Restriction ;
 	owl:maxCardinality 1 ;
@@ -14961,7 +14962,7 @@ _:c14n814 a owl:Restriction ;
 	owl:minCardinality 1 ;
 	owl:onProperty stix:id .
 _:c14n815 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4369 ;
+	owl:allValuesFrom _:c14n4365 ;
 	owl:onProperty stix:type .
 _:c14n816 xsd:pattern "language-content" .
 _:c14n817 xsd:pattern "^opinion--[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-5][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$" .
@@ -15003,7 +15004,7 @@ _:c14n829 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 _:c14n83 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4345 ;
+	owl:allValuesFrom _:c14n4341 ;
 	owl:onProperty stix:type .
 _:c14n830 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
@@ -15061,7 +15062,7 @@ _:c14n848 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty stix:type .
 _:c14n849 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4188 ;
+	owl:allValuesFrom _:c14n4181 ;
 	owl:onProperty stix:type .
 _:c14n85 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -15129,7 +15130,7 @@ _:c14n871 xsd:pattern "^CAPEC-\\d+$" .
 _:c14n872 rdf:first attack:AttackBypassedDefense\#Web\%20Content\%20Filters ;
 	rdf:rest _:c14n1456 .
 _:c14n873 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4393 ;
+	owl:allValuesFrom _:c14n4389 ;
 	owl:onProperty stix:id .
 _:c14n874 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
@@ -15147,7 +15148,7 @@ _:c14n878 rdf:first attack:StixInfrastructureType\#workstation ;
 _:c14n879 rdf:first attack:AttackTactic ;
 	rdf:rest _:c14n1851 .
 _:c14n88 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4193 ;
+	owl:allValuesFrom _:c14n4186 ;
 	owl:onProperty stix:id .
 _:c14n880 rdf:first attack:StixNetworkSocketAddressFamily\#AF_IRDA ;
 	rdf:rest _:c14n121 .
@@ -15210,7 +15211,7 @@ _:c14n899 a owl:Restriction ;
 _:c14n9 rdf:first stix:StixGrouping ;
 	rdf:rest _:c14n1861 .
 _:c14n90 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4238 ;
+	owl:allValuesFrom _:c14n4231 ;
 	owl:onProperty stix:id .
 _:c14n900 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -15336,7 +15337,7 @@ _:c14n942 a owl:Restriction ;
 	owl:onProperty stix:size_of_initialized_data .
 _:c14n943 owl:intersectionOf _:c14n3399 .
 _:c14n944 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4080 ;
+	owl:allValuesFrom _:c14n4073 ;
 	owl:onProperty stix:type .
 _:c14n945 a owl:Restriction ;
 	owl:minCardinality 0 ;
@@ -15398,7 +15399,7 @@ _:c14n966 a owl:Restriction ;
 	owl:allValuesFrom _:c14n3376 ;
 	owl:onProperty stix:id .
 _:c14n967 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4545 ;
+	owl:allValuesFrom _:c14n4541 ;
 	owl:onProperty stix:malware_types .
 _:c14n968 rdf:first attack:AttackBypassedDefense\#Static\%20File\%20Analysis ;
 	rdf:rest _:c14n412 .
@@ -15414,7 +15415,7 @@ _:c14n971 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
 	owl:onProperty stix:description .
 _:c14n972 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4154 ;
+	owl:allValuesFrom _:c14n4147 ;
 	owl:onProperty attack:x_mitre_attack_spec_version .
 _:c14n973 a owl:Restriction ;
 	owl:allValuesFrom owl:Thing ;
@@ -15435,10 +15436,10 @@ _:c14n978 a owl:Restriction ;
 	owl:maxCardinality 1 ;
 	owl:onProperty attack:x_mitre_deprecated .
 _:c14n979 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4042 ;
+	owl:allValuesFrom _:c14n4032 ;
 	owl:onProperty stix:type .
 _:c14n98 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4031 ;
+	owl:allValuesFrom _:c14n4021 ;
 	owl:onProperty stix:type .
 _:c14n980 a owl:Restriction ;
 	owl:allValuesFrom xsd:string ;
@@ -15497,6 +15498,6 @@ _:c14n998 a owl:Restriction ;
 	owl:minCardinality 0 ;
 	owl:onProperty attack:x_mitre_data_source_ref .
 _:c14n999 a owl:Restriction ;
-	owl:allValuesFrom _:c14n4361 ;
+	owl:allValuesFrom _:c14n4357 ;
 	owl:onProperty attack:x_mitre_old_attack_id .
 

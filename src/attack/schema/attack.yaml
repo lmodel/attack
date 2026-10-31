@@ -446,13 +446,16 @@ slots:
       The sources for when the campaign was first seen, each written
       "(Citation: name)" with no separator, where each name is the source name
       of one of the campaign's external references.
-    pattern: '^(\(Citation: [^)]+\))+$'
+    comments:
+      - >-
+        As in the ADM, a name holds no colon and is not blank.
+    pattern: '^(\(Citation: [^):]*[^):\s][^):]*\))+$'
     slot_uri: attack:x_mitre_first_seen_citation
   x_mitre_last_seen_citation:
     description: >-
       The sources for when the campaign was last seen, written as
       x_mitre_first_seen_citation is.
-    pattern: '^(\(Citation: [^)]+\))+$'
+    pattern: '^(\(Citation: [^):]*[^):\s][^):]*\))+$'
     slot_uri: attack:x_mitre_last_seen_citation
   x_mitre_sectors:
     description: The industry sectors in which the asset is commonly found.
