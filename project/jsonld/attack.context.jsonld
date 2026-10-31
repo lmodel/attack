@@ -1,21 +1,16 @@
 {
    "@context": {
       "xsd": "http://www.w3.org/2001/XMLSchema#",
-      "PATO": {
-         "@id": "http://purl.obolibrary.org/obo/PATO_",
-         "@prefix": true
-      },
       "attack": "https://w3id.org/lmodel/attack/",
-      "capex": "https://lmodel.github.io/capex/",
       "linkml": "https://w3id.org/linkml/",
-      "oscal": "https://lmodel.github.io/oscal/",
-      "schema": {
-         "@id": "stix:schema"
-      },
       "skos": "http://www.w3.org/2004/02/skos/core#",
-      "spdx": "https://lmodel.github.io/spdx/",
       "stix": "https://w3id.org/lmodel/stix/",
-      "unified_cyber_ontology": "https://w3id.org/lmodel/uco-master/",
+      "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+      "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+      "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+      "uco-marking": "https://ontology.unifiedcyberontology.org/uco/marking/",
+      "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+      "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
       "@vocab": "https://w3id.org/lmodel/attack/",
       "abstract": {
          "@id": "stix:abstract"
@@ -43,6 +38,7 @@
          "@id": "stix:account_type"
       },
       "additional_header_fields": {
+         "@type": "@id",
          "@id": "stix:additional_header_fields"
       },
       "address_family": {
@@ -59,17 +55,6 @@
       },
       "administrative_area": {
          "@id": "stix:administrative_area"
-      },
-      "ads_hashes": {
-         "@type": "@id",
-         "@id": "stix:ads_hashes"
-      },
-      "ads_name": {
-         "@id": "stix:ads_name"
-      },
-      "ads_size": {
-         "@type": "xsd:integer",
-         "@id": "stix:ads_size"
       },
       "aliases": {
          "@id": "stix:aliases"
@@ -89,6 +74,7 @@
          "@id": "stix:analysis_engine_version"
       },
       "analysis_sco_refs": {
+         "@type": "@id",
          "@id": "stix:analysis_sco_refs"
       },
       "analysis_started": {
@@ -106,6 +92,7 @@
          "@type": "xsd:dateTime",
          "@id": "stix:atime"
       },
+      "id": "@id",
       "authority_key_identifier": {
          "@id": "stix:authority_key_identifier"
       },
@@ -124,12 +111,15 @@
          "@id": "stix:basic_constraints"
       },
       "bcc_refs": {
+         "@type": "@id",
          "@id": "stix:bcc_refs"
       },
       "belongs_to_ref": {
+         "@type": "@id",
          "@id": "stix:belongs_to_ref"
       },
       "belongs_to_refs": {
+         "@type": "@id",
          "@id": "stix:belongs_to_refs"
       },
       "bits_per_pixel": {
@@ -144,11 +134,8 @@
          "@id": "stix:body_multipart"
       },
       "body_raw_ref": {
-         "@id": "stix:body_raw_ref"
-      },
-      "bundle_objects": {
          "@type": "@id",
-         "@id": "stix:bundle_objects"
+         "@id": "stix:body_raw_ref"
       },
       "can_escalate_privs": {
          "@type": "xsd:boolean",
@@ -158,18 +145,25 @@
          "@id": "stix:capabilities"
       },
       "cc_refs": {
+         "@type": "@id",
          "@id": "stix:cc_refs"
       },
       "certificate_policies": {
          "@id": "stix:certificate_policies"
       },
+      "channel": {
+         "@id": "channel"
+      },
       "characteristics_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:characteristics_hex"
       },
       "checksum_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:checksum_hex"
       },
       "child_refs": {
+         "@type": "@id",
          "@id": "stix:child_refs"
       },
       "city": {
@@ -192,6 +186,7 @@
          "@id": "stix:contact_information"
       },
       "contains_refs": {
+         "@type": "@id",
          "@id": "stix:contains_refs"
       },
       "content": {
@@ -201,12 +196,14 @@
          "@id": "stix:content_disposition"
       },
       "content_ref": {
+         "@type": "@id",
          "@id": "stix:content_ref"
       },
       "content_type": {
          "@id": "stix:content_type"
       },
       "contents": {
+         "@type": "@id",
          "@id": "stix:contents"
       },
       "context": {
@@ -227,6 +224,7 @@
          "@id": "stix:created"
       },
       "created_by_ref": {
+         "@type": "@id",
          "@id": "stix:created_by_ref"
       },
       "created_time": {
@@ -234,6 +232,7 @@
          "@id": "stix:created_time"
       },
       "creator_user_ref": {
+         "@type": "@id",
          "@id": "stix:creator_user_ref"
       },
       "credential": {
@@ -253,6 +252,17 @@
       "cwd": {
          "@id": "stix:cwd"
       },
+      "data": {
+         "@id": "stix:data"
+      },
+      "data_type": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
+         "@id": "stix:data_type"
+      },
       "decryption_key": {
          "@id": "stix:decryption_key"
       },
@@ -261,6 +271,7 @@
          "@id": "stix:defanged"
       },
       "definition": {
+         "@type": "@id",
          "@id": "stix:definition"
       },
       "definition_type": {
@@ -280,9 +291,11 @@
          "@id": "stix:display_name"
       },
       "dll_characteristics_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:dll_characteristics_hex"
       },
       "document_info_dict": {
+         "@type": "@id",
          "@id": "stix:document_info_dict"
       },
       "dst_byte_count": {
@@ -290,6 +303,7 @@
          "@id": "stix:dst_byte_count"
       },
       "dst_flags_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:dst_flags_hex"
       },
       "dst_packets": {
@@ -297,6 +311,7 @@
          "@id": "stix:dst_packets"
       },
       "dst_payload_ref": {
+         "@type": "@id",
          "@id": "stix:dst_payload_ref"
       },
       "dst_port": {
@@ -304,19 +319,27 @@
          "@id": "stix:dst_port"
       },
       "dst_ref": {
+         "@type": "@id",
          "@id": "stix:dst_ref"
       },
-      "email_date": {
+      "date": {
          "@type": "xsd:dateTime",
-         "@id": "stix:email_date"
+         "@id": "stix:date"
       },
       "encapsulated_by_ref": {
+         "@type": "@id",
          "@id": "stix:encapsulated_by_ref"
       },
       "encapsulates_refs": {
+         "@type": "@id",
          "@id": "stix:encapsulates_refs"
       },
       "encryption_algorithm": {
+         "@context": {
+            "text": "skos:notation",
+            "description": "skos:prefLabel",
+            "meaning": "@id"
+         },
          "@id": "stix:encryption_algorithm"
       },
       "end": {
@@ -328,9 +351,11 @@
          "@id": "stix:entropy"
       },
       "environment_variables": {
+         "@type": "@id",
          "@id": "stix:environment_variables"
       },
       "exif_tags": {
+         "@type": "@id",
          "@id": "stix:exif_tags"
       },
       "explanation": {
@@ -359,6 +384,7 @@
          "@id": "stix:extension_types"
       },
       "extensions": {
+         "@type": "@id",
          "@id": "stix:extensions"
       },
       "external_id": {
@@ -367,6 +393,9 @@
       "external_references": {
          "@type": "@id",
          "@id": "stix:external_references"
+      },
+      "field": {
+         "@id": "field"
       },
       "file_alignment": {
          "@type": "xsd:integer",
@@ -385,10 +414,11 @@
          "@id": "stix:first_seen"
       },
       "from_ref": {
+         "@type": "@id",
          "@id": "stix:from_ref"
       },
       "gid": {
-         "@type": "xsd:integer",
+         "@type": "xsd:float",
          "@id": "stix:gid"
       },
       "goals": {
@@ -412,16 +442,16 @@
          "@id": "stix:home_dir"
       },
       "host_vm_ref": {
+         "@type": "@id",
          "@id": "stix:host_vm_ref"
       },
       "icmp_code_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:icmp_code_hex"
       },
       "icmp_type_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:icmp_type_hex"
-      },
-      "id": {
-         "@id": "stix:id"
       },
       "identity_class": {
          "@id": "stix:identity_class"
@@ -435,6 +465,7 @@
          "@id": "stix:image_height"
       },
       "image_ref": {
+         "@type": "@id",
          "@id": "stix:image_ref"
       },
       "image_width": {
@@ -457,6 +488,7 @@
          "@id": "stix:inhibit_any_policy"
       },
       "installed_software_refs": {
+         "@type": "@id",
          "@id": "stix:installed_software_refs"
       },
       "integrity_level": {
@@ -468,6 +500,7 @@
          "@id": "stix:integrity_level"
       },
       "ipfix": {
+         "@type": "@id",
          "@id": "stix:ipfix"
       },
       "is_active": {
@@ -555,25 +588,23 @@
          "@id": "stix:latitude"
       },
       "loader_flags_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:loader_flags_hex"
-      },
-      "log_source_channel": {
-         "@id": "log_source_channel"
-      },
-      "log_source_name": {
-         "@id": "log_source_name"
       },
       "longitude": {
          "@type": "xsd:float",
          "@id": "stix:longitude"
       },
       "machine_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:machine_hex"
       },
       "magic_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:magic_hex"
       },
       "magic_number_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:magic_number_hex"
       },
       "major_image_version": {
@@ -596,9 +627,11 @@
          "@id": "stix:malware_types"
       },
       "marking_ref": {
+         "@type": "@id",
          "@id": "stix:marking_ref"
       },
       "message_body_data_ref": {
+         "@type": "@id",
          "@id": "stix:message_body_data_ref"
       },
       "message_body_length": {
@@ -642,9 +675,6 @@
          "@type": "xsd:dateTime",
          "@id": "stix:mtime"
       },
-      "mutable_field": {
-         "@id": "mutable_field"
-      },
       "name": {
          "@id": "stix:name"
       },
@@ -679,6 +709,7 @@
          "@id": "stix:number_of_symbols"
       },
       "object_marking_refs": {
+         "@type": "@id",
          "@id": "stix:object_marking_refs"
       },
       "object_modified": {
@@ -686,28 +717,33 @@
          "@id": "stix:object_modified"
       },
       "object_ref": {
+         "@type": "@id",
          "@id": "stix:object_ref"
       },
       "object_refs": {
+         "@type": "@id",
          "@id": "stix:object_refs"
       },
       "objective": {
          "@id": "stix:objective"
       },
       "objects": {
-         "@type": "@id",
          "@id": "stix:objects"
       },
       "observed_data_refs": {
+         "@type": "@id",
          "@id": "stix:observed_data_refs"
       },
       "opened_connection_refs": {
+         "@type": "@id",
          "@id": "stix:opened_connection_refs"
       },
       "operating_system_ref": {
+         "@type": "@id",
          "@id": "stix:operating_system_ref"
       },
       "operating_system_refs": {
+         "@type": "@id",
          "@id": "stix:operating_system_refs"
       },
       "opinion": {
@@ -722,13 +758,19 @@
          "@type": "@id",
          "@id": "stix:optional_header"
       },
+      "options": {
+         "@type": "@id",
+         "@id": "stix:options"
+      },
       "owner_sid": {
          "@id": "stix:owner_sid"
       },
       "parent_directory_ref": {
+         "@type": "@id",
          "@id": "stix:parent_directory_ref"
       },
       "parent_ref": {
+         "@type": "@id",
          "@id": "stix:parent_ref"
       },
       "path": {
@@ -747,6 +789,7 @@
          "@id": "stix:pattern_version"
       },
       "payload_bin": {
+         "@type": "xsd:base64Binary",
          "@id": "stix:payload_bin"
       },
       "pdfid0": {
@@ -754,17 +797,6 @@
       },
       "pdfid1": {
          "@id": "stix:pdfid1"
-      },
-      "pe_section_hashes": {
-         "@type": "@id",
-         "@id": "stix:pe_section_hashes"
-      },
-      "pe_section_name": {
-         "@id": "stix:pe_section_name"
-      },
-      "pe_section_size": {
-         "@type": "xsd:integer",
-         "@id": "stix:pe_section_size"
       },
       "pe_type": {
          "@id": "stix:pe_type"
@@ -780,6 +812,7 @@
          "@id": "stix:pid"
       },
       "pointer_to_symbol_table_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:pointer_to_symbol_table_hex"
       },
       "policy_constraints": {
@@ -820,6 +853,7 @@
          "@id": "stix:published"
       },
       "raw_email_ref": {
+         "@type": "@id",
          "@id": "stix:raw_email_ref"
       },
       "received_lines": {
@@ -827,20 +861,6 @@
       },
       "region": {
          "@id": "stix:region"
-      },
-      "registry_value_data": {
-         "@id": "stix:registry_value_data"
-      },
-      "registry_value_data_type": {
-         "@context": {
-            "text": "skos:notation",
-            "description": "skos:prefLabel",
-            "meaning": "@id"
-         },
-         "@id": "stix:registry_value_data_type"
-      },
-      "registry_value_name": {
-         "@id": "stix:registry_value_name"
       },
       "related_asset_sectors": {
          "@context": {
@@ -857,6 +877,7 @@
          "@id": "stix:report_types"
       },
       "request_header": {
+         "@type": "@id",
          "@id": "stix:request_header"
       },
       "request_method": {
@@ -869,6 +890,7 @@
          "@id": "stix:request_version"
       },
       "resolves_to_refs": {
+         "@type": "@id",
          "@id": "stix:resolves_to_refs"
       },
       "resource_level": {
@@ -891,10 +913,15 @@
          "@id": "stix:roles"
       },
       "sample_ref": {
+         "@type": "@id",
          "@id": "stix:sample_ref"
       },
       "sample_refs": {
+         "@type": "@id",
          "@id": "stix:sample_refs"
+      },
+      "schema": {
+         "@id": "stix:schema"
       },
       "secondary_motivations": {
          "@id": "stix:secondary_motivations"
@@ -914,12 +941,14 @@
          "@id": "stix:selectors"
       },
       "sender_ref": {
+         "@type": "@id",
          "@id": "stix:sender_ref"
       },
       "serial_number": {
          "@id": "stix:serial_number"
       },
       "service_dll_refs": {
+         "@type": "@id",
          "@id": "stix:service_dll_refs"
       },
       "service_name": {
@@ -948,6 +977,7 @@
          "@id": "stix:sid"
       },
       "sighting_of_ref": {
+         "@type": "@id",
          "@id": "stix:sighting_of_ref"
       },
       "signature_algorithm": {
@@ -1005,9 +1035,6 @@
          "@type": "xsd:integer",
          "@id": "stix:socket_handle"
       },
-      "socket_options": {
-         "@id": "stix:socket_options"
-      },
       "socket_type": {
          "@context": {
             "text": "skos:notation",
@@ -1023,6 +1050,7 @@
          "@id": "stix:source_name"
       },
       "source_ref": {
+         "@type": "@id",
          "@id": "stix:source_ref"
       },
       "spec_version": {
@@ -1038,6 +1066,7 @@
          "@id": "stix:src_byte_count"
       },
       "src_flags_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:src_flags_hex"
       },
       "src_packets": {
@@ -1045,6 +1074,7 @@
          "@id": "stix:src_packets"
       },
       "src_payload_ref": {
+         "@type": "@id",
          "@id": "stix:src_payload_ref"
       },
       "src_port": {
@@ -1052,6 +1082,7 @@
          "@id": "stix:src_port"
       },
       "src_ref": {
+         "@type": "@id",
          "@id": "stix:src_ref"
       },
       "start": {
@@ -1071,6 +1102,7 @@
          "@id": "stix:start_type"
       },
       "startup_info": {
+         "@type": "@id",
          "@id": "stix:startup_info"
       },
       "statement": {
@@ -1110,6 +1142,7 @@
          "@id": "stix:submitted"
       },
       "subsystem_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:subsystem_hex"
       },
       "summary": {
@@ -1120,9 +1153,11 @@
          "@id": "stix:swid"
       },
       "tactic_refs": {
+         "@type": "@id",
          "@id": "tactic_refs"
       },
       "target_ref": {
+         "@type": "@id",
          "@id": "stix:target_ref"
       },
       "threat_actor_types": {
@@ -1138,9 +1173,10 @@
             "description": "skos:prefLabel",
             "meaning": "@id"
          },
-         "@id": "tlp"
+         "@id": "stix:tlp"
       },
       "to_refs": {
+         "@type": "@id",
          "@id": "stix:to_refs"
       },
       "tool_types": {
@@ -1189,9 +1225,11 @@
          "@id": "stix:version"
       },
       "where_sighted_refs": {
+         "@type": "@id",
          "@id": "stix:where_sighted_refs"
       },
       "win32_version_value_hex": {
+         "@type": "xsd:hexBinary",
          "@id": "stix:win32_version_value_hex"
       },
       "window_title": {
@@ -1205,6 +1243,7 @@
          "@id": "x_mitre_aliases"
       },
       "x_mitre_analytic_refs": {
+         "@type": "@id",
          "@id": "x_mitre_analytic_refs"
       },
       "x_mitre_attack_spec_version": {
@@ -1226,9 +1265,11 @@
          "@id": "x_mitre_contributors"
       },
       "x_mitre_data_component_ref": {
+         "@type": "@id",
          "@id": "x_mitre_data_component_ref"
       },
       "x_mitre_data_source_ref": {
+         "@type": "@id",
          "@id": "x_mitre_data_source_ref"
       },
       "x_mitre_data_sources": {
@@ -1292,6 +1333,7 @@
          "@id": "x_mitre_log_sources"
       },
       "x_mitre_modified_by_ref": {
+         "@type": "@id",
          "@id": "x_mitre_modified_by_ref"
       },
       "x_mitre_mutable_elements": {
@@ -1359,20 +1401,11 @@
       "x_mitre_version": {
          "@id": "x_mitre_version"
       },
-      "AlternateDataStreamType": {
-         "@id": "stix:AlternateDataStreamType"
+      "AttackAnalytic": {
+         "@id": "AttackAnalytic"
       },
-      "Analytic": {
-         "@id": "Analytic"
-      },
-      "ArchiveExt": {
-         "@id": "stix:ArchiveExt"
-      },
-      "Artifact": {
-         "@id": "stix:Artifact"
-      },
-      "Asset": {
-         "@id": "Asset"
+      "AttackAsset": {
+         "@id": "AttackAsset"
       },
       "AttackBundle": {
          "@id": "AttackBundle"
@@ -1380,11 +1413,32 @@
       "AttackCampaign": {
          "@id": "AttackCampaign"
       },
+      "AttackCollection": {
+         "@id": "AttackCollection"
+      },
+      "AttackDataComponent": {
+         "@id": "AttackDataComponent"
+      },
+      "AttackDataSource": {
+         "@id": "AttackDataSource"
+      },
+      "AttackDetectionStrategy": {
+         "@id": "AttackDetectionStrategy"
+      },
+      "AttackGroup": {
+         "@id": "AttackGroup"
+      },
       "AttackIdentity": {
          "@id": "AttackIdentity"
       },
       "AttackKillChainPhase": {
          "@id": "AttackKillChainPhase"
+      },
+      "AttackLogSource": {
+         "@id": "AttackLogSource"
+      },
+      "AttackLogSourceReference": {
+         "@id": "AttackLogSourceReference"
       },
       "AttackMalware": {
          "@id": "AttackMalware"
@@ -1392,293 +1446,302 @@
       "AttackMarkingDefinition": {
          "@id": "AttackMarkingDefinition"
       },
-      "AttackObject": {
-         "@id": "AttackObject"
+      "AttackMatrix": {
+         "@id": "AttackMatrix"
       },
-      "AttackPattern": {
-         "@id": "stix:AttackPattern"
+      "AttackMitigation": {
+         "@id": "AttackMitigation"
+      },
+      "AttackMutableElement": {
+         "@id": "AttackMutableElement"
+      },
+      "AttackObjectVersionReference": {
+         "@id": "AttackObjectVersionReference"
+      },
+      "AttackRelatedAsset": {
+         "@id": "AttackRelatedAsset"
       },
       "AttackRelationship": {
          "@id": "AttackRelationship"
       },
-      "AttackSoftware": {
-         "@id": "AttackSoftware"
+      "AttackTactic": {
+         "@id": "AttackTactic"
+      },
+      "AttackTechnique": {
+         "@id": "AttackTechnique"
       },
       "AttackTool": {
          "@id": "AttackTool"
       },
-      "AutonomousSystem": {
-         "@id": "stix:AutonomousSystem"
+      "StixAlternateDataStream": {
+         "@id": "stix:StixAlternateDataStream"
       },
-      "Bundle": {
-         "@id": "stix:Bundle"
+      "StixArchiveExtension": {
+         "@id": "stix:StixArchiveExtension"
       },
-      "Campaign": {
-         "@id": "stix:Campaign"
+      "StixArtifact": {
+         "@id": "stix:StixArtifact"
       },
-      "Collection": {
-         "@id": "Collection"
+      "StixAttackPattern": {
+         "@id": "stix:StixAttackPattern"
       },
-      "CommonSchemaComponent": {
-         "@id": "stix:CommonSchemaComponent"
+      "StixAutonomousSystem": {
+         "@id": "stix:StixAutonomousSystem"
       },
-      "Core": {
-         "@id": "stix:Core"
+      "StixBundle": {
+         "@id": "stix:StixBundle",
+         "@context": {
+            "objects": {
+               "@id": "stix:objects",
+               "@type": "@id"
+            }
+         }
       },
-      "CourseOfAction": {
-         "@id": "stix:CourseOfAction"
+      "StixCampaign": {
+         "@id": "stix:StixCampaign"
       },
-      "CyberObservableCore": {
-         "@id": "stix:CyberObservableCore"
+      "StixCommonObject": {
+         "@id": "stix:StixCommonObject"
       },
-      "CyberObservableObject": {
-         "@id": "stix:CyberObservableObject"
+      "StixCourseOfAction": {
+         "@id": "stix:StixCourseOfAction"
       },
-      "DataComponent": {
-         "@id": "DataComponent"
+      "StixCyberObservableObject": {
+         "@id": "stix:StixCyberObservableObject"
       },
-      "DataSource": {
-         "@id": "DataSource"
+      "StixDictionary": {
+         "@id": "stix:StixDictionary"
       },
-      "DetectionStrategy": {
-         "@id": "DetectionStrategy"
+      "StixDirectory": {
+         "@id": "stix:StixDirectory"
       },
-      "Dictionary": {
-         "@id": "stix:Dictionary"
-      },
-      "Directory": {
-         "@id": "stix:Directory"
-      },
-      "DomainName": {
-         "@id": "stix:DomainName"
-      },
-      "EmailAddr": {
-         "@id": "stix:EmailAddr"
-      },
-      "EmailMessage": {
-         "@id": "stix:EmailMessage"
-      },
-      "Extension": {
-         "@id": "stix:Extension"
-      },
-      "ExtensionDefinition": {
-         "@id": "stix:ExtensionDefinition"
-      },
-      "ExternalReference": {
-         "@id": "stix:ExternalReference"
-      },
-      "File": {
-         "@id": "stix:File"
-      },
-      "GranularMarking": {
-         "@id": "stix:GranularMarking"
-      },
-      "Group": {
-         "@id": "Group"
-      },
-      "Grouping": {
-         "@id": "stix:Grouping"
-      },
-      "HashesType": {
-         "@id": "stix:HashesType"
-      },
-      "Hex": {
-         "@id": "stix:Hex"
-      },
-      "HttpRequestExt": {
-         "@id": "stix:HttpRequestExt"
-      },
-      "IcmpExt": {
-         "@id": "stix:IcmpExt"
-      },
-      "Identifier": {
-         "@id": "stix:Identifier"
-      },
-      "Identity": {
-         "@id": "stix:Identity"
-      },
-      "Incident": {
-         "@id": "stix:Incident"
-      },
-      "Indicator": {
-         "@id": "stix:Indicator"
-      },
-      "Infrastructure": {
-         "@id": "stix:Infrastructure"
-      },
-      "IntrusionSet": {
-         "@id": "stix:IntrusionSet"
-      },
-      "Ipv4Addr": {
-         "@id": "stix:Ipv4Addr"
-      },
-      "Ipv6Addr": {
-         "@id": "stix:Ipv6Addr"
-      },
-      "KillChainPhase": {
-         "@id": "stix:KillChainPhase"
-      },
-      "LanguageContent": {
-         "@id": "stix:LanguageContent"
-      },
-      "Location": {
-         "@id": "stix:Location"
-      },
-      "LogSource": {
-         "@id": "LogSource"
-      },
-      "LogSourceReference": {
-         "@id": "LogSourceReference"
-      },
-      "MacAddr": {
-         "@id": "stix:MacAddr"
-      },
-      "Malware": {
-         "@id": "stix:Malware"
-      },
-      "MalwareAnalysis": {
-         "@id": "stix:MalwareAnalysis"
-      },
-      "MarkingDefinition": {
-         "@id": "stix:MarkingDefinition"
-      },
-      "Matrix": {
-         "@id": "Matrix"
-      },
-      "MimePartType": {
-         "@id": "stix:MimePartType"
-      },
-      "Mitigation": {
-         "@id": "Mitigation"
-      },
-      "MutableElement": {
-         "@id": "MutableElement"
-      },
-      "Mutex": {
-         "@id": "stix:Mutex"
-      },
-      "NetworkTraffic": {
-         "@id": "stix:NetworkTraffic"
-      },
-      "Note": {
-         "@id": "stix:Note"
-      },
-      "NtfsExt": {
-         "@id": "stix:NtfsExt"
-      },
-      "ObjectVersionReference": {
-         "@id": "ObjectVersionReference"
-      },
-      "ObservedData": {
-         "@id": "stix:ObservedData"
-      },
-      "Opinion": {
-         "@id": "stix:Opinion"
-      },
-      "PdfExt": {
-         "@id": "stix:PdfExt"
-      },
-      "PEBinaryExt": {
-         "@id": "stix:PEBinaryExt"
-      },
-      "Process": {
-         "@id": "stix:Process"
-      },
-      "Properties": {
-         "@id": "stix:Properties"
-      },
-      "RasterImageExt": {
-         "@id": "stix:RasterImageExt"
-      },
-      "RelatedAsset": {
-         "@id": "RelatedAsset"
-      },
-      "Relationship": {
-         "@id": "stix:Relationship"
-      },
-      "Report": {
-         "@id": "stix:Report"
-      },
-      "Sighting": {
-         "@id": "stix:Sighting"
-      },
-      "SocketExt": {
-         "@id": "stix:SocketExt"
-      },
-      "Software": {
-         "@id": "stix:Software"
-      },
-      "StatementMarkingObject": {
-         "@id": "StatementMarkingObject"
+      "StixDomainName": {
+         "@id": "stix:StixDomainName"
       },
       "StixDomainObject": {
          "@id": "stix:StixDomainObject"
       },
-      "StixEntity": {
-         "@id": "stix:StixEntity"
+      "StixEmailAddress": {
+         "@id": "stix:StixEmailAddress"
+      },
+      "StixEmailMessage": {
+         "@id": "stix:StixEmailMessage"
+      },
+      "StixExifTags": {
+         "@id": "stix:StixExifTags"
+      },
+      "StixExtension": {
+         "@id": "stix:StixExtension"
+      },
+      "StixExtensionDefinition": {
+         "@id": "stix:StixExtensionDefinition"
+      },
+      "StixExtensions": {
+         "@id": "stix:StixExtensions"
+      },
+      "StixExternalReference": {
+         "@id": "stix:StixExternalReference"
+      },
+      "StixFile": {
+         "@id": "stix:StixFile"
+      },
+      "StixFileExtensions": {
+         "@id": "stix:StixFileExtensions"
+      },
+      "StixGranularMarking": {
+         "@id": "stix:StixGranularMarking"
+      },
+      "StixGrouping": {
+         "@id": "stix:StixGrouping"
+      },
+      "StixHashes": {
+         "@id": "stix:StixHashes"
+      },
+      "StixHttpRequestExtension": {
+         "@id": "stix:StixHttpRequestExtension"
+      },
+      "StixIcmpExtension": {
+         "@id": "stix:StixIcmpExtension"
+      },
+      "StixIdentity": {
+         "@id": "stix:StixIdentity"
+      },
+      "StixIncident": {
+         "@id": "stix:StixIncident"
+      },
+      "StixIndicator": {
+         "@id": "stix:StixIndicator"
+      },
+      "StixInfrastructure": {
+         "@id": "stix:StixInfrastructure"
+      },
+      "StixIntrusionSet": {
+         "@id": "stix:StixIntrusionSet"
+      },
+      "StixIpv4Address": {
+         "@id": "stix:StixIpv4Address"
+      },
+      "StixIpv6Address": {
+         "@id": "stix:StixIpv6Address"
+      },
+      "StixKillChainPhase": {
+         "@id": "stix:StixKillChainPhase"
+      },
+      "StixLanguageContent": {
+         "@id": "stix:StixLanguageContent"
+      },
+      "StixLanguageContents": {
+         "@id": "stix:StixLanguageContents"
+      },
+      "StixLocation": {
+         "@id": "stix:StixLocation"
+      },
+      "StixMacAddress": {
+         "@id": "stix:StixMacAddress"
+      },
+      "StixMalware": {
+         "@id": "stix:StixMalware"
+      },
+      "StixMalwareAnalysis": {
+         "@id": "stix:StixMalwareAnalysis"
+      },
+      "StixMarkingDefinition": {
+         "@id": "stix:StixMarkingDefinition"
+      },
+      "StixMimePart": {
+         "@id": "stix:StixMimePart"
+      },
+      "StixMutex": {
+         "@id": "stix:StixMutex"
+      },
+      "StixNetworkTraffic": {
+         "@id": "stix:StixNetworkTraffic"
+      },
+      "StixNetworkTrafficExtensions": {
+         "@id": "stix:StixNetworkTrafficExtensions"
+      },
+      "StixNote": {
+         "@id": "stix:StixNote"
+      },
+      "StixNtfsExtension": {
+         "@id": "stix:StixNtfsExtension"
+      },
+      "StixObject": {
+         "@id": "stix:StixObject"
+      },
+      "StixObservedData": {
+         "@id": "stix:StixObservedData",
+         "@context": {
+            "objects": {
+               "@id": "stix:objects",
+               "@type": "@id"
+            }
+         }
+      },
+      "StixObservedObjects": {
+         "@id": "stix:StixObservedObjects"
+      },
+      "StixOpinion": {
+         "@id": "stix:StixOpinion"
+      },
+      "StixPdfDocumentInfo": {
+         "@id": "stix:StixPdfDocumentInfo"
+      },
+      "StixPdfExtension": {
+         "@id": "stix:StixPdfExtension"
+      },
+      "StixProcess": {
+         "@id": "stix:StixProcess"
+      },
+      "StixProcessExtensions": {
+         "@id": "stix:StixProcessExtensions"
+      },
+      "StixRasterImageExtension": {
+         "@id": "stix:StixRasterImageExtension"
+      },
+      "StixRelationship": {
+         "@id": "stix:StixRelationship"
       },
       "StixRelationshipObject": {
          "@id": "stix:StixRelationshipObject"
       },
-      "Tactic": {
-         "@id": "Tactic"
+      "StixReport": {
+         "@id": "stix:StixReport"
       },
-      "TcpExt": {
-         "@id": "stix:TcpExt"
+      "StixSighting": {
+         "@id": "stix:StixSighting"
       },
-      "Technique": {
-         "@id": "Technique"
+      "StixSocketExtension": {
+         "@id": "stix:StixSocketExtension"
       },
-      "ThreatActor": {
-         "@id": "stix:ThreatActor"
+      "StixSocketOptions": {
+         "@id": "stix:StixSocketOptions"
       },
-      "Timestamp": {
-         "@id": "stix:Timestamp"
+      "StixSoftware": {
+         "@id": "stix:StixSoftware"
       },
-      "TlpMarkingObject": {
-         "@id": "TlpMarkingObject"
+      "StixStatementMarking": {
+         "@id": "stix:StixStatementMarking"
       },
-      "Tool": {
-         "@id": "stix:Tool"
+      "StixTcpExtension": {
+         "@id": "stix:StixTcpExtension"
       },
-      "UnixAccountExt": {
-         "@id": "stix:UnixAccountExt"
+      "StixThreatActor": {
+         "@id": "stix:StixThreatActor"
       },
-      "Url": {
-         "@id": "stix:Url"
+      "StixTlpMarking": {
+         "@id": "stix:StixTlpMarking"
       },
-      "UrlRegex": {
-         "@id": "stix:UrlRegex"
+      "StixTool": {
+         "@id": "stix:StixTool"
       },
-      "UserAccount": {
-         "@id": "stix:UserAccount"
+      "StixUnixAccountExtension": {
+         "@id": "stix:StixUnixAccountExtension"
       },
-      "Vulnerability": {
-         "@id": "stix:Vulnerability"
+      "StixUrl": {
+         "@id": "stix:StixUrl",
+         "@context": {
+            "value": {
+               "@id": "stix:value",
+               "@type": "xsd:anyURI"
+            }
+         }
       },
-      "WindowsPEOptionalHeaderType": {
-         "@id": "stix:WindowsPEOptionalHeaderType"
+      "StixUserAccount": {
+         "@id": "stix:StixUserAccount"
       },
-      "WindowsPESection": {
-         "@id": "stix:WindowsPESection"
+      "StixUserAccountExtensions": {
+         "@id": "stix:StixUserAccountExtensions"
       },
-      "WindowsProcessExt": {
-         "@id": "stix:WindowsProcessExt"
+      "StixVulnerability": {
+         "@id": "stix:StixVulnerability"
       },
-      "WindowsRegistryKey": {
-         "@id": "stix:WindowsRegistryKey"
+      "StixWindowsPeBinaryExtension": {
+         "@id": "stix:StixWindowsPeBinaryExtension"
       },
-      "WindowsRegistryValue": {
-         "@id": "stix:WindowsRegistryValue"
+      "StixWindowsPeOptionalHeader": {
+         "@id": "stix:StixWindowsPeOptionalHeader"
       },
-      "WindowsServiceExt": {
-         "@id": "stix:WindowsServiceExt"
+      "StixWindowsPeSection": {
+         "@id": "stix:StixWindowsPeSection"
       },
-      "X509Certificate": {
-         "@id": "stix:X509Certificate"
+      "StixWindowsProcessExtension": {
+         "@id": "stix:StixWindowsProcessExtension"
       },
-      "X509V3ExtensionsType": {
-         "@id": "stix:X509V3ExtensionsType"
+      "StixWindowsRegistryKey": {
+         "@id": "stix:StixWindowsRegistryKey"
+      },
+      "StixWindowsRegistryValue": {
+         "@id": "stix:StixWindowsRegistryValue"
+      },
+      "StixWindowsServiceExtension": {
+         "@id": "stix:StixWindowsServiceExtension"
+      },
+      "StixX509Certificate": {
+         "@id": "stix:StixX509Certificate"
+      },
+      "StixX509V3Extensions": {
+         "@id": "stix:StixX509V3Extensions"
       }
    }
 }

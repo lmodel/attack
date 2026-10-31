@@ -1,15 +1,21 @@
-package None;
+package example;
 
-/* metamodel_version: 1.7.0 */
+/* metamodel_version: 1.12.0 */
+/* version: 20.0 */
+import java.net.URI;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 import lombok.*;
 
 /**
-  An ATT&CK-constrained kill chain phase restricting kill_chain_name to the three ATT&CK domain identifiers: 'mitre-attack', 'mitre-mobile-attack', and 'mitre-ics-attack'. The phase_name must match the x_mitre_shortname of the associated x-mitre-tactic object in the same domain. Used in the kill_chain_phases property of Technique, Malware, and Tool objects to map them to their applicable tactic(s).
+  A phase of an ATT&CK domain's kill chain: the kill chain of the domain and the short name of one of its tactics.
 **/
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class AttackKillChainPhase extends KillChainPhase {
+public class AttackKillChainPhase extends StixKillChainPhase {
+
 
 
 }

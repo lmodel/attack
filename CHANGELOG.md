@@ -8,15 +8,21 @@ The `v0.0.0` tag is a baseline, not a release: it marks where versioning starts 
 
 ### Added
 
+- **A LinkML schema of MITRE ATT&CK v20.0, as MITRE publishes it in STIX 2.1.** It models the tactics, techniques, groups, campaigns, software, mitigations, assets, data sources, data components, detection strategies, analytics, matrices, collections, relationships, identity and marking of the Enterprise, Mobile and ICS domains, following the ATT&CK Data Model v4.11.7 at ATT&CK specification 3.3.0. Every object of the three v20.0 bundles validates against it.
+- **lmodel/stix's schema modules, vendored under `src/attack/schema/stix/`** and held to their git object hashes. Each ATT&CK class extends the STIX class it builds on.
 - **A weekly upstream watch** of MITRE's attack-stix-data and attack-data-model repositories. It reports a newer ATT&CK release, a newer ATT&CK Data Model release, a pinned bundle that a release changes or drops, a changed licence, a moved tag and a check that could not finish.
 - **`tests/data/attack-stix-data/manifest.json`, which pins the ATT&CK v20.0 bundles** by address, size, SHA-256 and git object hash, and `just fetch-attack-data`, which downloads them into `tmp/` and checks them.
 - **`.github/release/package-lock.json`, which pins semantic-release and every package it pulls in.** The release job installs from it with `npm ci`, and Dependabot keeps it current.
 
 ### Changed
 
+- **Classes and enums carry the `Attack` prefix** (`AttackTechnique`, `AttackTactic`, `AttackGroup` and the rest), so none shares a name with LOKF or another lmodel schema. ATT&CK's own keys stay as MITRE's data writes them (`x_mitre_*`, `tactic_refs`), so a bundle validates unchanged.
+- **Relationship types are a closed enum of the seven ATT&CK uses**, and rules say which types of object each may join.
 - **The Python project's name is `attack-linkml`.** PyPI publishing stays off.
 
 ### Removed
 
+- **The old copy of the STIX schema and the subsets that marked data rather than schema elements** (`enterprise_only`, `mobile_only`, `ics_only` and the like). Annotations now say which properties belong to which domain.
+- **The `schema`, `PATO`, `spdx`, `oscal`, `capex` and `unified_cyber_ontology` prefixes**, which no sure mapping used.
 - **The ATT&CK 18.1 bundles, 57 MB, and the test that rewrote their records to fit the schema.** The schema follows the data MITRE publishes.
 - **The PyPI publishing workflow and the mkdocs site's pull-request preview.**

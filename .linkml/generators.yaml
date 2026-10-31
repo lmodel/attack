@@ -37,6 +37,13 @@ generator_args:
     mergeimports: true
   jsonschema:
     mergeimports: true
+    # A bundle's objects range over StixObject, an abstract class. With its
+    # concrete descendants the schema offers every ATT&CK and STIX class an
+    # object may be; without them it offers StixObject alone, which no object
+    # passes. AttackBundle is the document root, not the StixBundle that the
+    # imported stix module also marks as one.
+    top_class: AttackBundle
+    include_range_class_descendants: true
   jsonldcontext:
     mergeimports: true
   # gen-pydantic is not yet supported by gen-project.

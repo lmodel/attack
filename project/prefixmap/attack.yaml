@@ -1,248 +1,263 @@
 {
-   "PATO": "http://purl.obolibrary.org/obo/PATO_",
    "attack": "https://w3id.org/lmodel/attack/",
-   "capex": "https://lmodel.github.io/capex/",
    "linkml": "https://w3id.org/linkml/",
-   "oscal": "https://lmodel.github.io/oscal/",
-   "schema": "http://schema.org/",
-   "spdx": "https://lmodel.github.io/spdx/",
    "stix": "https://w3id.org/lmodel/stix/",
-   "unified_cyber_ontology": "https://w3id.org/lmodel/uco-master/",
-   "AlternateDataStreamType": {
-      "@id": "stix:AlternateDataStreamType"
+   "uco-core": "https://ontology.unifiedcyberontology.org/uco/core/",
+   "uco-identity": "https://ontology.unifiedcyberontology.org/uco/identity/",
+   "uco-location": "https://ontology.unifiedcyberontology.org/uco/location/",
+   "uco-marking": "https://ontology.unifiedcyberontology.org/uco/marking/",
+   "uco-observable": "https://ontology.unifiedcyberontology.org/uco/observable/",
+   "uco-tool": "https://ontology.unifiedcyberontology.org/uco/tool/",
+   "StixAlternateDataStream": {
+      "@id": "stix:StixAlternateDataStream"
    },
-   "ArchiveExt": {
-      "@id": "stix:ArchiveExt"
+   "StixArchiveExtension": {
+      "@id": "stix:StixArchiveExtension"
    },
-   "Artifact": {
-      "@id": "stix:Artifact"
+   "StixArtifact": {
+      "@id": "stix:StixArtifact"
    },
-   "AttackPattern": {
-      "@id": "stix:AttackPattern"
+   "StixAttackPattern": {
+      "@id": "stix:StixAttackPattern"
    },
-   "AutonomousSystem": {
-      "@id": "stix:AutonomousSystem"
+   "StixAutonomousSystem": {
+      "@id": "stix:StixAutonomousSystem"
    },
-   "Bundle": {
-      "@id": "stix:Bundle"
+   "StixBundle": {
+      "@id": "stix:StixBundle"
    },
-   "Campaign": {
-      "@id": "stix:Campaign"
+   "StixCampaign": {
+      "@id": "stix:StixCampaign"
    },
-   "CommonSchemaComponent": {
-      "@id": "stix:CommonSchemaComponent"
+   "StixCommonObject": {
+      "@id": "stix:StixCommonObject"
    },
-   "Core": {
-      "@id": "stix:Core"
+   "StixCourseOfAction": {
+      "@id": "stix:StixCourseOfAction"
    },
-   "CourseOfAction": {
-      "@id": "stix:CourseOfAction"
+   "StixCyberObservableObject": {
+      "@id": "stix:StixCyberObservableObject"
    },
-   "CyberObservableCore": {
-      "@id": "stix:CyberObservableCore"
+   "StixDictionary": {
+      "@id": "stix:StixDictionary"
    },
-   "CyberObservableObject": {
-      "@id": "stix:CyberObservableObject"
+   "StixDirectory": {
+      "@id": "stix:StixDirectory"
    },
-   "Dictionary": {
-      "@id": "stix:Dictionary"
-   },
-   "Directory": {
-      "@id": "stix:Directory"
-   },
-   "DomainName": {
-      "@id": "stix:DomainName"
-   },
-   "EmailAddr": {
-      "@id": "stix:EmailAddr"
-   },
-   "EmailMessage": {
-      "@id": "stix:EmailMessage"
-   },
-   "Extension": {
-      "@id": "stix:Extension"
-   },
-   "ExtensionDefinition": {
-      "@id": "stix:ExtensionDefinition"
-   },
-   "ExternalReference": {
-      "@id": "stix:ExternalReference"
-   },
-   "File": {
-      "@id": "stix:File"
-   },
-   "GranularMarking": {
-      "@id": "stix:GranularMarking"
-   },
-   "Grouping": {
-      "@id": "stix:Grouping"
-   },
-   "HashesType": {
-      "@id": "stix:HashesType"
-   },
-   "Hex": {
-      "@id": "stix:Hex"
-   },
-   "HttpRequestExt": {
-      "@id": "stix:HttpRequestExt"
-   },
-   "IcmpExt": {
-      "@id": "stix:IcmpExt"
-   },
-   "Identifier": {
-      "@id": "stix:Identifier"
-   },
-   "Identity": {
-      "@id": "stix:Identity"
-   },
-   "Incident": {
-      "@id": "stix:Incident"
-   },
-   "Indicator": {
-      "@id": "stix:Indicator"
-   },
-   "Infrastructure": {
-      "@id": "stix:Infrastructure"
-   },
-   "IntrusionSet": {
-      "@id": "stix:IntrusionSet"
-   },
-   "Ipv4Addr": {
-      "@id": "stix:Ipv4Addr"
-   },
-   "Ipv6Addr": {
-      "@id": "stix:Ipv6Addr"
-   },
-   "KillChainPhase": {
-      "@id": "stix:KillChainPhase"
-   },
-   "LanguageContent": {
-      "@id": "stix:LanguageContent"
-   },
-   "Location": {
-      "@id": "stix:Location"
-   },
-   "MacAddr": {
-      "@id": "stix:MacAddr"
-   },
-   "Malware": {
-      "@id": "stix:Malware"
-   },
-   "MalwareAnalysis": {
-      "@id": "stix:MalwareAnalysis"
-   },
-   "MarkingDefinition": {
-      "@id": "stix:MarkingDefinition"
-   },
-   "MimePartType": {
-      "@id": "stix:MimePartType"
-   },
-   "Mutex": {
-      "@id": "stix:Mutex"
-   },
-   "NetworkTraffic": {
-      "@id": "stix:NetworkTraffic"
-   },
-   "Note": {
-      "@id": "stix:Note"
-   },
-   "NtfsExt": {
-      "@id": "stix:NtfsExt"
-   },
-   "ObservedData": {
-      "@id": "stix:ObservedData"
-   },
-   "Opinion": {
-      "@id": "stix:Opinion"
-   },
-   "PdfExt": {
-      "@id": "stix:PdfExt"
-   },
-   "PEBinaryExt": {
-      "@id": "stix:PEBinaryExt"
-   },
-   "Process": {
-      "@id": "stix:Process"
-   },
-   "Properties": {
-      "@id": "stix:Properties"
-   },
-   "RasterImageExt": {
-      "@id": "stix:RasterImageExt"
-   },
-   "Relationship": {
-      "@id": "stix:Relationship"
-   },
-   "Report": {
-      "@id": "stix:Report"
-   },
-   "Sighting": {
-      "@id": "stix:Sighting"
-   },
-   "SocketExt": {
-      "@id": "stix:SocketExt"
-   },
-   "Software": {
-      "@id": "stix:Software"
+   "StixDomainName": {
+      "@id": "stix:StixDomainName"
    },
    "StixDomainObject": {
       "@id": "stix:StixDomainObject"
    },
-   "StixEntity": {
-      "@id": "stix:StixEntity"
+   "StixEmailAddress": {
+      "@id": "stix:StixEmailAddress"
+   },
+   "StixEmailMessage": {
+      "@id": "stix:StixEmailMessage"
+   },
+   "StixExifTags": {
+      "@id": "stix:StixExifTags"
+   },
+   "StixExtension": {
+      "@id": "stix:StixExtension"
+   },
+   "StixExtensionDefinition": {
+      "@id": "stix:StixExtensionDefinition"
+   },
+   "StixExtensions": {
+      "@id": "stix:StixExtensions"
+   },
+   "StixExternalReference": {
+      "@id": "stix:StixExternalReference"
+   },
+   "StixFile": {
+      "@id": "stix:StixFile"
+   },
+   "StixFileExtensions": {
+      "@id": "stix:StixFileExtensions"
+   },
+   "StixGranularMarking": {
+      "@id": "stix:StixGranularMarking"
+   },
+   "StixGrouping": {
+      "@id": "stix:StixGrouping"
+   },
+   "StixHashes": {
+      "@id": "stix:StixHashes"
+   },
+   "StixHttpRequestExtension": {
+      "@id": "stix:StixHttpRequestExtension"
+   },
+   "StixIcmpExtension": {
+      "@id": "stix:StixIcmpExtension"
+   },
+   "StixIdentity": {
+      "@id": "stix:StixIdentity"
+   },
+   "StixIncident": {
+      "@id": "stix:StixIncident"
+   },
+   "StixIndicator": {
+      "@id": "stix:StixIndicator"
+   },
+   "StixInfrastructure": {
+      "@id": "stix:StixInfrastructure"
+   },
+   "StixIntrusionSet": {
+      "@id": "stix:StixIntrusionSet"
+   },
+   "StixIpv4Address": {
+      "@id": "stix:StixIpv4Address"
+   },
+   "StixIpv6Address": {
+      "@id": "stix:StixIpv6Address"
+   },
+   "StixKillChainPhase": {
+      "@id": "stix:StixKillChainPhase"
+   },
+   "StixLanguageContent": {
+      "@id": "stix:StixLanguageContent"
+   },
+   "StixLanguageContents": {
+      "@id": "stix:StixLanguageContents"
+   },
+   "StixLocation": {
+      "@id": "stix:StixLocation"
+   },
+   "StixMacAddress": {
+      "@id": "stix:StixMacAddress"
+   },
+   "StixMalware": {
+      "@id": "stix:StixMalware"
+   },
+   "StixMalwareAnalysis": {
+      "@id": "stix:StixMalwareAnalysis"
+   },
+   "StixMarkingDefinition": {
+      "@id": "stix:StixMarkingDefinition"
+   },
+   "StixMimePart": {
+      "@id": "stix:StixMimePart"
+   },
+   "StixMutex": {
+      "@id": "stix:StixMutex"
+   },
+   "StixNetworkTraffic": {
+      "@id": "stix:StixNetworkTraffic"
+   },
+   "StixNetworkTrafficExtensions": {
+      "@id": "stix:StixNetworkTrafficExtensions"
+   },
+   "StixNote": {
+      "@id": "stix:StixNote"
+   },
+   "StixNtfsExtension": {
+      "@id": "stix:StixNtfsExtension"
+   },
+   "StixObject": {
+      "@id": "stix:StixObject"
+   },
+   "StixObservedData": {
+      "@id": "stix:StixObservedData"
+   },
+   "StixObservedObjects": {
+      "@id": "stix:StixObservedObjects"
+   },
+   "StixOpinion": {
+      "@id": "stix:StixOpinion"
+   },
+   "StixPdfDocumentInfo": {
+      "@id": "stix:StixPdfDocumentInfo"
+   },
+   "StixPdfExtension": {
+      "@id": "stix:StixPdfExtension"
+   },
+   "StixProcess": {
+      "@id": "stix:StixProcess"
+   },
+   "StixProcessExtensions": {
+      "@id": "stix:StixProcessExtensions"
+   },
+   "StixRasterImageExtension": {
+      "@id": "stix:StixRasterImageExtension"
+   },
+   "StixRelationship": {
+      "@id": "stix:StixRelationship"
    },
    "StixRelationshipObject": {
       "@id": "stix:StixRelationshipObject"
    },
-   "TcpExt": {
-      "@id": "stix:TcpExt"
+   "StixReport": {
+      "@id": "stix:StixReport"
    },
-   "ThreatActor": {
-      "@id": "stix:ThreatActor"
+   "StixSighting": {
+      "@id": "stix:StixSighting"
    },
-   "Timestamp": {
-      "@id": "stix:Timestamp"
+   "StixSocketExtension": {
+      "@id": "stix:StixSocketExtension"
    },
-   "Tool": {
-      "@id": "stix:Tool"
+   "StixSocketOptions": {
+      "@id": "stix:StixSocketOptions"
    },
-   "UnixAccountExt": {
-      "@id": "stix:UnixAccountExt"
+   "StixSoftware": {
+      "@id": "stix:StixSoftware"
    },
-   "Url": {
-      "@id": "stix:Url"
+   "StixStatementMarking": {
+      "@id": "stix:StixStatementMarking"
    },
-   "UrlRegex": {
-      "@id": "stix:UrlRegex"
+   "StixTcpExtension": {
+      "@id": "stix:StixTcpExtension"
    },
-   "UserAccount": {
-      "@id": "stix:UserAccount"
+   "StixThreatActor": {
+      "@id": "stix:StixThreatActor"
    },
-   "Vulnerability": {
-      "@id": "stix:Vulnerability"
+   "StixTlpMarking": {
+      "@id": "stix:StixTlpMarking"
    },
-   "WindowsPEOptionalHeaderType": {
-      "@id": "stix:WindowsPEOptionalHeaderType"
+   "StixTool": {
+      "@id": "stix:StixTool"
    },
-   "WindowsPESection": {
-      "@id": "stix:WindowsPESection"
+   "StixUnixAccountExtension": {
+      "@id": "stix:StixUnixAccountExtension"
    },
-   "WindowsProcessExt": {
-      "@id": "stix:WindowsProcessExt"
+   "StixUrl": {
+      "@id": "stix:StixUrl"
    },
-   "WindowsRegistryKey": {
-      "@id": "stix:WindowsRegistryKey"
+   "StixUserAccount": {
+      "@id": "stix:StixUserAccount"
    },
-   "WindowsRegistryValue": {
-      "@id": "stix:WindowsRegistryValue"
+   "StixUserAccountExtensions": {
+      "@id": "stix:StixUserAccountExtensions"
    },
-   "WindowsServiceExt": {
-      "@id": "stix:WindowsServiceExt"
+   "StixVulnerability": {
+      "@id": "stix:StixVulnerability"
    },
-   "X509Certificate": {
-      "@id": "stix:X509Certificate"
+   "StixWindowsPeBinaryExtension": {
+      "@id": "stix:StixWindowsPeBinaryExtension"
    },
-   "X509V3ExtensionsType": {
-      "@id": "stix:X509V3ExtensionsType"
+   "StixWindowsPeOptionalHeader": {
+      "@id": "stix:StixWindowsPeOptionalHeader"
+   },
+   "StixWindowsPeSection": {
+      "@id": "stix:StixWindowsPeSection"
+   },
+   "StixWindowsProcessExtension": {
+      "@id": "stix:StixWindowsProcessExtension"
+   },
+   "StixWindowsRegistryKey": {
+      "@id": "stix:StixWindowsRegistryKey"
+   },
+   "StixWindowsRegistryValue": {
+      "@id": "stix:StixWindowsRegistryValue"
+   },
+   "StixWindowsServiceExtension": {
+      "@id": "stix:StixWindowsServiceExtension"
+   },
+   "StixX509Certificate": {
+      "@id": "stix:StixX509Certificate"
+   },
+   "StixX509V3Extensions": {
+      "@id": "stix:StixX509V3Extensions"
    }
 }
