@@ -36,10 +36,10 @@ The extract holds an object of each, and `just test-attack-data` holds each depa
 
 Across a bundle, the data also breaks three statements of the ADM's documentation. `tests/test_upstream.py` lists each breach by ATT&CK ID, in four groups with their reasons:[^bundle]
 
-- Sixteen retired Enterprise sub-techniques have no parent, where the ADM says each sub-technique has one (16).
-- Nine current sub-techniques, six in Enterprise and three in ICS, name a platform their parent lacks (9).
-- Seven log source references name a log and channel their data component does not list, such as `linus:syslog` (7).
-- Twelve ICS log source references name one of four Enterprise data components, which the ICS bundle does not hold (12).
+- 16 retired Enterprise sub-techniques have no parent, where the ADM says each sub-technique has one.
+- 9 current sub-techniques, six in Enterprise and three in ICS, name a platform their parent lacks.
+- 7 log source references name a log and channel their data component does not list, such as `linus:syslog`.
+- 12 ICS log source references name one of four Enterprise data components, which the ICS bundle does not hold.
 
 `just test-attack-data` fails both on a new breach and on a listed one that no longer occurs.[^bundle]
 
