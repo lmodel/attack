@@ -9,3 +9,9 @@
 [group('model development')]
 fetch-attack-data:
   uv run scripts/fetch_attack_data.py
+
+# Validate every object of the pinned ATT&CK bundles, one at a time, after
+# fetching any that tmp/attack-stix-data/ lacks
+[group('model development')]
+test-attack-data: fetch-attack-data
+  ATTACK_DATA=1 uv run python -m pytest tests/test_attack_data.py
