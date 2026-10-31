@@ -2,6 +2,8 @@
 
 ## 2026-10-31
 
+* **Changed**: Test data and tests says `tests/test_upstream.py` also lists the 44 breaches across a bundle, in KNOWN_BUNDLE_DEPARTURES.
+* **Changed**: Where the data departs from the ATT&CK Data Model adds the four groups of breaches across a bundle that KNOWN_BUNDLE_DEPARTURES lists.
 * **Changed**: lmodel/stix modules names stix commit 267064d, which `tests/test_stix_import.py` and NOTICE now pin.
 * **Changed**: Test data and tests counts 72 counter-examples, since `tests/data/invalid/` gained one for a citation name with a colon.
 * **Prose**: reworded 13 concept bodies in plain English. No fact, link, number or frontmatter changed.
