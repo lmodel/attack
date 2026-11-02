@@ -10,6 +10,10 @@ The `v0.0.0` tag is a baseline, not a release: it marks where versioning starts 
 
 - **The stix pin names lmodel/stix v0.1.0.** `tests/test_stix_import.py` and NOTICE named a branch commit that stix's squash merge left unreachable; the vendored modules equal the release's, so no file changed.
 
+### Security
+
+- **The sidecar copies and the skills pin are at Knowledge Trust Ladder [v0.60.0](https://github.com/noelmcloughlin/knowledge-trust-ladder/compare/v0.59.0...v0.60.0).** The release changed `.github/workflows/knowledge-registrar.yaml`, `.github/workflows/knowledge-librarian.yaml`, `.github/workflows/knowledge-release.yaml`, `.github/workflows/knowledge-sync.yaml`, `.lokf/scripts/knowledge-preflight.sh`, `.lokf/.gitignore`, `.lokf/justfile`, `website/package-lock.json`, `website/package.json`, `website/scripts/config.mjs`, `website/scripts/sync.mjs` and `.github/workflows/knowledge-website.yaml` here.
+
 ## [0.1.0] - 2026-10-31
 
 ### Added
