@@ -3,7 +3,7 @@ type: Dataset
 id: https://w3id.org/lmodel/attack/knowledge/datasets/attack-linkml-schema
 genre: reference
 title: attack LinkML schema
-description: "The LinkML schema of MITRE ATT&CK v20.0 in STIX 2.1, `src/attack/schema/attack.yaml` (schema id `https://w3id.org/lmodel/attack`): 24 classes with the Attack prefix, each object class extending a lmodel/stix class, 12 enums and 37 slots, most of them ATT&CK's `x_mitre_*` keys. Its `lokf adapt` copy `.lokf/attack.yaml`, rooted on StixObject and StixBundle, is the bundle's domain schema."
+description: "The LinkML schema of MITRE ATT&CK v20.0 in STIX 2.1, `src/attack/schema/attack.yaml` (schema id `https://w3id.org/lmodel/attack`): 24 classes with the Attack prefix, each object class extending a lmodel/stix class, 12 enums and 37 slots, most of them ATT&CK's `x_mitre_*` keys. Its `lokf adapt` copy `.lokf/schema/attack.yaml`, rooted on StixObject and StixBundle, is the bundle's domain schema."
 resource: src/attack/schema/attack.yaml
 version: "20.0"
 license: Apache-2.0
@@ -20,7 +20,7 @@ sources:
     resource: project.justfile
     title: the lokf-adapt recipes and their roots
   - id: lokf-attack.yaml
-    resource: .lokf/attack.yaml
+    resource: .lokf/schema/attack.yaml
     title: the notes lokf adapt wrote
   - id: readme.md
     resource: README.md
@@ -31,7 +31,7 @@ sources:
     title: the tool.lokf table
 generated:
   by: process:ktl-librarian
-  at: "2026-10-31T02:18:54Z"
+  at: "2026-11-06T21:16:35Z"
 status: draft
 ---
 
@@ -47,9 +47,9 @@ Each class names its STIX type in a `stix_type` annotation and, where ATT&CK giv
 
 ## As the bundle's domain schema
 
-The bundle's domain schema is `.lokf/attack.yaml`, which `lokf adapt` writes from this file. Edit the source, never the copy.[^readme.md] The `schema :=` line of `.lokf/justfile` and the `[tool.lokf]` table of `.lokf/pyproject.toml` both name it. `project.justfile` roots the copy on `StixObject` and `StixBundle` and passes `--prefix stix`, so the STIX keys LOKF also defines become `stix_type`, `stix_name` and the like, as in lmodel/stix's own copy.[^project.justfile] The copy's notes record those renames and the two roots.[^lokf-attack.yaml]
+The bundle's domain schema is `.lokf/schema/attack.yaml`, which `lokf adapt` writes from this file. Edit the source, never the copy.[^readme.md] The `schema :=` line of `.lokf/justfile` and the `[tool.lokf]` table of `.lokf/pyproject.toml` both name it. `project.justfile` roots the copy on `StixObject` and `StixBundle` and passes `--prefix stix`, so the STIX keys LOKF also defines become `stix_type`, `stix_name` and the like, as in lmodel/stix's own copy.[^project.justfile] The copy's notes record those renames and the two roots.[^lokf-attack.yaml]
 
 [^attack.yaml]: src/attack/schema/attack.yaml, the header and the classes
 [^readme.md]: README.md, the Knowledge Trust Ladder (KTL) section
 [^project.justfile]: project.justfile, the knowledge bundle recipes
-[^lokf-attack.yaml]: .lokf/attack.yaml, the notes
+[^lokf-attack.yaml]: .lokf/schema/attack.yaml, the notes

@@ -1,5 +1,9 @@
 # Change Log
 
+## 2026-11-06
+
+* **Changed**: `lokf.yaml` and `attack.yaml` moved into `.lokf/schema/`, where KTL v0.62.0 keeps a sidecar's schema files, and the concepts that name them follow.
+
 ## 2026-10-31
 
 * **Changed**: lmodel/stix modules names stix v0.1.0, the release the six files equal, which `tests/test_stix_import.py` and NOTICE now pin.
