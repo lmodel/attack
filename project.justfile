@@ -6,8 +6,8 @@
 
 # ============ Knowledge bundle: the adapted domain schema ============
 
-# `.lokf/attack.yaml` is the copy `lokf adapt` writes from the schema so that it
-# can sit beside `.lokf/lokf.yaml` (`lokf adapt --help` lists the moves). The
+# `.lokf/schema/attack.yaml` is the copy `lokf adapt` writes from the schema so that it
+# can sit beside `.lokf/schema/lokf.yaml` (`lokf adapt --help` lists the moves). The
 # roots are the classes adapt re-roots on LOKF's Concept. They are StixObject
 # and StixBundle, as in lmodel/stix's copy: adapt replaces the identifier `id`
 # with LOKF's own and refuses a class that lists `id` without descending from
@@ -23,15 +23,15 @@
 lokf_cmd := env_var_or_default("LOKF_CMD", "uv run --project .lokf lokf")
 lokf_adapt_roots := "--root StixObject --root StixBundle --prefix stix"
 
-# Rewrite .lokf/attack.yaml from the schema (run after every schema change)
+# Rewrite .lokf/schema/attack.yaml from the schema (run after every schema change)
 [group('knowledge bundle')]
 lokf-adapt:
-  {{lokf_cmd}} adapt {{source_schema_path}} {{lokf_adapt_roots}} --lokf .lokf/lokf.yaml -o .lokf/attack.yaml
+  {{lokf_cmd}} adapt {{source_schema_path}} {{lokf_adapt_roots}} --lokf .lokf/schema/lokf.yaml -o .lokf/schema/attack.yaml
 
-# Fail when .lokf/attack.yaml is stale against the schema or .lokf/lokf.yaml
+# Fail when .lokf/schema/attack.yaml is stale against the schema or .lokf/schema/lokf.yaml
 [group('knowledge bundle')]
 lokf-adapt-check:
-  {{lokf_cmd}} adapt {{source_schema_path}} {{lokf_adapt_roots}} --lokf .lokf/lokf.yaml -o .lokf/attack.yaml --check
+  {{lokf_cmd}} adapt {{source_schema_path}} {{lokf_adapt_roots}} --lokf .lokf/schema/lokf.yaml -o .lokf/schema/attack.yaml --check
 
 # Download the pinned ATT&CK bundles into tmp/attack-stix-data/, checking
 # each against the size and hashes in tests/data/attack-stix-data/manifest.json

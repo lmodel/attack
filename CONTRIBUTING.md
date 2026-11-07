@@ -38,7 +38,7 @@ npx skills add noelmcloughlin/knowledge-trust-ladder --skill ktl-curator --yes  
 
 ## Before opening a pull request
 
-- **Edit the schema, then regenerate** with `just gen-project`, `just gen-doc` and `just lokf-adapt`, and commit the output. `project/`, `src/attack/datamodel/`, `docs/schema/` and `.lokf/attack.yaml` are generated.
+- **Edit the schema, then regenerate** with `just gen-project`, `just gen-doc` and `just lokf-adapt`, and commit the output. `project/`, `src/attack/datamodel/`, `docs/schema/` and `.lokf/schema/attack.yaml` are generated.
 - **Follow the data.** Never rewrite a record to fit the schema. Where the data and the ADM disagree, the schema follows the data, and `tests/test_upstream.py` lists the departure with its reason.
 - **Render the pinned versions.** The schema header, `scripts/check_upstream_release.py` and `tests/data/attack-stix-data/manifest.json` name the same releases, and `tests/test_upstream.py` holds them equal.
 - **Validate the full bundles** after a schema change: `just fetch-attack-data`, then `just test-attack-data`.

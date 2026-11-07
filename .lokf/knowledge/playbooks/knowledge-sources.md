@@ -12,7 +12,7 @@ sources:
   - resource: src/attack/schema
   - resource: src/attack/datamodel
   - resource: project.justfile
-  - resource: .lokf/attack.yaml
+  - resource: .lokf/schema/attack.yaml
   - resource: .lokf/justfile
   - resource: .lokf/pyproject.toml
   - resource: NOTICE
@@ -77,7 +77,7 @@ exclusions:
     reason: The sidecar's link to the bundle.
   - resource: .github/PULL_REQUEST_TEMPLATE
     reason: The sidecar sync's pull request template.
-  - resource: .lokf/lokf.yaml
+  - resource: .lokf/schema/lokf.yaml
     reason: LOKF's schema, pinned by the sidecar.
   - resource: .lokf/scripts
     reason: The sidecar's scripts, which the weekly sync replaces.
@@ -99,7 +99,7 @@ exclusions:
     reason: The marker that keeps the folder gen-doc fills; git ignores the pages themselves.
 generated:
   by: process:ktl-librarian
-  at: "2026-10-31T02:22:49Z"
+  at: "2026-11-06T21:16:35Z"
 status: draft
 ---
 
@@ -113,7 +113,7 @@ Each concept derived from a file or folder of this repository names it by its pa
 | --- | --- | --- |
 | `src/attack/schema/attack.yaml` | `datasets/attack-linkml-schema`, the twelve `glossary/` terms | re-read the header's `version`, `source`, annotations and comments, each class's required slots, the patterns, the enums and the rules |
 | `src/attack/schema/stix/`, `tests/test_stix_import.py` | `datasets/stix-modules`, `references/lmodel-stix` | re-read the pinned commit and hashes |
-| `project.justfile`, `.lokf/attack.yaml`, `.lokf/justfile`, `.lokf/pyproject.toml` | the domain-schema section of `datasets/attack-linkml-schema` | re-read the `--root` list and `--prefix`, the copy's notes, the `schema :=` line and the `[tool.lokf]` table |
+| `project.justfile`, `.lokf/schema/attack.yaml`, `.lokf/justfile`, `.lokf/pyproject.toml` | the domain-schema section of `datasets/attack-linkml-schema` | re-read the `--root` list and `--prefix`, the copy's notes, the `schema :=` line and the `[tool.lokf]` table |
 | `tests/data/attack-stix-data/`, `scripts/fetch_attack_data.py` | `datasets/pinned-attack-bundles`, `references/attack-stix-data` | re-read the manifest's pins and the fetch script's docstring |
 | `scripts/check_upstream_release.py`, `.github/scripts/` | `playbooks/update-upstream-pins`, `workflows/upstream-watch`, `references/attack-data-model` | re-read the pins, the docstring and the issue title |
 | `tests/` | `datasets/test-data`, `explanations/data-departures` | re-count `valid/`, `invalid/` and the extract; re-read KNOWN_DEPARTURES and the neighbours' checksums |
