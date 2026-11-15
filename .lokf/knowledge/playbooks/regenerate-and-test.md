@@ -14,13 +14,13 @@ sources:
     title: the lint, gen-project, gen-doc and test recipes
 generated:
   by: process:ktl-librarian
-  at: "2026-10-31T02:20:54Z"
+  at: "2026-11-15T10:33:52Z"
 status: draft
 ---
 
 # Regenerate and test the schema
 
-1. Install Python 3.10 or later, uv and just, then run `uv sync --group dev` in a clone.[^contributing.md]
+1. Install Python 3.11 or later, uv and just, then run `uv sync --group dev` in a clone.[^contributing.md]
 2. Edit `src/attack/schema/attack.yaml`, never a generated file, and never the stix modules under `src/attack/schema/stix/`.
 3. Run `just gen-project`, `just gen-doc` and `just lokf-adapt`, and commit what they write.
 4. Run `just lint`, which fails on a warning as on an error, and `just test`, which generates the project into `tmp/`, runs the Python tests and runs the examples.[^justfile]

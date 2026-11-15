@@ -18,7 +18,7 @@ A LinkML schema of MITRE ATT&CK in STIX 2.1: its objects and the `x_mitre_*` pro
 
 ## Development setup
 
-You need Python 3.10+, [uv](https://docs.astral.sh/uv/) and [just](https://github.com/casey/just).
+You need Python 3.11+, [uv](https://docs.astral.sh/uv/) and [just](https://github.com/casey/just).
 
 ```bash
 git clone https://github.com/lmodel/attack.git

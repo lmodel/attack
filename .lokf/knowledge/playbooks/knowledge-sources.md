@@ -99,7 +99,7 @@ exclusions:
     reason: The marker that keeps the folder gen-doc fills; git ignores the pages themselves.
 generated:
   by: process:ktl-librarian
-  at: "2026-11-06T21:16:35Z"
+  at: "2026-11-15T02:27:06Z"
 status: draft
 ---
 
@@ -123,8 +123,8 @@ Each concept derived from a file or folder of this repository names it by its pa
 | `CONTRIBUTING.md` | `playbooks/regenerate-and-test` | confirm the setup and the checklist |
 | `.releaserc.json`, `.github/release/`, the Releasing section of `CONTRIBUTING.md` | `playbooks/release`, `workflows/semantic-release` | re-read the release rules, the commands and the pinned tools |
 | the nine files in `.github/workflows/` | the nine `workflows/` concepts | re-read each file's `on` keys, its jobs' permissions and environments, and the variables and secrets it reads |
-| `website/` | `services/documentation-site` | re-read `site.config.mjs` and `website/README.md` |
-| `NOTICE`, `LICENSE`, `website/NOTICE`, the License section of `README.md` | `policies/license-and-attribution` | re-read each third-party entry |
+| `website/` | `services/documentation-site` | re-read `site.toml` and `website/README.md` |
+| `NOTICE`, `LICENSE`, the License section of `README.md` | `policies/license-and-attribution` | re-read each third-party entry |
 | `SECURITY.md`, `.github/dependabot.yml` | `policies/security-policy` | re-read the table of surfaces and the settings not yet in force |
 | `AI_COVENANT.md` | `policies/ai-covenant` | re-read the project note and the section on agent automation |
 | <https://github.com/mitre-attack/attack-stix-data/releases/tag/v20.0>, <https://attack.mitre.org/resources/versions/> | `references/attack-stix-data` | external pages, read on 2026-10-31; re-read them when the upstream watch reports a new release |

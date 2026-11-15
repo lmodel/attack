@@ -12,12 +12,9 @@ sources:
   - id: readme.md
     resource: README.md
     title: the License section
-  - id: website-notice
-    resource: website/NOTICE
-    title: the part adapted from the LOKF toolkit's site
 generated:
   by: process:ktl-librarian
-  at: "2026-10-31T02:20:54Z"
+  at: "2026-11-15T02:27:06Z"
 status: draft
 ---
 
@@ -30,8 +27,7 @@ The schema and the code are under the Apache License 2.0, and the knowledge bund
 - lmodel/stix's modules, under Apache 2.0, whose descriptions partly reuse OASIS's STIX JSON schemas under BSD-3-Clause;
 - the linkml-project-copier template, under MIT, and the KTL sidecar and website templates, under Apache 2.0.
 
-NOTICE reproduces MITRE's copyright designation and licence. ATT&CK® is MITRE's registered trademark. `website/NOTICE` lists the part of the site adapted from the LOKF toolkit's site.[^website-notice]
+NOTICE reproduces MITRE's copyright designation and licence. ATT&CK® is MITRE's registered trademark.
 
 [^readme.md]: README.md, the License section
 [^notice]: NOTICE, every section
-[^website-notice]: website/NOTICE

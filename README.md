@@ -2,6 +2,11 @@
 
 # attack
 
+[![Build and test](https://github.com/lmodel/attack/actions/workflows/main.yaml/badge.svg)](https://github.com/lmodel/attack/actions/workflows/main.yaml)
+[![Licence](https://img.shields.io/github/license/lmodel/attack?label=licence)](LICENSE)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/lmodel/attack/badge)](https://scorecard.dev/viewer/?uri=github.com/lmodel/attack)
+[![KTL scorecard](https://img.shields.io/endpoint?url=https://lmodel.github.io/attack/badge.json)](https://lmodel.github.io/attack/health/)
+
 MITRE ATT&CK v20.0 (LinkML)
 
 > **Only want to ask?** Install `ktl-docent` into any agent you use, by a route from [the install page](https://w3id.org/ktl/docs/install/), and ask it about this project. It answers from the bundle and says how far each answer has been checked.
@@ -33,14 +38,14 @@ None of its own: ATT&CK's classes are STIX's, and the stix modules carry the map
 
 ## Repository Structure
 
-* [docs/](docs/): the website's pages, with the generated schema pages in [elements/](docs/elements/)
+* [docs/](docs/): the website's pages, with the generated schema pages in `docs/elements/`
 * [examples/](examples/): usage examples
 * [project/](project/): generated project files (do not edit them)
 * [scripts/](scripts/): the upstream watch and the fetch of the bundles
 * [src/attack/schema/](src/attack/schema): the LinkML schema, `attack.yaml` (edit this), and the stix modules it imports
 * [src/attack/datamodel/](src/attack/datamodel): the generated Python datamodel
 * [tests/](tests/): Python tests, with example data and the extract in [data/](tests/data) and the neighbours' adapt copies in [neighbours/](tests/neighbours)
-* [website/](website/): the Astro Starlight site built from the README, `docs/`, the schema's pages and the knowledge bundle
+* [website/](website/): the Hugo site built from the README, `docs/`, the schema's pages and the knowledge bundle
 
 ## Developer Tools
 
