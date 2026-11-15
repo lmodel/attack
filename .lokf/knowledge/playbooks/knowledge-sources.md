@@ -21,7 +21,7 @@ sources:
   - resource: .github/scripts
   - resource: .github/workflows
   - resource: .github/dependabot.yml
-  - resource: .github/release
+  - resource: .release
   - resource: justfile
   - resource: .linkml/generators.yaml
   - resource: .linkmllint.yaml
@@ -99,7 +99,7 @@ exclusions:
     reason: The marker that keeps the folder gen-doc fills; git ignores the pages themselves.
 generated:
   by: process:ktl-librarian
-  at: "2026-11-15T02:27:06Z"
+  at: "2026-11-15T20:55:41Z"
 status: draft
 ---
 
@@ -121,7 +121,7 @@ Each concept derived from a file or folder of this repository names it by its pa
 | `justfile`, `.linkml/generators.yaml`, `project/`, `src/attack/datamodel/`, `docs/schema/` | `datasets/generated-artefacts` | re-read the recipes and the jsonschema settings; re-list `project/` |
 | the Validating data section of `docs/index.md` | `playbooks/validate-data` | re-read the section |
 | `CONTRIBUTING.md` | `playbooks/regenerate-and-test` | confirm the setup and the checklist |
-| `.releaserc.json`, `.github/release/`, the Releasing section of `CONTRIBUTING.md` | `playbooks/release`, `workflows/semantic-release` | re-read the release rules, the commands and the pinned tools |
+| `.releaserc.json`, `.release/`, the Releasing section of `CONTRIBUTING.md` | `playbooks/release`, `workflows/semantic-release` | re-read the release rules, the commands and the pinned tools |
 | the nine files in `.github/workflows/` | the nine `workflows/` concepts | re-read each file's `on` keys, its jobs' permissions and environments, and the variables and secrets it reads |
 | `website/` | `services/documentation-site` | re-read `site.toml` and `website/README.md` |
 | `NOTICE`, `LICENSE`, the License section of `README.md` | `policies/license-and-attribution` | re-read each third-party entry |
